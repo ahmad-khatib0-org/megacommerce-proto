@@ -47707,6 +47707,1166 @@ public final class ConfigProto {
 
   }
 
+  public interface ConfigProductsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigProducts)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];</code>
+     * @return The productImageMaxSizeMb.
+     */
+    long getProductImageMaxSizeMb();
+
+    /**
+     * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+     * @return A list containing the productImageAcceptedFormats.
+     */
+    java.util.List<java.lang.String>
+        getProductImageAcceptedFormatsList();
+    /**
+     * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+     * @return The count of productImageAcceptedFormats.
+     */
+    int getProductImageAcceptedFormatsCount();
+    /**
+     * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+     * @param index The index of the element to return.
+     * @return The productImageAcceptedFormats at the given index.
+     */
+    java.lang.String getProductImageAcceptedFormats(int index);
+    /**
+     * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the productImageAcceptedFormats at the given index.
+     */
+    com.google.protobuf.ByteString
+        getProductImageAcceptedFormatsBytes(int index);
+
+    /**
+     * <code>uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];</code>
+     * @return The productImageMaxWidth.
+     */
+    long getProductImageMaxWidth();
+
+    /**
+     * <code>uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];</code>
+     * @return The productImageMaxHeight.
+     */
+    long getProductImageMaxHeight();
+
+    /**
+     * <code>uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];</code>
+     * @return The productImageMinWidth.
+     */
+    long getProductImageMinWidth();
+
+    /**
+     * <code>uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];</code>
+     * @return The productImageMinHeight.
+     */
+    long getProductImageMinHeight();
+
+    /**
+     * <code>uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];</code>
+     * @return The productImagesMinCountPerVariant.
+     */
+    long getProductImagesMinCountPerVariant();
+
+    /**
+     * <code>uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];</code>
+     * @return The productImagesMaxCountPerVariant.
+     */
+    long getProductImagesMaxCountPerVariant();
+
+    /**
+     * <code>uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];</code>
+     * @return The productMediaMaxDirectUploadingSizeMb.
+     */
+    long getProductMediaMaxDirectUploadingSizeMb();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigProducts}
+   */
+  public static final class ConfigProducts extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigProducts)
+      ConfigProductsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ConfigProducts.class.getName());
+    }
+    // Use ConfigProducts.newBuilder() to construct.
+    private ConfigProducts(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigProducts() {
+      productImageAcceptedFormats_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigProducts_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigProducts_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.ConfigProto.ConfigProducts.class, org.megacommerce.common.v1.ConfigProto.ConfigProducts.Builder.class);
+    }
+
+    public static final int PRODUCT_IMAGE_MAX_SIZE_MB_FIELD_NUMBER = 1;
+    private long productImageMaxSizeMb_ = 0L;
+    /**
+     * <code>uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];</code>
+     * @return The productImageMaxSizeMb.
+     */
+    @java.lang.Override
+    public long getProductImageMaxSizeMb() {
+      return productImageMaxSizeMb_;
+    }
+
+    public static final int PRODUCT_IMAGE_ACCEPTED_FORMATS_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList productImageAcceptedFormats_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+     * @return A list containing the productImageAcceptedFormats.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getProductImageAcceptedFormatsList() {
+      return productImageAcceptedFormats_;
+    }
+    /**
+     * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+     * @return The count of productImageAcceptedFormats.
+     */
+    public int getProductImageAcceptedFormatsCount() {
+      return productImageAcceptedFormats_.size();
+    }
+    /**
+     * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+     * @param index The index of the element to return.
+     * @return The productImageAcceptedFormats at the given index.
+     */
+    public java.lang.String getProductImageAcceptedFormats(int index) {
+      return productImageAcceptedFormats_.get(index);
+    }
+    /**
+     * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the productImageAcceptedFormats at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getProductImageAcceptedFormatsBytes(int index) {
+      return productImageAcceptedFormats_.getByteString(index);
+    }
+
+    public static final int PRODUCT_IMAGE_MAX_WIDTH_FIELD_NUMBER = 3;
+    private long productImageMaxWidth_ = 0L;
+    /**
+     * <code>uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];</code>
+     * @return The productImageMaxWidth.
+     */
+    @java.lang.Override
+    public long getProductImageMaxWidth() {
+      return productImageMaxWidth_;
+    }
+
+    public static final int PRODUCT_IMAGE_MAX_HEIGHT_FIELD_NUMBER = 4;
+    private long productImageMaxHeight_ = 0L;
+    /**
+     * <code>uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];</code>
+     * @return The productImageMaxHeight.
+     */
+    @java.lang.Override
+    public long getProductImageMaxHeight() {
+      return productImageMaxHeight_;
+    }
+
+    public static final int PRODUCT_IMAGE_MIN_WIDTH_FIELD_NUMBER = 5;
+    private long productImageMinWidth_ = 0L;
+    /**
+     * <code>uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];</code>
+     * @return The productImageMinWidth.
+     */
+    @java.lang.Override
+    public long getProductImageMinWidth() {
+      return productImageMinWidth_;
+    }
+
+    public static final int PRODUCT_IMAGE_MIN_HEIGHT_FIELD_NUMBER = 6;
+    private long productImageMinHeight_ = 0L;
+    /**
+     * <code>uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];</code>
+     * @return The productImageMinHeight.
+     */
+    @java.lang.Override
+    public long getProductImageMinHeight() {
+      return productImageMinHeight_;
+    }
+
+    public static final int PRODUCT_IMAGES_MIN_COUNT_PER_VARIANT_FIELD_NUMBER = 7;
+    private long productImagesMinCountPerVariant_ = 0L;
+    /**
+     * <code>uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];</code>
+     * @return The productImagesMinCountPerVariant.
+     */
+    @java.lang.Override
+    public long getProductImagesMinCountPerVariant() {
+      return productImagesMinCountPerVariant_;
+    }
+
+    public static final int PRODUCT_IMAGES_MAX_COUNT_PER_VARIANT_FIELD_NUMBER = 8;
+    private long productImagesMaxCountPerVariant_ = 0L;
+    /**
+     * <code>uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];</code>
+     * @return The productImagesMaxCountPerVariant.
+     */
+    @java.lang.Override
+    public long getProductImagesMaxCountPerVariant() {
+      return productImagesMaxCountPerVariant_;
+    }
+
+    public static final int PRODUCT_MEDIA_MAX_DIRECT_UPLOADING_SIZE_MB_FIELD_NUMBER = 9;
+    private long productMediaMaxDirectUploadingSizeMb_ = 0L;
+    /**
+     * <code>uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];</code>
+     * @return The productMediaMaxDirectUploadingSizeMb.
+     */
+    @java.lang.Override
+    public long getProductMediaMaxDirectUploadingSizeMb() {
+      return productMediaMaxDirectUploadingSizeMb_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (productImageMaxSizeMb_ != 0L) {
+        output.writeUInt64(1, productImageMaxSizeMb_);
+      }
+      for (int i = 0; i < productImageAcceptedFormats_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, productImageAcceptedFormats_.getRaw(i));
+      }
+      if (productImageMaxWidth_ != 0L) {
+        output.writeUInt64(3, productImageMaxWidth_);
+      }
+      if (productImageMaxHeight_ != 0L) {
+        output.writeUInt64(4, productImageMaxHeight_);
+      }
+      if (productImageMinWidth_ != 0L) {
+        output.writeUInt64(5, productImageMinWidth_);
+      }
+      if (productImageMinHeight_ != 0L) {
+        output.writeUInt64(6, productImageMinHeight_);
+      }
+      if (productImagesMinCountPerVariant_ != 0L) {
+        output.writeUInt64(7, productImagesMinCountPerVariant_);
+      }
+      if (productImagesMaxCountPerVariant_ != 0L) {
+        output.writeUInt64(8, productImagesMaxCountPerVariant_);
+      }
+      if (productMediaMaxDirectUploadingSizeMb_ != 0L) {
+        output.writeUInt64(9, productMediaMaxDirectUploadingSizeMb_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (productImageMaxSizeMb_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, productImageMaxSizeMb_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < productImageAcceptedFormats_.size(); i++) {
+          dataSize += computeStringSizeNoTag(productImageAcceptedFormats_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getProductImageAcceptedFormatsList().size();
+      }
+      if (productImageMaxWidth_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, productImageMaxWidth_);
+      }
+      if (productImageMaxHeight_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, productImageMaxHeight_);
+      }
+      if (productImageMinWidth_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, productImageMinWidth_);
+      }
+      if (productImageMinHeight_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, productImageMinHeight_);
+      }
+      if (productImagesMinCountPerVariant_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(7, productImagesMinCountPerVariant_);
+      }
+      if (productImagesMaxCountPerVariant_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(8, productImagesMaxCountPerVariant_);
+      }
+      if (productMediaMaxDirectUploadingSizeMb_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(9, productMediaMaxDirectUploadingSizeMb_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.ConfigProto.ConfigProducts)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.ConfigProto.ConfigProducts other = (org.megacommerce.common.v1.ConfigProto.ConfigProducts) obj;
+
+      if (getProductImageMaxSizeMb()
+          != other.getProductImageMaxSizeMb()) return false;
+      if (!getProductImageAcceptedFormatsList()
+          .equals(other.getProductImageAcceptedFormatsList())) return false;
+      if (getProductImageMaxWidth()
+          != other.getProductImageMaxWidth()) return false;
+      if (getProductImageMaxHeight()
+          != other.getProductImageMaxHeight()) return false;
+      if (getProductImageMinWidth()
+          != other.getProductImageMinWidth()) return false;
+      if (getProductImageMinHeight()
+          != other.getProductImageMinHeight()) return false;
+      if (getProductImagesMinCountPerVariant()
+          != other.getProductImagesMinCountPerVariant()) return false;
+      if (getProductImagesMaxCountPerVariant()
+          != other.getProductImagesMaxCountPerVariant()) return false;
+      if (getProductMediaMaxDirectUploadingSizeMb()
+          != other.getProductMediaMaxDirectUploadingSizeMb()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRODUCT_IMAGE_MAX_SIZE_MB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductImageMaxSizeMb());
+      if (getProductImageAcceptedFormatsCount() > 0) {
+        hash = (37 * hash) + PRODUCT_IMAGE_ACCEPTED_FORMATS_FIELD_NUMBER;
+        hash = (53 * hash) + getProductImageAcceptedFormatsList().hashCode();
+      }
+      hash = (37 * hash) + PRODUCT_IMAGE_MAX_WIDTH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductImageMaxWidth());
+      hash = (37 * hash) + PRODUCT_IMAGE_MAX_HEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductImageMaxHeight());
+      hash = (37 * hash) + PRODUCT_IMAGE_MIN_WIDTH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductImageMinWidth());
+      hash = (37 * hash) + PRODUCT_IMAGE_MIN_HEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductImageMinHeight());
+      hash = (37 * hash) + PRODUCT_IMAGES_MIN_COUNT_PER_VARIANT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductImagesMinCountPerVariant());
+      hash = (37 * hash) + PRODUCT_IMAGES_MAX_COUNT_PER_VARIANT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductImagesMaxCountPerVariant());
+      hash = (37 * hash) + PRODUCT_MEDIA_MAX_DIRECT_UPLOADING_SIZE_MB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProductMediaMaxDirectUploadingSizeMb());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.ConfigProto.ConfigProducts prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigProducts}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigProducts)
+        org.megacommerce.common.v1.ConfigProto.ConfigProductsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigProducts_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigProducts_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.ConfigProto.ConfigProducts.class, org.megacommerce.common.v1.ConfigProto.ConfigProducts.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.ConfigProto.ConfigProducts.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        productImageMaxSizeMb_ = 0L;
+        productImageAcceptedFormats_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        productImageMaxWidth_ = 0L;
+        productImageMaxHeight_ = 0L;
+        productImageMinWidth_ = 0L;
+        productImageMinHeight_ = 0L;
+        productImagesMinCountPerVariant_ = 0L;
+        productImagesMaxCountPerVariant_ = 0L;
+        productMediaMaxDirectUploadingSizeMb_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigProducts_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigProducts getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.ConfigProto.ConfigProducts.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigProducts build() {
+        org.megacommerce.common.v1.ConfigProto.ConfigProducts result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigProducts buildPartial() {
+        org.megacommerce.common.v1.ConfigProto.ConfigProducts result = new org.megacommerce.common.v1.ConfigProto.ConfigProducts(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.common.v1.ConfigProto.ConfigProducts result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.productImageMaxSizeMb_ = productImageMaxSizeMb_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          productImageAcceptedFormats_.makeImmutable();
+          result.productImageAcceptedFormats_ = productImageAcceptedFormats_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.productImageMaxWidth_ = productImageMaxWidth_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.productImageMaxHeight_ = productImageMaxHeight_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.productImageMinWidth_ = productImageMinWidth_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.productImageMinHeight_ = productImageMinHeight_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.productImagesMinCountPerVariant_ = productImagesMinCountPerVariant_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.productImagesMaxCountPerVariant_ = productImagesMaxCountPerVariant_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.productMediaMaxDirectUploadingSizeMb_ = productMediaMaxDirectUploadingSizeMb_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.ConfigProto.ConfigProducts) {
+          return mergeFrom((org.megacommerce.common.v1.ConfigProto.ConfigProducts)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigProducts other) {
+        if (other == org.megacommerce.common.v1.ConfigProto.ConfigProducts.getDefaultInstance()) return this;
+        if (other.getProductImageMaxSizeMb() != 0L) {
+          setProductImageMaxSizeMb(other.getProductImageMaxSizeMb());
+        }
+        if (!other.productImageAcceptedFormats_.isEmpty()) {
+          if (productImageAcceptedFormats_.isEmpty()) {
+            productImageAcceptedFormats_ = other.productImageAcceptedFormats_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureProductImageAcceptedFormatsIsMutable();
+            productImageAcceptedFormats_.addAll(other.productImageAcceptedFormats_);
+          }
+          onChanged();
+        }
+        if (other.getProductImageMaxWidth() != 0L) {
+          setProductImageMaxWidth(other.getProductImageMaxWidth());
+        }
+        if (other.getProductImageMaxHeight() != 0L) {
+          setProductImageMaxHeight(other.getProductImageMaxHeight());
+        }
+        if (other.getProductImageMinWidth() != 0L) {
+          setProductImageMinWidth(other.getProductImageMinWidth());
+        }
+        if (other.getProductImageMinHeight() != 0L) {
+          setProductImageMinHeight(other.getProductImageMinHeight());
+        }
+        if (other.getProductImagesMinCountPerVariant() != 0L) {
+          setProductImagesMinCountPerVariant(other.getProductImagesMinCountPerVariant());
+        }
+        if (other.getProductImagesMaxCountPerVariant() != 0L) {
+          setProductImagesMaxCountPerVariant(other.getProductImagesMaxCountPerVariant());
+        }
+        if (other.getProductMediaMaxDirectUploadingSizeMb() != 0L) {
+          setProductMediaMaxDirectUploadingSizeMb(other.getProductMediaMaxDirectUploadingSizeMb());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                productImageMaxSizeMb_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProductImageAcceptedFormatsIsMutable();
+                productImageAcceptedFormats_.add(s);
+                break;
+              } // case 18
+              case 24: {
+                productImageMaxWidth_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                productImageMaxHeight_ = input.readUInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                productImageMinWidth_ = input.readUInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                productImageMinHeight_ = input.readUInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 56: {
+                productImagesMinCountPerVariant_ = input.readUInt64();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 64: {
+                productImagesMaxCountPerVariant_ = input.readUInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 72: {
+                productMediaMaxDirectUploadingSizeMb_ = input.readUInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long productImageMaxSizeMb_ ;
+      /**
+       * <code>uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];</code>
+       * @return The productImageMaxSizeMb.
+       */
+      @java.lang.Override
+      public long getProductImageMaxSizeMb() {
+        return productImageMaxSizeMb_;
+      }
+      /**
+       * <code>uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];</code>
+       * @param value The productImageMaxSizeMb to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductImageMaxSizeMb(long value) {
+
+        productImageMaxSizeMb_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductImageMaxSizeMb() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        productImageMaxSizeMb_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList productImageAcceptedFormats_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureProductImageAcceptedFormatsIsMutable() {
+        if (!productImageAcceptedFormats_.isModifiable()) {
+          productImageAcceptedFormats_ = new com.google.protobuf.LazyStringArrayList(productImageAcceptedFormats_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+       * @return A list containing the productImageAcceptedFormats.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getProductImageAcceptedFormatsList() {
+        productImageAcceptedFormats_.makeImmutable();
+        return productImageAcceptedFormats_;
+      }
+      /**
+       * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+       * @return The count of productImageAcceptedFormats.
+       */
+      public int getProductImageAcceptedFormatsCount() {
+        return productImageAcceptedFormats_.size();
+      }
+      /**
+       * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+       * @param index The index of the element to return.
+       * @return The productImageAcceptedFormats at the given index.
+       */
+      public java.lang.String getProductImageAcceptedFormats(int index) {
+        return productImageAcceptedFormats_.get(index);
+      }
+      /**
+       * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the productImageAcceptedFormats at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getProductImageAcceptedFormatsBytes(int index) {
+        return productImageAcceptedFormats_.getByteString(index);
+      }
+      /**
+       * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+       * @param index The index to set the value at.
+       * @param value The productImageAcceptedFormats to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductImageAcceptedFormats(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureProductImageAcceptedFormatsIsMutable();
+        productImageAcceptedFormats_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+       * @param value The productImageAcceptedFormats to add.
+       * @return This builder for chaining.
+       */
+      public Builder addProductImageAcceptedFormats(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureProductImageAcceptedFormatsIsMutable();
+        productImageAcceptedFormats_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+       * @param values The productImageAcceptedFormats to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllProductImageAcceptedFormats(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureProductImageAcceptedFormatsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, productImageAcceptedFormats_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductImageAcceptedFormats() {
+        productImageAcceptedFormats_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];</code>
+       * @param value The bytes of the productImageAcceptedFormats to add.
+       * @return This builder for chaining.
+       */
+      public Builder addProductImageAcceptedFormatsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureProductImageAcceptedFormatsIsMutable();
+        productImageAcceptedFormats_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private long productImageMaxWidth_ ;
+      /**
+       * <code>uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];</code>
+       * @return The productImageMaxWidth.
+       */
+      @java.lang.Override
+      public long getProductImageMaxWidth() {
+        return productImageMaxWidth_;
+      }
+      /**
+       * <code>uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];</code>
+       * @param value The productImageMaxWidth to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductImageMaxWidth(long value) {
+
+        productImageMaxWidth_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductImageMaxWidth() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        productImageMaxWidth_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long productImageMaxHeight_ ;
+      /**
+       * <code>uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];</code>
+       * @return The productImageMaxHeight.
+       */
+      @java.lang.Override
+      public long getProductImageMaxHeight() {
+        return productImageMaxHeight_;
+      }
+      /**
+       * <code>uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];</code>
+       * @param value The productImageMaxHeight to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductImageMaxHeight(long value) {
+
+        productImageMaxHeight_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductImageMaxHeight() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        productImageMaxHeight_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long productImageMinWidth_ ;
+      /**
+       * <code>uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];</code>
+       * @return The productImageMinWidth.
+       */
+      @java.lang.Override
+      public long getProductImageMinWidth() {
+        return productImageMinWidth_;
+      }
+      /**
+       * <code>uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];</code>
+       * @param value The productImageMinWidth to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductImageMinWidth(long value) {
+
+        productImageMinWidth_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductImageMinWidth() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        productImageMinWidth_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long productImageMinHeight_ ;
+      /**
+       * <code>uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];</code>
+       * @return The productImageMinHeight.
+       */
+      @java.lang.Override
+      public long getProductImageMinHeight() {
+        return productImageMinHeight_;
+      }
+      /**
+       * <code>uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];</code>
+       * @param value The productImageMinHeight to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductImageMinHeight(long value) {
+
+        productImageMinHeight_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductImageMinHeight() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        productImageMinHeight_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long productImagesMinCountPerVariant_ ;
+      /**
+       * <code>uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];</code>
+       * @return The productImagesMinCountPerVariant.
+       */
+      @java.lang.Override
+      public long getProductImagesMinCountPerVariant() {
+        return productImagesMinCountPerVariant_;
+      }
+      /**
+       * <code>uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];</code>
+       * @param value The productImagesMinCountPerVariant to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductImagesMinCountPerVariant(long value) {
+
+        productImagesMinCountPerVariant_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductImagesMinCountPerVariant() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        productImagesMinCountPerVariant_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long productImagesMaxCountPerVariant_ ;
+      /**
+       * <code>uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];</code>
+       * @return The productImagesMaxCountPerVariant.
+       */
+      @java.lang.Override
+      public long getProductImagesMaxCountPerVariant() {
+        return productImagesMaxCountPerVariant_;
+      }
+      /**
+       * <code>uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];</code>
+       * @param value The productImagesMaxCountPerVariant to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductImagesMaxCountPerVariant(long value) {
+
+        productImagesMaxCountPerVariant_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductImagesMaxCountPerVariant() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        productImagesMaxCountPerVariant_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long productMediaMaxDirectUploadingSizeMb_ ;
+      /**
+       * <code>uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];</code>
+       * @return The productMediaMaxDirectUploadingSizeMb.
+       */
+      @java.lang.Override
+      public long getProductMediaMaxDirectUploadingSizeMb() {
+        return productMediaMaxDirectUploadingSizeMb_;
+      }
+      /**
+       * <code>uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];</code>
+       * @param value The productMediaMaxDirectUploadingSizeMb to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductMediaMaxDirectUploadingSizeMb(long value) {
+
+        productMediaMaxDirectUploadingSizeMb_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductMediaMaxDirectUploadingSizeMb() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        productMediaMaxDirectUploadingSizeMb_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigProducts)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigProducts)
+    private static final org.megacommerce.common.v1.ConfigProto.ConfigProducts DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.ConfigProto.ConfigProducts();
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigProducts getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigProducts>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigProducts>() {
+      @java.lang.Override
+      public ConfigProducts parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigProducts> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigProducts> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigProducts getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ConfigOrBuilder extends
       // @@protoc_insertion_point(interface_extends:common.v1.Config)
       com.google.protobuf.MessageOrBuilder {
@@ -48040,6 +49200,21 @@ public final class ConfigProto {
      * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
      */
     org.megacommerce.common.v1.ConfigProto.ConfigOAuthOrBuilder getOauthOrBuilder();
+
+    /**
+     * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+     * @return Whether the products field is set.
+     */
+    boolean hasProducts();
+    /**
+     * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+     * @return The products.
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigProducts getProducts();
+    /**
+     * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigProductsOrBuilder getProductsOrBuilder();
   }
   /**
    * Protobuf type {@code common.v1.Config}
@@ -48651,6 +49826,32 @@ public final class ConfigProto {
       return oauth_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigOAuth.getDefaultInstance() : oauth_;
     }
 
+    public static final int PRODUCTS_FIELD_NUMBER = 23;
+    private org.megacommerce.common.v1.ConfigProto.ConfigProducts products_;
+    /**
+     * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+     * @return Whether the products field is set.
+     */
+    @java.lang.Override
+    public boolean hasProducts() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+     * @return The products.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigProducts getProducts() {
+      return products_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigProducts.getDefaultInstance() : products_;
+    }
+    /**
+     * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigProductsOrBuilder getProductsOrBuilder() {
+      return products_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigProducts.getDefaultInstance() : products_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -48730,6 +49931,9 @@ public final class ConfigProto {
       }
       if (((bitField0_ & 0x00200000) != 0)) {
         output.writeMessage(22, getOauth());
+      }
+      if (((bitField0_ & 0x00400000) != 0)) {
+        output.writeMessage(23, getProducts());
       }
       getUnknownFields().writeTo(output);
     }
@@ -48827,6 +50031,10 @@ public final class ConfigProto {
       if (((bitField0_ & 0x00200000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(22, getOauth());
+      }
+      if (((bitField0_ & 0x00400000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(23, getProducts());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -48953,6 +50161,11 @@ public final class ConfigProto {
         if (!getOauth()
             .equals(other.getOauth())) return false;
       }
+      if (hasProducts() != other.hasProducts()) return false;
+      if (hasProducts()) {
+        if (!getProducts()
+            .equals(other.getProducts())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -49051,6 +50264,10 @@ public final class ConfigProto {
       if (hasOauth()) {
         hash = (37 * hash) + OAUTH_FIELD_NUMBER;
         hash = (53 * hash) + getOauth().hashCode();
+      }
+      if (hasProducts()) {
+        hash = (37 * hash) + PRODUCTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProducts().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -49204,6 +50421,7 @@ public final class ConfigProto {
           internalGetDataRetentionFieldBuilder();
           internalGetImageProxyFieldBuilder();
           internalGetOauthFieldBuilder();
+          internalGetProductsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -49319,6 +50537,11 @@ public final class ConfigProto {
         if (oauthBuilder_ != null) {
           oauthBuilder_.dispose();
           oauthBuilder_ = null;
+        }
+        products_ = null;
+        if (productsBuilder_ != null) {
+          productsBuilder_.dispose();
+          productsBuilder_ = null;
         }
         return this;
       }
@@ -49486,6 +50709,12 @@ public final class ConfigProto {
               : oauthBuilder_.build();
           to_bitField0_ |= 0x00200000;
         }
+        if (((from_bitField0_ & 0x00400000) != 0)) {
+          result.products_ = productsBuilder_ == null
+              ? products_
+              : productsBuilder_.build();
+          to_bitField0_ |= 0x00400000;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -49566,6 +50795,9 @@ public final class ConfigProto {
         }
         if (other.hasOauth()) {
           mergeOauth(other.getOauth());
+        }
+        if (other.hasProducts()) {
+          mergeProducts(other.getProducts());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -49747,6 +50979,13 @@ public final class ConfigProto {
                 bitField0_ |= 0x00200000;
                 break;
               } // case 178
+              case 186: {
+                input.readMessage(
+                    internalGetProductsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 186
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -52424,6 +53663,127 @@ public final class ConfigProto {
           oauth_ = null;
         }
         return oauthBuilder_;
+      }
+
+      private org.megacommerce.common.v1.ConfigProto.ConfigProducts products_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.common.v1.ConfigProto.ConfigProducts, org.megacommerce.common.v1.ConfigProto.ConfigProducts.Builder, org.megacommerce.common.v1.ConfigProto.ConfigProductsOrBuilder> productsBuilder_;
+      /**
+       * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+       * @return Whether the products field is set.
+       */
+      public boolean hasProducts() {
+        return ((bitField0_ & 0x00400000) != 0);
+      }
+      /**
+       * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+       * @return The products.
+       */
+      public org.megacommerce.common.v1.ConfigProto.ConfigProducts getProducts() {
+        if (productsBuilder_ == null) {
+          return products_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigProducts.getDefaultInstance() : products_;
+        } else {
+          return productsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+       */
+      public Builder setProducts(org.megacommerce.common.v1.ConfigProto.ConfigProducts value) {
+        if (productsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          products_ = value;
+        } else {
+          productsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00400000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+       */
+      public Builder setProducts(
+          org.megacommerce.common.v1.ConfigProto.ConfigProducts.Builder builderForValue) {
+        if (productsBuilder_ == null) {
+          products_ = builderForValue.build();
+        } else {
+          productsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00400000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+       */
+      public Builder mergeProducts(org.megacommerce.common.v1.ConfigProto.ConfigProducts value) {
+        if (productsBuilder_ == null) {
+          if (((bitField0_ & 0x00400000) != 0) &&
+            products_ != null &&
+            products_ != org.megacommerce.common.v1.ConfigProto.ConfigProducts.getDefaultInstance()) {
+            getProductsBuilder().mergeFrom(value);
+          } else {
+            products_ = value;
+          }
+        } else {
+          productsBuilder_.mergeFrom(value);
+        }
+        if (products_ != null) {
+          bitField0_ |= 0x00400000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+       */
+      public Builder clearProducts() {
+        bitField0_ = (bitField0_ & ~0x00400000);
+        products_ = null;
+        if (productsBuilder_ != null) {
+          productsBuilder_.dispose();
+          productsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.ConfigProducts.Builder getProductsBuilder() {
+        bitField0_ |= 0x00400000;
+        onChanged();
+        return internalGetProductsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.ConfigProductsOrBuilder getProductsOrBuilder() {
+        if (productsBuilder_ != null) {
+          return productsBuilder_.getMessageOrBuilder();
+        } else {
+          return products_ == null ?
+              org.megacommerce.common.v1.ConfigProto.ConfigProducts.getDefaultInstance() : products_;
+        }
+      }
+      /**
+       * <code>.common.v1.ConfigProducts products = 23 [json_name = "products"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.common.v1.ConfigProto.ConfigProducts, org.megacommerce.common.v1.ConfigProto.ConfigProducts.Builder, org.megacommerce.common.v1.ConfigProto.ConfigProductsOrBuilder> 
+          internalGetProductsFieldBuilder() {
+        if (productsBuilder_ == null) {
+          productsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.common.v1.ConfigProto.ConfigProducts, org.megacommerce.common.v1.ConfigProto.ConfigProducts.Builder, org.megacommerce.common.v1.ConfigProto.ConfigProductsOrBuilder>(
+                  getProducts(),
+                  getParentForChildren(),
+                  isClean());
+          products_ = null;
+        }
+        return productsBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:common.v1.Config)
@@ -56678,6 +58038,11 @@ public final class ConfigProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_v1_ConfigImageProxy_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigProducts_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_common_v1_ConfigProducts_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_Config_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -57267,51 +58632,68 @@ public final class ConfigProto {
       "\030\004 \001(\tH\003R\027remoteImageProxyOptions\210\001\001B\t\n\007" +
       "_enableB\023\n\021_image_proxy_typeB\031\n\027_remote_" +
       "image_proxy_urlB\035\n\033_remote_image_proxy_o" +
-      "ptions\"\373\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common" +
-      ".v1.ConfigMainR\004main\0225\n\010services\030\002 \001(\0132\031" +
-      ".common.v1.ConfigServicesR\010services\0225\n\010s" +
-      "ecurity\030\003 \001(\0132\031.common.v1.ConfigSecurity" +
-      "R\010security\022,\n\005cache\030\004 \001(\0132\026.common.v1.Ca" +
-      "cheConfigR\005cache\0222\n\007metrics\030\005 \001(\0132\030.comm" +
-      "on.v1.ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(" +
-      "\0132\024.common.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(" +
-      "\0132\024.common.v1.ConfigSqlR\003sql\0225\n\010password" +
-      "\030\010 \001(\0132\031.common.v1.ConfigPasswordR\010passw" +
-      "ord\022)\n\004file\030\t \001(\0132\025.common.v1.ConfigFile" +
-      "R\004file\022,\n\005email\030\n \001(\0132\026.common.v1.Config" +
-      "EmailR\005email\0229\n\nrate_limit\030\013 \001(\0132\032.commo" +
-      "n.v1.ConfigRateLimitR\trateLimit\0222\n\007priva" +
-      "cy\030\014 \001(\0132\030.common.v1.ConfigPrivacyR\007priv" +
-      "acy\0222\n\007support\030\r \001(\0132\030.common.v1.ConfigS" +
-      "upportR\007support\022A\n\014localization\030\016 \001(\0132\035." +
-      "common.v1.ConfigLocalizationR\014localizati" +
-      "on\022)\n\004ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR" +
-      "\004ldap\022)\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSa" +
-      "mlR\004saml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1" +
-      ".ConfigNativeAppR\tnativeApp\022>\n\013meilisear" +
-      "ch\030\022 \001(\0132\034.common.v1.ConfigMeilisearchR\013" +
-      "meilisearch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.C" +
-      "onfigBleveR\005bleve\022E\n\016data_retention\030\024 \001(" +
-      "\0132\036.common.v1.ConfigDataRetentionR\rdataR" +
-      "etention\022<\n\013image_proxy\030\025 \001(\0132\033.common.v" +
-      "1.ConfigImageProxyR\nimageProxy\022,\n\005oauth\030" +
-      "\026 \001(\0132\026.common.v1.ConfigOAuthR\005oauth\"\022\n\020" +
-      "ConfigGetRequest\"u\n\021ConfigGetResponse\022\'\n" +
-      "\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+" +
-      "\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005er" +
-      "rorB\n\n\010response\"@\n\023ConfigUpdateRequest\022)" +
-      "\n\006config\030\001 \001(\0132\021.common.v1.ConfigR\006confi" +
-      "g\"x\n\024ConfigUpdateResponse\022\'\n\004data\030\001 \001(\0132" +
-      "\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(" +
-      "\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respo" +
-      "nse\"z\n\026ConfigListenerResponse\022\'\n\004data\030\001 " +
-      "\001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030" +
-      "\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010r" +
-      "esponse\"4\n\025ConfigListenerRequest\022\033\n\tclie" +
-      "nt_id\030\001 \001(\tR\010clientIdBq\n\032org.megacommerc" +
-      "e.common.v1B\013ConfigProtoZCgithub.com/ahm" +
-      "ad-khatib0-org/megacommerce-proto/gen/go" +
-      "/common/v1;v1\370\001\001b\006proto3"
+      "ptions\"\347\004\n\016ConfigProducts\0228\n\031product_ima" +
+      "ge_max_size_mb\030\001 \001(\004R\025productImageMaxSiz" +
+      "eMb\022C\n\036product_image_accepted_formats\030\002 " +
+      "\003(\tR\033productImageAcceptedFormats\0225\n\027prod" +
+      "uct_image_max_width\030\003 \001(\004R\024productImageM" +
+      "axWidth\0227\n\030product_image_max_height\030\004 \001(" +
+      "\004R\025productImageMaxHeight\0225\n\027product_imag" +
+      "e_min_width\030\005 \001(\004R\024productImageMinWidth\022" +
+      "7\n\030product_image_min_height\030\006 \001(\004R\025produ" +
+      "ctImageMinHeight\022M\n$product_images_min_c" +
+      "ount_per_variant\030\007 \001(\004R\037productImagesMin" +
+      "CountPerVariant\022M\n$product_images_max_co" +
+      "unt_per_variant\030\010 \001(\004R\037productImagesMaxC" +
+      "ountPerVariant\022X\n*product_media_max_dire" +
+      "ct_uploading_size_mb\030\t \001(\004R$productMedia" +
+      "MaxDirectUploadingSizeMb\"\262\t\n\006Config\022)\n\004m" +
+      "ain\030\001 \001(\0132\025.common.v1.ConfigMainR\004main\0225" +
+      "\n\010services\030\002 \001(\0132\031.common.v1.ConfigServi" +
+      "cesR\010services\0225\n\010security\030\003 \001(\0132\031.common" +
+      ".v1.ConfigSecurityR\010security\022,\n\005cache\030\004 " +
+      "\001(\0132\026.common.v1.CacheConfigR\005cache\0222\n\007me" +
+      "trics\030\005 \001(\0132\030.common.v1.ConfigMetricsR\007m" +
+      "etrics\022&\n\003sso\030\006 \001(\0132\024.common.v1.ConfigSS" +
+      "OR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1.ConfigSq" +
+      "lR\003sql\0225\n\010password\030\010 \001(\0132\031.common.v1.Con" +
+      "figPasswordR\010password\022)\n\004file\030\t \001(\0132\025.co" +
+      "mmon.v1.ConfigFileR\004file\022,\n\005email\030\n \001(\0132" +
+      "\026.common.v1.ConfigEmailR\005email\0229\n\nrate_l" +
+      "imit\030\013 \001(\0132\032.common.v1.ConfigRateLimitR\t" +
+      "rateLimit\0222\n\007privacy\030\014 \001(\0132\030.common.v1.C" +
+      "onfigPrivacyR\007privacy\0222\n\007support\030\r \001(\0132\030" +
+      ".common.v1.ConfigSupportR\007support\022A\n\014loc" +
+      "alization\030\016 \001(\0132\035.common.v1.ConfigLocali" +
+      "zationR\014localization\022)\n\004ldap\030\017 \001(\0132\025.com" +
+      "mon.v1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025." +
+      "common.v1.ConfigSamlR\004saml\0229\n\nnative_app" +
+      "\030\021 \001(\0132\032.common.v1.ConfigNativeAppR\tnati" +
+      "veApp\022>\n\013meilisearch\030\022 \001(\0132\034.common.v1.C" +
+      "onfigMeilisearchR\013meilisearch\022,\n\005bleve\030\023" +
+      " \001(\0132\026.common.v1.ConfigBleveR\005bleve\022E\n\016d" +
+      "ata_retention\030\024 \001(\0132\036.common.v1.ConfigDa" +
+      "taRetentionR\rdataRetention\022<\n\013image_prox" +
+      "y\030\025 \001(\0132\033.common.v1.ConfigImageProxyR\nim" +
+      "ageProxy\022,\n\005oauth\030\026 \001(\0132\026.common.v1.Conf" +
+      "igOAuthR\005oauth\0225\n\010products\030\027 \001(\0132\031.commo" +
+      "n.v1.ConfigProductsR\010products\"\022\n\020ConfigG" +
+      "etRequest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001" +
+      " \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error" +
+      "\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010" +
+      "response\"@\n\023ConfigUpdateRequest\022)\n\006confi" +
+      "g\030\001 \001(\0132\021.common.v1.ConfigR\006config\"x\n\024Co" +
+      "nfigUpdateResponse\022\'\n\004data\030\001 \001(\0132\021.commo" +
+      "n.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.sha" +
+      "red.v1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026" +
+      "ConfigListenerResponse\022\'\n\004data\030\001 \001(\0132\021.c" +
+      "ommon.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023" +
+      ".shared.v1.AppErrorH\000R\005errorB\n\n\010response" +
+      "\"4\n\025ConfigListenerRequest\022\033\n\tclient_id\030\001" +
+      " \001(\tR\010clientIdBq\n\032org.megacommerce.commo" +
+      "n.v1B\013ConfigProtoZCgithub.com/ahmad-khat" +
+      "ib0-org/megacommerce-proto/gen/go/common" +
+      "/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -57450,44 +58832,50 @@ public final class ConfigProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigImageProxy_descriptor,
         new java.lang.String[] { "Enable", "ImageProxyType", "RemoteImageProxyUrl", "RemoteImageProxyOptions", });
-    internal_static_common_v1_Config_descriptor =
+    internal_static_common_v1_ConfigProducts_descriptor =
       getDescriptor().getMessageTypes().get(22);
+    internal_static_common_v1_ConfigProducts_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_v1_ConfigProducts_descriptor,
+        new java.lang.String[] { "ProductImageMaxSizeMb", "ProductImageAcceptedFormats", "ProductImageMaxWidth", "ProductImageMaxHeight", "ProductImageMinWidth", "ProductImageMinHeight", "ProductImagesMinCountPerVariant", "ProductImagesMaxCountPerVariant", "ProductMediaMaxDirectUploadingSizeMb", });
+    internal_static_common_v1_Config_descriptor =
+      getDescriptor().getMessageTypes().get(23);
     internal_static_common_v1_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_Config_descriptor,
-        new java.lang.String[] { "Main", "Services", "Security", "Cache", "Metrics", "Sso", "Sql", "Password", "File", "Email", "RateLimit", "Privacy", "Support", "Localization", "Ldap", "Saml", "NativeApp", "Meilisearch", "Bleve", "DataRetention", "ImageProxy", "Oauth", });
+        new java.lang.String[] { "Main", "Services", "Security", "Cache", "Metrics", "Sso", "Sql", "Password", "File", "Email", "RateLimit", "Privacy", "Support", "Localization", "Ldap", "Saml", "NativeApp", "Meilisearch", "Bleve", "DataRetention", "ImageProxy", "Oauth", "Products", });
     internal_static_common_v1_ConfigGetRequest_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_common_v1_ConfigGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigGetRequest_descriptor,
         new java.lang.String[] { });
     internal_static_common_v1_ConfigGetResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_common_v1_ConfigGetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigGetResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     internal_static_common_v1_ConfigUpdateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_common_v1_ConfigUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigUpdateRequest_descriptor,
         new java.lang.String[] { "Config", });
     internal_static_common_v1_ConfigUpdateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigUpdateResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     internal_static_common_v1_ConfigListenerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigListenerResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     internal_static_common_v1_ConfigListenerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_common_v1_ConfigListenerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigListenerRequest_descriptor,

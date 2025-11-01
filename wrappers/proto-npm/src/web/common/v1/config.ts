@@ -400,6 +400,18 @@ export interface ConfigImageProxy {
   remoteImageProxyOptions?: string | undefined;
 }
 
+export interface ConfigProducts {
+  productImageMaxSizeMb: string;
+  productImageAcceptedFormats: string[];
+  productImageMaxWidth: string;
+  productImageMaxHeight: string;
+  productImageMinWidth: string;
+  productImageMinHeight: string;
+  productImagesMinCountPerVariant: string;
+  productImagesMaxCountPerVariant: string;
+  productMediaMaxDirectUploadingSizeMb: string;
+}
+
 export interface Config {
   main?: ConfigMain | undefined;
   services?: ConfigServices | undefined;
@@ -423,6 +435,7 @@ export interface Config {
   dataRetention?: ConfigDataRetention | undefined;
   imageProxy?: ConfigImageProxy | undefined;
   oauth?: ConfigOAuth | undefined;
+  products?: ConfigProducts | undefined;
 }
 
 export interface ConfigGetRequest {
@@ -6419,6 +6432,218 @@ export const ConfigImageProxy: MessageFns<ConfigImageProxy> = {
   },
 };
 
+function createBaseConfigProducts(): ConfigProducts {
+  return {
+    productImageMaxSizeMb: "0",
+    productImageAcceptedFormats: [],
+    productImageMaxWidth: "0",
+    productImageMaxHeight: "0",
+    productImageMinWidth: "0",
+    productImageMinHeight: "0",
+    productImagesMinCountPerVariant: "0",
+    productImagesMaxCountPerVariant: "0",
+    productMediaMaxDirectUploadingSizeMb: "0",
+  };
+}
+
+export const ConfigProducts: MessageFns<ConfigProducts> = {
+  encode(message: ConfigProducts, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.productImageMaxSizeMb !== "0") {
+      writer.uint32(8).uint64(message.productImageMaxSizeMb);
+    }
+    for (const v of message.productImageAcceptedFormats) {
+      writer.uint32(18).string(v!);
+    }
+    if (message.productImageMaxWidth !== "0") {
+      writer.uint32(24).uint64(message.productImageMaxWidth);
+    }
+    if (message.productImageMaxHeight !== "0") {
+      writer.uint32(32).uint64(message.productImageMaxHeight);
+    }
+    if (message.productImageMinWidth !== "0") {
+      writer.uint32(40).uint64(message.productImageMinWidth);
+    }
+    if (message.productImageMinHeight !== "0") {
+      writer.uint32(48).uint64(message.productImageMinHeight);
+    }
+    if (message.productImagesMinCountPerVariant !== "0") {
+      writer.uint32(56).uint64(message.productImagesMinCountPerVariant);
+    }
+    if (message.productImagesMaxCountPerVariant !== "0") {
+      writer.uint32(64).uint64(message.productImagesMaxCountPerVariant);
+    }
+    if (message.productMediaMaxDirectUploadingSizeMb !== "0") {
+      writer.uint32(72).uint64(message.productMediaMaxDirectUploadingSizeMb);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ConfigProducts {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseConfigProducts();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.productImageMaxSizeMb = reader.uint64().toString();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.productImageAcceptedFormats.push(reader.string());
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.productImageMaxWidth = reader.uint64().toString();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
+            break;
+          }
+
+          message.productImageMaxHeight = reader.uint64().toString();
+          continue;
+        }
+        case 5: {
+          if (tag !== 40) {
+            break;
+          }
+
+          message.productImageMinWidth = reader.uint64().toString();
+          continue;
+        }
+        case 6: {
+          if (tag !== 48) {
+            break;
+          }
+
+          message.productImageMinHeight = reader.uint64().toString();
+          continue;
+        }
+        case 7: {
+          if (tag !== 56) {
+            break;
+          }
+
+          message.productImagesMinCountPerVariant = reader.uint64().toString();
+          continue;
+        }
+        case 8: {
+          if (tag !== 64) {
+            break;
+          }
+
+          message.productImagesMaxCountPerVariant = reader.uint64().toString();
+          continue;
+        }
+        case 9: {
+          if (tag !== 72) {
+            break;
+          }
+
+          message.productMediaMaxDirectUploadingSizeMb = reader.uint64().toString();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ConfigProducts {
+    return {
+      productImageMaxSizeMb: isSet(object.productImageMaxSizeMb)
+        ? globalThis.String(object.productImageMaxSizeMb)
+        : "0",
+      productImageAcceptedFormats: globalThis.Array.isArray(object?.productImageAcceptedFormats)
+        ? object.productImageAcceptedFormats.map((e: any) => globalThis.String(e))
+        : [],
+      productImageMaxWidth: isSet(object.productImageMaxWidth) ? globalThis.String(object.productImageMaxWidth) : "0",
+      productImageMaxHeight: isSet(object.productImageMaxHeight)
+        ? globalThis.String(object.productImageMaxHeight)
+        : "0",
+      productImageMinWidth: isSet(object.productImageMinWidth) ? globalThis.String(object.productImageMinWidth) : "0",
+      productImageMinHeight: isSet(object.productImageMinHeight)
+        ? globalThis.String(object.productImageMinHeight)
+        : "0",
+      productImagesMinCountPerVariant: isSet(object.productImagesMinCountPerVariant)
+        ? globalThis.String(object.productImagesMinCountPerVariant)
+        : "0",
+      productImagesMaxCountPerVariant: isSet(object.productImagesMaxCountPerVariant)
+        ? globalThis.String(object.productImagesMaxCountPerVariant)
+        : "0",
+      productMediaMaxDirectUploadingSizeMb: isSet(object.productMediaMaxDirectUploadingSizeMb)
+        ? globalThis.String(object.productMediaMaxDirectUploadingSizeMb)
+        : "0",
+    };
+  },
+
+  toJSON(message: ConfigProducts): unknown {
+    const obj: any = {};
+    if (message.productImageMaxSizeMb !== "0") {
+      obj.productImageMaxSizeMb = message.productImageMaxSizeMb;
+    }
+    if (message.productImageAcceptedFormats?.length) {
+      obj.productImageAcceptedFormats = message.productImageAcceptedFormats;
+    }
+    if (message.productImageMaxWidth !== "0") {
+      obj.productImageMaxWidth = message.productImageMaxWidth;
+    }
+    if (message.productImageMaxHeight !== "0") {
+      obj.productImageMaxHeight = message.productImageMaxHeight;
+    }
+    if (message.productImageMinWidth !== "0") {
+      obj.productImageMinWidth = message.productImageMinWidth;
+    }
+    if (message.productImageMinHeight !== "0") {
+      obj.productImageMinHeight = message.productImageMinHeight;
+    }
+    if (message.productImagesMinCountPerVariant !== "0") {
+      obj.productImagesMinCountPerVariant = message.productImagesMinCountPerVariant;
+    }
+    if (message.productImagesMaxCountPerVariant !== "0") {
+      obj.productImagesMaxCountPerVariant = message.productImagesMaxCountPerVariant;
+    }
+    if (message.productMediaMaxDirectUploadingSizeMb !== "0") {
+      obj.productMediaMaxDirectUploadingSizeMb = message.productMediaMaxDirectUploadingSizeMb;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ConfigProducts>, I>>(base?: I): ConfigProducts {
+    return ConfigProducts.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ConfigProducts>, I>>(object: I): ConfigProducts {
+    const message = createBaseConfigProducts();
+    message.productImageMaxSizeMb = object.productImageMaxSizeMb ?? "0";
+    message.productImageAcceptedFormats = object.productImageAcceptedFormats?.map((e) => e) || [];
+    message.productImageMaxWidth = object.productImageMaxWidth ?? "0";
+    message.productImageMaxHeight = object.productImageMaxHeight ?? "0";
+    message.productImageMinWidth = object.productImageMinWidth ?? "0";
+    message.productImageMinHeight = object.productImageMinHeight ?? "0";
+    message.productImagesMinCountPerVariant = object.productImagesMinCountPerVariant ?? "0";
+    message.productImagesMaxCountPerVariant = object.productImagesMaxCountPerVariant ?? "0";
+    message.productMediaMaxDirectUploadingSizeMb = object.productMediaMaxDirectUploadingSizeMb ?? "0";
+    return message;
+  },
+};
+
 function createBaseConfig(): Config {
   return {
     main: undefined,
@@ -6443,6 +6668,7 @@ function createBaseConfig(): Config {
     dataRetention: undefined,
     imageProxy: undefined,
     oauth: undefined,
+    products: undefined,
   };
 }
 
@@ -6513,6 +6739,9 @@ export const Config: MessageFns<Config> = {
     }
     if (message.oauth !== undefined) {
       ConfigOAuth.encode(message.oauth, writer.uint32(178).fork()).join();
+    }
+    if (message.products !== undefined) {
+      ConfigProducts.encode(message.products, writer.uint32(186).fork()).join();
     }
     return writer;
   },
@@ -6700,6 +6929,14 @@ export const Config: MessageFns<Config> = {
           message.oauth = ConfigOAuth.decode(reader, reader.uint32());
           continue;
         }
+        case 23: {
+          if (tag !== 186) {
+            break;
+          }
+
+          message.products = ConfigProducts.decode(reader, reader.uint32());
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -6733,6 +6970,7 @@ export const Config: MessageFns<Config> = {
       dataRetention: isSet(object.dataRetention) ? ConfigDataRetention.fromJSON(object.dataRetention) : undefined,
       imageProxy: isSet(object.imageProxy) ? ConfigImageProxy.fromJSON(object.imageProxy) : undefined,
       oauth: isSet(object.oauth) ? ConfigOAuth.fromJSON(object.oauth) : undefined,
+      products: isSet(object.products) ? ConfigProducts.fromJSON(object.products) : undefined,
     };
   },
 
@@ -6804,6 +7042,9 @@ export const Config: MessageFns<Config> = {
     if (message.oauth !== undefined) {
       obj.oauth = ConfigOAuth.toJSON(message.oauth);
     }
+    if (message.products !== undefined) {
+      obj.products = ConfigProducts.toJSON(message.products);
+    }
     return obj;
   },
 
@@ -6873,6 +7114,9 @@ export const Config: MessageFns<Config> = {
       : undefined;
     message.oauth = (object.oauth !== undefined && object.oauth !== null)
       ? ConfigOAuth.fromPartial(object.oauth)
+      : undefined;
+    message.products = (object.products !== undefined && object.products !== null)
+      ? ConfigProducts.fromPartial(object.products)
       : undefined;
     return message;
   },

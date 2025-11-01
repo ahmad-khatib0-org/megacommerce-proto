@@ -3077,6 +3077,114 @@ func (x *ConfigImageProxy) GetRemoteImageProxyOptions() string {
 	return ""
 }
 
+type ConfigProducts struct {
+	state                                protoimpl.MessageState `protogen:"open.v1"`
+	ProductImageMaxSizeMb                uint64                 `protobuf:"varint,1,opt,name=product_image_max_size_mb,json=productImageMaxSizeMb,proto3" json:"product_image_max_size_mb,omitempty"`
+	ProductImageAcceptedFormats          []string               `protobuf:"bytes,2,rep,name=product_image_accepted_formats,json=productImageAcceptedFormats,proto3" json:"product_image_accepted_formats,omitempty"`
+	ProductImageMaxWidth                 uint64                 `protobuf:"varint,3,opt,name=product_image_max_width,json=productImageMaxWidth,proto3" json:"product_image_max_width,omitempty"`
+	ProductImageMaxHeight                uint64                 `protobuf:"varint,4,opt,name=product_image_max_height,json=productImageMaxHeight,proto3" json:"product_image_max_height,omitempty"`
+	ProductImageMinWidth                 uint64                 `protobuf:"varint,5,opt,name=product_image_min_width,json=productImageMinWidth,proto3" json:"product_image_min_width,omitempty"`
+	ProductImageMinHeight                uint64                 `protobuf:"varint,6,opt,name=product_image_min_height,json=productImageMinHeight,proto3" json:"product_image_min_height,omitempty"`
+	ProductImagesMinCountPerVariant      uint64                 `protobuf:"varint,7,opt,name=product_images_min_count_per_variant,json=productImagesMinCountPerVariant,proto3" json:"product_images_min_count_per_variant,omitempty"`
+	ProductImagesMaxCountPerVariant      uint64                 `protobuf:"varint,8,opt,name=product_images_max_count_per_variant,json=productImagesMaxCountPerVariant,proto3" json:"product_images_max_count_per_variant,omitempty"`
+	ProductMediaMaxDirectUploadingSizeMb uint64                 `protobuf:"varint,9,opt,name=product_media_max_direct_uploading_size_mb,json=productMediaMaxDirectUploadingSizeMb,proto3" json:"product_media_max_direct_uploading_size_mb,omitempty"`
+	unknownFields                        protoimpl.UnknownFields
+	sizeCache                            protoimpl.SizeCache
+}
+
+func (x *ConfigProducts) Reset() {
+	*x = ConfigProducts{}
+	mi := &file_common_v1_config_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigProducts) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigProducts) ProtoMessage() {}
+
+func (x *ConfigProducts) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_config_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigProducts.ProtoReflect.Descriptor instead.
+func (*ConfigProducts) Descriptor() ([]byte, []int) {
+	return file_common_v1_config_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *ConfigProducts) GetProductImageMaxSizeMb() uint64 {
+	if x != nil {
+		return x.ProductImageMaxSizeMb
+	}
+	return 0
+}
+
+func (x *ConfigProducts) GetProductImageAcceptedFormats() []string {
+	if x != nil {
+		return x.ProductImageAcceptedFormats
+	}
+	return nil
+}
+
+func (x *ConfigProducts) GetProductImageMaxWidth() uint64 {
+	if x != nil {
+		return x.ProductImageMaxWidth
+	}
+	return 0
+}
+
+func (x *ConfigProducts) GetProductImageMaxHeight() uint64 {
+	if x != nil {
+		return x.ProductImageMaxHeight
+	}
+	return 0
+}
+
+func (x *ConfigProducts) GetProductImageMinWidth() uint64 {
+	if x != nil {
+		return x.ProductImageMinWidth
+	}
+	return 0
+}
+
+func (x *ConfigProducts) GetProductImageMinHeight() uint64 {
+	if x != nil {
+		return x.ProductImageMinHeight
+	}
+	return 0
+}
+
+func (x *ConfigProducts) GetProductImagesMinCountPerVariant() uint64 {
+	if x != nil {
+		return x.ProductImagesMinCountPerVariant
+	}
+	return 0
+}
+
+func (x *ConfigProducts) GetProductImagesMaxCountPerVariant() uint64 {
+	if x != nil {
+		return x.ProductImagesMaxCountPerVariant
+	}
+	return 0
+}
+
+func (x *ConfigProducts) GetProductMediaMaxDirectUploadingSizeMb() uint64 {
+	if x != nil {
+		return x.ProductMediaMaxDirectUploadingSizeMb
+	}
+	return 0
+}
+
 type Config struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Main          *ConfigMain            `protobuf:"bytes,1,opt,name=main,proto3" json:"main,omitempty"`
@@ -3101,13 +3209,14 @@ type Config struct {
 	DataRetention *ConfigDataRetention   `protobuf:"bytes,20,opt,name=data_retention,json=dataRetention,proto3" json:"data_retention,omitempty"`
 	ImageProxy    *ConfigImageProxy      `protobuf:"bytes,21,opt,name=image_proxy,json=imageProxy,proto3" json:"image_proxy,omitempty"`
 	Oauth         *ConfigOAuth           `protobuf:"bytes,22,opt,name=oauth,proto3" json:"oauth,omitempty"`
+	Products      *ConfigProducts        `protobuf:"bytes,23,opt,name=products,proto3" json:"products,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Config) Reset() {
 	*x = Config{}
-	mi := &file_common_v1_config_proto_msgTypes[22]
+	mi := &file_common_v1_config_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3119,7 +3228,7 @@ func (x *Config) String() string {
 func (*Config) ProtoMessage() {}
 
 func (x *Config) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[22]
+	mi := &file_common_v1_config_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3132,7 +3241,7 @@ func (x *Config) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Config.ProtoReflect.Descriptor instead.
 func (*Config) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{22}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *Config) GetMain() *ConfigMain {
@@ -3289,6 +3398,13 @@ func (x *Config) GetOauth() *ConfigOAuth {
 	return nil
 }
 
+func (x *Config) GetProducts() *ConfigProducts {
+	if x != nil {
+		return x.Products
+	}
+	return nil
+}
+
 type ConfigGetRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -3297,7 +3413,7 @@ type ConfigGetRequest struct {
 
 func (x *ConfigGetRequest) Reset() {
 	*x = ConfigGetRequest{}
-	mi := &file_common_v1_config_proto_msgTypes[23]
+	mi := &file_common_v1_config_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3309,7 +3425,7 @@ func (x *ConfigGetRequest) String() string {
 func (*ConfigGetRequest) ProtoMessage() {}
 
 func (x *ConfigGetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[23]
+	mi := &file_common_v1_config_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3322,7 +3438,7 @@ func (x *ConfigGetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigGetRequest.ProtoReflect.Descriptor instead.
 func (*ConfigGetRequest) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{23}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{24}
 }
 
 type ConfigGetResponse struct {
@@ -3338,7 +3454,7 @@ type ConfigGetResponse struct {
 
 func (x *ConfigGetResponse) Reset() {
 	*x = ConfigGetResponse{}
-	mi := &file_common_v1_config_proto_msgTypes[24]
+	mi := &file_common_v1_config_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3350,7 +3466,7 @@ func (x *ConfigGetResponse) String() string {
 func (*ConfigGetResponse) ProtoMessage() {}
 
 func (x *ConfigGetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[24]
+	mi := &file_common_v1_config_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3363,7 +3479,7 @@ func (x *ConfigGetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigGetResponse.ProtoReflect.Descriptor instead.
 func (*ConfigGetResponse) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{24}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *ConfigGetResponse) GetResponse() isConfigGetResponse_Response {
@@ -3416,7 +3532,7 @@ type ConfigUpdateRequest struct {
 
 func (x *ConfigUpdateRequest) Reset() {
 	*x = ConfigUpdateRequest{}
-	mi := &file_common_v1_config_proto_msgTypes[25]
+	mi := &file_common_v1_config_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3428,7 +3544,7 @@ func (x *ConfigUpdateRequest) String() string {
 func (*ConfigUpdateRequest) ProtoMessage() {}
 
 func (x *ConfigUpdateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[25]
+	mi := &file_common_v1_config_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3441,7 +3557,7 @@ func (x *ConfigUpdateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigUpdateRequest.ProtoReflect.Descriptor instead.
 func (*ConfigUpdateRequest) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{25}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ConfigUpdateRequest) GetConfig() *Config {
@@ -3464,7 +3580,7 @@ type ConfigUpdateResponse struct {
 
 func (x *ConfigUpdateResponse) Reset() {
 	*x = ConfigUpdateResponse{}
-	mi := &file_common_v1_config_proto_msgTypes[26]
+	mi := &file_common_v1_config_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3476,7 +3592,7 @@ func (x *ConfigUpdateResponse) String() string {
 func (*ConfigUpdateResponse) ProtoMessage() {}
 
 func (x *ConfigUpdateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[26]
+	mi := &file_common_v1_config_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3489,7 +3605,7 @@ func (x *ConfigUpdateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigUpdateResponse.ProtoReflect.Descriptor instead.
 func (*ConfigUpdateResponse) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{26}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *ConfigUpdateResponse) GetResponse() isConfigUpdateResponse_Response {
@@ -3546,7 +3662,7 @@ type ConfigListenerResponse struct {
 
 func (x *ConfigListenerResponse) Reset() {
 	*x = ConfigListenerResponse{}
-	mi := &file_common_v1_config_proto_msgTypes[27]
+	mi := &file_common_v1_config_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3558,7 +3674,7 @@ func (x *ConfigListenerResponse) String() string {
 func (*ConfigListenerResponse) ProtoMessage() {}
 
 func (x *ConfigListenerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[27]
+	mi := &file_common_v1_config_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3571,7 +3687,7 @@ func (x *ConfigListenerResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigListenerResponse.ProtoReflect.Descriptor instead.
 func (*ConfigListenerResponse) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{27}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *ConfigListenerResponse) GetResponse() isConfigListenerResponse_Response {
@@ -3624,7 +3740,7 @@ type ConfigListenerRequest struct {
 
 func (x *ConfigListenerRequest) Reset() {
 	*x = ConfigListenerRequest{}
-	mi := &file_common_v1_config_proto_msgTypes[28]
+	mi := &file_common_v1_config_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3636,7 +3752,7 @@ func (x *ConfigListenerRequest) String() string {
 func (*ConfigListenerRequest) ProtoMessage() {}
 
 func (x *ConfigListenerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[28]
+	mi := &file_common_v1_config_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3649,7 +3765,7 @@ func (x *ConfigListenerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigListenerRequest.ProtoReflect.Descriptor instead.
 func (*ConfigListenerRequest) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{28}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *ConfigListenerRequest) GetClientId() string {
@@ -4289,7 +4405,17 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\a_enableB\x13\n" +
 	"\x11_image_proxy_typeB\x19\n" +
 	"\x17_remote_image_proxy_urlB\x1d\n" +
-	"\x1b_remote_image_proxy_options\"\xfb\b\n" +
+	"\x1b_remote_image_proxy_options\"\xe7\x04\n" +
+	"\x0eConfigProducts\x128\n" +
+	"\x19product_image_max_size_mb\x18\x01 \x01(\x04R\x15productImageMaxSizeMb\x12C\n" +
+	"\x1eproduct_image_accepted_formats\x18\x02 \x03(\tR\x1bproductImageAcceptedFormats\x125\n" +
+	"\x17product_image_max_width\x18\x03 \x01(\x04R\x14productImageMaxWidth\x127\n" +
+	"\x18product_image_max_height\x18\x04 \x01(\x04R\x15productImageMaxHeight\x125\n" +
+	"\x17product_image_min_width\x18\x05 \x01(\x04R\x14productImageMinWidth\x127\n" +
+	"\x18product_image_min_height\x18\x06 \x01(\x04R\x15productImageMinHeight\x12M\n" +
+	"$product_images_min_count_per_variant\x18\a \x01(\x04R\x1fproductImagesMinCountPerVariant\x12M\n" +
+	"$product_images_max_count_per_variant\x18\b \x01(\x04R\x1fproductImagesMaxCountPerVariant\x12X\n" +
+	"*product_media_max_direct_uploading_size_mb\x18\t \x01(\x04R$productMediaMaxDirectUploadingSizeMb\"\xb2\t\n" +
 	"\x06Config\x12)\n" +
 	"\x04main\x18\x01 \x01(\v2\x15.common.v1.ConfigMainR\x04main\x125\n" +
 	"\bservices\x18\x02 \x01(\v2\x19.common.v1.ConfigServicesR\bservices\x125\n" +
@@ -4316,7 +4442,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x0edata_retention\x18\x14 \x01(\v2\x1e.common.v1.ConfigDataRetentionR\rdataRetention\x12<\n" +
 	"\vimage_proxy\x18\x15 \x01(\v2\x1b.common.v1.ConfigImageProxyR\n" +
 	"imageProxy\x12,\n" +
-	"\x05oauth\x18\x16 \x01(\v2\x16.common.v1.ConfigOAuthR\x05oauth\"\x12\n" +
+	"\x05oauth\x18\x16 \x01(\v2\x16.common.v1.ConfigOAuthR\x05oauth\x125\n" +
+	"\bproducts\x18\x17 \x01(\v2\x19.common.v1.ConfigProductsR\bproducts\"\x12\n" +
 	"\x10ConfigGetRequest\"u\n" +
 	"\x11ConfigGetResponse\x12'\n" +
 	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
@@ -4351,7 +4478,7 @@ func file_common_v1_config_proto_rawDescGZIP() []byte {
 	return file_common_v1_config_proto_rawDescData
 }
 
-var file_common_v1_config_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
+var file_common_v1_config_proto_msgTypes = make([]protoimpl.MessageInfo, 30)
 var file_common_v1_config_proto_goTypes = []any{
 	(*ConfigMain)(nil),             // 0: common.v1.ConfigMain
 	(*ConfigServices)(nil),         // 1: common.v1.ConfigServices
@@ -4375,14 +4502,15 @@ var file_common_v1_config_proto_goTypes = []any{
 	(*ConfigBleve)(nil),            // 19: common.v1.ConfigBleve
 	(*ConfigDataRetention)(nil),    // 20: common.v1.ConfigDataRetention
 	(*ConfigImageProxy)(nil),       // 21: common.v1.ConfigImageProxy
-	(*Config)(nil),                 // 22: common.v1.Config
-	(*ConfigGetRequest)(nil),       // 23: common.v1.ConfigGetRequest
-	(*ConfigGetResponse)(nil),      // 24: common.v1.ConfigGetResponse
-	(*ConfigUpdateRequest)(nil),    // 25: common.v1.ConfigUpdateRequest
-	(*ConfigUpdateResponse)(nil),   // 26: common.v1.ConfigUpdateResponse
-	(*ConfigListenerResponse)(nil), // 27: common.v1.ConfigListenerResponse
-	(*ConfigListenerRequest)(nil),  // 28: common.v1.ConfigListenerRequest
-	(*v1.AppError)(nil),            // 29: shared.v1.AppError
+	(*ConfigProducts)(nil),         // 22: common.v1.ConfigProducts
+	(*Config)(nil),                 // 23: common.v1.Config
+	(*ConfigGetRequest)(nil),       // 24: common.v1.ConfigGetRequest
+	(*ConfigGetResponse)(nil),      // 25: common.v1.ConfigGetResponse
+	(*ConfigUpdateRequest)(nil),    // 26: common.v1.ConfigUpdateRequest
+	(*ConfigUpdateResponse)(nil),   // 27: common.v1.ConfigUpdateResponse
+	(*ConfigListenerResponse)(nil), // 28: common.v1.ConfigListenerResponse
+	(*ConfigListenerRequest)(nil),  // 29: common.v1.ConfigListenerRequest
+	(*v1.AppError)(nil),            // 30: shared.v1.AppError
 }
 var file_common_v1_config_proto_depIdxs = []int32{
 	0,  // 0: common.v1.Config.main:type_name -> common.v1.ConfigMain
@@ -4407,18 +4535,19 @@ var file_common_v1_config_proto_depIdxs = []int32{
 	20, // 19: common.v1.Config.data_retention:type_name -> common.v1.ConfigDataRetention
 	21, // 20: common.v1.Config.image_proxy:type_name -> common.v1.ConfigImageProxy
 	2,  // 21: common.v1.Config.oauth:type_name -> common.v1.ConfigOAuth
-	22, // 22: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
-	29, // 23: common.v1.ConfigGetResponse.error:type_name -> shared.v1.AppError
-	22, // 24: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
-	22, // 25: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
-	29, // 26: common.v1.ConfigUpdateResponse.error:type_name -> shared.v1.AppError
-	22, // 27: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
-	29, // 28: common.v1.ConfigListenerResponse.error:type_name -> shared.v1.AppError
-	29, // [29:29] is the sub-list for method output_type
-	29, // [29:29] is the sub-list for method input_type
-	29, // [29:29] is the sub-list for extension type_name
-	29, // [29:29] is the sub-list for extension extendee
-	0,  // [0:29] is the sub-list for field type_name
+	22, // 22: common.v1.Config.products:type_name -> common.v1.ConfigProducts
+	23, // 23: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
+	30, // 24: common.v1.ConfigGetResponse.error:type_name -> shared.v1.AppError
+	23, // 25: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
+	23, // 26: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
+	30, // 27: common.v1.ConfigUpdateResponse.error:type_name -> shared.v1.AppError
+	23, // 28: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
+	30, // 29: common.v1.ConfigListenerResponse.error:type_name -> shared.v1.AppError
+	30, // [30:30] is the sub-list for method output_type
+	30, // [30:30] is the sub-list for method input_type
+	30, // [30:30] is the sub-list for extension type_name
+	30, // [30:30] is the sub-list for extension extendee
+	0,  // [0:30] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_config_proto_init() }
@@ -4448,15 +4577,15 @@ func file_common_v1_config_proto_init() {
 	file_common_v1_config_proto_msgTypes[19].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[20].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[21].OneofWrappers = []any{}
-	file_common_v1_config_proto_msgTypes[24].OneofWrappers = []any{
+	file_common_v1_config_proto_msgTypes[25].OneofWrappers = []any{
 		(*ConfigGetResponse_Data)(nil),
 		(*ConfigGetResponse_Error)(nil),
 	}
-	file_common_v1_config_proto_msgTypes[26].OneofWrappers = []any{
+	file_common_v1_config_proto_msgTypes[27].OneofWrappers = []any{
 		(*ConfigUpdateResponse_Data)(nil),
 		(*ConfigUpdateResponse_Error)(nil),
 	}
-	file_common_v1_config_proto_msgTypes[27].OneofWrappers = []any{
+	file_common_v1_config_proto_msgTypes[28].OneofWrappers = []any{
 		(*ConfigListenerResponse_Data)(nil),
 		(*ConfigListenerResponse_Error)(nil),
 	}
@@ -4466,7 +4595,7 @@ func file_common_v1_config_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_config_proto_rawDesc), len(file_common_v1_config_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   29,
+			NumMessages:   30,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

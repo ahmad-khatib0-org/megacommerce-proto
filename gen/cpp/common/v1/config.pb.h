@@ -136,6 +136,10 @@ class ConfigPrivacy;
 struct ConfigPrivacyDefaultTypeInternal;
 extern ConfigPrivacyDefaultTypeInternal _ConfigPrivacy_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull ConfigPrivacy_class_data_;
+class ConfigProducts;
+struct ConfigProductsDefaultTypeInternal;
+extern ConfigProductsDefaultTypeInternal _ConfigProducts_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ConfigProducts_class_data_;
 class ConfigRateLimit;
 struct ConfigRateLimitDefaultTypeInternal;
 extern ConfigRateLimitDefaultTypeInternal _ConfigRateLimit_default_instance_;
@@ -3037,6 +3041,305 @@ class ConfigRateLimit final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull ConfigRateLimit_class_data_;
 // -------------------------------------------------------------------
 
+class ConfigProducts final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:common.v1.ConfigProducts) */ {
+ public:
+  inline ConfigProducts() : ConfigProducts(nullptr) {}
+  ~ConfigProducts() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ConfigProducts* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ConfigProducts));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ConfigProducts(::google::protobuf::internal::ConstantInitialized);
+
+  inline ConfigProducts(const ConfigProducts& from) : ConfigProducts(nullptr, from) {}
+  inline ConfigProducts(ConfigProducts&& from) noexcept
+      : ConfigProducts(nullptr, ::std::move(from)) {}
+  inline ConfigProducts& operator=(const ConfigProducts& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigProducts& operator=(ConfigProducts&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigProducts& default_instance() {
+    return *reinterpret_cast<const ConfigProducts*>(
+        &_ConfigProducts_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 22;
+  friend void swap(ConfigProducts& a, ConfigProducts& b) { a.Swap(&b); }
+  inline void Swap(ConfigProducts* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigProducts* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigProducts* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ConfigProducts>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ConfigProducts& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ConfigProducts& from) { ConfigProducts::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ConfigProducts* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "common.v1.ConfigProducts"; }
+
+ protected:
+  explicit ConfigProducts(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ConfigProducts(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ConfigProducts& from);
+  ConfigProducts(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ConfigProducts&& from) noexcept
+      : ConfigProducts(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kProductImageAcceptedFormatsFieldNumber = 2,
+    kProductImageMaxSizeMbFieldNumber = 1,
+    kProductImageMaxWidthFieldNumber = 3,
+    kProductImageMaxHeightFieldNumber = 4,
+    kProductImageMinWidthFieldNumber = 5,
+    kProductImageMinHeightFieldNumber = 6,
+    kProductImagesMinCountPerVariantFieldNumber = 7,
+    kProductImagesMaxCountPerVariantFieldNumber = 8,
+    kProductMediaMaxDirectUploadingSizeMbFieldNumber = 9,
+  };
+  // repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];
+  int product_image_accepted_formats_size() const;
+  private:
+  int _internal_product_image_accepted_formats_size() const;
+
+  public:
+  void clear_product_image_accepted_formats() ;
+  const ::std::string& product_image_accepted_formats(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_product_image_accepted_formats(int index);
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_product_image_accepted_formats(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_product_image_accepted_formats();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_product_image_accepted_formats(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& product_image_accepted_formats() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_product_image_accepted_formats();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_product_image_accepted_formats() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_product_image_accepted_formats();
+
+  public:
+  // uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];
+  void clear_product_image_max_size_mb() ;
+  ::uint64_t product_image_max_size_mb() const;
+  void set_product_image_max_size_mb(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_product_image_max_size_mb() const;
+  void _internal_set_product_image_max_size_mb(::uint64_t value);
+
+  public:
+  // uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];
+  void clear_product_image_max_width() ;
+  ::uint64_t product_image_max_width() const;
+  void set_product_image_max_width(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_product_image_max_width() const;
+  void _internal_set_product_image_max_width(::uint64_t value);
+
+  public:
+  // uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];
+  void clear_product_image_max_height() ;
+  ::uint64_t product_image_max_height() const;
+  void set_product_image_max_height(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_product_image_max_height() const;
+  void _internal_set_product_image_max_height(::uint64_t value);
+
+  public:
+  // uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];
+  void clear_product_image_min_width() ;
+  ::uint64_t product_image_min_width() const;
+  void set_product_image_min_width(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_product_image_min_width() const;
+  void _internal_set_product_image_min_width(::uint64_t value);
+
+  public:
+  // uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];
+  void clear_product_image_min_height() ;
+  ::uint64_t product_image_min_height() const;
+  void set_product_image_min_height(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_product_image_min_height() const;
+  void _internal_set_product_image_min_height(::uint64_t value);
+
+  public:
+  // uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];
+  void clear_product_images_min_count_per_variant() ;
+  ::uint64_t product_images_min_count_per_variant() const;
+  void set_product_images_min_count_per_variant(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_product_images_min_count_per_variant() const;
+  void _internal_set_product_images_min_count_per_variant(::uint64_t value);
+
+  public:
+  // uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];
+  void clear_product_images_max_count_per_variant() ;
+  ::uint64_t product_images_max_count_per_variant() const;
+  void set_product_images_max_count_per_variant(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_product_images_max_count_per_variant() const;
+  void _internal_set_product_images_max_count_per_variant(::uint64_t value);
+
+  public:
+  // uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];
+  void clear_product_media_max_direct_uploading_size_mb() ;
+  ::uint64_t product_media_max_direct_uploading_size_mb() const;
+  void set_product_media_max_direct_uploading_size_mb(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_product_media_max_direct_uploading_size_mb() const;
+  void _internal_set_product_media_max_direct_uploading_size_mb(::uint64_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigProducts)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<4, 9,
+                                   0, 71,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ConfigProducts& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField<::std::string> product_image_accepted_formats_;
+    ::uint64_t product_image_max_size_mb_;
+    ::uint64_t product_image_max_width_;
+    ::uint64_t product_image_max_height_;
+    ::uint64_t product_image_min_width_;
+    ::uint64_t product_image_min_height_;
+    ::uint64_t product_images_min_count_per_variant_;
+    ::uint64_t product_images_max_count_per_variant_;
+    ::uint64_t product_media_max_direct_uploading_size_mb_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ConfigProducts_class_data_;
+// -------------------------------------------------------------------
+
 class ConfigPrivacy final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:common.v1.ConfigPrivacy) */ {
  public:
@@ -5753,7 +6056,7 @@ class ConfigListenerRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigListenerRequest*>(
         &_ConfigListenerRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 28;
+  static constexpr int kIndexInFileMessages = 29;
   friend void swap(ConfigListenerRequest& a, ConfigListenerRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigListenerRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6891,7 +7194,7 @@ class ConfigGetRequest final : public ::google::protobuf::internal::ZeroFieldsBa
     return *reinterpret_cast<const ConfigGetRequest*>(
         &_ConfigGetRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 23;
+  static constexpr int kIndexInFileMessages = 24;
   friend void swap(ConfigGetRequest& a, ConfigGetRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigGetRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8939,7 +9242,7 @@ class Config final : public ::google::protobuf::Message
     return *reinterpret_cast<const Config*>(
         &_Config_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 22;
+  static constexpr int kIndexInFileMessages = 23;
   friend void swap(Config& a, Config& b) { a.Swap(&b); }
   inline void Swap(Config* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9049,6 +9352,7 @@ class Config final : public ::google::protobuf::Message
     kDataRetentionFieldNumber = 20,
     kImageProxyFieldNumber = 21,
     kOauthFieldNumber = 22,
+    kProductsFieldNumber = 23,
   };
   // .common.v1.ConfigMain main = 1 [json_name = "main"];
   bool has_main() const;
@@ -9380,12 +9684,27 @@ class Config final : public ::google::protobuf::Message
   ::common::v1::ConfigOAuth* PROTOBUF_NONNULL _internal_mutable_oauth();
 
   public:
+  // .common.v1.ConfigProducts products = 23 [json_name = "products"];
+  bool has_products() const;
+  void clear_products() ;
+  const ::common::v1::ConfigProducts& products() const;
+  [[nodiscard]] ::common::v1::ConfigProducts* PROTOBUF_NULLABLE release_products();
+  ::common::v1::ConfigProducts* PROTOBUF_NONNULL mutable_products();
+  void set_allocated_products(::common::v1::ConfigProducts* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_products(::common::v1::ConfigProducts* PROTOBUF_NULLABLE value);
+  ::common::v1::ConfigProducts* PROTOBUF_NULLABLE unsafe_arena_release_products();
+
+  private:
+  const ::common::v1::ConfigProducts& _internal_products() const;
+  ::common::v1::ConfigProducts* PROTOBUF_NONNULL _internal_mutable_products();
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.Config)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 22,
-                                   22, 0,
+  static const ::google::protobuf::internal::TcParseTable<5, 23,
+                                   23, 0,
                                    2>
       _table_;
 
@@ -9428,6 +9747,7 @@ class Config final : public ::google::protobuf::Message
     ::common::v1::ConfigDataRetention* PROTOBUF_NULLABLE data_retention_;
     ::common::v1::ConfigImageProxy* PROTOBUF_NULLABLE image_proxy_;
     ::common::v1::ConfigOAuth* PROTOBUF_NULLABLE oauth_;
+    ::common::v1::ConfigProducts* PROTOBUF_NULLABLE products_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -9492,7 +9812,7 @@ class ConfigUpdateRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigUpdateRequest*>(
         &_ConfigUpdateRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 25;
+  static constexpr int kIndexInFileMessages = 26;
   friend void swap(ConfigUpdateRequest& a, ConfigUpdateRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigUpdateRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9693,7 +10013,7 @@ class ConfigUpdateResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 26;
+  static constexpr int kIndexInFileMessages = 27;
   friend void swap(ConfigUpdateResponse& a, ConfigUpdateResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigUpdateResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9929,7 +10249,7 @@ class ConfigListenerResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 27;
+  static constexpr int kIndexInFileMessages = 28;
   friend void swap(ConfigListenerResponse& a, ConfigListenerResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigListenerResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -10165,7 +10485,7 @@ class ConfigGetResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 24;
+  static constexpr int kIndexInFileMessages = 25;
   friend void swap(ConfigGetResponse& a, ConfigGetResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigGetResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -24279,6 +24599,266 @@ inline void ConfigImageProxy::set_allocated_remote_image_proxy_options(::std::st
 
 // -------------------------------------------------------------------
 
+// ConfigProducts
+
+// uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];
+inline void ConfigProducts::clear_product_image_max_size_mb() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_max_size_mb_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::uint64_t ConfigProducts::product_image_max_size_mb() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigProducts.product_image_max_size_mb)
+  return _internal_product_image_max_size_mb();
+}
+inline void ConfigProducts::set_product_image_max_size_mb(::uint64_t value) {
+  _internal_set_product_image_max_size_mb(value);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigProducts.product_image_max_size_mb)
+}
+inline ::uint64_t ConfigProducts::_internal_product_image_max_size_mb() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_image_max_size_mb_;
+}
+inline void ConfigProducts::_internal_set_product_image_max_size_mb(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_max_size_mb_ = value;
+}
+
+// repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];
+inline int ConfigProducts::_internal_product_image_accepted_formats_size() const {
+  return _internal_product_image_accepted_formats().size();
+}
+inline int ConfigProducts::product_image_accepted_formats_size() const {
+  return _internal_product_image_accepted_formats_size();
+}
+inline void ConfigProducts::clear_product_image_accepted_formats() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_accepted_formats_.Clear();
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigProducts::add_product_image_accepted_formats()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::std::string* _s = _internal_mutable_product_image_accepted_formats()->Add();
+  // @@protoc_insertion_point(field_add_mutable:common.v1.ConfigProducts.product_image_accepted_formats)
+  return _s;
+}
+inline const ::std::string& ConfigProducts::product_image_accepted_formats(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigProducts.product_image_accepted_formats)
+  return _internal_product_image_accepted_formats().Get(index);
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigProducts::mutable_product_image_accepted_formats(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigProducts.product_image_accepted_formats)
+  return _internal_mutable_product_image_accepted_formats()->Mutable(index);
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigProducts::set_product_image_accepted_formats(int index, Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::AssignToString(*_internal_mutable_product_image_accepted_formats()->Mutable(index), ::std::forward<Arg_>(value),
+                        args... );
+  // @@protoc_insertion_point(field_set:common.v1.ConfigProducts.product_image_accepted_formats)
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigProducts::add_product_image_accepted_formats(Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::google::protobuf::internal::AddToRepeatedPtrField(*_internal_mutable_product_image_accepted_formats(),
+                               ::std::forward<Arg_>(value),
+                               args... );
+  // @@protoc_insertion_point(field_add:common.v1.ConfigProducts.product_image_accepted_formats)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>& ConfigProducts::product_image_accepted_formats()
+    const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:common.v1.ConfigProducts.product_image_accepted_formats)
+  return _internal_product_image_accepted_formats();
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigProducts::mutable_product_image_accepted_formats() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:common.v1.ConfigProducts.product_image_accepted_formats)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_product_image_accepted_formats();
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+ConfigProducts::_internal_product_image_accepted_formats() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_image_accepted_formats_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigProducts::_internal_mutable_product_image_accepted_formats() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.product_image_accepted_formats_;
+}
+
+// uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];
+inline void ConfigProducts::clear_product_image_max_width() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_max_width_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::uint64_t ConfigProducts::product_image_max_width() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigProducts.product_image_max_width)
+  return _internal_product_image_max_width();
+}
+inline void ConfigProducts::set_product_image_max_width(::uint64_t value) {
+  _internal_set_product_image_max_width(value);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigProducts.product_image_max_width)
+}
+inline ::uint64_t ConfigProducts::_internal_product_image_max_width() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_image_max_width_;
+}
+inline void ConfigProducts::_internal_set_product_image_max_width(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_max_width_ = value;
+}
+
+// uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];
+inline void ConfigProducts::clear_product_image_max_height() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_max_height_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline ::uint64_t ConfigProducts::product_image_max_height() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigProducts.product_image_max_height)
+  return _internal_product_image_max_height();
+}
+inline void ConfigProducts::set_product_image_max_height(::uint64_t value) {
+  _internal_set_product_image_max_height(value);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigProducts.product_image_max_height)
+}
+inline ::uint64_t ConfigProducts::_internal_product_image_max_height() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_image_max_height_;
+}
+inline void ConfigProducts::_internal_set_product_image_max_height(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_max_height_ = value;
+}
+
+// uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];
+inline void ConfigProducts::clear_product_image_min_width() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_min_width_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline ::uint64_t ConfigProducts::product_image_min_width() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigProducts.product_image_min_width)
+  return _internal_product_image_min_width();
+}
+inline void ConfigProducts::set_product_image_min_width(::uint64_t value) {
+  _internal_set_product_image_min_width(value);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigProducts.product_image_min_width)
+}
+inline ::uint64_t ConfigProducts::_internal_product_image_min_width() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_image_min_width_;
+}
+inline void ConfigProducts::_internal_set_product_image_min_width(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_min_width_ = value;
+}
+
+// uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];
+inline void ConfigProducts::clear_product_image_min_height() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_min_height_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline ::uint64_t ConfigProducts::product_image_min_height() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigProducts.product_image_min_height)
+  return _internal_product_image_min_height();
+}
+inline void ConfigProducts::set_product_image_min_height(::uint64_t value) {
+  _internal_set_product_image_min_height(value);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigProducts.product_image_min_height)
+}
+inline ::uint64_t ConfigProducts::_internal_product_image_min_height() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_image_min_height_;
+}
+inline void ConfigProducts::_internal_set_product_image_min_height(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_min_height_ = value;
+}
+
+// uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];
+inline void ConfigProducts::clear_product_images_min_count_per_variant() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_images_min_count_per_variant_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline ::uint64_t ConfigProducts::product_images_min_count_per_variant() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigProducts.product_images_min_count_per_variant)
+  return _internal_product_images_min_count_per_variant();
+}
+inline void ConfigProducts::set_product_images_min_count_per_variant(::uint64_t value) {
+  _internal_set_product_images_min_count_per_variant(value);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigProducts.product_images_min_count_per_variant)
+}
+inline ::uint64_t ConfigProducts::_internal_product_images_min_count_per_variant() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_images_min_count_per_variant_;
+}
+inline void ConfigProducts::_internal_set_product_images_min_count_per_variant(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_images_min_count_per_variant_ = value;
+}
+
+// uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];
+inline void ConfigProducts::clear_product_images_max_count_per_variant() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_images_max_count_per_variant_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline ::uint64_t ConfigProducts::product_images_max_count_per_variant() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigProducts.product_images_max_count_per_variant)
+  return _internal_product_images_max_count_per_variant();
+}
+inline void ConfigProducts::set_product_images_max_count_per_variant(::uint64_t value) {
+  _internal_set_product_images_max_count_per_variant(value);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigProducts.product_images_max_count_per_variant)
+}
+inline ::uint64_t ConfigProducts::_internal_product_images_max_count_per_variant() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_images_max_count_per_variant_;
+}
+inline void ConfigProducts::_internal_set_product_images_max_count_per_variant(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_images_max_count_per_variant_ = value;
+}
+
+// uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];
+inline void ConfigProducts::clear_product_media_max_direct_uploading_size_mb() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_media_max_direct_uploading_size_mb_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000080u;
+}
+inline ::uint64_t ConfigProducts::product_media_max_direct_uploading_size_mb() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigProducts.product_media_max_direct_uploading_size_mb)
+  return _internal_product_media_max_direct_uploading_size_mb();
+}
+inline void ConfigProducts::set_product_media_max_direct_uploading_size_mb(::uint64_t value) {
+  _internal_set_product_media_max_direct_uploading_size_mb(value);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigProducts.product_media_max_direct_uploading_size_mb)
+}
+inline ::uint64_t ConfigProducts::_internal_product_media_max_direct_uploading_size_mb() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_media_max_direct_uploading_size_mb_;
+}
+inline void ConfigProducts::_internal_set_product_media_max_direct_uploading_size_mb(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_media_max_direct_uploading_size_mb_ = value;
+}
+
+// -------------------------------------------------------------------
+
 // Config
 
 // .common.v1.ConfigMain main = 1 [json_name = "main"];
@@ -26435,6 +27015,104 @@ inline void Config::set_allocated_oauth(::common::v1::ConfigOAuth* PROTOBUF_NULL
 
   _impl_.oauth_ = reinterpret_cast<::common::v1::ConfigOAuth*>(value);
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.oauth)
+}
+
+// .common.v1.ConfigProducts products = 23 [json_name = "products"];
+inline bool Config::has_products() const {
+  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.products_ != nullptr);
+  return value;
+}
+inline void Config::clear_products() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.products_ != nullptr) _impl_.products_->Clear();
+  _impl_._has_bits_[0] &= ~0x00400000u;
+}
+inline const ::common::v1::ConfigProducts& Config::_internal_products() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::common::v1::ConfigProducts* p = _impl_.products_;
+  return p != nullptr ? *p : reinterpret_cast<const ::common::v1::ConfigProducts&>(::common::v1::_ConfigProducts_default_instance_);
+}
+inline const ::common::v1::ConfigProducts& Config::products() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.Config.products)
+  return _internal_products();
+}
+inline void Config::unsafe_arena_set_allocated_products(
+    ::common::v1::ConfigProducts* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.products_);
+  }
+  _impl_.products_ = reinterpret_cast<::common::v1::ConfigProducts*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00400000u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00400000u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.Config.products)
+}
+inline ::common::v1::ConfigProducts* PROTOBUF_NULLABLE Config::release_products() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00400000u;
+  ::common::v1::ConfigProducts* released = _impl_.products_;
+  _impl_.products_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::common::v1::ConfigProducts* PROTOBUF_NULLABLE Config::unsafe_arena_release_products() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.Config.products)
+
+  _impl_._has_bits_[0] &= ~0x00400000u;
+  ::common::v1::ConfigProducts* temp = _impl_.products_;
+  _impl_.products_ = nullptr;
+  return temp;
+}
+inline ::common::v1::ConfigProducts* PROTOBUF_NONNULL Config::_internal_mutable_products() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.products_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::common::v1::ConfigProducts>(GetArena());
+    _impl_.products_ = reinterpret_cast<::common::v1::ConfigProducts*>(p);
+  }
+  return _impl_.products_;
+}
+inline ::common::v1::ConfigProducts* PROTOBUF_NONNULL Config::mutable_products()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00400000u;
+  ::common::v1::ConfigProducts* _msg = _internal_mutable_products();
+  // @@protoc_insertion_point(field_mutable:common.v1.Config.products)
+  return _msg;
+}
+inline void Config::set_allocated_products(::common::v1::ConfigProducts* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.products_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00400000u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00400000u;
+  }
+
+  _impl_.products_ = reinterpret_cast<::common::v1::ConfigProducts*>(value);
+  // @@protoc_insertion_point(field_set_allocated:common.v1.Config.products)
 }
 
 // -------------------------------------------------------------------

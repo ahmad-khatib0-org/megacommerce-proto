@@ -415,6 +415,39 @@ struct ConfigRateLimitDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConfigRateLimitDefaultTypeInternal _ConfigRateLimit_default_instance_;
 
+inline constexpr ConfigProducts::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        product_image_accepted_formats_{},
+        product_image_max_size_mb_{::uint64_t{0u}},
+        product_image_max_width_{::uint64_t{0u}},
+        product_image_max_height_{::uint64_t{0u}},
+        product_image_min_width_{::uint64_t{0u}},
+        product_image_min_height_{::uint64_t{0u}},
+        product_images_min_count_per_variant_{::uint64_t{0u}},
+        product_images_max_count_per_variant_{::uint64_t{0u}},
+        product_media_max_direct_uploading_size_mb_{::uint64_t{0u}} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ConfigProducts::ConfigProducts(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ConfigProducts_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ConfigProductsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ConfigProductsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ConfigProductsDefaultTypeInternal() {}
+  union {
+    ConfigProducts _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConfigProductsDefaultTypeInternal _ConfigProducts_default_instance_;
+
 inline constexpr ConfigPrivacy::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -1187,7 +1220,8 @@ inline constexpr Config::Impl_::Impl_(
         bleve_{nullptr},
         data_retention_{nullptr},
         image_proxy_{nullptr},
-        oauth_{nullptr} {}
+        oauth_{nullptr},
+        products_{nullptr} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR Config::Config(::_pbi::ConstantInitialized)
@@ -1949,8 +1983,29 @@ const ::uint32_t
         1,
         2,
         0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_._has_bits_),
+        12, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_.product_image_max_size_mb_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_.product_image_accepted_formats_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_.product_image_max_width_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_.product_image_max_height_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_.product_image_min_width_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_.product_image_min_height_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_.product_images_min_count_per_variant_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_.product_images_max_count_per_variant_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigProducts, _impl_.product_media_max_direct_uploading_size_mb_),
+        0,
+        ~0u,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::common::v1::Config, _impl_._has_bits_),
-        25, // hasbit index offset
+        26, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::common::v1::Config, _impl_.main_),
         PROTOBUF_FIELD_OFFSET(::common::v1::Config, _impl_.services_),
         PROTOBUF_FIELD_OFFSET(::common::v1::Config, _impl_.security_),
@@ -1973,6 +2028,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::common::v1::Config, _impl_.data_retention_),
         PROTOBUF_FIELD_OFFSET(::common::v1::Config, _impl_.image_proxy_),
         PROTOBUF_FIELD_OFFSET(::common::v1::Config, _impl_.oauth_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::Config, _impl_.products_),
         0,
         1,
         2,
@@ -1995,6 +2051,7 @@ const ::uint32_t
         19,
         20,
         21,
+        22,
         0x000, // bitmap
         0x004, // bitmap
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigGetResponse, _impl_._oneof_case_[0]),
@@ -2047,13 +2104,14 @@ static const ::_pbi::MigrationSchema
         {579, sizeof(::common::v1::ConfigBleve)},
         {594, sizeof(::common::v1::ConfigDataRetention)},
         {617, sizeof(::common::v1::ConfigImageProxy)},
-        {628, sizeof(::common::v1::Config)},
-        {675, sizeof(::common::v1::ConfigGetRequest)},
-        {676, sizeof(::common::v1::ConfigGetResponse)},
-        {681, sizeof(::common::v1::ConfigUpdateRequest)},
-        {686, sizeof(::common::v1::ConfigUpdateResponse)},
-        {691, sizeof(::common::v1::ConfigListenerResponse)},
-        {696, sizeof(::common::v1::ConfigListenerRequest)},
+        {628, sizeof(::common::v1::ConfigProducts)},
+        {649, sizeof(::common::v1::Config)},
+        {698, sizeof(::common::v1::ConfigGetRequest)},
+        {699, sizeof(::common::v1::ConfigGetResponse)},
+        {704, sizeof(::common::v1::ConfigUpdateRequest)},
+        {709, sizeof(::common::v1::ConfigUpdateResponse)},
+        {714, sizeof(::common::v1::ConfigListenerResponse)},
+        {719, sizeof(::common::v1::ConfigListenerRequest)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::common::v1::_ConfigMain_default_instance_._instance,
@@ -2078,6 +2136,7 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::common::v1::_ConfigBleve_default_instance_._instance,
     &::common::v1::_ConfigDataRetention_default_instance_._instance,
     &::common::v1::_ConfigImageProxy_default_instance_._instance,
+    &::common::v1::_ConfigProducts_default_instance_._instance,
     &::common::v1::_Config_default_instance_._instance,
     &::common::v1::_ConfigGetRequest_default_instance_._instance,
     &::common::v1::_ConfigGetResponse_default_instance_._instance,
@@ -2634,51 +2693,68 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] ABSL_ATTRIBU
     "\030\004 \001(\tH\003R\027remoteImageProxyOptions\210\001\001B\t\n\007"
     "_enableB\023\n\021_image_proxy_typeB\031\n\027_remote_"
     "image_proxy_urlB\035\n\033_remote_image_proxy_o"
-    "ptions\"\373\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common"
-    ".v1.ConfigMainR\004main\0225\n\010services\030\002 \001(\0132\031"
-    ".common.v1.ConfigServicesR\010services\0225\n\010s"
-    "ecurity\030\003 \001(\0132\031.common.v1.ConfigSecurity"
-    "R\010security\022,\n\005cache\030\004 \001(\0132\026.common.v1.Ca"
-    "cheConfigR\005cache\0222\n\007metrics\030\005 \001(\0132\030.comm"
-    "on.v1.ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001("
-    "\0132\024.common.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001("
-    "\0132\024.common.v1.ConfigSqlR\003sql\0225\n\010password"
-    "\030\010 \001(\0132\031.common.v1.ConfigPasswordR\010passw"
-    "ord\022)\n\004file\030\t \001(\0132\025.common.v1.ConfigFile"
-    "R\004file\022,\n\005email\030\n \001(\0132\026.common.v1.Config"
-    "EmailR\005email\0229\n\nrate_limit\030\013 \001(\0132\032.commo"
-    "n.v1.ConfigRateLimitR\trateLimit\0222\n\007priva"
-    "cy\030\014 \001(\0132\030.common.v1.ConfigPrivacyR\007priv"
-    "acy\0222\n\007support\030\r \001(\0132\030.common.v1.ConfigS"
-    "upportR\007support\022A\n\014localization\030\016 \001(\0132\035."
-    "common.v1.ConfigLocalizationR\014localizati"
-    "on\022)\n\004ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR"
-    "\004ldap\022)\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSa"
-    "mlR\004saml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1"
-    ".ConfigNativeAppR\tnativeApp\022>\n\013meilisear"
-    "ch\030\022 \001(\0132\034.common.v1.ConfigMeilisearchR\013"
-    "meilisearch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.C"
-    "onfigBleveR\005bleve\022E\n\016data_retention\030\024 \001("
-    "\0132\036.common.v1.ConfigDataRetentionR\rdataR"
-    "etention\022<\n\013image_proxy\030\025 \001(\0132\033.common.v"
-    "1.ConfigImageProxyR\nimageProxy\022,\n\005oauth\030"
-    "\026 \001(\0132\026.common.v1.ConfigOAuthR\005oauth\"\022\n\020"
-    "ConfigGetRequest\"u\n\021ConfigGetResponse\022\'\n"
-    "\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+"
-    "\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005er"
-    "rorB\n\n\010response\"@\n\023ConfigUpdateRequest\022)"
-    "\n\006config\030\001 \001(\0132\021.common.v1.ConfigR\006confi"
-    "g\"x\n\024ConfigUpdateResponse\022\'\n\004data\030\001 \001(\0132"
-    "\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001("
-    "\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respo"
-    "nse\"z\n\026ConfigListenerResponse\022\'\n\004data\030\001 "
-    "\001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030"
-    "\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010r"
-    "esponse\"4\n\025ConfigListenerRequest\022\033\n\tclie"
-    "nt_id\030\001 \001(\tR\010clientIdBq\n\032org.megacommerc"
-    "e.common.v1B\013ConfigProtoZCgithub.com/ahm"
-    "ad-khatib0-org/megacommerce-proto/gen/go"
-    "/common/v1;v1\370\001\001b\006proto3"
+    "ptions\"\347\004\n\016ConfigProducts\0228\n\031product_ima"
+    "ge_max_size_mb\030\001 \001(\004R\025productImageMaxSiz"
+    "eMb\022C\n\036product_image_accepted_formats\030\002 "
+    "\003(\tR\033productImageAcceptedFormats\0225\n\027prod"
+    "uct_image_max_width\030\003 \001(\004R\024productImageM"
+    "axWidth\0227\n\030product_image_max_height\030\004 \001("
+    "\004R\025productImageMaxHeight\0225\n\027product_imag"
+    "e_min_width\030\005 \001(\004R\024productImageMinWidth\022"
+    "7\n\030product_image_min_height\030\006 \001(\004R\025produ"
+    "ctImageMinHeight\022M\n$product_images_min_c"
+    "ount_per_variant\030\007 \001(\004R\037productImagesMin"
+    "CountPerVariant\022M\n$product_images_max_co"
+    "unt_per_variant\030\010 \001(\004R\037productImagesMaxC"
+    "ountPerVariant\022X\n*product_media_max_dire"
+    "ct_uploading_size_mb\030\t \001(\004R$productMedia"
+    "MaxDirectUploadingSizeMb\"\262\t\n\006Config\022)\n\004m"
+    "ain\030\001 \001(\0132\025.common.v1.ConfigMainR\004main\0225"
+    "\n\010services\030\002 \001(\0132\031.common.v1.ConfigServi"
+    "cesR\010services\0225\n\010security\030\003 \001(\0132\031.common"
+    ".v1.ConfigSecurityR\010security\022,\n\005cache\030\004 "
+    "\001(\0132\026.common.v1.CacheConfigR\005cache\0222\n\007me"
+    "trics\030\005 \001(\0132\030.common.v1.ConfigMetricsR\007m"
+    "etrics\022&\n\003sso\030\006 \001(\0132\024.common.v1.ConfigSS"
+    "OR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1.ConfigSq"
+    "lR\003sql\0225\n\010password\030\010 \001(\0132\031.common.v1.Con"
+    "figPasswordR\010password\022)\n\004file\030\t \001(\0132\025.co"
+    "mmon.v1.ConfigFileR\004file\022,\n\005email\030\n \001(\0132"
+    "\026.common.v1.ConfigEmailR\005email\0229\n\nrate_l"
+    "imit\030\013 \001(\0132\032.common.v1.ConfigRateLimitR\t"
+    "rateLimit\0222\n\007privacy\030\014 \001(\0132\030.common.v1.C"
+    "onfigPrivacyR\007privacy\0222\n\007support\030\r \001(\0132\030"
+    ".common.v1.ConfigSupportR\007support\022A\n\014loc"
+    "alization\030\016 \001(\0132\035.common.v1.ConfigLocali"
+    "zationR\014localization\022)\n\004ldap\030\017 \001(\0132\025.com"
+    "mon.v1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025."
+    "common.v1.ConfigSamlR\004saml\0229\n\nnative_app"
+    "\030\021 \001(\0132\032.common.v1.ConfigNativeAppR\tnati"
+    "veApp\022>\n\013meilisearch\030\022 \001(\0132\034.common.v1.C"
+    "onfigMeilisearchR\013meilisearch\022,\n\005bleve\030\023"
+    " \001(\0132\026.common.v1.ConfigBleveR\005bleve\022E\n\016d"
+    "ata_retention\030\024 \001(\0132\036.common.v1.ConfigDa"
+    "taRetentionR\rdataRetention\022<\n\013image_prox"
+    "y\030\025 \001(\0132\033.common.v1.ConfigImageProxyR\nim"
+    "ageProxy\022,\n\005oauth\030\026 \001(\0132\026.common.v1.Conf"
+    "igOAuthR\005oauth\0225\n\010products\030\027 \001(\0132\031.commo"
+    "n.v1.ConfigProductsR\010products\"\022\n\020ConfigG"
+    "etRequest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001"
+    " \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error"
+    "\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010"
+    "response\"@\n\023ConfigUpdateRequest\022)\n\006confi"
+    "g\030\001 \001(\0132\021.common.v1.ConfigR\006config\"x\n\024Co"
+    "nfigUpdateResponse\022\'\n\004data\030\001 \001(\0132\021.commo"
+    "n.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.sha"
+    "red.v1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026"
+    "ConfigListenerResponse\022\'\n\004data\030\001 \001(\0132\021.c"
+    "ommon.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023"
+    ".shared.v1.AppErrorH\000R\005errorB\n\n\010response"
+    "\"4\n\025ConfigListenerRequest\022\033\n\tclient_id\030\001"
+    " \001(\tR\010clientIdBq\n\032org.megacommerce.commo"
+    "n.v1B\013ConfigProtoZCgithub.com/ahmad-khat"
+    "ib0-org/megacommerce-proto/gen/go/common"
+    "/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_common_2fv1_2fconfig_2eproto_deps[1] = {
@@ -2688,13 +2764,13 @@ static ::absl::once_flag descriptor_table_common_2fv1_2fconfig_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_common_2fv1_2fconfig_2eproto = {
     false,
     false,
-    23624,
+    24297,
     descriptor_table_protodef_common_2fv1_2fconfig_2eproto,
     "common/v1/config.proto",
     &descriptor_table_common_2fv1_2fconfig_2eproto_once,
     descriptor_table_common_2fv1_2fconfig_2eproto_deps,
     1,
-    29,
+    30,
     schemas,
     file_default_instances,
     TableStruct_common_2fv1_2fconfig_2eproto::offsets,
@@ -15293,6 +15369,519 @@ void ConfigImageProxy::InternalSwap(ConfigImageProxy* PROTOBUF_RESTRICT PROTOBUF
 }
 // ===================================================================
 
+class ConfigProducts::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ConfigProducts>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_._has_bits_);
+};
+
+ConfigProducts::ConfigProducts(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ConfigProducts_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:common.v1.ConfigProducts)
+}
+PROTOBUF_NDEBUG_INLINE ConfigProducts::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::common::v1::ConfigProducts& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        product_image_accepted_formats_{visibility, arena, from.product_image_accepted_formats_} {}
+
+ConfigProducts::ConfigProducts(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ConfigProducts& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ConfigProducts_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ConfigProducts* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, product_image_max_size_mb_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, product_image_max_size_mb_),
+           offsetof(Impl_, product_media_max_direct_uploading_size_mb_) -
+               offsetof(Impl_, product_image_max_size_mb_) +
+               sizeof(Impl_::product_media_max_direct_uploading_size_mb_));
+
+  // @@protoc_insertion_point(copy_constructor:common.v1.ConfigProducts)
+}
+PROTOBUF_NDEBUG_INLINE ConfigProducts::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        product_image_accepted_formats_{visibility, arena} {}
+
+inline void ConfigProducts::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, product_image_max_size_mb_),
+           0,
+           offsetof(Impl_, product_media_max_direct_uploading_size_mb_) -
+               offsetof(Impl_, product_image_max_size_mb_) +
+               sizeof(Impl_::product_media_max_direct_uploading_size_mb_));
+}
+ConfigProducts::~ConfigProducts() {
+  // @@protoc_insertion_point(destructor:common.v1.ConfigProducts)
+  SharedDtor(*this);
+}
+inline void ConfigProducts::SharedDtor(MessageLite& self) {
+  ConfigProducts& this_ = static_cast<ConfigProducts&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ConfigProducts::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ConfigProducts(arena);
+}
+constexpr auto ConfigProducts::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_accepted_formats_) +
+          decltype(ConfigProducts::_impl_.product_image_accepted_formats_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::ZeroInit(
+        sizeof(ConfigProducts), alignof(ConfigProducts), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ConfigProducts::PlacementNew_,
+                                 sizeof(ConfigProducts),
+                                 alignof(ConfigProducts));
+  }
+}
+constexpr auto ConfigProducts::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ConfigProducts_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ConfigProducts::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ConfigProducts>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ConfigProducts::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ConfigProducts>(), &ConfigProducts::ByteSizeLong,
+              &ConfigProducts::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_._cached_size_),
+          false,
+      },
+      &ConfigProducts::kDescriptorMethods,
+      &descriptor_table_common_2fv1_2fconfig_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ConfigProducts_class_data_ =
+        ConfigProducts::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ConfigProducts::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ConfigProducts_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ConfigProducts_class_data_.tc_table);
+  return ConfigProducts_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 9, 0, 71, 2>
+ConfigProducts::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_._has_bits_),
+    0, // no _extensions_
+    9, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294966784,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    9,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    ConfigProducts_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::common::v1::ConfigProducts>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigProducts, _impl_.product_image_max_size_mb_), 0>(),
+     {8, 0, 0, PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_max_size_mb_)}},
+    // repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];
+    {::_pbi::TcParser::FastUR1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_accepted_formats_)}},
+    // uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigProducts, _impl_.product_image_max_width_), 1>(),
+     {24, 1, 0, PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_max_width_)}},
+    // uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigProducts, _impl_.product_image_max_height_), 2>(),
+     {32, 2, 0, PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_max_height_)}},
+    // uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigProducts, _impl_.product_image_min_width_), 3>(),
+     {40, 3, 0, PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_min_width_)}},
+    // uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigProducts, _impl_.product_image_min_height_), 4>(),
+     {48, 4, 0, PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_min_height_)}},
+    // uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigProducts, _impl_.product_images_min_count_per_variant_), 5>(),
+     {56, 5, 0, PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_images_min_count_per_variant_)}},
+    // uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigProducts, _impl_.product_images_max_count_per_variant_), 6>(),
+     {64, 6, 0, PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_images_max_count_per_variant_)}},
+    // uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigProducts, _impl_.product_media_max_direct_uploading_size_mb_), 7>(),
+     {72, 7, 0, PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_media_max_direct_uploading_size_mb_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];
+    {PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_max_size_mb_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];
+    {PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_accepted_formats_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
+    // uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];
+    {PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_max_width_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];
+    {PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_max_height_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];
+    {PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_min_width_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];
+    {PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_min_height_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];
+    {PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_images_min_count_per_variant_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];
+    {PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_images_max_count_per_variant_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];
+    {PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_media_max_direct_uploading_size_mb_), _Internal::kHasBitsOffset + 7, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+  }},
+  // no aux_entries
+  {{
+    "\30\0\36\0\0\0\0\0\0\0\0\0\0\0\0\0"
+    "common.v1.ConfigProducts"
+    "product_image_accepted_formats"
+  }},
+};
+PROTOBUF_NOINLINE void ConfigProducts::Clear() {
+// @@protoc_insertion_point(message_clear_start:common.v1.ConfigProducts)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.product_image_accepted_formats_.Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    ::memset(&_impl_.product_image_max_size_mb_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.product_media_max_direct_uploading_size_mb_) -
+        reinterpret_cast<char*>(&_impl_.product_image_max_size_mb_)) + sizeof(_impl_.product_media_max_direct_uploading_size_mb_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ConfigProducts::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ConfigProducts& this_ = static_cast<const ConfigProducts&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ConfigProducts::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ConfigProducts& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:common.v1.ConfigProducts)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (this_._internal_product_image_max_size_mb() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          1, this_._internal_product_image_max_size_mb(), target);
+    }
+  }
+
+  // repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];
+  for (int i = 0, n = this_._internal_product_image_accepted_formats_size(); i < n; ++i) {
+    const auto& s = this_._internal_product_image_accepted_formats().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigProducts.product_image_accepted_formats");
+    target = stream->WriteString(2, s, target);
+  }
+
+  // uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (this_._internal_product_image_max_width() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          3, this_._internal_product_image_max_width(), target);
+    }
+  }
+
+  // uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (this_._internal_product_image_max_height() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          4, this_._internal_product_image_max_height(), target);
+    }
+  }
+
+  // uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    if (this_._internal_product_image_min_width() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          5, this_._internal_product_image_min_width(), target);
+    }
+  }
+
+  // uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];
+  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
+    if (this_._internal_product_image_min_height() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          6, this_._internal_product_image_min_height(), target);
+    }
+  }
+
+  // uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];
+  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
+    if (this_._internal_product_images_min_count_per_variant() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          7, this_._internal_product_images_min_count_per_variant(), target);
+    }
+  }
+
+  // uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];
+  if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
+    if (this_._internal_product_images_max_count_per_variant() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          8, this_._internal_product_images_max_count_per_variant(), target);
+    }
+  }
+
+  // uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];
+  if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
+    if (this_._internal_product_media_max_direct_uploading_size_mb() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          9, this_._internal_product_media_max_direct_uploading_size_mb(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:common.v1.ConfigProducts)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ConfigProducts::ByteSizeLong(const MessageLite& base) {
+  const ConfigProducts& this_ = static_cast<const ConfigProducts&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ConfigProducts::ByteSizeLong() const {
+  const ConfigProducts& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:common.v1.ConfigProducts)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated string product_image_accepted_formats = 2 [json_name = "productImageAcceptedFormats"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_product_image_accepted_formats().size());
+      for (int i = 0, n = this_._internal_product_image_accepted_formats().size(); i < n; ++i) {
+        total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+            this_._internal_product_image_accepted_formats().Get(i));
+      }
+    }
+  }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    // uint64 product_image_max_size_mb = 1 [json_name = "productImageMaxSizeMb"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (this_._internal_product_image_max_size_mb() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_product_image_max_size_mb());
+      }
+    }
+    // uint64 product_image_max_width = 3 [json_name = "productImageMaxWidth"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (this_._internal_product_image_max_width() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_product_image_max_width());
+      }
+    }
+    // uint64 product_image_max_height = 4 [json_name = "productImageMaxHeight"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (this_._internal_product_image_max_height() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_product_image_max_height());
+      }
+    }
+    // uint64 product_image_min_width = 5 [json_name = "productImageMinWidth"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (this_._internal_product_image_min_width() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_product_image_min_width());
+      }
+    }
+    // uint64 product_image_min_height = 6 [json_name = "productImageMinHeight"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      if (this_._internal_product_image_min_height() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_product_image_min_height());
+      }
+    }
+    // uint64 product_images_min_count_per_variant = 7 [json_name = "productImagesMinCountPerVariant"];
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      if (this_._internal_product_images_min_count_per_variant() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_product_images_min_count_per_variant());
+      }
+    }
+    // uint64 product_images_max_count_per_variant = 8 [json_name = "productImagesMaxCountPerVariant"];
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      if (this_._internal_product_images_max_count_per_variant() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_product_images_max_count_per_variant());
+      }
+    }
+    // uint64 product_media_max_direct_uploading_size_mb = 9 [json_name = "productMediaMaxDirectUploadingSizeMb"];
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      if (this_._internal_product_media_max_direct_uploading_size_mb() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_product_media_max_direct_uploading_size_mb());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ConfigProducts::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ConfigProducts*>(&to_msg);
+  auto& from = static_cast<const ConfigProducts&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:common.v1.ConfigProducts)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_product_image_accepted_formats()->MergeFrom(from._internal_product_image_accepted_formats());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (from._internal_product_image_max_size_mb() != 0) {
+        _this->_impl_.product_image_max_size_mb_ = from._impl_.product_image_max_size_mb_;
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (from._internal_product_image_max_width() != 0) {
+        _this->_impl_.product_image_max_width_ = from._impl_.product_image_max_width_;
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (from._internal_product_image_max_height() != 0) {
+        _this->_impl_.product_image_max_height_ = from._impl_.product_image_max_height_;
+      }
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (from._internal_product_image_min_width() != 0) {
+        _this->_impl_.product_image_min_width_ = from._impl_.product_image_min_width_;
+      }
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      if (from._internal_product_image_min_height() != 0) {
+        _this->_impl_.product_image_min_height_ = from._impl_.product_image_min_height_;
+      }
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      if (from._internal_product_images_min_count_per_variant() != 0) {
+        _this->_impl_.product_images_min_count_per_variant_ = from._impl_.product_images_min_count_per_variant_;
+      }
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      if (from._internal_product_images_max_count_per_variant() != 0) {
+        _this->_impl_.product_images_max_count_per_variant_ = from._impl_.product_images_max_count_per_variant_;
+      }
+    }
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      if (from._internal_product_media_max_direct_uploading_size_mb() != 0) {
+        _this->_impl_.product_media_max_direct_uploading_size_mb_ = from._impl_.product_media_max_direct_uploading_size_mb_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ConfigProducts::CopyFrom(const ConfigProducts& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.ConfigProducts)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ConfigProducts::InternalSwap(ConfigProducts* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.product_image_accepted_formats_.InternalSwap(&other->_impl_.product_image_accepted_formats_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_media_max_direct_uploading_size_mb_)
+      + sizeof(ConfigProducts::_impl_.product_media_max_direct_uploading_size_mb_)
+      - PROTOBUF_FIELD_OFFSET(ConfigProducts, _impl_.product_image_max_size_mb_)>(
+          reinterpret_cast<char*>(&_impl_.product_image_max_size_mb_),
+          reinterpret_cast<char*>(&other->_impl_.product_image_max_size_mb_));
+}
+
+::google::protobuf::Metadata ConfigProducts::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
 class Config::_Internal {
  public:
   using HasBits =
@@ -15397,6 +15986,9 @@ Config::Config(
   _impl_.oauth_ = ((cached_has_bits & 0x00200000u) != 0)
                 ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.oauth_)
                 : nullptr;
+  _impl_.products_ = ((cached_has_bits & 0x00400000u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.products_)
+                : nullptr;
 
   // @@protoc_insertion_point(copy_constructor:common.v1.Config)
 }
@@ -15410,9 +16002,9 @@ inline void Config::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   ::memset(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, main_),
            0,
-           offsetof(Impl_, oauth_) -
+           offsetof(Impl_, products_) -
                offsetof(Impl_, main_) +
-               sizeof(Impl_::oauth_));
+               sizeof(Impl_::products_));
 }
 Config::~Config() {
   // @@protoc_insertion_point(destructor:common.v1.Config)
@@ -15444,6 +16036,7 @@ inline void Config::SharedDtor(MessageLite& self) {
   delete this_._impl_.data_retention_;
   delete this_._impl_.image_proxy_;
   delete this_._impl_.oauth_;
+  delete this_._impl_.products_;
   this_._impl_.~Impl_();
 }
 
@@ -15490,17 +16083,17 @@ Config::GetClassData() const {
   return Config_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<5, 22, 22, 0, 2>
+const ::_pbi::TcParseTable<5, 23, 23, 0, 2>
 Config::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(Config, _impl_._has_bits_),
     0, // no _extensions_
-    22, 248,  // max_field_number, fast_idx_mask
+    23, 248,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4290772992,  // skipmap
+    4286578688,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    22,  // num_field_entries
-    22,  // num_aux_entries
+    23,  // num_field_entries
+    23,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     Config_class_data_.base(),
     nullptr,  // post_loop_handler
@@ -15576,7 +16169,9 @@ Config::_table_ = {
     // .common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];
     {::_pbi::TcParser::FastMtS2,
      {434, 21, 21, PROTOBUF_FIELD_OFFSET(Config, _impl_.oauth_)}},
-    {::_pbi::TcParser::MiniParse, {}},
+    // .common.v1.ConfigProducts products = 23 [json_name = "products"];
+    {::_pbi::TcParser::FastMtS2,
+     {442, 22, 22, PROTOBUF_FIELD_OFFSET(Config, _impl_.products_)}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -15654,6 +16249,9 @@ Config::_table_ = {
     // .common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];
     {PROTOBUF_FIELD_OFFSET(Config, _impl_.oauth_), _Internal::kHasBitsOffset + 21, 21,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .common.v1.ConfigProducts products = 23 [json_name = "products"];
+    {PROTOBUF_FIELD_OFFSET(Config, _impl_.products_), _Internal::kHasBitsOffset + 22, 22,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
       {::_pbi::TcParser::GetTable<::common::v1::ConfigMain>()},
@@ -15678,6 +16276,7 @@ Config::_table_ = {
       {::_pbi::TcParser::GetTable<::common::v1::ConfigDataRetention>()},
       {::_pbi::TcParser::GetTable<::common::v1::ConfigImageProxy>()},
       {::_pbi::TcParser::GetTable<::common::v1::ConfigOAuth>()},
+      {::_pbi::TcParser::GetTable<::common::v1::ConfigProducts>()},
   }},
   {{
   }},
@@ -15758,7 +16357,7 @@ PROTOBUF_NOINLINE void Config::Clear() {
       _impl_.saml_->Clear();
     }
   }
-  if ((cached_has_bits & 0x003f0000u) != 0) {
+  if ((cached_has_bits & 0x007f0000u) != 0) {
     if ((cached_has_bits & 0x00010000u) != 0) {
       ABSL_DCHECK(_impl_.native_app_ != nullptr);
       _impl_.native_app_->Clear();
@@ -15782,6 +16381,10 @@ PROTOBUF_NOINLINE void Config::Clear() {
     if ((cached_has_bits & 0x00200000u) != 0) {
       ABSL_DCHECK(_impl_.oauth_ != nullptr);
       _impl_.oauth_->Clear();
+    }
+    if ((cached_has_bits & 0x00400000u) != 0) {
+      ABSL_DCHECK(_impl_.products_ != nullptr);
+      _impl_.products_->Clear();
     }
   }
   _impl_._has_bits_.Clear();
@@ -15958,6 +16561,13 @@ PROTOBUF_NOINLINE void Config::Clear() {
         stream);
   }
 
+  // .common.v1.ConfigProducts products = 23 [json_name = "products"];
+  if ((cached_has_bits & 0x00400000u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        23, *this_._impl_.products_, this_._impl_.products_->GetCachedSize(), target,
+        stream);
+  }
+
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -16067,7 +16677,7 @@ PROTOBUF_NOINLINE void Config::Clear() {
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.saml_);
     }
   }
-  if ((cached_has_bits & 0x003f0000u) != 0) {
+  if ((cached_has_bits & 0x007f0000u) != 0) {
     // .common.v1.ConfigNativeApp native_app = 17 [json_name = "nativeApp"];
     if ((cached_has_bits & 0x00010000u) != 0) {
       total_size += 2 +
@@ -16097,6 +16707,11 @@ PROTOBUF_NOINLINE void Config::Clear() {
     if ((cached_has_bits & 0x00200000u) != 0) {
       total_size += 2 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.oauth_);
+    }
+    // .common.v1.ConfigProducts products = 23 [json_name = "products"];
+    if ((cached_has_bits & 0x00400000u) != 0) {
+      total_size += 2 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.products_);
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -16245,7 +16860,7 @@ void Config::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::
       }
     }
   }
-  if ((cached_has_bits & 0x003f0000u) != 0) {
+  if ((cached_has_bits & 0x007f0000u) != 0) {
     if ((cached_has_bits & 0x00010000u) != 0) {
       ABSL_DCHECK(from._impl_.native_app_ != nullptr);
       if (_this->_impl_.native_app_ == nullptr) {
@@ -16294,6 +16909,14 @@ void Config::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::
         _this->_impl_.oauth_->MergeFrom(*from._impl_.oauth_);
       }
     }
+    if ((cached_has_bits & 0x00400000u) != 0) {
+      ABSL_DCHECK(from._impl_.products_ != nullptr);
+      if (_this->_impl_.products_ == nullptr) {
+        _this->_impl_.products_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.products_);
+      } else {
+        _this->_impl_.products_->MergeFrom(*from._impl_.products_);
+      }
+    }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
@@ -16312,8 +16935,8 @@ void Config::InternalSwap(Config* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Config, _impl_.oauth_)
-      + sizeof(Config::_impl_.oauth_)
+      PROTOBUF_FIELD_OFFSET(Config, _impl_.products_)
+      + sizeof(Config::_impl_.products_)
       - PROTOBUF_FIELD_OFFSET(Config, _impl_.main_)>(
           reinterpret_cast<char*>(&_impl_.main_),
           reinterpret_cast<char*>(&other->_impl_.main_));

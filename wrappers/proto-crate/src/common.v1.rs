@@ -702,6 +702,30 @@ pub struct ConfigImageProxy {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ConfigProducts {
+    #[prost(uint64, tag = "1")]
+    pub product_image_max_size_mb: u64,
+    #[prost(string, repeated, tag = "2")]
+    pub product_image_accepted_formats: ::prost::alloc::vec::Vec<
+        ::prost::alloc::string::String,
+    >,
+    #[prost(uint64, tag = "3")]
+    pub product_image_max_width: u64,
+    #[prost(uint64, tag = "4")]
+    pub product_image_max_height: u64,
+    #[prost(uint64, tag = "5")]
+    pub product_image_min_width: u64,
+    #[prost(uint64, tag = "6")]
+    pub product_image_min_height: u64,
+    #[prost(uint64, tag = "7")]
+    pub product_images_min_count_per_variant: u64,
+    #[prost(uint64, tag = "8")]
+    pub product_images_max_count_per_variant: u64,
+    #[prost(uint64, tag = "9")]
+    pub product_media_max_direct_uploading_size_mb: u64,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Config {
     #[prost(message, optional, tag = "1")]
     pub main: ::core::option::Option<ConfigMain>,
@@ -747,6 +771,8 @@ pub struct Config {
     pub image_proxy: ::core::option::Option<ConfigImageProxy>,
     #[prost(message, optional, tag = "22")]
     pub oauth: ::core::option::Option<ConfigOAuth>,
+    #[prost(message, optional, tag = "23")]
+    pub products: ::core::option::Option<ConfigProducts>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]

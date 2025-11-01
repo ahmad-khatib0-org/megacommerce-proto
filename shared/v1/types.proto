@@ -1,8 +1,5 @@
 syntax = "proto3";
 
-
-
-
 package shared.v1;
 
 option cc_enable_arenas = true;

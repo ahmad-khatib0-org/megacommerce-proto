@@ -388,6 +388,18 @@ message ConfigImageProxy {
   optional string remote_image_proxy_options = 4;
 }
 
+message ConfigProducts {
+  uint64 product_image_max_size_mb = 1;
+  repeated string product_image_accepted_formats = 2;
+  uint64 product_image_max_width = 3;
+  uint64 product_image_max_height = 4;
+  uint64 product_image_min_width = 5;
+  uint64 product_image_min_height = 6;
+  uint64 product_images_min_count_per_variant = 7;
+  uint64 product_images_max_count_per_variant = 8;
+  uint64 product_media_max_direct_uploading_size_mb = 9;
+}
+
 message Config {
   ConfigMain main = 1;
   ConfigServices services = 2;
@@ -411,6 +423,7 @@ message Config {
   ConfigDataRetention data_retention = 20;
   ConfigImageProxy image_proxy = 21;
   ConfigOAuth oauth = 22;
+  ConfigProducts products = 23;
 }
 
 message ConfigGetRequest {}
