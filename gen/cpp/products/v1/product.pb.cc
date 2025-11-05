@@ -58,10 +58,15 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 inline constexpr ProductOfferMinimumOrder::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
+        id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         price_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        quantity_{::uint64_t{0u}} {}
+        quantity_{::uint64_t{0u}},
+        created_at_{::uint64_t{0u}},
+        updated_at_{::uint64_t{0u}} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR ProductOfferMinimumOrder::ProductOfferMinimumOrder(::_pbi::ConstantInitialized)
@@ -736,11 +741,17 @@ const ::uint32_t
         ~0u,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOfferMinimumOrder, _impl_._has_bits_),
-        5, // hasbit index offset
+        8, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductOfferMinimumOrder, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOfferMinimumOrder, _impl_.price_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOfferMinimumOrder, _impl_.quantity_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductOfferMinimumOrder, _impl_.created_at_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductOfferMinimumOrder, _impl_.updated_at_),
         0,
         1,
+        2,
+        3,
+        4,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductSafety_SafetyEntry_DoNotUse, _impl_._has_bits_),
         5, // hasbit index offset
@@ -842,12 +853,12 @@ static const ::_pbi::MigrationSchema
         {81, sizeof(::products::v1::ProductOffer)},
         {83, sizeof(::products::v1::ProductOfferVariant)},
         {110, sizeof(::products::v1::ProductOfferMinimumOrder)},
-        {117, sizeof(::products::v1::ProductSafety_SafetyEntry_DoNotUse)},
-        {124, sizeof(::products::v1::ProductSafety)},
-        {126, sizeof(::products::v1::ProductTag)},
-        {133, sizeof(::products::v1::ProductTags)},
-        {135, sizeof(::products::v1::ProductMetadata)},
-        {136, sizeof(::products::v1::Product)},
+        {123, sizeof(::products::v1::ProductSafety_SafetyEntry_DoNotUse)},
+        {130, sizeof(::products::v1::ProductSafety)},
+        {132, sizeof(::products::v1::ProductTag)},
+        {139, sizeof(::products::v1::ProductTags)},
+        {141, sizeof(::products::v1::ProductMetadata)},
+        {142, sizeof(::products::v1::Product)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductBulletPoint_default_instance_._instance,
@@ -924,51 +935,54 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_2eproto[] ABSL_ATTR
     "products.v1.ProductOfferMinimumOrderR\rmi"
     "nimumOrdersB\021\n\017_condition_noteB\r\n\013_list_"
     "priceB\r\n\013_sale_priceB\023\n\021_sale_price_star"
-    "tB\021\n\017_sale_price_end\"L\n\030ProductOfferMini"
-    "mumOrder\022\024\n\005price\030\001 \001(\tR\005price\022\032\n\010quanti"
-    "ty\030\002 \001(\004R\010quantity\"\232\001\n\rProductSafety\022>\n\006"
-    "safety\030\001 \003(\0132&.products.v1.ProductSafety"
-    ".SafetyEntryR\006safety\032I\n\013SafetyEntry\022\020\n\003k"
-    "ey\030\001 \001(\tR\003key\022$\n\005value\030\002 \001(\0132\016.shared.v1"
-    ".AnyR\005value:\0028\001\"J\n\nProductTag\022\023\n\002id\030\001 \001("
-    "\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_"
-    "idB\007\n\005_name\":\n\013ProductTags\022+\n\004tags\030\001 \003(\013"
-    "2\027.products.v1.ProductTagR\004tags\"\021\n\017Produ"
-    "ctMetadata\"\336\t\n\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\027"
-    "\n\007user_id\030\002 \001(\tR\006userId\022\024\n\005title\030\003 \001(\tR\005"
-    "title\022\032\n\010category\030\004 \001(\tR\010category\022 \n\013sub"
-    "category\030\005 \001(\tR\013subcategory\022%\n\016has_varia"
-    "tions\030\006 \001(\010R\rhasVariations\022\"\n\nbrand_name"
-    "\030\007 \001(\tH\000R\tbrandName\210\001\001\022$\n\016has_brand_name"
-    "\030\010 \001(\010R\014hasBrandName\022\"\n\nproduct_id\030\t \001(\t"
-    "H\001R\tproductId\210\001\001\022$\n\016has_product_id\030\n \001(\010"
-    "R\014hasProductId\022+\n\017product_id_type\030\013 \001(\tH"
-    "\002R\rproductIdType\210\001\001\022 \n\013description\030\014 \001(\t"
-    "R\013description\022D\n\rbullet_points\030\r \003(\0132\037.p"
-    "roducts.v1.ProductBulletPointR\014bulletPoi"
-    "nts\022#\n\rcurrency_code\030\016 \001(\tR\014currencyCode"
-    "\022)\n\020fulfillment_type\030\017 \001(\tR\017fulfillmentT"
-    "ype\022\'\n\017processing_time\030\020 \001(\004R\016processing"
-    "Time\0225\n\007details\030\021 \001(\0132\033.products.v1.Prod"
-    "uctDetailsR\007details\022/\n\005media\030\022 \001(\0132\031.pro"
-    "ducts.v1.ProductMediaR\005media\022/\n\005offer\030\023 "
-    "\001(\0132\031.products.v1.ProductOfferR\005offer\0222\n"
-    "\006safety\030\024 \001(\0132\032.products.v1.ProductSafet"
-    "yR\006safety\022+\n\004tags\030\025 \003(\0132\027.products.v1.Pr"
-    "oductTagR\004tags\022=\n\010metadata\030\026 \001(\0132\034.produ"
-    "cts.v1.ProductMetadataH\003R\010metadata\210\001\001\022\035\n"
-    "\nar_enabled\030\027 \001(\010R\tarEnabled\022\022\n\004slug\030\030 \001"
-    "(\tR\004slug\022\026\n\006status\030\031 \001(\tR\006status\022\030\n\007vers"
-    "ion\030\032 \001(\rR\007version\022%\n\016schema_version\030\033 \001"
-    "(\rR\rschemaVersion\022\035\n\ncreated_at\030\034 \001(\004R\tc"
-    "reatedAt\022&\n\014published_at\030\035 \001(\004H\004R\013publis"
-    "hedAt\210\001\001\022\"\n\nupdated_at\030\036 \001(\004H\005R\tupdatedA"
-    "t\210\001\001B\r\n\013_brand_nameB\r\n\013_product_idB\022\n\020_p"
-    "roduct_id_typeB\013\n\t_metadataB\017\n\r_publishe"
-    "d_atB\r\n\013_updated_atBv\n\034org.megacommerce."
-    "products.v1B\014ProductProtoZEgithub.com/ah"
-    "mad-khatib0-org/megacommerce-proto/gen/g"
-    "o/products/v1;v1\370\001\001b\006proto3"
+    "tB\021\n\017_sale_price_end\"\256\001\n\030ProductOfferMin"
+    "imumOrder\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\t"
+    "R\005price\022\032\n\010quantity\030\003 \001(\004R\010quantity\022\035\n\nc"
+    "reated_at\030\004 \001(\004R\tcreatedAt\022\"\n\nupdated_at"
+    "\030\005 \001(\004H\000R\tupdatedAt\210\001\001B\r\n\013_updated_at\"\232\001"
+    "\n\rProductSafety\022>\n\006safety\030\001 \003(\0132&.produc"
+    "ts.v1.ProductSafety.SafetyEntryR\006safety\032"
+    "I\n\013SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005valu"
+    "e\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"J\n\nPr"
+    "oductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 "
+    "\001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\":\n\013Produc"
+    "tTags\022+\n\004tags\030\001 \003(\0132\027.products.v1.Produc"
+    "tTagR\004tags\"\021\n\017ProductMetadata\"\336\t\n\007Produc"
+    "t\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006user"
+    "Id\022\024\n\005title\030\003 \001(\tR\005title\022\032\n\010category\030\004 \001"
+    "(\tR\010category\022 \n\013subcategory\030\005 \001(\tR\013subca"
+    "tegory\022%\n\016has_variations\030\006 \001(\010R\rhasVaria"
+    "tions\022\"\n\nbrand_name\030\007 \001(\tH\000R\tbrandName\210\001"
+    "\001\022$\n\016has_brand_name\030\010 \001(\010R\014hasBrandName\022"
+    "\"\n\nproduct_id\030\t \001(\tH\001R\tproductId\210\001\001\022$\n\016h"
+    "as_product_id\030\n \001(\010R\014hasProductId\022+\n\017pro"
+    "duct_id_type\030\013 \001(\tH\002R\rproductIdType\210\001\001\022 "
+    "\n\013description\030\014 \001(\tR\013description\022D\n\rbull"
+    "et_points\030\r \003(\0132\037.products.v1.ProductBul"
+    "letPointR\014bulletPoints\022#\n\rcurrency_code\030"
+    "\016 \001(\tR\014currencyCode\022)\n\020fulfillment_type\030"
+    "\017 \001(\tR\017fulfillmentType\022\'\n\017processing_tim"
+    "e\030\020 \001(\004R\016processingTime\0225\n\007details\030\021 \001(\013"
+    "2\033.products.v1.ProductDetailsR\007details\022/"
+    "\n\005media\030\022 \001(\0132\031.products.v1.ProductMedia"
+    "R\005media\022/\n\005offer\030\023 \001(\0132\031.products.v1.Pro"
+    "ductOfferR\005offer\0222\n\006safety\030\024 \001(\0132\032.produ"
+    "cts.v1.ProductSafetyR\006safety\022+\n\004tags\030\025 \003"
+    "(\0132\027.products.v1.ProductTagR\004tags\022=\n\010met"
+    "adata\030\026 \001(\0132\034.products.v1.ProductMetadat"
+    "aH\003R\010metadata\210\001\001\022\035\n\nar_enabled\030\027 \001(\010R\tar"
+    "Enabled\022\022\n\004slug\030\030 \001(\tR\004slug\022\026\n\006status\030\031 "
+    "\001(\tR\006status\022\030\n\007version\030\032 \001(\rR\007version\022%\n"
+    "\016schema_version\030\033 \001(\rR\rschemaVersion\022\035\n\n"
+    "created_at\030\034 \001(\004R\tcreatedAt\022&\n\014published"
+    "_at\030\035 \001(\004H\004R\013publishedAt\210\001\001\022\"\n\nupdated_a"
+    "t\030\036 \001(\004H\005R\tupdatedAt\210\001\001B\r\n\013_brand_nameB\r"
+    "\n\013_product_idB\022\n\020_product_id_typeB\013\n\t_me"
+    "tadataB\017\n\r_published_atB\r\n\013_updated_atBv"
+    "\n\034org.megacommerce.products.v1B\014ProductP"
+    "rotoZEgithub.com/ahmad-khatib0-org/megac"
+    "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006"
+    "proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_2eproto_deps[1] = {
@@ -978,7 +992,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_2eproto = {
     false,
     false,
-    3787,
+    3886,
     descriptor_table_protodef_products_2fv1_2fproduct_2eproto,
     "products/v1/product.proto",
     &descriptor_table_products_2fv1_2fproduct_2eproto_once,
@@ -4791,6 +4805,7 @@ PROTOBUF_NDEBUG_INLINE ProductOfferMinimumOrder::Impl_::Impl_(
     const ::products::v1::ProductOfferMinimumOrder& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
+        id_(arena, from.id_),
         price_(arena, from.price_) {}
 
 ProductOfferMinimumOrder::ProductOfferMinimumOrder(
@@ -4806,7 +4821,13 @@ ProductOfferMinimumOrder::ProductOfferMinimumOrder(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  _impl_.quantity_ = from._impl_.quantity_;
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, quantity_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, quantity_),
+           offsetof(Impl_, updated_at_) -
+               offsetof(Impl_, quantity_) +
+               sizeof(Impl_::updated_at_));
 
   // @@protoc_insertion_point(copy_constructor:products.v1.ProductOfferMinimumOrder)
 }
@@ -4814,11 +4835,17 @@ PROTOBUF_NDEBUG_INLINE ProductOfferMinimumOrder::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
+        id_(arena),
         price_(arena) {}
 
 inline void ProductOfferMinimumOrder::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.quantity_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, quantity_),
+           0,
+           offsetof(Impl_, updated_at_) -
+               offsetof(Impl_, quantity_) +
+               sizeof(Impl_::updated_at_));
 }
 ProductOfferMinimumOrder::~ProductOfferMinimumOrder() {
   // @@protoc_insertion_point(destructor:products.v1.ProductOfferMinimumOrder)
@@ -4828,6 +4855,7 @@ inline void ProductOfferMinimumOrder::SharedDtor(MessageLite& self) {
   ProductOfferMinimumOrder& this_ = static_cast<ProductOfferMinimumOrder&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.id_.Destroy();
   this_._impl_.price_.Destroy();
   this_._impl_.~Impl_();
 }
@@ -4875,16 +4903,16 @@ ProductOfferMinimumOrder::GetClassData() const {
   return ProductOfferMinimumOrder_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 50, 2>
+const ::_pbi::TcParseTable<3, 5, 0, 52, 2>
 ProductOfferMinimumOrder::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_._has_bits_),
     0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
+    5, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
+    4294967264,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
+    5,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     ProductOfferMinimumOrder_class_data_.base(),
@@ -4894,26 +4922,48 @@ ProductOfferMinimumOrder::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::ProductOfferMinimumOrder>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // uint64 quantity = 2 [json_name = "quantity"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductOfferMinimumOrder, _impl_.quantity_), 1>(),
-     {16, 1, 0, PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.quantity_)}},
-    // string price = 1 [json_name = "price"];
+    {::_pbi::TcParser::MiniParse, {}},
+    // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.price_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.id_)}},
+    // string price = 2 [json_name = "price"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.price_)}},
+    // uint64 quantity = 3 [json_name = "quantity"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductOfferMinimumOrder, _impl_.quantity_), 2>(),
+     {24, 2, 0, PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.quantity_)}},
+    // uint64 created_at = 4 [json_name = "createdAt"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductOfferMinimumOrder, _impl_.created_at_), 3>(),
+     {32, 3, 0, PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.created_at_)}},
+    // optional uint64 updated_at = 5 [json_name = "updatedAt"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductOfferMinimumOrder, _impl_.updated_at_), 4>(),
+     {40, 4, 0, PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.updated_at_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
-    // string price = 1 [json_name = "price"];
-    {PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.price_), _Internal::kHasBitsOffset + 0, 0,
+    // string id = 1 [json_name = "id"];
+    {PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // uint64 quantity = 2 [json_name = "quantity"];
-    {PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.quantity_), _Internal::kHasBitsOffset + 1, 0,
+    // string price = 2 [json_name = "price"];
+    {PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.price_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // uint64 quantity = 3 [json_name = "quantity"];
+    {PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.quantity_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 created_at = 4 [json_name = "createdAt"];
+    {PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.created_at_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // optional uint64 updated_at = 5 [json_name = "updatedAt"];
+    {PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.updated_at_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
   // no aux_entries
   {{
-    "\44\5\0\0\0\0\0\0"
+    "\44\2\5\0\0\0\0\0"
     "products.v1.ProductOfferMinimumOrder"
+    "id"
     "price"
   }},
 };
@@ -4925,10 +4975,19 @@ PROTOBUF_NOINLINE void ProductOfferMinimumOrder::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000001u) != 0) {
-    _impl_.price_.ClearNonDefaultToEmpty();
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.id_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.price_.ClearNonDefaultToEmpty();
+    }
   }
-  _impl_.quantity_ = ::uint64_t{0u};
+  if ((cached_has_bits & 0x0000001cu) != 0) {
+    ::memset(&_impl_.quantity_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.updated_at_) -
+        reinterpret_cast<char*>(&_impl_.quantity_)) + sizeof(_impl_.updated_at_));
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -4948,23 +5007,50 @@ PROTOBUF_NOINLINE void ProductOfferMinimumOrder::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string price = 1 [json_name = "price"];
+  // string id = 1 [json_name = "id"];
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (!this_._internal_price().empty()) {
-      const ::std::string& _s = this_._internal_price();
+    if (!this_._internal_id().empty()) {
+      const ::std::string& _s = this_._internal_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductOfferMinimumOrder.price");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductOfferMinimumOrder.id");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
 
-  // uint64 quantity = 2 [json_name = "quantity"];
+  // string price = 2 [json_name = "price"];
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_price().empty()) {
+      const ::std::string& _s = this_._internal_price();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductOfferMinimumOrder.price");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // uint64 quantity = 3 [json_name = "quantity"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (this_._internal_quantity() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-          2, this_._internal_quantity(), target);
+          3, this_._internal_quantity(), target);
     }
+  }
+
+  // uint64 created_at = 4 [json_name = "createdAt"];
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    if (this_._internal_created_at() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          4, this_._internal_created_at(), target);
+    }
+  }
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // optional uint64 updated_at = 5 [json_name = "updatedAt"];
+  if ((cached_has_bits & 0x00000010u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        5, this_._internal_updated_at(), target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -4992,20 +5078,39 @@ PROTOBUF_NOINLINE void ProductOfferMinimumOrder::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    // string price = 1 [json_name = "price"];
+  if ((cached_has_bits & 0x0000001fu) != 0) {
+    // string id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_id());
+      }
+    }
+    // string price = 2 [json_name = "price"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_price().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_price());
       }
     }
-    // uint64 quantity = 2 [json_name = "quantity"];
-    if ((cached_has_bits & 0x00000002u) != 0) {
+    // uint64 quantity = 3 [json_name = "quantity"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
       if (this_._internal_quantity() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_quantity());
       }
+    }
+    // uint64 created_at = 4 [json_name = "createdAt"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (this_._internal_created_at() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_created_at());
+      }
+    }
+    // optional uint64 updated_at = 5 [json_name = "updatedAt"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+          this_._internal_updated_at());
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -5021,8 +5126,17 @@ void ProductOfferMinimumOrder::MergeImpl(::google::protobuf::MessageLite& to_msg
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
+  if ((cached_has_bits & 0x0000001fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_id().empty()) {
+        _this->_internal_set_id(from._internal_id());
+      } else {
+        if (_this->_impl_.id_.IsDefault()) {
+          _this->_internal_set_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
       if (!from._internal_price().empty()) {
         _this->_internal_set_price(from._internal_price());
       } else {
@@ -5031,10 +5145,18 @@ void ProductOfferMinimumOrder::MergeImpl(::google::protobuf::MessageLite& to_msg
         }
       }
     }
-    if ((cached_has_bits & 0x00000002u) != 0) {
+    if ((cached_has_bits & 0x00000004u) != 0) {
       if (from._internal_quantity() != 0) {
         _this->_impl_.quantity_ = from._impl_.quantity_;
       }
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (from._internal_created_at() != 0) {
+        _this->_impl_.created_at_ = from._impl_.created_at_;
+      }
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      _this->_impl_.updated_at_ = from._impl_.updated_at_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -5055,8 +5177,14 @@ void ProductOfferMinimumOrder::InternalSwap(ProductOfferMinimumOrder* PROTOBUF_R
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.price_, &other->_impl_.price_, arena);
-  swap(_impl_.quantity_, other->_impl_.quantity_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.updated_at_)
+      + sizeof(ProductOfferMinimumOrder::_impl_.updated_at_)
+      - PROTOBUF_FIELD_OFFSET(ProductOfferMinimumOrder, _impl_.quantity_)>(
+          reinterpret_cast<char*>(&_impl_.quantity_),
+          reinterpret_cast<char*>(&other->_impl_.quantity_));
 }
 
 ::google::protobuf::Metadata ProductOfferMinimumOrder::GetMetadata() const {

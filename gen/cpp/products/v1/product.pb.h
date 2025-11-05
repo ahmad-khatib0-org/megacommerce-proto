@@ -512,10 +512,28 @@ class ProductOfferMinimumOrder final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kPriceFieldNumber = 1,
-    kQuantityFieldNumber = 2,
+    kIdFieldNumber = 1,
+    kPriceFieldNumber = 2,
+    kQuantityFieldNumber = 3,
+    kCreatedAtFieldNumber = 4,
+    kUpdatedAtFieldNumber = 5,
   };
-  // string price = 1 [json_name = "price"];
+  // string id = 1 [json_name = "id"];
+  void clear_id() ;
+  const ::std::string& id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_id();
+  void set_allocated_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
+
+  public:
+  // string price = 2 [json_name = "price"];
   void clear_price() ;
   const ::std::string& price() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -530,7 +548,7 @@ class ProductOfferMinimumOrder final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_price();
 
   public:
-  // uint64 quantity = 2 [json_name = "quantity"];
+  // uint64 quantity = 3 [json_name = "quantity"];
   void clear_quantity() ;
   ::uint64_t quantity() const;
   void set_quantity(::uint64_t value);
@@ -540,12 +558,33 @@ class ProductOfferMinimumOrder final : public ::google::protobuf::Message
   void _internal_set_quantity(::uint64_t value);
 
   public:
+  // uint64 created_at = 4 [json_name = "createdAt"];
+  void clear_created_at() ;
+  ::uint64_t created_at() const;
+  void set_created_at(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_created_at() const;
+  void _internal_set_created_at(::uint64_t value);
+
+  public:
+  // optional uint64 updated_at = 5 [json_name = "updatedAt"];
+  bool has_updated_at() const;
+  void clear_updated_at() ;
+  ::uint64_t updated_at() const;
+  void set_updated_at(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_updated_at() const;
+  void _internal_set_updated_at(::uint64_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:products.v1.ProductOfferMinimumOrder)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   0, 50,
+  static const ::google::protobuf::internal::TcParseTable<3, 5,
+                                   0, 52,
                                    2>
       _table_;
 
@@ -566,8 +605,11 @@ class ProductOfferMinimumOrder final : public ::google::protobuf::Message
         const ProductOfferMinimumOrder& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr id_;
     ::google::protobuf::internal::ArenaStringPtr price_;
     ::uint64_t quantity_;
+    ::uint64_t created_at_;
+    ::uint64_t updated_at_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -5660,11 +5702,76 @@ ProductOfferVariant::_internal_mutable_minimum_orders() {
 
 // ProductOfferMinimumOrder
 
-// string price = 1 [json_name = "price"];
+// string id = 1 [json_name = "id"];
+inline void ProductOfferMinimumOrder::clear_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::std::string& ProductOfferMinimumOrder::id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductOfferMinimumOrder.id)
+  return _internal_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ProductOfferMinimumOrder::set_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.ProductOfferMinimumOrder.id)
+}
+inline ::std::string* PROTOBUF_NONNULL ProductOfferMinimumOrder::mutable_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductOfferMinimumOrder.id)
+  return _s;
+}
+inline const ::std::string& ProductOfferMinimumOrder::_internal_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.id_.Get();
+}
+inline void ProductOfferMinimumOrder::_internal_set_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ProductOfferMinimumOrder::_internal_mutable_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ProductOfferMinimumOrder::release_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductOfferMinimumOrder.id)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ProductOfferMinimumOrder::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.id_.IsDefault()) {
+    _impl_.id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductOfferMinimumOrder.id)
+}
+
+// string price = 2 [json_name = "price"];
 inline void ProductOfferMinimumOrder::clear_price() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.price_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const ::std::string& ProductOfferMinimumOrder::price() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -5674,7 +5781,7 @@ inline const ::std::string& ProductOfferMinimumOrder::price() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ProductOfferMinimumOrder::set_price(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.price_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:products.v1.ProductOfferMinimumOrder.price)
 }
@@ -5690,21 +5797,21 @@ inline const ::std::string& ProductOfferMinimumOrder::_internal_price() const {
 }
 inline void ProductOfferMinimumOrder::_internal_set_price(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.price_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ProductOfferMinimumOrder::_internal_mutable_price() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.price_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ProductOfferMinimumOrder::release_price() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:products.v1.ProductOfferMinimumOrder.price)
-  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
   auto* released = _impl_.price_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.price_.Set("", GetArena());
@@ -5714,9 +5821,9 @@ inline ::std::string* PROTOBUF_NULLABLE ProductOfferMinimumOrder::release_price(
 inline void ProductOfferMinimumOrder::set_allocated_price(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.price_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.price_.IsDefault()) {
@@ -5725,11 +5832,11 @@ inline void ProductOfferMinimumOrder::set_allocated_price(::std::string* PROTOBU
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductOfferMinimumOrder.price)
 }
 
-// uint64 quantity = 2 [json_name = "quantity"];
+// uint64 quantity = 3 [json_name = "quantity"];
 inline void ProductOfferMinimumOrder::clear_quantity() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline ::uint64_t ProductOfferMinimumOrder::quantity() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductOfferMinimumOrder.quantity)
@@ -5737,7 +5844,7 @@ inline ::uint64_t ProductOfferMinimumOrder::quantity() const {
 }
 inline void ProductOfferMinimumOrder::set_quantity(::uint64_t value) {
   _internal_set_quantity(value);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   // @@protoc_insertion_point(field_set:products.v1.ProductOfferMinimumOrder.quantity)
 }
 inline ::uint64_t ProductOfferMinimumOrder::_internal_quantity() const {
@@ -5747,6 +5854,58 @@ inline ::uint64_t ProductOfferMinimumOrder::_internal_quantity() const {
 inline void ProductOfferMinimumOrder::_internal_set_quantity(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_ = value;
+}
+
+// uint64 created_at = 4 [json_name = "createdAt"];
+inline void ProductOfferMinimumOrder::clear_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.created_at_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline ::uint64_t ProductOfferMinimumOrder::created_at() const {
+  // @@protoc_insertion_point(field_get:products.v1.ProductOfferMinimumOrder.created_at)
+  return _internal_created_at();
+}
+inline void ProductOfferMinimumOrder::set_created_at(::uint64_t value) {
+  _internal_set_created_at(value);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  // @@protoc_insertion_point(field_set:products.v1.ProductOfferMinimumOrder.created_at)
+}
+inline ::uint64_t ProductOfferMinimumOrder::_internal_created_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.created_at_;
+}
+inline void ProductOfferMinimumOrder::_internal_set_created_at(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.created_at_ = value;
+}
+
+// optional uint64 updated_at = 5 [json_name = "updatedAt"];
+inline bool ProductOfferMinimumOrder::has_updated_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline void ProductOfferMinimumOrder::clear_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.updated_at_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline ::uint64_t ProductOfferMinimumOrder::updated_at() const {
+  // @@protoc_insertion_point(field_get:products.v1.ProductOfferMinimumOrder.updated_at)
+  return _internal_updated_at();
+}
+inline void ProductOfferMinimumOrder::set_updated_at(::uint64_t value) {
+  _internal_set_updated_at(value);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  // @@protoc_insertion_point(field_set:products.v1.ProductOfferMinimumOrder.updated_at)
+}
+inline ::uint64_t ProductOfferMinimumOrder::_internal_updated_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.updated_at_;
+}
+inline void ProductOfferMinimumOrder::_internal_set_updated_at(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.updated_at_ = value;
 }
 
 // -------------------------------------------------------------------

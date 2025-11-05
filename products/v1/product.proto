@@ -73,8 +73,11 @@ message ProductOfferVariant {
 }
 
 message ProductOfferMinimumOrder {
-  string price = 1;
-  uint64 quantity = 2;
+  string id = 1;
+  string price = 2;
+  uint64 quantity = 3;
+  uint64 created_at = 4;
+  optional uint64 updated_at = 5;
 }
 
 message ProductSafety {

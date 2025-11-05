@@ -9381,22 +9381,51 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string price = 1 [json_name = "price"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string price = 2 [json_name = "price"];</code>
      * @return The price.
      */
     java.lang.String getPrice();
     /**
-     * <code>string price = 1 [json_name = "price"];</code>
+     * <code>string price = 2 [json_name = "price"];</code>
      * @return The bytes for price.
      */
     com.google.protobuf.ByteString
         getPriceBytes();
 
     /**
-     * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+     * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
      * @return The quantity.
      */
     long getQuantity();
+
+    /**
+     * <code>uint64 created_at = 4 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    long getCreatedAt();
+
+    /**
+     * <code>optional uint64 updated_at = 5 [json_name = "updatedAt"];</code>
+     * @return Whether the updatedAt field is set.
+     */
+    boolean hasUpdatedAt();
+    /**
+     * <code>optional uint64 updated_at = 5 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    long getUpdatedAt();
   }
   /**
    * Protobuf type {@code products.v1.ProductOfferMinimumOrder}
@@ -9420,6 +9449,7 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       super(builder);
     }
     private ProductOfferMinimumOrder() {
+      id_ = "";
       price_ = "";
     }
 
@@ -9436,11 +9466,51 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
               org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.class, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder.class);
     }
 
-    public static final int PRICE_FIELD_NUMBER = 1;
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRICE_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
     private volatile java.lang.Object price_ = "";
     /**
-     * <code>string price = 1 [json_name = "price"];</code>
+     * <code>string price = 2 [json_name = "price"];</code>
      * @return The price.
      */
     @java.lang.Override
@@ -9457,7 +9527,7 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       }
     }
     /**
-     * <code>string price = 1 [json_name = "price"];</code>
+     * <code>string price = 2 [json_name = "price"];</code>
      * @return The bytes for price.
      */
     @java.lang.Override
@@ -9475,15 +9545,45 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       }
     }
 
-    public static final int QUANTITY_FIELD_NUMBER = 2;
+    public static final int QUANTITY_FIELD_NUMBER = 3;
     private long quantity_ = 0L;
     /**
-     * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+     * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
      * @return The quantity.
      */
     @java.lang.Override
     public long getQuantity() {
       return quantity_;
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 4;
+    private long createdAt_ = 0L;
+    /**
+     * <code>uint64 created_at = 4 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public long getCreatedAt() {
+      return createdAt_;
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 5;
+    private long updatedAt_ = 0L;
+    /**
+     * <code>optional uint64 updated_at = 5 [json_name = "updatedAt"];</code>
+     * @return Whether the updatedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdatedAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional uint64 updated_at = 5 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public long getUpdatedAt() {
+      return updatedAt_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9500,11 +9600,20 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, price_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, price_);
       }
       if (quantity_ != 0L) {
-        output.writeUInt64(2, quantity_);
+        output.writeUInt64(3, quantity_);
+      }
+      if (createdAt_ != 0L) {
+        output.writeUInt64(4, createdAt_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeUInt64(5, updatedAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -9515,12 +9624,23 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, price_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, price_);
       }
       if (quantity_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, quantity_);
+          .computeUInt64Size(3, quantity_);
+      }
+      if (createdAt_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, createdAt_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, updatedAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -9537,10 +9657,19 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       }
       org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder other = (org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder) obj;
 
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!getPrice()
           .equals(other.getPrice())) return false;
       if (getQuantity()
           != other.getQuantity()) return false;
+      if (getCreatedAt()
+          != other.getCreatedAt()) return false;
+      if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+      if (hasUpdatedAt()) {
+        if (getUpdatedAt()
+            != other.getUpdatedAt()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -9552,11 +9681,21 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
       hash = (53 * hash) + getPrice().hashCode();
       hash = (37 * hash) + QUANTITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getQuantity());
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCreatedAt());
+      if (hasUpdatedAt()) {
+        hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUpdatedAt());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9688,8 +9827,11 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        id_ = "";
         price_ = "";
         quantity_ = 0L;
+        createdAt_ = 0L;
+        updatedAt_ = 0L;
         return this;
       }
 
@@ -9724,11 +9866,23 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.price_ = price_;
+          result.id_ = id_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.price_ = price_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.quantity_ = quantity_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.createdAt_ = createdAt_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.updatedAt_ = updatedAt_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -9743,13 +9897,24 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
 
       public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder other) {
         if (other == org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
         if (!other.getPrice().isEmpty()) {
           price_ = other.price_;
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getQuantity() != 0L) {
           setQuantity(other.getQuantity());
+        }
+        if (other.getCreatedAt() != 0L) {
+          setCreatedAt(other.getCreatedAt());
+        }
+        if (other.hasUpdatedAt()) {
+          setUpdatedAt(other.getUpdatedAt());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -9778,15 +9943,30 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
                 done = true;
                 break;
               case 10: {
-                price_ = input.readStringRequireUtf8();
+                id_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-              case 16: {
-                quantity_ = input.readUInt64();
+              case 18: {
+                price_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
+              } // case 18
+              case 24: {
+                quantity_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                createdAt_ = input.readUInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                updatedAt_ = input.readUInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -9804,9 +9984,81 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
       }
       private int bitField0_;
 
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object price_ = "";
       /**
-       * <code>string price = 1 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
        * @return The price.
        */
       public java.lang.String getPrice() {
@@ -9822,7 +10074,7 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
         }
       }
       /**
-       * <code>string price = 1 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
        * @return The bytes for price.
        */
       public com.google.protobuf.ByteString
@@ -9839,7 +10091,7 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
         }
       }
       /**
-       * <code>string price = 1 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
@@ -9847,22 +10099,22 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         price_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string price = 1 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
         price_ = getDefaultInstance().getPrice();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string price = 1 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
        * @param value The bytes for price to set.
        * @return This builder for chaining.
        */
@@ -9871,14 +10123,14 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         price_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
       private long quantity_ ;
       /**
-       * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+       * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
        * @return The quantity.
        */
       @java.lang.Override
@@ -9886,24 +10138,96 @@ org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
         return quantity_;
       }
       /**
-       * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+       * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
        * @param value The quantity to set.
        * @return This builder for chaining.
        */
       public Builder setQuantity(long value) {
 
         quantity_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+       * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
        * @return This builder for chaining.
        */
       public Builder clearQuantity() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         quantity_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long createdAt_ ;
+      /**
+       * <code>uint64 created_at = 4 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      @java.lang.Override
+      public long getCreatedAt() {
+        return createdAt_;
+      }
+      /**
+       * <code>uint64 created_at = 4 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(long value) {
+
+        createdAt_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 created_at = 4 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        createdAt_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long updatedAt_ ;
+      /**
+       * <code>optional uint64 updated_at = 5 [json_name = "updatedAt"];</code>
+       * @return Whether the updatedAt field is set.
+       */
+      @java.lang.Override
+      public boolean hasUpdatedAt() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <code>optional uint64 updated_at = 5 [json_name = "updatedAt"];</code>
+       * @return The updatedAt.
+       */
+      @java.lang.Override
+      public long getUpdatedAt() {
+        return updatedAt_;
+      }
+      /**
+       * <code>optional uint64 updated_at = 5 [json_name = "updatedAt"];</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(long value) {
+
+        updatedAt_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 updated_at = 5 [json_name = "updatedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        updatedAt_ = 0L;
         onChanged();
         return this;
       }
@@ -17466,51 +17790,54 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       "products.v1.ProductOfferMinimumOrderR\rmi" +
       "nimumOrdersB\021\n\017_condition_noteB\r\n\013_list_" +
       "priceB\r\n\013_sale_priceB\023\n\021_sale_price_star" +
-      "tB\021\n\017_sale_price_end\"L\n\030ProductOfferMini" +
-      "mumOrder\022\024\n\005price\030\001 \001(\tR\005price\022\032\n\010quanti" +
-      "ty\030\002 \001(\004R\010quantity\"\232\001\n\rProductSafety\022>\n\006" +
-      "safety\030\001 \003(\0132&.products.v1.ProductSafety" +
-      ".SafetyEntryR\006safety\032I\n\013SafetyEntry\022\020\n\003k" +
-      "ey\030\001 \001(\tR\003key\022$\n\005value\030\002 \001(\0132\016.shared.v1" +
-      ".AnyR\005value:\0028\001\"J\n\nProductTag\022\023\n\002id\030\001 \001(" +
-      "\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_" +
-      "idB\007\n\005_name\":\n\013ProductTags\022+\n\004tags\030\001 \003(\013" +
-      "2\027.products.v1.ProductTagR\004tags\"\021\n\017Produ" +
-      "ctMetadata\"\336\t\n\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\027" +
-      "\n\007user_id\030\002 \001(\tR\006userId\022\024\n\005title\030\003 \001(\tR\005" +
-      "title\022\032\n\010category\030\004 \001(\tR\010category\022 \n\013sub" +
-      "category\030\005 \001(\tR\013subcategory\022%\n\016has_varia" +
-      "tions\030\006 \001(\010R\rhasVariations\022\"\n\nbrand_name" +
-      "\030\007 \001(\tH\000R\tbrandName\210\001\001\022$\n\016has_brand_name" +
-      "\030\010 \001(\010R\014hasBrandName\022\"\n\nproduct_id\030\t \001(\t" +
-      "H\001R\tproductId\210\001\001\022$\n\016has_product_id\030\n \001(\010" +
-      "R\014hasProductId\022+\n\017product_id_type\030\013 \001(\tH" +
-      "\002R\rproductIdType\210\001\001\022 \n\013description\030\014 \001(\t" +
-      "R\013description\022D\n\rbullet_points\030\r \003(\0132\037.p" +
-      "roducts.v1.ProductBulletPointR\014bulletPoi" +
-      "nts\022#\n\rcurrency_code\030\016 \001(\tR\014currencyCode" +
-      "\022)\n\020fulfillment_type\030\017 \001(\tR\017fulfillmentT" +
-      "ype\022\'\n\017processing_time\030\020 \001(\004R\016processing" +
-      "Time\0225\n\007details\030\021 \001(\0132\033.products.v1.Prod" +
-      "uctDetailsR\007details\022/\n\005media\030\022 \001(\0132\031.pro" +
-      "ducts.v1.ProductMediaR\005media\022/\n\005offer\030\023 " +
-      "\001(\0132\031.products.v1.ProductOfferR\005offer\0222\n" +
-      "\006safety\030\024 \001(\0132\032.products.v1.ProductSafet" +
-      "yR\006safety\022+\n\004tags\030\025 \003(\0132\027.products.v1.Pr" +
-      "oductTagR\004tags\022=\n\010metadata\030\026 \001(\0132\034.produ" +
-      "cts.v1.ProductMetadataH\003R\010metadata\210\001\001\022\035\n" +
-      "\nar_enabled\030\027 \001(\010R\tarEnabled\022\022\n\004slug\030\030 \001" +
-      "(\tR\004slug\022\026\n\006status\030\031 \001(\tR\006status\022\030\n\007vers" +
-      "ion\030\032 \001(\rR\007version\022%\n\016schema_version\030\033 \001" +
-      "(\rR\rschemaVersion\022\035\n\ncreated_at\030\034 \001(\004R\tc" +
-      "reatedAt\022&\n\014published_at\030\035 \001(\004H\004R\013publis" +
-      "hedAt\210\001\001\022\"\n\nupdated_at\030\036 \001(\004H\005R\tupdatedA" +
-      "t\210\001\001B\r\n\013_brand_nameB\r\n\013_product_idB\022\n\020_p" +
-      "roduct_id_typeB\013\n\t_metadataB\017\n\r_publishe" +
-      "d_atB\r\n\013_updated_atBv\n\034org.megacommerce." +
-      "products.v1B\014ProductProtoZEgithub.com/ah" +
-      "mad-khatib0-org/megacommerce-proto/gen/g" +
-      "o/products/v1;v1\370\001\001b\006proto3"
+      "tB\021\n\017_sale_price_end\"\256\001\n\030ProductOfferMin" +
+      "imumOrder\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\t" +
+      "R\005price\022\032\n\010quantity\030\003 \001(\004R\010quantity\022\035\n\nc" +
+      "reated_at\030\004 \001(\004R\tcreatedAt\022\"\n\nupdated_at" +
+      "\030\005 \001(\004H\000R\tupdatedAt\210\001\001B\r\n\013_updated_at\"\232\001" +
+      "\n\rProductSafety\022>\n\006safety\030\001 \003(\0132&.produc" +
+      "ts.v1.ProductSafety.SafetyEntryR\006safety\032" +
+      "I\n\013SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005valu" +
+      "e\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"J\n\nPr" +
+      "oductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 " +
+      "\001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\":\n\013Produc" +
+      "tTags\022+\n\004tags\030\001 \003(\0132\027.products.v1.Produc" +
+      "tTagR\004tags\"\021\n\017ProductMetadata\"\336\t\n\007Produc" +
+      "t\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006user" +
+      "Id\022\024\n\005title\030\003 \001(\tR\005title\022\032\n\010category\030\004 \001" +
+      "(\tR\010category\022 \n\013subcategory\030\005 \001(\tR\013subca" +
+      "tegory\022%\n\016has_variations\030\006 \001(\010R\rhasVaria" +
+      "tions\022\"\n\nbrand_name\030\007 \001(\tH\000R\tbrandName\210\001" +
+      "\001\022$\n\016has_brand_name\030\010 \001(\010R\014hasBrandName\022" +
+      "\"\n\nproduct_id\030\t \001(\tH\001R\tproductId\210\001\001\022$\n\016h" +
+      "as_product_id\030\n \001(\010R\014hasProductId\022+\n\017pro" +
+      "duct_id_type\030\013 \001(\tH\002R\rproductIdType\210\001\001\022 " +
+      "\n\013description\030\014 \001(\tR\013description\022D\n\rbull" +
+      "et_points\030\r \003(\0132\037.products.v1.ProductBul" +
+      "letPointR\014bulletPoints\022#\n\rcurrency_code\030" +
+      "\016 \001(\tR\014currencyCode\022)\n\020fulfillment_type\030" +
+      "\017 \001(\tR\017fulfillmentType\022\'\n\017processing_tim" +
+      "e\030\020 \001(\004R\016processingTime\0225\n\007details\030\021 \001(\013" +
+      "2\033.products.v1.ProductDetailsR\007details\022/" +
+      "\n\005media\030\022 \001(\0132\031.products.v1.ProductMedia" +
+      "R\005media\022/\n\005offer\030\023 \001(\0132\031.products.v1.Pro" +
+      "ductOfferR\005offer\0222\n\006safety\030\024 \001(\0132\032.produ" +
+      "cts.v1.ProductSafetyR\006safety\022+\n\004tags\030\025 \003" +
+      "(\0132\027.products.v1.ProductTagR\004tags\022=\n\010met" +
+      "adata\030\026 \001(\0132\034.products.v1.ProductMetadat" +
+      "aH\003R\010metadata\210\001\001\022\035\n\nar_enabled\030\027 \001(\010R\tar" +
+      "Enabled\022\022\n\004slug\030\030 \001(\tR\004slug\022\026\n\006status\030\031 " +
+      "\001(\tR\006status\022\030\n\007version\030\032 \001(\rR\007version\022%\n" +
+      "\016schema_version\030\033 \001(\rR\rschemaVersion\022\035\n\n" +
+      "created_at\030\034 \001(\004R\tcreatedAt\022&\n\014published" +
+      "_at\030\035 \001(\004H\004R\013publishedAt\210\001\001\022\"\n\nupdated_a" +
+      "t\030\036 \001(\004H\005R\tupdatedAt\210\001\001B\r\n\013_brand_nameB\r" +
+      "\n\013_product_idB\022\n\020_product_id_typeB\013\n\t_me" +
+      "tadataB\017\n\r_published_atB\r\n\013_updated_atBv" +
+      "\n\034org.megacommerce.products.v1B\014ProductP" +
+      "rotoZEgithub.com/ahmad-khatib0-org/megac" +
+      "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17606,7 +17933,7 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     internal_static_products_v1_ProductOfferMinimumOrder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductOfferMinimumOrder_descriptor,
-        new java.lang.String[] { "Price", "Quantity", });
+        new java.lang.String[] { "Id", "Price", "Quantity", "CreatedAt", "UpdatedAt", });
     internal_static_products_v1_ProductSafety_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_products_v1_ProductSafety_fieldAccessorTable = new

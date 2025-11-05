@@ -103,8 +103,11 @@ export interface ProductOfferVariant {
 }
 
 export interface ProductOfferMinimumOrder {
+  id: string;
   price: string;
   quantity: string;
+  createdAt: string;
+  updatedAt?: string | undefined;
 }
 
 export interface ProductSafety {
@@ -1570,16 +1573,25 @@ export const ProductOfferVariant: MessageFns<ProductOfferVariant> = {
 };
 
 function createBaseProductOfferMinimumOrder(): ProductOfferMinimumOrder {
-  return { price: "", quantity: "0" };
+  return { id: "", price: "", quantity: "0", createdAt: "0", updatedAt: undefined };
 }
 
 export const ProductOfferMinimumOrder: MessageFns<ProductOfferMinimumOrder> = {
   encode(message: ProductOfferMinimumOrder, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
     if (message.price !== "") {
-      writer.uint32(10).string(message.price);
+      writer.uint32(18).string(message.price);
     }
     if (message.quantity !== "0") {
-      writer.uint32(16).uint64(message.quantity);
+      writer.uint32(24).uint64(message.quantity);
+    }
+    if (message.createdAt !== "0") {
+      writer.uint32(32).uint64(message.createdAt);
+    }
+    if (message.updatedAt !== undefined) {
+      writer.uint32(40).uint64(message.updatedAt);
     }
     return writer;
   },
@@ -1596,15 +1608,39 @@ export const ProductOfferMinimumOrder: MessageFns<ProductOfferMinimumOrder> = {
             break;
           }
 
-          message.price = reader.string();
+          message.id = reader.string();
           continue;
         }
         case 2: {
-          if (tag !== 16) {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.price = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
             break;
           }
 
           message.quantity = reader.uint64().toString();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
+            break;
+          }
+
+          message.createdAt = reader.uint64().toString();
+          continue;
+        }
+        case 5: {
+          if (tag !== 40) {
+            break;
+          }
+
+          message.updatedAt = reader.uint64().toString();
           continue;
         }
       }
@@ -1618,18 +1654,30 @@ export const ProductOfferMinimumOrder: MessageFns<ProductOfferMinimumOrder> = {
 
   fromJSON(object: any): ProductOfferMinimumOrder {
     return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
       price: isSet(object.price) ? globalThis.String(object.price) : "",
       quantity: isSet(object.quantity) ? globalThis.String(object.quantity) : "0",
+      createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
+      updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : undefined,
     };
   },
 
   toJSON(message: ProductOfferMinimumOrder): unknown {
     const obj: any = {};
+    if (message.id !== "") {
+      obj.id = message.id;
+    }
     if (message.price !== "") {
       obj.price = message.price;
     }
     if (message.quantity !== "0") {
       obj.quantity = message.quantity;
+    }
+    if (message.createdAt !== "0") {
+      obj.createdAt = message.createdAt;
+    }
+    if (message.updatedAt !== undefined) {
+      obj.updatedAt = message.updatedAt;
     }
     return obj;
   },
@@ -1639,8 +1687,11 @@ export const ProductOfferMinimumOrder: MessageFns<ProductOfferMinimumOrder> = {
   },
   fromPartial<I extends Exact<DeepPartial<ProductOfferMinimumOrder>, I>>(object: I): ProductOfferMinimumOrder {
     const message = createBaseProductOfferMinimumOrder();
+    message.id = object.id ?? "";
     message.price = object.price ?? "";
     message.quantity = object.quantity ?? "0";
+    message.createdAt = object.createdAt ?? "0";
+    message.updatedAt = object.updatedAt ?? undefined;
     return message;
   },
 };

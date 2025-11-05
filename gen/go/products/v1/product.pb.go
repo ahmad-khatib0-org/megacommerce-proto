@@ -601,8 +601,11 @@ func (x *ProductOfferVariant) GetMinimumOrders() []*ProductOfferMinimumOrder {
 
 type ProductOfferMinimumOrder struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Price         string                 `protobuf:"bytes,1,opt,name=price,proto3" json:"price,omitempty"`
-	Quantity      uint64                 `protobuf:"varint,2,opt,name=quantity,proto3" json:"quantity,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Price         string                 `protobuf:"bytes,2,opt,name=price,proto3" json:"price,omitempty"`
+	Quantity      uint64                 `protobuf:"varint,3,opt,name=quantity,proto3" json:"quantity,omitempty"`
+	CreatedAt     uint64                 `protobuf:"varint,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *uint64                `protobuf:"varint,5,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -637,6 +640,13 @@ func (*ProductOfferMinimumOrder) Descriptor() ([]byte, []int) {
 	return file_products_v1_product_proto_rawDescGZIP(), []int{9}
 }
 
+func (x *ProductOfferMinimumOrder) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 func (x *ProductOfferMinimumOrder) GetPrice() string {
 	if x != nil {
 		return x.Price
@@ -647,6 +657,20 @@ func (x *ProductOfferMinimumOrder) GetPrice() string {
 func (x *ProductOfferMinimumOrder) GetQuantity() uint64 {
 	if x != nil {
 		return x.Quantity
+	}
+	return 0
+}
+
+func (x *ProductOfferMinimumOrder) GetCreatedAt() uint64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+func (x *ProductOfferMinimumOrder) GetUpdatedAt() uint64 {
+	if x != nil && x.UpdatedAt != nil {
+		return *x.UpdatedAt
 	}
 	return 0
 }
@@ -1175,10 +1199,16 @@ const file_products_v1_product_proto_rawDesc = "" +
 	"\v_list_priceB\r\n" +
 	"\v_sale_priceB\x13\n" +
 	"\x11_sale_price_startB\x11\n" +
-	"\x0f_sale_price_end\"L\n" +
-	"\x18ProductOfferMinimumOrder\x12\x14\n" +
-	"\x05price\x18\x01 \x01(\tR\x05price\x12\x1a\n" +
-	"\bquantity\x18\x02 \x01(\x04R\bquantity\"\x9a\x01\n" +
+	"\x0f_sale_price_end\"\xae\x01\n" +
+	"\x18ProductOfferMinimumOrder\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05price\x18\x02 \x01(\tR\x05price\x12\x1a\n" +
+	"\bquantity\x18\x03 \x01(\x04R\bquantity\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\x04 \x01(\x04R\tcreatedAt\x12\"\n" +
+	"\n" +
+	"updated_at\x18\x05 \x01(\x04H\x00R\tupdatedAt\x88\x01\x01B\r\n" +
+	"\v_updated_at\"\x9a\x01\n" +
 	"\rProductSafety\x12>\n" +
 	"\x06safety\x18\x01 \x03(\v2&.products.v1.ProductSafety.SafetyEntryR\x06safety\x1aI\n" +
 	"\vSafetyEntry\x12\x10\n" +
@@ -1313,6 +1343,7 @@ func file_products_v1_product_proto_init() {
 	}
 	file_products_v1_product_proto_msgTypes[0].OneofWrappers = []any{}
 	file_products_v1_product_proto_msgTypes[8].OneofWrappers = []any{}
+	file_products_v1_product_proto_msgTypes[9].OneofWrappers = []any{}
 	file_products_v1_product_proto_msgTypes[11].OneofWrappers = []any{}
 	file_products_v1_product_proto_msgTypes[14].OneofWrappers = []any{}
 	type x struct{}

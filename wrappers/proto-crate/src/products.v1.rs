@@ -406,9 +406,15 @@ pub struct ProductOfferVariant {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductOfferMinimumOrder {
     #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
     pub price: ::prost::alloc::string::String,
-    #[prost(uint64, tag = "2")]
+    #[prost(uint64, tag = "3")]
     pub quantity: u64,
+    #[prost(uint64, tag = "4")]
+    pub created_at: u64,
+    #[prost(uint64, optional, tag = "5")]
+    pub updated_at: ::core::option::Option<u64>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
