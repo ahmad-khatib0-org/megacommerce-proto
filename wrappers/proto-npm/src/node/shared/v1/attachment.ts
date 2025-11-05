@@ -10,69 +10,6 @@ import { Struct } from "./struct";
 
 export const protobufPackage = "shared.v1";
 
-export enum AttachmentErrorType {
-  UNSPECIFIED = 0,
-  INVALID_BASE64 = 1,
-  INVALID_FILE_TYPE = 2,
-  BIG_FILE = 3,
-  DECODE_IMG = 4,
-  BIG_DIMENSIONS_IMG = 5,
-  UNSUPPORTED_FILE_TYPE = 6,
-  UNRECOGNIZED = -1,
-}
-
-export function attachmentErrorTypeFromJSON(object: any): AttachmentErrorType {
-  switch (object) {
-    case 0:
-    case "UNSPECIFIED":
-      return AttachmentErrorType.UNSPECIFIED;
-    case 1:
-    case "INVALID_BASE64":
-      return AttachmentErrorType.INVALID_BASE64;
-    case 2:
-    case "INVALID_FILE_TYPE":
-      return AttachmentErrorType.INVALID_FILE_TYPE;
-    case 3:
-    case "BIG_FILE":
-      return AttachmentErrorType.BIG_FILE;
-    case 4:
-    case "DECODE_IMG":
-      return AttachmentErrorType.DECODE_IMG;
-    case 5:
-    case "BIG_DIMENSIONS_IMG":
-      return AttachmentErrorType.BIG_DIMENSIONS_IMG;
-    case 6:
-    case "UNSUPPORTED_FILE_TYPE":
-      return AttachmentErrorType.UNSUPPORTED_FILE_TYPE;
-    case -1:
-    case "UNRECOGNIZED":
-    default:
-      return AttachmentErrorType.UNRECOGNIZED;
-  }
-}
-
-export function attachmentErrorTypeToJSON(object: AttachmentErrorType): string {
-  switch (object) {
-    case AttachmentErrorType.UNSPECIFIED:
-      return "UNSPECIFIED";
-    case AttachmentErrorType.INVALID_BASE64:
-      return "INVALID_BASE64";
-    case AttachmentErrorType.INVALID_FILE_TYPE:
-      return "INVALID_FILE_TYPE";
-    case AttachmentErrorType.BIG_FILE:
-      return "BIG_FILE";
-    case AttachmentErrorType.DECODE_IMG:
-      return "DECODE_IMG";
-    case AttachmentErrorType.BIG_DIMENSIONS_IMG:
-      return "BIG_DIMENSIONS_IMG";
-    case AttachmentErrorType.UNSUPPORTED_FILE_TYPE:
-      return "UNSUPPORTED_FILE_TYPE";
-    case AttachmentErrorType.UNRECOGNIZED:
-    default:
-      return "UNRECOGNIZED";
-  }
-}
-
 export interface Attachment {
   id: string;
   filename: string;
@@ -105,16 +42,6 @@ export interface Crop {
   width: number;
   height: number;
   aspectRatio: number;
-}
-
-export interface AttachmentError {
-  /** the attachment id */
-  id: string;
-  type: AttachmentErrorType;
-  /** shown to the user */
-  message: string;
-  /** used for the backend */
-  error: string;
 }
 
 function createBaseAttachment(): Attachment {
@@ -550,114 +477,6 @@ export const Crop: MessageFns<Crop> = {
     message.width = object.width ?? 0;
     message.height = object.height ?? 0;
     message.aspectRatio = object.aspectRatio ?? 0;
-    return message;
-  },
-};
-
-function createBaseAttachmentError(): AttachmentError {
-  return { id: "", type: 0, message: "", error: "" };
-}
-
-export const AttachmentError: MessageFns<AttachmentError> = {
-  encode(message: AttachmentError, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.id !== "") {
-      writer.uint32(10).string(message.id);
-    }
-    if (message.type !== 0) {
-      writer.uint32(16).int32(message.type);
-    }
-    if (message.message !== "") {
-      writer.uint32(26).string(message.message);
-    }
-    if (message.error !== "") {
-      writer.uint32(34).string(message.error);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): AttachmentError {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseAttachmentError();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.id = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 16) {
-            break;
-          }
-
-          message.type = reader.int32() as any;
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.message = reader.string();
-          continue;
-        }
-        case 4: {
-          if (tag !== 34) {
-            break;
-          }
-
-          message.error = reader.string();
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): AttachmentError {
-    return {
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      type: isSet(object.type) ? attachmentErrorTypeFromJSON(object.type) : 0,
-      message: isSet(object.message) ? globalThis.String(object.message) : "",
-      error: isSet(object.error) ? globalThis.String(object.error) : "",
-    };
-  },
-
-  toJSON(message: AttachmentError): unknown {
-    const obj: any = {};
-    if (message.id !== "") {
-      obj.id = message.id;
-    }
-    if (message.type !== 0) {
-      obj.type = attachmentErrorTypeToJSON(message.type);
-    }
-    if (message.message !== "") {
-      obj.message = message.message;
-    }
-    if (message.error !== "") {
-      obj.error = message.error;
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<AttachmentError>, I>>(base?: I): AttachmentError {
-    return AttachmentError.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<AttachmentError>, I>>(object: I): AttachmentError {
-    const message = createBaseAttachmentError();
-    message.id = object.id ?? "";
-    message.type = object.type ?? 0;
-    message.message = object.message ?? "";
-    message.error = object.error ?? "";
     return message;
   },
 };

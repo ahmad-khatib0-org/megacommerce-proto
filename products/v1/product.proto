@@ -2,10 +2,84 @@ syntax = "proto3";
 
 package products.v1;
 
+import "shared/v1/types.proto";
+
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
 option java_outer_classname = "ProductProto";
 option java_package = "org.megacommerce.products.v1";
+
+message ProductBulletPoint {
+  string id = 1;
+  string text = 2;
+  uint64 created_at = 3;
+  optional uint64 updated_at = 4;
+}
+
+message ProductDetails {
+  // non customizable details for variants (can be empty of all the attributes customizable)
+  map<string, shared.v1.Any> shared = 1;
+  // no need to store the data separately (E.g. with_variants, no_variant) because
+  // we can do a simple check: length === 1 ? So there is no variants
+  // for this product, and also this allow us later on to make the user be able
+  // to add variants to an existing product
+  map<string, ProductDetailsVariant> details = 2; // <variant_id, details>
+}
+
+message ProductDetailsVariant {
+  string variant_name = 1;
+  map<string, shared.v1.Any> variant_data = 2;
+}
+
+message ProductMedia {
+  map<string, shared.v1.Any> safety = 1;
+}
+
+message ProductMediaVariant {
+  repeated ProductMediaImage images = 1;
+  repeated ProductMediaVideo videos = 2;
+}
+
+message ProductMediaImage {
+  string format = 1;
+  string url = 2;
+  uint64 size = 3;
+}
+
+message ProductMediaVideo {
+  string format = 1;
+  string url = 2;
+  uint64 size = 3;
+  uint64 duration = 4;
+}
+
+message ProductOffer {
+  map<string, ProductOfferVariant> offer = 2; // <variant_id, offer>
+}
+
+message ProductOfferVariant {
+  string sku = 2;
+  uint64 quantity = 3;
+  string price = 4;
+  string offering_condition = 5;
+  optional string condition_note = 6;
+  optional string list_price = 7;
+  bool has_sale_price = 8;
+  optional string sale_price = 9;
+  optional string sale_price_start = 10;
+  optional string sale_price_end = 11;
+  bool has_minimum_orders = 12;
+  repeated ProductOfferMinimumOrder minimum_orders = 13;
+}
+
+message ProductOfferMinimumOrder {
+  string price = 1;
+  uint64 quantity = 2;
+}
+
+message ProductSafety {
+  map<string, shared.v1.Any> safety = 1;
+}
 
 message ProductTag {
   optional uint32 id = 1;
@@ -21,18 +95,32 @@ message ProductMetadata {}
 message Product {
   string id = 1;
   string user_id = 2;
-  string sku = 3;
-  uint32 version = 4;
-  string status = 5;
-  string title = 6;
-  string description = 7;
-  string slug = 8;
-  string price = 9;
-  string currency_code = 10;
-  repeated ProductTag tags = 11;
-  optional ProductMetadata metadata = 12;
-  bool ar_enabled = 13;
-  uint64 created_at = 14;
-  optional uint64 published_at = 15;
-  optional uint64 updated_at = 16;
+  string title = 3;
+  string category = 4;
+  string subcategory = 5;
+  bool has_variations = 6;
+  optional string brand_name = 7;
+  bool has_brand_name = 8;
+  optional string product_id = 9;
+  bool has_product_id = 10;
+  optional string product_id_type = 11;
+  string description = 12;
+  repeated ProductBulletPoint bullet_points = 13;
+  string currency_code = 14;
+  string fulfillment_type = 15;
+  uint64 processing_time = 16;
+  ProductDetails details = 17;
+  ProductMedia media = 18;
+  ProductOffer offer = 19;
+  ProductSafety safety = 20;
+  repeated ProductTag tags = 21;
+  optional ProductMetadata metadata = 22;
+  bool ar_enabled = 23;
+  string slug = 24;
+  string status = 25;
+  uint32 version = 26;
+  uint32 schema_version = 27;
+  uint64 created_at = 28;
+  optional uint64 published_at = 29;
+  optional uint64 updated_at = 30;
 }

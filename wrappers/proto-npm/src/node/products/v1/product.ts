@@ -6,8 +6,114 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { Any } from "../../shared/v1/types";
 
 export const protobufPackage = "products.v1";
+
+export interface ProductBulletPoint {
+  id: string;
+  text: string;
+  createdAt: string;
+  updatedAt?: string | undefined;
+}
+
+export interface ProductDetails {
+  /** non customizable details for variants (can be empty of all the attributes customizable) */
+  shared: { [key: string]: Any };
+  /**
+   * no need to store the data separately (E.g. with_variants, no_variant) because
+   * we can do a simple check: length === 1 ? So there is no variants
+   * for this product, and also this allow us later on to make the user be able
+   * to add variants to an existing product
+   */
+  details: { [key: string]: ProductDetailsVariant };
+}
+
+export interface ProductDetails_SharedEntry {
+  key: string;
+  value?: Any | undefined;
+}
+
+export interface ProductDetails_DetailsEntry {
+  key: string;
+  value?: ProductDetailsVariant | undefined;
+}
+
+export interface ProductDetailsVariant {
+  variantName: string;
+  variantData: { [key: string]: Any };
+}
+
+export interface ProductDetailsVariant_VariantDataEntry {
+  key: string;
+  value?: Any | undefined;
+}
+
+export interface ProductMedia {
+  safety: { [key: string]: Any };
+}
+
+export interface ProductMedia_SafetyEntry {
+  key: string;
+  value?: Any | undefined;
+}
+
+export interface ProductMediaVariant {
+  images: ProductMediaImage[];
+  videos: ProductMediaVideo[];
+}
+
+export interface ProductMediaImage {
+  format: string;
+  url: string;
+  size: string;
+}
+
+export interface ProductMediaVideo {
+  format: string;
+  url: string;
+  size: string;
+  duration: string;
+}
+
+export interface ProductOffer {
+  /** <variant_id, offer> */
+  offer: { [key: string]: ProductOfferVariant };
+}
+
+export interface ProductOffer_OfferEntry {
+  key: string;
+  value?: ProductOfferVariant | undefined;
+}
+
+export interface ProductOfferVariant {
+  sku: string;
+  quantity: string;
+  price: string;
+  offeringCondition: string;
+  conditionNote?: string | undefined;
+  listPrice?: string | undefined;
+  hasSalePrice: boolean;
+  salePrice?: string | undefined;
+  salePriceStart?: string | undefined;
+  salePriceEnd?: string | undefined;
+  hasMinimumOrders: boolean;
+  minimumOrders: ProductOfferMinimumOrder[];
+}
+
+export interface ProductOfferMinimumOrder {
+  price: string;
+  quantity: string;
+}
+
+export interface ProductSafety {
+  safety: { [key: string]: Any };
+}
+
+export interface ProductSafety_SafetyEntry {
+  key: string;
+  value?: Any | undefined;
+}
 
 export interface ProductTag {
   id?: number | undefined;
@@ -24,21 +130,1669 @@ export interface ProductMetadata {
 export interface Product {
   id: string;
   userId: string;
-  sku: string;
-  version: number;
-  status: string;
   title: string;
+  category: string;
+  subcategory: string;
+  hasVariations: boolean;
+  brandName?: string | undefined;
+  hasBrandName: boolean;
+  productId?: string | undefined;
+  hasProductId: boolean;
+  productIdType?: string | undefined;
   description: string;
-  slug: string;
-  price: string;
+  bulletPoints: ProductBulletPoint[];
   currencyCode: string;
+  fulfillmentType: string;
+  processingTime: string;
+  details?: ProductDetails | undefined;
+  media?: ProductMedia | undefined;
+  offer?: ProductOffer | undefined;
+  safety?: ProductSafety | undefined;
   tags: ProductTag[];
   metadata?: ProductMetadata | undefined;
   arEnabled: boolean;
+  slug: string;
+  status: string;
+  version: number;
+  schemaVersion: number;
   createdAt: string;
   publishedAt?: string | undefined;
   updatedAt?: string | undefined;
 }
+
+function createBaseProductBulletPoint(): ProductBulletPoint {
+  return { id: "", text: "", createdAt: "0", updatedAt: undefined };
+}
+
+export const ProductBulletPoint: MessageFns<ProductBulletPoint> = {
+  encode(message: ProductBulletPoint, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.text !== "") {
+      writer.uint32(18).string(message.text);
+    }
+    if (message.createdAt !== "0") {
+      writer.uint32(24).uint64(message.createdAt);
+    }
+    if (message.updatedAt !== undefined) {
+      writer.uint32(32).uint64(message.updatedAt);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductBulletPoint {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductBulletPoint();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.text = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.createdAt = reader.uint64().toString();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
+            break;
+          }
+
+          message.updatedAt = reader.uint64().toString();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductBulletPoint {
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
+      text: isSet(object.text) ? globalThis.String(object.text) : "",
+      createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
+      updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : undefined,
+    };
+  },
+
+  toJSON(message: ProductBulletPoint): unknown {
+    const obj: any = {};
+    if (message.id !== "") {
+      obj.id = message.id;
+    }
+    if (message.text !== "") {
+      obj.text = message.text;
+    }
+    if (message.createdAt !== "0") {
+      obj.createdAt = message.createdAt;
+    }
+    if (message.updatedAt !== undefined) {
+      obj.updatedAt = message.updatedAt;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductBulletPoint>, I>>(base?: I): ProductBulletPoint {
+    return ProductBulletPoint.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductBulletPoint>, I>>(object: I): ProductBulletPoint {
+    const message = createBaseProductBulletPoint();
+    message.id = object.id ?? "";
+    message.text = object.text ?? "";
+    message.createdAt = object.createdAt ?? "0";
+    message.updatedAt = object.updatedAt ?? undefined;
+    return message;
+  },
+};
+
+function createBaseProductDetails(): ProductDetails {
+  return { shared: {}, details: {} };
+}
+
+export const ProductDetails: MessageFns<ProductDetails> = {
+  encode(message: ProductDetails, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    Object.entries(message.shared).forEach(([key, value]) => {
+      ProductDetails_SharedEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
+    });
+    Object.entries(message.details).forEach(([key, value]) => {
+      ProductDetails_DetailsEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductDetails {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductDetails();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          const entry1 = ProductDetails_SharedEntry.decode(reader, reader.uint32());
+          if (entry1.value !== undefined) {
+            message.shared[entry1.key] = entry1.value;
+          }
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          const entry2 = ProductDetails_DetailsEntry.decode(reader, reader.uint32());
+          if (entry2.value !== undefined) {
+            message.details[entry2.key] = entry2.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductDetails {
+    return {
+      shared: isObject(object.shared)
+        ? Object.entries(object.shared).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+          acc[key] = Any.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+      details: isObject(object.details)
+        ? Object.entries(object.details).reduce<{ [key: string]: ProductDetailsVariant }>((acc, [key, value]) => {
+          acc[key] = ProductDetailsVariant.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: ProductDetails): unknown {
+    const obj: any = {};
+    if (message.shared) {
+      const entries = Object.entries(message.shared);
+      if (entries.length > 0) {
+        obj.shared = {};
+        entries.forEach(([k, v]) => {
+          obj.shared[k] = Any.toJSON(v);
+        });
+      }
+    }
+    if (message.details) {
+      const entries = Object.entries(message.details);
+      if (entries.length > 0) {
+        obj.details = {};
+        entries.forEach(([k, v]) => {
+          obj.details[k] = ProductDetailsVariant.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductDetails>, I>>(base?: I): ProductDetails {
+    return ProductDetails.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductDetails>, I>>(object: I): ProductDetails {
+    const message = createBaseProductDetails();
+    message.shared = Object.entries(object.shared ?? {}).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = Any.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    message.details = Object.entries(object.details ?? {}).reduce<{ [key: string]: ProductDetailsVariant }>(
+      (acc, [key, value]) => {
+        if (value !== undefined) {
+          acc[key] = ProductDetailsVariant.fromPartial(value);
+        }
+        return acc;
+      },
+      {},
+    );
+    return message;
+  },
+};
+
+function createBaseProductDetails_SharedEntry(): ProductDetails_SharedEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductDetails_SharedEntry: MessageFns<ProductDetails_SharedEntry> = {
+  encode(message: ProductDetails_SharedEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Any.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductDetails_SharedEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductDetails_SharedEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Any.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductDetails_SharedEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Any.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductDetails_SharedEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Any.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductDetails_SharedEntry>, I>>(base?: I): ProductDetails_SharedEntry {
+    return ProductDetails_SharedEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductDetails_SharedEntry>, I>>(object: I): ProductDetails_SharedEntry {
+    const message = createBaseProductDetails_SharedEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null) ? Any.fromPartial(object.value) : undefined;
+    return message;
+  },
+};
+
+function createBaseProductDetails_DetailsEntry(): ProductDetails_DetailsEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductDetails_DetailsEntry: MessageFns<ProductDetails_DetailsEntry> = {
+  encode(message: ProductDetails_DetailsEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      ProductDetailsVariant.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductDetails_DetailsEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductDetails_DetailsEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = ProductDetailsVariant.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductDetails_DetailsEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? ProductDetailsVariant.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductDetails_DetailsEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = ProductDetailsVariant.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductDetails_DetailsEntry>, I>>(base?: I): ProductDetails_DetailsEntry {
+    return ProductDetails_DetailsEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductDetails_DetailsEntry>, I>>(object: I): ProductDetails_DetailsEntry {
+    const message = createBaseProductDetails_DetailsEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null)
+      ? ProductDetailsVariant.fromPartial(object.value)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductDetailsVariant(): ProductDetailsVariant {
+  return { variantName: "", variantData: {} };
+}
+
+export const ProductDetailsVariant: MessageFns<ProductDetailsVariant> = {
+  encode(message: ProductDetailsVariant, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.variantName !== "") {
+      writer.uint32(10).string(message.variantName);
+    }
+    Object.entries(message.variantData).forEach(([key, value]) => {
+      ProductDetailsVariant_VariantDataEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductDetailsVariant {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductDetailsVariant();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.variantName = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          const entry2 = ProductDetailsVariant_VariantDataEntry.decode(reader, reader.uint32());
+          if (entry2.value !== undefined) {
+            message.variantData[entry2.key] = entry2.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductDetailsVariant {
+    return {
+      variantName: isSet(object.variantName) ? globalThis.String(object.variantName) : "",
+      variantData: isObject(object.variantData)
+        ? Object.entries(object.variantData).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+          acc[key] = Any.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: ProductDetailsVariant): unknown {
+    const obj: any = {};
+    if (message.variantName !== "") {
+      obj.variantName = message.variantName;
+    }
+    if (message.variantData) {
+      const entries = Object.entries(message.variantData);
+      if (entries.length > 0) {
+        obj.variantData = {};
+        entries.forEach(([k, v]) => {
+          obj.variantData[k] = Any.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductDetailsVariant>, I>>(base?: I): ProductDetailsVariant {
+    return ProductDetailsVariant.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductDetailsVariant>, I>>(object: I): ProductDetailsVariant {
+    const message = createBaseProductDetailsVariant();
+    message.variantName = object.variantName ?? "";
+    message.variantData = Object.entries(object.variantData ?? {}).reduce<{ [key: string]: Any }>(
+      (acc, [key, value]) => {
+        if (value !== undefined) {
+          acc[key] = Any.fromPartial(value);
+        }
+        return acc;
+      },
+      {},
+    );
+    return message;
+  },
+};
+
+function createBaseProductDetailsVariant_VariantDataEntry(): ProductDetailsVariant_VariantDataEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductDetailsVariant_VariantDataEntry: MessageFns<ProductDetailsVariant_VariantDataEntry> = {
+  encode(message: ProductDetailsVariant_VariantDataEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Any.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductDetailsVariant_VariantDataEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductDetailsVariant_VariantDataEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Any.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductDetailsVariant_VariantDataEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Any.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductDetailsVariant_VariantDataEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Any.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductDetailsVariant_VariantDataEntry>, I>>(
+    base?: I,
+  ): ProductDetailsVariant_VariantDataEntry {
+    return ProductDetailsVariant_VariantDataEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductDetailsVariant_VariantDataEntry>, I>>(
+    object: I,
+  ): ProductDetailsVariant_VariantDataEntry {
+    const message = createBaseProductDetailsVariant_VariantDataEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null) ? Any.fromPartial(object.value) : undefined;
+    return message;
+  },
+};
+
+function createBaseProductMedia(): ProductMedia {
+  return { safety: {} };
+}
+
+export const ProductMedia: MessageFns<ProductMedia> = {
+  encode(message: ProductMedia, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    Object.entries(message.safety).forEach(([key, value]) => {
+      ProductMedia_SafetyEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductMedia {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductMedia();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          const entry1 = ProductMedia_SafetyEntry.decode(reader, reader.uint32());
+          if (entry1.value !== undefined) {
+            message.safety[entry1.key] = entry1.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductMedia {
+    return {
+      safety: isObject(object.safety)
+        ? Object.entries(object.safety).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+          acc[key] = Any.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: ProductMedia): unknown {
+    const obj: any = {};
+    if (message.safety) {
+      const entries = Object.entries(message.safety);
+      if (entries.length > 0) {
+        obj.safety = {};
+        entries.forEach(([k, v]) => {
+          obj.safety[k] = Any.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductMedia>, I>>(base?: I): ProductMedia {
+    return ProductMedia.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductMedia>, I>>(object: I): ProductMedia {
+    const message = createBaseProductMedia();
+    message.safety = Object.entries(object.safety ?? {}).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = Any.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    return message;
+  },
+};
+
+function createBaseProductMedia_SafetyEntry(): ProductMedia_SafetyEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductMedia_SafetyEntry: MessageFns<ProductMedia_SafetyEntry> = {
+  encode(message: ProductMedia_SafetyEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Any.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductMedia_SafetyEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductMedia_SafetyEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Any.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductMedia_SafetyEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Any.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductMedia_SafetyEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Any.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductMedia_SafetyEntry>, I>>(base?: I): ProductMedia_SafetyEntry {
+    return ProductMedia_SafetyEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductMedia_SafetyEntry>, I>>(object: I): ProductMedia_SafetyEntry {
+    const message = createBaseProductMedia_SafetyEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null) ? Any.fromPartial(object.value) : undefined;
+    return message;
+  },
+};
+
+function createBaseProductMediaVariant(): ProductMediaVariant {
+  return { images: [], videos: [] };
+}
+
+export const ProductMediaVariant: MessageFns<ProductMediaVariant> = {
+  encode(message: ProductMediaVariant, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.images) {
+      ProductMediaImage.encode(v!, writer.uint32(10).fork()).join();
+    }
+    for (const v of message.videos) {
+      ProductMediaVideo.encode(v!, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductMediaVariant {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductMediaVariant();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.images.push(ProductMediaImage.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.videos.push(ProductMediaVideo.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductMediaVariant {
+    return {
+      images: globalThis.Array.isArray(object?.images)
+        ? object.images.map((e: any) => ProductMediaImage.fromJSON(e))
+        : [],
+      videos: globalThis.Array.isArray(object?.videos)
+        ? object.videos.map((e: any) => ProductMediaVideo.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ProductMediaVariant): unknown {
+    const obj: any = {};
+    if (message.images?.length) {
+      obj.images = message.images.map((e) => ProductMediaImage.toJSON(e));
+    }
+    if (message.videos?.length) {
+      obj.videos = message.videos.map((e) => ProductMediaVideo.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductMediaVariant>, I>>(base?: I): ProductMediaVariant {
+    return ProductMediaVariant.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductMediaVariant>, I>>(object: I): ProductMediaVariant {
+    const message = createBaseProductMediaVariant();
+    message.images = object.images?.map((e) => ProductMediaImage.fromPartial(e)) || [];
+    message.videos = object.videos?.map((e) => ProductMediaVideo.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseProductMediaImage(): ProductMediaImage {
+  return { format: "", url: "", size: "0" };
+}
+
+export const ProductMediaImage: MessageFns<ProductMediaImage> = {
+  encode(message: ProductMediaImage, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.format !== "") {
+      writer.uint32(10).string(message.format);
+    }
+    if (message.url !== "") {
+      writer.uint32(18).string(message.url);
+    }
+    if (message.size !== "0") {
+      writer.uint32(24).uint64(message.size);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductMediaImage {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductMediaImage();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.format = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.url = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.size = reader.uint64().toString();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductMediaImage {
+    return {
+      format: isSet(object.format) ? globalThis.String(object.format) : "",
+      url: isSet(object.url) ? globalThis.String(object.url) : "",
+      size: isSet(object.size) ? globalThis.String(object.size) : "0",
+    };
+  },
+
+  toJSON(message: ProductMediaImage): unknown {
+    const obj: any = {};
+    if (message.format !== "") {
+      obj.format = message.format;
+    }
+    if (message.url !== "") {
+      obj.url = message.url;
+    }
+    if (message.size !== "0") {
+      obj.size = message.size;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductMediaImage>, I>>(base?: I): ProductMediaImage {
+    return ProductMediaImage.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductMediaImage>, I>>(object: I): ProductMediaImage {
+    const message = createBaseProductMediaImage();
+    message.format = object.format ?? "";
+    message.url = object.url ?? "";
+    message.size = object.size ?? "0";
+    return message;
+  },
+};
+
+function createBaseProductMediaVideo(): ProductMediaVideo {
+  return { format: "", url: "", size: "0", duration: "0" };
+}
+
+export const ProductMediaVideo: MessageFns<ProductMediaVideo> = {
+  encode(message: ProductMediaVideo, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.format !== "") {
+      writer.uint32(10).string(message.format);
+    }
+    if (message.url !== "") {
+      writer.uint32(18).string(message.url);
+    }
+    if (message.size !== "0") {
+      writer.uint32(24).uint64(message.size);
+    }
+    if (message.duration !== "0") {
+      writer.uint32(32).uint64(message.duration);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductMediaVideo {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductMediaVideo();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.format = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.url = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.size = reader.uint64().toString();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
+            break;
+          }
+
+          message.duration = reader.uint64().toString();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductMediaVideo {
+    return {
+      format: isSet(object.format) ? globalThis.String(object.format) : "",
+      url: isSet(object.url) ? globalThis.String(object.url) : "",
+      size: isSet(object.size) ? globalThis.String(object.size) : "0",
+      duration: isSet(object.duration) ? globalThis.String(object.duration) : "0",
+    };
+  },
+
+  toJSON(message: ProductMediaVideo): unknown {
+    const obj: any = {};
+    if (message.format !== "") {
+      obj.format = message.format;
+    }
+    if (message.url !== "") {
+      obj.url = message.url;
+    }
+    if (message.size !== "0") {
+      obj.size = message.size;
+    }
+    if (message.duration !== "0") {
+      obj.duration = message.duration;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductMediaVideo>, I>>(base?: I): ProductMediaVideo {
+    return ProductMediaVideo.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductMediaVideo>, I>>(object: I): ProductMediaVideo {
+    const message = createBaseProductMediaVideo();
+    message.format = object.format ?? "";
+    message.url = object.url ?? "";
+    message.size = object.size ?? "0";
+    message.duration = object.duration ?? "0";
+    return message;
+  },
+};
+
+function createBaseProductOffer(): ProductOffer {
+  return { offer: {} };
+}
+
+export const ProductOffer: MessageFns<ProductOffer> = {
+  encode(message: ProductOffer, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    Object.entries(message.offer).forEach(([key, value]) => {
+      ProductOffer_OfferEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductOffer {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductOffer();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          const entry2 = ProductOffer_OfferEntry.decode(reader, reader.uint32());
+          if (entry2.value !== undefined) {
+            message.offer[entry2.key] = entry2.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductOffer {
+    return {
+      offer: isObject(object.offer)
+        ? Object.entries(object.offer).reduce<{ [key: string]: ProductOfferVariant }>((acc, [key, value]) => {
+          acc[key] = ProductOfferVariant.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: ProductOffer): unknown {
+    const obj: any = {};
+    if (message.offer) {
+      const entries = Object.entries(message.offer);
+      if (entries.length > 0) {
+        obj.offer = {};
+        entries.forEach(([k, v]) => {
+          obj.offer[k] = ProductOfferVariant.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductOffer>, I>>(base?: I): ProductOffer {
+    return ProductOffer.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductOffer>, I>>(object: I): ProductOffer {
+    const message = createBaseProductOffer();
+    message.offer = Object.entries(object.offer ?? {}).reduce<{ [key: string]: ProductOfferVariant }>(
+      (acc, [key, value]) => {
+        if (value !== undefined) {
+          acc[key] = ProductOfferVariant.fromPartial(value);
+        }
+        return acc;
+      },
+      {},
+    );
+    return message;
+  },
+};
+
+function createBaseProductOffer_OfferEntry(): ProductOffer_OfferEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductOffer_OfferEntry: MessageFns<ProductOffer_OfferEntry> = {
+  encode(message: ProductOffer_OfferEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      ProductOfferVariant.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductOffer_OfferEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductOffer_OfferEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = ProductOfferVariant.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductOffer_OfferEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? ProductOfferVariant.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductOffer_OfferEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = ProductOfferVariant.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductOffer_OfferEntry>, I>>(base?: I): ProductOffer_OfferEntry {
+    return ProductOffer_OfferEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductOffer_OfferEntry>, I>>(object: I): ProductOffer_OfferEntry {
+    const message = createBaseProductOffer_OfferEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null)
+      ? ProductOfferVariant.fromPartial(object.value)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductOfferVariant(): ProductOfferVariant {
+  return {
+    sku: "",
+    quantity: "0",
+    price: "",
+    offeringCondition: "",
+    conditionNote: undefined,
+    listPrice: undefined,
+    hasSalePrice: false,
+    salePrice: undefined,
+    salePriceStart: undefined,
+    salePriceEnd: undefined,
+    hasMinimumOrders: false,
+    minimumOrders: [],
+  };
+}
+
+export const ProductOfferVariant: MessageFns<ProductOfferVariant> = {
+  encode(message: ProductOfferVariant, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.sku !== "") {
+      writer.uint32(18).string(message.sku);
+    }
+    if (message.quantity !== "0") {
+      writer.uint32(24).uint64(message.quantity);
+    }
+    if (message.price !== "") {
+      writer.uint32(34).string(message.price);
+    }
+    if (message.offeringCondition !== "") {
+      writer.uint32(42).string(message.offeringCondition);
+    }
+    if (message.conditionNote !== undefined) {
+      writer.uint32(50).string(message.conditionNote);
+    }
+    if (message.listPrice !== undefined) {
+      writer.uint32(58).string(message.listPrice);
+    }
+    if (message.hasSalePrice !== false) {
+      writer.uint32(64).bool(message.hasSalePrice);
+    }
+    if (message.salePrice !== undefined) {
+      writer.uint32(74).string(message.salePrice);
+    }
+    if (message.salePriceStart !== undefined) {
+      writer.uint32(82).string(message.salePriceStart);
+    }
+    if (message.salePriceEnd !== undefined) {
+      writer.uint32(90).string(message.salePriceEnd);
+    }
+    if (message.hasMinimumOrders !== false) {
+      writer.uint32(96).bool(message.hasMinimumOrders);
+    }
+    for (const v of message.minimumOrders) {
+      ProductOfferMinimumOrder.encode(v!, writer.uint32(106).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductOfferVariant {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductOfferVariant();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.sku = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.quantity = reader.uint64().toString();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.price = reader.string();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.offeringCondition = reader.string();
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.conditionNote = reader.string();
+          continue;
+        }
+        case 7: {
+          if (tag !== 58) {
+            break;
+          }
+
+          message.listPrice = reader.string();
+          continue;
+        }
+        case 8: {
+          if (tag !== 64) {
+            break;
+          }
+
+          message.hasSalePrice = reader.bool();
+          continue;
+        }
+        case 9: {
+          if (tag !== 74) {
+            break;
+          }
+
+          message.salePrice = reader.string();
+          continue;
+        }
+        case 10: {
+          if (tag !== 82) {
+            break;
+          }
+
+          message.salePriceStart = reader.string();
+          continue;
+        }
+        case 11: {
+          if (tag !== 90) {
+            break;
+          }
+
+          message.salePriceEnd = reader.string();
+          continue;
+        }
+        case 12: {
+          if (tag !== 96) {
+            break;
+          }
+
+          message.hasMinimumOrders = reader.bool();
+          continue;
+        }
+        case 13: {
+          if (tag !== 106) {
+            break;
+          }
+
+          message.minimumOrders.push(ProductOfferMinimumOrder.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductOfferVariant {
+    return {
+      sku: isSet(object.sku) ? globalThis.String(object.sku) : "",
+      quantity: isSet(object.quantity) ? globalThis.String(object.quantity) : "0",
+      price: isSet(object.price) ? globalThis.String(object.price) : "",
+      offeringCondition: isSet(object.offeringCondition) ? globalThis.String(object.offeringCondition) : "",
+      conditionNote: isSet(object.conditionNote) ? globalThis.String(object.conditionNote) : undefined,
+      listPrice: isSet(object.listPrice) ? globalThis.String(object.listPrice) : undefined,
+      hasSalePrice: isSet(object.hasSalePrice) ? globalThis.Boolean(object.hasSalePrice) : false,
+      salePrice: isSet(object.salePrice) ? globalThis.String(object.salePrice) : undefined,
+      salePriceStart: isSet(object.salePriceStart) ? globalThis.String(object.salePriceStart) : undefined,
+      salePriceEnd: isSet(object.salePriceEnd) ? globalThis.String(object.salePriceEnd) : undefined,
+      hasMinimumOrders: isSet(object.hasMinimumOrders) ? globalThis.Boolean(object.hasMinimumOrders) : false,
+      minimumOrders: globalThis.Array.isArray(object?.minimumOrders)
+        ? object.minimumOrders.map((e: any) => ProductOfferMinimumOrder.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ProductOfferVariant): unknown {
+    const obj: any = {};
+    if (message.sku !== "") {
+      obj.sku = message.sku;
+    }
+    if (message.quantity !== "0") {
+      obj.quantity = message.quantity;
+    }
+    if (message.price !== "") {
+      obj.price = message.price;
+    }
+    if (message.offeringCondition !== "") {
+      obj.offeringCondition = message.offeringCondition;
+    }
+    if (message.conditionNote !== undefined) {
+      obj.conditionNote = message.conditionNote;
+    }
+    if (message.listPrice !== undefined) {
+      obj.listPrice = message.listPrice;
+    }
+    if (message.hasSalePrice !== false) {
+      obj.hasSalePrice = message.hasSalePrice;
+    }
+    if (message.salePrice !== undefined) {
+      obj.salePrice = message.salePrice;
+    }
+    if (message.salePriceStart !== undefined) {
+      obj.salePriceStart = message.salePriceStart;
+    }
+    if (message.salePriceEnd !== undefined) {
+      obj.salePriceEnd = message.salePriceEnd;
+    }
+    if (message.hasMinimumOrders !== false) {
+      obj.hasMinimumOrders = message.hasMinimumOrders;
+    }
+    if (message.minimumOrders?.length) {
+      obj.minimumOrders = message.minimumOrders.map((e) => ProductOfferMinimumOrder.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductOfferVariant>, I>>(base?: I): ProductOfferVariant {
+    return ProductOfferVariant.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductOfferVariant>, I>>(object: I): ProductOfferVariant {
+    const message = createBaseProductOfferVariant();
+    message.sku = object.sku ?? "";
+    message.quantity = object.quantity ?? "0";
+    message.price = object.price ?? "";
+    message.offeringCondition = object.offeringCondition ?? "";
+    message.conditionNote = object.conditionNote ?? undefined;
+    message.listPrice = object.listPrice ?? undefined;
+    message.hasSalePrice = object.hasSalePrice ?? false;
+    message.salePrice = object.salePrice ?? undefined;
+    message.salePriceStart = object.salePriceStart ?? undefined;
+    message.salePriceEnd = object.salePriceEnd ?? undefined;
+    message.hasMinimumOrders = object.hasMinimumOrders ?? false;
+    message.minimumOrders = object.minimumOrders?.map((e) => ProductOfferMinimumOrder.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseProductOfferMinimumOrder(): ProductOfferMinimumOrder {
+  return { price: "", quantity: "0" };
+}
+
+export const ProductOfferMinimumOrder: MessageFns<ProductOfferMinimumOrder> = {
+  encode(message: ProductOfferMinimumOrder, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.price !== "") {
+      writer.uint32(10).string(message.price);
+    }
+    if (message.quantity !== "0") {
+      writer.uint32(16).uint64(message.quantity);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductOfferMinimumOrder {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductOfferMinimumOrder();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.price = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.quantity = reader.uint64().toString();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductOfferMinimumOrder {
+    return {
+      price: isSet(object.price) ? globalThis.String(object.price) : "",
+      quantity: isSet(object.quantity) ? globalThis.String(object.quantity) : "0",
+    };
+  },
+
+  toJSON(message: ProductOfferMinimumOrder): unknown {
+    const obj: any = {};
+    if (message.price !== "") {
+      obj.price = message.price;
+    }
+    if (message.quantity !== "0") {
+      obj.quantity = message.quantity;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductOfferMinimumOrder>, I>>(base?: I): ProductOfferMinimumOrder {
+    return ProductOfferMinimumOrder.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductOfferMinimumOrder>, I>>(object: I): ProductOfferMinimumOrder {
+    const message = createBaseProductOfferMinimumOrder();
+    message.price = object.price ?? "";
+    message.quantity = object.quantity ?? "0";
+    return message;
+  },
+};
+
+function createBaseProductSafety(): ProductSafety {
+  return { safety: {} };
+}
+
+export const ProductSafety: MessageFns<ProductSafety> = {
+  encode(message: ProductSafety, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    Object.entries(message.safety).forEach(([key, value]) => {
+      ProductSafety_SafetyEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductSafety {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductSafety();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          const entry1 = ProductSafety_SafetyEntry.decode(reader, reader.uint32());
+          if (entry1.value !== undefined) {
+            message.safety[entry1.key] = entry1.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductSafety {
+    return {
+      safety: isObject(object.safety)
+        ? Object.entries(object.safety).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+          acc[key] = Any.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: ProductSafety): unknown {
+    const obj: any = {};
+    if (message.safety) {
+      const entries = Object.entries(message.safety);
+      if (entries.length > 0) {
+        obj.safety = {};
+        entries.forEach(([k, v]) => {
+          obj.safety[k] = Any.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductSafety>, I>>(base?: I): ProductSafety {
+    return ProductSafety.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductSafety>, I>>(object: I): ProductSafety {
+    const message = createBaseProductSafety();
+    message.safety = Object.entries(object.safety ?? {}).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = Any.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    return message;
+  },
+};
+
+function createBaseProductSafety_SafetyEntry(): ProductSafety_SafetyEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductSafety_SafetyEntry: MessageFns<ProductSafety_SafetyEntry> = {
+  encode(message: ProductSafety_SafetyEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Any.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductSafety_SafetyEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductSafety_SafetyEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Any.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductSafety_SafetyEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Any.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductSafety_SafetyEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Any.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductSafety_SafetyEntry>, I>>(base?: I): ProductSafety_SafetyEntry {
+    return ProductSafety_SafetyEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductSafety_SafetyEntry>, I>>(object: I): ProductSafety_SafetyEntry {
+    const message = createBaseProductSafety_SafetyEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null) ? Any.fromPartial(object.value) : undefined;
+    return message;
+  },
+};
 
 function createBaseProductTag(): ProductTag {
   return { id: undefined, name: undefined };
@@ -221,17 +1975,31 @@ function createBaseProduct(): Product {
   return {
     id: "",
     userId: "",
-    sku: "",
-    version: 0,
-    status: "",
     title: "",
+    category: "",
+    subcategory: "",
+    hasVariations: false,
+    brandName: undefined,
+    hasBrandName: false,
+    productId: undefined,
+    hasProductId: false,
+    productIdType: undefined,
     description: "",
-    slug: "",
-    price: "",
+    bulletPoints: [],
     currencyCode: "",
+    fulfillmentType: "",
+    processingTime: "0",
+    details: undefined,
+    media: undefined,
+    offer: undefined,
+    safety: undefined,
     tags: [],
     metadata: undefined,
     arEnabled: false,
+    slug: "",
+    status: "",
+    version: 0,
+    schemaVersion: 0,
     createdAt: "0",
     publishedAt: undefined,
     updatedAt: undefined,
@@ -246,47 +2014,89 @@ export const Product: MessageFns<Product> = {
     if (message.userId !== "") {
       writer.uint32(18).string(message.userId);
     }
-    if (message.sku !== "") {
-      writer.uint32(26).string(message.sku);
-    }
-    if (message.version !== 0) {
-      writer.uint32(32).uint32(message.version);
-    }
-    if (message.status !== "") {
-      writer.uint32(42).string(message.status);
-    }
     if (message.title !== "") {
-      writer.uint32(50).string(message.title);
+      writer.uint32(26).string(message.title);
+    }
+    if (message.category !== "") {
+      writer.uint32(34).string(message.category);
+    }
+    if (message.subcategory !== "") {
+      writer.uint32(42).string(message.subcategory);
+    }
+    if (message.hasVariations !== false) {
+      writer.uint32(48).bool(message.hasVariations);
+    }
+    if (message.brandName !== undefined) {
+      writer.uint32(58).string(message.brandName);
+    }
+    if (message.hasBrandName !== false) {
+      writer.uint32(64).bool(message.hasBrandName);
+    }
+    if (message.productId !== undefined) {
+      writer.uint32(74).string(message.productId);
+    }
+    if (message.hasProductId !== false) {
+      writer.uint32(80).bool(message.hasProductId);
+    }
+    if (message.productIdType !== undefined) {
+      writer.uint32(90).string(message.productIdType);
     }
     if (message.description !== "") {
-      writer.uint32(58).string(message.description);
+      writer.uint32(98).string(message.description);
     }
-    if (message.slug !== "") {
-      writer.uint32(66).string(message.slug);
-    }
-    if (message.price !== "") {
-      writer.uint32(74).string(message.price);
+    for (const v of message.bulletPoints) {
+      ProductBulletPoint.encode(v!, writer.uint32(106).fork()).join();
     }
     if (message.currencyCode !== "") {
-      writer.uint32(82).string(message.currencyCode);
+      writer.uint32(114).string(message.currencyCode);
+    }
+    if (message.fulfillmentType !== "") {
+      writer.uint32(122).string(message.fulfillmentType);
+    }
+    if (message.processingTime !== "0") {
+      writer.uint32(128).uint64(message.processingTime);
+    }
+    if (message.details !== undefined) {
+      ProductDetails.encode(message.details, writer.uint32(138).fork()).join();
+    }
+    if (message.media !== undefined) {
+      ProductMedia.encode(message.media, writer.uint32(146).fork()).join();
+    }
+    if (message.offer !== undefined) {
+      ProductOffer.encode(message.offer, writer.uint32(154).fork()).join();
+    }
+    if (message.safety !== undefined) {
+      ProductSafety.encode(message.safety, writer.uint32(162).fork()).join();
     }
     for (const v of message.tags) {
-      ProductTag.encode(v!, writer.uint32(90).fork()).join();
+      ProductTag.encode(v!, writer.uint32(170).fork()).join();
     }
     if (message.metadata !== undefined) {
-      ProductMetadata.encode(message.metadata, writer.uint32(98).fork()).join();
+      ProductMetadata.encode(message.metadata, writer.uint32(178).fork()).join();
     }
     if (message.arEnabled !== false) {
-      writer.uint32(104).bool(message.arEnabled);
+      writer.uint32(184).bool(message.arEnabled);
+    }
+    if (message.slug !== "") {
+      writer.uint32(194).string(message.slug);
+    }
+    if (message.status !== "") {
+      writer.uint32(202).string(message.status);
+    }
+    if (message.version !== 0) {
+      writer.uint32(208).uint32(message.version);
+    }
+    if (message.schemaVersion !== 0) {
+      writer.uint32(216).uint32(message.schemaVersion);
     }
     if (message.createdAt !== "0") {
-      writer.uint32(112).uint64(message.createdAt);
+      writer.uint32(224).uint64(message.createdAt);
     }
     if (message.publishedAt !== undefined) {
-      writer.uint32(120).uint64(message.publishedAt);
+      writer.uint32(232).uint64(message.publishedAt);
     }
     if (message.updatedAt !== undefined) {
-      writer.uint32(128).uint64(message.updatedAt);
+      writer.uint32(240).uint64(message.updatedAt);
     }
     return writer;
   },
@@ -319,15 +2129,15 @@ export const Product: MessageFns<Product> = {
             break;
           }
 
-          message.sku = reader.string();
+          message.title = reader.string();
           continue;
         }
         case 4: {
-          if (tag !== 32) {
+          if (tag !== 34) {
             break;
           }
 
-          message.version = reader.uint32();
+          message.category = reader.string();
           continue;
         }
         case 5: {
@@ -335,15 +2145,15 @@ export const Product: MessageFns<Product> = {
             break;
           }
 
-          message.status = reader.string();
+          message.subcategory = reader.string();
           continue;
         }
         case 6: {
-          if (tag !== 50) {
+          if (tag !== 48) {
             break;
           }
 
-          message.title = reader.string();
+          message.hasVariations = reader.bool();
           continue;
         }
         case 7: {
@@ -351,15 +2161,15 @@ export const Product: MessageFns<Product> = {
             break;
           }
 
-          message.description = reader.string();
+          message.brandName = reader.string();
           continue;
         }
         case 8: {
-          if (tag !== 66) {
+          if (tag !== 64) {
             break;
           }
 
-          message.slug = reader.string();
+          message.hasBrandName = reader.bool();
           continue;
         }
         case 9: {
@@ -367,15 +2177,15 @@ export const Product: MessageFns<Product> = {
             break;
           }
 
-          message.price = reader.string();
+          message.productId = reader.string();
           continue;
         }
         case 10: {
-          if (tag !== 82) {
+          if (tag !== 80) {
             break;
           }
 
-          message.currencyCode = reader.string();
+          message.hasProductId = reader.bool();
           continue;
         }
         case 11: {
@@ -383,7 +2193,7 @@ export const Product: MessageFns<Product> = {
             break;
           }
 
-          message.tags.push(ProductTag.decode(reader, reader.uint32()));
+          message.productIdType = reader.string();
           continue;
         }
         case 12: {
@@ -391,35 +2201,147 @@ export const Product: MessageFns<Product> = {
             break;
           }
 
-          message.metadata = ProductMetadata.decode(reader, reader.uint32());
+          message.description = reader.string();
           continue;
         }
         case 13: {
-          if (tag !== 104) {
+          if (tag !== 106) {
+            break;
+          }
+
+          message.bulletPoints.push(ProductBulletPoint.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 14: {
+          if (tag !== 114) {
+            break;
+          }
+
+          message.currencyCode = reader.string();
+          continue;
+        }
+        case 15: {
+          if (tag !== 122) {
+            break;
+          }
+
+          message.fulfillmentType = reader.string();
+          continue;
+        }
+        case 16: {
+          if (tag !== 128) {
+            break;
+          }
+
+          message.processingTime = reader.uint64().toString();
+          continue;
+        }
+        case 17: {
+          if (tag !== 138) {
+            break;
+          }
+
+          message.details = ProductDetails.decode(reader, reader.uint32());
+          continue;
+        }
+        case 18: {
+          if (tag !== 146) {
+            break;
+          }
+
+          message.media = ProductMedia.decode(reader, reader.uint32());
+          continue;
+        }
+        case 19: {
+          if (tag !== 154) {
+            break;
+          }
+
+          message.offer = ProductOffer.decode(reader, reader.uint32());
+          continue;
+        }
+        case 20: {
+          if (tag !== 162) {
+            break;
+          }
+
+          message.safety = ProductSafety.decode(reader, reader.uint32());
+          continue;
+        }
+        case 21: {
+          if (tag !== 170) {
+            break;
+          }
+
+          message.tags.push(ProductTag.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 22: {
+          if (tag !== 178) {
+            break;
+          }
+
+          message.metadata = ProductMetadata.decode(reader, reader.uint32());
+          continue;
+        }
+        case 23: {
+          if (tag !== 184) {
             break;
           }
 
           message.arEnabled = reader.bool();
           continue;
         }
-        case 14: {
-          if (tag !== 112) {
+        case 24: {
+          if (tag !== 194) {
+            break;
+          }
+
+          message.slug = reader.string();
+          continue;
+        }
+        case 25: {
+          if (tag !== 202) {
+            break;
+          }
+
+          message.status = reader.string();
+          continue;
+        }
+        case 26: {
+          if (tag !== 208) {
+            break;
+          }
+
+          message.version = reader.uint32();
+          continue;
+        }
+        case 27: {
+          if (tag !== 216) {
+            break;
+          }
+
+          message.schemaVersion = reader.uint32();
+          continue;
+        }
+        case 28: {
+          if (tag !== 224) {
             break;
           }
 
           message.createdAt = reader.uint64().toString();
           continue;
         }
-        case 15: {
-          if (tag !== 120) {
+        case 29: {
+          if (tag !== 232) {
             break;
           }
 
           message.publishedAt = reader.uint64().toString();
           continue;
         }
-        case 16: {
-          if (tag !== 128) {
+        case 30: {
+          if (tag !== 240) {
             break;
           }
 
@@ -439,17 +2361,33 @@ export const Product: MessageFns<Product> = {
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       userId: isSet(object.userId) ? globalThis.String(object.userId) : "",
-      sku: isSet(object.sku) ? globalThis.String(object.sku) : "",
-      version: isSet(object.version) ? globalThis.Number(object.version) : 0,
-      status: isSet(object.status) ? globalThis.String(object.status) : "",
       title: isSet(object.title) ? globalThis.String(object.title) : "",
+      category: isSet(object.category) ? globalThis.String(object.category) : "",
+      subcategory: isSet(object.subcategory) ? globalThis.String(object.subcategory) : "",
+      hasVariations: isSet(object.hasVariations) ? globalThis.Boolean(object.hasVariations) : false,
+      brandName: isSet(object.brandName) ? globalThis.String(object.brandName) : undefined,
+      hasBrandName: isSet(object.hasBrandName) ? globalThis.Boolean(object.hasBrandName) : false,
+      productId: isSet(object.productId) ? globalThis.String(object.productId) : undefined,
+      hasProductId: isSet(object.hasProductId) ? globalThis.Boolean(object.hasProductId) : false,
+      productIdType: isSet(object.productIdType) ? globalThis.String(object.productIdType) : undefined,
       description: isSet(object.description) ? globalThis.String(object.description) : "",
-      slug: isSet(object.slug) ? globalThis.String(object.slug) : "",
-      price: isSet(object.price) ? globalThis.String(object.price) : "",
+      bulletPoints: globalThis.Array.isArray(object?.bulletPoints)
+        ? object.bulletPoints.map((e: any) => ProductBulletPoint.fromJSON(e))
+        : [],
       currencyCode: isSet(object.currencyCode) ? globalThis.String(object.currencyCode) : "",
+      fulfillmentType: isSet(object.fulfillmentType) ? globalThis.String(object.fulfillmentType) : "",
+      processingTime: isSet(object.processingTime) ? globalThis.String(object.processingTime) : "0",
+      details: isSet(object.details) ? ProductDetails.fromJSON(object.details) : undefined,
+      media: isSet(object.media) ? ProductMedia.fromJSON(object.media) : undefined,
+      offer: isSet(object.offer) ? ProductOffer.fromJSON(object.offer) : undefined,
+      safety: isSet(object.safety) ? ProductSafety.fromJSON(object.safety) : undefined,
       tags: globalThis.Array.isArray(object?.tags) ? object.tags.map((e: any) => ProductTag.fromJSON(e)) : [],
       metadata: isSet(object.metadata) ? ProductMetadata.fromJSON(object.metadata) : undefined,
       arEnabled: isSet(object.arEnabled) ? globalThis.Boolean(object.arEnabled) : false,
+      slug: isSet(object.slug) ? globalThis.String(object.slug) : "",
+      status: isSet(object.status) ? globalThis.String(object.status) : "",
+      version: isSet(object.version) ? globalThis.Number(object.version) : 0,
+      schemaVersion: isSet(object.schemaVersion) ? globalThis.Number(object.schemaVersion) : 0,
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
       publishedAt: isSet(object.publishedAt) ? globalThis.String(object.publishedAt) : undefined,
       updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : undefined,
@@ -464,29 +2402,59 @@ export const Product: MessageFns<Product> = {
     if (message.userId !== "") {
       obj.userId = message.userId;
     }
-    if (message.sku !== "") {
-      obj.sku = message.sku;
-    }
-    if (message.version !== 0) {
-      obj.version = Math.round(message.version);
-    }
-    if (message.status !== "") {
-      obj.status = message.status;
-    }
     if (message.title !== "") {
       obj.title = message.title;
+    }
+    if (message.category !== "") {
+      obj.category = message.category;
+    }
+    if (message.subcategory !== "") {
+      obj.subcategory = message.subcategory;
+    }
+    if (message.hasVariations !== false) {
+      obj.hasVariations = message.hasVariations;
+    }
+    if (message.brandName !== undefined) {
+      obj.brandName = message.brandName;
+    }
+    if (message.hasBrandName !== false) {
+      obj.hasBrandName = message.hasBrandName;
+    }
+    if (message.productId !== undefined) {
+      obj.productId = message.productId;
+    }
+    if (message.hasProductId !== false) {
+      obj.hasProductId = message.hasProductId;
+    }
+    if (message.productIdType !== undefined) {
+      obj.productIdType = message.productIdType;
     }
     if (message.description !== "") {
       obj.description = message.description;
     }
-    if (message.slug !== "") {
-      obj.slug = message.slug;
-    }
-    if (message.price !== "") {
-      obj.price = message.price;
+    if (message.bulletPoints?.length) {
+      obj.bulletPoints = message.bulletPoints.map((e) => ProductBulletPoint.toJSON(e));
     }
     if (message.currencyCode !== "") {
       obj.currencyCode = message.currencyCode;
+    }
+    if (message.fulfillmentType !== "") {
+      obj.fulfillmentType = message.fulfillmentType;
+    }
+    if (message.processingTime !== "0") {
+      obj.processingTime = message.processingTime;
+    }
+    if (message.details !== undefined) {
+      obj.details = ProductDetails.toJSON(message.details);
+    }
+    if (message.media !== undefined) {
+      obj.media = ProductMedia.toJSON(message.media);
+    }
+    if (message.offer !== undefined) {
+      obj.offer = ProductOffer.toJSON(message.offer);
+    }
+    if (message.safety !== undefined) {
+      obj.safety = ProductSafety.toJSON(message.safety);
     }
     if (message.tags?.length) {
       obj.tags = message.tags.map((e) => ProductTag.toJSON(e));
@@ -496,6 +2464,18 @@ export const Product: MessageFns<Product> = {
     }
     if (message.arEnabled !== false) {
       obj.arEnabled = message.arEnabled;
+    }
+    if (message.slug !== "") {
+      obj.slug = message.slug;
+    }
+    if (message.status !== "") {
+      obj.status = message.status;
+    }
+    if (message.version !== 0) {
+      obj.version = Math.round(message.version);
+    }
+    if (message.schemaVersion !== 0) {
+      obj.schemaVersion = Math.round(message.schemaVersion);
     }
     if (message.createdAt !== "0") {
       obj.createdAt = message.createdAt;
@@ -516,19 +2496,41 @@ export const Product: MessageFns<Product> = {
     const message = createBaseProduct();
     message.id = object.id ?? "";
     message.userId = object.userId ?? "";
-    message.sku = object.sku ?? "";
-    message.version = object.version ?? 0;
-    message.status = object.status ?? "";
     message.title = object.title ?? "";
+    message.category = object.category ?? "";
+    message.subcategory = object.subcategory ?? "";
+    message.hasVariations = object.hasVariations ?? false;
+    message.brandName = object.brandName ?? undefined;
+    message.hasBrandName = object.hasBrandName ?? false;
+    message.productId = object.productId ?? undefined;
+    message.hasProductId = object.hasProductId ?? false;
+    message.productIdType = object.productIdType ?? undefined;
     message.description = object.description ?? "";
-    message.slug = object.slug ?? "";
-    message.price = object.price ?? "";
+    message.bulletPoints = object.bulletPoints?.map((e) => ProductBulletPoint.fromPartial(e)) || [];
     message.currencyCode = object.currencyCode ?? "";
+    message.fulfillmentType = object.fulfillmentType ?? "";
+    message.processingTime = object.processingTime ?? "0";
+    message.details = (object.details !== undefined && object.details !== null)
+      ? ProductDetails.fromPartial(object.details)
+      : undefined;
+    message.media = (object.media !== undefined && object.media !== null)
+      ? ProductMedia.fromPartial(object.media)
+      : undefined;
+    message.offer = (object.offer !== undefined && object.offer !== null)
+      ? ProductOffer.fromPartial(object.offer)
+      : undefined;
+    message.safety = (object.safety !== undefined && object.safety !== null)
+      ? ProductSafety.fromPartial(object.safety)
+      : undefined;
     message.tags = object.tags?.map((e) => ProductTag.fromPartial(e)) || [];
     message.metadata = (object.metadata !== undefined && object.metadata !== null)
       ? ProductMetadata.fromPartial(object.metadata)
       : undefined;
     message.arEnabled = object.arEnabled ?? false;
+    message.slug = object.slug ?? "";
+    message.status = object.status ?? "";
+    message.version = object.version ?? 0;
+    message.schemaVersion = object.schemaVersion ?? 0;
     message.createdAt = object.createdAt ?? "0";
     message.publishedAt = object.publishedAt ?? undefined;
     message.updatedAt = object.updatedAt ?? undefined;
@@ -547,6 +2549,10 @@ export type DeepPartial<T> = T extends Builtin ? T
 type KeysOfUnion<T> = T extends T ? keyof T : never;
 export type Exact<P, I extends P> = P extends Builtin ? P
   : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
+
+function isObject(value: any): boolean {
+  return typeof value === "object" && value !== null;
+}
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

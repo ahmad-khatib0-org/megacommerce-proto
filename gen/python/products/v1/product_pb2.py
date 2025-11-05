@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19products/v1/product.proto\x12\x0bproducts.v1\"@\n\nProductTag\x12\x0f\n\x02id\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x05\n\x03_idB\x07\n\x05_name\"4\n\x0bProductTags\x12%\n\x04tags\x18\x01 \x03(\x0b\x32\x17.products.v1.ProductTag\"\x11\n\x0fProductMetadata\"\x91\x03\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x0b\n\x03sku\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\r\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\r\n\x05title\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x0c\n\x04slug\x18\x08 \x01(\t\x12\r\n\x05price\x18\t \x01(\t\x12\x15\n\rcurrency_code\x18\n \x01(\t\x12%\n\x04tags\x18\x0b \x03(\x0b\x32\x17.products.v1.ProductTag\x12\x33\n\x08metadata\x18\x0c \x01(\x0b\x32\x1c.products.v1.ProductMetadataH\x00\x88\x01\x01\x12\x12\n\nar_enabled\x18\r \x01(\x08\x12\x12\n\ncreated_at\x18\x0e \x01(\x04\x12\x19\n\x0cpublished_at\x18\x0f \x01(\x04H\x01\x88\x01\x01\x12\x17\n\nupdated_at\x18\x10 \x01(\x04H\x02\x88\x01\x01\x42\x0b\n\t_metadataB\x0f\n\r_published_atB\r\n\x0b_updated_atBv\n\x1corg.megacommerce.products.v1B\x0cProductProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19products/v1/product.proto\x12\x0bproducts.v1\x1a\x15shared/v1/types.proto\"j\n\x12ProductBulletPoint\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x12\n\ncreated_at\x18\x03 \x01(\x04\x12\x17\n\nupdated_at\x18\x04 \x01(\x04H\x00\x88\x01\x01\x42\r\n\x0b_updated_at\"\x97\x02\n\x0eProductDetails\x12\x37\n\x06shared\x18\x01 \x03(\x0b\x32\'.products.v1.ProductDetails.SharedEntry\x12\x39\n\x07\x64\x65tails\x18\x02 \x03(\x0b\x32(.products.v1.ProductDetails.DetailsEntry\x1a=\n\x0bSharedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.shared.v1.Any:\x02\x38\x01\x1aR\n\x0c\x44\x65tailsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x31\n\x05value\x18\x02 \x01(\x0b\x32\".products.v1.ProductDetailsVariant:\x02\x38\x01\"\xbc\x01\n\x15ProductDetailsVariant\x12\x14\n\x0cvariant_name\x18\x01 \x01(\t\x12I\n\x0cvariant_data\x18\x02 \x03(\x0b\x32\x33.products.v1.ProductDetailsVariant.VariantDataEntry\x1a\x42\n\x10VariantDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.shared.v1.Any:\x02\x38\x01\"\x84\x01\n\x0cProductMedia\x12\x35\n\x06safety\x18\x01 \x03(\x0b\x32%.products.v1.ProductMedia.SafetyEntry\x1a=\n\x0bSafetyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.shared.v1.Any:\x02\x38\x01\"u\n\x13ProductMediaVariant\x12.\n\x06images\x18\x01 \x03(\x0b\x32\x1e.products.v1.ProductMediaImage\x12.\n\x06videos\x18\x02 \x03(\x0b\x32\x1e.products.v1.ProductMediaVideo\">\n\x11ProductMediaImage\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\x04\"P\n\x11ProductMediaVideo\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\x04\x12\x10\n\x08\x64uration\x18\x04 \x01(\x04\"\x93\x01\n\x0cProductOffer\x12\x33\n\x05offer\x18\x02 \x03(\x0b\x32$.products.v1.ProductOffer.OfferEntry\x1aN\n\nOfferEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .products.v1.ProductOfferVariant:\x02\x38\x01\"\xb6\x03\n\x13ProductOfferVariant\x12\x0b\n\x03sku\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\x04\x12\r\n\x05price\x18\x04 \x01(\t\x12\x1a\n\x12offering_condition\x18\x05 \x01(\t\x12\x1b\n\x0e\x63ondition_note\x18\x06 \x01(\tH\x00\x88\x01\x01\x12\x17\n\nlist_price\x18\x07 \x01(\tH\x01\x88\x01\x01\x12\x16\n\x0ehas_sale_price\x18\x08 \x01(\x08\x12\x17\n\nsale_price\x18\t \x01(\tH\x02\x88\x01\x01\x12\x1d\n\x10sale_price_start\x18\n \x01(\tH\x03\x88\x01\x01\x12\x1b\n\x0esale_price_end\x18\x0b \x01(\tH\x04\x88\x01\x01\x12\x1a\n\x12has_minimum_orders\x18\x0c \x01(\x08\x12=\n\x0eminimum_orders\x18\r \x03(\x0b\x32%.products.v1.ProductOfferMinimumOrderB\x11\n\x0f_condition_noteB\r\n\x0b_list_priceB\r\n\x0b_sale_priceB\x13\n\x11_sale_price_startB\x11\n\x0f_sale_price_end\";\n\x18ProductOfferMinimumOrder\x12\r\n\x05price\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x04\"\x86\x01\n\rProductSafety\x12\x36\n\x06safety\x18\x01 \x03(\x0b\x32&.products.v1.ProductSafety.SafetyEntry\x1a=\n\x0bSafetyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.shared.v1.Any:\x02\x38\x01\"@\n\nProductTag\x12\x0f\n\x02id\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x05\n\x03_idB\x07\n\x05_name\"4\n\x0bProductTags\x12%\n\x04tags\x18\x01 \x03(\x0b\x32\x17.products.v1.ProductTag\"\x11\n\x0fProductMetadata\"\x97\x07\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x04 \x01(\t\x12\x13\n\x0bsubcategory\x18\x05 \x01(\t\x12\x16\n\x0ehas_variations\x18\x06 \x01(\x08\x12\x17\n\nbrand_name\x18\x07 \x01(\tH\x00\x88\x01\x01\x12\x16\n\x0ehas_brand_name\x18\x08 \x01(\x08\x12\x17\n\nproduct_id\x18\t \x01(\tH\x01\x88\x01\x01\x12\x16\n\x0ehas_product_id\x18\n \x01(\x08\x12\x1c\n\x0fproduct_id_type\x18\x0b \x01(\tH\x02\x88\x01\x01\x12\x13\n\x0b\x64\x65scription\x18\x0c \x01(\t\x12\x36\n\rbullet_points\x18\r \x03(\x0b\x32\x1f.products.v1.ProductBulletPoint\x12\x15\n\rcurrency_code\x18\x0e \x01(\t\x12\x18\n\x10\x66ulfillment_type\x18\x0f \x01(\t\x12\x17\n\x0fprocessing_time\x18\x10 \x01(\x04\x12,\n\x07\x64\x65tails\x18\x11 \x01(\x0b\x32\x1b.products.v1.ProductDetails\x12(\n\x05media\x18\x12 \x01(\x0b\x32\x19.products.v1.ProductMedia\x12(\n\x05offer\x18\x13 \x01(\x0b\x32\x19.products.v1.ProductOffer\x12*\n\x06safety\x18\x14 \x01(\x0b\x32\x1a.products.v1.ProductSafety\x12%\n\x04tags\x18\x15 \x03(\x0b\x32\x17.products.v1.ProductTag\x12\x33\n\x08metadata\x18\x16 \x01(\x0b\x32\x1c.products.v1.ProductMetadataH\x03\x88\x01\x01\x12\x12\n\nar_enabled\x18\x17 \x01(\x08\x12\x0c\n\x04slug\x18\x18 \x01(\t\x12\x0e\n\x06status\x18\x19 \x01(\t\x12\x0f\n\x07version\x18\x1a \x01(\r\x12\x16\n\x0eschema_version\x18\x1b \x01(\r\x12\x12\n\ncreated_at\x18\x1c \x01(\x04\x12\x19\n\x0cpublished_at\x18\x1d \x01(\x04H\x04\x88\x01\x01\x12\x17\n\nupdated_at\x18\x1e \x01(\x04H\x05\x88\x01\x01\x42\r\n\x0b_brand_nameB\r\n\x0b_product_idB\x12\n\x10_product_id_typeB\x0b\n\t_metadataB\x0f\n\r_published_atB\r\n\x0b_updated_atBv\n\x1corg.megacommerce.products.v1B\x0cProductProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,12 +33,58 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'products.v1.product_pb2', _
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\014ProductProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
-  _globals['_PRODUCTTAG']._serialized_start=42
-  _globals['_PRODUCTTAG']._serialized_end=106
-  _globals['_PRODUCTTAGS']._serialized_start=108
-  _globals['_PRODUCTTAGS']._serialized_end=160
-  _globals['_PRODUCTMETADATA']._serialized_start=162
-  _globals['_PRODUCTMETADATA']._serialized_end=179
-  _globals['_PRODUCT']._serialized_start=182
-  _globals['_PRODUCT']._serialized_end=583
+  _globals['_PRODUCTDETAILS_SHAREDENTRY']._loaded_options = None
+  _globals['_PRODUCTDETAILS_SHAREDENTRY']._serialized_options = b'8\001'
+  _globals['_PRODUCTDETAILS_DETAILSENTRY']._loaded_options = None
+  _globals['_PRODUCTDETAILS_DETAILSENTRY']._serialized_options = b'8\001'
+  _globals['_PRODUCTDETAILSVARIANT_VARIANTDATAENTRY']._loaded_options = None
+  _globals['_PRODUCTDETAILSVARIANT_VARIANTDATAENTRY']._serialized_options = b'8\001'
+  _globals['_PRODUCTMEDIA_SAFETYENTRY']._loaded_options = None
+  _globals['_PRODUCTMEDIA_SAFETYENTRY']._serialized_options = b'8\001'
+  _globals['_PRODUCTOFFER_OFFERENTRY']._loaded_options = None
+  _globals['_PRODUCTOFFER_OFFERENTRY']._serialized_options = b'8\001'
+  _globals['_PRODUCTSAFETY_SAFETYENTRY']._loaded_options = None
+  _globals['_PRODUCTSAFETY_SAFETYENTRY']._serialized_options = b'8\001'
+  _globals['_PRODUCTBULLETPOINT']._serialized_start=65
+  _globals['_PRODUCTBULLETPOINT']._serialized_end=171
+  _globals['_PRODUCTDETAILS']._serialized_start=174
+  _globals['_PRODUCTDETAILS']._serialized_end=453
+  _globals['_PRODUCTDETAILS_SHAREDENTRY']._serialized_start=308
+  _globals['_PRODUCTDETAILS_SHAREDENTRY']._serialized_end=369
+  _globals['_PRODUCTDETAILS_DETAILSENTRY']._serialized_start=371
+  _globals['_PRODUCTDETAILS_DETAILSENTRY']._serialized_end=453
+  _globals['_PRODUCTDETAILSVARIANT']._serialized_start=456
+  _globals['_PRODUCTDETAILSVARIANT']._serialized_end=644
+  _globals['_PRODUCTDETAILSVARIANT_VARIANTDATAENTRY']._serialized_start=578
+  _globals['_PRODUCTDETAILSVARIANT_VARIANTDATAENTRY']._serialized_end=644
+  _globals['_PRODUCTMEDIA']._serialized_start=647
+  _globals['_PRODUCTMEDIA']._serialized_end=779
+  _globals['_PRODUCTMEDIA_SAFETYENTRY']._serialized_start=718
+  _globals['_PRODUCTMEDIA_SAFETYENTRY']._serialized_end=779
+  _globals['_PRODUCTMEDIAVARIANT']._serialized_start=781
+  _globals['_PRODUCTMEDIAVARIANT']._serialized_end=898
+  _globals['_PRODUCTMEDIAIMAGE']._serialized_start=900
+  _globals['_PRODUCTMEDIAIMAGE']._serialized_end=962
+  _globals['_PRODUCTMEDIAVIDEO']._serialized_start=964
+  _globals['_PRODUCTMEDIAVIDEO']._serialized_end=1044
+  _globals['_PRODUCTOFFER']._serialized_start=1047
+  _globals['_PRODUCTOFFER']._serialized_end=1194
+  _globals['_PRODUCTOFFER_OFFERENTRY']._serialized_start=1116
+  _globals['_PRODUCTOFFER_OFFERENTRY']._serialized_end=1194
+  _globals['_PRODUCTOFFERVARIANT']._serialized_start=1197
+  _globals['_PRODUCTOFFERVARIANT']._serialized_end=1635
+  _globals['_PRODUCTOFFERMINIMUMORDER']._serialized_start=1637
+  _globals['_PRODUCTOFFERMINIMUMORDER']._serialized_end=1696
+  _globals['_PRODUCTSAFETY']._serialized_start=1699
+  _globals['_PRODUCTSAFETY']._serialized_end=1833
+  _globals['_PRODUCTSAFETY_SAFETYENTRY']._serialized_start=718
+  _globals['_PRODUCTSAFETY_SAFETYENTRY']._serialized_end=779
+  _globals['_PRODUCTTAG']._serialized_start=1835
+  _globals['_PRODUCTTAG']._serialized_end=1899
+  _globals['_PRODUCTTAGS']._serialized_start=1901
+  _globals['_PRODUCTTAGS']._serialized_end=1953
+  _globals['_PRODUCTMETADATA']._serialized_start=1955
+  _globals['_PRODUCTMETADATA']._serialized_end=1972
+  _globals['_PRODUCT']._serialized_start=1975
+  _globals['_PRODUCT']._serialized_end=2894
 # @@protoc_insertion_point(module_scope)

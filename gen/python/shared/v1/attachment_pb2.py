@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from shared.v1 import struct_pb2 as shared_dot_v1_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\x96\x02\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x66ilename\x18\x02 \x01(\t\x12\x11\n\tfile_type\x18\x03 \x01(\t\x12\x11\n\tfile_size\x18\x04 \x01(\x03\x12\x16\n\x0e\x66ile_extension\x18\x05 \x01(\t\x12\x0e\n\x06\x62\x61se64\x18\x06 \x01(\t\x12\x18\n\x10\x65xif_orientation\x18\x07 \x01(\x05\x12\x1d\n\x04\x63rop\x18\x08 \x01(\x0b\x32\x0f.shared.v1.Crop\x12#\n\x08metadata\x18\t \x01(\x0b\x32\x11.shared.v1.Struct\x12\x0c\n\x04\x64\x61ta\x18\n \x01(\x0c\x12\x0c\n\x04mime\x18\x0b \x01(\t\x12\x15\n\x08\x63hecksum\x18\x0c \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_checksum\"9\n\x0b\x41ttachments\x12*\n\x0b\x61ttachments\x18\x01 \x03(\x0b\x32\x15.shared.v1.Attachment\"Q\n\x04\x43rop\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\r\n\x05width\x18\x03 \x01(\x02\x12\x0e\n\x06height\x18\x04 \x01(\x02\x12\x14\n\x0c\x61spect_ratio\x18\x05 \x01(\x02\"k\n\x0f\x41ttachmentError\x12\n\n\x02id\x18\x01 \x01(\t\x12,\n\x04type\x18\x02 \x01(\x0e\x32\x1e.shared.v1.AttachmentErrorType\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\r\n\x05\x65rror\x18\x04 \x01(\t*\xa2\x01\n\x13\x41ttachmentErrorType\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x12\n\x0eINVALID_BASE64\x10\x01\x12\x15\n\x11INVALID_FILE_TYPE\x10\x02\x12\x0c\n\x08\x42IG_FILE\x10\x03\x12\x0e\n\nDECODE_IMG\x10\x04\x12\x16\n\x12\x42IG_DIMENSIONS_IMG\x10\x05\x12\x19\n\x15UNSUPPORTED_FILE_TYPE\x10\x06\x42u\n\x1aorg.megacommerce.shared.v1B\x0f\x41ttachmentProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\x96\x02\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x66ilename\x18\x02 \x01(\t\x12\x11\n\tfile_type\x18\x03 \x01(\t\x12\x11\n\tfile_size\x18\x04 \x01(\x03\x12\x16\n\x0e\x66ile_extension\x18\x05 \x01(\t\x12\x0e\n\x06\x62\x61se64\x18\x06 \x01(\t\x12\x18\n\x10\x65xif_orientation\x18\x07 \x01(\x05\x12\x1d\n\x04\x63rop\x18\x08 \x01(\x0b\x32\x0f.shared.v1.Crop\x12#\n\x08metadata\x18\t \x01(\x0b\x32\x11.shared.v1.Struct\x12\x0c\n\x04\x64\x61ta\x18\n \x01(\x0c\x12\x0c\n\x04mime\x18\x0b \x01(\t\x12\x15\n\x08\x63hecksum\x18\x0c \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_checksum\"9\n\x0b\x41ttachments\x12*\n\x0b\x61ttachments\x18\x01 \x03(\x0b\x32\x15.shared.v1.Attachment\"Q\n\x04\x43rop\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\r\n\x05width\x18\x03 \x01(\x02\x12\x0e\n\x06height\x18\x04 \x01(\x02\x12\x14\n\x0c\x61spect_ratio\x18\x05 \x01(\x02\x42u\n\x1aorg.megacommerce.shared.v1B\x0f\x41ttachmentProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,14 +33,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'shared.v1.attachment_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.shared.v1B\017AttachmentProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\370\001\001'
-  _globals['_ATTACHMENTERRORTYPE']._serialized_start=598
-  _globals['_ATTACHMENTERRORTYPE']._serialized_end=760
   _globals['_ATTACHMENT']._serialized_start=66
   _globals['_ATTACHMENT']._serialized_end=344
   _globals['_ATTACHMENTS']._serialized_start=346
   _globals['_ATTACHMENTS']._serialized_end=403
   _globals['_CROP']._serialized_start=405
   _globals['_CROP']._serialized_end=486
-  _globals['_ATTACHMENTERROR']._serialized_start=488
-  _globals['_ATTACHMENTERROR']._serialized_end=595
 # @@protoc_insertion_point(module_scope)

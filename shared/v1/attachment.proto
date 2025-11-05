@@ -35,20 +35,3 @@ message Crop {
   float height = 4;
   float aspect_ratio = 5;
 }
-
-enum AttachmentErrorType {
-  UNSPECIFIED = 0;
-  INVALID_BASE64 = 1;
-  INVALID_FILE_TYPE = 2;
-  BIG_FILE = 3;
-  DECODE_IMG = 4;
-  BIG_DIMENSIONS_IMG = 5;
-  UNSUPPORTED_FILE_TYPE = 6;
-}
-
-message AttachmentError {
-  string id = 1; // the attachment id
-  AttachmentErrorType type = 2;
-  string message = 3; // shown to the user
-  string error = 4; // used for the backend
-}

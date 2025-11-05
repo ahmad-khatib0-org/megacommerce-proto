@@ -26,6 +26,10573 @@ public final class ProductProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface ProductBulletPointOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductBulletPoint)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string text = 2 [json_name = "text"];</code>
+     * @return The text.
+     */
+    java.lang.String getText();
+    /**
+     * <code>string text = 2 [json_name = "text"];</code>
+     * @return The bytes for text.
+     */
+    com.google.protobuf.ByteString
+        getTextBytes();
+
+    /**
+     * <code>uint64 created_at = 3 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    long getCreatedAt();
+
+    /**
+     * <code>optional uint64 updated_at = 4 [json_name = "updatedAt"];</code>
+     * @return Whether the updatedAt field is set.
+     */
+    boolean hasUpdatedAt();
+    /**
+     * <code>optional uint64 updated_at = 4 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    long getUpdatedAt();
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductBulletPoint}
+   */
+  public static final class ProductBulletPoint extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductBulletPoint)
+      ProductBulletPointOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductBulletPoint.class.getName());
+    }
+    // Use ProductBulletPoint.newBuilder() to construct.
+    private ProductBulletPoint(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductBulletPoint() {
+      id_ = "";
+      text_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductBulletPoint_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductBulletPoint_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductBulletPoint.class, org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEXT_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object text_ = "";
+    /**
+     * <code>string text = 2 [json_name = "text"];</code>
+     * @return The text.
+     */
+    @java.lang.Override
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string text = 2 [json_name = "text"];</code>
+     * @return The bytes for text.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 3;
+    private long createdAt_ = 0L;
+    /**
+     * <code>uint64 created_at = 3 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public long getCreatedAt() {
+      return createdAt_;
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 4;
+    private long updatedAt_ = 0L;
+    /**
+     * <code>optional uint64 updated_at = 4 [json_name = "updatedAt"];</code>
+     * @return Whether the updatedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdatedAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional uint64 updated_at = 4 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public long getUpdatedAt() {
+      return updatedAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(text_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, text_);
+      }
+      if (createdAt_ != 0L) {
+        output.writeUInt64(3, createdAt_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeUInt64(4, updatedAt_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(text_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, text_);
+      }
+      if (createdAt_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, createdAt_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, updatedAt_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductBulletPoint)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductBulletPoint other = (org.megacommerce.products.v1.ProductProto.ProductBulletPoint) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getText()
+          .equals(other.getText())) return false;
+      if (getCreatedAt()
+          != other.getCreatedAt()) return false;
+      if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+      if (hasUpdatedAt()) {
+        if (getUpdatedAt()
+            != other.getUpdatedAt()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getText().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCreatedAt());
+      if (hasUpdatedAt()) {
+        hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUpdatedAt());
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductBulletPoint prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductBulletPoint}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductBulletPoint)
+        org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductBulletPoint_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductBulletPoint_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductBulletPoint.class, org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductBulletPoint.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = "";
+        text_ = "";
+        createdAt_ = 0L;
+        updatedAt_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductBulletPoint_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductBulletPoint getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductBulletPoint.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductBulletPoint build() {
+        org.megacommerce.products.v1.ProductProto.ProductBulletPoint result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductBulletPoint buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductBulletPoint result = new org.megacommerce.products.v1.ProductProto.ProductBulletPoint(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductBulletPoint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.text_ = text_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.createdAt_ = createdAt_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.updatedAt_ = updatedAt_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductBulletPoint) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductBulletPoint)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductBulletPoint other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductBulletPoint.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getText().isEmpty()) {
+          text_ = other.text_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getCreatedAt() != 0L) {
+          setCreatedAt(other.getCreatedAt());
+        }
+        if (other.hasUpdatedAt()) {
+          setUpdatedAt(other.getUpdatedAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                text_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                createdAt_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                updatedAt_ = input.readUInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object text_ = "";
+      /**
+       * <code>string text = 2 [json_name = "text"];</code>
+       * @return The text.
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string text = 2 [json_name = "text"];</code>
+       * @return The bytes for text.
+       */
+      public com.google.protobuf.ByteString
+          getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string text = 2 [json_name = "text"];</code>
+       * @param value The text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setText(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        text_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string text = 2 [json_name = "text"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearText() {
+        text_ = getDefaultInstance().getText();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string text = 2 [json_name = "text"];</code>
+       * @param value The bytes for text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        text_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private long createdAt_ ;
+      /**
+       * <code>uint64 created_at = 3 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      @java.lang.Override
+      public long getCreatedAt() {
+        return createdAt_;
+      }
+      /**
+       * <code>uint64 created_at = 3 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(long value) {
+
+        createdAt_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 created_at = 3 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        createdAt_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long updatedAt_ ;
+      /**
+       * <code>optional uint64 updated_at = 4 [json_name = "updatedAt"];</code>
+       * @return Whether the updatedAt field is set.
+       */
+      @java.lang.Override
+      public boolean hasUpdatedAt() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>optional uint64 updated_at = 4 [json_name = "updatedAt"];</code>
+       * @return The updatedAt.
+       */
+      @java.lang.Override
+      public long getUpdatedAt() {
+        return updatedAt_;
+      }
+      /**
+       * <code>optional uint64 updated_at = 4 [json_name = "updatedAt"];</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(long value) {
+
+        updatedAt_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 updated_at = 4 [json_name = "updatedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        updatedAt_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductBulletPoint)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductBulletPoint)
+    private static final org.megacommerce.products.v1.ProductProto.ProductBulletPoint DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductBulletPoint();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductBulletPoint getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductBulletPoint>
+        PARSER = new com.google.protobuf.AbstractParser<ProductBulletPoint>() {
+      @java.lang.Override
+      public ProductBulletPoint parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductBulletPoint> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductBulletPoint> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductBulletPoint getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductDetailsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductDetails)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * non customizable details for variants (can be empty of all the attributes customizable)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    int getSharedCount();
+    /**
+     * <pre>
+     * non customizable details for variants (can be empty of all the attributes customizable)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    boolean containsShared(
+        java.lang.String key);
+    /**
+     * Use {@link #getSharedMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getShared();
+    /**
+     * <pre>
+     * non customizable details for variants (can be empty of all the attributes customizable)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getSharedMap();
+    /**
+     * <pre>
+     * non customizable details for variants (can be empty of all the attributes customizable)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSharedOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue);
+    /**
+     * <pre>
+     * non customizable details for variants (can be empty of all the attributes customizable)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    org.megacommerce.shared.v1.TypesProto.Any getSharedOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * no need to store the data separately (E.g. with_variants, no_variant) because
+     * we can do a simple check: length === 1 ? So there is no variants
+     * for this product, and also this allow us later on to make the user be able
+     * to add variants to an existing product
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+     */
+    int getDetailsCount();
+    /**
+     * <pre>
+     * no need to store the data separately (E.g. with_variants, no_variant) because
+     * we can do a simple check: length === 1 ? So there is no variants
+     * for this product, and also this allow us later on to make the user be able
+     * to add variants to an existing product
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+     */
+    boolean containsDetails(
+        java.lang.String key);
+    /**
+     * Use {@link #getDetailsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant>
+    getDetails();
+    /**
+     * <pre>
+     * no need to store the data separately (E.g. with_variants, no_variant) because
+     * we can do a simple check: length === 1 ? So there is no variants
+     * for this product, and also this allow us later on to make the user be able
+     * to add variants to an existing product
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant>
+    getDetailsMap();
+    /**
+     * <pre>
+     * no need to store the data separately (E.g. with_variants, no_variant) because
+     * we can do a simple check: length === 1 ? So there is no variants
+     * for this product, and also this allow us later on to make the user be able
+     * to add variants to an existing product
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+     */
+    /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductDetailsVariant getDetailsOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductDetailsVariant defaultValue);
+    /**
+     * <pre>
+     * no need to store the data separately (E.g. with_variants, no_variant) because
+     * we can do a simple check: length === 1 ? So there is no variants
+     * for this product, and also this allow us later on to make the user be able
+     * to add variants to an existing product
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductDetailsVariant getDetailsOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductDetails}
+   */
+  public static final class ProductDetails extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductDetails)
+      ProductDetailsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductDetails.class.getName());
+    }
+    // Use ProductDetails.newBuilder() to construct.
+    private ProductDetails(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductDetails() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetails_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetShared();
+        case 2:
+          return internalGetDetails();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetails_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductDetails.class, org.megacommerce.products.v1.ProductProto.ProductDetails.Builder.class);
+    }
+
+    public static final int SHARED_FIELD_NUMBER = 1;
+    private static final class SharedDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetails_SharedEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance());
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> shared_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    internalGetShared() {
+      if (shared_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SharedDefaultEntryHolder.defaultEntry);
+      }
+      return shared_;
+    }
+    public int getSharedCount() {
+      return internalGetShared().getMap().size();
+    }
+    /**
+     * <pre>
+     * non customizable details for variants (can be empty of all the attributes customizable)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    @java.lang.Override
+    public boolean containsShared(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetShared().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getSharedMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getShared() {
+      return getSharedMap();
+    }
+    /**
+     * <pre>
+     * non customizable details for variants (can be empty of all the attributes customizable)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSharedMap() {
+      return internalGetShared().getMap();
+    }
+    /**
+     * <pre>
+     * non customizable details for variants (can be empty of all the attributes customizable)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSharedOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetShared().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * non customizable details for variants (can be empty of all the attributes customizable)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.Any getSharedOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetShared().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int DETAILS_FIELD_NUMBER = 2;
+    private static final class DetailsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetails_DetailsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.getDefaultInstance());
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> details_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant>
+    internalGetDetails() {
+      if (details_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DetailsDefaultEntryHolder.defaultEntry);
+      }
+      return details_;
+    }
+    public int getDetailsCount() {
+      return internalGetDetails().getMap().size();
+    }
+    /**
+     * <pre>
+     * no need to store the data separately (E.g. with_variants, no_variant) because
+     * we can do a simple check: length === 1 ? So there is no variants
+     * for this product, and also this allow us later on to make the user be able
+     * to add variants to an existing product
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public boolean containsDetails(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetDetails().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getDetailsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> getDetails() {
+      return getDetailsMap();
+    }
+    /**
+     * <pre>
+     * no need to store the data separately (E.g. with_variants, no_variant) because
+     * we can do a simple check: length === 1 ? So there is no variants
+     * for this product, and also this allow us later on to make the user be able
+     * to add variants to an existing product
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> getDetailsMap() {
+      return internalGetDetails().getMap();
+    }
+    /**
+     * <pre>
+     * no need to store the data separately (E.g. with_variants, no_variant) because
+     * we can do a simple check: length === 1 ? So there is no variants
+     * for this product, and also this allow us later on to make the user be able
+     * to add variants to an existing product
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductDetailsVariant getDetailsOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductDetailsVariant defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> map =
+          internalGetDetails().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * no need to store the data separately (E.g. with_variants, no_variant) because
+     * we can do a simple check: length === 1 ? So there is no variants
+     * for this product, and also this allow us later on to make the user be able
+     * to add variants to an existing product
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductDetailsVariant getDetailsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> map =
+          internalGetDetails().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetShared(),
+          SharedDefaultEntryHolder.defaultEntry,
+          1);
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetDetails(),
+          DetailsDefaultEntryHolder.defaultEntry,
+          2);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> entry
+           : internalGetShared().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+        shared__ = SharedDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, shared__);
+      }
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> entry
+           : internalGetDetails().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant>
+        details__ = DetailsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, details__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductDetails)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductDetails other = (org.megacommerce.products.v1.ProductProto.ProductDetails) obj;
+
+      if (!internalGetShared().equals(
+          other.internalGetShared())) return false;
+      if (!internalGetDetails().equals(
+          other.internalGetDetails())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetShared().getMap().isEmpty()) {
+        hash = (37 * hash) + SHARED_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetShared().hashCode();
+      }
+      if (!internalGetDetails().getMap().isEmpty()) {
+        hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetDetails().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductDetails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductDetails}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductDetails)
+        org.megacommerce.products.v1.ProductProto.ProductDetailsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetails_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetShared();
+          case 2:
+            return internalGetDetails();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableShared();
+          case 2:
+            return internalGetMutableDetails();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductDetails.class, org.megacommerce.products.v1.ProductProto.ProductDetails.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductDetails.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        internalGetMutableShared().clear();
+        internalGetMutableDetails().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetails_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductDetails getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductDetails.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductDetails build() {
+        org.megacommerce.products.v1.ProductProto.ProductDetails result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductDetails buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductDetails result = new org.megacommerce.products.v1.ProductProto.ProductDetails(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.shared_ = internalGetShared().build(SharedDefaultEntryHolder.defaultEntry);
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.details_ = internalGetDetails().build(DetailsDefaultEntryHolder.defaultEntry);
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductDetails) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductDetails)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductDetails other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductDetails.getDefaultInstance()) return this;
+        internalGetMutableShared().mergeFrom(
+            other.internalGetShared());
+        bitField0_ |= 0x00000001;
+        internalGetMutableDetails().mergeFrom(
+            other.internalGetDetails());
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+                shared__ = input.readMessage(
+                    SharedDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableShared().ensureBuilderMap().put(
+                    shared__.getKey(), shared__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant>
+                details__ = input.readMessage(
+                    DetailsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableDetails().ensureBuilderMap().put(
+                    details__.getKey(), details__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private static final class SharedConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any> {
+        @java.lang.Override
+        public org.megacommerce.shared.v1.TypesProto.Any build(org.megacommerce.shared.v1.TypesProto.AnyOrBuilder val) {
+          if (val instanceof org.megacommerce.shared.v1.TypesProto.Any) { return (org.megacommerce.shared.v1.TypesProto.Any) val; }
+          return ((org.megacommerce.shared.v1.TypesProto.Any.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry() {
+          return SharedDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final SharedConverter sharedConverter = new SharedConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder> shared_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetShared() {
+        if (shared_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(sharedConverter);
+        }
+        return shared_;
+      }
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetMutableShared() {
+        if (shared_ == null) {
+          shared_ = new com.google.protobuf.MapFieldBuilder<>(sharedConverter);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return shared_;
+      }
+      public int getSharedCount() {
+        return internalGetShared().ensureBuilderMap().size();
+      }
+      /**
+       * <pre>
+       * non customizable details for variants (can be empty of all the attributes customizable)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      @java.lang.Override
+      public boolean containsShared(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetShared().ensureBuilderMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getSharedMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getShared() {
+        return getSharedMap();
+      }
+      /**
+       * <pre>
+       * non customizable details for variants (can be empty of all the attributes customizable)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSharedMap() {
+        return internalGetShared().getImmutableMap();
+      }
+      /**
+       * <pre>
+       * non customizable details for variants (can be empty of all the attributes customizable)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSharedOrDefault(
+          java.lang.String key,
+          /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableShared().ensureBuilderMap();
+        return map.containsKey(key) ? sharedConverter.build(map.get(key)) : defaultValue;
+      }
+      /**
+       * <pre>
+       * non customizable details for variants (can be empty of all the attributes customizable)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Any getSharedOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableShared().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return sharedConverter.build(map.get(key));
+      }
+      public Builder clearShared() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableShared().clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * non customizable details for variants (can be empty of all the attributes customizable)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      public Builder removeShared(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableShared().ensureBuilderMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+          getMutableShared() {
+        bitField0_ |= 0x00000001;
+        return internalGetMutableShared().ensureMessageMap();
+      }
+      /**
+       * <pre>
+       * non customizable details for variants (can be empty of all the attributes customizable)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      public Builder putShared(
+          java.lang.String key,
+          org.megacommerce.shared.v1.TypesProto.Any value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableShared().ensureBuilderMap()
+            .put(key, value);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * non customizable details for variants (can be empty of all the attributes customizable)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      public Builder putAllShared(
+          java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableShared().ensureBuilderMap()
+            .putAll(values);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * non customizable details for variants (can be empty of all the attributes customizable)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      public org.megacommerce.shared.v1.TypesProto.Any.Builder putSharedBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> builderMap = internalGetMutableShared().ensureBuilderMap();
+        org.megacommerce.shared.v1.TypesProto.AnyOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.shared.v1.TypesProto.Any.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof org.megacommerce.shared.v1.TypesProto.Any) {
+          entry = ((org.megacommerce.shared.v1.TypesProto.Any) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (org.megacommerce.shared.v1.TypesProto.Any.Builder) entry;
+      }
+
+      private static final class DetailsConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> {
+        @java.lang.Override
+        public org.megacommerce.products.v1.ProductProto.ProductDetailsVariant build(org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder val) {
+          if (val instanceof org.megacommerce.products.v1.ProductProto.ProductDetailsVariant) { return (org.megacommerce.products.v1.ProductProto.ProductDetailsVariant) val; }
+          return ((org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> defaultEntry() {
+          return DetailsDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final DetailsConverter detailsConverter = new DetailsConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.Builder> details_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.Builder>
+          internalGetDetails() {
+        if (details_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(detailsConverter);
+        }
+        return details_;
+      }
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.Builder>
+          internalGetMutableDetails() {
+        if (details_ == null) {
+          details_ = new com.google.protobuf.MapFieldBuilder<>(detailsConverter);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return details_;
+      }
+      public int getDetailsCount() {
+        return internalGetDetails().ensureBuilderMap().size();
+      }
+      /**
+       * <pre>
+       * no need to store the data separately (E.g. with_variants, no_variant) because
+       * we can do a simple check: length === 1 ? So there is no variants
+       * for this product, and also this allow us later on to make the user be able
+       * to add variants to an existing product
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+       */
+      @java.lang.Override
+      public boolean containsDetails(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetDetails().ensureBuilderMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getDetailsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> getDetails() {
+        return getDetailsMap();
+      }
+      /**
+       * <pre>
+       * no need to store the data separately (E.g. with_variants, no_variant) because
+       * we can do a simple check: length === 1 ? So there is no variants
+       * for this product, and also this allow us later on to make the user be able
+       * to add variants to an existing product
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> getDetailsMap() {
+        return internalGetDetails().getImmutableMap();
+      }
+      /**
+       * <pre>
+       * no need to store the data separately (E.g. with_variants, no_variant) because
+       * we can do a simple check: length === 1 ? So there is no variants
+       * for this product, and also this allow us later on to make the user be able
+       * to add variants to an existing product
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductDetailsVariant getDetailsOrDefault(
+          java.lang.String key,
+          /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductDetailsVariant defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder> map = internalGetMutableDetails().ensureBuilderMap();
+        return map.containsKey(key) ? detailsConverter.build(map.get(key)) : defaultValue;
+      }
+      /**
+       * <pre>
+       * no need to store the data separately (E.g. with_variants, no_variant) because
+       * we can do a simple check: length === 1 ? So there is no variants
+       * for this product, and also this allow us later on to make the user be able
+       * to add variants to an existing product
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductDetailsVariant getDetailsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder> map = internalGetMutableDetails().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return detailsConverter.build(map.get(key));
+      }
+      public Builder clearDetails() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableDetails().clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * no need to store the data separately (E.g. with_variants, no_variant) because
+       * we can do a simple check: length === 1 ? So there is no variants
+       * for this product, and also this allow us later on to make the user be able
+       * to add variants to an existing product
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+       */
+      public Builder removeDetails(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableDetails().ensureBuilderMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant>
+          getMutableDetails() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableDetails().ensureMessageMap();
+      }
+      /**
+       * <pre>
+       * no need to store the data separately (E.g. with_variants, no_variant) because
+       * we can do a simple check: length === 1 ? So there is no variants
+       * for this product, and also this allow us later on to make the user be able
+       * to add variants to an existing product
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+       */
+      public Builder putDetails(
+          java.lang.String key,
+          org.megacommerce.products.v1.ProductProto.ProductDetailsVariant value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableDetails().ensureBuilderMap()
+            .put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <pre>
+       * no need to store the data separately (E.g. with_variants, no_variant) because
+       * we can do a simple check: length === 1 ? So there is no variants
+       * for this product, and also this allow us later on to make the user be able
+       * to add variants to an existing product
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+       */
+      public Builder putAllDetails(
+          java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableDetails().ensureBuilderMap()
+            .putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <pre>
+       * no need to store the data separately (E.g. with_variants, no_variant) because
+       * we can do a simple check: length === 1 ? So there is no variants
+       * for this product, and also this allow us later on to make the user be able
+       * to add variants to an existing product
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductDetailsVariant&gt; details = 2 [json_name = "details"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.Builder putDetailsBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder> builderMap = internalGetMutableDetails().ensureBuilderMap();
+        org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof org.megacommerce.products.v1.ProductProto.ProductDetailsVariant) {
+          entry = ((org.megacommerce.products.v1.ProductProto.ProductDetailsVariant) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.Builder) entry;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductDetails)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductDetails)
+    private static final org.megacommerce.products.v1.ProductProto.ProductDetails DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductDetails();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductDetails getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductDetails>
+        PARSER = new com.google.protobuf.AbstractParser<ProductDetails>() {
+      @java.lang.Override
+      public ProductDetails parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductDetails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductDetails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductDetails getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductDetailsVariantOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductDetailsVariant)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string variant_name = 1 [json_name = "variantName"];</code>
+     * @return The variantName.
+     */
+    java.lang.String getVariantName();
+    /**
+     * <code>string variant_name = 1 [json_name = "variantName"];</code>
+     * @return The bytes for variantName.
+     */
+    com.google.protobuf.ByteString
+        getVariantNameBytes();
+
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+     */
+    int getVariantDataCount();
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+     */
+    boolean containsVariantData(
+        java.lang.String key);
+    /**
+     * Use {@link #getVariantDataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getVariantData();
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getVariantDataMap();
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+     */
+    /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getVariantDataOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue);
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+     */
+    org.megacommerce.shared.v1.TypesProto.Any getVariantDataOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductDetailsVariant}
+   */
+  public static final class ProductDetailsVariant extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductDetailsVariant)
+      ProductDetailsVariantOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductDetailsVariant.class.getName());
+    }
+    // Use ProductDetailsVariant.newBuilder() to construct.
+    private ProductDetailsVariant(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductDetailsVariant() {
+      variantName_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetailsVariant_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetVariantData();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetailsVariant_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.class, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.Builder.class);
+    }
+
+    public static final int VARIANT_NAME_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object variantName_ = "";
+    /**
+     * <code>string variant_name = 1 [json_name = "variantName"];</code>
+     * @return The variantName.
+     */
+    @java.lang.Override
+    public java.lang.String getVariantName() {
+      java.lang.Object ref = variantName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        variantName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string variant_name = 1 [json_name = "variantName"];</code>
+     * @return The bytes for variantName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVariantNameBytes() {
+      java.lang.Object ref = variantName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        variantName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VARIANT_DATA_FIELD_NUMBER = 2;
+    private static final class VariantDataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetailsVariant_VariantDataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance());
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> variantData_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    internalGetVariantData() {
+      if (variantData_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            VariantDataDefaultEntryHolder.defaultEntry);
+      }
+      return variantData_;
+    }
+    public int getVariantDataCount() {
+      return internalGetVariantData().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+     */
+    @java.lang.Override
+    public boolean containsVariantData(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetVariantData().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getVariantDataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getVariantData() {
+      return getVariantDataMap();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getVariantDataMap() {
+      return internalGetVariantData().getMap();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getVariantDataOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetVariantData().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.Any getVariantDataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetVariantData().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(variantName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, variantName_);
+      }
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetVariantData(),
+          VariantDataDefaultEntryHolder.defaultEntry,
+          2);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(variantName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, variantName_);
+      }
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> entry
+           : internalGetVariantData().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+        variantData__ = VariantDataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, variantData__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductDetailsVariant)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductDetailsVariant other = (org.megacommerce.products.v1.ProductProto.ProductDetailsVariant) obj;
+
+      if (!getVariantName()
+          .equals(other.getVariantName())) return false;
+      if (!internalGetVariantData().equals(
+          other.internalGetVariantData())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + VARIANT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getVariantName().hashCode();
+      if (!internalGetVariantData().getMap().isEmpty()) {
+        hash = (37 * hash) + VARIANT_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetVariantData().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductDetailsVariant prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductDetailsVariant}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductDetailsVariant)
+        org.megacommerce.products.v1.ProductProto.ProductDetailsVariantOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetailsVariant_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetVariantData();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableVariantData();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetailsVariant_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.class, org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        variantName_ = "";
+        internalGetMutableVariantData().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductDetailsVariant_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductDetailsVariant getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductDetailsVariant build() {
+        org.megacommerce.products.v1.ProductProto.ProductDetailsVariant result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductDetailsVariant buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductDetailsVariant result = new org.megacommerce.products.v1.ProductProto.ProductDetailsVariant(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductDetailsVariant result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.variantName_ = variantName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.variantData_ = internalGetVariantData().build(VariantDataDefaultEntryHolder.defaultEntry);
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductDetailsVariant) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductDetailsVariant)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductDetailsVariant other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductDetailsVariant.getDefaultInstance()) return this;
+        if (!other.getVariantName().isEmpty()) {
+          variantName_ = other.variantName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        internalGetMutableVariantData().mergeFrom(
+            other.internalGetVariantData());
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                variantName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+                variantData__ = input.readMessage(
+                    VariantDataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableVariantData().ensureBuilderMap().put(
+                    variantData__.getKey(), variantData__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object variantName_ = "";
+      /**
+       * <code>string variant_name = 1 [json_name = "variantName"];</code>
+       * @return The variantName.
+       */
+      public java.lang.String getVariantName() {
+        java.lang.Object ref = variantName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          variantName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string variant_name = 1 [json_name = "variantName"];</code>
+       * @return The bytes for variantName.
+       */
+      public com.google.protobuf.ByteString
+          getVariantNameBytes() {
+        java.lang.Object ref = variantName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          variantName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string variant_name = 1 [json_name = "variantName"];</code>
+       * @param value The variantName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVariantName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        variantName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string variant_name = 1 [json_name = "variantName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVariantName() {
+        variantName_ = getDefaultInstance().getVariantName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string variant_name = 1 [json_name = "variantName"];</code>
+       * @param value The bytes for variantName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVariantNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        variantName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private static final class VariantDataConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any> {
+        @java.lang.Override
+        public org.megacommerce.shared.v1.TypesProto.Any build(org.megacommerce.shared.v1.TypesProto.AnyOrBuilder val) {
+          if (val instanceof org.megacommerce.shared.v1.TypesProto.Any) { return (org.megacommerce.shared.v1.TypesProto.Any) val; }
+          return ((org.megacommerce.shared.v1.TypesProto.Any.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry() {
+          return VariantDataDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final VariantDataConverter variantDataConverter = new VariantDataConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder> variantData_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetVariantData() {
+        if (variantData_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(variantDataConverter);
+        }
+        return variantData_;
+      }
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetMutableVariantData() {
+        if (variantData_ == null) {
+          variantData_ = new com.google.protobuf.MapFieldBuilder<>(variantDataConverter);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return variantData_;
+      }
+      public int getVariantDataCount() {
+        return internalGetVariantData().ensureBuilderMap().size();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+       */
+      @java.lang.Override
+      public boolean containsVariantData(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetVariantData().ensureBuilderMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getVariantDataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getVariantData() {
+        return getVariantDataMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getVariantDataMap() {
+        return internalGetVariantData().getImmutableMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getVariantDataOrDefault(
+          java.lang.String key,
+          /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableVariantData().ensureBuilderMap();
+        return map.containsKey(key) ? variantDataConverter.build(map.get(key)) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Any getVariantDataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableVariantData().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return variantDataConverter.build(map.get(key));
+      }
+      public Builder clearVariantData() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableVariantData().clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+       */
+      public Builder removeVariantData(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableVariantData().ensureBuilderMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+          getMutableVariantData() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableVariantData().ensureMessageMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+       */
+      public Builder putVariantData(
+          java.lang.String key,
+          org.megacommerce.shared.v1.TypesProto.Any value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableVariantData().ensureBuilderMap()
+            .put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+       */
+      public Builder putAllVariantData(
+          java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableVariantData().ensureBuilderMap()
+            .putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; variant_data = 2 [json_name = "variantData"];</code>
+       */
+      public org.megacommerce.shared.v1.TypesProto.Any.Builder putVariantDataBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> builderMap = internalGetMutableVariantData().ensureBuilderMap();
+        org.megacommerce.shared.v1.TypesProto.AnyOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.shared.v1.TypesProto.Any.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof org.megacommerce.shared.v1.TypesProto.Any) {
+          entry = ((org.megacommerce.shared.v1.TypesProto.Any) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (org.megacommerce.shared.v1.TypesProto.Any.Builder) entry;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductDetailsVariant)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductDetailsVariant)
+    private static final org.megacommerce.products.v1.ProductProto.ProductDetailsVariant DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductDetailsVariant();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductDetailsVariant getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductDetailsVariant>
+        PARSER = new com.google.protobuf.AbstractParser<ProductDetailsVariant>() {
+      @java.lang.Override
+      public ProductDetailsVariant parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductDetailsVariant> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductDetailsVariant> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductDetailsVariant getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductMediaOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductMedia)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    int getSafetyCount();
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    boolean containsSafety(
+        java.lang.String key);
+    /**
+     * Use {@link #getSafetyMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getSafety();
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getSafetyMap();
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSafetyOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue);
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    org.megacommerce.shared.v1.TypesProto.Any getSafetyOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductMedia}
+   */
+  public static final class ProductMedia extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductMedia)
+      ProductMediaOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductMedia.class.getName());
+    }
+    // Use ProductMedia.newBuilder() to construct.
+    private ProductMedia(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductMedia() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMedia_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetSafety();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMedia_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductMedia.class, org.megacommerce.products.v1.ProductProto.ProductMedia.Builder.class);
+    }
+
+    public static final int SAFETY_FIELD_NUMBER = 1;
+    private static final class SafetyDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMedia_SafetyEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance());
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> safety_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    internalGetSafety() {
+      if (safety_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SafetyDefaultEntryHolder.defaultEntry);
+      }
+      return safety_;
+    }
+    public int getSafetyCount() {
+      return internalGetSafety().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    @java.lang.Override
+    public boolean containsSafety(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetSafety().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getSafetyMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafety() {
+      return getSafetyMap();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafetyMap() {
+      return internalGetSafety().getMap();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSafetyOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetSafety().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.Any getSafetyOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetSafety().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetSafety(),
+          SafetyDefaultEntryHolder.defaultEntry,
+          1);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> entry
+           : internalGetSafety().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+        safety__ = SafetyDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, safety__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductMedia)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductMedia other = (org.megacommerce.products.v1.ProductProto.ProductMedia) obj;
+
+      if (!internalGetSafety().equals(
+          other.internalGetSafety())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetSafety().getMap().isEmpty()) {
+        hash = (37 * hash) + SAFETY_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetSafety().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductMedia prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductMedia}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductMedia)
+        org.megacommerce.products.v1.ProductProto.ProductMediaOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMedia_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetSafety();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableSafety();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMedia_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductMedia.class, org.megacommerce.products.v1.ProductProto.ProductMedia.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductMedia.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        internalGetMutableSafety().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMedia_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMedia getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductMedia.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMedia build() {
+        org.megacommerce.products.v1.ProductProto.ProductMedia result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMedia buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductMedia result = new org.megacommerce.products.v1.ProductProto.ProductMedia(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductMedia result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.safety_ = internalGetSafety().build(SafetyDefaultEntryHolder.defaultEntry);
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductMedia) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductMedia)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductMedia other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductMedia.getDefaultInstance()) return this;
+        internalGetMutableSafety().mergeFrom(
+            other.internalGetSafety());
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+                safety__ = input.readMessage(
+                    SafetyDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableSafety().ensureBuilderMap().put(
+                    safety__.getKey(), safety__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private static final class SafetyConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any> {
+        @java.lang.Override
+        public org.megacommerce.shared.v1.TypesProto.Any build(org.megacommerce.shared.v1.TypesProto.AnyOrBuilder val) {
+          if (val instanceof org.megacommerce.shared.v1.TypesProto.Any) { return (org.megacommerce.shared.v1.TypesProto.Any) val; }
+          return ((org.megacommerce.shared.v1.TypesProto.Any.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry() {
+          return SafetyDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final SafetyConverter safetyConverter = new SafetyConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder> safety_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetSafety() {
+        if (safety_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(safetyConverter);
+        }
+        return safety_;
+      }
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetMutableSafety() {
+        if (safety_ == null) {
+          safety_ = new com.google.protobuf.MapFieldBuilder<>(safetyConverter);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return safety_;
+      }
+      public int getSafetyCount() {
+        return internalGetSafety().ensureBuilderMap().size();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      @java.lang.Override
+      public boolean containsSafety(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetSafety().ensureBuilderMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getSafetyMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafety() {
+        return getSafetyMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafetyMap() {
+        return internalGetSafety().getImmutableMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSafetyOrDefault(
+          java.lang.String key,
+          /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableSafety().ensureBuilderMap();
+        return map.containsKey(key) ? safetyConverter.build(map.get(key)) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Any getSafetyOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableSafety().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return safetyConverter.build(map.get(key));
+      }
+      public Builder clearSafety() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableSafety().clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      public Builder removeSafety(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableSafety().ensureBuilderMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+          getMutableSafety() {
+        bitField0_ |= 0x00000001;
+        return internalGetMutableSafety().ensureMessageMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      public Builder putSafety(
+          java.lang.String key,
+          org.megacommerce.shared.v1.TypesProto.Any value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableSafety().ensureBuilderMap()
+            .put(key, value);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      public Builder putAllSafety(
+          java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableSafety().ensureBuilderMap()
+            .putAll(values);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      public org.megacommerce.shared.v1.TypesProto.Any.Builder putSafetyBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> builderMap = internalGetMutableSafety().ensureBuilderMap();
+        org.megacommerce.shared.v1.TypesProto.AnyOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.shared.v1.TypesProto.Any.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof org.megacommerce.shared.v1.TypesProto.Any) {
+          entry = ((org.megacommerce.shared.v1.TypesProto.Any) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (org.megacommerce.shared.v1.TypesProto.Any.Builder) entry;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductMedia)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductMedia)
+    private static final org.megacommerce.products.v1.ProductProto.ProductMedia DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductMedia();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMedia getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductMedia>
+        PARSER = new com.google.protobuf.AbstractParser<ProductMedia>() {
+      @java.lang.Override
+      public ProductMedia parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductMedia> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductMedia> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMedia getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductMediaVariantOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductMediaVariant)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> 
+        getImagesList();
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductMediaImage getImages(int index);
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    int getImagesCount();
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> 
+        getImagesOrBuilderList();
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder getImagesOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> 
+        getVideosList();
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideos(int index);
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    int getVideosCount();
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> 
+        getVideosOrBuilderList();
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder getVideosOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductMediaVariant}
+   */
+  public static final class ProductMediaVariant extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductMediaVariant)
+      ProductMediaVariantOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductMediaVariant.class.getName());
+    }
+    // Use ProductMediaVariant.newBuilder() to construct.
+    private ProductMediaVariant(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductMediaVariant() {
+      images_ = java.util.Collections.emptyList();
+      videos_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVariant_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVariant_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductMediaVariant.class, org.megacommerce.products.v1.ProductProto.ProductMediaVariant.Builder.class);
+    }
+
+    public static final int IMAGES_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> images_;
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> getImagesList() {
+      return images_;
+    }
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> 
+        getImagesOrBuilderList() {
+      return images_;
+    }
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    @java.lang.Override
+    public int getImagesCount() {
+      return images_.size();
+    }
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaImage getImages(int index) {
+      return images_.get(index);
+    }
+    /**
+     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder getImagesOrBuilder(
+        int index) {
+      return images_.get(index);
+    }
+
+    public static final int VIDEOS_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> videos_;
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> getVideosList() {
+      return videos_;
+    }
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> 
+        getVideosOrBuilderList() {
+      return videos_;
+    }
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    @java.lang.Override
+    public int getVideosCount() {
+      return videos_.size();
+    }
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideos(int index) {
+      return videos_.get(index);
+    }
+    /**
+     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder getVideosOrBuilder(
+        int index) {
+      return videos_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < images_.size(); i++) {
+        output.writeMessage(1, images_.get(i));
+      }
+      for (int i = 0; i < videos_.size(); i++) {
+        output.writeMessage(2, videos_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < images_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, images_.get(i));
+      }
+      for (int i = 0; i < videos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, videos_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductMediaVariant)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductMediaVariant other = (org.megacommerce.products.v1.ProductProto.ProductMediaVariant) obj;
+
+      if (!getImagesList()
+          .equals(other.getImagesList())) return false;
+      if (!getVideosList()
+          .equals(other.getVideosList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getImagesCount() > 0) {
+        hash = (37 * hash) + IMAGES_FIELD_NUMBER;
+        hash = (53 * hash) + getImagesList().hashCode();
+      }
+      if (getVideosCount() > 0) {
+        hash = (37 * hash) + VIDEOS_FIELD_NUMBER;
+        hash = (53 * hash) + getVideosList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductMediaVariant prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductMediaVariant}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductMediaVariant)
+        org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVariant_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVariant_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductMediaVariant.class, org.megacommerce.products.v1.ProductProto.ProductMediaVariant.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductMediaVariant.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (imagesBuilder_ == null) {
+          images_ = java.util.Collections.emptyList();
+        } else {
+          images_ = null;
+          imagesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (videosBuilder_ == null) {
+          videos_ = java.util.Collections.emptyList();
+        } else {
+          videos_ = null;
+          videosBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVariant_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVariant getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductMediaVariant.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVariant build() {
+        org.megacommerce.products.v1.ProductProto.ProductMediaVariant result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVariant buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductMediaVariant result = new org.megacommerce.products.v1.ProductProto.ProductMediaVariant(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductProto.ProductMediaVariant result) {
+        if (imagesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            images_ = java.util.Collections.unmodifiableList(images_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.images_ = images_;
+        } else {
+          result.images_ = imagesBuilder_.build();
+        }
+        if (videosBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            videos_ = java.util.Collections.unmodifiableList(videos_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.videos_ = videos_;
+        } else {
+          result.videos_ = videosBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductMediaVariant result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductMediaVariant) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductMediaVariant)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductMediaVariant other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductMediaVariant.getDefaultInstance()) return this;
+        if (imagesBuilder_ == null) {
+          if (!other.images_.isEmpty()) {
+            if (images_.isEmpty()) {
+              images_ = other.images_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureImagesIsMutable();
+              images_.addAll(other.images_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.images_.isEmpty()) {
+            if (imagesBuilder_.isEmpty()) {
+              imagesBuilder_.dispose();
+              imagesBuilder_ = null;
+              images_ = other.images_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              imagesBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   internalGetImagesFieldBuilder() : null;
+            } else {
+              imagesBuilder_.addAllMessages(other.images_);
+            }
+          }
+        }
+        if (videosBuilder_ == null) {
+          if (!other.videos_.isEmpty()) {
+            if (videos_.isEmpty()) {
+              videos_ = other.videos_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureVideosIsMutable();
+              videos_.addAll(other.videos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.videos_.isEmpty()) {
+            if (videosBuilder_.isEmpty()) {
+              videosBuilder_.dispose();
+              videosBuilder_ = null;
+              videos_ = other.videos_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              videosBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   internalGetVideosFieldBuilder() : null;
+            } else {
+              videosBuilder_.addAllMessages(other.videos_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                org.megacommerce.products.v1.ProductProto.ProductMediaImage m =
+                    input.readMessage(
+                        org.megacommerce.products.v1.ProductProto.ProductMediaImage.parser(),
+                        extensionRegistry);
+                if (imagesBuilder_ == null) {
+                  ensureImagesIsMutable();
+                  images_.add(m);
+                } else {
+                  imagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                org.megacommerce.products.v1.ProductProto.ProductMediaVideo m =
+                    input.readMessage(
+                        org.megacommerce.products.v1.ProductProto.ProductMediaVideo.parser(),
+                        extensionRegistry);
+                if (videosBuilder_ == null) {
+                  ensureVideosIsMutable();
+                  videos_.add(m);
+                } else {
+                  videosBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> images_ =
+        java.util.Collections.emptyList();
+      private void ensureImagesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          images_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductProto.ProductMediaImage>(images_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductMediaImage, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> imagesBuilder_;
+
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> getImagesList() {
+        if (imagesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(images_);
+        } else {
+          return imagesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public int getImagesCount() {
+        if (imagesBuilder_ == null) {
+          return images_.size();
+        } else {
+          return imagesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImage getImages(int index) {
+        if (imagesBuilder_ == null) {
+          return images_.get(index);
+        } else {
+          return imagesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public Builder setImages(
+          int index, org.megacommerce.products.v1.ProductProto.ProductMediaImage value) {
+        if (imagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureImagesIsMutable();
+          images_.set(index, value);
+          onChanged();
+        } else {
+          imagesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public Builder setImages(
+          int index, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder builderForValue) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          images_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          imagesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public Builder addImages(org.megacommerce.products.v1.ProductProto.ProductMediaImage value) {
+        if (imagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureImagesIsMutable();
+          images_.add(value);
+          onChanged();
+        } else {
+          imagesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public Builder addImages(
+          int index, org.megacommerce.products.v1.ProductProto.ProductMediaImage value) {
+        if (imagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureImagesIsMutable();
+          images_.add(index, value);
+          onChanged();
+        } else {
+          imagesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public Builder addImages(
+          org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder builderForValue) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          images_.add(builderForValue.build());
+          onChanged();
+        } else {
+          imagesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public Builder addImages(
+          int index, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder builderForValue) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          images_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          imagesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public Builder addAllImages(
+          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductProto.ProductMediaImage> values) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, images_);
+          onChanged();
+        } else {
+          imagesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public Builder clearImages() {
+        if (imagesBuilder_ == null) {
+          images_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          imagesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public Builder removeImages(int index) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          images_.remove(index);
+          onChanged();
+        } else {
+          imagesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder getImagesBuilder(
+          int index) {
+        return internalGetImagesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder getImagesOrBuilder(
+          int index) {
+        if (imagesBuilder_ == null) {
+          return images_.get(index);  } else {
+          return imagesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> 
+           getImagesOrBuilderList() {
+        if (imagesBuilder_ != null) {
+          return imagesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(images_);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder addImagesBuilder() {
+        return internalGetImagesFieldBuilder().addBuilder(
+            org.megacommerce.products.v1.ProductProto.ProductMediaImage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder addImagesBuilder(
+          int index) {
+        return internalGetImagesFieldBuilder().addBuilder(
+            index, org.megacommerce.products.v1.ProductProto.ProductMediaImage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       */
+      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder> 
+           getImagesBuilderList() {
+        return internalGetImagesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductMediaImage, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> 
+          internalGetImagesFieldBuilder() {
+        if (imagesBuilder_ == null) {
+          imagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.megacommerce.products.v1.ProductProto.ProductMediaImage, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder>(
+                  images_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          images_ = null;
+        }
+        return imagesBuilder_;
+      }
+
+      private java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> videos_ =
+        java.util.Collections.emptyList();
+      private void ensureVideosIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          videos_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductProto.ProductMediaVideo>(videos_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductMediaVideo, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> videosBuilder_;
+
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> getVideosList() {
+        if (videosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(videos_);
+        } else {
+          return videosBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public int getVideosCount() {
+        if (videosBuilder_ == null) {
+          return videos_.size();
+        } else {
+          return videosBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideos(int index) {
+        if (videosBuilder_ == null) {
+          return videos_.get(index);
+        } else {
+          return videosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder setVideos(
+          int index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo value) {
+        if (videosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVideosIsMutable();
+          videos_.set(index, value);
+          onChanged();
+        } else {
+          videosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder setVideos(
+          int index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder builderForValue) {
+        if (videosBuilder_ == null) {
+          ensureVideosIsMutable();
+          videos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          videosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder addVideos(org.megacommerce.products.v1.ProductProto.ProductMediaVideo value) {
+        if (videosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVideosIsMutable();
+          videos_.add(value);
+          onChanged();
+        } else {
+          videosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder addVideos(
+          int index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo value) {
+        if (videosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVideosIsMutable();
+          videos_.add(index, value);
+          onChanged();
+        } else {
+          videosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder addVideos(
+          org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder builderForValue) {
+        if (videosBuilder_ == null) {
+          ensureVideosIsMutable();
+          videos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          videosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder addVideos(
+          int index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder builderForValue) {
+        if (videosBuilder_ == null) {
+          ensureVideosIsMutable();
+          videos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          videosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder addAllVideos(
+          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductProto.ProductMediaVideo> values) {
+        if (videosBuilder_ == null) {
+          ensureVideosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, videos_);
+          onChanged();
+        } else {
+          videosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder clearVideos() {
+        if (videosBuilder_ == null) {
+          videos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          videosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder removeVideos(int index) {
+        if (videosBuilder_ == null) {
+          ensureVideosIsMutable();
+          videos_.remove(index);
+          onChanged();
+        } else {
+          videosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder getVideosBuilder(
+          int index) {
+        return internalGetVideosFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder getVideosOrBuilder(
+          int index) {
+        if (videosBuilder_ == null) {
+          return videos_.get(index);  } else {
+          return videosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> 
+           getVideosOrBuilderList() {
+        if (videosBuilder_ != null) {
+          return videosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(videos_);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder addVideosBuilder() {
+        return internalGetVideosFieldBuilder().addBuilder(
+            org.megacommerce.products.v1.ProductProto.ProductMediaVideo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder addVideosBuilder(
+          int index) {
+        return internalGetVideosFieldBuilder().addBuilder(
+            index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       */
+      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder> 
+           getVideosBuilderList() {
+        return internalGetVideosFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductMediaVideo, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> 
+          internalGetVideosFieldBuilder() {
+        if (videosBuilder_ == null) {
+          videosBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.megacommerce.products.v1.ProductProto.ProductMediaVideo, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder>(
+                  videos_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          videos_ = null;
+        }
+        return videosBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductMediaVariant)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductMediaVariant)
+    private static final org.megacommerce.products.v1.ProductProto.ProductMediaVariant DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductMediaVariant();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVariant getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductMediaVariant>
+        PARSER = new com.google.protobuf.AbstractParser<ProductMediaVariant>() {
+      @java.lang.Override
+      public ProductMediaVariant parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductMediaVariant> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductMediaVariant> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaVariant getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductMediaImageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductMediaImage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string format = 1 [json_name = "format"];</code>
+     * @return The format.
+     */
+    java.lang.String getFormat();
+    /**
+     * <code>string format = 1 [json_name = "format"];</code>
+     * @return The bytes for format.
+     */
+    com.google.protobuf.ByteString
+        getFormatBytes();
+
+    /**
+     * <code>string url = 2 [json_name = "url"];</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>string url = 2 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+
+    /**
+     * <code>uint64 size = 3 [json_name = "size"];</code>
+     * @return The size.
+     */
+    long getSize();
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductMediaImage}
+   */
+  public static final class ProductMediaImage extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductMediaImage)
+      ProductMediaImageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductMediaImage.class.getName());
+    }
+    // Use ProductMediaImage.newBuilder() to construct.
+    private ProductMediaImage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductMediaImage() {
+      format_ = "";
+      url_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaImage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaImage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductMediaImage.class, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder.class);
+    }
+
+    public static final int FORMAT_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object format_ = "";
+    /**
+     * <code>string format = 1 [json_name = "format"];</code>
+     * @return The format.
+     */
+    @java.lang.Override
+    public java.lang.String getFormat() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        format_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string format = 1 [json_name = "format"];</code>
+     * @return The bytes for format.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFormatBytes() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        format_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <code>string url = 2 [json_name = "url"];</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string url = 2 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIZE_FIELD_NUMBER = 3;
+    private long size_ = 0L;
+    /**
+     * <code>uint64 size = 3 [json_name = "size"];</code>
+     * @return The size.
+     */
+    @java.lang.Override
+    public long getSize() {
+      return size_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(format_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, format_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, url_);
+      }
+      if (size_ != 0L) {
+        output.writeUInt64(3, size_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(format_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, format_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, url_);
+      }
+      if (size_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, size_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductMediaImage)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductMediaImage other = (org.megacommerce.products.v1.ProductProto.ProductMediaImage) obj;
+
+      if (!getFormat()
+          .equals(other.getFormat())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (getSize()
+          != other.getSize()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + getFormat().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSize());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductMediaImage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductMediaImage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductMediaImage)
+        org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaImage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaImage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductMediaImage.class, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductMediaImage.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        format_ = "";
+        url_ = "";
+        size_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaImage_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImage getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductMediaImage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImage build() {
+        org.megacommerce.products.v1.ProductProto.ProductMediaImage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImage buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductMediaImage result = new org.megacommerce.products.v1.ProductProto.ProductMediaImage(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductMediaImage result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.format_ = format_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.size_ = size_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductMediaImage) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductMediaImage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductMediaImage other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductMediaImage.getDefaultInstance()) return this;
+        if (!other.getFormat().isEmpty()) {
+          format_ = other.format_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getSize() != 0L) {
+          setSize(other.getSize());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                format_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                size_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object format_ = "";
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @return The format.
+       */
+      public java.lang.String getFormat() {
+        java.lang.Object ref = format_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          format_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @return The bytes for format.
+       */
+      public com.google.protobuf.ByteString
+          getFormatBytes() {
+        java.lang.Object ref = format_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          format_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @param value The format to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFormat(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        format_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFormat() {
+        format_ = getDefaultInstance().getFormat();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @param value The bytes for format to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFormatBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        format_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private long size_ ;
+      /**
+       * <code>uint64 size = 3 [json_name = "size"];</code>
+       * @return The size.
+       */
+      @java.lang.Override
+      public long getSize() {
+        return size_;
+      }
+      /**
+       * <code>uint64 size = 3 [json_name = "size"];</code>
+       * @param value The size to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSize(long value) {
+
+        size_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 size = 3 [json_name = "size"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSize() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        size_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductMediaImage)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductMediaImage)
+    private static final org.megacommerce.products.v1.ProductProto.ProductMediaImage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductMediaImage();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaImage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductMediaImage>
+        PARSER = new com.google.protobuf.AbstractParser<ProductMediaImage>() {
+      @java.lang.Override
+      public ProductMediaImage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductMediaImage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductMediaImage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaImage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductMediaVideoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductMediaVideo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string format = 1 [json_name = "format"];</code>
+     * @return The format.
+     */
+    java.lang.String getFormat();
+    /**
+     * <code>string format = 1 [json_name = "format"];</code>
+     * @return The bytes for format.
+     */
+    com.google.protobuf.ByteString
+        getFormatBytes();
+
+    /**
+     * <code>string url = 2 [json_name = "url"];</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>string url = 2 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+
+    /**
+     * <code>uint64 size = 3 [json_name = "size"];</code>
+     * @return The size.
+     */
+    long getSize();
+
+    /**
+     * <code>uint64 duration = 4 [json_name = "duration"];</code>
+     * @return The duration.
+     */
+    long getDuration();
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductMediaVideo}
+   */
+  public static final class ProductMediaVideo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductMediaVideo)
+      ProductMediaVideoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductMediaVideo.class.getName());
+    }
+    // Use ProductMediaVideo.newBuilder() to construct.
+    private ProductMediaVideo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductMediaVideo() {
+      format_ = "";
+      url_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVideo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVideo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductMediaVideo.class, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder.class);
+    }
+
+    public static final int FORMAT_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object format_ = "";
+    /**
+     * <code>string format = 1 [json_name = "format"];</code>
+     * @return The format.
+     */
+    @java.lang.Override
+    public java.lang.String getFormat() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        format_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string format = 1 [json_name = "format"];</code>
+     * @return The bytes for format.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFormatBytes() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        format_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <code>string url = 2 [json_name = "url"];</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string url = 2 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIZE_FIELD_NUMBER = 3;
+    private long size_ = 0L;
+    /**
+     * <code>uint64 size = 3 [json_name = "size"];</code>
+     * @return The size.
+     */
+    @java.lang.Override
+    public long getSize() {
+      return size_;
+    }
+
+    public static final int DURATION_FIELD_NUMBER = 4;
+    private long duration_ = 0L;
+    /**
+     * <code>uint64 duration = 4 [json_name = "duration"];</code>
+     * @return The duration.
+     */
+    @java.lang.Override
+    public long getDuration() {
+      return duration_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(format_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, format_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, url_);
+      }
+      if (size_ != 0L) {
+        output.writeUInt64(3, size_);
+      }
+      if (duration_ != 0L) {
+        output.writeUInt64(4, duration_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(format_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, format_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, url_);
+      }
+      if (size_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, size_);
+      }
+      if (duration_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, duration_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductMediaVideo)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductMediaVideo other = (org.megacommerce.products.v1.ProductProto.ProductMediaVideo) obj;
+
+      if (!getFormat()
+          .equals(other.getFormat())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (getSize()
+          != other.getSize()) return false;
+      if (getDuration()
+          != other.getDuration()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + getFormat().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSize());
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDuration());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductMediaVideo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductMediaVideo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductMediaVideo)
+        org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVideo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVideo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductMediaVideo.class, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductMediaVideo.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        format_ = "";
+        url_ = "";
+        size_ = 0L;
+        duration_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVideo_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductMediaVideo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo build() {
+        org.megacommerce.products.v1.ProductProto.ProductMediaVideo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductMediaVideo result = new org.megacommerce.products.v1.ProductProto.ProductMediaVideo(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductMediaVideo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.format_ = format_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.size_ = size_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.duration_ = duration_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductMediaVideo) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductMediaVideo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductMediaVideo other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductMediaVideo.getDefaultInstance()) return this;
+        if (!other.getFormat().isEmpty()) {
+          format_ = other.format_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getSize() != 0L) {
+          setSize(other.getSize());
+        }
+        if (other.getDuration() != 0L) {
+          setDuration(other.getDuration());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                format_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                size_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                duration_ = input.readUInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object format_ = "";
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @return The format.
+       */
+      public java.lang.String getFormat() {
+        java.lang.Object ref = format_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          format_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @return The bytes for format.
+       */
+      public com.google.protobuf.ByteString
+          getFormatBytes() {
+        java.lang.Object ref = format_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          format_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @param value The format to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFormat(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        format_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFormat() {
+        format_ = getDefaultInstance().getFormat();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string format = 1 [json_name = "format"];</code>
+       * @param value The bytes for format to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFormatBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        format_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 2 [json_name = "url"];</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private long size_ ;
+      /**
+       * <code>uint64 size = 3 [json_name = "size"];</code>
+       * @return The size.
+       */
+      @java.lang.Override
+      public long getSize() {
+        return size_;
+      }
+      /**
+       * <code>uint64 size = 3 [json_name = "size"];</code>
+       * @param value The size to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSize(long value) {
+
+        size_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 size = 3 [json_name = "size"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSize() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        size_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long duration_ ;
+      /**
+       * <code>uint64 duration = 4 [json_name = "duration"];</code>
+       * @return The duration.
+       */
+      @java.lang.Override
+      public long getDuration() {
+        return duration_;
+      }
+      /**
+       * <code>uint64 duration = 4 [json_name = "duration"];</code>
+       * @param value The duration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDuration(long value) {
+
+        duration_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 duration = 4 [json_name = "duration"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDuration() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        duration_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductMediaVideo)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductMediaVideo)
+    private static final org.megacommerce.products.v1.ProductProto.ProductMediaVideo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductMediaVideo();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductMediaVideo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductMediaVideo>
+        PARSER = new com.google.protobuf.AbstractParser<ProductMediaVideo>() {
+      @java.lang.Override
+      public ProductMediaVideo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductMediaVideo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductMediaVideo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaVideo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductOfferOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductOffer)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &lt;variant_id, offer&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+     */
+    int getOfferCount();
+    /**
+     * <pre>
+     * &lt;variant_id, offer&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+     */
+    boolean containsOffer(
+        java.lang.String key);
+    /**
+     * Use {@link #getOfferMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant>
+    getOffer();
+    /**
+     * <pre>
+     * &lt;variant_id, offer&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant>
+    getOfferMap();
+    /**
+     * <pre>
+     * &lt;variant_id, offer&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+     */
+    /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductOfferVariant getOfferOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue);
+    /**
+     * <pre>
+     * &lt;variant_id, offer&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductOfferVariant getOfferOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductOffer}
+   */
+  public static final class ProductOffer extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductOffer)
+      ProductOfferOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductOffer.class.getName());
+    }
+    // Use ProductOffer.newBuilder() to construct.
+    private ProductOffer(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductOffer() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOffer_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetOffer();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOffer_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductOffer.class, org.megacommerce.products.v1.ProductProto.ProductOffer.Builder.class);
+    }
+
+    public static final int OFFER_FIELD_NUMBER = 2;
+    private static final class OfferDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOffer_OfferEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.products.v1.ProductProto.ProductOfferVariant.getDefaultInstance());
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> offer_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant>
+    internalGetOffer() {
+      if (offer_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            OfferDefaultEntryHolder.defaultEntry);
+      }
+      return offer_;
+    }
+    public int getOfferCount() {
+      return internalGetOffer().getMap().size();
+    }
+    /**
+     * <pre>
+     * &lt;variant_id, offer&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+     */
+    @java.lang.Override
+    public boolean containsOffer(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetOffer().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getOfferMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> getOffer() {
+      return getOfferMap();
+    }
+    /**
+     * <pre>
+     * &lt;variant_id, offer&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> getOfferMap() {
+      return internalGetOffer().getMap();
+    }
+    /**
+     * <pre>
+     * &lt;variant_id, offer&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductOfferVariant getOfferOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> map =
+          internalGetOffer().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * &lt;variant_id, offer&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductOfferVariant getOfferOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> map =
+          internalGetOffer().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetOffer(),
+          OfferDefaultEntryHolder.defaultEntry,
+          2);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> entry
+           : internalGetOffer().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant>
+        offer__ = OfferDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, offer__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductOffer)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductOffer other = (org.megacommerce.products.v1.ProductProto.ProductOffer) obj;
+
+      if (!internalGetOffer().equals(
+          other.internalGetOffer())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetOffer().getMap().isEmpty()) {
+        hash = (37 * hash) + OFFER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetOffer().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductOffer prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductOffer}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductOffer)
+        org.megacommerce.products.v1.ProductProto.ProductOfferOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOffer_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetOffer();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableOffer();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOffer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductOffer.class, org.megacommerce.products.v1.ProductProto.ProductOffer.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductOffer.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        internalGetMutableOffer().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOffer_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOffer getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductOffer.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOffer build() {
+        org.megacommerce.products.v1.ProductProto.ProductOffer result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOffer buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductOffer result = new org.megacommerce.products.v1.ProductProto.ProductOffer(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductOffer result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.offer_ = internalGetOffer().build(OfferDefaultEntryHolder.defaultEntry);
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductOffer) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductOffer)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductOffer other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductOffer.getDefaultInstance()) return this;
+        internalGetMutableOffer().mergeFrom(
+            other.internalGetOffer());
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant>
+                offer__ = input.readMessage(
+                    OfferDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableOffer().ensureBuilderMap().put(
+                    offer__.getKey(), offer__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private static final class OfferConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> {
+        @java.lang.Override
+        public org.megacommerce.products.v1.ProductProto.ProductOfferVariant build(org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder val) {
+          if (val instanceof org.megacommerce.products.v1.ProductProto.ProductOfferVariant) { return (org.megacommerce.products.v1.ProductProto.ProductOfferVariant) val; }
+          return ((org.megacommerce.products.v1.ProductProto.ProductOfferVariant.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> defaultEntry() {
+          return OfferDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final OfferConverter offerConverter = new OfferConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductOfferVariant, org.megacommerce.products.v1.ProductProto.ProductOfferVariant.Builder> offer_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductOfferVariant, org.megacommerce.products.v1.ProductProto.ProductOfferVariant.Builder>
+          internalGetOffer() {
+        if (offer_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(offerConverter);
+        }
+        return offer_;
+      }
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductOfferVariant, org.megacommerce.products.v1.ProductProto.ProductOfferVariant.Builder>
+          internalGetMutableOffer() {
+        if (offer_ == null) {
+          offer_ = new com.google.protobuf.MapFieldBuilder<>(offerConverter);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return offer_;
+      }
+      public int getOfferCount() {
+        return internalGetOffer().ensureBuilderMap().size();
+      }
+      /**
+       * <pre>
+       * &lt;variant_id, offer&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+       */
+      @java.lang.Override
+      public boolean containsOffer(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetOffer().ensureBuilderMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getOfferMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> getOffer() {
+        return getOfferMap();
+      }
+      /**
+       * <pre>
+       * &lt;variant_id, offer&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> getOfferMap() {
+        return internalGetOffer().getImmutableMap();
+      }
+      /**
+       * <pre>
+       * &lt;variant_id, offer&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductOfferVariant getOfferOrDefault(
+          java.lang.String key,
+          /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductOfferVariant defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder> map = internalGetMutableOffer().ensureBuilderMap();
+        return map.containsKey(key) ? offerConverter.build(map.get(key)) : defaultValue;
+      }
+      /**
+       * <pre>
+       * &lt;variant_id, offer&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOfferVariant getOfferOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder> map = internalGetMutableOffer().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return offerConverter.build(map.get(key));
+      }
+      public Builder clearOffer() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableOffer().clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * &lt;variant_id, offer&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+       */
+      public Builder removeOffer(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableOffer().ensureBuilderMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant>
+          getMutableOffer() {
+        bitField0_ |= 0x00000001;
+        return internalGetMutableOffer().ensureMessageMap();
+      }
+      /**
+       * <pre>
+       * &lt;variant_id, offer&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+       */
+      public Builder putOffer(
+          java.lang.String key,
+          org.megacommerce.products.v1.ProductProto.ProductOfferVariant value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableOffer().ensureBuilderMap()
+            .put(key, value);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * &lt;variant_id, offer&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+       */
+      public Builder putAllOffer(
+          java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariant> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableOffer().ensureBuilderMap()
+            .putAll(values);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * &lt;variant_id, offer&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductOfferVariant&gt; offer = 2 [json_name = "offer"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductOfferVariant.Builder putOfferBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder> builderMap = internalGetMutableOffer().ensureBuilderMap();
+        org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.products.v1.ProductProto.ProductOfferVariant.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof org.megacommerce.products.v1.ProductProto.ProductOfferVariant) {
+          entry = ((org.megacommerce.products.v1.ProductProto.ProductOfferVariant) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (org.megacommerce.products.v1.ProductProto.ProductOfferVariant.Builder) entry;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductOffer)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductOffer)
+    private static final org.megacommerce.products.v1.ProductProto.ProductOffer DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductOffer();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOffer getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductOffer>
+        PARSER = new com.google.protobuf.AbstractParser<ProductOffer>() {
+      @java.lang.Override
+      public ProductOffer parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductOffer> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductOffer> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductOffer getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductOfferVariantOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductOfferVariant)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string sku = 2 [json_name = "sku"];</code>
+     * @return The sku.
+     */
+    java.lang.String getSku();
+    /**
+     * <code>string sku = 2 [json_name = "sku"];</code>
+     * @return The bytes for sku.
+     */
+    com.google.protobuf.ByteString
+        getSkuBytes();
+
+    /**
+     * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
+     * @return The quantity.
+     */
+    long getQuantity();
+
+    /**
+     * <code>string price = 4 [json_name = "price"];</code>
+     * @return The price.
+     */
+    java.lang.String getPrice();
+    /**
+     * <code>string price = 4 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    com.google.protobuf.ByteString
+        getPriceBytes();
+
+    /**
+     * <code>string offering_condition = 5 [json_name = "offeringCondition"];</code>
+     * @return The offeringCondition.
+     */
+    java.lang.String getOfferingCondition();
+    /**
+     * <code>string offering_condition = 5 [json_name = "offeringCondition"];</code>
+     * @return The bytes for offeringCondition.
+     */
+    com.google.protobuf.ByteString
+        getOfferingConditionBytes();
+
+    /**
+     * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+     * @return Whether the conditionNote field is set.
+     */
+    boolean hasConditionNote();
+    /**
+     * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+     * @return The conditionNote.
+     */
+    java.lang.String getConditionNote();
+    /**
+     * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+     * @return The bytes for conditionNote.
+     */
+    com.google.protobuf.ByteString
+        getConditionNoteBytes();
+
+    /**
+     * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+     * @return Whether the listPrice field is set.
+     */
+    boolean hasListPrice();
+    /**
+     * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+     * @return The listPrice.
+     */
+    java.lang.String getListPrice();
+    /**
+     * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+     * @return The bytes for listPrice.
+     */
+    com.google.protobuf.ByteString
+        getListPriceBytes();
+
+    /**
+     * <code>bool has_sale_price = 8 [json_name = "hasSalePrice"];</code>
+     * @return The hasSalePrice.
+     */
+    boolean getHasSalePrice();
+
+    /**
+     * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+     * @return Whether the salePrice field is set.
+     */
+    boolean hasSalePrice();
+    /**
+     * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+     * @return The salePrice.
+     */
+    java.lang.String getSalePrice();
+    /**
+     * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+     * @return The bytes for salePrice.
+     */
+    com.google.protobuf.ByteString
+        getSalePriceBytes();
+
+    /**
+     * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+     * @return Whether the salePriceStart field is set.
+     */
+    boolean hasSalePriceStart();
+    /**
+     * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+     * @return The salePriceStart.
+     */
+    java.lang.String getSalePriceStart();
+    /**
+     * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+     * @return The bytes for salePriceStart.
+     */
+    com.google.protobuf.ByteString
+        getSalePriceStartBytes();
+
+    /**
+     * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+     * @return Whether the salePriceEnd field is set.
+     */
+    boolean hasSalePriceEnd();
+    /**
+     * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+     * @return The salePriceEnd.
+     */
+    java.lang.String getSalePriceEnd();
+    /**
+     * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+     * @return The bytes for salePriceEnd.
+     */
+    com.google.protobuf.ByteString
+        getSalePriceEndBytes();
+
+    /**
+     * <code>bool has_minimum_orders = 12 [json_name = "hasMinimumOrders"];</code>
+     * @return The hasMinimumOrders.
+     */
+    boolean getHasMinimumOrders();
+
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    java.util.List<org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder> 
+        getMinimumOrdersList();
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder getMinimumOrders(int index);
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    int getMinimumOrdersCount();
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder> 
+        getMinimumOrdersOrBuilderList();
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder getMinimumOrdersOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductOfferVariant}
+   */
+  public static final class ProductOfferVariant extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductOfferVariant)
+      ProductOfferVariantOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductOfferVariant.class.getName());
+    }
+    // Use ProductOfferVariant.newBuilder() to construct.
+    private ProductOfferVariant(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductOfferVariant() {
+      sku_ = "";
+      price_ = "";
+      offeringCondition_ = "";
+      conditionNote_ = "";
+      listPrice_ = "";
+      salePrice_ = "";
+      salePriceStart_ = "";
+      salePriceEnd_ = "";
+      minimumOrders_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferVariant_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferVariant_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductOfferVariant.class, org.megacommerce.products.v1.ProductProto.ProductOfferVariant.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SKU_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sku_ = "";
+    /**
+     * <code>string sku = 2 [json_name = "sku"];</code>
+     * @return The sku.
+     */
+    @java.lang.Override
+    public java.lang.String getSku() {
+      java.lang.Object ref = sku_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sku_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sku = 2 [json_name = "sku"];</code>
+     * @return The bytes for sku.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSkuBytes() {
+      java.lang.Object ref = sku_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sku_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUANTITY_FIELD_NUMBER = 3;
+    private long quantity_ = 0L;
+    /**
+     * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
+     * @return The quantity.
+     */
+    @java.lang.Override
+    public long getQuantity() {
+      return quantity_;
+    }
+
+    public static final int PRICE_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object price_ = "";
+    /**
+     * <code>string price = 4 [json_name = "price"];</code>
+     * @return The price.
+     */
+    @java.lang.Override
+    public java.lang.String getPrice() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        price_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string price = 4 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPriceBytes() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        price_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OFFERING_CONDITION_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object offeringCondition_ = "";
+    /**
+     * <code>string offering_condition = 5 [json_name = "offeringCondition"];</code>
+     * @return The offeringCondition.
+     */
+    @java.lang.Override
+    public java.lang.String getOfferingCondition() {
+      java.lang.Object ref = offeringCondition_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        offeringCondition_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string offering_condition = 5 [json_name = "offeringCondition"];</code>
+     * @return The bytes for offeringCondition.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOfferingConditionBytes() {
+      java.lang.Object ref = offeringCondition_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        offeringCondition_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONDITION_NOTE_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object conditionNote_ = "";
+    /**
+     * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+     * @return Whether the conditionNote field is set.
+     */
+    @java.lang.Override
+    public boolean hasConditionNote() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+     * @return The conditionNote.
+     */
+    @java.lang.Override
+    public java.lang.String getConditionNote() {
+      java.lang.Object ref = conditionNote_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        conditionNote_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+     * @return The bytes for conditionNote.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getConditionNoteBytes() {
+      java.lang.Object ref = conditionNote_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        conditionNote_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LIST_PRICE_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object listPrice_ = "";
+    /**
+     * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+     * @return Whether the listPrice field is set.
+     */
+    @java.lang.Override
+    public boolean hasListPrice() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+     * @return The listPrice.
+     */
+    @java.lang.Override
+    public java.lang.String getListPrice() {
+      java.lang.Object ref = listPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        listPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+     * @return The bytes for listPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getListPriceBytes() {
+      java.lang.Object ref = listPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        listPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HAS_SALE_PRICE_FIELD_NUMBER = 8;
+    private boolean hasSalePrice_ = false;
+    /**
+     * <code>bool has_sale_price = 8 [json_name = "hasSalePrice"];</code>
+     * @return The hasSalePrice.
+     */
+    @java.lang.Override
+    public boolean getHasSalePrice() {
+      return hasSalePrice_;
+    }
+
+    public static final int SALE_PRICE_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object salePrice_ = "";
+    /**
+     * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+     * @return Whether the salePrice field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalePrice() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+     * @return The salePrice.
+     */
+    @java.lang.Override
+    public java.lang.String getSalePrice() {
+      java.lang.Object ref = salePrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        salePrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+     * @return The bytes for salePrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSalePriceBytes() {
+      java.lang.Object ref = salePrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        salePrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SALE_PRICE_START_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object salePriceStart_ = "";
+    /**
+     * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+     * @return Whether the salePriceStart field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalePriceStart() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+     * @return The salePriceStart.
+     */
+    @java.lang.Override
+    public java.lang.String getSalePriceStart() {
+      java.lang.Object ref = salePriceStart_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        salePriceStart_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+     * @return The bytes for salePriceStart.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSalePriceStartBytes() {
+      java.lang.Object ref = salePriceStart_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        salePriceStart_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SALE_PRICE_END_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object salePriceEnd_ = "";
+    /**
+     * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+     * @return Whether the salePriceEnd field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalePriceEnd() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+     * @return The salePriceEnd.
+     */
+    @java.lang.Override
+    public java.lang.String getSalePriceEnd() {
+      java.lang.Object ref = salePriceEnd_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        salePriceEnd_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+     * @return The bytes for salePriceEnd.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSalePriceEndBytes() {
+      java.lang.Object ref = salePriceEnd_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        salePriceEnd_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HAS_MINIMUM_ORDERS_FIELD_NUMBER = 12;
+    private boolean hasMinimumOrders_ = false;
+    /**
+     * <code>bool has_minimum_orders = 12 [json_name = "hasMinimumOrders"];</code>
+     * @return The hasMinimumOrders.
+     */
+    @java.lang.Override
+    public boolean getHasMinimumOrders() {
+      return hasMinimumOrders_;
+    }
+
+    public static final int MINIMUM_ORDERS_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
+    private java.util.List<org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder> minimumOrders_;
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder> getMinimumOrdersList() {
+      return minimumOrders_;
+    }
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder> 
+        getMinimumOrdersOrBuilderList() {
+      return minimumOrders_;
+    }
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    @java.lang.Override
+    public int getMinimumOrdersCount() {
+      return minimumOrders_.size();
+    }
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder getMinimumOrders(int index) {
+      return minimumOrders_.get(index);
+    }
+    /**
+     * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder getMinimumOrdersOrBuilder(
+        int index) {
+      return minimumOrders_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sku_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, sku_);
+      }
+      if (quantity_ != 0L) {
+        output.writeUInt64(3, quantity_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, price_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(offeringCondition_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, offeringCondition_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, conditionNote_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, listPrice_);
+      }
+      if (hasSalePrice_ != false) {
+        output.writeBool(8, hasSalePrice_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, salePrice_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 10, salePriceStart_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, salePriceEnd_);
+      }
+      if (hasMinimumOrders_ != false) {
+        output.writeBool(12, hasMinimumOrders_);
+      }
+      for (int i = 0; i < minimumOrders_.size(); i++) {
+        output.writeMessage(13, minimumOrders_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sku_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, sku_);
+      }
+      if (quantity_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, quantity_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, price_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(offeringCondition_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, offeringCondition_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, conditionNote_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, listPrice_);
+      }
+      if (hasSalePrice_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, hasSalePrice_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, salePrice_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, salePriceStart_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, salePriceEnd_);
+      }
+      if (hasMinimumOrders_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, hasMinimumOrders_);
+      }
+      for (int i = 0; i < minimumOrders_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, minimumOrders_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductOfferVariant)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductOfferVariant other = (org.megacommerce.products.v1.ProductProto.ProductOfferVariant) obj;
+
+      if (!getSku()
+          .equals(other.getSku())) return false;
+      if (getQuantity()
+          != other.getQuantity()) return false;
+      if (!getPrice()
+          .equals(other.getPrice())) return false;
+      if (!getOfferingCondition()
+          .equals(other.getOfferingCondition())) return false;
+      if (hasConditionNote() != other.hasConditionNote()) return false;
+      if (hasConditionNote()) {
+        if (!getConditionNote()
+            .equals(other.getConditionNote())) return false;
+      }
+      if (hasListPrice() != other.hasListPrice()) return false;
+      if (hasListPrice()) {
+        if (!getListPrice()
+            .equals(other.getListPrice())) return false;
+      }
+      if (getHasSalePrice()
+          != other.getHasSalePrice()) return false;
+      if (hasSalePrice() != other.hasSalePrice()) return false;
+      if (hasSalePrice()) {
+        if (!getSalePrice()
+            .equals(other.getSalePrice())) return false;
+      }
+      if (hasSalePriceStart() != other.hasSalePriceStart()) return false;
+      if (hasSalePriceStart()) {
+        if (!getSalePriceStart()
+            .equals(other.getSalePriceStart())) return false;
+      }
+      if (hasSalePriceEnd() != other.hasSalePriceEnd()) return false;
+      if (hasSalePriceEnd()) {
+        if (!getSalePriceEnd()
+            .equals(other.getSalePriceEnd())) return false;
+      }
+      if (getHasMinimumOrders()
+          != other.getHasMinimumOrders()) return false;
+      if (!getMinimumOrdersList()
+          .equals(other.getMinimumOrdersList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SKU_FIELD_NUMBER;
+      hash = (53 * hash) + getSku().hashCode();
+      hash = (37 * hash) + QUANTITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getQuantity());
+      hash = (37 * hash) + PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + getPrice().hashCode();
+      hash = (37 * hash) + OFFERING_CONDITION_FIELD_NUMBER;
+      hash = (53 * hash) + getOfferingCondition().hashCode();
+      if (hasConditionNote()) {
+        hash = (37 * hash) + CONDITION_NOTE_FIELD_NUMBER;
+        hash = (53 * hash) + getConditionNote().hashCode();
+      }
+      if (hasListPrice()) {
+        hash = (37 * hash) + LIST_PRICE_FIELD_NUMBER;
+        hash = (53 * hash) + getListPrice().hashCode();
+      }
+      hash = (37 * hash) + HAS_SALE_PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasSalePrice());
+      if (hasSalePrice()) {
+        hash = (37 * hash) + SALE_PRICE_FIELD_NUMBER;
+        hash = (53 * hash) + getSalePrice().hashCode();
+      }
+      if (hasSalePriceStart()) {
+        hash = (37 * hash) + SALE_PRICE_START_FIELD_NUMBER;
+        hash = (53 * hash) + getSalePriceStart().hashCode();
+      }
+      if (hasSalePriceEnd()) {
+        hash = (37 * hash) + SALE_PRICE_END_FIELD_NUMBER;
+        hash = (53 * hash) + getSalePriceEnd().hashCode();
+      }
+      hash = (37 * hash) + HAS_MINIMUM_ORDERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasMinimumOrders());
+      if (getMinimumOrdersCount() > 0) {
+        hash = (37 * hash) + MINIMUM_ORDERS_FIELD_NUMBER;
+        hash = (53 * hash) + getMinimumOrdersList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductOfferVariant prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductOfferVariant}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductOfferVariant)
+        org.megacommerce.products.v1.ProductProto.ProductOfferVariantOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferVariant_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferVariant_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductOfferVariant.class, org.megacommerce.products.v1.ProductProto.ProductOfferVariant.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductOfferVariant.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        sku_ = "";
+        quantity_ = 0L;
+        price_ = "";
+        offeringCondition_ = "";
+        conditionNote_ = "";
+        listPrice_ = "";
+        hasSalePrice_ = false;
+        salePrice_ = "";
+        salePriceStart_ = "";
+        salePriceEnd_ = "";
+        hasMinimumOrders_ = false;
+        if (minimumOrdersBuilder_ == null) {
+          minimumOrders_ = java.util.Collections.emptyList();
+        } else {
+          minimumOrders_ = null;
+          minimumOrdersBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000800);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferVariant_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOfferVariant getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductOfferVariant.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOfferVariant build() {
+        org.megacommerce.products.v1.ProductProto.ProductOfferVariant result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOfferVariant buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductOfferVariant result = new org.megacommerce.products.v1.ProductProto.ProductOfferVariant(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductProto.ProductOfferVariant result) {
+        if (minimumOrdersBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0)) {
+            minimumOrders_ = java.util.Collections.unmodifiableList(minimumOrders_);
+            bitField0_ = (bitField0_ & ~0x00000800);
+          }
+          result.minimumOrders_ = minimumOrders_;
+        } else {
+          result.minimumOrders_ = minimumOrdersBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductOfferVariant result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sku_ = sku_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.quantity_ = quantity_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.price_ = price_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.offeringCondition_ = offeringCondition_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.conditionNote_ = conditionNote_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.listPrice_ = listPrice_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.hasSalePrice_ = hasSalePrice_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.salePrice_ = salePrice_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.salePriceStart_ = salePriceStart_;
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.salePriceEnd_ = salePriceEnd_;
+          to_bitField0_ |= 0x00000010;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.hasMinimumOrders_ = hasMinimumOrders_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductOfferVariant) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductOfferVariant)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductOfferVariant other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductOfferVariant.getDefaultInstance()) return this;
+        if (!other.getSku().isEmpty()) {
+          sku_ = other.sku_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getQuantity() != 0L) {
+          setQuantity(other.getQuantity());
+        }
+        if (!other.getPrice().isEmpty()) {
+          price_ = other.price_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getOfferingCondition().isEmpty()) {
+          offeringCondition_ = other.offeringCondition_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.hasConditionNote()) {
+          conditionNote_ = other.conditionNote_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (other.hasListPrice()) {
+          listPrice_ = other.listPrice_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (other.getHasSalePrice() != false) {
+          setHasSalePrice(other.getHasSalePrice());
+        }
+        if (other.hasSalePrice()) {
+          salePrice_ = other.salePrice_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (other.hasSalePriceStart()) {
+          salePriceStart_ = other.salePriceStart_;
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        if (other.hasSalePriceEnd()) {
+          salePriceEnd_ = other.salePriceEnd_;
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        if (other.getHasMinimumOrders() != false) {
+          setHasMinimumOrders(other.getHasMinimumOrders());
+        }
+        if (minimumOrdersBuilder_ == null) {
+          if (!other.minimumOrders_.isEmpty()) {
+            if (minimumOrders_.isEmpty()) {
+              minimumOrders_ = other.minimumOrders_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+            } else {
+              ensureMinimumOrdersIsMutable();
+              minimumOrders_.addAll(other.minimumOrders_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.minimumOrders_.isEmpty()) {
+            if (minimumOrdersBuilder_.isEmpty()) {
+              minimumOrdersBuilder_.dispose();
+              minimumOrdersBuilder_ = null;
+              minimumOrders_ = other.minimumOrders_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+              minimumOrdersBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   internalGetMinimumOrdersFieldBuilder() : null;
+            } else {
+              minimumOrdersBuilder_.addAllMessages(other.minimumOrders_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                sku_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 18
+              case 24: {
+                quantity_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 34: {
+                price_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+              case 42: {
+                offeringCondition_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+              case 50: {
+                conditionNote_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
+              case 58: {
+                listPrice_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
+              case 64: {
+                hasSalePrice_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+              case 74: {
+                salePrice_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
+              case 82: {
+                salePriceStart_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
+              case 90: {
+                salePriceEnd_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
+              case 96: {
+                hasMinimumOrders_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 96
+              case 106: {
+                org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder m =
+                    input.readMessage(
+                        org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.parser(),
+                        extensionRegistry);
+                if (minimumOrdersBuilder_ == null) {
+                  ensureMinimumOrdersIsMutable();
+                  minimumOrders_.add(m);
+                } else {
+                  minimumOrdersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object sku_ = "";
+      /**
+       * <code>string sku = 2 [json_name = "sku"];</code>
+       * @return The sku.
+       */
+      public java.lang.String getSku() {
+        java.lang.Object ref = sku_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sku_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sku = 2 [json_name = "sku"];</code>
+       * @return The bytes for sku.
+       */
+      public com.google.protobuf.ByteString
+          getSkuBytes() {
+        java.lang.Object ref = sku_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sku_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sku = 2 [json_name = "sku"];</code>
+       * @param value The sku to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSku(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        sku_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sku = 2 [json_name = "sku"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSku() {
+        sku_ = getDefaultInstance().getSku();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sku = 2 [json_name = "sku"];</code>
+       * @param value The bytes for sku to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkuBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        sku_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private long quantity_ ;
+      /**
+       * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
+       * @return The quantity.
+       */
+      @java.lang.Override
+      public long getQuantity() {
+        return quantity_;
+      }
+      /**
+       * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
+       * @param value The quantity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuantity(long value) {
+
+        quantity_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 quantity = 3 [json_name = "quantity"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuantity() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        quantity_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object price_ = "";
+      /**
+       * <code>string price = 4 [json_name = "price"];</code>
+       * @return The price.
+       */
+      public java.lang.String getPrice() {
+        java.lang.Object ref = price_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          price_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string price = 4 [json_name = "price"];</code>
+       * @return The bytes for price.
+       */
+      public com.google.protobuf.ByteString
+          getPriceBytes() {
+        java.lang.Object ref = price_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          price_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string price = 4 [json_name = "price"];</code>
+       * @param value The price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrice(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        price_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string price = 4 [json_name = "price"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrice() {
+        price_ = getDefaultInstance().getPrice();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string price = 4 [json_name = "price"];</code>
+       * @param value The bytes for price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        price_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object offeringCondition_ = "";
+      /**
+       * <code>string offering_condition = 5 [json_name = "offeringCondition"];</code>
+       * @return The offeringCondition.
+       */
+      public java.lang.String getOfferingCondition() {
+        java.lang.Object ref = offeringCondition_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          offeringCondition_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string offering_condition = 5 [json_name = "offeringCondition"];</code>
+       * @return The bytes for offeringCondition.
+       */
+      public com.google.protobuf.ByteString
+          getOfferingConditionBytes() {
+        java.lang.Object ref = offeringCondition_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          offeringCondition_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string offering_condition = 5 [json_name = "offeringCondition"];</code>
+       * @param value The offeringCondition to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOfferingCondition(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        offeringCondition_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string offering_condition = 5 [json_name = "offeringCondition"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOfferingCondition() {
+        offeringCondition_ = getDefaultInstance().getOfferingCondition();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string offering_condition = 5 [json_name = "offeringCondition"];</code>
+       * @param value The bytes for offeringCondition to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOfferingConditionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        offeringCondition_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object conditionNote_ = "";
+      /**
+       * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+       * @return Whether the conditionNote field is set.
+       */
+      public boolean hasConditionNote() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+       * @return The conditionNote.
+       */
+      public java.lang.String getConditionNote() {
+        java.lang.Object ref = conditionNote_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          conditionNote_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+       * @return The bytes for conditionNote.
+       */
+      public com.google.protobuf.ByteString
+          getConditionNoteBytes() {
+        java.lang.Object ref = conditionNote_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          conditionNote_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+       * @param value The conditionNote to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConditionNote(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        conditionNote_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConditionNote() {
+        conditionNote_ = getDefaultInstance().getConditionNote();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string condition_note = 6 [json_name = "conditionNote"];</code>
+       * @param value The bytes for conditionNote to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConditionNoteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        conditionNote_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object listPrice_ = "";
+      /**
+       * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+       * @return Whether the listPrice field is set.
+       */
+      public boolean hasListPrice() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+       * @return The listPrice.
+       */
+      public java.lang.String getListPrice() {
+        java.lang.Object ref = listPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          listPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+       * @return The bytes for listPrice.
+       */
+      public com.google.protobuf.ByteString
+          getListPriceBytes() {
+        java.lang.Object ref = listPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          listPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+       * @param value The listPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setListPrice(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        listPrice_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearListPrice() {
+        listPrice_ = getDefaultInstance().getListPrice();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string list_price = 7 [json_name = "listPrice"];</code>
+       * @param value The bytes for listPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setListPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        listPrice_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasSalePrice_ ;
+      /**
+       * <code>bool has_sale_price = 8 [json_name = "hasSalePrice"];</code>
+       * @return The hasSalePrice.
+       */
+      @java.lang.Override
+      public boolean getHasSalePrice() {
+        return hasSalePrice_;
+      }
+      /**
+       * <code>bool has_sale_price = 8 [json_name = "hasSalePrice"];</code>
+       * @param value The hasSalePrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasSalePrice(boolean value) {
+
+        hasSalePrice_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool has_sale_price = 8 [json_name = "hasSalePrice"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasSalePrice() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        hasSalePrice_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object salePrice_ = "";
+      /**
+       * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+       * @return Whether the salePrice field is set.
+       */
+      public boolean hasSalePrice() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+       * @return The salePrice.
+       */
+      public java.lang.String getSalePrice() {
+        java.lang.Object ref = salePrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          salePrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+       * @return The bytes for salePrice.
+       */
+      public com.google.protobuf.ByteString
+          getSalePriceBytes() {
+        java.lang.Object ref = salePrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          salePrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+       * @param value The salePrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalePrice(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        salePrice_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSalePrice() {
+        salePrice_ = getDefaultInstance().getSalePrice();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sale_price = 9 [json_name = "salePrice"];</code>
+       * @param value The bytes for salePrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalePriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        salePrice_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object salePriceStart_ = "";
+      /**
+       * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+       * @return Whether the salePriceStart field is set.
+       */
+      public boolean hasSalePriceStart() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+       * @return The salePriceStart.
+       */
+      public java.lang.String getSalePriceStart() {
+        java.lang.Object ref = salePriceStart_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          salePriceStart_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+       * @return The bytes for salePriceStart.
+       */
+      public com.google.protobuf.ByteString
+          getSalePriceStartBytes() {
+        java.lang.Object ref = salePriceStart_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          salePriceStart_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+       * @param value The salePriceStart to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalePriceStart(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        salePriceStart_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSalePriceStart() {
+        salePriceStart_ = getDefaultInstance().getSalePriceStart();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sale_price_start = 10 [json_name = "salePriceStart"];</code>
+       * @param value The bytes for salePriceStart to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalePriceStartBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        salePriceStart_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object salePriceEnd_ = "";
+      /**
+       * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+       * @return Whether the salePriceEnd field is set.
+       */
+      public boolean hasSalePriceEnd() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+       * @return The salePriceEnd.
+       */
+      public java.lang.String getSalePriceEnd() {
+        java.lang.Object ref = salePriceEnd_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          salePriceEnd_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+       * @return The bytes for salePriceEnd.
+       */
+      public com.google.protobuf.ByteString
+          getSalePriceEndBytes() {
+        java.lang.Object ref = salePriceEnd_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          salePriceEnd_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+       * @param value The salePriceEnd to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalePriceEnd(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        salePriceEnd_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSalePriceEnd() {
+        salePriceEnd_ = getDefaultInstance().getSalePriceEnd();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sale_price_end = 11 [json_name = "salePriceEnd"];</code>
+       * @param value The bytes for salePriceEnd to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalePriceEndBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        salePriceEnd_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasMinimumOrders_ ;
+      /**
+       * <code>bool has_minimum_orders = 12 [json_name = "hasMinimumOrders"];</code>
+       * @return The hasMinimumOrders.
+       */
+      @java.lang.Override
+      public boolean getHasMinimumOrders() {
+        return hasMinimumOrders_;
+      }
+      /**
+       * <code>bool has_minimum_orders = 12 [json_name = "hasMinimumOrders"];</code>
+       * @param value The hasMinimumOrders to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasMinimumOrders(boolean value) {
+
+        hasMinimumOrders_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool has_minimum_orders = 12 [json_name = "hasMinimumOrders"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasMinimumOrders() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        hasMinimumOrders_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder> minimumOrders_ =
+        java.util.Collections.emptyList();
+      private void ensureMinimumOrdersIsMutable() {
+        if (!((bitField0_ & 0x00000800) != 0)) {
+          minimumOrders_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder>(minimumOrders_);
+          bitField0_ |= 0x00000800;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder> minimumOrdersBuilder_;
+
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder> getMinimumOrdersList() {
+        if (minimumOrdersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(minimumOrders_);
+        } else {
+          return minimumOrdersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public int getMinimumOrdersCount() {
+        if (minimumOrdersBuilder_ == null) {
+          return minimumOrders_.size();
+        } else {
+          return minimumOrdersBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder getMinimumOrders(int index) {
+        if (minimumOrdersBuilder_ == null) {
+          return minimumOrders_.get(index);
+        } else {
+          return minimumOrdersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public Builder setMinimumOrders(
+          int index, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder value) {
+        if (minimumOrdersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMinimumOrdersIsMutable();
+          minimumOrders_.set(index, value);
+          onChanged();
+        } else {
+          minimumOrdersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public Builder setMinimumOrders(
+          int index, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder builderForValue) {
+        if (minimumOrdersBuilder_ == null) {
+          ensureMinimumOrdersIsMutable();
+          minimumOrders_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          minimumOrdersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public Builder addMinimumOrders(org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder value) {
+        if (minimumOrdersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMinimumOrdersIsMutable();
+          minimumOrders_.add(value);
+          onChanged();
+        } else {
+          minimumOrdersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public Builder addMinimumOrders(
+          int index, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder value) {
+        if (minimumOrdersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMinimumOrdersIsMutable();
+          minimumOrders_.add(index, value);
+          onChanged();
+        } else {
+          minimumOrdersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public Builder addMinimumOrders(
+          org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder builderForValue) {
+        if (minimumOrdersBuilder_ == null) {
+          ensureMinimumOrdersIsMutable();
+          minimumOrders_.add(builderForValue.build());
+          onChanged();
+        } else {
+          minimumOrdersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public Builder addMinimumOrders(
+          int index, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder builderForValue) {
+        if (minimumOrdersBuilder_ == null) {
+          ensureMinimumOrdersIsMutable();
+          minimumOrders_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          minimumOrdersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public Builder addAllMinimumOrders(
+          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder> values) {
+        if (minimumOrdersBuilder_ == null) {
+          ensureMinimumOrdersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, minimumOrders_);
+          onChanged();
+        } else {
+          minimumOrdersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public Builder clearMinimumOrders() {
+        if (minimumOrdersBuilder_ == null) {
+          minimumOrders_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+          onChanged();
+        } else {
+          minimumOrdersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public Builder removeMinimumOrders(int index) {
+        if (minimumOrdersBuilder_ == null) {
+          ensureMinimumOrdersIsMutable();
+          minimumOrders_.remove(index);
+          onChanged();
+        } else {
+          minimumOrdersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder getMinimumOrdersBuilder(
+          int index) {
+        return internalGetMinimumOrdersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder getMinimumOrdersOrBuilder(
+          int index) {
+        if (minimumOrdersBuilder_ == null) {
+          return minimumOrders_.get(index);  } else {
+          return minimumOrdersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder> 
+           getMinimumOrdersOrBuilderList() {
+        if (minimumOrdersBuilder_ != null) {
+          return minimumOrdersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(minimumOrders_);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder addMinimumOrdersBuilder() {
+        return internalGetMinimumOrdersFieldBuilder().addBuilder(
+            org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder addMinimumOrdersBuilder(
+          int index) {
+        return internalGetMinimumOrdersFieldBuilder().addBuilder(
+            index, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .products.v1.ProductOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];</code>
+       */
+      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder> 
+           getMinimumOrdersBuilderList() {
+        return internalGetMinimumOrdersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder> 
+          internalGetMinimumOrdersFieldBuilder() {
+        if (minimumOrdersBuilder_ == null) {
+          minimumOrdersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder>(
+                  minimumOrders_,
+                  ((bitField0_ & 0x00000800) != 0),
+                  getParentForChildren(),
+                  isClean());
+          minimumOrders_ = null;
+        }
+        return minimumOrdersBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductOfferVariant)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductOfferVariant)
+    private static final org.megacommerce.products.v1.ProductProto.ProductOfferVariant DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductOfferVariant();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferVariant getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductOfferVariant>
+        PARSER = new com.google.protobuf.AbstractParser<ProductOfferVariant>() {
+      @java.lang.Override
+      public ProductOfferVariant parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductOfferVariant> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductOfferVariant> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductOfferVariant getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductOfferMinimumOrderOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductOfferMinimumOrder)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string price = 1 [json_name = "price"];</code>
+     * @return The price.
+     */
+    java.lang.String getPrice();
+    /**
+     * <code>string price = 1 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    com.google.protobuf.ByteString
+        getPriceBytes();
+
+    /**
+     * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+     * @return The quantity.
+     */
+    long getQuantity();
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductOfferMinimumOrder}
+   */
+  public static final class ProductOfferMinimumOrder extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductOfferMinimumOrder)
+      ProductOfferMinimumOrderOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductOfferMinimumOrder.class.getName());
+    }
+    // Use ProductOfferMinimumOrder.newBuilder() to construct.
+    private ProductOfferMinimumOrder(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductOfferMinimumOrder() {
+      price_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferMinimumOrder_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferMinimumOrder_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.class, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder.class);
+    }
+
+    public static final int PRICE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object price_ = "";
+    /**
+     * <code>string price = 1 [json_name = "price"];</code>
+     * @return The price.
+     */
+    @java.lang.Override
+    public java.lang.String getPrice() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        price_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string price = 1 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPriceBytes() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        price_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUANTITY_FIELD_NUMBER = 2;
+    private long quantity_ = 0L;
+    /**
+     * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+     * @return The quantity.
+     */
+    @java.lang.Override
+    public long getQuantity() {
+      return quantity_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, price_);
+      }
+      if (quantity_ != 0L) {
+        output.writeUInt64(2, quantity_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, price_);
+      }
+      if (quantity_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, quantity_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder other = (org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder) obj;
+
+      if (!getPrice()
+          .equals(other.getPrice())) return false;
+      if (getQuantity()
+          != other.getQuantity()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + getPrice().hashCode();
+      hash = (37 * hash) + QUANTITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getQuantity());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductOfferMinimumOrder}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductOfferMinimumOrder)
+        org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrderOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferMinimumOrder_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferMinimumOrder_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.class, org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        price_ = "";
+        quantity_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductOfferMinimumOrder_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder build() {
+        org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder result = new org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.price_ = price_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.quantity_ = quantity_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder.getDefaultInstance()) return this;
+        if (!other.getPrice().isEmpty()) {
+          price_ = other.price_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getQuantity() != 0L) {
+          setQuantity(other.getQuantity());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                price_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                quantity_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object price_ = "";
+      /**
+       * <code>string price = 1 [json_name = "price"];</code>
+       * @return The price.
+       */
+      public java.lang.String getPrice() {
+        java.lang.Object ref = price_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          price_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string price = 1 [json_name = "price"];</code>
+       * @return The bytes for price.
+       */
+      public com.google.protobuf.ByteString
+          getPriceBytes() {
+        java.lang.Object ref = price_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          price_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string price = 1 [json_name = "price"];</code>
+       * @param value The price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrice(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        price_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string price = 1 [json_name = "price"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrice() {
+        price_ = getDefaultInstance().getPrice();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string price = 1 [json_name = "price"];</code>
+       * @param value The bytes for price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        price_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private long quantity_ ;
+      /**
+       * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+       * @return The quantity.
+       */
+      @java.lang.Override
+      public long getQuantity() {
+        return quantity_;
+      }
+      /**
+       * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+       * @param value The quantity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuantity(long value) {
+
+        quantity_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 quantity = 2 [json_name = "quantity"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuantity() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        quantity_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductOfferMinimumOrder)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductOfferMinimumOrder)
+    private static final org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductOfferMinimumOrder>
+        PARSER = new com.google.protobuf.AbstractParser<ProductOfferMinimumOrder>() {
+      @java.lang.Override
+      public ProductOfferMinimumOrder parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductOfferMinimumOrder> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductOfferMinimumOrder> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductOfferMinimumOrder getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductSafetyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductSafety)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    int getSafetyCount();
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    boolean containsSafety(
+        java.lang.String key);
+    /**
+     * Use {@link #getSafetyMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getSafety();
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getSafetyMap();
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSafetyOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue);
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    org.megacommerce.shared.v1.TypesProto.Any getSafetyOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductSafety}
+   */
+  public static final class ProductSafety extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductSafety)
+      ProductSafetyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductSafety.class.getName());
+    }
+    // Use ProductSafety.newBuilder() to construct.
+    private ProductSafety(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductSafety() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductSafety_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetSafety();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductSafety_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductProto.ProductSafety.class, org.megacommerce.products.v1.ProductProto.ProductSafety.Builder.class);
+    }
+
+    public static final int SAFETY_FIELD_NUMBER = 1;
+    private static final class SafetyDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductSafety_SafetyEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance());
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> safety_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    internalGetSafety() {
+      if (safety_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SafetyDefaultEntryHolder.defaultEntry);
+      }
+      return safety_;
+    }
+    public int getSafetyCount() {
+      return internalGetSafety().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    @java.lang.Override
+    public boolean containsSafety(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetSafety().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getSafetyMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafety() {
+      return getSafetyMap();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafetyMap() {
+      return internalGetSafety().getMap();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSafetyOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetSafety().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.Any getSafetyOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetSafety().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetSafety(),
+          SafetyDefaultEntryHolder.defaultEntry,
+          1);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> entry
+           : internalGetSafety().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+        safety__ = SafetyDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, safety__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductProto.ProductSafety)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductProto.ProductSafety other = (org.megacommerce.products.v1.ProductProto.ProductSafety) obj;
+
+      if (!internalGetSafety().equals(
+          other.internalGetSafety())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetSafety().getMap().isEmpty()) {
+        hash = (37 * hash) + SAFETY_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetSafety().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductProto.ProductSafety prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductSafety}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductSafety)
+        org.megacommerce.products.v1.ProductProto.ProductSafetyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductSafety_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetSafety();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableSafety();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductSafety_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductProto.ProductSafety.class, org.megacommerce.products.v1.ProductProto.ProductSafety.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductProto.ProductSafety.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        internalGetMutableSafety().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductSafety_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductSafety getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductProto.ProductSafety.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductSafety build() {
+        org.megacommerce.products.v1.ProductProto.ProductSafety result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductSafety buildPartial() {
+        org.megacommerce.products.v1.ProductProto.ProductSafety result = new org.megacommerce.products.v1.ProductProto.ProductSafety(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductSafety result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.safety_ = internalGetSafety().build(SafetyDefaultEntryHolder.defaultEntry);
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductProto.ProductSafety) {
+          return mergeFrom((org.megacommerce.products.v1.ProductProto.ProductSafety)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductSafety other) {
+        if (other == org.megacommerce.products.v1.ProductProto.ProductSafety.getDefaultInstance()) return this;
+        internalGetMutableSafety().mergeFrom(
+            other.internalGetSafety());
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+                safety__ = input.readMessage(
+                    SafetyDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableSafety().ensureBuilderMap().put(
+                    safety__.getKey(), safety__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private static final class SafetyConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any> {
+        @java.lang.Override
+        public org.megacommerce.shared.v1.TypesProto.Any build(org.megacommerce.shared.v1.TypesProto.AnyOrBuilder val) {
+          if (val instanceof org.megacommerce.shared.v1.TypesProto.Any) { return (org.megacommerce.shared.v1.TypesProto.Any) val; }
+          return ((org.megacommerce.shared.v1.TypesProto.Any.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry() {
+          return SafetyDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final SafetyConverter safetyConverter = new SafetyConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder> safety_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetSafety() {
+        if (safety_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(safetyConverter);
+        }
+        return safety_;
+      }
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetMutableSafety() {
+        if (safety_ == null) {
+          safety_ = new com.google.protobuf.MapFieldBuilder<>(safetyConverter);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return safety_;
+      }
+      public int getSafetyCount() {
+        return internalGetSafety().ensureBuilderMap().size();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      @java.lang.Override
+      public boolean containsSafety(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetSafety().ensureBuilderMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getSafetyMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafety() {
+        return getSafetyMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafetyMap() {
+        return internalGetSafety().getImmutableMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSafetyOrDefault(
+          java.lang.String key,
+          /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableSafety().ensureBuilderMap();
+        return map.containsKey(key) ? safetyConverter.build(map.get(key)) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Any getSafetyOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableSafety().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return safetyConverter.build(map.get(key));
+      }
+      public Builder clearSafety() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableSafety().clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      public Builder removeSafety(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableSafety().ensureBuilderMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+          getMutableSafety() {
+        bitField0_ |= 0x00000001;
+        return internalGetMutableSafety().ensureMessageMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      public Builder putSafety(
+          java.lang.String key,
+          org.megacommerce.shared.v1.TypesProto.Any value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableSafety().ensureBuilderMap()
+            .put(key, value);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      public Builder putAllSafety(
+          java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableSafety().ensureBuilderMap()
+            .putAll(values);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       */
+      public org.megacommerce.shared.v1.TypesProto.Any.Builder putSafetyBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> builderMap = internalGetMutableSafety().ensureBuilderMap();
+        org.megacommerce.shared.v1.TypesProto.AnyOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.shared.v1.TypesProto.Any.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof org.megacommerce.shared.v1.TypesProto.Any) {
+          entry = ((org.megacommerce.shared.v1.TypesProto.Any) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (org.megacommerce.shared.v1.TypesProto.Any.Builder) entry;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductSafety)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductSafety)
+    private static final org.megacommerce.products.v1.ProductProto.ProductSafety DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductProto.ProductSafety();
+    }
+
+    public static org.megacommerce.products.v1.ProductProto.ProductSafety getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductSafety>
+        PARSER = new com.google.protobuf.AbstractParser<ProductSafety>() {
+      @java.lang.Override
+      public ProductSafety parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductSafety> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductSafety> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductSafety getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ProductTagOrBuilder extends
       // @@protoc_insertion_point(interface_extends:products.v1.ProductTag)
       com.google.protobuf.MessageOrBuilder {
@@ -1788,164 +12355,341 @@ public final class ProductProto {
         getUserIdBytes();
 
     /**
-     * <code>string sku = 3 [json_name = "sku"];</code>
-     * @return The sku.
-     */
-    java.lang.String getSku();
-    /**
-     * <code>string sku = 3 [json_name = "sku"];</code>
-     * @return The bytes for sku.
-     */
-    com.google.protobuf.ByteString
-        getSkuBytes();
-
-    /**
-     * <code>uint32 version = 4 [json_name = "version"];</code>
-     * @return The version.
-     */
-    int getVersion();
-
-    /**
-     * <code>string status = 5 [json_name = "status"];</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 5 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
-
-    /**
-     * <code>string title = 6 [json_name = "title"];</code>
+     * <code>string title = 3 [json_name = "title"];</code>
      * @return The title.
      */
     java.lang.String getTitle();
     /**
-     * <code>string title = 6 [json_name = "title"];</code>
+     * <code>string title = 3 [json_name = "title"];</code>
      * @return The bytes for title.
      */
     com.google.protobuf.ByteString
         getTitleBytes();
 
     /**
-     * <code>string description = 7 [json_name = "description"];</code>
+     * <code>string category = 4 [json_name = "category"];</code>
+     * @return The category.
+     */
+    java.lang.String getCategory();
+    /**
+     * <code>string category = 4 [json_name = "category"];</code>
+     * @return The bytes for category.
+     */
+    com.google.protobuf.ByteString
+        getCategoryBytes();
+
+    /**
+     * <code>string subcategory = 5 [json_name = "subcategory"];</code>
+     * @return The subcategory.
+     */
+    java.lang.String getSubcategory();
+    /**
+     * <code>string subcategory = 5 [json_name = "subcategory"];</code>
+     * @return The bytes for subcategory.
+     */
+    com.google.protobuf.ByteString
+        getSubcategoryBytes();
+
+    /**
+     * <code>bool has_variations = 6 [json_name = "hasVariations"];</code>
+     * @return The hasVariations.
+     */
+    boolean getHasVariations();
+
+    /**
+     * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+     * @return Whether the brandName field is set.
+     */
+    boolean hasBrandName();
+    /**
+     * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+     * @return The brandName.
+     */
+    java.lang.String getBrandName();
+    /**
+     * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+     * @return The bytes for brandName.
+     */
+    com.google.protobuf.ByteString
+        getBrandNameBytes();
+
+    /**
+     * <code>bool has_brand_name = 8 [json_name = "hasBrandName"];</code>
+     * @return The hasBrandName.
+     */
+    boolean getHasBrandName();
+
+    /**
+     * <code>optional string product_id = 9 [json_name = "productId"];</code>
+     * @return Whether the productId field is set.
+     */
+    boolean hasProductId();
+    /**
+     * <code>optional string product_id = 9 [json_name = "productId"];</code>
+     * @return The productId.
+     */
+    java.lang.String getProductId();
+    /**
+     * <code>optional string product_id = 9 [json_name = "productId"];</code>
+     * @return The bytes for productId.
+     */
+    com.google.protobuf.ByteString
+        getProductIdBytes();
+
+    /**
+     * <code>bool has_product_id = 10 [json_name = "hasProductId"];</code>
+     * @return The hasProductId.
+     */
+    boolean getHasProductId();
+
+    /**
+     * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+     * @return Whether the productIdType field is set.
+     */
+    boolean hasProductIdType();
+    /**
+     * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+     * @return The productIdType.
+     */
+    java.lang.String getProductIdType();
+    /**
+     * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+     * @return The bytes for productIdType.
+     */
+    com.google.protobuf.ByteString
+        getProductIdTypeBytes();
+
+    /**
+     * <code>string description = 12 [json_name = "description"];</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
-     * <code>string description = 7 [json_name = "description"];</code>
+     * <code>string description = 12 [json_name = "description"];</code>
      * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
-     * <code>string slug = 8 [json_name = "slug"];</code>
-     * @return The slug.
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
      */
-    java.lang.String getSlug();
+    java.util.List<org.megacommerce.products.v1.ProductProto.ProductBulletPoint> 
+        getBulletPointsList();
     /**
-     * <code>string slug = 8 [json_name = "slug"];</code>
-     * @return The bytes for slug.
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
      */
-    com.google.protobuf.ByteString
-        getSlugBytes();
+    org.megacommerce.products.v1.ProductProto.ProductBulletPoint getBulletPoints(int index);
+    /**
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+     */
+    int getBulletPointsCount();
+    /**
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+     */
+    java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder> 
+        getBulletPointsOrBuilderList();
+    /**
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder getBulletPointsOrBuilder(
+        int index);
 
     /**
-     * <code>string price = 9 [json_name = "price"];</code>
-     * @return The price.
-     */
-    java.lang.String getPrice();
-    /**
-     * <code>string price = 9 [json_name = "price"];</code>
-     * @return The bytes for price.
-     */
-    com.google.protobuf.ByteString
-        getPriceBytes();
-
-    /**
-     * <code>string currency_code = 10 [json_name = "currencyCode"];</code>
+     * <code>string currency_code = 14 [json_name = "currencyCode"];</code>
      * @return The currencyCode.
      */
     java.lang.String getCurrencyCode();
     /**
-     * <code>string currency_code = 10 [json_name = "currencyCode"];</code>
+     * <code>string currency_code = 14 [json_name = "currencyCode"];</code>
      * @return The bytes for currencyCode.
      */
     com.google.protobuf.ByteString
         getCurrencyCodeBytes();
 
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>string fulfillment_type = 15 [json_name = "fulfillmentType"];</code>
+     * @return The fulfillmentType.
+     */
+    java.lang.String getFulfillmentType();
+    /**
+     * <code>string fulfillment_type = 15 [json_name = "fulfillmentType"];</code>
+     * @return The bytes for fulfillmentType.
+     */
+    com.google.protobuf.ByteString
+        getFulfillmentTypeBytes();
+
+    /**
+     * <code>uint64 processing_time = 16 [json_name = "processingTime"];</code>
+     * @return The processingTime.
+     */
+    long getProcessingTime();
+
+    /**
+     * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+     * @return Whether the details field is set.
+     */
+    boolean hasDetails();
+    /**
+     * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+     * @return The details.
+     */
+    org.megacommerce.products.v1.ProductProto.ProductDetails getDetails();
+    /**
+     * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductDetailsOrBuilder getDetailsOrBuilder();
+
+    /**
+     * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+     * @return Whether the media field is set.
+     */
+    boolean hasMedia();
+    /**
+     * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+     * @return The media.
+     */
+    org.megacommerce.products.v1.ProductProto.ProductMedia getMedia();
+    /**
+     * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductMediaOrBuilder getMediaOrBuilder();
+
+    /**
+     * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+     * @return Whether the offer field is set.
+     */
+    boolean hasOffer();
+    /**
+     * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+     * @return The offer.
+     */
+    org.megacommerce.products.v1.ProductProto.ProductOffer getOffer();
+    /**
+     * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductOfferOrBuilder getOfferOrBuilder();
+
+    /**
+     * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+     * @return Whether the safety field is set.
+     */
+    boolean hasSafety();
+    /**
+     * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+     * @return The safety.
+     */
+    org.megacommerce.products.v1.ProductProto.ProductSafety getSafety();
+    /**
+     * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductSafetyOrBuilder getSafetyOrBuilder();
+
+    /**
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     java.util.List<org.megacommerce.products.v1.ProductProto.ProductTag> 
         getTagsList();
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     org.megacommerce.products.v1.ProductProto.ProductTag getTags(int index);
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     int getTagsCount();
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductTagOrBuilder> 
         getTagsOrBuilderList();
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     org.megacommerce.products.v1.ProductProto.ProductTagOrBuilder getTagsOrBuilder(
         int index);
 
     /**
-     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
-     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
      * @return The metadata.
      */
     org.megacommerce.products.v1.ProductProto.ProductMetadata getMetadata();
     /**
-     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
      */
     org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>bool ar_enabled = 13 [json_name = "arEnabled"];</code>
+     * <code>bool ar_enabled = 23 [json_name = "arEnabled"];</code>
      * @return The arEnabled.
      */
     boolean getArEnabled();
 
     /**
-     * <code>uint64 created_at = 14 [json_name = "createdAt"];</code>
+     * <code>string slug = 24 [json_name = "slug"];</code>
+     * @return The slug.
+     */
+    java.lang.String getSlug();
+    /**
+     * <code>string slug = 24 [json_name = "slug"];</code>
+     * @return The bytes for slug.
+     */
+    com.google.protobuf.ByteString
+        getSlugBytes();
+
+    /**
+     * <code>string status = 25 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 25 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <code>uint32 version = 26 [json_name = "version"];</code>
+     * @return The version.
+     */
+    int getVersion();
+
+    /**
+     * <code>uint32 schema_version = 27 [json_name = "schemaVersion"];</code>
+     * @return The schemaVersion.
+     */
+    int getSchemaVersion();
+
+    /**
+     * <code>uint64 created_at = 28 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
 
     /**
-     * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+     * <code>optional uint64 published_at = 29 [json_name = "publishedAt"];</code>
      * @return Whether the publishedAt field is set.
      */
     boolean hasPublishedAt();
     /**
-     * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+     * <code>optional uint64 published_at = 29 [json_name = "publishedAt"];</code>
      * @return The publishedAt.
      */
     long getPublishedAt();
 
     /**
-     * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 30 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     boolean hasUpdatedAt();
     /**
-     * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 30 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
@@ -1974,14 +12718,19 @@ public final class ProductProto {
     private Product() {
       id_ = "";
       userId_ = "";
-      sku_ = "";
-      status_ = "";
       title_ = "";
+      category_ = "";
+      subcategory_ = "";
+      brandName_ = "";
+      productId_ = "";
+      productIdType_ = "";
       description_ = "";
-      slug_ = "";
-      price_ = "";
+      bulletPoints_ = java.util.Collections.emptyList();
       currencyCode_ = "";
+      fulfillmentType_ = "";
       tags_ = java.util.Collections.emptyList();
+      slug_ = "";
+      status_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2076,100 +12825,11 @@ public final class ProductProto {
       }
     }
 
-    public static final int SKU_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object sku_ = "";
-    /**
-     * <code>string sku = 3 [json_name = "sku"];</code>
-     * @return The sku.
-     */
-    @java.lang.Override
-    public java.lang.String getSku() {
-      java.lang.Object ref = sku_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sku_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string sku = 3 [json_name = "sku"];</code>
-     * @return The bytes for sku.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSkuBytes() {
-      java.lang.Object ref = sku_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sku_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VERSION_FIELD_NUMBER = 4;
-    private int version_ = 0;
-    /**
-     * <code>uint32 version = 4 [json_name = "version"];</code>
-     * @return The version.
-     */
-    @java.lang.Override
-    public int getVersion() {
-      return version_;
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object status_ = "";
-    /**
-     * <code>string status = 5 [json_name = "status"];</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 5 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TITLE_FIELD_NUMBER = 6;
+    public static final int TITLE_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
     /**
-     * <code>string title = 6 [json_name = "title"];</code>
+     * <code>string title = 3 [json_name = "title"];</code>
      * @return The title.
      */
     @java.lang.Override
@@ -2186,7 +12846,7 @@ public final class ProductProto {
       }
     }
     /**
-     * <code>string title = 6 [json_name = "title"];</code>
+     * <code>string title = 3 [json_name = "title"];</code>
      * @return The bytes for title.
      */
     @java.lang.Override
@@ -2204,11 +12864,263 @@ public final class ProductProto {
       }
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 7;
+    public static final int CATEGORY_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object category_ = "";
+    /**
+     * <code>string category = 4 [json_name = "category"];</code>
+     * @return The category.
+     */
+    @java.lang.Override
+    public java.lang.String getCategory() {
+      java.lang.Object ref = category_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        category_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string category = 4 [json_name = "category"];</code>
+     * @return The bytes for category.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCategoryBytes() {
+      java.lang.Object ref = category_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        category_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUBCATEGORY_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object subcategory_ = "";
+    /**
+     * <code>string subcategory = 5 [json_name = "subcategory"];</code>
+     * @return The subcategory.
+     */
+    @java.lang.Override
+    public java.lang.String getSubcategory() {
+      java.lang.Object ref = subcategory_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subcategory_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string subcategory = 5 [json_name = "subcategory"];</code>
+     * @return The bytes for subcategory.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSubcategoryBytes() {
+      java.lang.Object ref = subcategory_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subcategory_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HAS_VARIATIONS_FIELD_NUMBER = 6;
+    private boolean hasVariations_ = false;
+    /**
+     * <code>bool has_variations = 6 [json_name = "hasVariations"];</code>
+     * @return The hasVariations.
+     */
+    @java.lang.Override
+    public boolean getHasVariations() {
+      return hasVariations_;
+    }
+
+    public static final int BRAND_NAME_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object brandName_ = "";
+    /**
+     * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+     * @return Whether the brandName field is set.
+     */
+    @java.lang.Override
+    public boolean hasBrandName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+     * @return The brandName.
+     */
+    @java.lang.Override
+    public java.lang.String getBrandName() {
+      java.lang.Object ref = brandName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        brandName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+     * @return The bytes for brandName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBrandNameBytes() {
+      java.lang.Object ref = brandName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        brandName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HAS_BRAND_NAME_FIELD_NUMBER = 8;
+    private boolean hasBrandName_ = false;
+    /**
+     * <code>bool has_brand_name = 8 [json_name = "hasBrandName"];</code>
+     * @return The hasBrandName.
+     */
+    @java.lang.Override
+    public boolean getHasBrandName() {
+      return hasBrandName_;
+    }
+
+    public static final int PRODUCT_ID_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
+    /**
+     * <code>optional string product_id = 9 [json_name = "productId"];</code>
+     * @return Whether the productId field is set.
+     */
+    @java.lang.Override
+    public boolean hasProductId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional string product_id = 9 [json_name = "productId"];</code>
+     * @return The productId.
+     */
+    @java.lang.Override
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string product_id = 9 [json_name = "productId"];</code>
+     * @return The bytes for productId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HAS_PRODUCT_ID_FIELD_NUMBER = 10;
+    private boolean hasProductId_ = false;
+    /**
+     * <code>bool has_product_id = 10 [json_name = "hasProductId"];</code>
+     * @return The hasProductId.
+     */
+    @java.lang.Override
+    public boolean getHasProductId() {
+      return hasProductId_;
+    }
+
+    public static final int PRODUCT_ID_TYPE_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productIdType_ = "";
+    /**
+     * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+     * @return Whether the productIdType field is set.
+     */
+    @java.lang.Override
+    public boolean hasProductIdType() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+     * @return The productIdType.
+     */
+    @java.lang.Override
+    public java.lang.String getProductIdType() {
+      java.lang.Object ref = productIdType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productIdType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+     * @return The bytes for productIdType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductIdTypeBytes() {
+      java.lang.Object ref = productIdType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productIdType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 12;
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
     /**
-     * <code>string description = 7 [json_name = "description"];</code>
+     * <code>string description = 12 [json_name = "description"];</code>
      * @return The description.
      */
     @java.lang.Override
@@ -2225,7 +13137,7 @@ public final class ProductProto {
       }
     }
     /**
-     * <code>string description = 7 [json_name = "description"];</code>
+     * <code>string description = 12 [json_name = "description"];</code>
      * @return The bytes for description.
      */
     @java.lang.Override
@@ -2243,89 +13155,52 @@ public final class ProductProto {
       }
     }
 
-    public static final int SLUG_FIELD_NUMBER = 8;
+    public static final int BULLET_POINTS_FIELD_NUMBER = 13;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object slug_ = "";
+    private java.util.List<org.megacommerce.products.v1.ProductProto.ProductBulletPoint> bulletPoints_;
     /**
-     * <code>string slug = 8 [json_name = "slug"];</code>
-     * @return The slug.
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
      */
     @java.lang.Override
-    public java.lang.String getSlug() {
-      java.lang.Object ref = slug_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        slug_ = s;
-        return s;
-      }
+    public java.util.List<org.megacommerce.products.v1.ProductProto.ProductBulletPoint> getBulletPointsList() {
+      return bulletPoints_;
     }
     /**
-     * <code>string slug = 8 [json_name = "slug"];</code>
-     * @return The bytes for slug.
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSlugBytes() {
-      java.lang.Object ref = slug_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        slug_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder> 
+        getBulletPointsOrBuilderList() {
+      return bulletPoints_;
+    }
+    /**
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+     */
+    @java.lang.Override
+    public int getBulletPointsCount() {
+      return bulletPoints_.size();
+    }
+    /**
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductBulletPoint getBulletPoints(int index) {
+      return bulletPoints_.get(index);
+    }
+    /**
+     * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder getBulletPointsOrBuilder(
+        int index) {
+      return bulletPoints_.get(index);
     }
 
-    public static final int PRICE_FIELD_NUMBER = 9;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object price_ = "";
-    /**
-     * <code>string price = 9 [json_name = "price"];</code>
-     * @return The price.
-     */
-    @java.lang.Override
-    public java.lang.String getPrice() {
-      java.lang.Object ref = price_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        price_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string price = 9 [json_name = "price"];</code>
-     * @return The bytes for price.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPriceBytes() {
-      java.lang.Object ref = price_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        price_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CURRENCY_CODE_FIELD_NUMBER = 10;
+    public static final int CURRENCY_CODE_FIELD_NUMBER = 14;
     @SuppressWarnings("serial")
     private volatile java.lang.Object currencyCode_ = "";
     /**
-     * <code>string currency_code = 10 [json_name = "currencyCode"];</code>
+     * <code>string currency_code = 14 [json_name = "currencyCode"];</code>
      * @return The currencyCode.
      */
     @java.lang.Override
@@ -2342,7 +13217,7 @@ public final class ProductProto {
       }
     }
     /**
-     * <code>string currency_code = 10 [json_name = "currencyCode"];</code>
+     * <code>string currency_code = 14 [json_name = "currencyCode"];</code>
      * @return The bytes for currencyCode.
      */
     @java.lang.Override
@@ -2360,18 +13235,172 @@ public final class ProductProto {
       }
     }
 
-    public static final int TAGS_FIELD_NUMBER = 11;
+    public static final int FULFILLMENT_TYPE_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fulfillmentType_ = "";
+    /**
+     * <code>string fulfillment_type = 15 [json_name = "fulfillmentType"];</code>
+     * @return The fulfillmentType.
+     */
+    @java.lang.Override
+    public java.lang.String getFulfillmentType() {
+      java.lang.Object ref = fulfillmentType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fulfillmentType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string fulfillment_type = 15 [json_name = "fulfillmentType"];</code>
+     * @return The bytes for fulfillmentType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFulfillmentTypeBytes() {
+      java.lang.Object ref = fulfillmentType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fulfillmentType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROCESSING_TIME_FIELD_NUMBER = 16;
+    private long processingTime_ = 0L;
+    /**
+     * <code>uint64 processing_time = 16 [json_name = "processingTime"];</code>
+     * @return The processingTime.
+     */
+    @java.lang.Override
+    public long getProcessingTime() {
+      return processingTime_;
+    }
+
+    public static final int DETAILS_FIELD_NUMBER = 17;
+    private org.megacommerce.products.v1.ProductProto.ProductDetails details_;
+    /**
+     * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+     * @return Whether the details field is set.
+     */
+    @java.lang.Override
+    public boolean hasDetails() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+     * @return The details.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductDetails getDetails() {
+      return details_ == null ? org.megacommerce.products.v1.ProductProto.ProductDetails.getDefaultInstance() : details_;
+    }
+    /**
+     * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductDetailsOrBuilder getDetailsOrBuilder() {
+      return details_ == null ? org.megacommerce.products.v1.ProductProto.ProductDetails.getDefaultInstance() : details_;
+    }
+
+    public static final int MEDIA_FIELD_NUMBER = 18;
+    private org.megacommerce.products.v1.ProductProto.ProductMedia media_;
+    /**
+     * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+     * @return Whether the media field is set.
+     */
+    @java.lang.Override
+    public boolean hasMedia() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+     * @return The media.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMedia getMedia() {
+      return media_ == null ? org.megacommerce.products.v1.ProductProto.ProductMedia.getDefaultInstance() : media_;
+    }
+    /**
+     * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaOrBuilder getMediaOrBuilder() {
+      return media_ == null ? org.megacommerce.products.v1.ProductProto.ProductMedia.getDefaultInstance() : media_;
+    }
+
+    public static final int OFFER_FIELD_NUMBER = 19;
+    private org.megacommerce.products.v1.ProductProto.ProductOffer offer_;
+    /**
+     * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+     * @return Whether the offer field is set.
+     */
+    @java.lang.Override
+    public boolean hasOffer() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+     * @return The offer.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductOffer getOffer() {
+      return offer_ == null ? org.megacommerce.products.v1.ProductProto.ProductOffer.getDefaultInstance() : offer_;
+    }
+    /**
+     * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductOfferOrBuilder getOfferOrBuilder() {
+      return offer_ == null ? org.megacommerce.products.v1.ProductProto.ProductOffer.getDefaultInstance() : offer_;
+    }
+
+    public static final int SAFETY_FIELD_NUMBER = 20;
+    private org.megacommerce.products.v1.ProductProto.ProductSafety safety_;
+    /**
+     * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+     * @return Whether the safety field is set.
+     */
+    @java.lang.Override
+    public boolean hasSafety() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+     * @return The safety.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductSafety getSafety() {
+      return safety_ == null ? org.megacommerce.products.v1.ProductProto.ProductSafety.getDefaultInstance() : safety_;
+    }
+    /**
+     * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductSafetyOrBuilder getSafetyOrBuilder() {
+      return safety_ == null ? org.megacommerce.products.v1.ProductProto.ProductSafety.getDefaultInstance() : safety_;
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 21;
     @SuppressWarnings("serial")
     private java.util.List<org.megacommerce.products.v1.ProductProto.ProductTag> tags_;
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     @java.lang.Override
     public java.util.List<org.megacommerce.products.v1.ProductProto.ProductTag> getTagsList() {
       return tags_;
     }
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductTagOrBuilder> 
@@ -2379,21 +13408,21 @@ public final class ProductProto {
       return tags_;
     }
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     @java.lang.Override
     public int getTagsCount() {
       return tags_.size();
     }
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     @java.lang.Override
     public org.megacommerce.products.v1.ProductProto.ProductTag getTags(int index) {
       return tags_.get(index);
     }
     /**
-     * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+     * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
      */
     @java.lang.Override
     public org.megacommerce.products.v1.ProductProto.ProductTagOrBuilder getTagsOrBuilder(
@@ -2401,18 +13430,18 @@ public final class ProductProto {
       return tags_.get(index);
     }
 
-    public static final int METADATA_FIELD_NUMBER = 12;
+    public static final int METADATA_FIELD_NUMBER = 22;
     private org.megacommerce.products.v1.ProductProto.ProductMetadata metadata_;
     /**
-     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
      * @return Whether the metadata field is set.
      */
     @java.lang.Override
     public boolean hasMetadata() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
      * @return The metadata.
      */
     @java.lang.Override
@@ -2420,17 +13449,17 @@ public final class ProductProto {
       return metadata_ == null ? org.megacommerce.products.v1.ProductProto.ProductMetadata.getDefaultInstance() : metadata_;
     }
     /**
-     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
      */
     @java.lang.Override
     public org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder getMetadataOrBuilder() {
       return metadata_ == null ? org.megacommerce.products.v1.ProductProto.ProductMetadata.getDefaultInstance() : metadata_;
     }
 
-    public static final int AR_ENABLED_FIELD_NUMBER = 13;
+    public static final int AR_ENABLED_FIELD_NUMBER = 23;
     private boolean arEnabled_ = false;
     /**
-     * <code>bool ar_enabled = 13 [json_name = "arEnabled"];</code>
+     * <code>bool ar_enabled = 23 [json_name = "arEnabled"];</code>
      * @return The arEnabled.
      */
     @java.lang.Override
@@ -2438,10 +13467,110 @@ public final class ProductProto {
       return arEnabled_;
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 14;
+    public static final int SLUG_FIELD_NUMBER = 24;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object slug_ = "";
+    /**
+     * <code>string slug = 24 [json_name = "slug"];</code>
+     * @return The slug.
+     */
+    @java.lang.Override
+    public java.lang.String getSlug() {
+      java.lang.Object ref = slug_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        slug_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string slug = 24 [json_name = "slug"];</code>
+     * @return The bytes for slug.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSlugBytes() {
+      java.lang.Object ref = slug_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        slug_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 25;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object status_ = "";
+    /**
+     * <code>string status = 25 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 25 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 26;
+    private int version_ = 0;
+    /**
+     * <code>uint32 version = 26 [json_name = "version"];</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public int getVersion() {
+      return version_;
+    }
+
+    public static final int SCHEMA_VERSION_FIELD_NUMBER = 27;
+    private int schemaVersion_ = 0;
+    /**
+     * <code>uint32 schema_version = 27 [json_name = "schemaVersion"];</code>
+     * @return The schemaVersion.
+     */
+    @java.lang.Override
+    public int getSchemaVersion() {
+      return schemaVersion_;
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 28;
     private long createdAt_ = 0L;
     /**
-     * <code>uint64 created_at = 14 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 28 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -2449,18 +13578,18 @@ public final class ProductProto {
       return createdAt_;
     }
 
-    public static final int PUBLISHED_AT_FIELD_NUMBER = 15;
+    public static final int PUBLISHED_AT_FIELD_NUMBER = 29;
     private long publishedAt_ = 0L;
     /**
-     * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+     * <code>optional uint64 published_at = 29 [json_name = "publishedAt"];</code>
      * @return Whether the publishedAt field is set.
      */
     @java.lang.Override
     public boolean hasPublishedAt() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+     * <code>optional uint64 published_at = 29 [json_name = "publishedAt"];</code>
      * @return The publishedAt.
      */
     @java.lang.Override
@@ -2468,18 +13597,18 @@ public final class ProductProto {
       return publishedAt_;
     }
 
-    public static final int UPDATED_AT_FIELD_NUMBER = 16;
+    public static final int UPDATED_AT_FIELD_NUMBER = 30;
     private long updatedAt_ = 0L;
     /**
-     * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 30 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     @java.lang.Override
     public boolean hasUpdatedAt() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 30 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -2507,47 +13636,89 @@ public final class ProductProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sku_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, sku_);
-      }
-      if (version_ != 0) {
-        output.writeUInt32(4, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 5, status_);
-      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 6, title_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, title_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 7, description_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(category_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, category_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(slug_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 8, slug_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(subcategory_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, subcategory_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 9, price_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currencyCode_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 10, currencyCode_);
-      }
-      for (int i = 0; i < tags_.size(); i++) {
-        output.writeMessage(11, tags_.get(i));
+      if (hasVariations_ != false) {
+        output.writeBool(6, hasVariations_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(12, getMetadata());
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, brandName_);
       }
-      if (arEnabled_ != false) {
-        output.writeBool(13, arEnabled_);
-      }
-      if (createdAt_ != 0L) {
-        output.writeUInt64(14, createdAt_);
+      if (hasBrandName_ != false) {
+        output.writeBool(8, hasBrandName_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeUInt64(15, publishedAt_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, productId_);
+      }
+      if (hasProductId_ != false) {
+        output.writeBool(10, hasProductId_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeUInt64(16, updatedAt_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, productIdType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 12, description_);
+      }
+      for (int i = 0; i < bulletPoints_.size(); i++) {
+        output.writeMessage(13, bulletPoints_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currencyCode_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 14, currencyCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fulfillmentType_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 15, fulfillmentType_);
+      }
+      if (processingTime_ != 0L) {
+        output.writeUInt64(16, processingTime_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(17, getDetails());
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeMessage(18, getMedia());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeMessage(19, getOffer());
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        output.writeMessage(20, getSafety());
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        output.writeMessage(21, tags_.get(i));
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        output.writeMessage(22, getMetadata());
+      }
+      if (arEnabled_ != false) {
+        output.writeBool(23, arEnabled_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(slug_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 24, slug_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 25, status_);
+      }
+      if (version_ != 0) {
+        output.writeUInt32(26, version_);
+      }
+      if (schemaVersion_ != 0) {
+        output.writeUInt32(27, schemaVersion_);
+      }
+      if (createdAt_ != 0L) {
+        output.writeUInt64(28, createdAt_);
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        output.writeUInt64(29, publishedAt_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        output.writeUInt64(30, updatedAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2564,54 +13735,106 @@ public final class ProductProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sku_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, sku_);
-      }
-      if (version_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, status_);
-      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, title_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, title_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(category_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, category_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(subcategory_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, subcategory_);
+      }
+      if (hasVariations_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, hasVariations_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, brandName_);
+      }
+      if (hasBrandName_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, hasBrandName_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, productId_);
+      }
+      if (hasProductId_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, hasProductId_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, productIdType_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, description_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, description_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(slug_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, slug_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, price_);
+      for (int i = 0; i < bulletPoints_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, bulletPoints_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currencyCode_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, currencyCode_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(14, currencyCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fulfillmentType_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(15, fulfillmentType_);
+      }
+      if (processingTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(16, processingTime_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, getDetails());
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, getMedia());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(19, getOffer());
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(20, getSafety());
       }
       for (int i = 0; i < tags_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, tags_.get(i));
+          .computeMessageSize(21, tags_.get(i));
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getMetadata());
+          .computeMessageSize(22, getMetadata());
       }
       if (arEnabled_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, arEnabled_);
+          .computeBoolSize(23, arEnabled_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(slug_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(24, slug_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(25, status_);
+      }
+      if (version_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(26, version_);
+      }
+      if (schemaVersion_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(27, schemaVersion_);
       }
       if (createdAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(14, createdAt_);
+          .computeUInt64Size(28, createdAt_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(15, publishedAt_);
+          .computeUInt64Size(29, publishedAt_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(16, updatedAt_);
+          .computeUInt64Size(30, updatedAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2632,22 +13855,63 @@ public final class ProductProto {
           .equals(other.getId())) return false;
       if (!getUserId()
           .equals(other.getUserId())) return false;
-      if (!getSku()
-          .equals(other.getSku())) return false;
-      if (getVersion()
-          != other.getVersion()) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!getTitle()
           .equals(other.getTitle())) return false;
+      if (!getCategory()
+          .equals(other.getCategory())) return false;
+      if (!getSubcategory()
+          .equals(other.getSubcategory())) return false;
+      if (getHasVariations()
+          != other.getHasVariations()) return false;
+      if (hasBrandName() != other.hasBrandName()) return false;
+      if (hasBrandName()) {
+        if (!getBrandName()
+            .equals(other.getBrandName())) return false;
+      }
+      if (getHasBrandName()
+          != other.getHasBrandName()) return false;
+      if (hasProductId() != other.hasProductId()) return false;
+      if (hasProductId()) {
+        if (!getProductId()
+            .equals(other.getProductId())) return false;
+      }
+      if (getHasProductId()
+          != other.getHasProductId()) return false;
+      if (hasProductIdType() != other.hasProductIdType()) return false;
+      if (hasProductIdType()) {
+        if (!getProductIdType()
+            .equals(other.getProductIdType())) return false;
+      }
       if (!getDescription()
           .equals(other.getDescription())) return false;
-      if (!getSlug()
-          .equals(other.getSlug())) return false;
-      if (!getPrice()
-          .equals(other.getPrice())) return false;
+      if (!getBulletPointsList()
+          .equals(other.getBulletPointsList())) return false;
       if (!getCurrencyCode()
           .equals(other.getCurrencyCode())) return false;
+      if (!getFulfillmentType()
+          .equals(other.getFulfillmentType())) return false;
+      if (getProcessingTime()
+          != other.getProcessingTime()) return false;
+      if (hasDetails() != other.hasDetails()) return false;
+      if (hasDetails()) {
+        if (!getDetails()
+            .equals(other.getDetails())) return false;
+      }
+      if (hasMedia() != other.hasMedia()) return false;
+      if (hasMedia()) {
+        if (!getMedia()
+            .equals(other.getMedia())) return false;
+      }
+      if (hasOffer() != other.hasOffer()) return false;
+      if (hasOffer()) {
+        if (!getOffer()
+            .equals(other.getOffer())) return false;
+      }
+      if (hasSafety() != other.hasSafety()) return false;
+      if (hasSafety()) {
+        if (!getSafety()
+            .equals(other.getSafety())) return false;
+      }
       if (!getTagsList()
           .equals(other.getTagsList())) return false;
       if (hasMetadata() != other.hasMetadata()) return false;
@@ -2657,6 +13921,14 @@ public final class ProductProto {
       }
       if (getArEnabled()
           != other.getArEnabled()) return false;
+      if (!getSlug()
+          .equals(other.getSlug())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (getVersion()
+          != other.getVersion()) return false;
+      if (getSchemaVersion()
+          != other.getSchemaVersion()) return false;
       if (getCreatedAt()
           != other.getCreatedAt()) return false;
       if (hasPublishedAt() != other.hasPublishedAt()) return false;
@@ -2684,22 +13956,62 @@ public final class ProductProto {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
-      hash = (37 * hash) + SKU_FIELD_NUMBER;
-      hash = (53 * hash) + getSku().hashCode();
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
       hash = (53 * hash) + getTitle().hashCode();
+      hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+      hash = (53 * hash) + getCategory().hashCode();
+      hash = (37 * hash) + SUBCATEGORY_FIELD_NUMBER;
+      hash = (53 * hash) + getSubcategory().hashCode();
+      hash = (37 * hash) + HAS_VARIATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasVariations());
+      if (hasBrandName()) {
+        hash = (37 * hash) + BRAND_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getBrandName().hashCode();
+      }
+      hash = (37 * hash) + HAS_BRAND_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasBrandName());
+      if (hasProductId()) {
+        hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getProductId().hashCode();
+      }
+      hash = (37 * hash) + HAS_PRODUCT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasProductId());
+      if (hasProductIdType()) {
+        hash = (37 * hash) + PRODUCT_ID_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getProductIdType().hashCode();
+      }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
-      hash = (37 * hash) + SLUG_FIELD_NUMBER;
-      hash = (53 * hash) + getSlug().hashCode();
-      hash = (37 * hash) + PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + getPrice().hashCode();
+      if (getBulletPointsCount() > 0) {
+        hash = (37 * hash) + BULLET_POINTS_FIELD_NUMBER;
+        hash = (53 * hash) + getBulletPointsList().hashCode();
+      }
       hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCurrencyCode().hashCode();
+      hash = (37 * hash) + FULFILLMENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getFulfillmentType().hashCode();
+      hash = (37 * hash) + PROCESSING_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProcessingTime());
+      if (hasDetails()) {
+        hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getDetails().hashCode();
+      }
+      if (hasMedia()) {
+        hash = (37 * hash) + MEDIA_FIELD_NUMBER;
+        hash = (53 * hash) + getMedia().hashCode();
+      }
+      if (hasOffer()) {
+        hash = (37 * hash) + OFFER_FIELD_NUMBER;
+        hash = (53 * hash) + getOffer().hashCode();
+      }
+      if (hasSafety()) {
+        hash = (37 * hash) + SAFETY_FIELD_NUMBER;
+        hash = (53 * hash) + getSafety().hashCode();
+      }
       if (getTagsCount() > 0) {
         hash = (37 * hash) + TAGS_FIELD_NUMBER;
         hash = (53 * hash) + getTagsList().hashCode();
@@ -2711,6 +14023,14 @@ public final class ProductProto {
       hash = (37 * hash) + AR_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getArEnabled());
+      hash = (37 * hash) + SLUG_FIELD_NUMBER;
+      hash = (53 * hash) + getSlug().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion();
+      hash = (37 * hash) + SCHEMA_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaVersion();
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreatedAt());
@@ -2854,6 +14174,11 @@ public final class ProductProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage
                 .alwaysUseFieldBuilders) {
+          internalGetBulletPointsFieldBuilder();
+          internalGetDetailsFieldBuilder();
+          internalGetMediaFieldBuilder();
+          internalGetOfferFieldBuilder();
+          internalGetSafetyFieldBuilder();
           internalGetTagsFieldBuilder();
           internalGetMetadataFieldBuilder();
         }
@@ -2864,27 +14189,63 @@ public final class ProductProto {
         bitField0_ = 0;
         id_ = "";
         userId_ = "";
-        sku_ = "";
-        version_ = 0;
-        status_ = "";
         title_ = "";
+        category_ = "";
+        subcategory_ = "";
+        hasVariations_ = false;
+        brandName_ = "";
+        hasBrandName_ = false;
+        productId_ = "";
+        hasProductId_ = false;
+        productIdType_ = "";
         description_ = "";
-        slug_ = "";
-        price_ = "";
+        if (bulletPointsBuilder_ == null) {
+          bulletPoints_ = java.util.Collections.emptyList();
+        } else {
+          bulletPoints_ = null;
+          bulletPointsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
         currencyCode_ = "";
+        fulfillmentType_ = "";
+        processingTime_ = 0L;
+        details_ = null;
+        if (detailsBuilder_ != null) {
+          detailsBuilder_.dispose();
+          detailsBuilder_ = null;
+        }
+        media_ = null;
+        if (mediaBuilder_ != null) {
+          mediaBuilder_.dispose();
+          mediaBuilder_ = null;
+        }
+        offer_ = null;
+        if (offerBuilder_ != null) {
+          offerBuilder_.dispose();
+          offerBuilder_ = null;
+        }
+        safety_ = null;
+        if (safetyBuilder_ != null) {
+          safetyBuilder_.dispose();
+          safetyBuilder_ = null;
+        }
         if (tagsBuilder_ == null) {
           tags_ = java.util.Collections.emptyList();
         } else {
           tags_ = null;
           tagsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00100000);
         metadata_ = null;
         if (metadataBuilder_ != null) {
           metadataBuilder_.dispose();
           metadataBuilder_ = null;
         }
         arEnabled_ = false;
+        slug_ = "";
+        status_ = "";
+        version_ = 0;
+        schemaVersion_ = 0;
         createdAt_ = 0L;
         publishedAt_ = 0L;
         updatedAt_ = 0L;
@@ -2921,10 +14282,19 @@ public final class ProductProto {
       }
 
       private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductProto.Product result) {
+        if (bulletPointsBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) != 0)) {
+            bulletPoints_ = java.util.Collections.unmodifiableList(bulletPoints_);
+            bitField0_ = (bitField0_ & ~0x00001000);
+          }
+          result.bulletPoints_ = bulletPoints_;
+        } else {
+          result.bulletPoints_ = bulletPointsBuilder_.build();
+        }
         if (tagsBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0)) {
+          if (((bitField0_ & 0x00100000) != 0)) {
             tags_ = java.util.Collections.unmodifiableList(tags_);
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00100000);
           }
           result.tags_ = tags_;
         } else {
@@ -2941,49 +14311,103 @@ public final class ProductProto {
           result.userId_ = userId_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.sku_ = sku_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.version_ = version_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.status_ = status_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.title_ = title_;
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.description_ = description_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.category_ = category_;
         }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.slug_ = slug_;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.subcategory_ = subcategory_;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.price_ = price_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.currencyCode_ = currencyCode_;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.hasVariations_ = hasVariations_;
         }
         int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.brandName_ = brandName_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.hasBrandName_ = hasBrandName_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.productId_ = productId_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.hasProductId_ = hasProductId_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.productIdType_ = productIdType_;
+          to_bitField0_ |= 0x00000004;
+        }
         if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.currencyCode_ = currencyCode_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.fulfillmentType_ = fulfillmentType_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.processingTime_ = processingTime_;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.details_ = detailsBuilder_ == null
+              ? details_
+              : detailsBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.media_ = mediaBuilder_ == null
+              ? media_
+              : mediaBuilder_.build();
+          to_bitField0_ |= 0x00000010;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.offer_ = offerBuilder_ == null
+              ? offer_
+              : offerBuilder_.build();
+          to_bitField0_ |= 0x00000020;
+        }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.safety_ = safetyBuilder_ == null
+              ? safety_
+              : safetyBuilder_.build();
+          to_bitField0_ |= 0x00000040;
+        }
+        if (((from_bitField0_ & 0x00200000) != 0)) {
           result.metadata_ = metadataBuilder_ == null
               ? metadata_
               : metadataBuilder_.build();
-          to_bitField0_ |= 0x00000001;
+          to_bitField0_ |= 0x00000080;
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
+        if (((from_bitField0_ & 0x00400000) != 0)) {
           result.arEnabled_ = arEnabled_;
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
+        if (((from_bitField0_ & 0x00800000) != 0)) {
+          result.slug_ = slug_;
+        }
+        if (((from_bitField0_ & 0x01000000) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x02000000) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x04000000) != 0)) {
+          result.schemaVersion_ = schemaVersion_;
+        }
+        if (((from_bitField0_ & 0x08000000) != 0)) {
           result.createdAt_ = createdAt_;
         }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
+        if (((from_bitField0_ & 0x10000000) != 0)) {
           result.publishedAt_ = publishedAt_;
-          to_bitField0_ |= 0x00000002;
+          to_bitField0_ |= 0x00000100;
         }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
+        if (((from_bitField0_ & 0x20000000) != 0)) {
           result.updatedAt_ = updatedAt_;
-          to_bitField0_ |= 0x00000004;
+          to_bitField0_ |= 0x00000200;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -3010,49 +14434,106 @@ public final class ProductProto {
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (!other.getSku().isEmpty()) {
-          sku_ = other.sku_;
+        if (!other.getTitle().isEmpty()) {
+          title_ = other.title_;
           bitField0_ |= 0x00000004;
           onChanged();
         }
-        if (other.getVersion() != 0) {
-          setVersion(other.getVersion());
+        if (!other.getCategory().isEmpty()) {
+          category_ = other.category_;
+          bitField0_ |= 0x00000008;
+          onChanged();
         }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
+        if (!other.getSubcategory().isEmpty()) {
+          subcategory_ = other.subcategory_;
           bitField0_ |= 0x00000010;
           onChanged();
         }
-        if (!other.getTitle().isEmpty()) {
-          title_ = other.title_;
-          bitField0_ |= 0x00000020;
+        if (other.getHasVariations() != false) {
+          setHasVariations(other.getHasVariations());
+        }
+        if (other.hasBrandName()) {
+          brandName_ = other.brandName_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (other.getHasBrandName() != false) {
+          setHasBrandName(other.getHasBrandName());
+        }
+        if (other.hasProductId()) {
+          productId_ = other.productId_;
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        if (other.getHasProductId() != false) {
+          setHasProductId(other.getHasProductId());
+        }
+        if (other.hasProductIdType()) {
+          productIdType_ = other.productIdType_;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
-        if (!other.getSlug().isEmpty()) {
-          slug_ = other.slug_;
-          bitField0_ |= 0x00000080;
-          onChanged();
-        }
-        if (!other.getPrice().isEmpty()) {
-          price_ = other.price_;
-          bitField0_ |= 0x00000100;
-          onChanged();
+        if (bulletPointsBuilder_ == null) {
+          if (!other.bulletPoints_.isEmpty()) {
+            if (bulletPoints_.isEmpty()) {
+              bulletPoints_ = other.bulletPoints_;
+              bitField0_ = (bitField0_ & ~0x00001000);
+            } else {
+              ensureBulletPointsIsMutable();
+              bulletPoints_.addAll(other.bulletPoints_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.bulletPoints_.isEmpty()) {
+            if (bulletPointsBuilder_.isEmpty()) {
+              bulletPointsBuilder_.dispose();
+              bulletPointsBuilder_ = null;
+              bulletPoints_ = other.bulletPoints_;
+              bitField0_ = (bitField0_ & ~0x00001000);
+              bulletPointsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   internalGetBulletPointsFieldBuilder() : null;
+            } else {
+              bulletPointsBuilder_.addAllMessages(other.bulletPoints_);
+            }
+          }
         }
         if (!other.getCurrencyCode().isEmpty()) {
           currencyCode_ = other.currencyCode_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00002000;
           onChanged();
+        }
+        if (!other.getFulfillmentType().isEmpty()) {
+          fulfillmentType_ = other.fulfillmentType_;
+          bitField0_ |= 0x00004000;
+          onChanged();
+        }
+        if (other.getProcessingTime() != 0L) {
+          setProcessingTime(other.getProcessingTime());
+        }
+        if (other.hasDetails()) {
+          mergeDetails(other.getDetails());
+        }
+        if (other.hasMedia()) {
+          mergeMedia(other.getMedia());
+        }
+        if (other.hasOffer()) {
+          mergeOffer(other.getOffer());
+        }
+        if (other.hasSafety()) {
+          mergeSafety(other.getSafety());
         }
         if (tagsBuilder_ == null) {
           if (!other.tags_.isEmpty()) {
             if (tags_.isEmpty()) {
               tags_ = other.tags_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00100000);
             } else {
               ensureTagsIsMutable();
               tags_.addAll(other.tags_);
@@ -3065,7 +14546,7 @@ public final class ProductProto {
               tagsBuilder_.dispose();
               tagsBuilder_ = null;
               tags_ = other.tags_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00100000);
               tagsBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    internalGetTagsFieldBuilder() : null;
@@ -3079,6 +14560,22 @@ public final class ProductProto {
         }
         if (other.getArEnabled() != false) {
           setArEnabled(other.getArEnabled());
+        }
+        if (!other.getSlug().isEmpty()) {
+          slug_ = other.slug_;
+          bitField0_ |= 0x00800000;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          bitField0_ |= 0x01000000;
+          onChanged();
+        }
+        if (other.getVersion() != 0) {
+          setVersion(other.getVersion());
+        }
+        if (other.getSchemaVersion() != 0) {
+          setSchemaVersion(other.getSchemaVersion());
         }
         if (other.getCreatedAt() != 0L) {
           setCreatedAt(other.getCreatedAt());
@@ -3126,46 +14623,112 @@ public final class ProductProto {
                 break;
               } // case 18
               case 26: {
-                sku_ = input.readStringRequireUtf8();
+                title_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-              case 32: {
-                version_ = input.readUInt32();
+              case 34: {
+                category_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
-              } // case 32
+              } // case 34
               case 42: {
-                status_ = input.readStringRequireUtf8();
+                subcategory_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
-              case 50: {
-                title_ = input.readStringRequireUtf8();
+              case 48: {
+                hasVariations_ = input.readBool();
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 50
+              } // case 48
               case 58: {
-                description_ = input.readStringRequireUtf8();
+                brandName_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
-              case 66: {
-                slug_ = input.readStringRequireUtf8();
+              case 64: {
+                hasBrandName_ = input.readBool();
                 bitField0_ |= 0x00000080;
                 break;
-              } // case 66
+              } // case 64
               case 74: {
-                price_ = input.readStringRequireUtf8();
+                productId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
-              case 82: {
-                currencyCode_ = input.readStringRequireUtf8();
+              case 80: {
+                hasProductId_ = input.readBool();
                 bitField0_ |= 0x00000200;
                 break;
-              } // case 82
+              } // case 80
               case 90: {
+                productIdType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              case 98: {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                org.megacommerce.products.v1.ProductProto.ProductBulletPoint m =
+                    input.readMessage(
+                        org.megacommerce.products.v1.ProductProto.ProductBulletPoint.parser(),
+                        extensionRegistry);
+                if (bulletPointsBuilder_ == null) {
+                  ensureBulletPointsIsMutable();
+                  bulletPoints_.add(m);
+                } else {
+                  bulletPointsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+              case 114: {
+                currencyCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
+              case 122: {
+                fulfillmentType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
+              case 128: {
+                processingTime_ = input.readUInt64();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 128
+              case 138: {
+                input.readMessage(
+                    internalGetDetailsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 138
+              case 146: {
+                input.readMessage(
+                    internalGetMediaFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
+              case 154: {
+                input.readMessage(
+                    internalGetOfferFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 154
+              case 162: {
+                input.readMessage(
+                    internalGetSafetyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 162
+              case 170: {
                 org.megacommerce.products.v1.ProductProto.ProductTag m =
                     input.readMessage(
                         org.megacommerce.products.v1.ProductProto.ProductTag.parser(),
@@ -3177,34 +14740,54 @@ public final class ProductProto {
                   tagsBuilder_.addMessage(m);
                 }
                 break;
-              } // case 90
-              case 98: {
+              } // case 170
+              case 178: {
                 input.readMessage(
                     internalGetMetadataFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00200000;
                 break;
-              } // case 98
-              case 104: {
+              } // case 178
+              case 184: {
                 arEnabled_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00400000;
                 break;
-              } // case 104
-              case 112: {
+              } // case 184
+              case 194: {
+                slug_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 194
+              case 202: {
+                status_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 202
+              case 208: {
+                version_ = input.readUInt32();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 208
+              case 216: {
+                schemaVersion_ = input.readUInt32();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 216
+              case 224: {
                 createdAt_ = input.readUInt64();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x08000000;
                 break;
-              } // case 112
-              case 120: {
+              } // case 224
+              case 232: {
                 publishedAt_ = input.readUInt64();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x10000000;
                 break;
-              } // case 120
-              case 128: {
+              } // case 232
+              case 240: {
                 updatedAt_ = input.readUInt64();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x20000000;
                 break;
-              } // case 128
+              } // case 240
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3366,185 +14949,9 @@ public final class ProductProto {
         return this;
       }
 
-      private java.lang.Object sku_ = "";
-      /**
-       * <code>string sku = 3 [json_name = "sku"];</code>
-       * @return The sku.
-       */
-      public java.lang.String getSku() {
-        java.lang.Object ref = sku_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sku_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string sku = 3 [json_name = "sku"];</code>
-       * @return The bytes for sku.
-       */
-      public com.google.protobuf.ByteString
-          getSkuBytes() {
-        java.lang.Object ref = sku_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sku_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string sku = 3 [json_name = "sku"];</code>
-       * @param value The sku to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSku(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        sku_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sku = 3 [json_name = "sku"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSku() {
-        sku_ = getDefaultInstance().getSku();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sku = 3 [json_name = "sku"];</code>
-       * @param value The bytes for sku to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSkuBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        sku_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      private int version_ ;
-      /**
-       * <code>uint32 version = 4 [json_name = "version"];</code>
-       * @return The version.
-       */
-      @java.lang.Override
-      public int getVersion() {
-        return version_;
-      }
-      /**
-       * <code>uint32 version = 4 [json_name = "version"];</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(int value) {
-
-        version_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 version = 4 [json_name = "version"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        version_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 5 [json_name = "status"];</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 5 [json_name = "status"];</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 5 [json_name = "status"];</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        status_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 5 [json_name = "status"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        status_ = getDefaultInstance().getStatus();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 5 [json_name = "status"];</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        status_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object title_ = "";
       /**
-       * <code>string title = 6 [json_name = "title"];</code>
+       * <code>string title = 3 [json_name = "title"];</code>
        * @return The title.
        */
       public java.lang.String getTitle() {
@@ -3560,7 +14967,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>string title = 6 [json_name = "title"];</code>
+       * <code>string title = 3 [json_name = "title"];</code>
        * @return The bytes for title.
        */
       public com.google.protobuf.ByteString
@@ -3577,7 +14984,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>string title = 6 [json_name = "title"];</code>
+       * <code>string title = 3 [json_name = "title"];</code>
        * @param value The title to set.
        * @return This builder for chaining.
        */
@@ -3585,22 +14992,22 @@ public final class ProductProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         title_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>string title = 6 [json_name = "title"];</code>
+       * <code>string title = 3 [json_name = "title"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTitle() {
         title_ = getDefaultInstance().getTitle();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>string title = 6 [json_name = "title"];</code>
+       * <code>string title = 3 [json_name = "title"];</code>
        * @param value The bytes for title to set.
        * @return This builder for chaining.
        */
@@ -3609,14 +15016,491 @@ public final class ProductProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         title_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object category_ = "";
+      /**
+       * <code>string category = 4 [json_name = "category"];</code>
+       * @return The category.
+       */
+      public java.lang.String getCategory() {
+        java.lang.Object ref = category_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          category_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string category = 4 [json_name = "category"];</code>
+       * @return The bytes for category.
+       */
+      public com.google.protobuf.ByteString
+          getCategoryBytes() {
+        java.lang.Object ref = category_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          category_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string category = 4 [json_name = "category"];</code>
+       * @param value The category to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategory(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        category_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string category = 4 [json_name = "category"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCategory() {
+        category_ = getDefaultInstance().getCategory();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string category = 4 [json_name = "category"];</code>
+       * @param value The bytes for category to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategoryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        category_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object subcategory_ = "";
+      /**
+       * <code>string subcategory = 5 [json_name = "subcategory"];</code>
+       * @return The subcategory.
+       */
+      public java.lang.String getSubcategory() {
+        java.lang.Object ref = subcategory_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subcategory_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string subcategory = 5 [json_name = "subcategory"];</code>
+       * @return The bytes for subcategory.
+       */
+      public com.google.protobuf.ByteString
+          getSubcategoryBytes() {
+        java.lang.Object ref = subcategory_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          subcategory_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string subcategory = 5 [json_name = "subcategory"];</code>
+       * @param value The subcategory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubcategory(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        subcategory_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subcategory = 5 [json_name = "subcategory"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSubcategory() {
+        subcategory_ = getDefaultInstance().getSubcategory();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subcategory = 5 [json_name = "subcategory"];</code>
+       * @param value The bytes for subcategory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubcategoryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        subcategory_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasVariations_ ;
+      /**
+       * <code>bool has_variations = 6 [json_name = "hasVariations"];</code>
+       * @return The hasVariations.
+       */
+      @java.lang.Override
+      public boolean getHasVariations() {
+        return hasVariations_;
+      }
+      /**
+       * <code>bool has_variations = 6 [json_name = "hasVariations"];</code>
+       * @param value The hasVariations to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasVariations(boolean value) {
+
+        hasVariations_ = value;
         bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool has_variations = 6 [json_name = "hasVariations"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasVariations() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        hasVariations_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object brandName_ = "";
+      /**
+       * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+       * @return Whether the brandName field is set.
+       */
+      public boolean hasBrandName() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+       * @return The brandName.
+       */
+      public java.lang.String getBrandName() {
+        java.lang.Object ref = brandName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          brandName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+       * @return The bytes for brandName.
+       */
+      public com.google.protobuf.ByteString
+          getBrandNameBytes() {
+        java.lang.Object ref = brandName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          brandName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+       * @param value The brandName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBrandName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        brandName_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBrandName() {
+        brandName_ = getDefaultInstance().getBrandName();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string brand_name = 7 [json_name = "brandName"];</code>
+       * @param value The bytes for brandName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBrandNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        brandName_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasBrandName_ ;
+      /**
+       * <code>bool has_brand_name = 8 [json_name = "hasBrandName"];</code>
+       * @return The hasBrandName.
+       */
+      @java.lang.Override
+      public boolean getHasBrandName() {
+        return hasBrandName_;
+      }
+      /**
+       * <code>bool has_brand_name = 8 [json_name = "hasBrandName"];</code>
+       * @param value The hasBrandName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasBrandName(boolean value) {
+
+        hasBrandName_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool has_brand_name = 8 [json_name = "hasBrandName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasBrandName() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        hasBrandName_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object productId_ = "";
+      /**
+       * <code>optional string product_id = 9 [json_name = "productId"];</code>
+       * @return Whether the productId field is set.
+       */
+      public boolean hasProductId() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <code>optional string product_id = 9 [json_name = "productId"];</code>
+       * @return The productId.
+       */
+      public java.lang.String getProductId() {
+        java.lang.Object ref = productId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string product_id = 9 [json_name = "productId"];</code>
+       * @return The bytes for productId.
+       */
+      public com.google.protobuf.ByteString
+          getProductIdBytes() {
+        java.lang.Object ref = productId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string product_id = 9 [json_name = "productId"];</code>
+       * @param value The productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        productId_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string product_id = 9 [json_name = "productId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductId() {
+        productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string product_id = 9 [json_name = "productId"];</code>
+       * @param value The bytes for productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        productId_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasProductId_ ;
+      /**
+       * <code>bool has_product_id = 10 [json_name = "hasProductId"];</code>
+       * @return The hasProductId.
+       */
+      @java.lang.Override
+      public boolean getHasProductId() {
+        return hasProductId_;
+      }
+      /**
+       * <code>bool has_product_id = 10 [json_name = "hasProductId"];</code>
+       * @param value The hasProductId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasProductId(boolean value) {
+
+        hasProductId_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool has_product_id = 10 [json_name = "hasProductId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasProductId() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        hasProductId_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object productIdType_ = "";
+      /**
+       * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+       * @return Whether the productIdType field is set.
+       */
+      public boolean hasProductIdType() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+      /**
+       * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+       * @return The productIdType.
+       */
+      public java.lang.String getProductIdType() {
+        java.lang.Object ref = productIdType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productIdType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+       * @return The bytes for productIdType.
+       */
+      public com.google.protobuf.ByteString
+          getProductIdTypeBytes() {
+        java.lang.Object ref = productIdType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productIdType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+       * @param value The productIdType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        productIdType_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductIdType() {
+        productIdType_ = getDefaultInstance().getProductIdType();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string product_id_type = 11 [json_name = "productIdType"];</code>
+       * @param value The bytes for productIdType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        productIdType_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
 
       private java.lang.Object description_ = "";
       /**
-       * <code>string description = 7 [json_name = "description"];</code>
+       * <code>string description = 12 [json_name = "description"];</code>
        * @return The description.
        */
       public java.lang.String getDescription() {
@@ -3632,7 +15516,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>string description = 7 [json_name = "description"];</code>
+       * <code>string description = 12 [json_name = "description"];</code>
        * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
@@ -3649,7 +15533,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>string description = 7 [json_name = "description"];</code>
+       * <code>string description = 12 [json_name = "description"];</code>
        * @param value The description to set.
        * @return This builder for chaining.
        */
@@ -3657,22 +15541,22 @@ public final class ProductProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         description_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
       /**
-       * <code>string description = 7 [json_name = "description"];</code>
+       * <code>string description = 12 [json_name = "description"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
         description_ = getDefaultInstance().getDescription();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
       /**
-       * <code>string description = 7 [json_name = "description"];</code>
+       * <code>string description = 12 [json_name = "description"];</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
        */
@@ -3681,158 +15565,254 @@ public final class ProductProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         description_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
 
-      private java.lang.Object slug_ = "";
-      /**
-       * <code>string slug = 8 [json_name = "slug"];</code>
-       * @return The slug.
-       */
-      public java.lang.String getSlug() {
-        java.lang.Object ref = slug_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          slug_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string slug = 8 [json_name = "slug"];</code>
-       * @return The bytes for slug.
-       */
-      public com.google.protobuf.ByteString
-          getSlugBytes() {
-        java.lang.Object ref = slug_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          slug_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string slug = 8 [json_name = "slug"];</code>
-       * @param value The slug to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSlug(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        slug_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string slug = 8 [json_name = "slug"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSlug() {
-        slug_ = getDefaultInstance().getSlug();
-        bitField0_ = (bitField0_ & ~0x00000080);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string slug = 8 [json_name = "slug"];</code>
-       * @param value The bytes for slug to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSlugBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        slug_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
+      private java.util.List<org.megacommerce.products.v1.ProductProto.ProductBulletPoint> bulletPoints_ =
+        java.util.Collections.emptyList();
+      private void ensureBulletPointsIsMutable() {
+        if (!((bitField0_ & 0x00001000) != 0)) {
+          bulletPoints_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductProto.ProductBulletPoint>(bulletPoints_);
+          bitField0_ |= 0x00001000;
+         }
       }
 
-      private java.lang.Object price_ = "";
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductBulletPoint, org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder, org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder> bulletPointsBuilder_;
+
       /**
-       * <code>string price = 9 [json_name = "price"];</code>
-       * @return The price.
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
        */
-      public java.lang.String getPrice() {
-        java.lang.Object ref = price_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          price_ = s;
-          return s;
+      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductBulletPoint> getBulletPointsList() {
+        if (bulletPointsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(bulletPoints_);
         } else {
-          return (java.lang.String) ref;
+          return bulletPointsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>string price = 9 [json_name = "price"];</code>
-       * @return The bytes for price.
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
        */
-      public com.google.protobuf.ByteString
-          getPriceBytes() {
-        java.lang.Object ref = price_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          price_ = b;
-          return b;
+      public int getBulletPointsCount() {
+        if (bulletPointsBuilder_ == null) {
+          return bulletPoints_.size();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          return bulletPointsBuilder_.getCount();
         }
       }
       /**
-       * <code>string price = 9 [json_name = "price"];</code>
-       * @param value The price to set.
-       * @return This builder for chaining.
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
        */
-      public Builder setPrice(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        price_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
+      public org.megacommerce.products.v1.ProductProto.ProductBulletPoint getBulletPoints(int index) {
+        if (bulletPointsBuilder_ == null) {
+          return bulletPoints_.get(index);
+        } else {
+          return bulletPointsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public Builder setBulletPoints(
+          int index, org.megacommerce.products.v1.ProductProto.ProductBulletPoint value) {
+        if (bulletPointsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBulletPointsIsMutable();
+          bulletPoints_.set(index, value);
+          onChanged();
+        } else {
+          bulletPointsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>string price = 9 [json_name = "price"];</code>
-       * @return This builder for chaining.
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
        */
-      public Builder clearPrice() {
-        price_ = getDefaultInstance().getPrice();
-        bitField0_ = (bitField0_ & ~0x00000100);
-        onChanged();
+      public Builder setBulletPoints(
+          int index, org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder builderForValue) {
+        if (bulletPointsBuilder_ == null) {
+          ensureBulletPointsIsMutable();
+          bulletPoints_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          bulletPointsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
-       * <code>string price = 9 [json_name = "price"];</code>
-       * @param value The bytes for price to set.
-       * @return This builder for chaining.
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
        */
-      public Builder setPriceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        price_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
+      public Builder addBulletPoints(org.megacommerce.products.v1.ProductProto.ProductBulletPoint value) {
+        if (bulletPointsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBulletPointsIsMutable();
+          bulletPoints_.add(value);
+          onChanged();
+        } else {
+          bulletPointsBuilder_.addMessage(value);
+        }
         return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public Builder addBulletPoints(
+          int index, org.megacommerce.products.v1.ProductProto.ProductBulletPoint value) {
+        if (bulletPointsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBulletPointsIsMutable();
+          bulletPoints_.add(index, value);
+          onChanged();
+        } else {
+          bulletPointsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public Builder addBulletPoints(
+          org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder builderForValue) {
+        if (bulletPointsBuilder_ == null) {
+          ensureBulletPointsIsMutable();
+          bulletPoints_.add(builderForValue.build());
+          onChanged();
+        } else {
+          bulletPointsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public Builder addBulletPoints(
+          int index, org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder builderForValue) {
+        if (bulletPointsBuilder_ == null) {
+          ensureBulletPointsIsMutable();
+          bulletPoints_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          bulletPointsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public Builder addAllBulletPoints(
+          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductProto.ProductBulletPoint> values) {
+        if (bulletPointsBuilder_ == null) {
+          ensureBulletPointsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, bulletPoints_);
+          onChanged();
+        } else {
+          bulletPointsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public Builder clearBulletPoints() {
+        if (bulletPointsBuilder_ == null) {
+          bulletPoints_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00001000);
+          onChanged();
+        } else {
+          bulletPointsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public Builder removeBulletPoints(int index) {
+        if (bulletPointsBuilder_ == null) {
+          ensureBulletPointsIsMutable();
+          bulletPoints_.remove(index);
+          onChanged();
+        } else {
+          bulletPointsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder getBulletPointsBuilder(
+          int index) {
+        return internalGetBulletPointsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder getBulletPointsOrBuilder(
+          int index) {
+        if (bulletPointsBuilder_ == null) {
+          return bulletPoints_.get(index);  } else {
+          return bulletPointsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder> 
+           getBulletPointsOrBuilderList() {
+        if (bulletPointsBuilder_ != null) {
+          return bulletPointsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(bulletPoints_);
+        }
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder addBulletPointsBuilder() {
+        return internalGetBulletPointsFieldBuilder().addBuilder(
+            org.megacommerce.products.v1.ProductProto.ProductBulletPoint.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder addBulletPointsBuilder(
+          int index) {
+        return internalGetBulletPointsFieldBuilder().addBuilder(
+            index, org.megacommerce.products.v1.ProductProto.ProductBulletPoint.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .products.v1.ProductBulletPoint bullet_points = 13 [json_name = "bulletPoints"];</code>
+       */
+      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder> 
+           getBulletPointsBuilderList() {
+        return internalGetBulletPointsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductBulletPoint, org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder, org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder> 
+          internalGetBulletPointsFieldBuilder() {
+        if (bulletPointsBuilder_ == null) {
+          bulletPointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.megacommerce.products.v1.ProductProto.ProductBulletPoint, org.megacommerce.products.v1.ProductProto.ProductBulletPoint.Builder, org.megacommerce.products.v1.ProductProto.ProductBulletPointOrBuilder>(
+                  bulletPoints_,
+                  ((bitField0_ & 0x00001000) != 0),
+                  getParentForChildren(),
+                  isClean());
+          bulletPoints_ = null;
+        }
+        return bulletPointsBuilder_;
       }
 
       private java.lang.Object currencyCode_ = "";
       /**
-       * <code>string currency_code = 10 [json_name = "currencyCode"];</code>
+       * <code>string currency_code = 14 [json_name = "currencyCode"];</code>
        * @return The currencyCode.
        */
       public java.lang.String getCurrencyCode() {
@@ -3848,7 +15828,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>string currency_code = 10 [json_name = "currencyCode"];</code>
+       * <code>string currency_code = 14 [json_name = "currencyCode"];</code>
        * @return The bytes for currencyCode.
        */
       public com.google.protobuf.ByteString
@@ -3865,7 +15845,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>string currency_code = 10 [json_name = "currencyCode"];</code>
+       * <code>string currency_code = 14 [json_name = "currencyCode"];</code>
        * @param value The currencyCode to set.
        * @return This builder for chaining.
        */
@@ -3873,22 +15853,22 @@ public final class ProductProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         currencyCode_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
       /**
-       * <code>string currency_code = 10 [json_name = "currencyCode"];</code>
+       * <code>string currency_code = 14 [json_name = "currencyCode"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCurrencyCode() {
         currencyCode_ = getDefaultInstance().getCurrencyCode();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
         return this;
       }
       /**
-       * <code>string currency_code = 10 [json_name = "currencyCode"];</code>
+       * <code>string currency_code = 14 [json_name = "currencyCode"];</code>
        * @param value The bytes for currencyCode to set.
        * @return This builder for chaining.
        */
@@ -3897,17 +15877,605 @@ public final class ProductProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         currencyCode_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
+      }
+
+      private java.lang.Object fulfillmentType_ = "";
+      /**
+       * <code>string fulfillment_type = 15 [json_name = "fulfillmentType"];</code>
+       * @return The fulfillmentType.
+       */
+      public java.lang.String getFulfillmentType() {
+        java.lang.Object ref = fulfillmentType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fulfillmentType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string fulfillment_type = 15 [json_name = "fulfillmentType"];</code>
+       * @return The bytes for fulfillmentType.
+       */
+      public com.google.protobuf.ByteString
+          getFulfillmentTypeBytes() {
+        java.lang.Object ref = fulfillmentType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fulfillmentType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string fulfillment_type = 15 [json_name = "fulfillmentType"];</code>
+       * @param value The fulfillmentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFulfillmentType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        fulfillmentType_ = value;
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string fulfillment_type = 15 [json_name = "fulfillmentType"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFulfillmentType() {
+        fulfillmentType_ = getDefaultInstance().getFulfillmentType();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string fulfillment_type = 15 [json_name = "fulfillmentType"];</code>
+       * @param value The bytes for fulfillmentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFulfillmentTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        fulfillmentType_ = value;
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+
+      private long processingTime_ ;
+      /**
+       * <code>uint64 processing_time = 16 [json_name = "processingTime"];</code>
+       * @return The processingTime.
+       */
+      @java.lang.Override
+      public long getProcessingTime() {
+        return processingTime_;
+      }
+      /**
+       * <code>uint64 processing_time = 16 [json_name = "processingTime"];</code>
+       * @param value The processingTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProcessingTime(long value) {
+
+        processingTime_ = value;
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 processing_time = 16 [json_name = "processingTime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProcessingTime() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        processingTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private org.megacommerce.products.v1.ProductProto.ProductDetails details_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductDetails, org.megacommerce.products.v1.ProductProto.ProductDetails.Builder, org.megacommerce.products.v1.ProductProto.ProductDetailsOrBuilder> detailsBuilder_;
+      /**
+       * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+       * @return Whether the details field is set.
+       */
+      public boolean hasDetails() {
+        return ((bitField0_ & 0x00010000) != 0);
+      }
+      /**
+       * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+       * @return The details.
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductDetails getDetails() {
+        if (detailsBuilder_ == null) {
+          return details_ == null ? org.megacommerce.products.v1.ProductProto.ProductDetails.getDefaultInstance() : details_;
+        } else {
+          return detailsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+       */
+      public Builder setDetails(org.megacommerce.products.v1.ProductProto.ProductDetails value) {
+        if (detailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          details_ = value;
+        } else {
+          detailsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+       */
+      public Builder setDetails(
+          org.megacommerce.products.v1.ProductProto.ProductDetails.Builder builderForValue) {
+        if (detailsBuilder_ == null) {
+          details_ = builderForValue.build();
+        } else {
+          detailsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+       */
+      public Builder mergeDetails(org.megacommerce.products.v1.ProductProto.ProductDetails value) {
+        if (detailsBuilder_ == null) {
+          if (((bitField0_ & 0x00010000) != 0) &&
+            details_ != null &&
+            details_ != org.megacommerce.products.v1.ProductProto.ProductDetails.getDefaultInstance()) {
+            getDetailsBuilder().mergeFrom(value);
+          } else {
+            details_ = value;
+          }
+        } else {
+          detailsBuilder_.mergeFrom(value);
+        }
+        if (details_ != null) {
+          bitField0_ |= 0x00010000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+       */
+      public Builder clearDetails() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        details_ = null;
+        if (detailsBuilder_ != null) {
+          detailsBuilder_.dispose();
+          detailsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductDetails.Builder getDetailsBuilder() {
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return internalGetDetailsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductDetailsOrBuilder getDetailsOrBuilder() {
+        if (detailsBuilder_ != null) {
+          return detailsBuilder_.getMessageOrBuilder();
+        } else {
+          return details_ == null ?
+              org.megacommerce.products.v1.ProductProto.ProductDetails.getDefaultInstance() : details_;
+        }
+      }
+      /**
+       * <code>.products.v1.ProductDetails details = 17 [json_name = "details"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductDetails, org.megacommerce.products.v1.ProductProto.ProductDetails.Builder, org.megacommerce.products.v1.ProductProto.ProductDetailsOrBuilder> 
+          internalGetDetailsFieldBuilder() {
+        if (detailsBuilder_ == null) {
+          detailsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.ProductProto.ProductDetails, org.megacommerce.products.v1.ProductProto.ProductDetails.Builder, org.megacommerce.products.v1.ProductProto.ProductDetailsOrBuilder>(
+                  getDetails(),
+                  getParentForChildren(),
+                  isClean());
+          details_ = null;
+        }
+        return detailsBuilder_;
+      }
+
+      private org.megacommerce.products.v1.ProductProto.ProductMedia media_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductMedia, org.megacommerce.products.v1.ProductProto.ProductMedia.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaOrBuilder> mediaBuilder_;
+      /**
+       * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+       * @return Whether the media field is set.
+       */
+      public boolean hasMedia() {
+        return ((bitField0_ & 0x00020000) != 0);
+      }
+      /**
+       * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+       * @return The media.
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMedia getMedia() {
+        if (mediaBuilder_ == null) {
+          return media_ == null ? org.megacommerce.products.v1.ProductProto.ProductMedia.getDefaultInstance() : media_;
+        } else {
+          return mediaBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+       */
+      public Builder setMedia(org.megacommerce.products.v1.ProductProto.ProductMedia value) {
+        if (mediaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          media_ = value;
+        } else {
+          mediaBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+       */
+      public Builder setMedia(
+          org.megacommerce.products.v1.ProductProto.ProductMedia.Builder builderForValue) {
+        if (mediaBuilder_ == null) {
+          media_ = builderForValue.build();
+        } else {
+          mediaBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+       */
+      public Builder mergeMedia(org.megacommerce.products.v1.ProductProto.ProductMedia value) {
+        if (mediaBuilder_ == null) {
+          if (((bitField0_ & 0x00020000) != 0) &&
+            media_ != null &&
+            media_ != org.megacommerce.products.v1.ProductProto.ProductMedia.getDefaultInstance()) {
+            getMediaBuilder().mergeFrom(value);
+          } else {
+            media_ = value;
+          }
+        } else {
+          mediaBuilder_.mergeFrom(value);
+        }
+        if (media_ != null) {
+          bitField0_ |= 0x00020000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+       */
+      public Builder clearMedia() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        media_ = null;
+        if (mediaBuilder_ != null) {
+          mediaBuilder_.dispose();
+          mediaBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMedia.Builder getMediaBuilder() {
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return internalGetMediaFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductMediaOrBuilder getMediaOrBuilder() {
+        if (mediaBuilder_ != null) {
+          return mediaBuilder_.getMessageOrBuilder();
+        } else {
+          return media_ == null ?
+              org.megacommerce.products.v1.ProductProto.ProductMedia.getDefaultInstance() : media_;
+        }
+      }
+      /**
+       * <code>.products.v1.ProductMedia media = 18 [json_name = "media"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductMedia, org.megacommerce.products.v1.ProductProto.ProductMedia.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaOrBuilder> 
+          internalGetMediaFieldBuilder() {
+        if (mediaBuilder_ == null) {
+          mediaBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.ProductProto.ProductMedia, org.megacommerce.products.v1.ProductProto.ProductMedia.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaOrBuilder>(
+                  getMedia(),
+                  getParentForChildren(),
+                  isClean());
+          media_ = null;
+        }
+        return mediaBuilder_;
+      }
+
+      private org.megacommerce.products.v1.ProductProto.ProductOffer offer_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductOffer, org.megacommerce.products.v1.ProductProto.ProductOffer.Builder, org.megacommerce.products.v1.ProductProto.ProductOfferOrBuilder> offerBuilder_;
+      /**
+       * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+       * @return Whether the offer field is set.
+       */
+      public boolean hasOffer() {
+        return ((bitField0_ & 0x00040000) != 0);
+      }
+      /**
+       * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+       * @return The offer.
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductOffer getOffer() {
+        if (offerBuilder_ == null) {
+          return offer_ == null ? org.megacommerce.products.v1.ProductProto.ProductOffer.getDefaultInstance() : offer_;
+        } else {
+          return offerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+       */
+      public Builder setOffer(org.megacommerce.products.v1.ProductProto.ProductOffer value) {
+        if (offerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          offer_ = value;
+        } else {
+          offerBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+       */
+      public Builder setOffer(
+          org.megacommerce.products.v1.ProductProto.ProductOffer.Builder builderForValue) {
+        if (offerBuilder_ == null) {
+          offer_ = builderForValue.build();
+        } else {
+          offerBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+       */
+      public Builder mergeOffer(org.megacommerce.products.v1.ProductProto.ProductOffer value) {
+        if (offerBuilder_ == null) {
+          if (((bitField0_ & 0x00040000) != 0) &&
+            offer_ != null &&
+            offer_ != org.megacommerce.products.v1.ProductProto.ProductOffer.getDefaultInstance()) {
+            getOfferBuilder().mergeFrom(value);
+          } else {
+            offer_ = value;
+          }
+        } else {
+          offerBuilder_.mergeFrom(value);
+        }
+        if (offer_ != null) {
+          bitField0_ |= 0x00040000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+       */
+      public Builder clearOffer() {
+        bitField0_ = (bitField0_ & ~0x00040000);
+        offer_ = null;
+        if (offerBuilder_ != null) {
+          offerBuilder_.dispose();
+          offerBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductOffer.Builder getOfferBuilder() {
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return internalGetOfferFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductOfferOrBuilder getOfferOrBuilder() {
+        if (offerBuilder_ != null) {
+          return offerBuilder_.getMessageOrBuilder();
+        } else {
+          return offer_ == null ?
+              org.megacommerce.products.v1.ProductProto.ProductOffer.getDefaultInstance() : offer_;
+        }
+      }
+      /**
+       * <code>.products.v1.ProductOffer offer = 19 [json_name = "offer"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductOffer, org.megacommerce.products.v1.ProductProto.ProductOffer.Builder, org.megacommerce.products.v1.ProductProto.ProductOfferOrBuilder> 
+          internalGetOfferFieldBuilder() {
+        if (offerBuilder_ == null) {
+          offerBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.ProductProto.ProductOffer, org.megacommerce.products.v1.ProductProto.ProductOffer.Builder, org.megacommerce.products.v1.ProductProto.ProductOfferOrBuilder>(
+                  getOffer(),
+                  getParentForChildren(),
+                  isClean());
+          offer_ = null;
+        }
+        return offerBuilder_;
+      }
+
+      private org.megacommerce.products.v1.ProductProto.ProductSafety safety_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductSafety, org.megacommerce.products.v1.ProductProto.ProductSafety.Builder, org.megacommerce.products.v1.ProductProto.ProductSafetyOrBuilder> safetyBuilder_;
+      /**
+       * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+       * @return Whether the safety field is set.
+       */
+      public boolean hasSafety() {
+        return ((bitField0_ & 0x00080000) != 0);
+      }
+      /**
+       * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+       * @return The safety.
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductSafety getSafety() {
+        if (safetyBuilder_ == null) {
+          return safety_ == null ? org.megacommerce.products.v1.ProductProto.ProductSafety.getDefaultInstance() : safety_;
+        } else {
+          return safetyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+       */
+      public Builder setSafety(org.megacommerce.products.v1.ProductProto.ProductSafety value) {
+        if (safetyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          safety_ = value;
+        } else {
+          safetyBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00080000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+       */
+      public Builder setSafety(
+          org.megacommerce.products.v1.ProductProto.ProductSafety.Builder builderForValue) {
+        if (safetyBuilder_ == null) {
+          safety_ = builderForValue.build();
+        } else {
+          safetyBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00080000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+       */
+      public Builder mergeSafety(org.megacommerce.products.v1.ProductProto.ProductSafety value) {
+        if (safetyBuilder_ == null) {
+          if (((bitField0_ & 0x00080000) != 0) &&
+            safety_ != null &&
+            safety_ != org.megacommerce.products.v1.ProductProto.ProductSafety.getDefaultInstance()) {
+            getSafetyBuilder().mergeFrom(value);
+          } else {
+            safety_ = value;
+          }
+        } else {
+          safetyBuilder_.mergeFrom(value);
+        }
+        if (safety_ != null) {
+          bitField0_ |= 0x00080000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+       */
+      public Builder clearSafety() {
+        bitField0_ = (bitField0_ & ~0x00080000);
+        safety_ = null;
+        if (safetyBuilder_ != null) {
+          safetyBuilder_.dispose();
+          safetyBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductSafety.Builder getSafetyBuilder() {
+        bitField0_ |= 0x00080000;
+        onChanged();
+        return internalGetSafetyFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+       */
+      public org.megacommerce.products.v1.ProductProto.ProductSafetyOrBuilder getSafetyOrBuilder() {
+        if (safetyBuilder_ != null) {
+          return safetyBuilder_.getMessageOrBuilder();
+        } else {
+          return safety_ == null ?
+              org.megacommerce.products.v1.ProductProto.ProductSafety.getDefaultInstance() : safety_;
+        }
+      }
+      /**
+       * <code>.products.v1.ProductSafety safety = 20 [json_name = "safety"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductProto.ProductSafety, org.megacommerce.products.v1.ProductProto.ProductSafety.Builder, org.megacommerce.products.v1.ProductProto.ProductSafetyOrBuilder> 
+          internalGetSafetyFieldBuilder() {
+        if (safetyBuilder_ == null) {
+          safetyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.ProductProto.ProductSafety, org.megacommerce.products.v1.ProductProto.ProductSafety.Builder, org.megacommerce.products.v1.ProductProto.ProductSafetyOrBuilder>(
+                  getSafety(),
+                  getParentForChildren(),
+                  isClean());
+          safety_ = null;
+        }
+        return safetyBuilder_;
       }
 
       private java.util.List<org.megacommerce.products.v1.ProductProto.ProductTag> tags_ =
         java.util.Collections.emptyList();
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000400) != 0)) {
+        if (!((bitField0_ & 0x00100000) != 0)) {
           tags_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductProto.ProductTag>(tags_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00100000;
          }
       }
 
@@ -3915,7 +16483,7 @@ public final class ProductProto {
           org.megacommerce.products.v1.ProductProto.ProductTag, org.megacommerce.products.v1.ProductProto.ProductTag.Builder, org.megacommerce.products.v1.ProductProto.ProductTagOrBuilder> tagsBuilder_;
 
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public java.util.List<org.megacommerce.products.v1.ProductProto.ProductTag> getTagsList() {
         if (tagsBuilder_ == null) {
@@ -3925,7 +16493,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public int getTagsCount() {
         if (tagsBuilder_ == null) {
@@ -3935,7 +16503,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductTag getTags(int index) {
         if (tagsBuilder_ == null) {
@@ -3945,7 +16513,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public Builder setTags(
           int index, org.megacommerce.products.v1.ProductProto.ProductTag value) {
@@ -3962,7 +16530,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public Builder setTags(
           int index, org.megacommerce.products.v1.ProductProto.ProductTag.Builder builderForValue) {
@@ -3976,7 +16544,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public Builder addTags(org.megacommerce.products.v1.ProductProto.ProductTag value) {
         if (tagsBuilder_ == null) {
@@ -3992,7 +16560,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public Builder addTags(
           int index, org.megacommerce.products.v1.ProductProto.ProductTag value) {
@@ -4009,7 +16577,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public Builder addTags(
           org.megacommerce.products.v1.ProductProto.ProductTag.Builder builderForValue) {
@@ -4023,7 +16591,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public Builder addTags(
           int index, org.megacommerce.products.v1.ProductProto.ProductTag.Builder builderForValue) {
@@ -4037,7 +16605,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public Builder addAllTags(
           java.lang.Iterable<? extends org.megacommerce.products.v1.ProductProto.ProductTag> values) {
@@ -4052,12 +16620,12 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public Builder clearTags() {
         if (tagsBuilder_ == null) {
           tags_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00100000);
           onChanged();
         } else {
           tagsBuilder_.clear();
@@ -4065,7 +16633,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public Builder removeTags(int index) {
         if (tagsBuilder_ == null) {
@@ -4078,14 +16646,14 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductTag.Builder getTagsBuilder(
           int index) {
         return internalGetTagsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductTagOrBuilder getTagsOrBuilder(
           int index) {
@@ -4095,7 +16663,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductTagOrBuilder> 
            getTagsOrBuilderList() {
@@ -4106,14 +16674,14 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductTag.Builder addTagsBuilder() {
         return internalGetTagsFieldBuilder().addBuilder(
             org.megacommerce.products.v1.ProductProto.ProductTag.getDefaultInstance());
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductTag.Builder addTagsBuilder(
           int index) {
@@ -4121,7 +16689,7 @@ public final class ProductProto {
             index, org.megacommerce.products.v1.ProductProto.ProductTag.getDefaultInstance());
       }
       /**
-       * <code>repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];</code>
+       * <code>repeated .products.v1.ProductTag tags = 21 [json_name = "tags"];</code>
        */
       public java.util.List<org.megacommerce.products.v1.ProductProto.ProductTag.Builder> 
            getTagsBuilderList() {
@@ -4134,7 +16702,7 @@ public final class ProductProto {
           tagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               org.megacommerce.products.v1.ProductProto.ProductTag, org.megacommerce.products.v1.ProductProto.ProductTag.Builder, org.megacommerce.products.v1.ProductProto.ProductTagOrBuilder>(
                   tags_,
-                  ((bitField0_ & 0x00000400) != 0),
+                  ((bitField0_ & 0x00100000) != 0),
                   getParentForChildren(),
                   isClean());
           tags_ = null;
@@ -4146,14 +16714,14 @@ public final class ProductProto {
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductProto.ProductMetadata, org.megacommerce.products.v1.ProductProto.ProductMetadata.Builder, org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
        * @return Whether the metadata field is set.
        */
       public boolean hasMetadata() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00200000) != 0);
       }
       /**
-       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
        * @return The metadata.
        */
       public org.megacommerce.products.v1.ProductProto.ProductMetadata getMetadata() {
@@ -4164,7 +16732,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
        */
       public Builder setMetadata(org.megacommerce.products.v1.ProductProto.ProductMetadata value) {
         if (metadataBuilder_ == null) {
@@ -4175,12 +16743,12 @@ public final class ProductProto {
         } else {
           metadataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
        */
       public Builder setMetadata(
           org.megacommerce.products.v1.ProductProto.ProductMetadata.Builder builderForValue) {
@@ -4189,16 +16757,16 @@ public final class ProductProto {
         } else {
           metadataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
        */
       public Builder mergeMetadata(org.megacommerce.products.v1.ProductProto.ProductMetadata value) {
         if (metadataBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) != 0) &&
+          if (((bitField0_ & 0x00200000) != 0) &&
             metadata_ != null &&
             metadata_ != org.megacommerce.products.v1.ProductProto.ProductMetadata.getDefaultInstance()) {
             getMetadataBuilder().mergeFrom(value);
@@ -4209,16 +16777,16 @@ public final class ProductProto {
           metadataBuilder_.mergeFrom(value);
         }
         if (metadata_ != null) {
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00200000;
           onChanged();
         }
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
        */
       public Builder clearMetadata() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00200000);
         metadata_ = null;
         if (metadataBuilder_ != null) {
           metadataBuilder_.dispose();
@@ -4228,15 +16796,15 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductMetadata.Builder getMetadataBuilder() {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00200000;
         onChanged();
         return internalGetMetadataFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder getMetadataOrBuilder() {
         if (metadataBuilder_ != null) {
@@ -4247,7 +16815,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 22 [json_name = "metadata"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductProto.ProductMetadata, org.megacommerce.products.v1.ProductProto.ProductMetadata.Builder, org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder> 
@@ -4265,7 +16833,7 @@ public final class ProductProto {
 
       private boolean arEnabled_ ;
       /**
-       * <code>bool ar_enabled = 13 [json_name = "arEnabled"];</code>
+       * <code>bool ar_enabled = 23 [json_name = "arEnabled"];</code>
        * @return The arEnabled.
        */
       @java.lang.Override
@@ -4273,31 +16841,239 @@ public final class ProductProto {
         return arEnabled_;
       }
       /**
-       * <code>bool ar_enabled = 13 [json_name = "arEnabled"];</code>
+       * <code>bool ar_enabled = 23 [json_name = "arEnabled"];</code>
        * @param value The arEnabled to set.
        * @return This builder for chaining.
        */
       public Builder setArEnabled(boolean value) {
 
         arEnabled_ = value;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00400000;
         onChanged();
         return this;
       }
       /**
-       * <code>bool ar_enabled = 13 [json_name = "arEnabled"];</code>
+       * <code>bool ar_enabled = 23 [json_name = "arEnabled"];</code>
        * @return This builder for chaining.
        */
       public Builder clearArEnabled() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         arEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object slug_ = "";
+      /**
+       * <code>string slug = 24 [json_name = "slug"];</code>
+       * @return The slug.
+       */
+      public java.lang.String getSlug() {
+        java.lang.Object ref = slug_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          slug_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string slug = 24 [json_name = "slug"];</code>
+       * @return The bytes for slug.
+       */
+      public com.google.protobuf.ByteString
+          getSlugBytes() {
+        java.lang.Object ref = slug_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          slug_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string slug = 24 [json_name = "slug"];</code>
+       * @param value The slug to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSlug(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        slug_ = value;
+        bitField0_ |= 0x00800000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string slug = 24 [json_name = "slug"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSlug() {
+        slug_ = getDefaultInstance().getSlug();
+        bitField0_ = (bitField0_ & ~0x00800000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string slug = 24 [json_name = "slug"];</code>
+       * @param value The bytes for slug to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSlugBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        slug_ = value;
+        bitField0_ |= 0x00800000;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 25 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 25 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 25 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        status_ = value;
+        bitField0_ |= 0x01000000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 25 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        status_ = getDefaultInstance().getStatus();
+        bitField0_ = (bitField0_ & ~0x01000000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 25 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        status_ = value;
+        bitField0_ |= 0x01000000;
+        onChanged();
+        return this;
+      }
+
+      private int version_ ;
+      /**
+       * <code>uint32 version = 26 [json_name = "version"];</code>
+       * @return The version.
+       */
+      @java.lang.Override
+      public int getVersion() {
+        return version_;
+      }
+      /**
+       * <code>uint32 version = 26 [json_name = "version"];</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(int value) {
+
+        version_ = value;
+        bitField0_ |= 0x02000000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 version = 26 [json_name = "version"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x02000000);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int schemaVersion_ ;
+      /**
+       * <code>uint32 schema_version = 27 [json_name = "schemaVersion"];</code>
+       * @return The schemaVersion.
+       */
+      @java.lang.Override
+      public int getSchemaVersion() {
+        return schemaVersion_;
+      }
+      /**
+       * <code>uint32 schema_version = 27 [json_name = "schemaVersion"];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaVersion(int value) {
+
+        schemaVersion_ = value;
+        bitField0_ |= 0x04000000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 schema_version = 27 [json_name = "schemaVersion"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSchemaVersion() {
+        bitField0_ = (bitField0_ & ~0x04000000);
+        schemaVersion_ = 0;
         onChanged();
         return this;
       }
 
       private long createdAt_ ;
       /**
-       * <code>uint64 created_at = 14 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 28 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -4305,23 +17081,23 @@ public final class ProductProto {
         return createdAt_;
       }
       /**
-       * <code>uint64 created_at = 14 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 28 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
       public Builder setCreatedAt(long value) {
 
         createdAt_ = value;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x08000000;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 created_at = 14 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 28 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         createdAt_ = 0L;
         onChanged();
         return this;
@@ -4329,15 +17105,15 @@ public final class ProductProto {
 
       private long publishedAt_ ;
       /**
-       * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+       * <code>optional uint64 published_at = 29 [json_name = "publishedAt"];</code>
        * @return Whether the publishedAt field is set.
        */
       @java.lang.Override
       public boolean hasPublishedAt() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return ((bitField0_ & 0x10000000) != 0);
       }
       /**
-       * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+       * <code>optional uint64 published_at = 29 [json_name = "publishedAt"];</code>
        * @return The publishedAt.
        */
       @java.lang.Override
@@ -4345,23 +17121,23 @@ public final class ProductProto {
         return publishedAt_;
       }
       /**
-       * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+       * <code>optional uint64 published_at = 29 [json_name = "publishedAt"];</code>
        * @param value The publishedAt to set.
        * @return This builder for chaining.
        */
       public Builder setPublishedAt(long value) {
 
         publishedAt_ = value;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x10000000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+       * <code>optional uint64 published_at = 29 [json_name = "publishedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPublishedAt() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         publishedAt_ = 0L;
         onChanged();
         return this;
@@ -4369,15 +17145,15 @@ public final class ProductProto {
 
       private long updatedAt_ ;
       /**
-       * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 30 [json_name = "updatedAt"];</code>
        * @return Whether the updatedAt field is set.
        */
       @java.lang.Override
       public boolean hasUpdatedAt() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x20000000) != 0);
       }
       /**
-       * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 30 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -4385,23 +17161,23 @@ public final class ProductProto {
         return updatedAt_;
       }
       /**
-       * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 30 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
       public Builder setUpdatedAt(long value) {
 
         updatedAt_ = value;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x20000000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 30 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         updatedAt_ = 0L;
         onChanged();
         return this;
@@ -4459,6 +17235,91 @@ public final class ProductProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductBulletPoint_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductBulletPoint_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductDetails_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductDetails_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductDetails_SharedEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductDetails_SharedEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductDetails_DetailsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductDetails_DetailsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductDetailsVariant_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductDetailsVariant_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductDetailsVariant_VariantDataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductDetailsVariant_VariantDataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductMedia_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductMedia_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductMedia_SafetyEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductMedia_SafetyEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductMediaVariant_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductMediaVariant_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductMediaImage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductMediaImage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductMediaVideo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductMediaVideo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductOffer_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductOffer_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductOffer_OfferEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductOffer_OfferEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductOfferVariant_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductOfferVariant_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductOfferMinimumOrder_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductOfferMinimumOrder_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductSafety_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductSafety_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductSafety_SafetyEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductSafety_SafetyEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_products_v1_ProductTag_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -4488,57 +17349,234 @@ public final class ProductProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\031products/v1/product.proto\022\013products.v1" +
-      "\"J\n\nProductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004n" +
-      "ame\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\":\n\013" +
-      "ProductTags\022+\n\004tags\030\001 \003(\0132\027.products.v1." +
-      "ProductTagR\004tags\"\021\n\017ProductMetadata\"\240\004\n\007" +
-      "Product\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\t" +
-      "R\006userId\022\020\n\003sku\030\003 \001(\tR\003sku\022\030\n\007version\030\004 " +
-      "\001(\rR\007version\022\026\n\006status\030\005 \001(\tR\006status\022\024\n\005" +
-      "title\030\006 \001(\tR\005title\022 \n\013description\030\007 \001(\tR" +
-      "\013description\022\022\n\004slug\030\010 \001(\tR\004slug\022\024\n\005pric" +
-      "e\030\t \001(\tR\005price\022#\n\rcurrency_code\030\n \001(\tR\014c" +
-      "urrencyCode\022+\n\004tags\030\013 \003(\0132\027.products.v1." +
-      "ProductTagR\004tags\022=\n\010metadata\030\014 \001(\0132\034.pro" +
-      "ducts.v1.ProductMetadataH\000R\010metadata\210\001\001\022" +
-      "\035\n\nar_enabled\030\r \001(\010R\tarEnabled\022\035\n\ncreate" +
-      "d_at\030\016 \001(\004R\tcreatedAt\022&\n\014published_at\030\017 " +
-      "\001(\004H\001R\013publishedAt\210\001\001\022\"\n\nupdated_at\030\020 \001(" +
-      "\004H\002R\tupdatedAt\210\001\001B\013\n\t_metadataB\017\n\r_publi" +
-      "shed_atB\r\n\013_updated_atBv\n\034org.megacommer" +
-      "ce.products.v1B\014ProductProtoZEgithub.com" +
-      "/ahmad-khatib0-org/megacommerce-proto/ge" +
-      "n/go/products/v1;v1\370\001\001b\006proto3"
+      "\032\025shared/v1/types.proto\"\212\001\n\022ProductBulle" +
+      "tPoint\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004text\030\002 \001(\tR\004te" +
+      "xt\022\035\n\ncreated_at\030\003 \001(\004R\tcreatedAt\022\"\n\nupd" +
+      "ated_at\030\004 \001(\004H\000R\tupdatedAt\210\001\001B\r\n\013_update" +
+      "d_at\"\300\002\n\016ProductDetails\022?\n\006shared\030\001 \003(\0132" +
+      "\'.products.v1.ProductDetails.SharedEntry" +
+      "R\006shared\022B\n\007details\030\002 \003(\0132(.products.v1." +
+      "ProductDetails.DetailsEntryR\007details\032I\n\013" +
+      "SharedEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value\030\002" +
+      " \001(\0132\016.shared.v1.AnyR\005value:\0028\001\032^\n\014Detai" +
+      "lsEntry\022\020\n\003key\030\001 \001(\tR\003key\0228\n\005value\030\002 \001(\013" +
+      "2\".products.v1.ProductDetailsVariantR\005va" +
+      "lue:\0028\001\"\342\001\n\025ProductDetailsVariant\022!\n\014var" +
+      "iant_name\030\001 \001(\tR\013variantName\022V\n\014variant_" +
+      "data\030\002 \003(\01323.products.v1.ProductDetailsV" +
+      "ariant.VariantDataEntryR\013variantData\032N\n\020" +
+      "VariantDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005va" +
+      "lue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\230\001\n" +
+      "\014ProductMedia\022=\n\006safety\030\001 \003(\0132%.products" +
+      ".v1.ProductMedia.SafetyEntryR\006safety\032I\n\013" +
+      "SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value\030\002" +
+      " \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\205\001\n\023Prod" +
+      "uctMediaVariant\0226\n\006images\030\001 \003(\0132\036.produc" +
+      "ts.v1.ProductMediaImageR\006images\0226\n\006video" +
+      "s\030\002 \003(\0132\036.products.v1.ProductMediaVideoR" +
+      "\006videos\"Q\n\021ProductMediaImage\022\026\n\006format\030\001" +
+      " \001(\tR\006format\022\020\n\003url\030\002 \001(\tR\003url\022\022\n\004size\030\003" +
+      " \001(\004R\004size\"m\n\021ProductMediaVideo\022\026\n\006forma" +
+      "t\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001(\tR\003url\022\022\n\004siz" +
+      "e\030\003 \001(\004R\004size\022\032\n\010duration\030\004 \001(\004R\010duratio" +
+      "n\"\246\001\n\014ProductOffer\022:\n\005offer\030\002 \003(\0132$.prod" +
+      "ucts.v1.ProductOffer.OfferEntryR\005offer\032Z" +
+      "\n\nOfferEntry\022\020\n\003key\030\001 \001(\tR\003key\0226\n\005value\030" +
+      "\002 \001(\0132 .products.v1.ProductOfferVariantR" +
+      "\005value:\0028\001\"\321\004\n\023ProductOfferVariant\022\020\n\003sk" +
+      "u\030\002 \001(\tR\003sku\022\032\n\010quantity\030\003 \001(\004R\010quantity" +
+      "\022\024\n\005price\030\004 \001(\tR\005price\022-\n\022offering_condi" +
+      "tion\030\005 \001(\tR\021offeringCondition\022*\n\016conditi" +
+      "on_note\030\006 \001(\tH\000R\rconditionNote\210\001\001\022\"\n\nlis" +
+      "t_price\030\007 \001(\tH\001R\tlistPrice\210\001\001\022$\n\016has_sal" +
+      "e_price\030\010 \001(\010R\014hasSalePrice\022\"\n\nsale_pric" +
+      "e\030\t \001(\tH\002R\tsalePrice\210\001\001\022-\n\020sale_price_st" +
+      "art\030\n \001(\tH\003R\016salePriceStart\210\001\001\022)\n\016sale_p" +
+      "rice_end\030\013 \001(\tH\004R\014salePriceEnd\210\001\001\022,\n\022has" +
+      "_minimum_orders\030\014 \001(\010R\020hasMinimumOrders\022" +
+      "L\n\016minimum_orders\030\r \003(\0132%.products.v1.Pr" +
+      "oductOfferMinimumOrderR\rminimumOrdersB\021\n" +
+      "\017_condition_noteB\r\n\013_list_priceB\r\n\013_sale" +
+      "_priceB\023\n\021_sale_price_startB\021\n\017_sale_pri" +
+      "ce_end\"L\n\030ProductOfferMinimumOrder\022\024\n\005pr" +
+      "ice\030\001 \001(\tR\005price\022\032\n\010quantity\030\002 \001(\004R\010quan" +
+      "tity\"\232\001\n\rProductSafety\022>\n\006safety\030\001 \003(\0132&" +
+      ".products.v1.ProductSafety.SafetyEntryR\006" +
+      "safety\032I\n\013SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
+      "$\n\005value\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028" +
+      "\001\"J\n\nProductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004" +
+      "name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\":\n" +
+      "\013ProductTags\022+\n\004tags\030\001 \003(\0132\027.products.v1" +
+      ".ProductTagR\004tags\"\021\n\017ProductMetadata\"\336\t\n" +
+      "\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(" +
+      "\tR\006userId\022\024\n\005title\030\003 \001(\tR\005title\022\032\n\010categ" +
+      "ory\030\004 \001(\tR\010category\022 \n\013subcategory\030\005 \001(\t" +
+      "R\013subcategory\022%\n\016has_variations\030\006 \001(\010R\rh" +
+      "asVariations\022\"\n\nbrand_name\030\007 \001(\tH\000R\tbran" +
+      "dName\210\001\001\022$\n\016has_brand_name\030\010 \001(\010R\014hasBra" +
+      "ndName\022\"\n\nproduct_id\030\t \001(\tH\001R\tproductId\210" +
+      "\001\001\022$\n\016has_product_id\030\n \001(\010R\014hasProductId" +
+      "\022+\n\017product_id_type\030\013 \001(\tH\002R\rproductIdTy" +
+      "pe\210\001\001\022 \n\013description\030\014 \001(\tR\013description\022" +
+      "D\n\rbullet_points\030\r \003(\0132\037.products.v1.Pro" +
+      "ductBulletPointR\014bulletPoints\022#\n\rcurrenc" +
+      "y_code\030\016 \001(\tR\014currencyCode\022)\n\020fulfillmen" +
+      "t_type\030\017 \001(\tR\017fulfillmentType\022\'\n\017process" +
+      "ing_time\030\020 \001(\004R\016processingTime\0225\n\007detail" +
+      "s\030\021 \001(\0132\033.products.v1.ProductDetailsR\007de" +
+      "tails\022/\n\005media\030\022 \001(\0132\031.products.v1.Produ" +
+      "ctMediaR\005media\022/\n\005offer\030\023 \001(\0132\031.products" +
+      ".v1.ProductOfferR\005offer\0222\n\006safety\030\024 \001(\0132" +
+      "\032.products.v1.ProductSafetyR\006safety\022+\n\004t" +
+      "ags\030\025 \003(\0132\027.products.v1.ProductTagR\004tags" +
+      "\022=\n\010metadata\030\026 \001(\0132\034.products.v1.Product" +
+      "MetadataH\003R\010metadata\210\001\001\022\035\n\nar_enabled\030\027 " +
+      "\001(\010R\tarEnabled\022\022\n\004slug\030\030 \001(\tR\004slug\022\026\n\006st" +
+      "atus\030\031 \001(\tR\006status\022\030\n\007version\030\032 \001(\rR\007ver" +
+      "sion\022%\n\016schema_version\030\033 \001(\rR\rschemaVers" +
+      "ion\022\035\n\ncreated_at\030\034 \001(\004R\tcreatedAt\022&\n\014pu" +
+      "blished_at\030\035 \001(\004H\004R\013publishedAt\210\001\001\022\"\n\nup" +
+      "dated_at\030\036 \001(\004H\005R\tupdatedAt\210\001\001B\r\n\013_brand" +
+      "_nameB\r\n\013_product_idB\022\n\020_product_id_type" +
+      "B\013\n\t_metadataB\017\n\r_published_atB\r\n\013_updat" +
+      "ed_atBv\n\034org.megacommerce.products.v1B\014P" +
+      "roductProtoZEgithub.com/ahmad-khatib0-or" +
+      "g/megacommerce-proto/gen/go/products/v1;" +
+      "v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          org.megacommerce.shared.v1.TypesProto.getDescriptor(),
         });
-    internal_static_products_v1_ProductTag_descriptor =
+    internal_static_products_v1_ProductBulletPoint_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_products_v1_ProductBulletPoint_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductBulletPoint_descriptor,
+        new java.lang.String[] { "Id", "Text", "CreatedAt", "UpdatedAt", });
+    internal_static_products_v1_ProductDetails_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_products_v1_ProductDetails_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductDetails_descriptor,
+        new java.lang.String[] { "Shared", "Details", });
+    internal_static_products_v1_ProductDetails_SharedEntry_descriptor =
+      internal_static_products_v1_ProductDetails_descriptor.getNestedTypes().get(0);
+    internal_static_products_v1_ProductDetails_SharedEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductDetails_SharedEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_products_v1_ProductDetails_DetailsEntry_descriptor =
+      internal_static_products_v1_ProductDetails_descriptor.getNestedTypes().get(1);
+    internal_static_products_v1_ProductDetails_DetailsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductDetails_DetailsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_products_v1_ProductDetailsVariant_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_products_v1_ProductDetailsVariant_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductDetailsVariant_descriptor,
+        new java.lang.String[] { "VariantName", "VariantData", });
+    internal_static_products_v1_ProductDetailsVariant_VariantDataEntry_descriptor =
+      internal_static_products_v1_ProductDetailsVariant_descriptor.getNestedTypes().get(0);
+    internal_static_products_v1_ProductDetailsVariant_VariantDataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductDetailsVariant_VariantDataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_products_v1_ProductMedia_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_products_v1_ProductMedia_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductMedia_descriptor,
+        new java.lang.String[] { "Safety", });
+    internal_static_products_v1_ProductMedia_SafetyEntry_descriptor =
+      internal_static_products_v1_ProductMedia_descriptor.getNestedTypes().get(0);
+    internal_static_products_v1_ProductMedia_SafetyEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductMedia_SafetyEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_products_v1_ProductMediaVariant_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_products_v1_ProductMediaVariant_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductMediaVariant_descriptor,
+        new java.lang.String[] { "Images", "Videos", });
+    internal_static_products_v1_ProductMediaImage_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_products_v1_ProductMediaImage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductMediaImage_descriptor,
+        new java.lang.String[] { "Format", "Url", "Size", });
+    internal_static_products_v1_ProductMediaVideo_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_products_v1_ProductMediaVideo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductMediaVideo_descriptor,
+        new java.lang.String[] { "Format", "Url", "Size", "Duration", });
+    internal_static_products_v1_ProductOffer_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_products_v1_ProductOffer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductOffer_descriptor,
+        new java.lang.String[] { "Offer", });
+    internal_static_products_v1_ProductOffer_OfferEntry_descriptor =
+      internal_static_products_v1_ProductOffer_descriptor.getNestedTypes().get(0);
+    internal_static_products_v1_ProductOffer_OfferEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductOffer_OfferEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_products_v1_ProductOfferVariant_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_products_v1_ProductOfferVariant_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductOfferVariant_descriptor,
+        new java.lang.String[] { "Sku", "Quantity", "Price", "OfferingCondition", "ConditionNote", "ListPrice", "HasSalePrice", "SalePrice", "SalePriceStart", "SalePriceEnd", "HasMinimumOrders", "MinimumOrders", });
+    internal_static_products_v1_ProductOfferMinimumOrder_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_products_v1_ProductOfferMinimumOrder_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductOfferMinimumOrder_descriptor,
+        new java.lang.String[] { "Price", "Quantity", });
+    internal_static_products_v1_ProductSafety_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_products_v1_ProductSafety_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductSafety_descriptor,
+        new java.lang.String[] { "Safety", });
+    internal_static_products_v1_ProductSafety_SafetyEntry_descriptor =
+      internal_static_products_v1_ProductSafety_descriptor.getNestedTypes().get(0);
+    internal_static_products_v1_ProductSafety_SafetyEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductSafety_SafetyEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_products_v1_ProductTag_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_products_v1_ProductTag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductTag_descriptor,
         new java.lang.String[] { "Id", "Name", });
     internal_static_products_v1_ProductTags_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_products_v1_ProductTags_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductTags_descriptor,
         new java.lang.String[] { "Tags", });
     internal_static_products_v1_ProductMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_products_v1_ProductMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductMetadata_descriptor,
         new java.lang.String[] { });
     internal_static_products_v1_Product_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_products_v1_Product_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_Product_descriptor,
-        new java.lang.String[] { "Id", "UserId", "Sku", "Version", "Status", "Title", "Description", "Slug", "Price", "CurrencyCode", "Tags", "Metadata", "ArEnabled", "CreatedAt", "PublishedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "UserId", "Title", "Category", "Subcategory", "HasVariations", "BrandName", "HasBrandName", "ProductId", "HasProductId", "ProductIdType", "Description", "BulletPoints", "CurrencyCode", "FulfillmentType", "ProcessingTime", "Details", "Media", "Offer", "Safety", "Tags", "Metadata", "ArEnabled", "Slug", "Status", "Version", "SchemaVersion", "CreatedAt", "PublishedAt", "UpdatedAt", });
     descriptor.resolveAllFeaturesImmutable();
+    org.megacommerce.shared.v1.TypesProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

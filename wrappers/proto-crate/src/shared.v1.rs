@@ -248,63 +248,6 @@ pub struct Crop {
     #[prost(float, tag = "5")]
     pub aspect_ratio: f32,
 }
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct AttachmentError {
-    /// the attachment id
-    #[prost(string, tag = "1")]
-    pub id: ::prost::alloc::string::String,
-    #[prost(enumeration = "AttachmentErrorType", tag = "2")]
-    pub r#type: i32,
-    /// shown to the user
-    #[prost(string, tag = "3")]
-    pub message: ::prost::alloc::string::String,
-    /// used for the backend
-    #[prost(string, tag = "4")]
-    pub error: ::prost::alloc::string::String,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum AttachmentErrorType {
-    Unspecified = 0,
-    InvalidBase64 = 1,
-    InvalidFileType = 2,
-    BigFile = 3,
-    DecodeImg = 4,
-    BigDimensionsImg = 5,
-    UnsupportedFileType = 6,
-}
-impl AttachmentErrorType {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            Self::Unspecified => "UNSPECIFIED",
-            Self::InvalidBase64 => "INVALID_BASE64",
-            Self::InvalidFileType => "INVALID_FILE_TYPE",
-            Self::BigFile => "BIG_FILE",
-            Self::DecodeImg => "DECODE_IMG",
-            Self::BigDimensionsImg => "BIG_DIMENSIONS_IMG",
-            Self::UnsupportedFileType => "UNSUPPORTED_FILE_TYPE",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "UNSPECIFIED" => Some(Self::Unspecified),
-            "INVALID_BASE64" => Some(Self::InvalidBase64),
-            "INVALID_FILE_TYPE" => Some(Self::InvalidFileType),
-            "BIG_FILE" => Some(Self::BigFile),
-            "DECODE_IMG" => Some(Self::DecodeImg),
-            "BIG_DIMENSIONS_IMG" => Some(Self::BigDimensionsImg),
-            "UNSUPPORTED_FILE_TYPE" => Some(Self::UnsupportedFileType),
-            _ => None,
-        }
-    }
-}
 /// A Timestamp represents a point in time independent of any time zone or local
 /// calendar, encoded as a count of seconds and fractions of seconds at
 /// nanosecond resolution. The count is relative to an epoch at UTC midnight on

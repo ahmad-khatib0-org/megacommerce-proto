@@ -21,67 +21,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type AttachmentErrorType int32
-
-const (
-	AttachmentErrorType_UNSPECIFIED           AttachmentErrorType = 0
-	AttachmentErrorType_INVALID_BASE64        AttachmentErrorType = 1
-	AttachmentErrorType_INVALID_FILE_TYPE     AttachmentErrorType = 2
-	AttachmentErrorType_BIG_FILE              AttachmentErrorType = 3
-	AttachmentErrorType_DECODE_IMG            AttachmentErrorType = 4
-	AttachmentErrorType_BIG_DIMENSIONS_IMG    AttachmentErrorType = 5
-	AttachmentErrorType_UNSUPPORTED_FILE_TYPE AttachmentErrorType = 6
-)
-
-// Enum value maps for AttachmentErrorType.
-var (
-	AttachmentErrorType_name = map[int32]string{
-		0: "UNSPECIFIED",
-		1: "INVALID_BASE64",
-		2: "INVALID_FILE_TYPE",
-		3: "BIG_FILE",
-		4: "DECODE_IMG",
-		5: "BIG_DIMENSIONS_IMG",
-		6: "UNSUPPORTED_FILE_TYPE",
-	}
-	AttachmentErrorType_value = map[string]int32{
-		"UNSPECIFIED":           0,
-		"INVALID_BASE64":        1,
-		"INVALID_FILE_TYPE":     2,
-		"BIG_FILE":              3,
-		"DECODE_IMG":            4,
-		"BIG_DIMENSIONS_IMG":    5,
-		"UNSUPPORTED_FILE_TYPE": 6,
-	}
-)
-
-func (x AttachmentErrorType) Enum() *AttachmentErrorType {
-	p := new(AttachmentErrorType)
-	*p = x
-	return p
-}
-
-func (x AttachmentErrorType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (AttachmentErrorType) Descriptor() protoreflect.EnumDescriptor {
-	return file_shared_v1_attachment_proto_enumTypes[0].Descriptor()
-}
-
-func (AttachmentErrorType) Type() protoreflect.EnumType {
-	return &file_shared_v1_attachment_proto_enumTypes[0]
-}
-
-func (x AttachmentErrorType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use AttachmentErrorType.Descriptor instead.
-func (AttachmentErrorType) EnumDescriptor() ([]byte, []int) {
-	return file_shared_v1_attachment_proto_rawDescGZIP(), []int{0}
-}
-
 type Attachment struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -334,74 +273,6 @@ func (x *Crop) GetAspectRatio() float32 {
 	return 0
 }
 
-type AttachmentError struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // the attachment id
-	Type          AttachmentErrorType    `protobuf:"varint,2,opt,name=type,proto3,enum=shared.v1.AttachmentErrorType" json:"type,omitempty"`
-	Message       string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"` // shown to the user
-	Error         string                 `protobuf:"bytes,4,opt,name=error,proto3" json:"error,omitempty"`     // used for the backend
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *AttachmentError) Reset() {
-	*x = AttachmentError{}
-	mi := &file_shared_v1_attachment_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *AttachmentError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*AttachmentError) ProtoMessage() {}
-
-func (x *AttachmentError) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_attachment_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use AttachmentError.ProtoReflect.Descriptor instead.
-func (*AttachmentError) Descriptor() ([]byte, []int) {
-	return file_shared_v1_attachment_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *AttachmentError) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *AttachmentError) GetType() AttachmentErrorType {
-	if x != nil {
-		return x.Type
-	}
-	return AttachmentErrorType_UNSPECIFIED
-}
-
-func (x *AttachmentError) GetMessage() string {
-	if x != nil {
-		return x.Message
-	}
-	return ""
-}
-
-func (x *AttachmentError) GetError() string {
-	if x != nil {
-		return x.Error
-	}
-	return ""
-}
-
 var File_shared_v1_attachment_proto protoreflect.FileDescriptor
 
 const file_shared_v1_attachment_proto_rawDesc = "" +
@@ -430,21 +301,7 @@ const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\x01y\x18\x02 \x01(\x02R\x01y\x12\x14\n" +
 	"\x05width\x18\x03 \x01(\x02R\x05width\x12\x16\n" +
 	"\x06height\x18\x04 \x01(\x02R\x06height\x12!\n" +
-	"\faspect_ratio\x18\x05 \x01(\x02R\vaspectRatio\"\x85\x01\n" +
-	"\x0fAttachmentError\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x122\n" +
-	"\x04type\x18\x02 \x01(\x0e2\x1e.shared.v1.AttachmentErrorTypeR\x04type\x12\x18\n" +
-	"\amessage\x18\x03 \x01(\tR\amessage\x12\x14\n" +
-	"\x05error\x18\x04 \x01(\tR\x05error*\xa2\x01\n" +
-	"\x13AttachmentErrorType\x12\x0f\n" +
-	"\vUNSPECIFIED\x10\x00\x12\x12\n" +
-	"\x0eINVALID_BASE64\x10\x01\x12\x15\n" +
-	"\x11INVALID_FILE_TYPE\x10\x02\x12\f\n" +
-	"\bBIG_FILE\x10\x03\x12\x0e\n" +
-	"\n" +
-	"DECODE_IMG\x10\x04\x12\x16\n" +
-	"\x12BIG_DIMENSIONS_IMG\x10\x05\x12\x19\n" +
-	"\x15UNSUPPORTED_FILE_TYPE\x10\x06Bu\n" +
+	"\faspect_ratio\x18\x05 \x01(\x02R\vaspectRatioBu\n" +
 	"\x1aorg.megacommerce.shared.v1B\x0fAttachmentProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -459,26 +316,22 @@ func file_shared_v1_attachment_proto_rawDescGZIP() []byte {
 	return file_shared_v1_attachment_proto_rawDescData
 }
 
-var file_shared_v1_attachment_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_shared_v1_attachment_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_shared_v1_attachment_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_shared_v1_attachment_proto_goTypes = []any{
-	(AttachmentErrorType)(0), // 0: shared.v1.AttachmentErrorType
-	(*Attachment)(nil),       // 1: shared.v1.Attachment
-	(*Attachments)(nil),      // 2: shared.v1.Attachments
-	(*Crop)(nil),             // 3: shared.v1.Crop
-	(*AttachmentError)(nil),  // 4: shared.v1.AttachmentError
-	(*Struct)(nil),           // 5: shared.v1.Struct
+	(*Attachment)(nil),  // 0: shared.v1.Attachment
+	(*Attachments)(nil), // 1: shared.v1.Attachments
+	(*Crop)(nil),        // 2: shared.v1.Crop
+	(*Struct)(nil),      // 3: shared.v1.Struct
 }
 var file_shared_v1_attachment_proto_depIdxs = []int32{
-	3, // 0: shared.v1.Attachment.crop:type_name -> shared.v1.Crop
-	5, // 1: shared.v1.Attachment.metadata:type_name -> shared.v1.Struct
-	1, // 2: shared.v1.Attachments.attachments:type_name -> shared.v1.Attachment
-	0, // 3: shared.v1.AttachmentError.type:type_name -> shared.v1.AttachmentErrorType
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	2, // 0: shared.v1.Attachment.crop:type_name -> shared.v1.Crop
+	3, // 1: shared.v1.Attachment.metadata:type_name -> shared.v1.Struct
+	0, // 2: shared.v1.Attachments.attachments:type_name -> shared.v1.Attachment
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_shared_v1_attachment_proto_init() }
@@ -493,14 +346,13 @@ func file_shared_v1_attachment_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_shared_v1_attachment_proto_rawDesc), len(file_shared_v1_attachment_proto_rawDesc)),
-			NumEnums:      1,
-			NumMessages:   4,
+			NumEnums:      0,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_shared_v1_attachment_proto_goTypes,
 		DependencyIndexes: file_shared_v1_attachment_proto_depIdxs,
-		EnumInfos:         file_shared_v1_attachment_proto_enumTypes,
 		MessageInfos:      file_shared_v1_attachment_proto_msgTypes,
 	}.Build()
 	File_shared_v1_attachment_proto = out.File
