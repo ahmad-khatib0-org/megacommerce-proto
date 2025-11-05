@@ -327,10 +327,11 @@ pub struct ProductDetailsVariant {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductMedia {
+    /// <variant_id, media>
     #[prost(map = "string, message", tag = "1")]
-    pub safety: ::std::collections::HashMap<
+    pub media: ::std::collections::HashMap<
         ::prost::alloc::string::String,
-        super::super::shared::v1::Any,
+        ProductMediaVariant,
     >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

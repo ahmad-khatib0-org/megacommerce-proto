@@ -50,12 +50,13 @@ export interface ProductDetailsVariant_VariantDataEntry {
 }
 
 export interface ProductMedia {
-  safety: { [key: string]: Any };
+  /** <variant_id, media> */
+  media: { [key: string]: ProductMediaVariant };
 }
 
-export interface ProductMedia_SafetyEntry {
+export interface ProductMedia_MediaEntry {
   key: string;
-  value?: Any | undefined;
+  value?: ProductMediaVariant | undefined;
 }
 
 export interface ProductMediaVariant {
@@ -718,13 +719,13 @@ export const ProductDetailsVariant_VariantDataEntry: MessageFns<ProductDetailsVa
 };
 
 function createBaseProductMedia(): ProductMedia {
-  return { safety: {} };
+  return { media: {} };
 }
 
 export const ProductMedia: MessageFns<ProductMedia> = {
   encode(message: ProductMedia, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    Object.entries(message.safety).forEach(([key, value]) => {
-      ProductMedia_SafetyEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
+    Object.entries(message.media).forEach(([key, value]) => {
+      ProductMedia_MediaEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
     });
     return writer;
   },
@@ -741,9 +742,9 @@ export const ProductMedia: MessageFns<ProductMedia> = {
             break;
           }
 
-          const entry1 = ProductMedia_SafetyEntry.decode(reader, reader.uint32());
+          const entry1 = ProductMedia_MediaEntry.decode(reader, reader.uint32());
           if (entry1.value !== undefined) {
-            message.safety[entry1.key] = entry1.value;
+            message.media[entry1.key] = entry1.value;
           }
           continue;
         }
@@ -758,9 +759,9 @@ export const ProductMedia: MessageFns<ProductMedia> = {
 
   fromJSON(object: any): ProductMedia {
     return {
-      safety: isObject(object.safety)
-        ? Object.entries(object.safety).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
-          acc[key] = Any.fromJSON(value);
+      media: isObject(object.media)
+        ? Object.entries(object.media).reduce<{ [key: string]: ProductMediaVariant }>((acc, [key, value]) => {
+          acc[key] = ProductMediaVariant.fromJSON(value);
           return acc;
         }, {})
         : {},
@@ -769,12 +770,12 @@ export const ProductMedia: MessageFns<ProductMedia> = {
 
   toJSON(message: ProductMedia): unknown {
     const obj: any = {};
-    if (message.safety) {
-      const entries = Object.entries(message.safety);
+    if (message.media) {
+      const entries = Object.entries(message.media);
       if (entries.length > 0) {
-        obj.safety = {};
+        obj.media = {};
         entries.forEach(([k, v]) => {
-          obj.safety[k] = Any.toJSON(v);
+          obj.media[k] = ProductMediaVariant.toJSON(v);
         });
       }
     }
@@ -786,35 +787,38 @@ export const ProductMedia: MessageFns<ProductMedia> = {
   },
   fromPartial<I extends Exact<DeepPartial<ProductMedia>, I>>(object: I): ProductMedia {
     const message = createBaseProductMedia();
-    message.safety = Object.entries(object.safety ?? {}).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
-      if (value !== undefined) {
-        acc[key] = Any.fromPartial(value);
-      }
-      return acc;
-    }, {});
+    message.media = Object.entries(object.media ?? {}).reduce<{ [key: string]: ProductMediaVariant }>(
+      (acc, [key, value]) => {
+        if (value !== undefined) {
+          acc[key] = ProductMediaVariant.fromPartial(value);
+        }
+        return acc;
+      },
+      {},
+    );
     return message;
   },
 };
 
-function createBaseProductMedia_SafetyEntry(): ProductMedia_SafetyEntry {
+function createBaseProductMedia_MediaEntry(): ProductMedia_MediaEntry {
   return { key: "", value: undefined };
 }
 
-export const ProductMedia_SafetyEntry: MessageFns<ProductMedia_SafetyEntry> = {
-  encode(message: ProductMedia_SafetyEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const ProductMedia_MediaEntry: MessageFns<ProductMedia_MediaEntry> = {
+  encode(message: ProductMedia_MediaEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.key !== "") {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
-      Any.encode(message.value, writer.uint32(18).fork()).join();
+      ProductMediaVariant.encode(message.value, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductMedia_SafetyEntry {
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductMedia_MediaEntry {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductMedia_SafetyEntry();
+    const message = createBaseProductMedia_MediaEntry();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -831,7 +835,7 @@ export const ProductMedia_SafetyEntry: MessageFns<ProductMedia_SafetyEntry> = {
             break;
           }
 
-          message.value = Any.decode(reader, reader.uint32());
+          message.value = ProductMediaVariant.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -843,31 +847,33 @@ export const ProductMedia_SafetyEntry: MessageFns<ProductMedia_SafetyEntry> = {
     return message;
   },
 
-  fromJSON(object: any): ProductMedia_SafetyEntry {
+  fromJSON(object: any): ProductMedia_MediaEntry {
     return {
       key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? Any.fromJSON(object.value) : undefined,
+      value: isSet(object.value) ? ProductMediaVariant.fromJSON(object.value) : undefined,
     };
   },
 
-  toJSON(message: ProductMedia_SafetyEntry): unknown {
+  toJSON(message: ProductMedia_MediaEntry): unknown {
     const obj: any = {};
     if (message.key !== "") {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
-      obj.value = Any.toJSON(message.value);
+      obj.value = ProductMediaVariant.toJSON(message.value);
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ProductMedia_SafetyEntry>, I>>(base?: I): ProductMedia_SafetyEntry {
-    return ProductMedia_SafetyEntry.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<ProductMedia_MediaEntry>, I>>(base?: I): ProductMedia_MediaEntry {
+    return ProductMedia_MediaEntry.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ProductMedia_SafetyEntry>, I>>(object: I): ProductMedia_SafetyEntry {
-    const message = createBaseProductMedia_SafetyEntry();
+  fromPartial<I extends Exact<DeepPartial<ProductMedia_MediaEntry>, I>>(object: I): ProductMedia_MediaEntry {
+    const message = createBaseProductMedia_MediaEntry();
     message.key = object.key ?? "";
-    message.value = (object.value !== undefined && object.value !== null) ? Any.fromPartial(object.value) : undefined;
+    message.value = (object.value !== undefined && object.value !== null)
+      ? ProductMediaVariant.fromPartial(object.value)
+      : undefined;
     return message;
   },
 };

@@ -200,8 +200,8 @@ func (x *ProductDetailsVariant) GetVariantData() map[string]*v1.Any {
 }
 
 type ProductMedia struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Safety        map[string]*v1.Any     `protobuf:"bytes,1,rep,name=safety,proto3" json:"safety,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Media         map[string]*ProductMediaVariant `protobuf:"bytes,1,rep,name=media,proto3" json:"media,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"` // <variant_id, media>
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -236,9 +236,9 @@ func (*ProductMedia) Descriptor() ([]byte, []int) {
 	return file_products_v1_product_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ProductMedia) GetSafety() map[string]*v1.Any {
+func (x *ProductMedia) GetMedia() map[string]*ProductMediaVariant {
 	if x != nil {
-		return x.Safety
+		return x.Media
 	}
 	return nil
 }
@@ -1130,12 +1130,13 @@ const file_products_v1_product_proto_rawDesc = "" +
 	"\fvariant_data\x18\x02 \x03(\v23.products.v1.ProductDetailsVariant.VariantDataEntryR\vvariantData\x1aN\n" +
 	"\x10VariantDataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12$\n" +
-	"\x05value\x18\x02 \x01(\v2\x0e.shared.v1.AnyR\x05value:\x028\x01\"\x98\x01\n" +
-	"\fProductMedia\x12=\n" +
-	"\x06safety\x18\x01 \x03(\v2%.products.v1.ProductMedia.SafetyEntryR\x06safety\x1aI\n" +
-	"\vSafetyEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12$\n" +
-	"\x05value\x18\x02 \x01(\v2\x0e.shared.v1.AnyR\x05value:\x028\x01\"\x85\x01\n" +
+	"\x05value\x18\x02 \x01(\v2\x0e.shared.v1.AnyR\x05value:\x028\x01\"\xa6\x01\n" +
+	"\fProductMedia\x12:\n" +
+	"\x05media\x18\x01 \x03(\v2$.products.v1.ProductMedia.MediaEntryR\x05media\x1aZ\n" +
+	"\n" +
+	"MediaEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x126\n" +
+	"\x05value\x18\x02 \x01(\v2 .products.v1.ProductMediaVariantR\x05value:\x028\x01\"\x85\x01\n" +
 	"\x13ProductMediaVariant\x126\n" +
 	"\x06images\x18\x01 \x03(\v2\x1e.products.v1.ProductMediaImageR\x06images\x126\n" +
 	"\x06videos\x18\x02 \x03(\v2\x1e.products.v1.ProductMediaVideoR\x06videos\"Q\n" +
@@ -1269,7 +1270,7 @@ var file_products_v1_product_proto_goTypes = []any{
 	nil,                              // 15: products.v1.ProductDetails.SharedEntry
 	nil,                              // 16: products.v1.ProductDetails.DetailsEntry
 	nil,                              // 17: products.v1.ProductDetailsVariant.VariantDataEntry
-	nil,                              // 18: products.v1.ProductMedia.SafetyEntry
+	nil,                              // 18: products.v1.ProductMedia.MediaEntry
 	nil,                              // 19: products.v1.ProductOffer.OfferEntry
 	nil,                              // 20: products.v1.ProductSafety.SafetyEntry
 	(*v1.Any)(nil),                   // 21: shared.v1.Any
@@ -1278,7 +1279,7 @@ var file_products_v1_product_proto_depIdxs = []int32{
 	15, // 0: products.v1.ProductDetails.shared:type_name -> products.v1.ProductDetails.SharedEntry
 	16, // 1: products.v1.ProductDetails.details:type_name -> products.v1.ProductDetails.DetailsEntry
 	17, // 2: products.v1.ProductDetailsVariant.variant_data:type_name -> products.v1.ProductDetailsVariant.VariantDataEntry
-	18, // 3: products.v1.ProductMedia.safety:type_name -> products.v1.ProductMedia.SafetyEntry
+	18, // 3: products.v1.ProductMedia.media:type_name -> products.v1.ProductMedia.MediaEntry
 	5,  // 4: products.v1.ProductMediaVariant.images:type_name -> products.v1.ProductMediaImage
 	6,  // 5: products.v1.ProductMediaVariant.videos:type_name -> products.v1.ProductMediaVideo
 	19, // 6: products.v1.ProductOffer.offer:type_name -> products.v1.ProductOffer.OfferEntry
@@ -1295,7 +1296,7 @@ var file_products_v1_product_proto_depIdxs = []int32{
 	21, // 17: products.v1.ProductDetails.SharedEntry.value:type_name -> shared.v1.Any
 	2,  // 18: products.v1.ProductDetails.DetailsEntry.value:type_name -> products.v1.ProductDetailsVariant
 	21, // 19: products.v1.ProductDetailsVariant.VariantDataEntry.value:type_name -> shared.v1.Any
-	21, // 20: products.v1.ProductMedia.SafetyEntry.value:type_name -> shared.v1.Any
+	4,  // 20: products.v1.ProductMedia.MediaEntry.value:type_name -> products.v1.ProductMediaVariant
 	8,  // 21: products.v1.ProductOffer.OfferEntry.value:type_name -> products.v1.ProductOfferVariant
 	21, // 22: products.v1.ProductSafety.SafetyEntry.value:type_name -> shared.v1.Any
 	23, // [23:23] is the sub-list for method output_type

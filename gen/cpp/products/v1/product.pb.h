@@ -104,10 +104,10 @@ class ProductMediaVideo;
 struct ProductMediaVideoDefaultTypeInternal;
 extern ProductMediaVideoDefaultTypeInternal _ProductMediaVideo_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull ProductMediaVideo_class_data_;
-class ProductMedia_SafetyEntry_DoNotUse;
-struct ProductMedia_SafetyEntry_DoNotUseDefaultTypeInternal;
-extern ProductMedia_SafetyEntry_DoNotUseDefaultTypeInternal _ProductMedia_SafetyEntry_DoNotUse_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull ProductMedia_SafetyEntry_DoNotUse_class_data_;
+class ProductMedia_MediaEntry_DoNotUse;
+struct ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal;
+extern ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal _ProductMedia_MediaEntry_DoNotUse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ProductMedia_MediaEntry_DoNotUse_class_data_;
 class ProductMetadata;
 struct ProductMetadataDefaultTypeInternal;
 extern ProductMetadataDefaultTypeInternal _ProductMetadata_default_instance_;
@@ -2250,45 +2250,6 @@ class ProductMediaVariant final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull ProductMediaVariant_class_data_;
 // -------------------------------------------------------------------
 
-class ProductMedia_SafetyEntry_DoNotUse final
-    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
- public:
-  using SuperType =
-      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
-  ProductMedia_SafetyEntry_DoNotUse();
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ProductMedia_SafetyEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
-  explicit ProductMedia_SafetyEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
-    return &_ProductMedia_SafetyEntry_DoNotUse_default_instance_;
-  }
-
-
-  static constexpr auto InternalGenerateClassData_();
-
- private:
-  friend class ::google::protobuf::MessageLite;
-  friend struct ::TableStruct_products_2fv1_2fproduct_2eproto;
-
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   1, 48,
-                                   2>
-      _table_;
-
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-};
-extern const ::google::protobuf::internal::ClassDataFull ProductMedia_SafetyEntry_DoNotUse_class_data_;
-// -------------------------------------------------------------------
-
 class ProductDetailsVariant_VariantDataEntry_DoNotUse final
     : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
                              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
@@ -2604,202 +2565,43 @@ class ProductOffer_OfferEntry_DoNotUse final
 extern const ::google::protobuf::internal::ClassDataFull ProductOffer_OfferEntry_DoNotUse_class_data_;
 // -------------------------------------------------------------------
 
-class ProductMedia final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:products.v1.ProductMedia) */ {
+class ProductMedia_MediaEntry_DoNotUse final
+    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
  public:
-  inline ProductMedia() : ProductMedia(nullptr) {}
-  ~ProductMedia() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ProductMedia* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductMedia));
-  }
-#endif
-
+  using SuperType =
+      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
+  ProductMedia_MediaEntry_DoNotUse();
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ProductMedia(::google::protobuf::internal::ConstantInitialized);
-
-  inline ProductMedia(const ProductMedia& from) : ProductMedia(nullptr, from) {}
-  inline ProductMedia(ProductMedia&& from) noexcept
-      : ProductMedia(nullptr, ::std::move(from)) {}
-  inline ProductMedia& operator=(const ProductMedia& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ProductMedia& operator=(ProductMedia&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
+  explicit PROTOBUF_CONSTEXPR ProductMedia_MediaEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
+  explicit ProductMedia_MediaEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
+    return &_ProductMedia_MediaEntry_DoNotUse_default_instance_;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
 
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ProductMedia& default_instance() {
-    return *reinterpret_cast<const ProductMedia*>(
-        &_ProductMedia_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 7;
-  friend void swap(ProductMedia& a, ProductMedia& b) { a.Swap(&b); }
-  inline void Swap(ProductMedia* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ProductMedia* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
+  static constexpr auto InternalGenerateClassData_();
 
-  // implements Message ----------------------------------------------
-
-  ProductMedia* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<ProductMedia>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const ProductMedia& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ProductMedia& from) { ProductMedia::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(ProductMedia* PROTOBUF_NONNULL other);
  private:
-  template <typename T>
-  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "products.v1.ProductMedia"; }
+  friend class ::google::protobuf::MessageLite;
+  friend struct ::TableStruct_products_2fv1_2fproduct_2eproto;
 
- protected:
-  explicit ProductMedia(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ProductMedia(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductMedia& from);
-  ProductMedia(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductMedia&& from) noexcept
-      : ProductMedia(arena) {
-    *this = ::std::move(from);
-  }
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   1, 47,
+                                   2>
+      _table_;
+
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
   static void* PROTOBUF_NONNULL PlacementNew_(
       const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
       ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_();
-
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kSafetyFieldNumber = 1,
-  };
-  // map<string, .shared.v1.Any> safety = 1 [json_name = "safety"];
-  int safety_size() const;
-  private:
-  int _internal_safety_size() const;
-
-  public:
-  void clear_safety() ;
-  const ::google::protobuf::Map<std::string, ::shared::v1::Any>& safety() const;
-  ::google::protobuf::Map<std::string, ::shared::v1::Any>* PROTOBUF_NONNULL mutable_safety();
-
-  private:
-  const ::google::protobuf::Map<std::string, ::shared::v1::Any>& _internal_safety() const;
-  ::google::protobuf::Map<std::string, ::shared::v1::Any>* PROTOBUF_NONNULL _internal_mutable_safety();
-
-  public:
-  // @@protoc_insertion_point(class_scope:products.v1.ProductMedia)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 1,
-                                   2, 39,
-                                   2>
-      _table_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ProductMedia& from_msg);
-    ::google::protobuf::internal::MapField<ProductMedia_SafetyEntry_DoNotUse, std::string, ::shared::v1::Any,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>
-        safety_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_products_2fv1_2fproduct_2eproto;
 };
-
-extern const ::google::protobuf::internal::ClassDataFull ProductMedia_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull ProductMedia_MediaEntry_DoNotUse_class_data_;
 // -------------------------------------------------------------------
 
 class ProductDetailsVariant final : public ::google::protobuf::Message
@@ -3214,6 +3016,204 @@ class ProductOffer final : public ::google::protobuf::Message
 };
 
 extern const ::google::protobuf::internal::ClassDataFull ProductOffer_class_data_;
+// -------------------------------------------------------------------
+
+class ProductMedia final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.ProductMedia) */ {
+ public:
+  inline ProductMedia() : ProductMedia(nullptr) {}
+  ~ProductMedia() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ProductMedia* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductMedia));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ProductMedia(::google::protobuf::internal::ConstantInitialized);
+
+  inline ProductMedia(const ProductMedia& from) : ProductMedia(nullptr, from) {}
+  inline ProductMedia(ProductMedia&& from) noexcept
+      : ProductMedia(nullptr, ::std::move(from)) {}
+  inline ProductMedia& operator=(const ProductMedia& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProductMedia& operator=(ProductMedia&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProductMedia& default_instance() {
+    return *reinterpret_cast<const ProductMedia*>(
+        &_ProductMedia_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 7;
+  friend void swap(ProductMedia& a, ProductMedia& b) { a.Swap(&b); }
+  inline void Swap(ProductMedia* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProductMedia* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ProductMedia* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ProductMedia>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ProductMedia& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ProductMedia& from) { ProductMedia::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ProductMedia* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.ProductMedia"; }
+
+ protected:
+  explicit ProductMedia(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ProductMedia(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductMedia& from);
+  ProductMedia(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductMedia&& from) noexcept
+      : ProductMedia(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kMediaFieldNumber = 1,
+  };
+  // map<string, .products.v1.ProductMediaVariant> media = 1 [json_name = "media"];
+  int media_size() const;
+  private:
+  int _internal_media_size() const;
+
+  public:
+  void clear_media() ;
+  const ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVariant>& media() const;
+  ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVariant>* PROTOBUF_NONNULL mutable_media();
+
+  private:
+  const ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVariant>& _internal_media() const;
+  ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVariant>* PROTOBUF_NONNULL _internal_mutable_media();
+
+  public:
+  // @@protoc_insertion_point(class_scope:products.v1.ProductMedia)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 1,
+                                   2, 38,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ProductMedia& from_msg);
+    ::google::protobuf::internal::MapField<ProductMedia_MediaEntry_DoNotUse, std::string, ::products::v1::ProductMediaVariant,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>
+        media_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fproduct_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ProductMedia_class_data_;
 // -------------------------------------------------------------------
 
 class ProductDetails_DetailsEntry_DoNotUse final
@@ -4482,29 +4482,33 @@ inline ::google::protobuf::Map<std::string, ::shared::v1::Any>* PROTOBUF_NONNULL
 
 // ProductMedia
 
-// map<string, .shared.v1.Any> safety = 1 [json_name = "safety"];
-inline int ProductMedia::_internal_safety_size() const {
-  return _internal_safety().size();
+// map<string, .products.v1.ProductMediaVariant> media = 1 [json_name = "media"];
+inline int ProductMedia::_internal_media_size() const {
+  return _internal_media().size();
 }
-inline int ProductMedia::safety_size() const {
-  return _internal_safety_size();
+inline int ProductMedia::media_size() const {
+  return _internal_media_size();
 }
-inline const ::google::protobuf::Map<std::string, ::shared::v1::Any>& ProductMedia::_internal_safety() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.safety_.GetMap();
-}
-inline const ::google::protobuf::Map<std::string, ::shared::v1::Any>& ProductMedia::safety() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_map:products.v1.ProductMedia.safety)
-  return _internal_safety();
-}
-inline ::google::protobuf::Map<std::string, ::shared::v1::Any>* PROTOBUF_NONNULL ProductMedia::_internal_mutable_safety() {
+inline void ProductMedia::clear_media() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.safety_.MutableMap();
+  _impl_.media_.Clear();
 }
-inline ::google::protobuf::Map<std::string, ::shared::v1::Any>* PROTOBUF_NONNULL ProductMedia::mutable_safety()
+inline const ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVariant>& ProductMedia::_internal_media() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.media_.GetMap();
+}
+inline const ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVariant>& ProductMedia::media() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_map:products.v1.ProductMedia.media)
+  return _internal_media();
+}
+inline ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVariant>* PROTOBUF_NONNULL ProductMedia::_internal_mutable_media() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.media_.MutableMap();
+}
+inline ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVariant>* PROTOBUF_NONNULL ProductMedia::mutable_media()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable_map:products.v1.ProductMedia.safety)
-  return _internal_mutable_safety();
+  // @@protoc_insertion_point(field_mutable_map:products.v1.ProductMedia.media)
+  return _internal_mutable_media();
 }
 
 // -------------------------------------------------------------------

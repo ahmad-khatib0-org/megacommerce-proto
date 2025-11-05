@@ -2916,37 +2916,57 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     * <pre>
+     * &lt;variant_id, media&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
      */
-    int getSafetyCount();
+    int getMediaCount();
     /**
-     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     * <pre>
+     * &lt;variant_id, media&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
      */
-    boolean containsSafety(
+    boolean containsMedia(
         java.lang.String key);
     /**
-     * Use {@link #getSafetyMap()} instead.
+     * Use {@link #getMediaMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
-    getSafety();
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant>
+    getMedia();
     /**
-     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     * <pre>
+     * &lt;variant_id, media&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
      */
-    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
-    getSafetyMap();
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant>
+    getMediaMap();
     /**
-     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     * <pre>
+     * &lt;variant_id, media&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
      */
     /* nullable */
-org.megacommerce.shared.v1.TypesProto.Any getSafetyOrDefault(
+org.megacommerce.products.v1.ProductProto.ProductMediaVariant getMediaOrDefault(
         java.lang.String key,
         /* nullable */
-org.megacommerce.shared.v1.TypesProto.Any defaultValue);
+org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue);
     /**
-     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     * <pre>
+     * &lt;variant_id, media&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
      */
-    org.megacommerce.shared.v1.TypesProto.Any getSafetyOrThrow(
+    org.megacommerce.products.v1.ProductProto.ProductMediaVariant getMediaOrThrow(
         java.lang.String key);
   }
   /**
@@ -2984,7 +3004,7 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue);
         int number) {
       switch (number) {
         case 1:
-          return internalGetSafety();
+          return internalGetMedia();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -2998,79 +3018,95 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue);
               org.megacommerce.products.v1.ProductProto.ProductMedia.class, org.megacommerce.products.v1.ProductProto.ProductMedia.Builder.class);
     }
 
-    public static final int SAFETY_FIELD_NUMBER = 1;
-    private static final class SafetyDefaultEntryHolder {
+    public static final int MEDIA_FIELD_NUMBER = 1;
+    private static final class MediaDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry =
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>newDefaultInstance(
-                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMedia_SafetyEntry_descriptor, 
+              .<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMedia_MediaEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance());
+                  org.megacommerce.products.v1.ProductProto.ProductMediaVariant.getDefaultInstance());
     }
     @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
-        java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> safety_;
-    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
-    internalGetSafety() {
-      if (safety_ == null) {
+        java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> media_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant>
+    internalGetMedia() {
+      if (media_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            SafetyDefaultEntryHolder.defaultEntry);
+            MediaDefaultEntryHolder.defaultEntry);
       }
-      return safety_;
+      return media_;
     }
-    public int getSafetyCount() {
-      return internalGetSafety().getMap().size();
+    public int getMediaCount() {
+      return internalGetMedia().getMap().size();
     }
     /**
-     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     * <pre>
+     * &lt;variant_id, media&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
      */
     @java.lang.Override
-    public boolean containsSafety(
+    public boolean containsMedia(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetSafety().getMap().containsKey(key);
+      return internalGetMedia().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getSafetyMap()} instead.
+     * Use {@link #getMediaMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafety() {
-      return getSafetyMap();
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> getMedia() {
+      return getMediaMap();
     }
     /**
-     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     * <pre>
+     * &lt;variant_id, media&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafetyMap() {
-      return internalGetSafety().getMap();
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> getMediaMap() {
+      return internalGetMedia().getMap();
     }
     /**
-     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     * <pre>
+     * &lt;variant_id, media&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
      */
     @java.lang.Override
     public /* nullable */
-org.megacommerce.shared.v1.TypesProto.Any getSafetyOrDefault(
+org.megacommerce.products.v1.ProductProto.ProductMediaVariant getMediaOrDefault(
         java.lang.String key,
         /* nullable */
-org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
-          internalGetSafety().getMap();
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> map =
+          internalGetMedia().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+     * <pre>
+     * &lt;variant_id, media&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.Any getSafetyOrThrow(
+    public org.megacommerce.products.v1.ProductProto.ProductMediaVariant getMediaOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
-          internalGetSafety().getMap();
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> map =
+          internalGetMedia().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -3094,8 +3130,8 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       com.google.protobuf.GeneratedMessage
         .serializeStringMapTo(
           output,
-          internalGetSafety(),
-          SafetyDefaultEntryHolder.defaultEntry,
+          internalGetMedia(),
+          MediaDefaultEntryHolder.defaultEntry,
           1);
       getUnknownFields().writeTo(output);
     }
@@ -3106,15 +3142,15 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> entry
-           : internalGetSafety().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
-        safety__ = SafetyDefaultEntryHolder.defaultEntry.newBuilderForType()
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> entry
+           : internalGetMedia().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant>
+        media__ = MediaDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, safety__);
+            .computeMessageSize(1, media__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3131,8 +3167,8 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       }
       org.megacommerce.products.v1.ProductProto.ProductMedia other = (org.megacommerce.products.v1.ProductProto.ProductMedia) obj;
 
-      if (!internalGetSafety().equals(
-          other.internalGetSafety())) return false;
+      if (!internalGetMedia().equals(
+          other.internalGetMedia())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3144,9 +3180,9 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetSafety().getMap().isEmpty()) {
-        hash = (37 * hash) + SAFETY_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetSafety().hashCode();
+      if (!internalGetMedia().getMap().isEmpty()) {
+        hash = (37 * hash) + MEDIA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMedia().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -3262,7 +3298,7 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
           int number) {
         switch (number) {
           case 1:
-            return internalGetSafety();
+            return internalGetMedia();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -3273,7 +3309,7 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
           int number) {
         switch (number) {
           case 1:
-            return internalGetMutableSafety();
+            return internalGetMutableMedia();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -3301,7 +3337,7 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        internalGetMutableSafety().clear();
+        internalGetMutableMedia().clear();
         return this;
       }
 
@@ -3336,7 +3372,7 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductMedia result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.safety_ = internalGetSafety().build(SafetyDefaultEntryHolder.defaultEntry);
+          result.media_ = internalGetMedia().build(MediaDefaultEntryHolder.defaultEntry);
         }
       }
 
@@ -3352,8 +3388,8 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
 
       public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductMedia other) {
         if (other == org.megacommerce.products.v1.ProductProto.ProductMedia.getDefaultInstance()) return this;
-        internalGetMutableSafety().mergeFrom(
-            other.internalGetSafety());
+        internalGetMutableMedia().mergeFrom(
+            other.internalGetMedia());
         bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3382,11 +3418,11 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
                 done = true;
                 break;
               case 10: {
-                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
-                safety__ = input.readMessage(
-                    SafetyDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableSafety().ensureBuilderMap().put(
-                    safety__.getKey(), safety__.getValue());
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant>
+                media__ = input.readMessage(
+                    MediaDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableMedia().ensureBuilderMap().put(
+                    media__.getKey(), media__.getValue());
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
@@ -3407,103 +3443,123 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       }
       private int bitField0_;
 
-      private static final class SafetyConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any> {
+      private static final class MediaConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> {
         @java.lang.Override
-        public org.megacommerce.shared.v1.TypesProto.Any build(org.megacommerce.shared.v1.TypesProto.AnyOrBuilder val) {
-          if (val instanceof org.megacommerce.shared.v1.TypesProto.Any) { return (org.megacommerce.shared.v1.TypesProto.Any) val; }
-          return ((org.megacommerce.shared.v1.TypesProto.Any.Builder) val).build();
+        public org.megacommerce.products.v1.ProductProto.ProductMediaVariant build(org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder val) {
+          if (val instanceof org.megacommerce.products.v1.ProductProto.ProductMediaVariant) { return (org.megacommerce.products.v1.ProductProto.ProductMediaVariant) val; }
+          return ((org.megacommerce.products.v1.ProductProto.ProductMediaVariant.Builder) val).build();
         }
 
         @java.lang.Override
-        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry() {
-          return SafetyDefaultEntryHolder.defaultEntry;
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> defaultEntry() {
+          return MediaDefaultEntryHolder.defaultEntry;
         }
       };
-      private static final SafetyConverter safetyConverter = new SafetyConverter();
+      private static final MediaConverter mediaConverter = new MediaConverter();
 
       private com.google.protobuf.MapFieldBuilder<
-          java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder> safety_;
-      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
-          internalGetSafety() {
-        if (safety_ == null) {
-          return new com.google.protobuf.MapFieldBuilder<>(safetyConverter);
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaVariant, org.megacommerce.products.v1.ProductProto.ProductMediaVariant.Builder> media_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaVariant, org.megacommerce.products.v1.ProductProto.ProductMediaVariant.Builder>
+          internalGetMedia() {
+        if (media_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(mediaConverter);
         }
-        return safety_;
+        return media_;
       }
-      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
-          internalGetMutableSafety() {
-        if (safety_ == null) {
-          safety_ = new com.google.protobuf.MapFieldBuilder<>(safetyConverter);
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaVariant, org.megacommerce.products.v1.ProductProto.ProductMediaVariant.Builder>
+          internalGetMutableMedia() {
+        if (media_ == null) {
+          media_ = new com.google.protobuf.MapFieldBuilder<>(mediaConverter);
         }
         bitField0_ |= 0x00000001;
         onChanged();
-        return safety_;
+        return media_;
       }
-      public int getSafetyCount() {
-        return internalGetSafety().ensureBuilderMap().size();
+      public int getMediaCount() {
+        return internalGetMedia().ensureBuilderMap().size();
       }
       /**
-       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       * <pre>
+       * &lt;variant_id, media&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
        */
       @java.lang.Override
-      public boolean containsSafety(
+      public boolean containsMedia(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetSafety().ensureBuilderMap().containsKey(key);
+        return internalGetMedia().ensureBuilderMap().containsKey(key);
       }
       /**
-       * Use {@link #getSafetyMap()} instead.
+       * Use {@link #getMediaMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafety() {
-        return getSafetyMap();
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> getMedia() {
+        return getMediaMap();
       }
       /**
-       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       * <pre>
+       * &lt;variant_id, media&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
        */
       @java.lang.Override
-      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSafetyMap() {
-        return internalGetSafety().getImmutableMap();
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> getMediaMap() {
+        return internalGetMedia().getImmutableMap();
       }
       /**
-       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       * <pre>
+       * &lt;variant_id, media&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
        */
       @java.lang.Override
       public /* nullable */
-org.megacommerce.shared.v1.TypesProto.Any getSafetyOrDefault(
+org.megacommerce.products.v1.ProductProto.ProductMediaVariant getMediaOrDefault(
           java.lang.String key,
           /* nullable */
-org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableSafety().ensureBuilderMap();
-        return map.containsKey(key) ? safetyConverter.build(map.get(key)) : defaultValue;
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder> map = internalGetMutableMedia().ensureBuilderMap();
+        return map.containsKey(key) ? mediaConverter.build(map.get(key)) : defaultValue;
       }
       /**
-       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       * <pre>
+       * &lt;variant_id, media&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.shared.v1.TypesProto.Any getSafetyOrThrow(
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVariant getMediaOrThrow(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableSafety().ensureBuilderMap();
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder> map = internalGetMutableMedia().ensureBuilderMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
-        return safetyConverter.build(map.get(key));
+        return mediaConverter.build(map.get(key));
       }
-      public Builder clearSafety() {
+      public Builder clearMedia() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        internalGetMutableSafety().clear();
+        internalGetMutableMedia().clear();
         return this;
       }
       /**
-       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       * <pre>
+       * &lt;variant_id, media&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
        */
-      public Builder removeSafety(
+      public Builder removeMedia(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableSafety().ensureBuilderMap()
+        internalGetMutableMedia().ensureBuilderMap()
             .remove(key);
         return this;
       }
@@ -3511,55 +3567,67 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
-          getMutableSafety() {
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant>
+          getMutableMedia() {
         bitField0_ |= 0x00000001;
-        return internalGetMutableSafety().ensureMessageMap();
+        return internalGetMutableMedia().ensureMessageMap();
       }
       /**
-       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       * <pre>
+       * &lt;variant_id, media&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
        */
-      public Builder putSafety(
+      public Builder putMedia(
           java.lang.String key,
-          org.megacommerce.shared.v1.TypesProto.Any value) {
+          org.megacommerce.products.v1.ProductProto.ProductMediaVariant value) {
         if (key == null) { throw new NullPointerException("map key"); }
         if (value == null) { throw new NullPointerException("map value"); }
-        internalGetMutableSafety().ensureBuilderMap()
+        internalGetMutableMedia().ensureBuilderMap()
             .put(key, value);
         bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       * <pre>
+       * &lt;variant_id, media&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
        */
-      public Builder putAllSafety(
-          java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> values) {
-        for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> e : values.entrySet()) {
+      public Builder putAllMedia(
+          java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariant> e : values.entrySet()) {
           if (e.getKey() == null || e.getValue() == null) {
             throw new NullPointerException();
           }
         }
-        internalGetMutableSafety().ensureBuilderMap()
+        internalGetMutableMedia().ensureBuilderMap()
             .putAll(values);
         bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>map&lt;string, .shared.v1.Any&gt; safety = 1 [json_name = "safety"];</code>
+       * <pre>
+       * &lt;variant_id, media&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVariant&gt; media = 1 [json_name = "media"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.Any.Builder putSafetyBuilderIfAbsent(
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVariant.Builder putMediaBuilderIfAbsent(
           java.lang.String key) {
-        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> builderMap = internalGetMutableSafety().ensureBuilderMap();
-        org.megacommerce.shared.v1.TypesProto.AnyOrBuilder entry = builderMap.get(key);
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder> builderMap = internalGetMutableMedia().ensureBuilderMap();
+        org.megacommerce.products.v1.ProductProto.ProductMediaVariantOrBuilder entry = builderMap.get(key);
         if (entry == null) {
-          entry = org.megacommerce.shared.v1.TypesProto.Any.newBuilder();
+          entry = org.megacommerce.products.v1.ProductProto.ProductMediaVariant.newBuilder();
           builderMap.put(key, entry);
         }
-        if (entry instanceof org.megacommerce.shared.v1.TypesProto.Any) {
-          entry = ((org.megacommerce.shared.v1.TypesProto.Any) entry).toBuilder();
+        if (entry instanceof org.megacommerce.products.v1.ProductProto.ProductMediaVariant) {
+          entry = ((org.megacommerce.products.v1.ProductProto.ProductMediaVariant) entry).toBuilder();
           builderMap.put(key, entry);
         }
-        return (org.megacommerce.shared.v1.TypesProto.Any.Builder) entry;
+        return (org.megacommerce.products.v1.ProductProto.ProductMediaVariant.Builder) entry;
       }
 
       // @@protoc_insertion_point(builder_scope:products.v1.ProductMedia)
@@ -17270,10 +17338,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_products_v1_ProductMedia_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_products_v1_ProductMedia_SafetyEntry_descriptor;
+    internal_static_products_v1_ProductMedia_MediaEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_products_v1_ProductMedia_SafetyEntry_fieldAccessorTable;
+      internal_static_products_v1_ProductMedia_MediaEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_products_v1_ProductMediaVariant_descriptor;
   private static final 
@@ -17366,83 +17434,83 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       "data\030\002 \003(\01323.products.v1.ProductDetailsV" +
       "ariant.VariantDataEntryR\013variantData\032N\n\020" +
       "VariantDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005va" +
-      "lue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\230\001\n" +
-      "\014ProductMedia\022=\n\006safety\030\001 \003(\0132%.products" +
-      ".v1.ProductMedia.SafetyEntryR\006safety\032I\n\013" +
-      "SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value\030\002" +
-      " \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\205\001\n\023Prod" +
-      "uctMediaVariant\0226\n\006images\030\001 \003(\0132\036.produc" +
-      "ts.v1.ProductMediaImageR\006images\0226\n\006video" +
-      "s\030\002 \003(\0132\036.products.v1.ProductMediaVideoR" +
-      "\006videos\"Q\n\021ProductMediaImage\022\026\n\006format\030\001" +
-      " \001(\tR\006format\022\020\n\003url\030\002 \001(\tR\003url\022\022\n\004size\030\003" +
-      " \001(\004R\004size\"m\n\021ProductMediaVideo\022\026\n\006forma" +
-      "t\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001(\tR\003url\022\022\n\004siz" +
-      "e\030\003 \001(\004R\004size\022\032\n\010duration\030\004 \001(\004R\010duratio" +
-      "n\"\246\001\n\014ProductOffer\022:\n\005offer\030\002 \003(\0132$.prod" +
-      "ucts.v1.ProductOffer.OfferEntryR\005offer\032Z" +
-      "\n\nOfferEntry\022\020\n\003key\030\001 \001(\tR\003key\0226\n\005value\030" +
-      "\002 \001(\0132 .products.v1.ProductOfferVariantR" +
-      "\005value:\0028\001\"\321\004\n\023ProductOfferVariant\022\020\n\003sk" +
-      "u\030\002 \001(\tR\003sku\022\032\n\010quantity\030\003 \001(\004R\010quantity" +
-      "\022\024\n\005price\030\004 \001(\tR\005price\022-\n\022offering_condi" +
-      "tion\030\005 \001(\tR\021offeringCondition\022*\n\016conditi" +
-      "on_note\030\006 \001(\tH\000R\rconditionNote\210\001\001\022\"\n\nlis" +
-      "t_price\030\007 \001(\tH\001R\tlistPrice\210\001\001\022$\n\016has_sal" +
-      "e_price\030\010 \001(\010R\014hasSalePrice\022\"\n\nsale_pric" +
-      "e\030\t \001(\tH\002R\tsalePrice\210\001\001\022-\n\020sale_price_st" +
-      "art\030\n \001(\tH\003R\016salePriceStart\210\001\001\022)\n\016sale_p" +
-      "rice_end\030\013 \001(\tH\004R\014salePriceEnd\210\001\001\022,\n\022has" +
-      "_minimum_orders\030\014 \001(\010R\020hasMinimumOrders\022" +
-      "L\n\016minimum_orders\030\r \003(\0132%.products.v1.Pr" +
-      "oductOfferMinimumOrderR\rminimumOrdersB\021\n" +
-      "\017_condition_noteB\r\n\013_list_priceB\r\n\013_sale" +
-      "_priceB\023\n\021_sale_price_startB\021\n\017_sale_pri" +
-      "ce_end\"L\n\030ProductOfferMinimumOrder\022\024\n\005pr" +
-      "ice\030\001 \001(\tR\005price\022\032\n\010quantity\030\002 \001(\004R\010quan" +
-      "tity\"\232\001\n\rProductSafety\022>\n\006safety\030\001 \003(\0132&" +
-      ".products.v1.ProductSafety.SafetyEntryR\006" +
-      "safety\032I\n\013SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
-      "$\n\005value\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028" +
-      "\001\"J\n\nProductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004" +
-      "name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\":\n" +
-      "\013ProductTags\022+\n\004tags\030\001 \003(\0132\027.products.v1" +
-      ".ProductTagR\004tags\"\021\n\017ProductMetadata\"\336\t\n" +
-      "\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(" +
-      "\tR\006userId\022\024\n\005title\030\003 \001(\tR\005title\022\032\n\010categ" +
-      "ory\030\004 \001(\tR\010category\022 \n\013subcategory\030\005 \001(\t" +
-      "R\013subcategory\022%\n\016has_variations\030\006 \001(\010R\rh" +
-      "asVariations\022\"\n\nbrand_name\030\007 \001(\tH\000R\tbran" +
-      "dName\210\001\001\022$\n\016has_brand_name\030\010 \001(\010R\014hasBra" +
-      "ndName\022\"\n\nproduct_id\030\t \001(\tH\001R\tproductId\210" +
-      "\001\001\022$\n\016has_product_id\030\n \001(\010R\014hasProductId" +
-      "\022+\n\017product_id_type\030\013 \001(\tH\002R\rproductIdTy" +
-      "pe\210\001\001\022 \n\013description\030\014 \001(\tR\013description\022" +
-      "D\n\rbullet_points\030\r \003(\0132\037.products.v1.Pro" +
-      "ductBulletPointR\014bulletPoints\022#\n\rcurrenc" +
-      "y_code\030\016 \001(\tR\014currencyCode\022)\n\020fulfillmen" +
-      "t_type\030\017 \001(\tR\017fulfillmentType\022\'\n\017process" +
-      "ing_time\030\020 \001(\004R\016processingTime\0225\n\007detail" +
-      "s\030\021 \001(\0132\033.products.v1.ProductDetailsR\007de" +
-      "tails\022/\n\005media\030\022 \001(\0132\031.products.v1.Produ" +
-      "ctMediaR\005media\022/\n\005offer\030\023 \001(\0132\031.products" +
-      ".v1.ProductOfferR\005offer\0222\n\006safety\030\024 \001(\0132" +
-      "\032.products.v1.ProductSafetyR\006safety\022+\n\004t" +
-      "ags\030\025 \003(\0132\027.products.v1.ProductTagR\004tags" +
-      "\022=\n\010metadata\030\026 \001(\0132\034.products.v1.Product" +
-      "MetadataH\003R\010metadata\210\001\001\022\035\n\nar_enabled\030\027 " +
-      "\001(\010R\tarEnabled\022\022\n\004slug\030\030 \001(\tR\004slug\022\026\n\006st" +
-      "atus\030\031 \001(\tR\006status\022\030\n\007version\030\032 \001(\rR\007ver" +
-      "sion\022%\n\016schema_version\030\033 \001(\rR\rschemaVers" +
-      "ion\022\035\n\ncreated_at\030\034 \001(\004R\tcreatedAt\022&\n\014pu" +
-      "blished_at\030\035 \001(\004H\004R\013publishedAt\210\001\001\022\"\n\nup" +
-      "dated_at\030\036 \001(\004H\005R\tupdatedAt\210\001\001B\r\n\013_brand" +
-      "_nameB\r\n\013_product_idB\022\n\020_product_id_type" +
-      "B\013\n\t_metadataB\017\n\r_published_atB\r\n\013_updat" +
-      "ed_atBv\n\034org.megacommerce.products.v1B\014P" +
-      "roductProtoZEgithub.com/ahmad-khatib0-or" +
-      "g/megacommerce-proto/gen/go/products/v1;" +
-      "v1\370\001\001b\006proto3"
+      "lue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\246\001\n" +
+      "\014ProductMedia\022:\n\005media\030\001 \003(\0132$.products." +
+      "v1.ProductMedia.MediaEntryR\005media\032Z\n\nMed" +
+      "iaEntry\022\020\n\003key\030\001 \001(\tR\003key\0226\n\005value\030\002 \001(\013" +
+      "2 .products.v1.ProductMediaVariantR\005valu" +
+      "e:\0028\001\"\205\001\n\023ProductMediaVariant\0226\n\006images\030" +
+      "\001 \003(\0132\036.products.v1.ProductMediaImageR\006i" +
+      "mages\0226\n\006videos\030\002 \003(\0132\036.products.v1.Prod" +
+      "uctMediaVideoR\006videos\"Q\n\021ProductMediaIma" +
+      "ge\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001(\tR" +
+      "\003url\022\022\n\004size\030\003 \001(\004R\004size\"m\n\021ProductMedia" +
+      "Video\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001" +
+      "(\tR\003url\022\022\n\004size\030\003 \001(\004R\004size\022\032\n\010duration\030" +
+      "\004 \001(\004R\010duration\"\246\001\n\014ProductOffer\022:\n\005offe" +
+      "r\030\002 \003(\0132$.products.v1.ProductOffer.Offer" +
+      "EntryR\005offer\032Z\n\nOfferEntry\022\020\n\003key\030\001 \001(\tR" +
+      "\003key\0226\n\005value\030\002 \001(\0132 .products.v1.Produc" +
+      "tOfferVariantR\005value:\0028\001\"\321\004\n\023ProductOffe" +
+      "rVariant\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010quantity\030\003" +
+      " \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR\005price\022-\n\022" +
+      "offering_condition\030\005 \001(\tR\021offeringCondit" +
+      "ion\022*\n\016condition_note\030\006 \001(\tH\000R\rcondition" +
+      "Note\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R\tlistPrice" +
+      "\210\001\001\022$\n\016has_sale_price\030\010 \001(\010R\014hasSalePric" +
+      "e\022\"\n\nsale_price\030\t \001(\tH\002R\tsalePrice\210\001\001\022-\n" +
+      "\020sale_price_start\030\n \001(\tH\003R\016salePriceStar" +
+      "t\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH\004R\014salePric" +
+      "eEnd\210\001\001\022,\n\022has_minimum_orders\030\014 \001(\010R\020has" +
+      "MinimumOrders\022L\n\016minimum_orders\030\r \003(\0132%." +
+      "products.v1.ProductOfferMinimumOrderR\rmi" +
+      "nimumOrdersB\021\n\017_condition_noteB\r\n\013_list_" +
+      "priceB\r\n\013_sale_priceB\023\n\021_sale_price_star" +
+      "tB\021\n\017_sale_price_end\"L\n\030ProductOfferMini" +
+      "mumOrder\022\024\n\005price\030\001 \001(\tR\005price\022\032\n\010quanti" +
+      "ty\030\002 \001(\004R\010quantity\"\232\001\n\rProductSafety\022>\n\006" +
+      "safety\030\001 \003(\0132&.products.v1.ProductSafety" +
+      ".SafetyEntryR\006safety\032I\n\013SafetyEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\022$\n\005value\030\002 \001(\0132\016.shared.v1" +
+      ".AnyR\005value:\0028\001\"J\n\nProductTag\022\023\n\002id\030\001 \001(" +
+      "\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_" +
+      "idB\007\n\005_name\":\n\013ProductTags\022+\n\004tags\030\001 \003(\013" +
+      "2\027.products.v1.ProductTagR\004tags\"\021\n\017Produ" +
+      "ctMetadata\"\336\t\n\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\027" +
+      "\n\007user_id\030\002 \001(\tR\006userId\022\024\n\005title\030\003 \001(\tR\005" +
+      "title\022\032\n\010category\030\004 \001(\tR\010category\022 \n\013sub" +
+      "category\030\005 \001(\tR\013subcategory\022%\n\016has_varia" +
+      "tions\030\006 \001(\010R\rhasVariations\022\"\n\nbrand_name" +
+      "\030\007 \001(\tH\000R\tbrandName\210\001\001\022$\n\016has_brand_name" +
+      "\030\010 \001(\010R\014hasBrandName\022\"\n\nproduct_id\030\t \001(\t" +
+      "H\001R\tproductId\210\001\001\022$\n\016has_product_id\030\n \001(\010" +
+      "R\014hasProductId\022+\n\017product_id_type\030\013 \001(\tH" +
+      "\002R\rproductIdType\210\001\001\022 \n\013description\030\014 \001(\t" +
+      "R\013description\022D\n\rbullet_points\030\r \003(\0132\037.p" +
+      "roducts.v1.ProductBulletPointR\014bulletPoi" +
+      "nts\022#\n\rcurrency_code\030\016 \001(\tR\014currencyCode" +
+      "\022)\n\020fulfillment_type\030\017 \001(\tR\017fulfillmentT" +
+      "ype\022\'\n\017processing_time\030\020 \001(\004R\016processing" +
+      "Time\0225\n\007details\030\021 \001(\0132\033.products.v1.Prod" +
+      "uctDetailsR\007details\022/\n\005media\030\022 \001(\0132\031.pro" +
+      "ducts.v1.ProductMediaR\005media\022/\n\005offer\030\023 " +
+      "\001(\0132\031.products.v1.ProductOfferR\005offer\0222\n" +
+      "\006safety\030\024 \001(\0132\032.products.v1.ProductSafet" +
+      "yR\006safety\022+\n\004tags\030\025 \003(\0132\027.products.v1.Pr" +
+      "oductTagR\004tags\022=\n\010metadata\030\026 \001(\0132\034.produ" +
+      "cts.v1.ProductMetadataH\003R\010metadata\210\001\001\022\035\n" +
+      "\nar_enabled\030\027 \001(\010R\tarEnabled\022\022\n\004slug\030\030 \001" +
+      "(\tR\004slug\022\026\n\006status\030\031 \001(\tR\006status\022\030\n\007vers" +
+      "ion\030\032 \001(\rR\007version\022%\n\016schema_version\030\033 \001" +
+      "(\rR\rschemaVersion\022\035\n\ncreated_at\030\034 \001(\004R\tc" +
+      "reatedAt\022&\n\014published_at\030\035 \001(\004H\004R\013publis" +
+      "hedAt\210\001\001\022\"\n\nupdated_at\030\036 \001(\004H\005R\tupdatedA" +
+      "t\210\001\001B\r\n\013_brand_nameB\r\n\013_product_idB\022\n\020_p" +
+      "roduct_id_typeB\013\n\t_metadataB\017\n\r_publishe" +
+      "d_atB\r\n\013_updated_atBv\n\034org.megacommerce." +
+      "products.v1B\014ProductProtoZEgithub.com/ah" +
+      "mad-khatib0-org/megacommerce-proto/gen/g" +
+      "o/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17490,12 +17558,12 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     internal_static_products_v1_ProductMedia_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductMedia_descriptor,
-        new java.lang.String[] { "Safety", });
-    internal_static_products_v1_ProductMedia_SafetyEntry_descriptor =
+        new java.lang.String[] { "Media", });
+    internal_static_products_v1_ProductMedia_MediaEntry_descriptor =
       internal_static_products_v1_ProductMedia_descriptor.getNestedTypes().get(0);
-    internal_static_products_v1_ProductMedia_SafetyEntry_fieldAccessorTable = new
+    internal_static_products_v1_ProductMedia_MediaEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_products_v1_ProductMedia_SafetyEntry_descriptor,
+        internal_static_products_v1_ProductMedia_MediaEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_products_v1_ProductMediaVariant_descriptor =
       getDescriptor().getMessageTypes().get(4);

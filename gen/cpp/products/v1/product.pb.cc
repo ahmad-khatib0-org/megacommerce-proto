@@ -317,24 +317,6 @@ struct ProductMediaVariantDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMediaVariantDefaultTypeInternal _ProductMediaVariant_default_instance_;
 template <typename>
-PROTOBUF_CONSTEXPR ProductMedia_SafetyEntry_DoNotUse::ProductMedia_SafetyEntry_DoNotUse(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ProductMedia_SafetyEntry_DoNotUse::MapEntry(ProductMedia_SafetyEntry_DoNotUse_class_data_.base()){}
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ProductMedia_SafetyEntry_DoNotUse::MapEntry() {
-}
-#endif  // PROTOBUF_CUSTOM_VTABLE
-struct ProductMedia_SafetyEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductMedia_SafetyEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductMedia_SafetyEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    ProductMedia_SafetyEntry_DoNotUse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMedia_SafetyEntry_DoNotUseDefaultTypeInternal _ProductMedia_SafetyEntry_DoNotUse_default_instance_;
-template <typename>
 PROTOBUF_CONSTEXPR ProductDetailsVariant_VariantDataEntry_DoNotUse::ProductDetailsVariant_VariantDataEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ProductDetailsVariant_VariantDataEntry_DoNotUse::MapEntry(ProductDetailsVariant_VariantDataEntry_DoNotUse_class_data_.base()){}
@@ -413,31 +395,24 @@ struct ProductOffer_OfferEntry_DoNotUseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductOffer_OfferEntry_DoNotUseDefaultTypeInternal _ProductOffer_OfferEntry_DoNotUse_default_instance_;
-
-inline constexpr ProductMedia::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : safety_{},
-        _cached_size_{0} {}
-
 template <typename>
-PROTOBUF_CONSTEXPR ProductMedia::ProductMedia(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR ProductMedia_MediaEntry_DoNotUse::ProductMedia_MediaEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ProductMedia_class_data_.base()),
+    : ProductMedia_MediaEntry_DoNotUse::MapEntry(ProductMedia_MediaEntry_DoNotUse_class_data_.base()){}
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
+    : ProductMedia_MediaEntry_DoNotUse::MapEntry() {
 }
-struct ProductMediaDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductMediaDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductMediaDefaultTypeInternal() {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal() {}
   union {
-    ProductMedia _instance;
+    ProductMedia_MediaEntry_DoNotUse _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMediaDefaultTypeInternal _ProductMedia_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal _ProductMedia_MediaEntry_DoNotUse_default_instance_;
 
 inline constexpr ProductDetailsVariant::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -491,6 +466,31 @@ struct ProductOfferDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductOfferDefaultTypeInternal _ProductOffer_default_instance_;
+
+inline constexpr ProductMedia::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : media_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductMedia::ProductMedia(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductMedia_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductMediaDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductMediaDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductMediaDefaultTypeInternal() {}
+  union {
+    ProductMedia _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMediaDefaultTypeInternal _ProductMedia_default_instance_;
 template <typename>
 PROTOBUF_CONSTEXPR ProductDetails_DetailsEntry_DoNotUse::ProductDetails_DetailsEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -667,14 +667,14 @@ const ::uint32_t
         0,
         ~0u,
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMedia_SafetyEntry_DoNotUse, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMedia_MediaEntry_DoNotUse, _impl_._has_bits_),
         5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMedia_SafetyEntry_DoNotUse, _impl_.key_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMedia_SafetyEntry_DoNotUse, _impl_.value_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMedia_MediaEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMedia_MediaEntry_DoNotUse, _impl_.value_),
         0,
         1,
         0x000, // bitmap
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMedia, _impl_.safety_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMedia, _impl_.media_),
         0x000, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant, _impl_.images_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant, _impl_.videos_),
@@ -833,7 +833,7 @@ static const ::_pbi::MigrationSchema
         {25, sizeof(::products::v1::ProductDetails)},
         {28, sizeof(::products::v1::ProductDetailsVariant_VariantDataEntry_DoNotUse)},
         {35, sizeof(::products::v1::ProductDetailsVariant)},
-        {42, sizeof(::products::v1::ProductMedia_SafetyEntry_DoNotUse)},
+        {42, sizeof(::products::v1::ProductMedia_MediaEntry_DoNotUse)},
         {49, sizeof(::products::v1::ProductMedia)},
         {51, sizeof(::products::v1::ProductMediaVariant)},
         {54, sizeof(::products::v1::ProductMediaImage)},
@@ -856,7 +856,7 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductDetails_default_instance_._instance,
     &::products::v1::_ProductDetailsVariant_VariantDataEntry_DoNotUse_default_instance_._instance,
     &::products::v1::_ProductDetailsVariant_default_instance_._instance,
-    &::products::v1::_ProductMedia_SafetyEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_ProductMedia_MediaEntry_DoNotUse_default_instance_._instance,
     &::products::v1::_ProductMedia_default_instance_._instance,
     &::products::v1::_ProductMediaVariant_default_instance_._instance,
     &::products::v1::_ProductMediaImage_default_instance_._instance,
@@ -892,83 +892,83 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_2eproto[] ABSL_ATTR
     "data\030\002 \003(\01323.products.v1.ProductDetailsV"
     "ariant.VariantDataEntryR\013variantData\032N\n\020"
     "VariantDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005va"
-    "lue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\230\001\n"
-    "\014ProductMedia\022=\n\006safety\030\001 \003(\0132%.products"
-    ".v1.ProductMedia.SafetyEntryR\006safety\032I\n\013"
-    "SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value\030\002"
-    " \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\205\001\n\023Prod"
-    "uctMediaVariant\0226\n\006images\030\001 \003(\0132\036.produc"
-    "ts.v1.ProductMediaImageR\006images\0226\n\006video"
-    "s\030\002 \003(\0132\036.products.v1.ProductMediaVideoR"
-    "\006videos\"Q\n\021ProductMediaImage\022\026\n\006format\030\001"
-    " \001(\tR\006format\022\020\n\003url\030\002 \001(\tR\003url\022\022\n\004size\030\003"
-    " \001(\004R\004size\"m\n\021ProductMediaVideo\022\026\n\006forma"
-    "t\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001(\tR\003url\022\022\n\004siz"
-    "e\030\003 \001(\004R\004size\022\032\n\010duration\030\004 \001(\004R\010duratio"
-    "n\"\246\001\n\014ProductOffer\022:\n\005offer\030\002 \003(\0132$.prod"
-    "ucts.v1.ProductOffer.OfferEntryR\005offer\032Z"
-    "\n\nOfferEntry\022\020\n\003key\030\001 \001(\tR\003key\0226\n\005value\030"
-    "\002 \001(\0132 .products.v1.ProductOfferVariantR"
-    "\005value:\0028\001\"\321\004\n\023ProductOfferVariant\022\020\n\003sk"
-    "u\030\002 \001(\tR\003sku\022\032\n\010quantity\030\003 \001(\004R\010quantity"
-    "\022\024\n\005price\030\004 \001(\tR\005price\022-\n\022offering_condi"
-    "tion\030\005 \001(\tR\021offeringCondition\022*\n\016conditi"
-    "on_note\030\006 \001(\tH\000R\rconditionNote\210\001\001\022\"\n\nlis"
-    "t_price\030\007 \001(\tH\001R\tlistPrice\210\001\001\022$\n\016has_sal"
-    "e_price\030\010 \001(\010R\014hasSalePrice\022\"\n\nsale_pric"
-    "e\030\t \001(\tH\002R\tsalePrice\210\001\001\022-\n\020sale_price_st"
-    "art\030\n \001(\tH\003R\016salePriceStart\210\001\001\022)\n\016sale_p"
-    "rice_end\030\013 \001(\tH\004R\014salePriceEnd\210\001\001\022,\n\022has"
-    "_minimum_orders\030\014 \001(\010R\020hasMinimumOrders\022"
-    "L\n\016minimum_orders\030\r \003(\0132%.products.v1.Pr"
-    "oductOfferMinimumOrderR\rminimumOrdersB\021\n"
-    "\017_condition_noteB\r\n\013_list_priceB\r\n\013_sale"
-    "_priceB\023\n\021_sale_price_startB\021\n\017_sale_pri"
-    "ce_end\"L\n\030ProductOfferMinimumOrder\022\024\n\005pr"
-    "ice\030\001 \001(\tR\005price\022\032\n\010quantity\030\002 \001(\004R\010quan"
-    "tity\"\232\001\n\rProductSafety\022>\n\006safety\030\001 \003(\0132&"
-    ".products.v1.ProductSafety.SafetyEntryR\006"
-    "safety\032I\n\013SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
-    "$\n\005value\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028"
-    "\001\"J\n\nProductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004"
-    "name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\":\n"
-    "\013ProductTags\022+\n\004tags\030\001 \003(\0132\027.products.v1"
-    ".ProductTagR\004tags\"\021\n\017ProductMetadata\"\336\t\n"
-    "\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001("
-    "\tR\006userId\022\024\n\005title\030\003 \001(\tR\005title\022\032\n\010categ"
-    "ory\030\004 \001(\tR\010category\022 \n\013subcategory\030\005 \001(\t"
-    "R\013subcategory\022%\n\016has_variations\030\006 \001(\010R\rh"
-    "asVariations\022\"\n\nbrand_name\030\007 \001(\tH\000R\tbran"
-    "dName\210\001\001\022$\n\016has_brand_name\030\010 \001(\010R\014hasBra"
-    "ndName\022\"\n\nproduct_id\030\t \001(\tH\001R\tproductId\210"
-    "\001\001\022$\n\016has_product_id\030\n \001(\010R\014hasProductId"
-    "\022+\n\017product_id_type\030\013 \001(\tH\002R\rproductIdTy"
-    "pe\210\001\001\022 \n\013description\030\014 \001(\tR\013description\022"
-    "D\n\rbullet_points\030\r \003(\0132\037.products.v1.Pro"
-    "ductBulletPointR\014bulletPoints\022#\n\rcurrenc"
-    "y_code\030\016 \001(\tR\014currencyCode\022)\n\020fulfillmen"
-    "t_type\030\017 \001(\tR\017fulfillmentType\022\'\n\017process"
-    "ing_time\030\020 \001(\004R\016processingTime\0225\n\007detail"
-    "s\030\021 \001(\0132\033.products.v1.ProductDetailsR\007de"
-    "tails\022/\n\005media\030\022 \001(\0132\031.products.v1.Produ"
-    "ctMediaR\005media\022/\n\005offer\030\023 \001(\0132\031.products"
-    ".v1.ProductOfferR\005offer\0222\n\006safety\030\024 \001(\0132"
-    "\032.products.v1.ProductSafetyR\006safety\022+\n\004t"
-    "ags\030\025 \003(\0132\027.products.v1.ProductTagR\004tags"
-    "\022=\n\010metadata\030\026 \001(\0132\034.products.v1.Product"
-    "MetadataH\003R\010metadata\210\001\001\022\035\n\nar_enabled\030\027 "
-    "\001(\010R\tarEnabled\022\022\n\004slug\030\030 \001(\tR\004slug\022\026\n\006st"
-    "atus\030\031 \001(\tR\006status\022\030\n\007version\030\032 \001(\rR\007ver"
-    "sion\022%\n\016schema_version\030\033 \001(\rR\rschemaVers"
-    "ion\022\035\n\ncreated_at\030\034 \001(\004R\tcreatedAt\022&\n\014pu"
-    "blished_at\030\035 \001(\004H\004R\013publishedAt\210\001\001\022\"\n\nup"
-    "dated_at\030\036 \001(\004H\005R\tupdatedAt\210\001\001B\r\n\013_brand"
-    "_nameB\r\n\013_product_idB\022\n\020_product_id_type"
-    "B\013\n\t_metadataB\017\n\r_published_atB\r\n\013_updat"
-    "ed_atBv\n\034org.megacommerce.products.v1B\014P"
-    "roductProtoZEgithub.com/ahmad-khatib0-or"
-    "g/megacommerce-proto/gen/go/products/v1;"
-    "v1\370\001\001b\006proto3"
+    "lue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\246\001\n"
+    "\014ProductMedia\022:\n\005media\030\001 \003(\0132$.products."
+    "v1.ProductMedia.MediaEntryR\005media\032Z\n\nMed"
+    "iaEntry\022\020\n\003key\030\001 \001(\tR\003key\0226\n\005value\030\002 \001(\013"
+    "2 .products.v1.ProductMediaVariantR\005valu"
+    "e:\0028\001\"\205\001\n\023ProductMediaVariant\0226\n\006images\030"
+    "\001 \003(\0132\036.products.v1.ProductMediaImageR\006i"
+    "mages\0226\n\006videos\030\002 \003(\0132\036.products.v1.Prod"
+    "uctMediaVideoR\006videos\"Q\n\021ProductMediaIma"
+    "ge\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001(\tR"
+    "\003url\022\022\n\004size\030\003 \001(\004R\004size\"m\n\021ProductMedia"
+    "Video\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001"
+    "(\tR\003url\022\022\n\004size\030\003 \001(\004R\004size\022\032\n\010duration\030"
+    "\004 \001(\004R\010duration\"\246\001\n\014ProductOffer\022:\n\005offe"
+    "r\030\002 \003(\0132$.products.v1.ProductOffer.Offer"
+    "EntryR\005offer\032Z\n\nOfferEntry\022\020\n\003key\030\001 \001(\tR"
+    "\003key\0226\n\005value\030\002 \001(\0132 .products.v1.Produc"
+    "tOfferVariantR\005value:\0028\001\"\321\004\n\023ProductOffe"
+    "rVariant\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010quantity\030\003"
+    " \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR\005price\022-\n\022"
+    "offering_condition\030\005 \001(\tR\021offeringCondit"
+    "ion\022*\n\016condition_note\030\006 \001(\tH\000R\rcondition"
+    "Note\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R\tlistPrice"
+    "\210\001\001\022$\n\016has_sale_price\030\010 \001(\010R\014hasSalePric"
+    "e\022\"\n\nsale_price\030\t \001(\tH\002R\tsalePrice\210\001\001\022-\n"
+    "\020sale_price_start\030\n \001(\tH\003R\016salePriceStar"
+    "t\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH\004R\014salePric"
+    "eEnd\210\001\001\022,\n\022has_minimum_orders\030\014 \001(\010R\020has"
+    "MinimumOrders\022L\n\016minimum_orders\030\r \003(\0132%."
+    "products.v1.ProductOfferMinimumOrderR\rmi"
+    "nimumOrdersB\021\n\017_condition_noteB\r\n\013_list_"
+    "priceB\r\n\013_sale_priceB\023\n\021_sale_price_star"
+    "tB\021\n\017_sale_price_end\"L\n\030ProductOfferMini"
+    "mumOrder\022\024\n\005price\030\001 \001(\tR\005price\022\032\n\010quanti"
+    "ty\030\002 \001(\004R\010quantity\"\232\001\n\rProductSafety\022>\n\006"
+    "safety\030\001 \003(\0132&.products.v1.ProductSafety"
+    ".SafetyEntryR\006safety\032I\n\013SafetyEntry\022\020\n\003k"
+    "ey\030\001 \001(\tR\003key\022$\n\005value\030\002 \001(\0132\016.shared.v1"
+    ".AnyR\005value:\0028\001\"J\n\nProductTag\022\023\n\002id\030\001 \001("
+    "\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_"
+    "idB\007\n\005_name\":\n\013ProductTags\022+\n\004tags\030\001 \003(\013"
+    "2\027.products.v1.ProductTagR\004tags\"\021\n\017Produ"
+    "ctMetadata\"\336\t\n\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\027"
+    "\n\007user_id\030\002 \001(\tR\006userId\022\024\n\005title\030\003 \001(\tR\005"
+    "title\022\032\n\010category\030\004 \001(\tR\010category\022 \n\013sub"
+    "category\030\005 \001(\tR\013subcategory\022%\n\016has_varia"
+    "tions\030\006 \001(\010R\rhasVariations\022\"\n\nbrand_name"
+    "\030\007 \001(\tH\000R\tbrandName\210\001\001\022$\n\016has_brand_name"
+    "\030\010 \001(\010R\014hasBrandName\022\"\n\nproduct_id\030\t \001(\t"
+    "H\001R\tproductId\210\001\001\022$\n\016has_product_id\030\n \001(\010"
+    "R\014hasProductId\022+\n\017product_id_type\030\013 \001(\tH"
+    "\002R\rproductIdType\210\001\001\022 \n\013description\030\014 \001(\t"
+    "R\013description\022D\n\rbullet_points\030\r \003(\0132\037.p"
+    "roducts.v1.ProductBulletPointR\014bulletPoi"
+    "nts\022#\n\rcurrency_code\030\016 \001(\tR\014currencyCode"
+    "\022)\n\020fulfillment_type\030\017 \001(\tR\017fulfillmentT"
+    "ype\022\'\n\017processing_time\030\020 \001(\004R\016processing"
+    "Time\0225\n\007details\030\021 \001(\0132\033.products.v1.Prod"
+    "uctDetailsR\007details\022/\n\005media\030\022 \001(\0132\031.pro"
+    "ducts.v1.ProductMediaR\005media\022/\n\005offer\030\023 "
+    "\001(\0132\031.products.v1.ProductOfferR\005offer\0222\n"
+    "\006safety\030\024 \001(\0132\032.products.v1.ProductSafet"
+    "yR\006safety\022+\n\004tags\030\025 \003(\0132\027.products.v1.Pr"
+    "oductTagR\004tags\022=\n\010metadata\030\026 \001(\0132\034.produ"
+    "cts.v1.ProductMetadataH\003R\010metadata\210\001\001\022\035\n"
+    "\nar_enabled\030\027 \001(\010R\tarEnabled\022\022\n\004slug\030\030 \001"
+    "(\tR\004slug\022\026\n\006status\030\031 \001(\tR\006status\022\030\n\007vers"
+    "ion\030\032 \001(\rR\007version\022%\n\016schema_version\030\033 \001"
+    "(\rR\rschemaVersion\022\035\n\ncreated_at\030\034 \001(\004R\tc"
+    "reatedAt\022&\n\014published_at\030\035 \001(\004H\004R\013publis"
+    "hedAt\210\001\001\022\"\n\nupdated_at\030\036 \001(\004H\005R\tupdatedA"
+    "t\210\001\001B\r\n\013_brand_nameB\r\n\013_product_idB\022\n\020_p"
+    "roduct_id_typeB\013\n\t_metadataB\017\n\r_publishe"
+    "d_atB\r\n\013_updated_atBv\n\034org.megacommerce."
+    "products.v1B\014ProductProtoZEgithub.com/ah"
+    "mad-khatib0-org/megacommerce-proto/gen/g"
+    "o/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_2eproto_deps[1] = {
@@ -978,7 +978,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_2eproto = {
     false,
     false,
-    3773,
+    3787,
     descriptor_table_protodef_products_2fv1_2fproduct_2eproto,
     "products/v1/product.proto",
     &descriptor_table_products_2fv1_2fproduct_2eproto_once,
@@ -2349,62 +2349,62 @@ void ProductDetailsVariant::InternalSwap(ProductDetailsVariant* PROTOBUF_RESTRIC
 // ===================================================================
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-ProductMedia_SafetyEntry_DoNotUse::ProductMedia_SafetyEntry_DoNotUse()
-    : SuperType(ProductMedia_SafetyEntry_DoNotUse_class_data_.base()) {}
-ProductMedia_SafetyEntry_DoNotUse::ProductMedia_SafetyEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-    : SuperType(arena, ProductMedia_SafetyEntry_DoNotUse_class_data_.base()) {}
+ProductMedia_MediaEntry_DoNotUse::ProductMedia_MediaEntry_DoNotUse()
+    : SuperType(ProductMedia_MediaEntry_DoNotUse_class_data_.base()) {}
+ProductMedia_MediaEntry_DoNotUse::ProductMedia_MediaEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, ProductMedia_MediaEntry_DoNotUse_class_data_.base()) {}
 #else   // PROTOBUF_CUSTOM_VTABLE
-ProductMedia_SafetyEntry_DoNotUse::ProductMedia_SafetyEntry_DoNotUse() : SuperType() {}
-ProductMedia_SafetyEntry_DoNotUse::ProductMedia_SafetyEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+ProductMedia_MediaEntry_DoNotUse::ProductMedia_MediaEntry_DoNotUse() : SuperType() {}
+ProductMedia_MediaEntry_DoNotUse::ProductMedia_MediaEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
 #endif  // PROTOBUF_CUSTOM_VTABLE
-inline void* PROTOBUF_NONNULL ProductMedia_SafetyEntry_DoNotUse::PlacementNew_(
+inline void* PROTOBUF_NONNULL ProductMedia_MediaEntry_DoNotUse::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ProductMedia_SafetyEntry_DoNotUse(arena);
+  return ::new (mem) ProductMedia_MediaEntry_DoNotUse(arena);
 }
-constexpr auto ProductMedia_SafetyEntry_DoNotUse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductMedia_SafetyEntry_DoNotUse),
-                                            alignof(ProductMedia_SafetyEntry_DoNotUse));
+constexpr auto ProductMedia_MediaEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductMedia_MediaEntry_DoNotUse),
+                                            alignof(ProductMedia_MediaEntry_DoNotUse));
 }
-constexpr auto ProductMedia_SafetyEntry_DoNotUse::InternalGenerateClassData_() {
+constexpr auto ProductMedia_MediaEntry_DoNotUse::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
       ::google::protobuf::internal::ClassData{
-          &_ProductMedia_SafetyEntry_DoNotUse_default_instance_._instance,
+          &_ProductMedia_MediaEntry_DoNotUse_default_instance_._instance,
           &_table_.header,
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
-          &ProductMedia_SafetyEntry_DoNotUse::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<ProductMedia_SafetyEntry_DoNotUse>(),
+          &ProductMedia_MediaEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductMedia_MediaEntry_DoNotUse>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ProductMedia_SafetyEntry_DoNotUse::SharedDtor,
-          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductMedia_SafetyEntry_DoNotUse::ClearImpl),
+          &ProductMedia_MediaEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductMedia_MediaEntry_DoNotUse::ClearImpl),
               ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
               ,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ProductMedia_SafetyEntry_DoNotUse, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(ProductMedia_MediaEntry_DoNotUse, _impl_._cached_size_),
           false,
       },
-      &ProductMedia_SafetyEntry_DoNotUse::kDescriptorMethods,
+      &ProductMedia_MediaEntry_DoNotUse::kDescriptorMethods,
       &descriptor_table_products_2fv1_2fproduct_2eproto,
       nullptr,  // tracker
   };
 }
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ProductMedia_SafetyEntry_DoNotUse_class_data_ =
-        ProductMedia_SafetyEntry_DoNotUse::InternalGenerateClassData_();
+    ::google::protobuf::internal::ClassDataFull ProductMedia_MediaEntry_DoNotUse_class_data_ =
+        ProductMedia_MediaEntry_DoNotUse::InternalGenerateClassData_();
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ProductMedia_SafetyEntry_DoNotUse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ProductMedia_SafetyEntry_DoNotUse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ProductMedia_SafetyEntry_DoNotUse_class_data_.tc_table);
-  return ProductMedia_SafetyEntry_DoNotUse_class_data_.base();
+ProductMedia_MediaEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductMedia_MediaEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductMedia_MediaEntry_DoNotUse_class_data_.tc_table);
+  return ProductMedia_MediaEntry_DoNotUse_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 1, 48, 2>
-ProductMedia_SafetyEntry_DoNotUse::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 1, 47, 2>
+ProductMedia_MediaEntry_DoNotUse::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(ProductMedia_SafetyEntry_DoNotUse, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(ProductMedia_MediaEntry_DoNotUse, _impl_._has_bits_),
     0, // no _extensions_
     2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
@@ -2413,35 +2413,35 @@ ProductMedia_SafetyEntry_DoNotUse::_table_ = {
     2,  // num_field_entries
     1,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
-    ProductMedia_SafetyEntry_DoNotUse_class_data_.base(),
+    ProductMedia_MediaEntry_DoNotUse_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::products::v1::ProductMedia_SafetyEntry_DoNotUse>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::products::v1::ProductMedia_MediaEntry_DoNotUse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // .shared.v1.Any value = 2 [json_name = "value"];
+    // .products.v1.ProductMediaVariant value = 2 [json_name = "value"];
     {::_pbi::TcParser::FastMtS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductMedia_SafetyEntry_DoNotUse, _impl_.value_)}},
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductMedia_MediaEntry_DoNotUse, _impl_.value_)}},
     // string key = 1 [json_name = "key"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductMedia_SafetyEntry_DoNotUse, _impl_.key_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductMedia_MediaEntry_DoNotUse, _impl_.key_)}},
   }}, {{
     65535, 65535
   }}, {{
     // string key = 1 [json_name = "key"];
-    {PROTOBUF_FIELD_OFFSET(ProductMedia_SafetyEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductMedia_MediaEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // .shared.v1.Any value = 2 [json_name = "value"];
-    {PROTOBUF_FIELD_OFFSET(ProductMedia_SafetyEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    // .products.v1.ProductMediaVariant value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(ProductMedia_MediaEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductMediaVariant>()},
   }},
   {{
-    "\44\3\0\0\0\0\0\0"
-    "products.v1.ProductMedia.SafetyEntry"
+    "\43\3\0\0\0\0\0\0"
+    "products.v1.ProductMedia.MediaEntry"
     "key"
   }},
 };
@@ -2451,10 +2451,6 @@ class ProductMedia::_Internal {
  public:
 };
 
-void ProductMedia::clear_safety() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.safety_.Clear();
-}
 ProductMedia::ProductMedia(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, ProductMedia_class_data_.base()) {
@@ -2468,7 +2464,7 @@ PROTOBUF_NDEBUG_INLINE ProductMedia::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
     const ::products::v1::ProductMedia& from_msg)
-      : safety_{visibility, arena, from.safety_},
+      : media_{visibility, arena, from.media_},
         _cached_size_{0} {}
 
 ProductMedia::ProductMedia(
@@ -2490,7 +2486,7 @@ ProductMedia::ProductMedia(
 PROTOBUF_NDEBUG_INLINE ProductMedia::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : safety_{visibility, arena},
+      : media_{visibility, arena},
         _cached_size_{0} {}
 
 inline void ProductMedia::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
@@ -2514,12 +2510,12 @@ inline void* PROTOBUF_NONNULL ProductMedia::PlacementNew_(
 }
 constexpr auto ProductMedia::InternalNewImpl_() {
   constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
-      PROTOBUF_FIELD_OFFSET(ProductMedia, _impl_.safety_) +
-          decltype(ProductMedia::_impl_.safety_)::
+      PROTOBUF_FIELD_OFFSET(ProductMedia, _impl_.media_) +
+          decltype(ProductMedia::_impl_.media_)::
               InternalGetArenaOffset(
                   ::google::protobuf::Message::internal_visibility()),
-      PROTOBUF_FIELD_OFFSET(ProductMedia, _impl_.safety_) +
-          decltype(ProductMedia::_impl_.safety_)::
+      PROTOBUF_FIELD_OFFSET(ProductMedia, _impl_.media_) +
+          decltype(ProductMedia::_impl_.media_)::
               InternalGetArenaOffsetAlt(
                   ::google::protobuf::Message::internal_visibility()),
   });
@@ -2566,7 +2562,7 @@ ProductMedia::GetClassData() const {
   return ProductMedia_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 2, 39, 2>
+const ::_pbi::TcParseTable<0, 1, 2, 38, 2>
 ProductMedia::_table_ = {
   {
     0,  // no _has_bits_
@@ -2589,20 +2585,20 @@ ProductMedia::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // map<string, .shared.v1.Any> safety = 1 [json_name = "safety"];
-    {PROTOBUF_FIELD_OFFSET(ProductMedia, _impl_.safety_), 0, 0,
+    // map<string, .products.v1.ProductMediaVariant> media = 1 [json_name = "media"];
+    {PROTOBUF_FIELD_OFFSET(ProductMedia, _impl_.media_), 0, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
   }},
   {{
       {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
                                        9, 11,
                                        0)},
-      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductMediaVariant>()},
   }},
   {{
-    "\30\6\0\0\0\0\0\0"
+    "\30\5\0\0\0\0\0\0"
     "products.v1.ProductMedia"
-    "safety"
+    "media"
   }},
 };
 PROTOBUF_NOINLINE void ProductMedia::Clear() {
@@ -2612,7 +2608,7 @@ PROTOBUF_NOINLINE void ProductMedia::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.safety_.Clear();
+  _impl_.media_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -2631,13 +2627,13 @@ PROTOBUF_NOINLINE void ProductMedia::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // map<string, .shared.v1.Any> safety = 1 [json_name = "safety"];
-  if (!this_._internal_safety().empty()) {
-    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::Any>;
-    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+  // map<string, .products.v1.ProductMediaVariant> media = 1 [json_name = "media"];
+  if (!this_._internal_media().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVariant>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::products::v1::ProductMediaVariant,
                                    _pbi::WireFormatLite::TYPE_STRING,
                                    _pbi::WireFormatLite::TYPE_MESSAGE>;
-    const auto& field = this_._internal_safety();
+    const auto& field = this_._internal_media();
 
     if (stream->IsSerializationDeterministic() && field.size() > 1) {
       for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
@@ -2645,7 +2641,7 @@ PROTOBUF_NOINLINE void ProductMedia::Clear() {
             1, entry.first, entry.second, target, stream);
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductMedia.safety");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductMedia.media");
       }
     } else {
       for (const auto& entry : field) {
@@ -2653,7 +2649,7 @@ PROTOBUF_NOINLINE void ProductMedia::Clear() {
             1, entry.first, entry.second, target, stream);
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductMedia.safety");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductMedia.media");
       }
     }
   }
@@ -2683,12 +2679,12 @@ PROTOBUF_NOINLINE void ProductMedia::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // map<string, .shared.v1.Any> safety = 1 [json_name = "safety"];
+    // map<string, .products.v1.ProductMediaVariant> media = 1 [json_name = "media"];
     {
       total_size +=
-          1 * ::google::protobuf::internal::FromIntSize(this_._internal_safety_size());
-      for (const auto& entry : this_._internal_safety()) {
-        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_media_size());
+      for (const auto& entry : this_._internal_media()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::products::v1::ProductMediaVariant,
                                        _pbi::WireFormatLite::TYPE_STRING,
                                        _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
       }
@@ -2706,7 +2702,7 @@ void ProductMedia::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::go
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.safety_.MergeFrom(from._impl_.safety_);
+  _this->_impl_.media_.MergeFrom(from._impl_.media_);
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2721,7 +2717,7 @@ void ProductMedia::CopyFrom(const ProductMedia& from) {
 void ProductMedia::InternalSwap(ProductMedia* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.safety_.InternalSwap(&other->_impl_.safety_);
+  _impl_.media_.InternalSwap(&other->_impl_.media_);
 }
 
 ::google::protobuf::Metadata ProductMedia::GetMetadata() const {

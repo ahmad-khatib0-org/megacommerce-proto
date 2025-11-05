@@ -32,7 +32,7 @@ message ProductDetailsVariant {
 }
 
 message ProductMedia {
-  map<string, shared.v1.Any> safety = 1;
+  map<string, ProductMediaVariant> media = 1; // <variant_id, media>
 }
 
 message ProductMediaVariant {
