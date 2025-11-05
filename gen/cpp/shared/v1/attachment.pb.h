@@ -476,6 +476,7 @@ class Attachment final : public ::google::protobuf::Message
     kCropFieldNumber = 8,
     kMetadataFieldNumber = 9,
     kFileSizeFieldNumber = 4,
+    kDurationSecondsFieldNumber = 14,
     kExifOrientationFieldNumber = 7,
   };
   // string id = 1 [json_name = "id"];
@@ -655,6 +656,17 @@ class Attachment final : public ::google::protobuf::Message
   void _internal_set_file_size(::int64_t value);
 
   public:
+  // optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];
+  bool has_duration_seconds() const;
+  void clear_duration_seconds() ;
+  ::uint64_t duration_seconds() const;
+  void set_duration_seconds(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_duration_seconds() const;
+  void _internal_set_duration_seconds(::uint64_t value);
+
+  public:
   // int32 exif_orientation = 7 [json_name = "exifOrientation"];
   void clear_exif_orientation() ;
   ::int32_t exif_orientation() const;
@@ -669,7 +681,7 @@ class Attachment final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<4, 13,
+  static const ::google::protobuf::internal::TcParseTable<4, 14,
                                    2, 91,
                                    2>
       _table_;
@@ -703,6 +715,7 @@ class Attachment final : public ::google::protobuf::Message
     ::shared::v1::Crop* PROTOBUF_NULLABLE crop_;
     ::shared::v1::Struct* PROTOBUF_NULLABLE metadata_;
     ::int64_t file_size_;
+    ::uint64_t duration_seconds_;
     ::int32_t exif_orientation_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1278,7 +1291,7 @@ inline void Attachment::set_allocated_base64(::std::string* PROTOBUF_NULLABLE va
 inline void Attachment::clear_exif_orientation() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.exif_orientation_ = 0;
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00002000u;
 }
 inline ::int32_t Attachment::exif_orientation() const {
   // @@protoc_insertion_point(field_get:shared.v1.Attachment.exif_orientation)
@@ -1286,7 +1299,7 @@ inline ::int32_t Attachment::exif_orientation() const {
 }
 inline void Attachment::set_exif_orientation(::int32_t value) {
   _internal_set_exif_orientation(value);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00002000u;
   // @@protoc_insertion_point(field_set:shared.v1.Attachment.exif_orientation)
 }
 inline ::int32_t Attachment::_internal_exif_orientation() const {
@@ -1755,6 +1768,34 @@ inline void Attachment::set_allocated_url(::std::string* PROTOBUF_NULLABLE value
     _impl_.url_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:shared.v1.Attachment.url)
+}
+
+// optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];
+inline bool Attachment::has_duration_seconds() const {
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  return value;
+}
+inline void Attachment::clear_duration_seconds() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.duration_seconds_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00001000u;
+}
+inline ::uint64_t Attachment::duration_seconds() const {
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.duration_seconds)
+  return _internal_duration_seconds();
+}
+inline void Attachment::set_duration_seconds(::uint64_t value) {
+  _internal_set_duration_seconds(value);
+  _impl_._has_bits_[0] |= 0x00001000u;
+  // @@protoc_insertion_point(field_set:shared.v1.Attachment.duration_seconds)
+}
+inline ::uint64_t Attachment::_internal_duration_seconds() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.duration_seconds_;
+}
+inline void Attachment::_internal_set_duration_seconds(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.duration_seconds_ = value;
 }
 
 // -------------------------------------------------------------------

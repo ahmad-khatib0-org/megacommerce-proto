@@ -229,6 +229,8 @@ pub struct Attachment {
     pub checksum: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "13")]
     pub url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(uint64, optional, tag = "14")]
+    pub duration_seconds: ::core::option::Option<u64>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

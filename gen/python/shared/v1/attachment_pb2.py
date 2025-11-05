@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from shared.v1 import struct_pb2 as shared_dot_v1_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\xb0\x02\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x66ilename\x18\x02 \x01(\t\x12\x11\n\tfile_type\x18\x03 \x01(\t\x12\x11\n\tfile_size\x18\x04 \x01(\x03\x12\x16\n\x0e\x66ile_extension\x18\x05 \x01(\t\x12\x0e\n\x06\x62\x61se64\x18\x06 \x01(\t\x12\x18\n\x10\x65xif_orientation\x18\x07 \x01(\x05\x12\x1d\n\x04\x63rop\x18\x08 \x01(\x0b\x32\x0f.shared.v1.Crop\x12#\n\x08metadata\x18\t \x01(\x0b\x32\x11.shared.v1.Struct\x12\x0c\n\x04\x64\x61ta\x18\n \x01(\x0c\x12\x0c\n\x04mime\x18\x0b \x01(\t\x12\x15\n\x08\x63hecksum\x18\x0c \x01(\tH\x00\x88\x01\x01\x12\x10\n\x03url\x18\r \x01(\tH\x01\x88\x01\x01\x42\x0b\n\t_checksumB\x06\n\x04_url\"9\n\x0b\x41ttachments\x12*\n\x0b\x61ttachments\x18\x01 \x03(\x0b\x32\x15.shared.v1.Attachment\"Q\n\x04\x43rop\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\r\n\x05width\x18\x03 \x01(\x02\x12\x0e\n\x06height\x18\x04 \x01(\x02\x12\x14\n\x0c\x61spect_ratio\x18\x05 \x01(\x02\x42u\n\x1aorg.megacommerce.shared.v1B\x0f\x41ttachmentProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\xe4\x02\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x66ilename\x18\x02 \x01(\t\x12\x11\n\tfile_type\x18\x03 \x01(\t\x12\x11\n\tfile_size\x18\x04 \x01(\x03\x12\x16\n\x0e\x66ile_extension\x18\x05 \x01(\t\x12\x0e\n\x06\x62\x61se64\x18\x06 \x01(\t\x12\x18\n\x10\x65xif_orientation\x18\x07 \x01(\x05\x12\x1d\n\x04\x63rop\x18\x08 \x01(\x0b\x32\x0f.shared.v1.Crop\x12#\n\x08metadata\x18\t \x01(\x0b\x32\x11.shared.v1.Struct\x12\x0c\n\x04\x64\x61ta\x18\n \x01(\x0c\x12\x0c\n\x04mime\x18\x0b \x01(\t\x12\x15\n\x08\x63hecksum\x18\x0c \x01(\tH\x00\x88\x01\x01\x12\x10\n\x03url\x18\r \x01(\tH\x01\x88\x01\x01\x12\x1d\n\x10\x64uration_seconds\x18\x0e \x01(\x04H\x02\x88\x01\x01\x42\x0b\n\t_checksumB\x06\n\x04_urlB\x13\n\x11_duration_seconds\"9\n\x0b\x41ttachments\x12*\n\x0b\x61ttachments\x18\x01 \x03(\x0b\x32\x15.shared.v1.Attachment\"Q\n\x04\x43rop\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\r\n\x05width\x18\x03 \x01(\x02\x12\x0e\n\x06height\x18\x04 \x01(\x02\x12\x14\n\x0c\x61spect_ratio\x18\x05 \x01(\x02\x42u\n\x1aorg.megacommerce.shared.v1B\x0f\x41ttachmentProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,9 +34,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.shared.v1B\017AttachmentProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\370\001\001'
   _globals['_ATTACHMENT']._serialized_start=66
-  _globals['_ATTACHMENT']._serialized_end=370
-  _globals['_ATTACHMENTS']._serialized_start=372
-  _globals['_ATTACHMENTS']._serialized_end=429
-  _globals['_CROP']._serialized_start=431
-  _globals['_CROP']._serialized_end=512
+  _globals['_ATTACHMENT']._serialized_end=422
+  _globals['_ATTACHMENTS']._serialized_start=424
+  _globals['_ATTACHMENTS']._serialized_end=481
+  _globals['_CROP']._serialized_start=483
+  _globals['_CROP']._serialized_end=564
 # @@protoc_insertion_point(module_scope)

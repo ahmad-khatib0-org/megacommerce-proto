@@ -207,6 +207,17 @@ public final class AttachmentProto {
      */
     com.google.protobuf.ByteString
         getUrlBytes();
+
+    /**
+     * <code>optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];</code>
+     * @return Whether the durationSeconds field is set.
+     */
+    boolean hasDurationSeconds();
+    /**
+     * <code>optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];</code>
+     * @return The durationSeconds.
+     */
+    long getDurationSeconds();
   }
   /**
    * Protobuf type {@code shared.v1.Attachment}
@@ -692,6 +703,25 @@ public final class AttachmentProto {
       }
     }
 
+    public static final int DURATION_SECONDS_FIELD_NUMBER = 14;
+    private long durationSeconds_ = 0L;
+    /**
+     * <code>optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];</code>
+     * @return Whether the durationSeconds field is set.
+     */
+    @java.lang.Override
+    public boolean hasDurationSeconds() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];</code>
+     * @return The durationSeconds.
+     */
+    @java.lang.Override
+    public long getDurationSeconds() {
+      return durationSeconds_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -744,6 +774,9 @@ public final class AttachmentProto {
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 13, url_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeUInt64(14, durationSeconds_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -798,6 +831,10 @@ public final class AttachmentProto {
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(13, url_);
       }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(14, durationSeconds_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -851,6 +888,11 @@ public final class AttachmentProto {
         if (!getUrl()
             .equals(other.getUrl())) return false;
       }
+      if (hasDurationSeconds() != other.hasDurationSeconds()) return false;
+      if (hasDurationSeconds()) {
+        if (getDurationSeconds()
+            != other.getDurationSeconds()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -896,6 +938,11 @@ public final class AttachmentProto {
       if (hasUrl()) {
         hash = (37 * hash) + URL_FIELD_NUMBER;
         hash = (53 * hash) + getUrl().hashCode();
+      }
+      if (hasDurationSeconds()) {
+        hash = (37 * hash) + DURATION_SECONDS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getDurationSeconds());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1056,6 +1103,7 @@ public final class AttachmentProto {
         mime_ = "";
         checksum_ = "";
         url_ = "";
+        durationSeconds_ = 0L;
         return this;
       }
 
@@ -1137,6 +1185,10 @@ public final class AttachmentProto {
           result.url_ = url_;
           to_bitField0_ |= 0x00000008;
         }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.durationSeconds_ = durationSeconds_;
+          to_bitField0_ |= 0x00000010;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1206,6 +1258,9 @@ public final class AttachmentProto {
           url_ = other.url_;
           bitField0_ |= 0x00001000;
           onChanged();
+        }
+        if (other.hasDurationSeconds()) {
+          setDurationSeconds(other.getDurationSeconds());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1302,6 +1357,11 @@ public final class AttachmentProto {
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
+              case 112: {
+                durationSeconds_ = input.readUInt64();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 112
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2311,6 +2371,46 @@ public final class AttachmentProto {
         checkByteStringIsUtf8(value);
         url_ = value;
         bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+
+      private long durationSeconds_ ;
+      /**
+       * <code>optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];</code>
+       * @return Whether the durationSeconds field is set.
+       */
+      @java.lang.Override
+      public boolean hasDurationSeconds() {
+        return ((bitField0_ & 0x00002000) != 0);
+      }
+      /**
+       * <code>optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];</code>
+       * @return The durationSeconds.
+       */
+      @java.lang.Override
+      public long getDurationSeconds() {
+        return durationSeconds_;
+      }
+      /**
+       * <code>optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];</code>
+       * @param value The durationSeconds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDurationSeconds(long value) {
+
+        durationSeconds_ = value;
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 duration_seconds = 14 [json_name = "durationSeconds"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDurationSeconds() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        durationSeconds_ = 0L;
         onChanged();
         return this;
       }
@@ -3863,7 +3963,7 @@ public final class AttachmentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032shared/v1/attachment.proto\022\tshared.v1\032" +
-      "\026shared/v1/struct.proto\"\245\003\n\nAttachment\022\016" +
+      "\026shared/v1/struct.proto\"\352\003\n\nAttachment\022\016" +
       "\n\002id\030\001 \001(\tR\002id\022\032\n\010filename\030\002 \001(\tR\010filena" +
       "me\022\033\n\tfile_type\030\003 \001(\tR\010fileType\022\033\n\tfile_" +
       "size\030\004 \001(\003R\010fileSize\022%\n\016file_extension\030\005" +
@@ -3873,16 +3973,17 @@ public final class AttachmentProto {
       "rop\022-\n\010metadata\030\t \001(\0132\021.shared.v1.Struct" +
       "R\010metadata\022\022\n\004data\030\n \001(\014R\004data\022\022\n\004mime\030\013" +
       " \001(\tR\004mime\022\037\n\010checksum\030\014 \001(\tH\000R\010checksum" +
-      "\210\001\001\022\025\n\003url\030\r \001(\tH\001R\003url\210\001\001B\013\n\t_checksumB" +
-      "\006\n\004_url\"F\n\013Attachments\0227\n\013attachments\030\001 " +
-      "\003(\0132\025.shared.v1.AttachmentR\013attachments\"" +
-      "s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 \001(\002R\001y\022\024\n\005w" +
-      "idth\030\003 \001(\002R\005width\022\026\n\006height\030\004 \001(\002R\006heigh" +
-      "t\022!\n\014aspect_ratio\030\005 \001(\002R\013aspectRatioBu\n\032" +
-      "org.megacommerce.shared.v1B\017AttachmentPr" +
-      "otoZCgithub.com/ahmad-khatib0-org/megaco" +
-      "mmerce-proto/gen/go/shared/v1;v1\370\001\001b\006pro" +
-      "to3"
+      "\210\001\001\022\025\n\003url\030\r \001(\tH\001R\003url\210\001\001\022.\n\020duration_s" +
+      "econds\030\016 \001(\004H\002R\017durationSeconds\210\001\001B\013\n\t_c" +
+      "hecksumB\006\n\004_urlB\023\n\021_duration_seconds\"F\n\013" +
+      "Attachments\0227\n\013attachments\030\001 \003(\0132\025.share" +
+      "d.v1.AttachmentR\013attachments\"s\n\004Crop\022\014\n\001" +
+      "x\030\001 \001(\002R\001x\022\014\n\001y\030\002 \001(\002R\001y\022\024\n\005width\030\003 \001(\002R" +
+      "\005width\022\026\n\006height\030\004 \001(\002R\006height\022!\n\014aspect" +
+      "_ratio\030\005 \001(\002R\013aspectRatioBu\n\032org.megacom" +
+      "merce.shared.v1B\017AttachmentProtoZCgithub" +
+      ".com/ahmad-khatib0-org/megacommerce-prot" +
+      "o/gen/go/shared/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3894,7 +3995,7 @@ public final class AttachmentProto {
     internal_static_shared_v1_Attachment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Attachment_descriptor,
-        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", "Data", "Mime", "Checksum", "Url", });
+        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", "Data", "Mime", "Checksum", "Url", "DurationSeconds", });
     internal_static_shared_v1_Attachments_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_shared_v1_Attachments_fieldAccessorTable = new

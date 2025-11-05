@@ -31,6 +31,7 @@ export interface Attachment {
   mime: string;
   checksum?: string | undefined;
   url?: string | undefined;
+  durationSeconds?: string | undefined;
 }
 
 export interface Attachments {
@@ -60,6 +61,7 @@ function createBaseAttachment(): Attachment {
     mime: "",
     checksum: undefined,
     url: undefined,
+    durationSeconds: undefined,
   };
 }
 
@@ -103,6 +105,9 @@ export const Attachment: MessageFns<Attachment> = {
     }
     if (message.url !== undefined) {
       writer.uint32(106).string(message.url);
+    }
+    if (message.durationSeconds !== undefined) {
+      writer.uint32(112).uint64(message.durationSeconds);
     }
     return writer;
   },
@@ -218,6 +223,14 @@ export const Attachment: MessageFns<Attachment> = {
           message.url = reader.string();
           continue;
         }
+        case 14: {
+          if (tag !== 112) {
+            break;
+          }
+
+          message.durationSeconds = reader.uint64().toString();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -242,6 +255,7 @@ export const Attachment: MessageFns<Attachment> = {
       mime: isSet(object.mime) ? globalThis.String(object.mime) : "",
       checksum: isSet(object.checksum) ? globalThis.String(object.checksum) : undefined,
       url: isSet(object.url) ? globalThis.String(object.url) : undefined,
+      durationSeconds: isSet(object.durationSeconds) ? globalThis.String(object.durationSeconds) : undefined,
     };
   },
 
@@ -286,6 +300,9 @@ export const Attachment: MessageFns<Attachment> = {
     if (message.url !== undefined) {
       obj.url = message.url;
     }
+    if (message.durationSeconds !== undefined) {
+      obj.durationSeconds = message.durationSeconds;
+    }
     return obj;
   },
 
@@ -309,6 +326,7 @@ export const Attachment: MessageFns<Attachment> = {
     message.mime = object.mime ?? "";
     message.checksum = object.checksum ?? undefined;
     message.url = object.url ?? undefined;
+    message.durationSeconds = object.durationSeconds ?? undefined;
     return message;
   },
 };
