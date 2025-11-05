@@ -35,6 +35,7 @@ type Attachment struct {
 	Data            []byte                 `protobuf:"bytes,10,opt,name=data,proto3" json:"data,omitempty"`        // usually set by the backend
 	Mime            string                 `protobuf:"bytes,11,opt,name=mime,proto3" json:"mime,omitempty"`        // usually set by the backend
 	Checksum        *string                `protobuf:"bytes,12,opt,name=checksum,proto3,oneof" json:"checksum,omitempty"`
+	Url             *string                `protobuf:"bytes,13,opt,name=url,proto3,oneof" json:"url,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -149,6 +150,13 @@ func (x *Attachment) GetMime() string {
 func (x *Attachment) GetChecksum() string {
 	if x != nil && x.Checksum != nil {
 		return *x.Checksum
+	}
+	return ""
+}
+
+func (x *Attachment) GetUrl() string {
+	if x != nil && x.Url != nil {
+		return *x.Url
 	}
 	return ""
 }
@@ -277,7 +285,7 @@ var File_shared_v1_attachment_proto protoreflect.FileDescriptor
 
 const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\n" +
-	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\x86\x03\n" +
+	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\xa5\x03\n" +
 	"\n" +
 	"Attachment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
@@ -292,8 +300,10 @@ const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\x04data\x18\n" +
 	" \x01(\fR\x04data\x12\x12\n" +
 	"\x04mime\x18\v \x01(\tR\x04mime\x12\x1f\n" +
-	"\bchecksum\x18\f \x01(\tH\x00R\bchecksum\x88\x01\x01B\v\n" +
-	"\t_checksum\"F\n" +
+	"\bchecksum\x18\f \x01(\tH\x00R\bchecksum\x88\x01\x01\x12\x15\n" +
+	"\x03url\x18\r \x01(\tH\x01R\x03url\x88\x01\x01B\v\n" +
+	"\t_checksumB\x06\n" +
+	"\x04_url\"F\n" +
 	"\vAttachments\x127\n" +
 	"\vattachments\x18\x01 \x03(\v2\x15.shared.v1.AttachmentR\vattachments\"s\n" +
 	"\x04Crop\x12\f\n" +

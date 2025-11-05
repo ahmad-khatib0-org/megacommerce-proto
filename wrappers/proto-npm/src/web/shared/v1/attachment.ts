@@ -30,6 +30,7 @@ export interface Attachment {
   /** usually set by the backend */
   mime: string;
   checksum?: string | undefined;
+  url?: string | undefined;
 }
 
 export interface Attachments {
@@ -58,6 +59,7 @@ function createBaseAttachment(): Attachment {
     data: new Uint8Array(0),
     mime: "",
     checksum: undefined,
+    url: undefined,
   };
 }
 
@@ -98,6 +100,9 @@ export const Attachment: MessageFns<Attachment> = {
     }
     if (message.checksum !== undefined) {
       writer.uint32(98).string(message.checksum);
+    }
+    if (message.url !== undefined) {
+      writer.uint32(106).string(message.url);
     }
     return writer;
   },
@@ -205,6 +210,14 @@ export const Attachment: MessageFns<Attachment> = {
           message.checksum = reader.string();
           continue;
         }
+        case 13: {
+          if (tag !== 106) {
+            break;
+          }
+
+          message.url = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -228,6 +241,7 @@ export const Attachment: MessageFns<Attachment> = {
       data: isSet(object.data) ? bytesFromBase64(object.data) : new Uint8Array(0),
       mime: isSet(object.mime) ? globalThis.String(object.mime) : "",
       checksum: isSet(object.checksum) ? globalThis.String(object.checksum) : undefined,
+      url: isSet(object.url) ? globalThis.String(object.url) : undefined,
     };
   },
 
@@ -269,6 +283,9 @@ export const Attachment: MessageFns<Attachment> = {
     if (message.checksum !== undefined) {
       obj.checksum = message.checksum;
     }
+    if (message.url !== undefined) {
+      obj.url = message.url;
+    }
     return obj;
   },
 
@@ -291,6 +308,7 @@ export const Attachment: MessageFns<Attachment> = {
     message.data = object.data ?? new Uint8Array(0);
     message.mime = object.mime ?? "";
     message.checksum = object.checksum ?? undefined;
+    message.url = object.url ?? undefined;
     return message;
   },
 };

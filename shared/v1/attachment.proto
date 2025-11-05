@@ -22,6 +22,7 @@ message Attachment {
   bytes data = 10; // usually set by the backend
   string mime = 11; // usually set by the backend
   optional string checksum = 12;
+  optional string url = 13;
 }
 
 message Attachments {

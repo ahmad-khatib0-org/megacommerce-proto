@@ -190,6 +190,23 @@ public final class AttachmentProto {
      */
     com.google.protobuf.ByteString
         getChecksumBytes();
+
+    /**
+     * <code>optional string url = 13 [json_name = "url"];</code>
+     * @return Whether the url field is set.
+     */
+    boolean hasUrl();
+    /**
+     * <code>optional string url = 13 [json_name = "url"];</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>optional string url = 13 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
   }
   /**
    * Protobuf type {@code shared.v1.Attachment}
@@ -221,6 +238,7 @@ public final class AttachmentProto {
       data_ = com.google.protobuf.ByteString.EMPTY;
       mime_ = "";
       checksum_ = "";
+      url_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -627,6 +645,53 @@ public final class AttachmentProto {
       }
     }
 
+    public static final int URL_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <code>optional string url = 13 [json_name = "url"];</code>
+     * @return Whether the url field is set.
+     */
+    @java.lang.Override
+    public boolean hasUrl() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string url = 13 [json_name = "url"];</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string url = 13 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -676,6 +741,9 @@ public final class AttachmentProto {
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 12, checksum_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 13, url_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -727,6 +795,9 @@ public final class AttachmentProto {
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(12, checksum_);
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(13, url_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -775,6 +846,11 @@ public final class AttachmentProto {
         if (!getChecksum()
             .equals(other.getChecksum())) return false;
       }
+      if (hasUrl() != other.hasUrl()) return false;
+      if (hasUrl()) {
+        if (!getUrl()
+            .equals(other.getUrl())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -816,6 +892,10 @@ public final class AttachmentProto {
       if (hasChecksum()) {
         hash = (37 * hash) + CHECKSUM_FIELD_NUMBER;
         hash = (53 * hash) + getChecksum().hashCode();
+      }
+      if (hasUrl()) {
+        hash = (37 * hash) + URL_FIELD_NUMBER;
+        hash = (53 * hash) + getUrl().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -975,6 +1055,7 @@ public final class AttachmentProto {
         data_ = com.google.protobuf.ByteString.EMPTY;
         mime_ = "";
         checksum_ = "";
+        url_ = "";
         return this;
       }
 
@@ -1052,6 +1133,10 @@ public final class AttachmentProto {
           result.checksum_ = checksum_;
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.url_ = url_;
+          to_bitField0_ |= 0x00000008;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1115,6 +1200,11 @@ public final class AttachmentProto {
         if (other.hasChecksum()) {
           checksum_ = other.checksum_;
           bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        if (other.hasUrl()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1207,6 +1297,11 @@ public final class AttachmentProto {
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
+              case 106: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2137,6 +2232,85 @@ public final class AttachmentProto {
         checkByteStringIsUtf8(value);
         checksum_ = value;
         bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>optional string url = 13 [json_name = "url"];</code>
+       * @return Whether the url field is set.
+       */
+      public boolean hasUrl() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+      /**
+       * <code>optional string url = 13 [json_name = "url"];</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string url = 13 [json_name = "url"];</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string url = 13 [json_name = "url"];</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string url = 13 [json_name = "url"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string url = 13 [json_name = "url"];</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -3689,7 +3863,7 @@ public final class AttachmentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032shared/v1/attachment.proto\022\tshared.v1\032" +
-      "\026shared/v1/struct.proto\"\206\003\n\nAttachment\022\016" +
+      "\026shared/v1/struct.proto\"\245\003\n\nAttachment\022\016" +
       "\n\002id\030\001 \001(\tR\002id\022\032\n\010filename\030\002 \001(\tR\010filena" +
       "me\022\033\n\tfile_type\030\003 \001(\tR\010fileType\022\033\n\tfile_" +
       "size\030\004 \001(\003R\010fileSize\022%\n\016file_extension\030\005" +
@@ -3699,15 +3873,16 @@ public final class AttachmentProto {
       "rop\022-\n\010metadata\030\t \001(\0132\021.shared.v1.Struct" +
       "R\010metadata\022\022\n\004data\030\n \001(\014R\004data\022\022\n\004mime\030\013" +
       " \001(\tR\004mime\022\037\n\010checksum\030\014 \001(\tH\000R\010checksum" +
-      "\210\001\001B\013\n\t_checksum\"F\n\013Attachments\0227\n\013attac" +
-      "hments\030\001 \003(\0132\025.shared.v1.AttachmentR\013att" +
-      "achments\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 \001(" +
-      "\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006height\030\004 \001" +
-      "(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspect" +
-      "RatioBu\n\032org.megacommerce.shared.v1B\017Att" +
-      "achmentProtoZCgithub.com/ahmad-khatib0-o" +
-      "rg/megacommerce-proto/gen/go/shared/v1;v" +
-      "1\370\001\001b\006proto3"
+      "\210\001\001\022\025\n\003url\030\r \001(\tH\001R\003url\210\001\001B\013\n\t_checksumB" +
+      "\006\n\004_url\"F\n\013Attachments\0227\n\013attachments\030\001 " +
+      "\003(\0132\025.shared.v1.AttachmentR\013attachments\"" +
+      "s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 \001(\002R\001y\022\024\n\005w" +
+      "idth\030\003 \001(\002R\005width\022\026\n\006height\030\004 \001(\002R\006heigh" +
+      "t\022!\n\014aspect_ratio\030\005 \001(\002R\013aspectRatioBu\n\032" +
+      "org.megacommerce.shared.v1B\017AttachmentPr" +
+      "otoZCgithub.com/ahmad-khatib0-org/megaco" +
+      "mmerce-proto/gen/go/shared/v1;v1\370\001\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3719,7 +3894,7 @@ public final class AttachmentProto {
     internal_static_shared_v1_Attachment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Attachment_descriptor,
-        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", "Data", "Mime", "Checksum", });
+        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", "Data", "Mime", "Checksum", "Url", });
     internal_static_shared_v1_Attachments_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_shared_v1_Attachments_fieldAccessorTable = new
