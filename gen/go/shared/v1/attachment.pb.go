@@ -37,6 +37,7 @@ type Attachment struct {
 	Checksum        *string                `protobuf:"bytes,12,opt,name=checksum,proto3,oneof" json:"checksum,omitempty"`
 	Url             *string                `protobuf:"bytes,13,opt,name=url,proto3,oneof" json:"url,omitempty"`
 	DurationSeconds *uint64                `protobuf:"varint,14,opt,name=duration_seconds,json=durationSeconds,proto3,oneof" json:"duration_seconds,omitempty"`
+	Error           *string                `protobuf:"bytes,15,opt,name=error,proto3,oneof" json:"error,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -169,6 +170,13 @@ func (x *Attachment) GetDurationSeconds() uint64 {
 	return 0
 }
 
+func (x *Attachment) GetError() string {
+	if x != nil && x.Error != nil {
+		return *x.Error
+	}
+	return ""
+}
+
 type Attachments struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Attachments   []*Attachment          `protobuf:"bytes,1,rep,name=attachments,proto3" json:"attachments,omitempty"`
@@ -293,7 +301,7 @@ var File_shared_v1_attachment_proto protoreflect.FileDescriptor
 
 const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\n" +
-	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\xea\x03\n" +
+	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\x8f\x04\n" +
 	"\n" +
 	"Attachment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
@@ -310,10 +318,12 @@ const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\x04mime\x18\v \x01(\tR\x04mime\x12\x1f\n" +
 	"\bchecksum\x18\f \x01(\tH\x00R\bchecksum\x88\x01\x01\x12\x15\n" +
 	"\x03url\x18\r \x01(\tH\x01R\x03url\x88\x01\x01\x12.\n" +
-	"\x10duration_seconds\x18\x0e \x01(\x04H\x02R\x0fdurationSeconds\x88\x01\x01B\v\n" +
+	"\x10duration_seconds\x18\x0e \x01(\x04H\x02R\x0fdurationSeconds\x88\x01\x01\x12\x19\n" +
+	"\x05error\x18\x0f \x01(\tH\x03R\x05error\x88\x01\x01B\v\n" +
 	"\t_checksumB\x06\n" +
 	"\x04_urlB\x13\n" +
-	"\x11_duration_seconds\"F\n" +
+	"\x11_duration_secondsB\b\n" +
+	"\x06_error\"F\n" +
 	"\vAttachments\x127\n" +
 	"\vattachments\x18\x01 \x03(\v2\x15.shared.v1.AttachmentR\vattachments\"s\n" +
 	"\x04Crop\x12\f\n" +

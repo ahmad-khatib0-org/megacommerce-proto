@@ -24,6 +24,7 @@ message Attachment {
   optional string checksum = 12;
   optional string url = 13;
   optional uint64 duration_seconds = 14;
+  optional string error = 15;
 }
 
 message Attachments {

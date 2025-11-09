@@ -218,6 +218,23 @@ public final class AttachmentProto {
      * @return The durationSeconds.
      */
     long getDurationSeconds();
+
+    /**
+     * <code>optional string error = 15 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <code>optional string error = 15 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>optional string error = 15 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code shared.v1.Attachment}
@@ -250,6 +267,7 @@ public final class AttachmentProto {
       mime_ = "";
       checksum_ = "";
       url_ = "";
+      error_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -722,6 +740,53 @@ public final class AttachmentProto {
       return durationSeconds_;
     }
 
+    public static final int ERROR_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object error_ = "";
+    /**
+     * <code>optional string error = 15 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional string error = 15 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string error = 15 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -777,6 +842,9 @@ public final class AttachmentProto {
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         output.writeUInt64(14, durationSeconds_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 15, error_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -834,6 +902,9 @@ public final class AttachmentProto {
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(14, durationSeconds_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(15, error_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -893,6 +964,11 @@ public final class AttachmentProto {
         if (getDurationSeconds()
             != other.getDurationSeconds()) return false;
       }
+      if (hasError() != other.hasError()) return false;
+      if (hasError()) {
+        if (!getError()
+            .equals(other.getError())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -943,6 +1019,10 @@ public final class AttachmentProto {
         hash = (37 * hash) + DURATION_SECONDS_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getDurationSeconds());
+      }
+      if (hasError()) {
+        hash = (37 * hash) + ERROR_FIELD_NUMBER;
+        hash = (53 * hash) + getError().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1104,6 +1184,7 @@ public final class AttachmentProto {
         checksum_ = "";
         url_ = "";
         durationSeconds_ = 0L;
+        error_ = "";
         return this;
       }
 
@@ -1189,6 +1270,10 @@ public final class AttachmentProto {
           result.durationSeconds_ = durationSeconds_;
           to_bitField0_ |= 0x00000010;
         }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.error_ = error_;
+          to_bitField0_ |= 0x00000020;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1261,6 +1346,11 @@ public final class AttachmentProto {
         }
         if (other.hasDurationSeconds()) {
           setDurationSeconds(other.getDurationSeconds());
+        }
+        if (other.hasError()) {
+          error_ = other.error_;
+          bitField0_ |= 0x00004000;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1362,6 +1452,11 @@ public final class AttachmentProto {
                 bitField0_ |= 0x00002000;
                 break;
               } // case 112
+              case 122: {
+                error_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2411,6 +2506,85 @@ public final class AttachmentProto {
       public Builder clearDurationSeconds() {
         bitField0_ = (bitField0_ & ~0x00002000);
         durationSeconds_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>optional string error = 15 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      public boolean hasError() {
+        return ((bitField0_ & 0x00004000) != 0);
+      }
+      /**
+       * <code>optional string error = 15 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string error = 15 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string error = 15 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        error_ = value;
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string error = 15 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        error_ = getDefaultInstance().getError();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string error = 15 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        error_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -3963,7 +4137,7 @@ public final class AttachmentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032shared/v1/attachment.proto\022\tshared.v1\032" +
-      "\026shared/v1/struct.proto\"\352\003\n\nAttachment\022\016" +
+      "\026shared/v1/struct.proto\"\217\004\n\nAttachment\022\016" +
       "\n\002id\030\001 \001(\tR\002id\022\032\n\010filename\030\002 \001(\tR\010filena" +
       "me\022\033\n\tfile_type\030\003 \001(\tR\010fileType\022\033\n\tfile_" +
       "size\030\004 \001(\003R\010fileSize\022%\n\016file_extension\030\005" +
@@ -3974,16 +4148,17 @@ public final class AttachmentProto {
       "R\010metadata\022\022\n\004data\030\n \001(\014R\004data\022\022\n\004mime\030\013" +
       " \001(\tR\004mime\022\037\n\010checksum\030\014 \001(\tH\000R\010checksum" +
       "\210\001\001\022\025\n\003url\030\r \001(\tH\001R\003url\210\001\001\022.\n\020duration_s" +
-      "econds\030\016 \001(\004H\002R\017durationSeconds\210\001\001B\013\n\t_c" +
-      "hecksumB\006\n\004_urlB\023\n\021_duration_seconds\"F\n\013" +
-      "Attachments\0227\n\013attachments\030\001 \003(\0132\025.share" +
-      "d.v1.AttachmentR\013attachments\"s\n\004Crop\022\014\n\001" +
-      "x\030\001 \001(\002R\001x\022\014\n\001y\030\002 \001(\002R\001y\022\024\n\005width\030\003 \001(\002R" +
-      "\005width\022\026\n\006height\030\004 \001(\002R\006height\022!\n\014aspect" +
-      "_ratio\030\005 \001(\002R\013aspectRatioBu\n\032org.megacom" +
-      "merce.shared.v1B\017AttachmentProtoZCgithub" +
-      ".com/ahmad-khatib0-org/megacommerce-prot" +
-      "o/gen/go/shared/v1;v1\370\001\001b\006proto3"
+      "econds\030\016 \001(\004H\002R\017durationSeconds\210\001\001\022\031\n\005er" +
+      "ror\030\017 \001(\tH\003R\005error\210\001\001B\013\n\t_checksumB\006\n\004_u" +
+      "rlB\023\n\021_duration_secondsB\010\n\006_error\"F\n\013Att" +
+      "achments\0227\n\013attachments\030\001 \003(\0132\025.shared.v" +
+      "1.AttachmentR\013attachments\"s\n\004Crop\022\014\n\001x\030\001" +
+      " \001(\002R\001x\022\014\n\001y\030\002 \001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005wi" +
+      "dth\022\026\n\006height\030\004 \001(\002R\006height\022!\n\014aspect_ra" +
+      "tio\030\005 \001(\002R\013aspectRatioBu\n\032org.megacommer" +
+      "ce.shared.v1B\017AttachmentProtoZCgithub.co" +
+      "m/ahmad-khatib0-org/megacommerce-proto/g" +
+      "en/go/shared/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3995,7 +4170,7 @@ public final class AttachmentProto {
     internal_static_shared_v1_Attachment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Attachment_descriptor,
-        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", "Data", "Mime", "Checksum", "Url", "DurationSeconds", });
+        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", "Data", "Mime", "Checksum", "Url", "DurationSeconds", "Error", });
     internal_static_shared_v1_Attachments_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_shared_v1_Attachments_fieldAccessorTable = new

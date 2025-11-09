@@ -231,6 +231,8 @@ pub struct Attachment {
     pub url: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(uint64, optional, tag = "14")]
     pub duration_seconds: ::core::option::Option<u64>,
+    #[prost(string, optional, tag = "15")]
+    pub error: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

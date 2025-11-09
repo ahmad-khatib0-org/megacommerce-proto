@@ -32,6 +32,7 @@ export interface Attachment {
   checksum?: string | undefined;
   url?: string | undefined;
   durationSeconds?: string | undefined;
+  error?: string | undefined;
 }
 
 export interface Attachments {
@@ -62,6 +63,7 @@ function createBaseAttachment(): Attachment {
     checksum: undefined,
     url: undefined,
     durationSeconds: undefined,
+    error: undefined,
   };
 }
 
@@ -108,6 +110,9 @@ export const Attachment: MessageFns<Attachment> = {
     }
     if (message.durationSeconds !== undefined) {
       writer.uint32(112).uint64(message.durationSeconds);
+    }
+    if (message.error !== undefined) {
+      writer.uint32(122).string(message.error);
     }
     return writer;
   },
@@ -231,6 +236,14 @@ export const Attachment: MessageFns<Attachment> = {
           message.durationSeconds = reader.uint64().toString();
           continue;
         }
+        case 15: {
+          if (tag !== 122) {
+            break;
+          }
+
+          message.error = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -256,6 +269,7 @@ export const Attachment: MessageFns<Attachment> = {
       checksum: isSet(object.checksum) ? globalThis.String(object.checksum) : undefined,
       url: isSet(object.url) ? globalThis.String(object.url) : undefined,
       durationSeconds: isSet(object.durationSeconds) ? globalThis.String(object.durationSeconds) : undefined,
+      error: isSet(object.error) ? globalThis.String(object.error) : undefined,
     };
   },
 
@@ -303,6 +317,9 @@ export const Attachment: MessageFns<Attachment> = {
     if (message.durationSeconds !== undefined) {
       obj.durationSeconds = message.durationSeconds;
     }
+    if (message.error !== undefined) {
+      obj.error = message.error;
+    }
     return obj;
   },
 
@@ -327,6 +344,7 @@ export const Attachment: MessageFns<Attachment> = {
     message.checksum = object.checksum ?? undefined;
     message.url = object.url ?? undefined;
     message.durationSeconds = object.durationSeconds ?? undefined;
+    message.error = object.error ?? undefined;
     return message;
   },
 };
