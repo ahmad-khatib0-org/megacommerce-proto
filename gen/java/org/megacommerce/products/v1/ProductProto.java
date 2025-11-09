@@ -3686,52 +3686,112 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-     */
-    java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> 
-        getImagesList();
-    /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-     */
-    org.megacommerce.products.v1.ProductProto.ProductMediaImage getImages(int index);
-    /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
      */
     int getImagesCount();
     /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
      */
-    java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> 
-        getImagesOrBuilderList();
+    boolean containsImages(
+        java.lang.String key);
     /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     * Use {@link #getImagesMap()} instead.
      */
-    org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder getImagesOrBuilder(
-        int index);
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage>
+    getImages();
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage>
+    getImagesMap();
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
+     */
+    /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaImage getImagesOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaImage defaultValue);
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductMediaImage getImagesOrThrow(
+        java.lang.String key);
 
     /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-     */
-    java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> 
-        getVideosList();
-    /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-     */
-    org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideos(int index);
-    /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
      */
     int getVideosCount();
     /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
      */
-    java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> 
-        getVideosOrBuilderList();
+    boolean containsVideos(
+        java.lang.String key);
     /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     * Use {@link #getVideosMap()} instead.
      */
-    org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder getVideosOrBuilder(
-        int index);
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo>
+    getVideos();
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo>
+    getVideosMap();
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
+     */
+    /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideosOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaVideo defaultValue);
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
+     */
+    org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideosOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code products.v1.ProductMediaVariant}
@@ -3755,8 +3815,6 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       super(builder);
     }
     private ProductMediaVariant() {
-      images_ = java.util.Collections.emptyList();
-      videos_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -3764,6 +3822,20 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVariant_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetImages();
+        case 2:
+          return internalGetVideos();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -3773,85 +3845,193 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
     }
 
     public static final int IMAGES_FIELD_NUMBER = 1;
+    private static final class ImagesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVariant_ImagesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.products.v1.ProductProto.ProductMediaImage.getDefaultInstance());
+    }
     @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> images_;
-    /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> getImagesList() {
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> images_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage>
+    internalGetImages() {
+      if (images_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ImagesDefaultEntryHolder.defaultEntry);
+      }
       return images_;
     }
-    /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> 
-        getImagesOrBuilderList() {
-      return images_;
-    }
-    /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-     */
-    @java.lang.Override
     public int getImagesCount() {
-      return images_.size();
+      return internalGetImages().getMap().size();
     }
     /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductProto.ProductMediaImage getImages(int index) {
-      return images_.get(index);
+    public boolean containsImages(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetImages().getMap().containsKey(key);
     }
     /**
-     * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+     * Use {@link #getImagesMap()} instead.
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder getImagesOrBuilder(
-        int index) {
-      return images_.get(index);
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> getImages() {
+      return getImagesMap();
+    }
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> getImagesMap() {
+      return internalGetImages().getMap();
+    }
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaImage getImagesOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaImage defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> map =
+          internalGetImages().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaImage getImagesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> map =
+          internalGetImages().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     public static final int VIDEOS_FIELD_NUMBER = 2;
+    private static final class VideosDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVariant_VideosEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.products.v1.ProductProto.ProductMediaVideo.getDefaultInstance());
+    }
     @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> videos_;
-    /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> getVideosList() {
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> videos_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo>
+    internalGetVideos() {
+      if (videos_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            VideosDefaultEntryHolder.defaultEntry);
+      }
       return videos_;
     }
-    /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> 
-        getVideosOrBuilderList() {
-      return videos_;
-    }
-    /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-     */
-    @java.lang.Override
     public int getVideosCount() {
-      return videos_.size();
+      return internalGetVideos().getMap().size();
     }
     /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideos(int index) {
-      return videos_.get(index);
+    public boolean containsVideos(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetVideos().getMap().containsKey(key);
     }
     /**
-     * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+     * Use {@link #getVideosMap()} instead.
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder getVideosOrBuilder(
-        int index) {
-      return videos_.get(index);
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> getVideos() {
+      return getVideosMap();
+    }
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> getVideosMap() {
+      return internalGetVideos().getMap();
+    }
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideosOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaVideo defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> map =
+          internalGetVideos().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * &lt;attachment_id , attachment&gt;
+     * </pre>
+     *
+     * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideosOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> map =
+          internalGetVideos().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3868,12 +4048,18 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < images_.size(); i++) {
-        output.writeMessage(1, images_.get(i));
-      }
-      for (int i = 0; i < videos_.size(); i++) {
-        output.writeMessage(2, videos_.get(i));
-      }
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetImages(),
+          ImagesDefaultEntryHolder.defaultEntry,
+          1);
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetVideos(),
+          VideosDefaultEntryHolder.defaultEntry,
+          2);
       getUnknownFields().writeTo(output);
     }
 
@@ -3883,13 +4069,25 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < images_.size(); i++) {
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> entry
+           : internalGetImages().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage>
+        images__ = ImagesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, images_.get(i));
+            .computeMessageSize(1, images__);
       }
-      for (int i = 0; i < videos_.size(); i++) {
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> entry
+           : internalGetVideos().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo>
+        videos__ = VideosDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, videos_.get(i));
+            .computeMessageSize(2, videos__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3906,10 +4104,10 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       }
       org.megacommerce.products.v1.ProductProto.ProductMediaVariant other = (org.megacommerce.products.v1.ProductProto.ProductMediaVariant) obj;
 
-      if (!getImagesList()
-          .equals(other.getImagesList())) return false;
-      if (!getVideosList()
-          .equals(other.getVideosList())) return false;
+      if (!internalGetImages().equals(
+          other.internalGetImages())) return false;
+      if (!internalGetVideos().equals(
+          other.internalGetVideos())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3921,13 +4119,13 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getImagesCount() > 0) {
+      if (!internalGetImages().getMap().isEmpty()) {
         hash = (37 * hash) + IMAGES_FIELD_NUMBER;
-        hash = (53 * hash) + getImagesList().hashCode();
+        hash = (53 * hash) + internalGetImages().hashCode();
       }
-      if (getVideosCount() > 0) {
+      if (!internalGetVideos().getMap().isEmpty()) {
         hash = (37 * hash) + VIDEOS_FIELD_NUMBER;
-        hash = (53 * hash) + getVideosList().hashCode();
+        hash = (53 * hash) + internalGetVideos().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -4038,6 +4236,32 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
         return org.megacommerce.products.v1.ProductProto.internal_static_products_v1_ProductMediaVariant_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetImages();
+          case 2:
+            return internalGetVideos();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableImages();
+          case 2:
+            return internalGetMutableVideos();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -4060,20 +4284,8 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        if (imagesBuilder_ == null) {
-          images_ = java.util.Collections.emptyList();
-        } else {
-          images_ = null;
-          imagesBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (videosBuilder_ == null) {
-          videos_ = java.util.Collections.emptyList();
-        } else {
-          videos_ = null;
-          videosBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableImages().clear();
+        internalGetMutableVideos().clear();
         return this;
       }
 
@@ -4100,35 +4312,19 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       @java.lang.Override
       public org.megacommerce.products.v1.ProductProto.ProductMediaVariant buildPartial() {
         org.megacommerce.products.v1.ProductProto.ProductMediaVariant result = new org.megacommerce.products.v1.ProductProto.ProductMediaVariant(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductProto.ProductMediaVariant result) {
-        if (imagesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            images_ = java.util.Collections.unmodifiableList(images_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.images_ = images_;
-        } else {
-          result.images_ = imagesBuilder_.build();
-        }
-        if (videosBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            videos_ = java.util.Collections.unmodifiableList(videos_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.videos_ = videos_;
-        } else {
-          result.videos_ = videosBuilder_.build();
-        }
-      }
-
       private void buildPartial0(org.megacommerce.products.v1.ProductProto.ProductMediaVariant result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.images_ = internalGetImages().build(ImagesDefaultEntryHolder.defaultEntry);
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.videos_ = internalGetVideos().build(VideosDefaultEntryHolder.defaultEntry);
+        }
       }
 
       @java.lang.Override
@@ -4143,58 +4339,12 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
 
       public Builder mergeFrom(org.megacommerce.products.v1.ProductProto.ProductMediaVariant other) {
         if (other == org.megacommerce.products.v1.ProductProto.ProductMediaVariant.getDefaultInstance()) return this;
-        if (imagesBuilder_ == null) {
-          if (!other.images_.isEmpty()) {
-            if (images_.isEmpty()) {
-              images_ = other.images_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureImagesIsMutable();
-              images_.addAll(other.images_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.images_.isEmpty()) {
-            if (imagesBuilder_.isEmpty()) {
-              imagesBuilder_.dispose();
-              imagesBuilder_ = null;
-              images_ = other.images_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              imagesBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   internalGetImagesFieldBuilder() : null;
-            } else {
-              imagesBuilder_.addAllMessages(other.images_);
-            }
-          }
-        }
-        if (videosBuilder_ == null) {
-          if (!other.videos_.isEmpty()) {
-            if (videos_.isEmpty()) {
-              videos_ = other.videos_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureVideosIsMutable();
-              videos_.addAll(other.videos_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.videos_.isEmpty()) {
-            if (videosBuilder_.isEmpty()) {
-              videosBuilder_.dispose();
-              videosBuilder_ = null;
-              videos_ = other.videos_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              videosBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   internalGetVideosFieldBuilder() : null;
-            } else {
-              videosBuilder_.addAllMessages(other.videos_);
-            }
-          }
-        }
+        internalGetMutableImages().mergeFrom(
+            other.internalGetImages());
+        bitField0_ |= 0x00000001;
+        internalGetMutableVideos().mergeFrom(
+            other.internalGetVideos());
+        bitField0_ |= 0x00000002;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4222,29 +4372,21 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
                 done = true;
                 break;
               case 10: {
-                org.megacommerce.products.v1.ProductProto.ProductMediaImage m =
-                    input.readMessage(
-                        org.megacommerce.products.v1.ProductProto.ProductMediaImage.parser(),
-                        extensionRegistry);
-                if (imagesBuilder_ == null) {
-                  ensureImagesIsMutable();
-                  images_.add(m);
-                } else {
-                  imagesBuilder_.addMessage(m);
-                }
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage>
+                images__ = input.readMessage(
+                    ImagesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableImages().ensureBuilderMap().put(
+                    images__.getKey(), images__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
               case 18: {
-                org.megacommerce.products.v1.ProductProto.ProductMediaVideo m =
-                    input.readMessage(
-                        org.megacommerce.products.v1.ProductProto.ProductMediaVideo.parser(),
-                        extensionRegistry);
-                if (videosBuilder_ == null) {
-                  ensureVideosIsMutable();
-                  videos_.add(m);
-                } else {
-                  videosBuilder_.addMessage(m);
-                }
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo>
+                videos__ = input.readMessage(
+                    VideosDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableVideos().ensureBuilderMap().put(
+                    videos__.getKey(), videos__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
               default: {
@@ -4264,484 +4406,378 @@ org.megacommerce.products.v1.ProductProto.ProductMediaVariant defaultValue) {
       }
       private int bitField0_;
 
-      private java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> images_ =
-        java.util.Collections.emptyList();
-      private void ensureImagesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          images_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductProto.ProductMediaImage>(images_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductProto.ProductMediaImage, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> imagesBuilder_;
-
-      /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-       */
-      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage> getImagesList() {
-        if (imagesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(images_);
-        } else {
-          return imagesBuilder_.getMessageList();
+      private static final class ImagesConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaImage> {
+        @java.lang.Override
+        public org.megacommerce.products.v1.ProductProto.ProductMediaImage build(org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder val) {
+          if (val instanceof org.megacommerce.products.v1.ProductProto.ProductMediaImage) { return (org.megacommerce.products.v1.ProductProto.ProductMediaImage) val; }
+          return ((org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder) val).build();
         }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> defaultEntry() {
+          return ImagesDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final ImagesConverter imagesConverter = new ImagesConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaImage, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder> images_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaImage, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder>
+          internalGetImages() {
+        if (images_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(imagesConverter);
+        }
+        return images_;
       }
-      /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-       */
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaImage, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder>
+          internalGetMutableImages() {
+        if (images_ == null) {
+          images_ = new com.google.protobuf.MapFieldBuilder<>(imagesConverter);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return images_;
+      }
       public int getImagesCount() {
-        if (imagesBuilder_ == null) {
-          return images_.size();
-        } else {
-          return imagesBuilder_.getCount();
-        }
+        return internalGetImages().ensureBuilderMap().size();
       }
       /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
        */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaImage getImages(int index) {
-        if (imagesBuilder_ == null) {
-          return images_.get(index);
-        } else {
-          return imagesBuilder_.getMessage(index);
-        }
+      @java.lang.Override
+      public boolean containsImages(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetImages().ensureBuilderMap().containsKey(key);
       }
       /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       * Use {@link #getImagesMap()} instead.
        */
-      public Builder setImages(
-          int index, org.megacommerce.products.v1.ProductProto.ProductMediaImage value) {
-        if (imagesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureImagesIsMutable();
-          images_.set(index, value);
-          onChanged();
-        } else {
-          imagesBuilder_.setMessage(index, value);
-        }
-        return this;
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> getImages() {
+        return getImagesMap();
       }
       /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
        */
-      public Builder setImages(
-          int index, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder builderForValue) {
-        if (imagesBuilder_ == null) {
-          ensureImagesIsMutable();
-          images_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          imagesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
+      @java.lang.Override
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> getImagesMap() {
+        return internalGetImages().getImmutableMap();
       }
       /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
        */
-      public Builder addImages(org.megacommerce.products.v1.ProductProto.ProductMediaImage value) {
-        if (imagesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureImagesIsMutable();
-          images_.add(value);
-          onChanged();
-        } else {
-          imagesBuilder_.addMessage(value);
-        }
-        return this;
+      @java.lang.Override
+      public /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaImage getImagesOrDefault(
+          java.lang.String key,
+          /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaImage defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> map = internalGetMutableImages().ensureBuilderMap();
+        return map.containsKey(key) ? imagesConverter.build(map.get(key)) : defaultValue;
       }
       /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
        */
-      public Builder addImages(
-          int index, org.megacommerce.products.v1.ProductProto.ProductMediaImage value) {
-        if (imagesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureImagesIsMutable();
-          images_.add(index, value);
-          onChanged();
-        } else {
-          imagesBuilder_.addMessage(index, value);
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImage getImagesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> map = internalGetMutableImages().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
         }
-        return this;
+        return imagesConverter.build(map.get(key));
       }
-      /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-       */
-      public Builder addImages(
-          org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder builderForValue) {
-        if (imagesBuilder_ == null) {
-          ensureImagesIsMutable();
-          images_.add(builderForValue.build());
-          onChanged();
-        } else {
-          imagesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-       */
-      public Builder addImages(
-          int index, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder builderForValue) {
-        if (imagesBuilder_ == null) {
-          ensureImagesIsMutable();
-          images_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          imagesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-       */
-      public Builder addAllImages(
-          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductProto.ProductMediaImage> values) {
-        if (imagesBuilder_ == null) {
-          ensureImagesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, images_);
-          onChanged();
-        } else {
-          imagesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-       */
       public Builder clearImages() {
-        if (imagesBuilder_ == null) {
-          images_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          imagesBuilder_.clear();
-        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableImages().clear();
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
        */
-      public Builder removeImages(int index) {
-        if (imagesBuilder_ == null) {
-          ensureImagesIsMutable();
-          images_.remove(index);
-          onChanged();
-        } else {
-          imagesBuilder_.remove(index);
-        }
+      public Builder removeImages(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableImages().ensureBuilderMap()
+            .remove(key);
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       * Use alternate mutation accessors instead.
        */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder getImagesBuilder(
-          int index) {
-        return internalGetImagesFieldBuilder().getBuilder(index);
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage>
+          getMutableImages() {
+        bitField0_ |= 0x00000001;
+        return internalGetMutableImages().ensureMessageMap();
       }
       /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
        */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder getImagesOrBuilder(
-          int index) {
-        if (imagesBuilder_ == null) {
-          return images_.get(index);  } else {
-          return imagesBuilder_.getMessageOrBuilder(index);
+      public Builder putImages(
+          java.lang.String key,
+          org.megacommerce.products.v1.ProductProto.ProductMediaImage value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableImages().ensureBuilderMap()
+            .put(key, value);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
+       */
+      public Builder putAllImages(
+          java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImage> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
         }
+        internalGetMutableImages().ensureBuilderMap()
+            .putAll(values);
+        bitField0_ |= 0x00000001;
+        return this;
       }
       /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaImage&gt; images = 1 [json_name = "images"];</code>
        */
-      public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> 
-           getImagesOrBuilderList() {
-        if (imagesBuilder_ != null) {
-          return imagesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(images_);
+      public org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder putImagesBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> builderMap = internalGetMutableImages().ensureBuilderMap();
+        org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.products.v1.ProductProto.ProductMediaImage.newBuilder();
+          builderMap.put(key, entry);
         }
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-       */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder addImagesBuilder() {
-        return internalGetImagesFieldBuilder().addBuilder(
-            org.megacommerce.products.v1.ProductProto.ProductMediaImage.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-       */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder addImagesBuilder(
-          int index) {
-        return internalGetImagesFieldBuilder().addBuilder(
-            index, org.megacommerce.products.v1.ProductProto.ProductMediaImage.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];</code>
-       */
-      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder> 
-           getImagesBuilderList() {
-        return internalGetImagesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductProto.ProductMediaImage, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder> 
-          internalGetImagesFieldBuilder() {
-        if (imagesBuilder_ == null) {
-          imagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.products.v1.ProductProto.ProductMediaImage, org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaImageOrBuilder>(
-                  images_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          images_ = null;
+        if (entry instanceof org.megacommerce.products.v1.ProductProto.ProductMediaImage) {
+          entry = ((org.megacommerce.products.v1.ProductProto.ProductMediaImage) entry).toBuilder();
+          builderMap.put(key, entry);
         }
-        return imagesBuilder_;
+        return (org.megacommerce.products.v1.ProductProto.ProductMediaImage.Builder) entry;
       }
 
-      private java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> videos_ =
-        java.util.Collections.emptyList();
-      private void ensureVideosIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          videos_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductProto.ProductMediaVideo>(videos_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductProto.ProductMediaVideo, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> videosBuilder_;
-
-      /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-       */
-      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo> getVideosList() {
-        if (videosBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(videos_);
-        } else {
-          return videosBuilder_.getMessageList();
+      private static final class VideosConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> {
+        @java.lang.Override
+        public org.megacommerce.products.v1.ProductProto.ProductMediaVideo build(org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder val) {
+          if (val instanceof org.megacommerce.products.v1.ProductProto.ProductMediaVideo) { return (org.megacommerce.products.v1.ProductProto.ProductMediaVideo) val; }
+          return ((org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder) val).build();
         }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> defaultEntry() {
+          return VideosDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final VideosConverter videosConverter = new VideosConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaVideo, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder> videos_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaVideo, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder>
+          internalGetVideos() {
+        if (videos_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(videosConverter);
+        }
+        return videos_;
       }
-      /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-       */
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder, org.megacommerce.products.v1.ProductProto.ProductMediaVideo, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder>
+          internalGetMutableVideos() {
+        if (videos_ == null) {
+          videos_ = new com.google.protobuf.MapFieldBuilder<>(videosConverter);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return videos_;
+      }
       public int getVideosCount() {
-        if (videosBuilder_ == null) {
-          return videos_.size();
-        } else {
-          return videosBuilder_.getCount();
-        }
+        return internalGetVideos().ensureBuilderMap().size();
       }
       /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
        */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideos(int index) {
-        if (videosBuilder_ == null) {
-          return videos_.get(index);
-        } else {
-          return videosBuilder_.getMessage(index);
-        }
+      @java.lang.Override
+      public boolean containsVideos(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetVideos().ensureBuilderMap().containsKey(key);
       }
       /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       * Use {@link #getVideosMap()} instead.
        */
-      public Builder setVideos(
-          int index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo value) {
-        if (videosBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureVideosIsMutable();
-          videos_.set(index, value);
-          onChanged();
-        } else {
-          videosBuilder_.setMessage(index, value);
-        }
-        return this;
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> getVideos() {
+        return getVideosMap();
       }
       /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
        */
-      public Builder setVideos(
-          int index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder builderForValue) {
-        if (videosBuilder_ == null) {
-          ensureVideosIsMutable();
-          videos_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          videosBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
+      @java.lang.Override
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> getVideosMap() {
+        return internalGetVideos().getImmutableMap();
       }
       /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
        */
-      public Builder addVideos(org.megacommerce.products.v1.ProductProto.ProductMediaVideo value) {
-        if (videosBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureVideosIsMutable();
-          videos_.add(value);
-          onChanged();
-        } else {
-          videosBuilder_.addMessage(value);
-        }
-        return this;
+      @java.lang.Override
+      public /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideosOrDefault(
+          java.lang.String key,
+          /* nullable */
+org.megacommerce.products.v1.ProductProto.ProductMediaVideo defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> map = internalGetMutableVideos().ensureBuilderMap();
+        return map.containsKey(key) ? videosConverter.build(map.get(key)) : defaultValue;
       }
       /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
        */
-      public Builder addVideos(
-          int index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo value) {
-        if (videosBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureVideosIsMutable();
-          videos_.add(index, value);
-          onChanged();
-        } else {
-          videosBuilder_.addMessage(index, value);
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo getVideosOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> map = internalGetMutableVideos().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
         }
-        return this;
+        return videosConverter.build(map.get(key));
       }
-      /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-       */
-      public Builder addVideos(
-          org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder builderForValue) {
-        if (videosBuilder_ == null) {
-          ensureVideosIsMutable();
-          videos_.add(builderForValue.build());
-          onChanged();
-        } else {
-          videosBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-       */
-      public Builder addVideos(
-          int index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder builderForValue) {
-        if (videosBuilder_ == null) {
-          ensureVideosIsMutable();
-          videos_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          videosBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-       */
-      public Builder addAllVideos(
-          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductProto.ProductMediaVideo> values) {
-        if (videosBuilder_ == null) {
-          ensureVideosIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, videos_);
-          onChanged();
-        } else {
-          videosBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-       */
       public Builder clearVideos() {
-        if (videosBuilder_ == null) {
-          videos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          videosBuilder_.clear();
-        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableVideos().clear();
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
        */
-      public Builder removeVideos(int index) {
-        if (videosBuilder_ == null) {
-          ensureVideosIsMutable();
-          videos_.remove(index);
-          onChanged();
-        } else {
-          videosBuilder_.remove(index);
-        }
+      public Builder removeVideos(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableVideos().ensureBuilderMap()
+            .remove(key);
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       * Use alternate mutation accessors instead.
        */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder getVideosBuilder(
-          int index) {
-        return internalGetVideosFieldBuilder().getBuilder(index);
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo>
+          getMutableVideos() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableVideos().ensureMessageMap();
       }
       /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
        */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder getVideosOrBuilder(
-          int index) {
-        if (videosBuilder_ == null) {
-          return videos_.get(index);  } else {
-          return videosBuilder_.getMessageOrBuilder(index);
+      public Builder putVideos(
+          java.lang.String key,
+          org.megacommerce.products.v1.ProductProto.ProductMediaVideo value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableVideos().ensureBuilderMap()
+            .put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
+       */
+      public Builder putAllVideos(
+          java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideo> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
         }
+        internalGetMutableVideos().ensureBuilderMap()
+            .putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
       }
       /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
+       * <pre>
+       * &lt;attachment_id , attachment&gt;
+       * </pre>
+       *
+       * <code>map&lt;string, .products.v1.ProductMediaVideo&gt; videos = 2 [json_name = "videos"];</code>
        */
-      public java.util.List<? extends org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> 
-           getVideosOrBuilderList() {
-        if (videosBuilder_ != null) {
-          return videosBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(videos_);
+      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder putVideosBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> builderMap = internalGetMutableVideos().ensureBuilderMap();
+        org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.products.v1.ProductProto.ProductMediaVideo.newBuilder();
+          builderMap.put(key, entry);
         }
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-       */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder addVideosBuilder() {
-        return internalGetVideosFieldBuilder().addBuilder(
-            org.megacommerce.products.v1.ProductProto.ProductMediaVideo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-       */
-      public org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder addVideosBuilder(
-          int index) {
-        return internalGetVideosFieldBuilder().addBuilder(
-            index, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];</code>
-       */
-      public java.util.List<org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder> 
-           getVideosBuilderList() {
-        return internalGetVideosFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductProto.ProductMediaVideo, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder> 
-          internalGetVideosFieldBuilder() {
-        if (videosBuilder_ == null) {
-          videosBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.products.v1.ProductProto.ProductMediaVideo, org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder, org.megacommerce.products.v1.ProductProto.ProductMediaVideoOrBuilder>(
-                  videos_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          videos_ = null;
+        if (entry instanceof org.megacommerce.products.v1.ProductProto.ProductMediaVideo) {
+          entry = ((org.megacommerce.products.v1.ProductProto.ProductMediaVideo) entry).toBuilder();
+          builderMap.put(key, entry);
         }
-        return videosBuilder_;
+        return (org.megacommerce.products.v1.ProductProto.ProductMediaVideo.Builder) entry;
       }
 
       // @@protoc_insertion_point(builder_scope:products.v1.ProductMediaVariant)
@@ -17672,6 +17708,16 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_products_v1_ProductMediaVariant_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductMediaVariant_ImagesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductMediaVariant_ImagesEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductMediaVariant_VideosEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductMediaVariant_VideosEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_products_v1_ProductMediaImage_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -17763,81 +17809,86 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       "v1.ProductMedia.MediaEntryR\005media\032Z\n\nMed" +
       "iaEntry\022\020\n\003key\030\001 \001(\tR\003key\0226\n\005value\030\002 \001(\013" +
       "2 .products.v1.ProductMediaVariantR\005valu" +
-      "e:\0028\001\"\205\001\n\023ProductMediaVariant\0226\n\006images\030" +
-      "\001 \003(\0132\036.products.v1.ProductMediaImageR\006i" +
-      "mages\0226\n\006videos\030\002 \003(\0132\036.products.v1.Prod" +
-      "uctMediaVideoR\006videos\"Q\n\021ProductMediaIma" +
-      "ge\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001(\tR" +
-      "\003url\022\022\n\004size\030\003 \001(\004R\004size\"m\n\021ProductMedia" +
-      "Video\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001" +
-      "(\tR\003url\022\022\n\004size\030\003 \001(\004R\004size\022\032\n\010duration\030" +
-      "\004 \001(\004R\010duration\"\246\001\n\014ProductOffer\022:\n\005offe" +
-      "r\030\002 \003(\0132$.products.v1.ProductOffer.Offer" +
-      "EntryR\005offer\032Z\n\nOfferEntry\022\020\n\003key\030\001 \001(\tR" +
-      "\003key\0226\n\005value\030\002 \001(\0132 .products.v1.Produc" +
-      "tOfferVariantR\005value:\0028\001\"\321\004\n\023ProductOffe" +
-      "rVariant\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010quantity\030\003" +
-      " \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR\005price\022-\n\022" +
-      "offering_condition\030\005 \001(\tR\021offeringCondit" +
-      "ion\022*\n\016condition_note\030\006 \001(\tH\000R\rcondition" +
-      "Note\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R\tlistPrice" +
-      "\210\001\001\022$\n\016has_sale_price\030\010 \001(\010R\014hasSalePric" +
-      "e\022\"\n\nsale_price\030\t \001(\tH\002R\tsalePrice\210\001\001\022-\n" +
-      "\020sale_price_start\030\n \001(\tH\003R\016salePriceStar" +
-      "t\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH\004R\014salePric" +
-      "eEnd\210\001\001\022,\n\022has_minimum_orders\030\014 \001(\010R\020has" +
-      "MinimumOrders\022L\n\016minimum_orders\030\r \003(\0132%." +
-      "products.v1.ProductOfferMinimumOrderR\rmi" +
-      "nimumOrdersB\021\n\017_condition_noteB\r\n\013_list_" +
-      "priceB\r\n\013_sale_priceB\023\n\021_sale_price_star" +
-      "tB\021\n\017_sale_price_end\"\256\001\n\030ProductOfferMin" +
-      "imumOrder\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\t" +
-      "R\005price\022\032\n\010quantity\030\003 \001(\004R\010quantity\022\035\n\nc" +
-      "reated_at\030\004 \001(\004R\tcreatedAt\022\"\n\nupdated_at" +
-      "\030\005 \001(\004H\000R\tupdatedAt\210\001\001B\r\n\013_updated_at\"\232\001" +
-      "\n\rProductSafety\022>\n\006safety\030\001 \003(\0132&.produc" +
-      "ts.v1.ProductSafety.SafetyEntryR\006safety\032" +
-      "I\n\013SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005valu" +
-      "e\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"J\n\nPr" +
-      "oductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 " +
-      "\001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\":\n\013Produc" +
-      "tTags\022+\n\004tags\030\001 \003(\0132\027.products.v1.Produc" +
-      "tTagR\004tags\"\021\n\017ProductMetadata\"\336\t\n\007Produc" +
-      "t\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006user" +
-      "Id\022\024\n\005title\030\003 \001(\tR\005title\022\032\n\010category\030\004 \001" +
-      "(\tR\010category\022 \n\013subcategory\030\005 \001(\tR\013subca" +
-      "tegory\022%\n\016has_variations\030\006 \001(\010R\rhasVaria" +
-      "tions\022\"\n\nbrand_name\030\007 \001(\tH\000R\tbrandName\210\001" +
-      "\001\022$\n\016has_brand_name\030\010 \001(\010R\014hasBrandName\022" +
-      "\"\n\nproduct_id\030\t \001(\tH\001R\tproductId\210\001\001\022$\n\016h" +
-      "as_product_id\030\n \001(\010R\014hasProductId\022+\n\017pro" +
-      "duct_id_type\030\013 \001(\tH\002R\rproductIdType\210\001\001\022 " +
-      "\n\013description\030\014 \001(\tR\013description\022D\n\rbull" +
-      "et_points\030\r \003(\0132\037.products.v1.ProductBul" +
-      "letPointR\014bulletPoints\022#\n\rcurrency_code\030" +
-      "\016 \001(\tR\014currencyCode\022)\n\020fulfillment_type\030" +
-      "\017 \001(\tR\017fulfillmentType\022\'\n\017processing_tim" +
-      "e\030\020 \001(\004R\016processingTime\0225\n\007details\030\021 \001(\013" +
-      "2\033.products.v1.ProductDetailsR\007details\022/" +
-      "\n\005media\030\022 \001(\0132\031.products.v1.ProductMedia" +
-      "R\005media\022/\n\005offer\030\023 \001(\0132\031.products.v1.Pro" +
-      "ductOfferR\005offer\0222\n\006safety\030\024 \001(\0132\032.produ" +
-      "cts.v1.ProductSafetyR\006safety\022+\n\004tags\030\025 \003" +
-      "(\0132\027.products.v1.ProductTagR\004tags\022=\n\010met" +
-      "adata\030\026 \001(\0132\034.products.v1.ProductMetadat" +
-      "aH\003R\010metadata\210\001\001\022\035\n\nar_enabled\030\027 \001(\010R\tar" +
-      "Enabled\022\022\n\004slug\030\030 \001(\tR\004slug\022\026\n\006status\030\031 " +
-      "\001(\tR\006status\022\030\n\007version\030\032 \001(\rR\007version\022%\n" +
-      "\016schema_version\030\033 \001(\rR\rschemaVersion\022\035\n\n" +
-      "created_at\030\034 \001(\004R\tcreatedAt\022&\n\014published" +
-      "_at\030\035 \001(\004H\004R\013publishedAt\210\001\001\022\"\n\nupdated_a" +
-      "t\030\036 \001(\004H\005R\tupdatedAt\210\001\001B\r\n\013_brand_nameB\r" +
-      "\n\013_product_idB\022\n\020_product_id_typeB\013\n\t_me" +
-      "tadataB\017\n\r_published_atB\r\n\013_updated_atBv" +
-      "\n\034org.megacommerce.products.v1B\014ProductP" +
-      "rotoZEgithub.com/ahmad-khatib0-org/megac" +
-      "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006" +
-      "proto3"
+      "e:\0028\001\"\327\002\n\023ProductMediaVariant\022D\n\006images\030" +
+      "\001 \003(\0132,.products.v1.ProductMediaVariant." +
+      "ImagesEntryR\006images\022D\n\006videos\030\002 \003(\0132,.pr" +
+      "oducts.v1.ProductMediaVariant.VideosEntr" +
+      "yR\006videos\032Y\n\013ImagesEntry\022\020\n\003key\030\001 \001(\tR\003k" +
+      "ey\0224\n\005value\030\002 \001(\0132\036.products.v1.ProductM" +
+      "ediaImageR\005value:\0028\001\032Y\n\013VideosEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\0224\n\005value\030\002 \001(\0132\036.products." +
+      "v1.ProductMediaVideoR\005value:\0028\001\"Q\n\021Produ" +
+      "ctMediaImage\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003" +
+      "url\030\002 \001(\tR\003url\022\022\n\004size\030\003 \001(\004R\004size\"m\n\021Pr" +
+      "oductMediaVideo\022\026\n\006format\030\001 \001(\tR\006format\022" +
+      "\020\n\003url\030\002 \001(\tR\003url\022\022\n\004size\030\003 \001(\004R\004size\022\032\n" +
+      "\010duration\030\004 \001(\004R\010duration\"\246\001\n\014ProductOff" +
+      "er\022:\n\005offer\030\002 \003(\0132$.products.v1.ProductO" +
+      "ffer.OfferEntryR\005offer\032Z\n\nOfferEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\0226\n\005value\030\002 \001(\0132 .products" +
+      ".v1.ProductOfferVariantR\005value:\0028\001\"\321\004\n\023P" +
+      "roductOfferVariant\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010" +
+      "quantity\030\003 \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR" +
+      "\005price\022-\n\022offering_condition\030\005 \001(\tR\021offe" +
+      "ringCondition\022*\n\016condition_note\030\006 \001(\tH\000R" +
+      "\rconditionNote\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R" +
+      "\tlistPrice\210\001\001\022$\n\016has_sale_price\030\010 \001(\010R\014h" +
+      "asSalePrice\022\"\n\nsale_price\030\t \001(\tH\002R\tsaleP" +
+      "rice\210\001\001\022-\n\020sale_price_start\030\n \001(\tH\003R\016sal" +
+      "ePriceStart\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH\004" +
+      "R\014salePriceEnd\210\001\001\022,\n\022has_minimum_orders\030" +
+      "\014 \001(\010R\020hasMinimumOrders\022L\n\016minimum_order" +
+      "s\030\r \003(\0132%.products.v1.ProductOfferMinimu" +
+      "mOrderR\rminimumOrdersB\021\n\017_condition_note" +
+      "B\r\n\013_list_priceB\r\n\013_sale_priceB\023\n\021_sale_" +
+      "price_startB\021\n\017_sale_price_end\"\256\001\n\030Produ" +
+      "ctOfferMinimumOrder\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005p" +
+      "rice\030\002 \001(\tR\005price\022\032\n\010quantity\030\003 \001(\004R\010qua" +
+      "ntity\022\035\n\ncreated_at\030\004 \001(\004R\tcreatedAt\022\"\n\n" +
+      "updated_at\030\005 \001(\004H\000R\tupdatedAt\210\001\001B\r\n\013_upd" +
+      "ated_at\"\232\001\n\rProductSafety\022>\n\006safety\030\001 \003(" +
+      "\0132&.products.v1.ProductSafety.SafetyEntr" +
+      "yR\006safety\032I\n\013SafetyEntry\022\020\n\003key\030\001 \001(\tR\003k" +
+      "ey\022$\n\005value\030\002 \001(\0132\016.shared.v1.AnyR\005value" +
+      ":\0028\001\"J\n\nProductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022" +
+      "\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name" +
+      "\":\n\013ProductTags\022+\n\004tags\030\001 \003(\0132\027.products" +
+      ".v1.ProductTagR\004tags\"\021\n\017ProductMetadata\"" +
+      "\336\t\n\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002" +
+      " \001(\tR\006userId\022\024\n\005title\030\003 \001(\tR\005title\022\032\n\010ca" +
+      "tegory\030\004 \001(\tR\010category\022 \n\013subcategory\030\005 " +
+      "\001(\tR\013subcategory\022%\n\016has_variations\030\006 \001(\010" +
+      "R\rhasVariations\022\"\n\nbrand_name\030\007 \001(\tH\000R\tb" +
+      "randName\210\001\001\022$\n\016has_brand_name\030\010 \001(\010R\014has" +
+      "BrandName\022\"\n\nproduct_id\030\t \001(\tH\001R\tproduct" +
+      "Id\210\001\001\022$\n\016has_product_id\030\n \001(\010R\014hasProduc" +
+      "tId\022+\n\017product_id_type\030\013 \001(\tH\002R\rproductI" +
+      "dType\210\001\001\022 \n\013description\030\014 \001(\tR\013descripti" +
+      "on\022D\n\rbullet_points\030\r \003(\0132\037.products.v1." +
+      "ProductBulletPointR\014bulletPoints\022#\n\rcurr" +
+      "ency_code\030\016 \001(\tR\014currencyCode\022)\n\020fulfill" +
+      "ment_type\030\017 \001(\tR\017fulfillmentType\022\'\n\017proc" +
+      "essing_time\030\020 \001(\004R\016processingTime\0225\n\007det" +
+      "ails\030\021 \001(\0132\033.products.v1.ProductDetailsR" +
+      "\007details\022/\n\005media\030\022 \001(\0132\031.products.v1.Pr" +
+      "oductMediaR\005media\022/\n\005offer\030\023 \001(\0132\031.produ" +
+      "cts.v1.ProductOfferR\005offer\0222\n\006safety\030\024 \001" +
+      "(\0132\032.products.v1.ProductSafetyR\006safety\022+" +
+      "\n\004tags\030\025 \003(\0132\027.products.v1.ProductTagR\004t" +
+      "ags\022=\n\010metadata\030\026 \001(\0132\034.products.v1.Prod" +
+      "uctMetadataH\003R\010metadata\210\001\001\022\035\n\nar_enabled" +
+      "\030\027 \001(\010R\tarEnabled\022\022\n\004slug\030\030 \001(\tR\004slug\022\026\n" +
+      "\006status\030\031 \001(\tR\006status\022\030\n\007version\030\032 \001(\rR\007" +
+      "version\022%\n\016schema_version\030\033 \001(\rR\rschemaV" +
+      "ersion\022\035\n\ncreated_at\030\034 \001(\004R\tcreatedAt\022&\n" +
+      "\014published_at\030\035 \001(\004H\004R\013publishedAt\210\001\001\022\"\n" +
+      "\nupdated_at\030\036 \001(\004H\005R\tupdatedAt\210\001\001B\r\n\013_br" +
+      "and_nameB\r\n\013_product_idB\022\n\020_product_id_t" +
+      "ypeB\013\n\t_metadataB\017\n\r_published_atB\r\n\013_up" +
+      "dated_atBv\n\034org.megacommerce.products.v1" +
+      "B\014ProductProtoZEgithub.com/ahmad-khatib0" +
+      "-org/megacommerce-proto/gen/go/products/" +
+      "v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17898,6 +17949,18 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductMediaVariant_descriptor,
         new java.lang.String[] { "Images", "Videos", });
+    internal_static_products_v1_ProductMediaVariant_ImagesEntry_descriptor =
+      internal_static_products_v1_ProductMediaVariant_descriptor.getNestedTypes().get(0);
+    internal_static_products_v1_ProductMediaVariant_ImagesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductMediaVariant_ImagesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_products_v1_ProductMediaVariant_VideosEntry_descriptor =
+      internal_static_products_v1_ProductMediaVariant_descriptor.getNestedTypes().get(1);
+    internal_static_products_v1_ProductMediaVariant_VideosEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductMediaVariant_VideosEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_products_v1_ProductMediaImage_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_products_v1_ProductMediaImage_fieldAccessorTable = new

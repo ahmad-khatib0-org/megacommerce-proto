@@ -295,32 +295,42 @@ struct ProductOfferVariantDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductOfferVariantDefaultTypeInternal _ProductOfferVariant_default_instance_;
-
-inline constexpr ProductMediaVariant::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : images_{},
-        videos_{},
-        _cached_size_{0} {}
-
 template <typename>
-PROTOBUF_CONSTEXPR ProductMediaVariant::ProductMediaVariant(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR ProductMediaVariant_VideosEntry_DoNotUse::ProductMediaVariant_VideosEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ProductMediaVariant_class_data_.base()),
+    : ProductMediaVariant_VideosEntry_DoNotUse::MapEntry(ProductMediaVariant_VideosEntry_DoNotUse_class_data_.base()){}
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
+    : ProductMediaVariant_VideosEntry_DoNotUse::MapEntry() {
 }
-struct ProductMediaVariantDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductMediaVariantDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductMediaVariantDefaultTypeInternal() {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductMediaVariant_VideosEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductMediaVariant_VideosEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductMediaVariant_VideosEntry_DoNotUseDefaultTypeInternal() {}
   union {
-    ProductMediaVariant _instance;
+    ProductMediaVariant_VideosEntry_DoNotUse _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMediaVariantDefaultTypeInternal _ProductMediaVariant_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMediaVariant_VideosEntry_DoNotUseDefaultTypeInternal _ProductMediaVariant_VideosEntry_DoNotUse_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductMediaVariant_ImagesEntry_DoNotUse::ProductMediaVariant_ImagesEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ProductMediaVariant_ImagesEntry_DoNotUse::MapEntry(ProductMediaVariant_ImagesEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ProductMediaVariant_ImagesEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductMediaVariant_ImagesEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductMediaVariant_ImagesEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductMediaVariant_ImagesEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ProductMediaVariant_ImagesEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMediaVariant_ImagesEntry_DoNotUseDefaultTypeInternal _ProductMediaVariant_ImagesEntry_DoNotUse_default_instance_;
 template <typename>
 PROTOBUF_CONSTEXPR ProductDetailsVariant_VariantDataEntry_DoNotUse::ProductDetailsVariant_VariantDataEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -400,24 +410,32 @@ struct ProductOffer_OfferEntry_DoNotUseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductOffer_OfferEntry_DoNotUseDefaultTypeInternal _ProductOffer_OfferEntry_DoNotUse_default_instance_;
+
+inline constexpr ProductMediaVariant::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : images_{},
+        videos_{},
+        _cached_size_{0} {}
+
 template <typename>
-PROTOBUF_CONSTEXPR ProductMedia_MediaEntry_DoNotUse::ProductMedia_MediaEntry_DoNotUse(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR ProductMediaVariant::ProductMediaVariant(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ProductMedia_MediaEntry_DoNotUse::MapEntry(ProductMedia_MediaEntry_DoNotUse_class_data_.base()){}
+    : ::google::protobuf::Message(ProductMediaVariant_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : ProductMedia_MediaEntry_DoNotUse::MapEntry() {
-}
+    : ::google::protobuf::Message(),
 #endif  // PROTOBUF_CUSTOM_VTABLE
-struct ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal() {}
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductMediaVariantDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductMediaVariantDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductMediaVariantDefaultTypeInternal() {}
   union {
-    ProductMedia_MediaEntry_DoNotUse _instance;
+    ProductMediaVariant _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal _ProductMedia_MediaEntry_DoNotUse_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMediaVariantDefaultTypeInternal _ProductMediaVariant_default_instance_;
 
 inline constexpr ProductDetailsVariant::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -471,6 +489,42 @@ struct ProductOfferDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductOfferDefaultTypeInternal _ProductOffer_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductMedia_MediaEntry_DoNotUse::ProductMedia_MediaEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ProductMedia_MediaEntry_DoNotUse::MapEntry(ProductMedia_MediaEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ProductMedia_MediaEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ProductMedia_MediaEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMedia_MediaEntry_DoNotUseDefaultTypeInternal _ProductMedia_MediaEntry_DoNotUse_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductDetails_DetailsEntry_DoNotUse::ProductDetails_DetailsEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ProductDetails_DetailsEntry_DoNotUse::MapEntry(ProductDetails_DetailsEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ProductDetails_DetailsEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductDetails_DetailsEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductDetails_DetailsEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductDetails_DetailsEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ProductDetails_DetailsEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductDetails_DetailsEntry_DoNotUseDefaultTypeInternal _ProductDetails_DetailsEntry_DoNotUse_default_instance_;
 
 inline constexpr ProductMedia::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -496,24 +550,6 @@ struct ProductMediaDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMediaDefaultTypeInternal _ProductMedia_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR ProductDetails_DetailsEntry_DoNotUse::ProductDetails_DetailsEntry_DoNotUse(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ProductDetails_DetailsEntry_DoNotUse::MapEntry(ProductDetails_DetailsEntry_DoNotUse_class_data_.base()){}
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ProductDetails_DetailsEntry_DoNotUse::MapEntry() {
-}
-#endif  // PROTOBUF_CUSTOM_VTABLE
-struct ProductDetails_DetailsEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductDetails_DetailsEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductDetails_DetailsEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    ProductDetails_DetailsEntry_DoNotUse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductDetails_DetailsEntry_DoNotUseDefaultTypeInternal _ProductDetails_DetailsEntry_DoNotUse_default_instance_;
 
 inline constexpr ProductDetails::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -680,6 +716,20 @@ const ::uint32_t
         1,
         0x000, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductMedia, _impl_.media_),
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant_ImagesEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant_ImagesEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant_ImagesEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant_VideosEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant_VideosEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant_VideosEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
         0x000, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant, _impl_.images_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductMediaVariant, _impl_.videos_),
@@ -846,19 +896,21 @@ static const ::_pbi::MigrationSchema
         {35, sizeof(::products::v1::ProductDetailsVariant)},
         {42, sizeof(::products::v1::ProductMedia_MediaEntry_DoNotUse)},
         {49, sizeof(::products::v1::ProductMedia)},
-        {51, sizeof(::products::v1::ProductMediaVariant)},
-        {54, sizeof(::products::v1::ProductMediaImage)},
-        {63, sizeof(::products::v1::ProductMediaVideo)},
-        {74, sizeof(::products::v1::ProductOffer_OfferEntry_DoNotUse)},
-        {81, sizeof(::products::v1::ProductOffer)},
-        {83, sizeof(::products::v1::ProductOfferVariant)},
-        {110, sizeof(::products::v1::ProductOfferMinimumOrder)},
-        {123, sizeof(::products::v1::ProductSafety_SafetyEntry_DoNotUse)},
-        {130, sizeof(::products::v1::ProductSafety)},
-        {132, sizeof(::products::v1::ProductTag)},
-        {139, sizeof(::products::v1::ProductTags)},
-        {141, sizeof(::products::v1::ProductMetadata)},
-        {142, sizeof(::products::v1::Product)},
+        {51, sizeof(::products::v1::ProductMediaVariant_ImagesEntry_DoNotUse)},
+        {58, sizeof(::products::v1::ProductMediaVariant_VideosEntry_DoNotUse)},
+        {65, sizeof(::products::v1::ProductMediaVariant)},
+        {68, sizeof(::products::v1::ProductMediaImage)},
+        {77, sizeof(::products::v1::ProductMediaVideo)},
+        {88, sizeof(::products::v1::ProductOffer_OfferEntry_DoNotUse)},
+        {95, sizeof(::products::v1::ProductOffer)},
+        {97, sizeof(::products::v1::ProductOfferVariant)},
+        {124, sizeof(::products::v1::ProductOfferMinimumOrder)},
+        {137, sizeof(::products::v1::ProductSafety_SafetyEntry_DoNotUse)},
+        {144, sizeof(::products::v1::ProductSafety)},
+        {146, sizeof(::products::v1::ProductTag)},
+        {153, sizeof(::products::v1::ProductTags)},
+        {155, sizeof(::products::v1::ProductMetadata)},
+        {156, sizeof(::products::v1::Product)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductBulletPoint_default_instance_._instance,
@@ -869,6 +921,8 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductDetailsVariant_default_instance_._instance,
     &::products::v1::_ProductMedia_MediaEntry_DoNotUse_default_instance_._instance,
     &::products::v1::_ProductMedia_default_instance_._instance,
+    &::products::v1::_ProductMediaVariant_ImagesEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_ProductMediaVariant_VideosEntry_DoNotUse_default_instance_._instance,
     &::products::v1::_ProductMediaVariant_default_instance_._instance,
     &::products::v1::_ProductMediaImage_default_instance_._instance,
     &::products::v1::_ProductMediaVideo_default_instance_._instance,
@@ -908,81 +962,86 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_2eproto[] ABSL_ATTR
     "v1.ProductMedia.MediaEntryR\005media\032Z\n\nMed"
     "iaEntry\022\020\n\003key\030\001 \001(\tR\003key\0226\n\005value\030\002 \001(\013"
     "2 .products.v1.ProductMediaVariantR\005valu"
-    "e:\0028\001\"\205\001\n\023ProductMediaVariant\0226\n\006images\030"
-    "\001 \003(\0132\036.products.v1.ProductMediaImageR\006i"
-    "mages\0226\n\006videos\030\002 \003(\0132\036.products.v1.Prod"
-    "uctMediaVideoR\006videos\"Q\n\021ProductMediaIma"
-    "ge\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001(\tR"
-    "\003url\022\022\n\004size\030\003 \001(\004R\004size\"m\n\021ProductMedia"
-    "Video\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003url\030\002 \001"
-    "(\tR\003url\022\022\n\004size\030\003 \001(\004R\004size\022\032\n\010duration\030"
-    "\004 \001(\004R\010duration\"\246\001\n\014ProductOffer\022:\n\005offe"
-    "r\030\002 \003(\0132$.products.v1.ProductOffer.Offer"
-    "EntryR\005offer\032Z\n\nOfferEntry\022\020\n\003key\030\001 \001(\tR"
-    "\003key\0226\n\005value\030\002 \001(\0132 .products.v1.Produc"
-    "tOfferVariantR\005value:\0028\001\"\321\004\n\023ProductOffe"
-    "rVariant\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010quantity\030\003"
-    " \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR\005price\022-\n\022"
-    "offering_condition\030\005 \001(\tR\021offeringCondit"
-    "ion\022*\n\016condition_note\030\006 \001(\tH\000R\rcondition"
-    "Note\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R\tlistPrice"
-    "\210\001\001\022$\n\016has_sale_price\030\010 \001(\010R\014hasSalePric"
-    "e\022\"\n\nsale_price\030\t \001(\tH\002R\tsalePrice\210\001\001\022-\n"
-    "\020sale_price_start\030\n \001(\tH\003R\016salePriceStar"
-    "t\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH\004R\014salePric"
-    "eEnd\210\001\001\022,\n\022has_minimum_orders\030\014 \001(\010R\020has"
-    "MinimumOrders\022L\n\016minimum_orders\030\r \003(\0132%."
-    "products.v1.ProductOfferMinimumOrderR\rmi"
-    "nimumOrdersB\021\n\017_condition_noteB\r\n\013_list_"
-    "priceB\r\n\013_sale_priceB\023\n\021_sale_price_star"
-    "tB\021\n\017_sale_price_end\"\256\001\n\030ProductOfferMin"
-    "imumOrder\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\t"
-    "R\005price\022\032\n\010quantity\030\003 \001(\004R\010quantity\022\035\n\nc"
-    "reated_at\030\004 \001(\004R\tcreatedAt\022\"\n\nupdated_at"
-    "\030\005 \001(\004H\000R\tupdatedAt\210\001\001B\r\n\013_updated_at\"\232\001"
-    "\n\rProductSafety\022>\n\006safety\030\001 \003(\0132&.produc"
-    "ts.v1.ProductSafety.SafetyEntryR\006safety\032"
-    "I\n\013SafetyEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005valu"
-    "e\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"J\n\nPr"
-    "oductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 "
-    "\001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\":\n\013Produc"
-    "tTags\022+\n\004tags\030\001 \003(\0132\027.products.v1.Produc"
-    "tTagR\004tags\"\021\n\017ProductMetadata\"\336\t\n\007Produc"
-    "t\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006user"
-    "Id\022\024\n\005title\030\003 \001(\tR\005title\022\032\n\010category\030\004 \001"
-    "(\tR\010category\022 \n\013subcategory\030\005 \001(\tR\013subca"
-    "tegory\022%\n\016has_variations\030\006 \001(\010R\rhasVaria"
-    "tions\022\"\n\nbrand_name\030\007 \001(\tH\000R\tbrandName\210\001"
-    "\001\022$\n\016has_brand_name\030\010 \001(\010R\014hasBrandName\022"
-    "\"\n\nproduct_id\030\t \001(\tH\001R\tproductId\210\001\001\022$\n\016h"
-    "as_product_id\030\n \001(\010R\014hasProductId\022+\n\017pro"
-    "duct_id_type\030\013 \001(\tH\002R\rproductIdType\210\001\001\022 "
-    "\n\013description\030\014 \001(\tR\013description\022D\n\rbull"
-    "et_points\030\r \003(\0132\037.products.v1.ProductBul"
-    "letPointR\014bulletPoints\022#\n\rcurrency_code\030"
-    "\016 \001(\tR\014currencyCode\022)\n\020fulfillment_type\030"
-    "\017 \001(\tR\017fulfillmentType\022\'\n\017processing_tim"
-    "e\030\020 \001(\004R\016processingTime\0225\n\007details\030\021 \001(\013"
-    "2\033.products.v1.ProductDetailsR\007details\022/"
-    "\n\005media\030\022 \001(\0132\031.products.v1.ProductMedia"
-    "R\005media\022/\n\005offer\030\023 \001(\0132\031.products.v1.Pro"
-    "ductOfferR\005offer\0222\n\006safety\030\024 \001(\0132\032.produ"
-    "cts.v1.ProductSafetyR\006safety\022+\n\004tags\030\025 \003"
-    "(\0132\027.products.v1.ProductTagR\004tags\022=\n\010met"
-    "adata\030\026 \001(\0132\034.products.v1.ProductMetadat"
-    "aH\003R\010metadata\210\001\001\022\035\n\nar_enabled\030\027 \001(\010R\tar"
-    "Enabled\022\022\n\004slug\030\030 \001(\tR\004slug\022\026\n\006status\030\031 "
-    "\001(\tR\006status\022\030\n\007version\030\032 \001(\rR\007version\022%\n"
-    "\016schema_version\030\033 \001(\rR\rschemaVersion\022\035\n\n"
-    "created_at\030\034 \001(\004R\tcreatedAt\022&\n\014published"
-    "_at\030\035 \001(\004H\004R\013publishedAt\210\001\001\022\"\n\nupdated_a"
-    "t\030\036 \001(\004H\005R\tupdatedAt\210\001\001B\r\n\013_brand_nameB\r"
-    "\n\013_product_idB\022\n\020_product_id_typeB\013\n\t_me"
-    "tadataB\017\n\r_published_atB\r\n\013_updated_atBv"
-    "\n\034org.megacommerce.products.v1B\014ProductP"
-    "rotoZEgithub.com/ahmad-khatib0-org/megac"
-    "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006"
-    "proto3"
+    "e:\0028\001\"\327\002\n\023ProductMediaVariant\022D\n\006images\030"
+    "\001 \003(\0132,.products.v1.ProductMediaVariant."
+    "ImagesEntryR\006images\022D\n\006videos\030\002 \003(\0132,.pr"
+    "oducts.v1.ProductMediaVariant.VideosEntr"
+    "yR\006videos\032Y\n\013ImagesEntry\022\020\n\003key\030\001 \001(\tR\003k"
+    "ey\0224\n\005value\030\002 \001(\0132\036.products.v1.ProductM"
+    "ediaImageR\005value:\0028\001\032Y\n\013VideosEntry\022\020\n\003k"
+    "ey\030\001 \001(\tR\003key\0224\n\005value\030\002 \001(\0132\036.products."
+    "v1.ProductMediaVideoR\005value:\0028\001\"Q\n\021Produ"
+    "ctMediaImage\022\026\n\006format\030\001 \001(\tR\006format\022\020\n\003"
+    "url\030\002 \001(\tR\003url\022\022\n\004size\030\003 \001(\004R\004size\"m\n\021Pr"
+    "oductMediaVideo\022\026\n\006format\030\001 \001(\tR\006format\022"
+    "\020\n\003url\030\002 \001(\tR\003url\022\022\n\004size\030\003 \001(\004R\004size\022\032\n"
+    "\010duration\030\004 \001(\004R\010duration\"\246\001\n\014ProductOff"
+    "er\022:\n\005offer\030\002 \003(\0132$.products.v1.ProductO"
+    "ffer.OfferEntryR\005offer\032Z\n\nOfferEntry\022\020\n\003"
+    "key\030\001 \001(\tR\003key\0226\n\005value\030\002 \001(\0132 .products"
+    ".v1.ProductOfferVariantR\005value:\0028\001\"\321\004\n\023P"
+    "roductOfferVariant\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010"
+    "quantity\030\003 \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR"
+    "\005price\022-\n\022offering_condition\030\005 \001(\tR\021offe"
+    "ringCondition\022*\n\016condition_note\030\006 \001(\tH\000R"
+    "\rconditionNote\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R"
+    "\tlistPrice\210\001\001\022$\n\016has_sale_price\030\010 \001(\010R\014h"
+    "asSalePrice\022\"\n\nsale_price\030\t \001(\tH\002R\tsaleP"
+    "rice\210\001\001\022-\n\020sale_price_start\030\n \001(\tH\003R\016sal"
+    "ePriceStart\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH\004"
+    "R\014salePriceEnd\210\001\001\022,\n\022has_minimum_orders\030"
+    "\014 \001(\010R\020hasMinimumOrders\022L\n\016minimum_order"
+    "s\030\r \003(\0132%.products.v1.ProductOfferMinimu"
+    "mOrderR\rminimumOrdersB\021\n\017_condition_note"
+    "B\r\n\013_list_priceB\r\n\013_sale_priceB\023\n\021_sale_"
+    "price_startB\021\n\017_sale_price_end\"\256\001\n\030Produ"
+    "ctOfferMinimumOrder\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005p"
+    "rice\030\002 \001(\tR\005price\022\032\n\010quantity\030\003 \001(\004R\010qua"
+    "ntity\022\035\n\ncreated_at\030\004 \001(\004R\tcreatedAt\022\"\n\n"
+    "updated_at\030\005 \001(\004H\000R\tupdatedAt\210\001\001B\r\n\013_upd"
+    "ated_at\"\232\001\n\rProductSafety\022>\n\006safety\030\001 \003("
+    "\0132&.products.v1.ProductSafety.SafetyEntr"
+    "yR\006safety\032I\n\013SafetyEntry\022\020\n\003key\030\001 \001(\tR\003k"
+    "ey\022$\n\005value\030\002 \001(\0132\016.shared.v1.AnyR\005value"
+    ":\0028\001\"J\n\nProductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022"
+    "\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name"
+    "\":\n\013ProductTags\022+\n\004tags\030\001 \003(\0132\027.products"
+    ".v1.ProductTagR\004tags\"\021\n\017ProductMetadata\""
+    "\336\t\n\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002"
+    " \001(\tR\006userId\022\024\n\005title\030\003 \001(\tR\005title\022\032\n\010ca"
+    "tegory\030\004 \001(\tR\010category\022 \n\013subcategory\030\005 "
+    "\001(\tR\013subcategory\022%\n\016has_variations\030\006 \001(\010"
+    "R\rhasVariations\022\"\n\nbrand_name\030\007 \001(\tH\000R\tb"
+    "randName\210\001\001\022$\n\016has_brand_name\030\010 \001(\010R\014has"
+    "BrandName\022\"\n\nproduct_id\030\t \001(\tH\001R\tproduct"
+    "Id\210\001\001\022$\n\016has_product_id\030\n \001(\010R\014hasProduc"
+    "tId\022+\n\017product_id_type\030\013 \001(\tH\002R\rproductI"
+    "dType\210\001\001\022 \n\013description\030\014 \001(\tR\013descripti"
+    "on\022D\n\rbullet_points\030\r \003(\0132\037.products.v1."
+    "ProductBulletPointR\014bulletPoints\022#\n\rcurr"
+    "ency_code\030\016 \001(\tR\014currencyCode\022)\n\020fulfill"
+    "ment_type\030\017 \001(\tR\017fulfillmentType\022\'\n\017proc"
+    "essing_time\030\020 \001(\004R\016processingTime\0225\n\007det"
+    "ails\030\021 \001(\0132\033.products.v1.ProductDetailsR"
+    "\007details\022/\n\005media\030\022 \001(\0132\031.products.v1.Pr"
+    "oductMediaR\005media\022/\n\005offer\030\023 \001(\0132\031.produ"
+    "cts.v1.ProductOfferR\005offer\0222\n\006safety\030\024 \001"
+    "(\0132\032.products.v1.ProductSafetyR\006safety\022+"
+    "\n\004tags\030\025 \003(\0132\027.products.v1.ProductTagR\004t"
+    "ags\022=\n\010metadata\030\026 \001(\0132\034.products.v1.Prod"
+    "uctMetadataH\003R\010metadata\210\001\001\022\035\n\nar_enabled"
+    "\030\027 \001(\010R\tarEnabled\022\022\n\004slug\030\030 \001(\tR\004slug\022\026\n"
+    "\006status\030\031 \001(\tR\006status\022\030\n\007version\030\032 \001(\rR\007"
+    "version\022%\n\016schema_version\030\033 \001(\rR\rschemaV"
+    "ersion\022\035\n\ncreated_at\030\034 \001(\004R\tcreatedAt\022&\n"
+    "\014published_at\030\035 \001(\004H\004R\013publishedAt\210\001\001\022\"\n"
+    "\nupdated_at\030\036 \001(\004H\005R\tupdatedAt\210\001\001B\r\n\013_br"
+    "and_nameB\r\n\013_product_idB\022\n\020_product_id_t"
+    "ypeB\013\n\t_metadataB\017\n\r_published_atB\r\n\013_up"
+    "dated_atBv\n\034org.megacommerce.products.v1"
+    "B\014ProductProtoZEgithub.com/ahmad-khatib0"
+    "-org/megacommerce-proto/gen/go/products/"
+    "v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_2eproto_deps[1] = {
@@ -992,13 +1051,13 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_2eproto = {
     false,
     false,
-    3886,
+    4096,
     descriptor_table_protodef_products_2fv1_2fproduct_2eproto,
     "products/v1/product.proto",
     &descriptor_table_products_2fv1_2fproduct_2eproto_once,
     descriptor_table_products_2fv1_2fproduct_2eproto_deps,
     1,
-    21,
+    23,
     schemas,
     file_default_instances,
     TableStruct_products_2fv1_2fproduct_2eproto::offsets,
@@ -2739,6 +2798,204 @@ void ProductMedia::InternalSwap(ProductMedia* PROTOBUF_RESTRICT PROTOBUF_NONNULL
 }
 // ===================================================================
 
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ProductMediaVariant_ImagesEntry_DoNotUse::ProductMediaVariant_ImagesEntry_DoNotUse()
+    : SuperType(ProductMediaVariant_ImagesEntry_DoNotUse_class_data_.base()) {}
+ProductMediaVariant_ImagesEntry_DoNotUse::ProductMediaVariant_ImagesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, ProductMediaVariant_ImagesEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+ProductMediaVariant_ImagesEntry_DoNotUse::ProductMediaVariant_ImagesEntry_DoNotUse() : SuperType() {}
+ProductMediaVariant_ImagesEntry_DoNotUse::ProductMediaVariant_ImagesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL ProductMediaVariant_ImagesEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductMediaVariant_ImagesEntry_DoNotUse(arena);
+}
+constexpr auto ProductMediaVariant_ImagesEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductMediaVariant_ImagesEntry_DoNotUse),
+                                            alignof(ProductMediaVariant_ImagesEntry_DoNotUse));
+}
+constexpr auto ProductMediaVariant_ImagesEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductMediaVariant_ImagesEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductMediaVariant_ImagesEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductMediaVariant_ImagesEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductMediaVariant_ImagesEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductMediaVariant_ImagesEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductMediaVariant_ImagesEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &ProductMediaVariant_ImagesEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductMediaVariant_ImagesEntry_DoNotUse_class_data_ =
+        ProductMediaVariant_ImagesEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductMediaVariant_ImagesEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductMediaVariant_ImagesEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductMediaVariant_ImagesEntry_DoNotUse_class_data_.tc_table);
+  return ProductMediaVariant_ImagesEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 55, 2>
+ProductMediaVariant_ImagesEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductMediaVariant_ImagesEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductMediaVariant_ImagesEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductMediaVariant_ImagesEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .products.v1.ProductMediaImage value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductMediaVariant_ImagesEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductMediaVariant_ImagesEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(ProductMediaVariant_ImagesEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .products.v1.ProductMediaImage value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(ProductMediaVariant_ImagesEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductMediaImage>()},
+  }},
+  {{
+    "\53\3\0\0\0\0\0\0"
+    "products.v1.ProductMediaVariant.ImagesEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ProductMediaVariant_VideosEntry_DoNotUse::ProductMediaVariant_VideosEntry_DoNotUse()
+    : SuperType(ProductMediaVariant_VideosEntry_DoNotUse_class_data_.base()) {}
+ProductMediaVariant_VideosEntry_DoNotUse::ProductMediaVariant_VideosEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, ProductMediaVariant_VideosEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+ProductMediaVariant_VideosEntry_DoNotUse::ProductMediaVariant_VideosEntry_DoNotUse() : SuperType() {}
+ProductMediaVariant_VideosEntry_DoNotUse::ProductMediaVariant_VideosEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL ProductMediaVariant_VideosEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductMediaVariant_VideosEntry_DoNotUse(arena);
+}
+constexpr auto ProductMediaVariant_VideosEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductMediaVariant_VideosEntry_DoNotUse),
+                                            alignof(ProductMediaVariant_VideosEntry_DoNotUse));
+}
+constexpr auto ProductMediaVariant_VideosEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductMediaVariant_VideosEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductMediaVariant_VideosEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductMediaVariant_VideosEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductMediaVariant_VideosEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductMediaVariant_VideosEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductMediaVariant_VideosEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &ProductMediaVariant_VideosEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductMediaVariant_VideosEntry_DoNotUse_class_data_ =
+        ProductMediaVariant_VideosEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductMediaVariant_VideosEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductMediaVariant_VideosEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductMediaVariant_VideosEntry_DoNotUse_class_data_.tc_table);
+  return ProductMediaVariant_VideosEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 55, 2>
+ProductMediaVariant_VideosEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductMediaVariant_VideosEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductMediaVariant_VideosEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductMediaVariant_VideosEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .products.v1.ProductMediaVideo value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductMediaVariant_VideosEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductMediaVariant_VideosEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(ProductMediaVariant_VideosEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .products.v1.ProductMediaVideo value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(ProductMediaVariant_VideosEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductMediaVideo>()},
+  }},
+  {{
+    "\53\3\0\0\0\0\0\0"
+    "products.v1.ProductMediaVariant.VideosEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
 class ProductMediaVariant::_Internal {
  public:
 };
@@ -2808,13 +3065,21 @@ constexpr auto ProductMediaVariant::InternalNewImpl_() {
           decltype(ProductMediaVariant::_impl_.images_)::
               InternalGetArenaOffset(
                   ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductMediaVariant, _impl_.images_) +
+          decltype(ProductMediaVariant::_impl_.images_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
       PROTOBUF_FIELD_OFFSET(ProductMediaVariant, _impl_.videos_) +
           decltype(ProductMediaVariant::_impl_.videos_)::
               InternalGetArenaOffset(
                   ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductMediaVariant, _impl_.videos_) +
+          decltype(ProductMediaVariant::_impl_.videos_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
   });
   if (arena_bits.has_value()) {
-    return ::google::protobuf::internal::MessageCreator::ZeroInit(
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
         sizeof(ProductMediaVariant), alignof(ProductMediaVariant), *arena_bits);
   } else {
     return ::google::protobuf::internal::MessageCreator(&ProductMediaVariant::PlacementNew_,
@@ -2856,17 +3121,17 @@ ProductMediaVariant::GetClassData() const {
   return ProductMediaVariant_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 2, 0, 2>
+const ::_pbi::TcParseTable<0, 2, 4, 52, 2>
 ProductMediaVariant::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
+    2, 0,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
     4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
     2,  // num_field_entries
-    2,  // num_aux_entries
+    4,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     ProductMediaVariant_class_data_.base(),
     nullptr,  // post_loop_handler
@@ -2875,27 +3140,32 @@ ProductMediaVariant::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::ProductMediaVariant>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];
-    {::_pbi::TcParser::FastMtR1,
-     {18, 63, 1, PROTOBUF_FIELD_OFFSET(ProductMediaVariant, _impl_.videos_)}},
-    // repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(ProductMediaVariant, _impl_.images_)}},
+    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
-    // repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];
+    // map<string, .products.v1.ProductMediaImage> images = 1 [json_name = "images"];
     {PROTOBUF_FIELD_OFFSET(ProductMediaVariant, _impl_.images_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-    // repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];
-    {PROTOBUF_FIELD_OFFSET(ProductMediaVariant, _impl_.videos_), 0, 1,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+    // map<string, .products.v1.ProductMediaVideo> videos = 2 [json_name = "videos"];
+    {PROTOBUF_FIELD_OFFSET(ProductMediaVariant, _impl_.videos_), 0, 2,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
   }},
   {{
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
       {::_pbi::TcParser::GetTable<::products::v1::ProductMediaImage>()},
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
       {::_pbi::TcParser::GetTable<::products::v1::ProductMediaVideo>()},
   }},
   {{
+    "\37\6\6\0\0\0\0\0"
+    "products.v1.ProductMediaVariant"
+    "images"
+    "videos"
   }},
 };
 PROTOBUF_NOINLINE void ProductMediaVariant::Clear() {
@@ -2925,26 +3195,58 @@ PROTOBUF_NOINLINE void ProductMediaVariant::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];
-  for (unsigned i = 0, n = static_cast<unsigned>(
-                           this_._internal_images_size());
-       i < n; i++) {
-    const auto& repfield = this_._internal_images().Get(i);
-    target =
-        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-            1, repfield, repfield.GetCachedSize(),
-            target, stream);
+  // map<string, .products.v1.ProductMediaImage> images = 1 [json_name = "images"];
+  if (!this_._internal_images().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::products::v1::ProductMediaImage>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::products::v1::ProductMediaImage,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_images();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductMediaVariant.images");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductMediaVariant.images");
+      }
+    }
   }
 
-  // repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];
-  for (unsigned i = 0, n = static_cast<unsigned>(
-                           this_._internal_videos_size());
-       i < n; i++) {
-    const auto& repfield = this_._internal_videos().Get(i);
-    target =
-        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-            2, repfield, repfield.GetCachedSize(),
-            target, stream);
+  // map<string, .products.v1.ProductMediaVideo> videos = 2 [json_name = "videos"];
+  if (!this_._internal_videos().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::products::v1::ProductMediaVideo>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::products::v1::ProductMediaVideo,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_videos();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            2, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductMediaVariant.videos");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            2, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductMediaVariant.videos");
+      }
+    }
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -2972,18 +3274,24 @@ PROTOBUF_NOINLINE void ProductMediaVariant::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // repeated .products.v1.ProductMediaImage images = 1 [json_name = "images"];
+    // map<string, .products.v1.ProductMediaImage> images = 1 [json_name = "images"];
     {
-      total_size += 1UL * this_._internal_images_size();
-      for (const auto& msg : this_._internal_images()) {
-        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_images_size());
+      for (const auto& entry : this_._internal_images()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::products::v1::ProductMediaImage,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
       }
     }
-    // repeated .products.v1.ProductMediaVideo videos = 2 [json_name = "videos"];
+    // map<string, .products.v1.ProductMediaVideo> videos = 2 [json_name = "videos"];
     {
-      total_size += 1UL * this_._internal_videos_size();
-      for (const auto& msg : this_._internal_videos()) {
-        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_videos_size());
+      for (const auto& entry : this_._internal_videos()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::products::v1::ProductMediaVideo,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
       }
     }
   }
@@ -2999,10 +3307,8 @@ void ProductMediaVariant::MergeImpl(::google::protobuf::MessageLite& to_msg, con
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_images()->MergeFrom(
-      from._internal_images());
-  _this->_internal_mutable_videos()->MergeFrom(
-      from._internal_videos());
+  _this->_impl_.images_.MergeFrom(from._impl_.images_);
+  _this->_impl_.videos_.MergeFrom(from._impl_.videos_);
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 

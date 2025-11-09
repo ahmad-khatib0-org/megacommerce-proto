@@ -36,8 +36,8 @@ message ProductMedia {
 }
 
 message ProductMediaVariant {
-  repeated ProductMediaImage images = 1;
-  repeated ProductMediaVideo videos = 2;
+  map<string, ProductMediaImage> images = 1; // <attachment_id , attachment>
+  map<string, ProductMediaVideo> videos = 2; // <attachment_id , attachment>
 }
 
 message ProductMediaImage {

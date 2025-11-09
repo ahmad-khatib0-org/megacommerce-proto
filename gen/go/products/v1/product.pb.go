@@ -244,9 +244,9 @@ func (x *ProductMedia) GetMedia() map[string]*ProductMediaVariant {
 }
 
 type ProductMediaVariant struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Images        []*ProductMediaImage   `protobuf:"bytes,1,rep,name=images,proto3" json:"images,omitempty"`
-	Videos        []*ProductMediaVideo   `protobuf:"bytes,2,rep,name=videos,proto3" json:"videos,omitempty"`
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Images        map[string]*ProductMediaImage `protobuf:"bytes,1,rep,name=images,proto3" json:"images,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"` // <attachment_id , attachment>
+	Videos        map[string]*ProductMediaVideo `protobuf:"bytes,2,rep,name=videos,proto3" json:"videos,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"` // <attachment_id , attachment>
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -281,14 +281,14 @@ func (*ProductMediaVariant) Descriptor() ([]byte, []int) {
 	return file_products_v1_product_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *ProductMediaVariant) GetImages() []*ProductMediaImage {
+func (x *ProductMediaVariant) GetImages() map[string]*ProductMediaImage {
 	if x != nil {
 		return x.Images
 	}
 	return nil
 }
 
-func (x *ProductMediaVariant) GetVideos() []*ProductMediaVideo {
+func (x *ProductMediaVariant) GetVideos() map[string]*ProductMediaVideo {
 	if x != nil {
 		return x.Videos
 	}
@@ -1160,10 +1160,16 @@ const file_products_v1_product_proto_rawDesc = "" +
 	"\n" +
 	"MediaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x126\n" +
-	"\x05value\x18\x02 \x01(\v2 .products.v1.ProductMediaVariantR\x05value:\x028\x01\"\x85\x01\n" +
-	"\x13ProductMediaVariant\x126\n" +
-	"\x06images\x18\x01 \x03(\v2\x1e.products.v1.ProductMediaImageR\x06images\x126\n" +
-	"\x06videos\x18\x02 \x03(\v2\x1e.products.v1.ProductMediaVideoR\x06videos\"Q\n" +
+	"\x05value\x18\x02 \x01(\v2 .products.v1.ProductMediaVariantR\x05value:\x028\x01\"\xd7\x02\n" +
+	"\x13ProductMediaVariant\x12D\n" +
+	"\x06images\x18\x01 \x03(\v2,.products.v1.ProductMediaVariant.ImagesEntryR\x06images\x12D\n" +
+	"\x06videos\x18\x02 \x03(\v2,.products.v1.ProductMediaVariant.VideosEntryR\x06videos\x1aY\n" +
+	"\vImagesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x124\n" +
+	"\x05value\x18\x02 \x01(\v2\x1e.products.v1.ProductMediaImageR\x05value:\x028\x01\x1aY\n" +
+	"\vVideosEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x124\n" +
+	"\x05value\x18\x02 \x01(\v2\x1e.products.v1.ProductMediaVideoR\x05value:\x028\x01\"Q\n" +
 	"\x11ProductMediaImage\x12\x16\n" +
 	"\x06format\x18\x01 \x01(\tR\x06format\x12\x10\n" +
 	"\x03url\x18\x02 \x01(\tR\x03url\x12\x12\n" +
@@ -1280,7 +1286,7 @@ func file_products_v1_product_proto_rawDescGZIP() []byte {
 	return file_products_v1_product_proto_rawDescData
 }
 
-var file_products_v1_product_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
+var file_products_v1_product_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
 var file_products_v1_product_proto_goTypes = []any{
 	(*ProductBulletPoint)(nil),       // 0: products.v1.ProductBulletPoint
 	(*ProductDetails)(nil),           // 1: products.v1.ProductDetails
@@ -1301,20 +1307,22 @@ var file_products_v1_product_proto_goTypes = []any{
 	nil,                              // 16: products.v1.ProductDetails.DetailsEntry
 	nil,                              // 17: products.v1.ProductDetailsVariant.VariantDataEntry
 	nil,                              // 18: products.v1.ProductMedia.MediaEntry
-	nil,                              // 19: products.v1.ProductOffer.OfferEntry
-	nil,                              // 20: products.v1.ProductSafety.SafetyEntry
-	(*v1.Any)(nil),                   // 21: shared.v1.Any
+	nil,                              // 19: products.v1.ProductMediaVariant.ImagesEntry
+	nil,                              // 20: products.v1.ProductMediaVariant.VideosEntry
+	nil,                              // 21: products.v1.ProductOffer.OfferEntry
+	nil,                              // 22: products.v1.ProductSafety.SafetyEntry
+	(*v1.Any)(nil),                   // 23: shared.v1.Any
 }
 var file_products_v1_product_proto_depIdxs = []int32{
 	15, // 0: products.v1.ProductDetails.shared:type_name -> products.v1.ProductDetails.SharedEntry
 	16, // 1: products.v1.ProductDetails.details:type_name -> products.v1.ProductDetails.DetailsEntry
 	17, // 2: products.v1.ProductDetailsVariant.variant_data:type_name -> products.v1.ProductDetailsVariant.VariantDataEntry
 	18, // 3: products.v1.ProductMedia.media:type_name -> products.v1.ProductMedia.MediaEntry
-	5,  // 4: products.v1.ProductMediaVariant.images:type_name -> products.v1.ProductMediaImage
-	6,  // 5: products.v1.ProductMediaVariant.videos:type_name -> products.v1.ProductMediaVideo
-	19, // 6: products.v1.ProductOffer.offer:type_name -> products.v1.ProductOffer.OfferEntry
+	19, // 4: products.v1.ProductMediaVariant.images:type_name -> products.v1.ProductMediaVariant.ImagesEntry
+	20, // 5: products.v1.ProductMediaVariant.videos:type_name -> products.v1.ProductMediaVariant.VideosEntry
+	21, // 6: products.v1.ProductOffer.offer:type_name -> products.v1.ProductOffer.OfferEntry
 	9,  // 7: products.v1.ProductOfferVariant.minimum_orders:type_name -> products.v1.ProductOfferMinimumOrder
-	20, // 8: products.v1.ProductSafety.safety:type_name -> products.v1.ProductSafety.SafetyEntry
+	22, // 8: products.v1.ProductSafety.safety:type_name -> products.v1.ProductSafety.SafetyEntry
 	11, // 9: products.v1.ProductTags.tags:type_name -> products.v1.ProductTag
 	0,  // 10: products.v1.Product.bullet_points:type_name -> products.v1.ProductBulletPoint
 	1,  // 11: products.v1.Product.details:type_name -> products.v1.ProductDetails
@@ -1323,17 +1331,19 @@ var file_products_v1_product_proto_depIdxs = []int32{
 	10, // 14: products.v1.Product.safety:type_name -> products.v1.ProductSafety
 	11, // 15: products.v1.Product.tags:type_name -> products.v1.ProductTag
 	13, // 16: products.v1.Product.metadata:type_name -> products.v1.ProductMetadata
-	21, // 17: products.v1.ProductDetails.SharedEntry.value:type_name -> shared.v1.Any
+	23, // 17: products.v1.ProductDetails.SharedEntry.value:type_name -> shared.v1.Any
 	2,  // 18: products.v1.ProductDetails.DetailsEntry.value:type_name -> products.v1.ProductDetailsVariant
-	21, // 19: products.v1.ProductDetailsVariant.VariantDataEntry.value:type_name -> shared.v1.Any
+	23, // 19: products.v1.ProductDetailsVariant.VariantDataEntry.value:type_name -> shared.v1.Any
 	4,  // 20: products.v1.ProductMedia.MediaEntry.value:type_name -> products.v1.ProductMediaVariant
-	8,  // 21: products.v1.ProductOffer.OfferEntry.value:type_name -> products.v1.ProductOfferVariant
-	21, // 22: products.v1.ProductSafety.SafetyEntry.value:type_name -> shared.v1.Any
-	23, // [23:23] is the sub-list for method output_type
-	23, // [23:23] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	5,  // 21: products.v1.ProductMediaVariant.ImagesEntry.value:type_name -> products.v1.ProductMediaImage
+	6,  // 22: products.v1.ProductMediaVariant.VideosEntry.value:type_name -> products.v1.ProductMediaVideo
+	8,  // 23: products.v1.ProductOffer.OfferEntry.value:type_name -> products.v1.ProductOfferVariant
+	23, // 24: products.v1.ProductSafety.SafetyEntry.value:type_name -> shared.v1.Any
+	25, // [25:25] is the sub-list for method output_type
+	25, // [25:25] is the sub-list for method input_type
+	25, // [25:25] is the sub-list for extension type_name
+	25, // [25:25] is the sub-list for extension extendee
+	0,  // [0:25] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_proto_init() }
@@ -1352,7 +1362,7 @@ func file_products_v1_product_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_product_proto_rawDesc), len(file_products_v1_product_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   21,
+			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

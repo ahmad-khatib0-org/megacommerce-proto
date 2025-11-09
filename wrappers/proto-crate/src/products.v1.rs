@@ -337,10 +337,18 @@ pub struct ProductMedia {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductMediaVariant {
-    #[prost(message, repeated, tag = "1")]
-    pub images: ::prost::alloc::vec::Vec<ProductMediaImage>,
-    #[prost(message, repeated, tag = "2")]
-    pub videos: ::prost::alloc::vec::Vec<ProductMediaVideo>,
+    /// <attachment_id , attachment>
+    #[prost(map = "string, message", tag = "1")]
+    pub images: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ProductMediaImage,
+    >,
+    /// <attachment_id , attachment>
+    #[prost(map = "string, message", tag = "2")]
+    pub videos: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ProductMediaVideo,
+    >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

@@ -60,8 +60,20 @@ export interface ProductMedia_MediaEntry {
 }
 
 export interface ProductMediaVariant {
-  images: ProductMediaImage[];
-  videos: ProductMediaVideo[];
+  /** <attachment_id , attachment> */
+  images: { [key: string]: ProductMediaImage };
+  /** <attachment_id , attachment> */
+  videos: { [key: string]: ProductMediaVideo };
+}
+
+export interface ProductMediaVariant_ImagesEntry {
+  key: string;
+  value?: ProductMediaImage | undefined;
+}
+
+export interface ProductMediaVariant_VideosEntry {
+  key: string;
+  value?: ProductMediaVideo | undefined;
 }
 
 export interface ProductMediaImage {
@@ -882,17 +894,17 @@ export const ProductMedia_MediaEntry: MessageFns<ProductMedia_MediaEntry> = {
 };
 
 function createBaseProductMediaVariant(): ProductMediaVariant {
-  return { images: [], videos: [] };
+  return { images: {}, videos: {} };
 }
 
 export const ProductMediaVariant: MessageFns<ProductMediaVariant> = {
   encode(message: ProductMediaVariant, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    for (const v of message.images) {
-      ProductMediaImage.encode(v!, writer.uint32(10).fork()).join();
-    }
-    for (const v of message.videos) {
-      ProductMediaVideo.encode(v!, writer.uint32(18).fork()).join();
-    }
+    Object.entries(message.images).forEach(([key, value]) => {
+      ProductMediaVariant_ImagesEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
+    });
+    Object.entries(message.videos).forEach(([key, value]) => {
+      ProductMediaVariant_VideosEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
+    });
     return writer;
   },
 
@@ -908,7 +920,10 @@ export const ProductMediaVariant: MessageFns<ProductMediaVariant> = {
             break;
           }
 
-          message.images.push(ProductMediaImage.decode(reader, reader.uint32()));
+          const entry1 = ProductMediaVariant_ImagesEntry.decode(reader, reader.uint32());
+          if (entry1.value !== undefined) {
+            message.images[entry1.key] = entry1.value;
+          }
           continue;
         }
         case 2: {
@@ -916,7 +931,10 @@ export const ProductMediaVariant: MessageFns<ProductMediaVariant> = {
             break;
           }
 
-          message.videos.push(ProductMediaVideo.decode(reader, reader.uint32()));
+          const entry2 = ProductMediaVariant_VideosEntry.decode(reader, reader.uint32());
+          if (entry2.value !== undefined) {
+            message.videos[entry2.key] = entry2.value;
+          }
           continue;
         }
       }
@@ -930,22 +948,40 @@ export const ProductMediaVariant: MessageFns<ProductMediaVariant> = {
 
   fromJSON(object: any): ProductMediaVariant {
     return {
-      images: globalThis.Array.isArray(object?.images)
-        ? object.images.map((e: any) => ProductMediaImage.fromJSON(e))
-        : [],
-      videos: globalThis.Array.isArray(object?.videos)
-        ? object.videos.map((e: any) => ProductMediaVideo.fromJSON(e))
-        : [],
+      images: isObject(object.images)
+        ? Object.entries(object.images).reduce<{ [key: string]: ProductMediaImage }>((acc, [key, value]) => {
+          acc[key] = ProductMediaImage.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+      videos: isObject(object.videos)
+        ? Object.entries(object.videos).reduce<{ [key: string]: ProductMediaVideo }>((acc, [key, value]) => {
+          acc[key] = ProductMediaVideo.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
     };
   },
 
   toJSON(message: ProductMediaVariant): unknown {
     const obj: any = {};
-    if (message.images?.length) {
-      obj.images = message.images.map((e) => ProductMediaImage.toJSON(e));
+    if (message.images) {
+      const entries = Object.entries(message.images);
+      if (entries.length > 0) {
+        obj.images = {};
+        entries.forEach(([k, v]) => {
+          obj.images[k] = ProductMediaImage.toJSON(v);
+        });
+      }
     }
-    if (message.videos?.length) {
-      obj.videos = message.videos.map((e) => ProductMediaVideo.toJSON(e));
+    if (message.videos) {
+      const entries = Object.entries(message.videos);
+      if (entries.length > 0) {
+        obj.videos = {};
+        entries.forEach(([k, v]) => {
+          obj.videos[k] = ProductMediaVideo.toJSON(v);
+        });
+      }
     }
     return obj;
   },
@@ -955,8 +991,184 @@ export const ProductMediaVariant: MessageFns<ProductMediaVariant> = {
   },
   fromPartial<I extends Exact<DeepPartial<ProductMediaVariant>, I>>(object: I): ProductMediaVariant {
     const message = createBaseProductMediaVariant();
-    message.images = object.images?.map((e) => ProductMediaImage.fromPartial(e)) || [];
-    message.videos = object.videos?.map((e) => ProductMediaVideo.fromPartial(e)) || [];
+    message.images = Object.entries(object.images ?? {}).reduce<{ [key: string]: ProductMediaImage }>(
+      (acc, [key, value]) => {
+        if (value !== undefined) {
+          acc[key] = ProductMediaImage.fromPartial(value);
+        }
+        return acc;
+      },
+      {},
+    );
+    message.videos = Object.entries(object.videos ?? {}).reduce<{ [key: string]: ProductMediaVideo }>(
+      (acc, [key, value]) => {
+        if (value !== undefined) {
+          acc[key] = ProductMediaVideo.fromPartial(value);
+        }
+        return acc;
+      },
+      {},
+    );
+    return message;
+  },
+};
+
+function createBaseProductMediaVariant_ImagesEntry(): ProductMediaVariant_ImagesEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductMediaVariant_ImagesEntry: MessageFns<ProductMediaVariant_ImagesEntry> = {
+  encode(message: ProductMediaVariant_ImagesEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      ProductMediaImage.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductMediaVariant_ImagesEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductMediaVariant_ImagesEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = ProductMediaImage.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductMediaVariant_ImagesEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? ProductMediaImage.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductMediaVariant_ImagesEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = ProductMediaImage.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductMediaVariant_ImagesEntry>, I>>(base?: I): ProductMediaVariant_ImagesEntry {
+    return ProductMediaVariant_ImagesEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductMediaVariant_ImagesEntry>, I>>(
+    object: I,
+  ): ProductMediaVariant_ImagesEntry {
+    const message = createBaseProductMediaVariant_ImagesEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null)
+      ? ProductMediaImage.fromPartial(object.value)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductMediaVariant_VideosEntry(): ProductMediaVariant_VideosEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductMediaVariant_VideosEntry: MessageFns<ProductMediaVariant_VideosEntry> = {
+  encode(message: ProductMediaVariant_VideosEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      ProductMediaVideo.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductMediaVariant_VideosEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductMediaVariant_VideosEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = ProductMediaVideo.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductMediaVariant_VideosEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? ProductMediaVideo.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductMediaVariant_VideosEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = ProductMediaVideo.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductMediaVariant_VideosEntry>, I>>(base?: I): ProductMediaVariant_VideosEntry {
+    return ProductMediaVariant_VideosEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductMediaVariant_VideosEntry>, I>>(
+    object: I,
+  ): ProductMediaVariant_VideosEntry {
+    const message = createBaseProductMediaVariant_VideosEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null)
+      ? ProductMediaVideo.fromPartial(object.value)
+      : undefined;
     return message;
   },
 };
