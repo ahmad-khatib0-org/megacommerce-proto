@@ -43,6 +43,8 @@ generate:
 	pnpm exec tsx scripts/gen-barrels.ts
 	@echo "Compiling TypeScript (tsc)..."
 	cd wrappers/proto-npm && pnpm run build
+	@echo "Building proto CJS artifacts..."
+	@node ./scripts/build-cjs.js ./wrappers/proto-npm/dist
 
 	@echo "✅ Generation complete"
 
