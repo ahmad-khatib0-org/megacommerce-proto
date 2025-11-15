@@ -1,0 +1,248 @@
+syntax = "proto3";
+
+package orders.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/pagination.proto";
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
+option java_outer_classname = "OrdersProto";
+option java_package = "org.megacommerce.orders.v1";
+
+service OrdersService {
+  // Create order: synchronous payment capture. Returns order snapshot if success.
+  rpc OrderCreate(OrderCreateRequest) returns (OrderCreateResponse) {}
+
+  // Get order by id
+  rpc OrderGet(OrderGetRequest) returns (OrderGetResponse) {}
+
+  // List orders for user (with simple pagination)
+  rpc OrdersList(OrdersListRequest) returns (OrdersListResponse) {}
+
+  // Cancel order (subject to business rules). Refunds handled separately.
+  rpc OrderCancel(OrderCancelRequest) returns (OrderCancelResponse) {}
+
+  // Refund an order or order line(s)
+  rpc OrderRefund(OrderRefundRequest) returns (OrderRefundResponse) {}
+}
+
+message OrderCreateResponse {
+  oneof response {
+    shared.v1.SuccessResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message OrderGetResponse {
+  oneof response {
+    Order data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message OrdersListResponse {
+  oneof response {
+    OrdersListResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message OrdersListResponseData {
+  repeated Order orders = 1;
+  shared.v1.PaginationResponse pagination = 2;
+}
+
+message OrderCancelResponse {
+  oneof response {
+    shared.v1.SuccessResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message OrderRefundResponse {
+  oneof response {
+    shared.v1.SuccessResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+// CreateOrder: synchronous payment capture
+message OrderCreateRequest {
+  // idempotency key provided by client to avoid duplicate orders
+  string idempotency_key = 1;
+
+  // currency code (ISO 4217)
+  string currency_code = 3;
+
+  // order-level metadata (free-form, e.g., channel, campaign utm)
+  map<string, string> metadata = 4;
+
+  // shipping and billing addresses: use shared.v1.Any
+  // provide existing address type (keeps proto flexible)
+  shared.v1.Any shipping_address = 5;
+  shared.v1.Any billing_address = 6;
+
+  // list of items to order
+  repeated OrderLineItemRequest items = 7;
+
+  // shipping method id or chosen shipping service
+  string shipping_method = 8;
+
+  // coupon / promotion codes
+  repeated string promotion_codes = 9;
+
+  // payment information token (card token, stripe payment method id, etc.)
+  // For PCI, clients should use tokenization and not send raw card numbers.
+  string payment_method_token = 10;
+
+  // optional client-provided note
+  string customer_note = 11;
+}
+
+// Line item in create request. Qty + source product reference.
+message OrderLineItemRequest {
+  string product_id = 1;
+  string variant_id = 2; // optional SKU/variant id
+  string sku = 3;
+  uint32 quantity = 4;
+  // Optionally client can pass a desired price verification to aid checks:
+  // e.g., unit_price_cents_client = 1000 (means client expected price = 10.00)
+  // This helps detect mismatches (promotions or stale inventory).
+  optional int64 unit_price_cents_client = 5;
+  // metadata for line (gift wrap, special options)
+  map<string, string> metadata = 6;
+}
+
+message OrderGetRequest {
+  string order_id = 1;
+}
+
+message OrdersListRequest {
+  shared.v1.PaginationRequest pagination = 1;
+  repeated string status = 2;
+}
+
+message OrderCancelRequest {
+  string order_id = 1;
+  string reason = 2;
+  // whether to attempt an immediate refund (if payment captured)
+  bool refund = 3;
+}
+
+message OrderRefundRequest {
+  string order_id = 1;
+  // refund whole order or specific line items
+  repeated RefundLineItemRefund line_items = 2;
+  // reason code, external refund id, etc.
+  string reason = 3;
+  bool refund_shipping = 4;
+}
+
+message RefundLineItemRefund {
+  string line_id = 1; // link to OrderLineItem.line_id
+  uint32 quantity = 2;
+  // amount to refund in minor units (cents). If zero, compute pro-rata.
+  optional int64 amount_cents = 3;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Order model and snapshots (what we store in DB)
+////////////////////////////////////////////////////////////////////////////////
+
+// Top-level order snapshot returned to clients.
+message Order {
+  string id = 1;
+
+  // monetary amounts are stored in minor units (cents) to avoid float errors
+  int64 subtotal_cents = 3;
+  int64 shipping_cents = 4;
+  int64 tax_cents = 5;
+  int64 discount_cents = 6;
+  int64 total_cents = 7;
+  string currency_code = 8;
+
+  // line items snapshot
+  repeated OrderLineItem line_items = 9;
+
+  // shipping & billing addresses (snapshot)
+  shared.v1.Any shipping_address = 10;
+  shared.v1.Any billing_address = 11;
+
+  // Payment snapshot (synchronous capture info)
+  PaymentSnapshot payment = 12;
+
+  // Inventory reservation status - since inventory service is separate,
+  // we include reservation status in order so UI shows what's reserved.
+  InventoryReservationStatus inventory_reservation_status = 13;
+
+  // order lifecycle
+  string status = 14; // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
+  uint64 created_at = 15;
+  optional uint64 updated_at = 16;
+
+  // product/service traceability
+  string product_source = 17; // e.g., product service name/version
+  string product_version = 18; // product_version that was used for snapshot
+
+  // free-form metadata
+  map<string, string> metadata = 19;
+}
+
+// Per-line item snapshot (immutable snapshot of product at order time)
+message OrderLineItem {
+  string line_id = 1; // unique per line (UUID)
+  string product_id = 2;
+  string variant_id = 3;
+  string sku = 4;
+  string title = 5; // product title snapshot
+  map<string, string> attributes = 6; // e.g., color=size etc. (snapshot)
+  uint32 quantity = 7;
+
+  // Prices in minor units (cents)
+  int64 unit_price_cents = 8; // price charged per unit at order time
+  optional int64 list_price_cents = 9;
+  optional int64 sale_price_cents = 10;
+  optional int64 discount_cents = 11; // per-line total discount
+  optional int64 tax_cents = 12; // per-line tax
+  int64 total_cents = 13; // (quantity * unit_price) - discount + tax
+
+  // applied offers/promotions (ids)
+  repeated string applied_offer_ids = 14;
+
+  // Keep the full product snapshot for debugging/audit (json)
+  shared.v1.Any product_snapshot = 15;
+
+  uint64 created_at = 16;
+  optional uint64 updated_at = 17;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Payment snapshot (synchronous capture)
+////////////////////////////////////////////////////////////////////////////////
+message PaymentSnapshot {
+  // provider e.g., "stripe"
+  string provider = 1;
+  // provider transaction id (gateway charge id)
+  string transaction_id = 2;
+  // capture status: AUTHORIZED/CAPTURED/FAILED
+  string status = 3;
+  // card token or payment method id (tokenized)
+  string payment_method = 4;
+  // provider raw response for auditing (tokenized, avoid PII)
+  shared.v1.Any provider_response = 5;
+  // payment fees (in cents) charged by gateway, optional
+  optional int64 fee_cents = 6;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Inventory reservation status enum
+////////////////////////////////////////////////////////////////////////////////
+enum InventoryReservationStatus {
+  INVENTORY_UNKNOWN = 0;
+  INVENTORY_RESERVED = 1;
+  INVENTORY_PARTIALLY_RESERVED = 2;
+  INVENTORY_NOT_RESERVED = 3;
+  INVENTORY_PENDING = 4;
+}
