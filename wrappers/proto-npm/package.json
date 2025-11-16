@@ -1,6 +1,6 @@
 {
   "name": "@megacommerce/proto",
-  "version": "0.3.83",
+  "version": "0.3.84",
   "description": "TypeScript Protobuf bindings for MegaCommerce",
   "license": "MIT",
   "types": "dist/index.d.ts",
@@ -32,7 +32,7 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.js"
     },
     "./*": {
       "import": "./dist/node/*",
@@ -40,51 +40,51 @@
     },
     "./products/v1": {
       "import": "./dist/node/products/v1/index.js",
-      "require": "./dist/node-cjs/products/v1/index.cjs"
+      "require": "./dist/node-cjs/products/v1/index.js"
     },
     "./products/v1/*": {
       "import": "./dist/node/products/v1/*.js",
-      "require": "./dist/node-cjs/products/v1/*.cjs"
+      "require": "./dist/node-cjs/products/v1/*.js"
     },
     "./search/v1": {
       "import": "./dist/node/search/v1/index.js",
-      "require": "./dist/node-cjs/search/v1/index.cjs"
+      "require": "./dist/node-cjs/search/v1/index.js"
     },
     "./search/v1/*": {
       "import": "./dist/node/search/v1/*.js",
-      "require": "./dist/node-cjs/search/v1/*.cjs"
+      "require": "./dist/node-cjs/search/v1/*.js"
     },
     "./shared/v1": {
       "import": "./dist/node/shared/v1/index.js",
-      "require": "./dist/node-cjs/shared/v1/index.cjs"
+      "require": "./dist/node-cjs/shared/v1/index.js"
     },
     "./shared/v1/*": {
       "import": "./dist/node/shared/v1/*.js",
-      "require": "./dist/node-cjs/shared/v1/*.cjs"
+      "require": "./dist/node-cjs/shared/v1/*.js"
     },
     "./common/v1": {
       "import": "./dist/node/common/v1/index.js",
-      "require": "./dist/node-cjs/common/v1/index.cjs"
+      "require": "./dist/node-cjs/common/v1/index.js"
     },
     "./common/v1/*": {
       "import": "./dist/node/common/v1/*.js",
-      "require": "./dist/node-cjs/common/v1/*.cjs"
+      "require": "./dist/node-cjs/common/v1/*.js"
     },
     "./uploader/v1": {
       "import": "./dist/node/uploader/v1/index.js",
-      "require": "./dist/node-cjs/uploader/v1/index.cjs"
+      "require": "./dist/node-cjs/uploader/v1/index.js"
     },
     "./uploader/v1/*": {
       "import": "./dist/node/uploader/v1/*.js",
-      "require": "./dist/node-cjs/uploader/v1/*.cjs"
+      "require": "./dist/node-cjs/uploader/v1/*.js"
     },
     "./users/v1": {
       "import": "./dist/node/users/v1/index.js",
-      "require": "./dist/node-cjs/users/v1/index.cjs"
+      "require": "./dist/node-cjs/users/v1/index.js"
     },
     "./users/v1/*": {
       "import": "./dist/node/users/v1/*.js",
-      "require": "./dist/node-cjs/users/v1/*.cjs"
+      "require": "./dist/node-cjs/users/v1/*.js"
     },
     "./web/products/v1": "./dist/web/products/v1/index.js",
     "./web/products/v1/*": "./dist/web/products/v1/*.js",
