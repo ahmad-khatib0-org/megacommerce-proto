@@ -1,6 +1,6 @@
 {
   "name": "@megacommerce/proto",
-  "version": "0.3.84",
+  "version": "0.3.85",
   "description": "TypeScript Protobuf bindings for MegaCommerce",
   "license": "MIT",
   "types": "dist/index.d.ts",
@@ -37,6 +37,14 @@
     "./*": {
       "import": "./dist/node/*",
       "require": "./dist/node-cjs/*"
+    },
+    "./orders/v1": {
+      "import": "./dist/node/orders/v1/index.js",
+      "require": "./dist/node-cjs/orders/v1/index.js"
+    },
+    "./orders/v1/*": {
+      "import": "./dist/node/orders/v1/*.js",
+      "require": "./dist/node-cjs/orders/v1/*.js"
     },
     "./products/v1": {
       "import": "./dist/node/products/v1/index.js",
