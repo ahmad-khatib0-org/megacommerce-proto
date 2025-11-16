@@ -39,7 +39,7 @@ async function transformDir(srcDir, outDir) {
 
     if (ent.isFile()) {
       if (srcPath.endsWith('.js')) {
-        const relOut = outPath.replace(/\.js$/, '.cjs')
+        const relOut = outPath
         await build({
           entryPoints: [srcPath],
           outfile: relOut,
