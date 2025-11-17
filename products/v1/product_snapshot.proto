@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package products.v1;
+
+import "products/v1/product.proto";
+import "shared/v1/error.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "ProductSnapshotProto";
+option java_package = "org.megacommerce.products.v1";
+
+// minimal product data used mostly for creating orders
+message ProductSnapshot {
+  string id = 1;
+  string title = 2;
+  uint32 version = 3;
+  uint32 schema_version = 4;
+  products.v1.ProductOffer offer = 5;
+}
+
+message ProductSnapshotRequest {
+  string product_id = 1;
+}
+
+message ProductSnapshotResponse {
+  oneof response {
+    ProductSnapshot data = 1;
+    shared.v1.AppError error = 2;
+  }
+}

@@ -29,6 +29,7 @@
 #include "products/v1/product_create.pb.h"
 #include "products/v1/product_data.pb.h"
 #include "products/v1/product_list.pb.h"
+#include "products/v1/product_snapshot.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

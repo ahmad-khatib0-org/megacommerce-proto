@@ -38,17 +38,20 @@ public final class ProductsProto {
       "\n\032products/v1/products.proto\022\013products.v" +
       "1\032 products/v1/product_create.proto\032\036pro" +
       "ducts/v1/product_data.proto\032\036products/v1" +
-      "/product_list.proto2\215\002\n\017ProductsService\022" +
-      "V\n\rProductCreate\022!.products.v1.ProductCr" +
-      "eateRequest\032\".products.v1.ProductCreateR" +
-      "esponse\022P\n\013ProductData\022\037.products.v1.Pro" +
-      "ductDataRequest\032 .products.v1.ProductDat" +
-      "aResponse\022P\n\013ProductList\022\037.products.v1.P" +
-      "roductListRequest\032 .products.v1.ProductL" +
-      "istResponseBw\n\034org.megacommerce.products" +
-      ".v1B\rProductsProtoZEgithub.com/ahmad-kha" +
-      "tib0-org/megacommerce-proto/gen/go/produ" +
-      "cts/v1;v1\370\001\001b\006proto3"
+      "/product_list.proto\032\"products/v1/product" +
+      "_snapshot.proto2\353\002\n\017ProductsService\022V\n\rP" +
+      "roductCreate\022!.products.v1.ProductCreate" +
+      "Request\032\".products.v1.ProductCreateRespo" +
+      "nse\022P\n\013ProductData\022\037.products.v1.Product" +
+      "DataRequest\032 .products.v1.ProductDataRes" +
+      "ponse\022P\n\013ProductList\022\037.products.v1.Produ" +
+      "ctListRequest\032 .products.v1.ProductListR" +
+      "esponse\022\\\n\017ProductSnapshot\022#.products.v1" +
+      ".ProductSnapshotRequest\032$.products.v1.Pr" +
+      "oductSnapshotResponseBw\n\034org.megacommerc" +
+      "e.products.v1B\rProductsProtoZEgithub.com" +
+      "/ahmad-khatib0-org/megacommerce-proto/ge" +
+      "n/go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -56,11 +59,13 @@ public final class ProductsProto {
           org.megacommerce.products.v1.ProductCreateProto.getDescriptor(),
           org.megacommerce.products.v1.ProductDataProto.getDescriptor(),
           org.megacommerce.products.v1.ProductListProto.getDescriptor(),
+          org.megacommerce.products.v1.ProductSnapshotProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.products.v1.ProductCreateProto.getDescriptor();
     org.megacommerce.products.v1.ProductDataProto.getDescriptor();
     org.megacommerce.products.v1.ProductListProto.getDescriptor();
+    org.megacommerce.products.v1.ProductSnapshotProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

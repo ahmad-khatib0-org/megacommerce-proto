@@ -47,6 +47,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "products/v1/product_data.proto",
         "products/v1/product_events.proto",
         "products/v1/product_list.proto",
+        "products/v1/product_snapshot.proto",
         "uploader/v1/uploader.proto",
         "uploader/v1/config.proto",
       ],

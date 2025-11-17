@@ -20,6 +20,7 @@ import {
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create";
 import { ProductDataRequest, ProductDataResponse } from "./product_data";
 import { ProductListRequest, ProductListResponse } from "./product_list";
+import { ProductSnapshotRequest, ProductSnapshotResponse } from "./product_snapshot";
 
 export const protobufPackage = "products.v1";
 
@@ -53,12 +54,24 @@ export const ProductsServiceService = {
     responseSerialize: (value: ProductListResponse): Buffer => Buffer.from(ProductListResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): ProductListResponse => ProductListResponse.decode(value),
   },
+  productSnapshot: {
+    path: "/products.v1.ProductsService/ProductSnapshot",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: ProductSnapshotRequest): Buffer =>
+      Buffer.from(ProductSnapshotRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): ProductSnapshotRequest => ProductSnapshotRequest.decode(value),
+    responseSerialize: (value: ProductSnapshotResponse): Buffer =>
+      Buffer.from(ProductSnapshotResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): ProductSnapshotResponse => ProductSnapshotResponse.decode(value),
+  },
 } as const;
 
 export interface ProductsServiceServer extends UntypedServiceImplementation {
   productCreate: handleUnaryCall<ProductCreateRequest, ProductCreateResponse>;
   productData: handleUnaryCall<ProductDataRequest, ProductDataResponse>;
   productList: handleUnaryCall<ProductListRequest, ProductListResponse>;
+  productSnapshot: handleUnaryCall<ProductSnapshotRequest, ProductSnapshotResponse>;
 }
 
 export interface ProductsServiceClient extends Client {
@@ -106,6 +119,21 @@ export interface ProductsServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: ProductListResponse) => void,
+  ): ClientUnaryCall;
+  productSnapshot(
+    request: ProductSnapshotRequest,
+    callback: (error: ServiceError | null, response: ProductSnapshotResponse) => void,
+  ): ClientUnaryCall;
+  productSnapshot(
+    request: ProductSnapshotRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: ProductSnapshotResponse) => void,
+  ): ClientUnaryCall;
+  productSnapshot(
+    request: ProductSnapshotRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: ProductSnapshotResponse) => void,
   ): ClientUnaryCall;
 }
 

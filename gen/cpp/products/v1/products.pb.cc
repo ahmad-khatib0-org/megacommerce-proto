@@ -41,34 +41,38 @@ const char descriptor_table_protodef_products_2fv1_2fproducts_2eproto[] ABSL_ATT
     "\n\032products/v1/products.proto\022\013products.v"
     "1\032 products/v1/product_create.proto\032\036pro"
     "ducts/v1/product_data.proto\032\036products/v1"
-    "/product_list.proto2\215\002\n\017ProductsService\022"
-    "V\n\rProductCreate\022!.products.v1.ProductCr"
-    "eateRequest\032\".products.v1.ProductCreateR"
-    "esponse\022P\n\013ProductData\022\037.products.v1.Pro"
-    "ductDataRequest\032 .products.v1.ProductDat"
-    "aResponse\022P\n\013ProductList\022\037.products.v1.P"
-    "roductListRequest\032 .products.v1.ProductL"
-    "istResponseBw\n\034org.megacommerce.products"
-    ".v1B\rProductsProtoZEgithub.com/ahmad-kha"
-    "tib0-org/megacommerce-proto/gen/go/produ"
-    "cts/v1;v1\370\001\001b\006proto3"
+    "/product_list.proto\032\"products/v1/product"
+    "_snapshot.proto2\353\002\n\017ProductsService\022V\n\rP"
+    "roductCreate\022!.products.v1.ProductCreate"
+    "Request\032\".products.v1.ProductCreateRespo"
+    "nse\022P\n\013ProductData\022\037.products.v1.Product"
+    "DataRequest\032 .products.v1.ProductDataRes"
+    "ponse\022P\n\013ProductList\022\037.products.v1.Produ"
+    "ctListRequest\032 .products.v1.ProductListR"
+    "esponse\022\\\n\017ProductSnapshot\022#.products.v1"
+    ".ProductSnapshotRequest\032$.products.v1.Pr"
+    "oductSnapshotResponseBw\n\034org.megacommerc"
+    "e.products.v1B\rProductsProtoZEgithub.com"
+    "/ahmad-khatib0-org/megacommerce-proto/ge"
+    "n/go/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_products_2fv1_2fproducts_2eproto_deps[3] = {
+    descriptor_table_products_2fv1_2fproducts_2eproto_deps[4] = {
         &::descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
         &::descriptor_table_products_2fv1_2fproduct_5fdata_2eproto,
         &::descriptor_table_products_2fv1_2fproduct_5flist_2eproto,
+        &::descriptor_table_products_2fv1_2fproduct_5fsnapshot_2eproto,
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproducts_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproducts_2eproto = {
     false,
     false,
-    540,
+    670,
     descriptor_table_protodef_products_2fv1_2fproducts_2eproto,
     "products/v1/products.proto",
     &descriptor_table_products_2fv1_2fproducts_2eproto_once,
     descriptor_table_products_2fv1_2fproducts_2eproto_deps,
-    3,
+    4,
     0,
     schemas,
     file_default_instances,

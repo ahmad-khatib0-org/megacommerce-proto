@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ProductsService_ProductCreate_FullMethodName = "/products.v1.ProductsService/ProductCreate"
-	ProductsService_ProductData_FullMethodName   = "/products.v1.ProductsService/ProductData"
-	ProductsService_ProductList_FullMethodName   = "/products.v1.ProductsService/ProductList"
+	ProductsService_ProductCreate_FullMethodName   = "/products.v1.ProductsService/ProductCreate"
+	ProductsService_ProductData_FullMethodName     = "/products.v1.ProductsService/ProductData"
+	ProductsService_ProductList_FullMethodName     = "/products.v1.ProductsService/ProductList"
+	ProductsService_ProductSnapshot_FullMethodName = "/products.v1.ProductsService/ProductSnapshot"
 )
 
 // ProductsServiceClient is the client API for ProductsService service.
@@ -31,6 +32,7 @@ type ProductsServiceClient interface {
 	ProductCreate(ctx context.Context, in *ProductCreateRequest, opts ...grpc.CallOption) (*ProductCreateResponse, error)
 	ProductData(ctx context.Context, in *ProductDataRequest, opts ...grpc.CallOption) (*ProductDataResponse, error)
 	ProductList(ctx context.Context, in *ProductListRequest, opts ...grpc.CallOption) (*ProductListResponse, error)
+	ProductSnapshot(ctx context.Context, in *ProductSnapshotRequest, opts ...grpc.CallOption) (*ProductSnapshotResponse, error)
 }
 
 type productsServiceClient struct {
@@ -71,6 +73,16 @@ func (c *productsServiceClient) ProductList(ctx context.Context, in *ProductList
 	return out, nil
 }
 
+func (c *productsServiceClient) ProductSnapshot(ctx context.Context, in *ProductSnapshotRequest, opts ...grpc.CallOption) (*ProductSnapshotResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ProductSnapshotResponse)
+	err := c.cc.Invoke(ctx, ProductsService_ProductSnapshot_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProductsServiceServer is the server API for ProductsService service.
 // All implementations must embed UnimplementedProductsServiceServer
 // for forward compatibility.
@@ -78,6 +90,7 @@ type ProductsServiceServer interface {
 	ProductCreate(context.Context, *ProductCreateRequest) (*ProductCreateResponse, error)
 	ProductData(context.Context, *ProductDataRequest) (*ProductDataResponse, error)
 	ProductList(context.Context, *ProductListRequest) (*ProductListResponse, error)
+	ProductSnapshot(context.Context, *ProductSnapshotRequest) (*ProductSnapshotResponse, error)
 	mustEmbedUnimplementedProductsServiceServer()
 }
 
@@ -96,6 +109,9 @@ func (UnimplementedProductsServiceServer) ProductData(context.Context, *ProductD
 }
 func (UnimplementedProductsServiceServer) ProductList(context.Context, *ProductListRequest) (*ProductListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProductList not implemented")
+}
+func (UnimplementedProductsServiceServer) ProductSnapshot(context.Context, *ProductSnapshotRequest) (*ProductSnapshotResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductSnapshot not implemented")
 }
 func (UnimplementedProductsServiceServer) mustEmbedUnimplementedProductsServiceServer() {}
 func (UnimplementedProductsServiceServer) testEmbeddedByValue()                         {}
@@ -172,6 +188,24 @@ func _ProductsService_ProductList_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProductsService_ProductSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProductSnapshotRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductsServiceServer).ProductSnapshot(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProductsService_ProductSnapshot_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductsServiceServer).ProductSnapshot(ctx, req.(*ProductSnapshotRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ProductsService_ServiceDesc is the grpc.ServiceDesc for ProductsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -190,6 +224,10 @@ var ProductsService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ProductList",
 			Handler:    _ProductsService_ProductList_Handler,
+		},
+		{
+			MethodName: "ProductSnapshot",
+			Handler:    _ProductsService_ProductSnapshot_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

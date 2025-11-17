@@ -5,6 +5,7 @@ package products.v1;
 import "products/v1/product_create.proto";
 import "products/v1/product_data.proto";
 import "products/v1/product_list.proto";
+import "products/v1/product_snapshot.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
@@ -15,4 +16,5 @@ service ProductsService {
   rpc ProductCreate(products.v1.ProductCreateRequest) returns (products.v1.ProductCreateResponse);
   rpc ProductData(products.v1.ProductDataRequest) returns (products.v1.ProductDataResponse);
   rpc ProductList(products.v1.ProductListRequest) returns (products.v1.ProductListResponse);
+  rpc ProductSnapshot(products.v1.ProductSnapshotRequest) returns (products.v1.ProductSnapshotResponse);
 }

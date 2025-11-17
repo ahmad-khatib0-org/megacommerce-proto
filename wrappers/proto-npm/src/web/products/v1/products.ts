@@ -10,6 +10,7 @@ import { BrowserHeaders } from "browser-headers";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create.js";
 import { ProductDataRequest, ProductDataResponse } from "./product_data.js";
 import { ProductListRequest, ProductListResponse } from "./product_list.js";
+import { ProductSnapshotRequest, ProductSnapshotResponse } from "./product_snapshot.js";
 
 export const protobufPackage = "products.v1";
 
@@ -17,6 +18,10 @@ export interface ProductsService {
   ProductCreate(request: DeepPartial<ProductCreateRequest>, metadata?: grpc.Metadata): Promise<ProductCreateResponse>;
   ProductData(request: DeepPartial<ProductDataRequest>, metadata?: grpc.Metadata): Promise<ProductDataResponse>;
   ProductList(request: DeepPartial<ProductListRequest>, metadata?: grpc.Metadata): Promise<ProductListResponse>;
+  ProductSnapshot(
+    request: DeepPartial<ProductSnapshotRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<ProductSnapshotResponse>;
 }
 
 export class ProductsServiceClientImpl implements ProductsService {
@@ -27,6 +32,7 @@ export class ProductsServiceClientImpl implements ProductsService {
     this.ProductCreate = this.ProductCreate.bind(this);
     this.ProductData = this.ProductData.bind(this);
     this.ProductList = this.ProductList.bind(this);
+    this.ProductSnapshot = this.ProductSnapshot.bind(this);
   }
 
   ProductCreate(request: DeepPartial<ProductCreateRequest>, metadata?: grpc.Metadata): Promise<ProductCreateResponse> {
@@ -39,6 +45,13 @@ export class ProductsServiceClientImpl implements ProductsService {
 
   ProductList(request: DeepPartial<ProductListRequest>, metadata?: grpc.Metadata): Promise<ProductListResponse> {
     return this.rpc.unary(ProductsServiceProductListDesc, ProductListRequest.fromPartial(request), metadata);
+  }
+
+  ProductSnapshot(
+    request: DeepPartial<ProductSnapshotRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<ProductSnapshotResponse> {
+    return this.rpc.unary(ProductsServiceProductSnapshotDesc, ProductSnapshotRequest.fromPartial(request), metadata);
   }
 }
 
@@ -103,6 +116,29 @@ export const ProductsServiceProductListDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = ProductListResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const ProductsServiceProductSnapshotDesc: UnaryMethodDefinitionish = {
+  methodName: "ProductSnapshot",
+  service: ProductsServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return ProductSnapshotRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = ProductSnapshotResponse.decode(data);
       return {
         ...value,
         toObject() {
