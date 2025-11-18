@@ -18,6 +18,10 @@ enum InventoryReservationStatus {
 }
 
 message InventoryReserveRequest {
+  repeated InventoryReserveRequestItem items = 1;
+}
+
+message InventoryReserveRequestItem {
   string order_line_item_id = 1;
   string product_id = 2;
   string variant_id = 3;

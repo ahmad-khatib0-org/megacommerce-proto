@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$inventory/v1/inventory_reserve.proto\x12\x0cinventory.v1\x1a\x15shared/v1/error.proto\"|\n\x17InventoryReserveRequest\x12\x1a\n\x12order_line_item_id\x18\x01 \x01(\t\x12\x12\n\nproduct_id\x18\x02 \x01(\t\x12\x12\n\nvariant_id\x18\x03 \x01(\t\x12\x0b\n\x03sku\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\r\"\x88\x01\n\x18InventoryReserveResponse\x12:\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32*.inventory.v1.InventoryReserveResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\".\n\x1cInventoryReserveResponseData\x12\x0e\n\x06status\x18\x01 \x01(\t*\xa0\x01\n\x1aInventoryReservationStatus\x12\x15\n\x11INVENTORY_UNKNOWN\x10\x00\x12\x16\n\x12INVENTORY_RESERVED\x10\x01\x12 \n\x1cINVENTORY_PARTIALLY_RESERVED\x10\x02\x12\x1a\n\x16INVENTORY_NOT_RESERVED\x10\x03\x12\x15\n\x11INVENTORY_PENDING\x10\x04\x42\x81\x01\n\x1dorg.megacommerce.inventory.v1B\x15InventoryReserveProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$inventory/v1/inventory_reserve.proto\x12\x0cinventory.v1\x1a\x15shared/v1/error.proto\"S\n\x17InventoryReserveRequest\x12\x38\n\x05items\x18\x01 \x03(\x0b\x32).inventory.v1.InventoryReserveRequestItem\"\x80\x01\n\x1bInventoryReserveRequestItem\x12\x1a\n\x12order_line_item_id\x18\x01 \x01(\t\x12\x12\n\nproduct_id\x18\x02 \x01(\t\x12\x12\n\nvariant_id\x18\x03 \x01(\t\x12\x0b\n\x03sku\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\r\"\x88\x01\n\x18InventoryReserveResponse\x12:\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32*.inventory.v1.InventoryReserveResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\".\n\x1cInventoryReserveResponseData\x12\x0e\n\x06status\x18\x01 \x01(\t*\xa0\x01\n\x1aInventoryReservationStatus\x12\x15\n\x11INVENTORY_UNKNOWN\x10\x00\x12\x16\n\x12INVENTORY_RESERVED\x10\x01\x12 \n\x1cINVENTORY_PARTIALLY_RESERVED\x10\x02\x12\x1a\n\x16INVENTORY_NOT_RESERVED\x10\x03\x12\x15\n\x11INVENTORY_PENDING\x10\x04\x42\x81\x01\n\x1dorg.megacommerce.inventory.v1B\x15InventoryReserveProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +33,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'inventory.v1.inventory_rese
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035org.megacommerce.inventory.v1B\025InventoryReserveProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\370\001\001'
-  _globals['_INVENTORYRESERVATIONSTATUS']._serialized_start=391
-  _globals['_INVENTORYRESERVATIONSTATUS']._serialized_end=551
+  _globals['_INVENTORYRESERVATIONSTATUS']._serialized_start=481
+  _globals['_INVENTORYRESERVATIONSTATUS']._serialized_end=641
   _globals['_INVENTORYRESERVEREQUEST']._serialized_start=77
-  _globals['_INVENTORYRESERVEREQUEST']._serialized_end=201
-  _globals['_INVENTORYRESERVERESPONSE']._serialized_start=204
-  _globals['_INVENTORYRESERVERESPONSE']._serialized_end=340
-  _globals['_INVENTORYRESERVERESPONSEDATA']._serialized_start=342
-  _globals['_INVENTORYRESERVERESPONSEDATA']._serialized_end=388
+  _globals['_INVENTORYRESERVEREQUEST']._serialized_end=160
+  _globals['_INVENTORYRESERVEREQUESTITEM']._serialized_start=163
+  _globals['_INVENTORYRESERVEREQUESTITEM']._serialized_end=291
+  _globals['_INVENTORYRESERVERESPONSE']._serialized_start=294
+  _globals['_INVENTORYRESERVERESPONSE']._serialized_end=430
+  _globals['_INVENTORYRESERVERESPONSEDATA']._serialized_start=432
+  _globals['_INVENTORYRESERVERESPONSEDATA']._serialized_end=478
 # @@protoc_insertion_point(module_scope)

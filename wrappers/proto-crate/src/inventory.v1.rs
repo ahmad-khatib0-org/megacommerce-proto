@@ -2,6 +2,12 @@
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct InventoryReserveRequest {
+    #[prost(message, repeated, tag = "1")]
+    pub items: ::prost::alloc::vec::Vec<InventoryReserveRequestItem>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct InventoryReserveRequestItem {
     #[prost(string, tag = "1")]
     pub order_line_item_id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]

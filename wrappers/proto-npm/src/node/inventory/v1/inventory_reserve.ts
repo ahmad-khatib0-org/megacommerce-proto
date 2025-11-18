@@ -62,6 +62,10 @@ export function inventoryReservationStatusToJSON(object: InventoryReservationSta
 }
 
 export interface InventoryReserveRequest {
+  items: InventoryReserveRequestItem[];
+}
+
+export interface InventoryReserveRequestItem {
   orderLineItemId: string;
   productId: string;
   variantId: string;
@@ -79,11 +83,73 @@ export interface InventoryReserveResponseData {
 }
 
 function createBaseInventoryReserveRequest(): InventoryReserveRequest {
-  return { orderLineItemId: "", productId: "", variantId: "", sku: "", quantity: 0 };
+  return { items: [] };
 }
 
 export const InventoryReserveRequest: MessageFns<InventoryReserveRequest> = {
   encode(message: InventoryReserveRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.items) {
+      InventoryReserveRequestItem.encode(v!, writer.uint32(10).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): InventoryReserveRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseInventoryReserveRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.items.push(InventoryReserveRequestItem.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): InventoryReserveRequest {
+    return {
+      items: globalThis.Array.isArray(object?.items)
+        ? object.items.map((e: any) => InventoryReserveRequestItem.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: InventoryReserveRequest): unknown {
+    const obj: any = {};
+    if (message.items?.length) {
+      obj.items = message.items.map((e) => InventoryReserveRequestItem.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<InventoryReserveRequest>, I>>(base?: I): InventoryReserveRequest {
+    return InventoryReserveRequest.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<InventoryReserveRequest>, I>>(object: I): InventoryReserveRequest {
+    const message = createBaseInventoryReserveRequest();
+    message.items = object.items?.map((e) => InventoryReserveRequestItem.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseInventoryReserveRequestItem(): InventoryReserveRequestItem {
+  return { orderLineItemId: "", productId: "", variantId: "", sku: "", quantity: 0 };
+}
+
+export const InventoryReserveRequestItem: MessageFns<InventoryReserveRequestItem> = {
+  encode(message: InventoryReserveRequestItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.orderLineItemId !== "") {
       writer.uint32(10).string(message.orderLineItemId);
     }
@@ -102,10 +168,10 @@ export const InventoryReserveRequest: MessageFns<InventoryReserveRequest> = {
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): InventoryReserveRequest {
+  decode(input: BinaryReader | Uint8Array, length?: number): InventoryReserveRequestItem {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseInventoryReserveRequest();
+    const message = createBaseInventoryReserveRequestItem();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -158,7 +224,7 @@ export const InventoryReserveRequest: MessageFns<InventoryReserveRequest> = {
     return message;
   },
 
-  fromJSON(object: any): InventoryReserveRequest {
+  fromJSON(object: any): InventoryReserveRequestItem {
     return {
       orderLineItemId: isSet(object.orderLineItemId) ? globalThis.String(object.orderLineItemId) : "",
       productId: isSet(object.productId) ? globalThis.String(object.productId) : "",
@@ -168,7 +234,7 @@ export const InventoryReserveRequest: MessageFns<InventoryReserveRequest> = {
     };
   },
 
-  toJSON(message: InventoryReserveRequest): unknown {
+  toJSON(message: InventoryReserveRequestItem): unknown {
     const obj: any = {};
     if (message.orderLineItemId !== "") {
       obj.orderLineItemId = message.orderLineItemId;
@@ -188,11 +254,11 @@ export const InventoryReserveRequest: MessageFns<InventoryReserveRequest> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<InventoryReserveRequest>, I>>(base?: I): InventoryReserveRequest {
-    return InventoryReserveRequest.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<InventoryReserveRequestItem>, I>>(base?: I): InventoryReserveRequestItem {
+    return InventoryReserveRequestItem.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<InventoryReserveRequest>, I>>(object: I): InventoryReserveRequest {
-    const message = createBaseInventoryReserveRequest();
+  fromPartial<I extends Exact<DeepPartial<InventoryReserveRequestItem>, I>>(object: I): InventoryReserveRequestItem {
+    const message = createBaseInventoryReserveRequestItem();
     message.orderLineItemId = object.orderLineItemId ?? "";
     message.productId = object.productId ?? "";
     message.variantId = object.variantId ?? "";
