@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package orders.v1;
 
+import "inventory/v1/inventory_reserve.proto";
 import "orders/v1/order.proto";
 import "orders/v1/order_line_items.proto";
 import "shared/v1/error.proto";
@@ -35,7 +36,7 @@ message OrderItem {
 
   // Inventory reservation status - since inventory service is separate,
   // we include reservation status in order so UI shows what's reserved.
-  orders.v1.InventoryReservationStatus inventory_reservation_status = 13;
+  inventory.v1.InventoryReservationStatus inventory_reservation_status = 13;
 
   // order lifecycle
   string status = 14; // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED

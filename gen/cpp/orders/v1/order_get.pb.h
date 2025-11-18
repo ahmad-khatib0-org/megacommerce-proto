@@ -33,6 +33,7 @@
 #include "google/protobuf/map_entry.h"
 #include "google/protobuf/map_field.h"
 #include "google/protobuf/unknown_field_set.h"
+#include "inventory/v1/inventory_reserve.pb.h"
 #include "orders/v1/order.pb.h"
 #include "orders/v1/order_line_items.pb.h"
 #include "shared/v1/error.pb.h"
@@ -994,14 +995,14 @@ class OrderItem final : public ::google::protobuf::Message
   void _internal_set_updated_at(::uint64_t value);
 
   public:
-  // .orders.v1.InventoryReservationStatus inventory_reservation_status = 13 [json_name = "inventoryReservationStatus"];
+  // .inventory.v1.InventoryReservationStatus inventory_reservation_status = 13 [json_name = "inventoryReservationStatus"];
   void clear_inventory_reservation_status() ;
-  ::orders::v1::InventoryReservationStatus inventory_reservation_status() const;
-  void set_inventory_reservation_status(::orders::v1::InventoryReservationStatus value);
+  ::inventory::v1::InventoryReservationStatus inventory_reservation_status() const;
+  void set_inventory_reservation_status(::inventory::v1::InventoryReservationStatus value);
 
   private:
-  ::orders::v1::InventoryReservationStatus _internal_inventory_reservation_status() const;
-  void _internal_set_inventory_reservation_status(::orders::v1::InventoryReservationStatus value);
+  ::inventory::v1::InventoryReservationStatus _internal_inventory_reservation_status() const;
+  void _internal_set_inventory_reservation_status(::inventory::v1::InventoryReservationStatus value);
 
   public:
   // @@protoc_insertion_point(class_scope:orders.v1.OrderItem)
@@ -1893,26 +1894,26 @@ inline void OrderItem::set_allocated_payment(::orders::v1::PaymentSnapshot* PROT
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderItem.payment)
 }
 
-// .orders.v1.InventoryReservationStatus inventory_reservation_status = 13 [json_name = "inventoryReservationStatus"];
+// .inventory.v1.InventoryReservationStatus inventory_reservation_status = 13 [json_name = "inventoryReservationStatus"];
 inline void OrderItem::clear_inventory_reservation_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.inventory_reservation_status_ = 0;
   _impl_._has_bits_[0] &= ~0x00008000u;
 }
-inline ::orders::v1::InventoryReservationStatus OrderItem::inventory_reservation_status() const {
+inline ::inventory::v1::InventoryReservationStatus OrderItem::inventory_reservation_status() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderItem.inventory_reservation_status)
   return _internal_inventory_reservation_status();
 }
-inline void OrderItem::set_inventory_reservation_status(::orders::v1::InventoryReservationStatus value) {
+inline void OrderItem::set_inventory_reservation_status(::inventory::v1::InventoryReservationStatus value) {
   _internal_set_inventory_reservation_status(value);
   _impl_._has_bits_[0] |= 0x00008000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderItem.inventory_reservation_status)
 }
-inline ::orders::v1::InventoryReservationStatus OrderItem::_internal_inventory_reservation_status() const {
+inline ::inventory::v1::InventoryReservationStatus OrderItem::_internal_inventory_reservation_status() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return static_cast<::orders::v1::InventoryReservationStatus>(_impl_.inventory_reservation_status_);
+  return static_cast<::inventory::v1::InventoryReservationStatus>(_impl_.inventory_reservation_status_);
 }
-inline void OrderItem::_internal_set_inventory_reservation_status(::orders::v1::InventoryReservationStatus value) {
+inline void OrderItem::_internal_set_inventory_reservation_status(::inventory::v1::InventoryReservationStatus value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.inventory_reservation_status_ = value;
 }

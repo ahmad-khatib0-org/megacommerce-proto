@@ -61,42 +61,6 @@ pub struct Order {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-pub enum InventoryReservationStatus {
-    InventoryUnknown = 0,
-    InventoryReserved = 1,
-    InventoryPartiallyReserved = 2,
-    InventoryNotReserved = 3,
-    InventoryPending = 4,
-}
-impl InventoryReservationStatus {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            Self::InventoryUnknown => "INVENTORY_UNKNOWN",
-            Self::InventoryReserved => "INVENTORY_RESERVED",
-            Self::InventoryPartiallyReserved => "INVENTORY_PARTIALLY_RESERVED",
-            Self::InventoryNotReserved => "INVENTORY_NOT_RESERVED",
-            Self::InventoryPending => "INVENTORY_PENDING",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "INVENTORY_UNKNOWN" => Some(Self::InventoryUnknown),
-            "INVENTORY_RESERVED" => Some(Self::InventoryReserved),
-            "INVENTORY_PARTIALLY_RESERVED" => Some(Self::InventoryPartiallyReserved),
-            "INVENTORY_NOT_RESERVED" => Some(Self::InventoryNotReserved),
-            "INVENTORY_PENDING" => Some(Self::InventoryPending),
-            _ => None,
-        }
-    }
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
 pub enum PaymentStatus {
     PaymentUnknown = 0,
     PaymentAuthorized = 1,
@@ -435,7 +399,10 @@ pub struct OrderItem {
     pub payment: ::core::option::Option<PaymentSnapshot>,
     /// Inventory reservation status - since inventory service is separate,
     /// we include reservation status in order so UI shows what's reserved.
-    #[prost(enumeration = "InventoryReservationStatus", tag = "13")]
+    #[prost(
+        enumeration = "super::super::inventory::v1::InventoryReservationStatus",
+        tag = "13"
+    )]
     pub inventory_reservation_status: i32,
     /// order lifecycle
     ///

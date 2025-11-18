@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package inventory.v1;
+
+import "shared/v1/error.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1";
+option java_outer_classname = "InventoryReserveProto";
+option java_package = "org.megacommerce.inventory.v1";
+
+enum InventoryReservationStatus {
+  INVENTORY_UNKNOWN = 0;
+  INVENTORY_RESERVED = 1;
+  INVENTORY_PARTIALLY_RESERVED = 2;
+  INVENTORY_NOT_RESERVED = 3;
+  INVENTORY_PENDING = 4;
+}
+
+message InventoryReserveRequest {
+  string order_line_item_id = 1;
+  string product_id = 2;
+  string variant_id = 3;
+  string sku = 4;
+  uint32 quantity = 5;
+}
+
+message InventoryReserveResponse {
+  oneof response {
+    InventoryReserveResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message InventoryReserveResponseData {
+  string status = 1;
+}

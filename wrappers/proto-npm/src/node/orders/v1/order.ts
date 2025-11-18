@@ -10,57 +10,6 @@ import { Struct } from "../../shared/v1/struct";
 
 export const protobufPackage = "orders.v1";
 
-export enum InventoryReservationStatus {
-  INVENTORY_UNKNOWN = 0,
-  INVENTORY_RESERVED = 1,
-  INVENTORY_PARTIALLY_RESERVED = 2,
-  INVENTORY_NOT_RESERVED = 3,
-  INVENTORY_PENDING = 4,
-  UNRECOGNIZED = -1,
-}
-
-export function inventoryReservationStatusFromJSON(object: any): InventoryReservationStatus {
-  switch (object) {
-    case 0:
-    case "INVENTORY_UNKNOWN":
-      return InventoryReservationStatus.INVENTORY_UNKNOWN;
-    case 1:
-    case "INVENTORY_RESERVED":
-      return InventoryReservationStatus.INVENTORY_RESERVED;
-    case 2:
-    case "INVENTORY_PARTIALLY_RESERVED":
-      return InventoryReservationStatus.INVENTORY_PARTIALLY_RESERVED;
-    case 3:
-    case "INVENTORY_NOT_RESERVED":
-      return InventoryReservationStatus.INVENTORY_NOT_RESERVED;
-    case 4:
-    case "INVENTORY_PENDING":
-      return InventoryReservationStatus.INVENTORY_PENDING;
-    case -1:
-    case "UNRECOGNIZED":
-    default:
-      return InventoryReservationStatus.UNRECOGNIZED;
-  }
-}
-
-export function inventoryReservationStatusToJSON(object: InventoryReservationStatus): string {
-  switch (object) {
-    case InventoryReservationStatus.INVENTORY_UNKNOWN:
-      return "INVENTORY_UNKNOWN";
-    case InventoryReservationStatus.INVENTORY_RESERVED:
-      return "INVENTORY_RESERVED";
-    case InventoryReservationStatus.INVENTORY_PARTIALLY_RESERVED:
-      return "INVENTORY_PARTIALLY_RESERVED";
-    case InventoryReservationStatus.INVENTORY_NOT_RESERVED:
-      return "INVENTORY_NOT_RESERVED";
-    case InventoryReservationStatus.INVENTORY_PENDING:
-      return "INVENTORY_PENDING";
-    case InventoryReservationStatus.UNRECOGNIZED:
-    default:
-      return "UNRECOGNIZED";
-  }
-}
-
 export enum PaymentStatus {
   PAYMENT_UNKNOWN = 0,
   PAYMENT_AUTHORIZED = 1,

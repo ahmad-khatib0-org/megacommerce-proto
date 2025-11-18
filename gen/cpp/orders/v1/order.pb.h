@@ -56,8 +56,6 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_orde
 }  // extern "C"
 namespace orders {
 namespace v1 {
-enum InventoryReservationStatus : int;
-extern const uint32_t InventoryReservationStatus_internal_data_[];
 enum OrderStatus : int;
 extern const uint32_t OrderStatus_internal_data_[];
 enum PaymentStatus : int;
@@ -71,9 +69,6 @@ extern const ::google::protobuf::internal::ClassDataFull Order_class_data_;
 namespace google {
 namespace protobuf {
 template <>
-internal::EnumTraitsT<::orders::v1::InventoryReservationStatus_internal_data_>
-    internal::EnumTraitsImpl::value<::orders::v1::InventoryReservationStatus>;
-template <>
 internal::EnumTraitsT<::orders::v1::OrderStatus_internal_data_>
     internal::EnumTraitsImpl::value<::orders::v1::OrderStatus>;
 template <>
@@ -84,45 +79,6 @@ internal::EnumTraitsT<::orders::v1::PaymentStatus_internal_data_>
 
 namespace orders {
 namespace v1 {
-enum InventoryReservationStatus : int {
-  INVENTORY_UNKNOWN = 0,
-  INVENTORY_RESERVED = 1,
-  INVENTORY_PARTIALLY_RESERVED = 2,
-  INVENTORY_NOT_RESERVED = 3,
-  INVENTORY_PENDING = 4,
-  InventoryReservationStatus_INT_MIN_SENTINEL_DO_NOT_USE_ =
-      ::std::numeric_limits<::int32_t>::min(),
-  InventoryReservationStatus_INT_MAX_SENTINEL_DO_NOT_USE_ =
-      ::std::numeric_limits<::int32_t>::max(),
-};
-
-extern const uint32_t InventoryReservationStatus_internal_data_[];
-inline constexpr InventoryReservationStatus InventoryReservationStatus_MIN =
-    static_cast<InventoryReservationStatus>(0);
-inline constexpr InventoryReservationStatus InventoryReservationStatus_MAX =
-    static_cast<InventoryReservationStatus>(4);
-inline bool InventoryReservationStatus_IsValid(int value) {
-  return 0 <= value && value <= 4;
-}
-inline constexpr int InventoryReservationStatus_ARRAYSIZE = 4 + 1;
-const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL InventoryReservationStatus_descriptor();
-template <typename T>
-const ::std::string& InventoryReservationStatus_Name(T value) {
-  static_assert(::std::is_same<T, InventoryReservationStatus>::value ||
-                    ::std::is_integral<T>::value,
-                "Incorrect type passed to InventoryReservationStatus_Name().");
-  return InventoryReservationStatus_Name(static_cast<InventoryReservationStatus>(value));
-}
-template <>
-inline const ::std::string& InventoryReservationStatus_Name(InventoryReservationStatus value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<InventoryReservationStatus_descriptor, 0, 4>(
-      static_cast<int>(value));
-}
-inline bool InventoryReservationStatus_Parse(
-    ::absl::string_view name, InventoryReservationStatus* PROTOBUF_NONNULL value) {
-  return ::google::protobuf::internal::ParseNamedEnum<InventoryReservationStatus>(InventoryReservationStatus_descriptor(), name,
-                                           value);
-}
 enum PaymentStatus : int {
   PAYMENT_UNKNOWN = 0,
   PAYMENT_AUTHORIZED = 1,
@@ -2007,12 +1963,6 @@ inline void Order::_internal_set_deleted_at(::uint64_t value) {
 namespace google {
 namespace protobuf {
 
-template <>
-struct is_proto_enum<::orders::v1::InventoryReservationStatus> : std::true_type {};
-template <>
-inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::orders::v1::InventoryReservationStatus>() {
-  return ::orders::v1::InventoryReservationStatus_descriptor();
-}
 template <>
 struct is_proto_enum<::orders::v1::PaymentStatus> : std::true_type {};
 template <>

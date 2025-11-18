@@ -22,61 +22,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type InventoryReservationStatus int32
-
-const (
-	InventoryReservationStatus_INVENTORY_UNKNOWN            InventoryReservationStatus = 0
-	InventoryReservationStatus_INVENTORY_RESERVED           InventoryReservationStatus = 1
-	InventoryReservationStatus_INVENTORY_PARTIALLY_RESERVED InventoryReservationStatus = 2
-	InventoryReservationStatus_INVENTORY_NOT_RESERVED       InventoryReservationStatus = 3
-	InventoryReservationStatus_INVENTORY_PENDING            InventoryReservationStatus = 4
-)
-
-// Enum value maps for InventoryReservationStatus.
-var (
-	InventoryReservationStatus_name = map[int32]string{
-		0: "INVENTORY_UNKNOWN",
-		1: "INVENTORY_RESERVED",
-		2: "INVENTORY_PARTIALLY_RESERVED",
-		3: "INVENTORY_NOT_RESERVED",
-		4: "INVENTORY_PENDING",
-	}
-	InventoryReservationStatus_value = map[string]int32{
-		"INVENTORY_UNKNOWN":            0,
-		"INVENTORY_RESERVED":           1,
-		"INVENTORY_PARTIALLY_RESERVED": 2,
-		"INVENTORY_NOT_RESERVED":       3,
-		"INVENTORY_PENDING":            4,
-	}
-)
-
-func (x InventoryReservationStatus) Enum() *InventoryReservationStatus {
-	p := new(InventoryReservationStatus)
-	*p = x
-	return p
-}
-
-func (x InventoryReservationStatus) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (InventoryReservationStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_orders_v1_order_proto_enumTypes[0].Descriptor()
-}
-
-func (InventoryReservationStatus) Type() protoreflect.EnumType {
-	return &file_orders_v1_order_proto_enumTypes[0]
-}
-
-func (x InventoryReservationStatus) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use InventoryReservationStatus.Descriptor instead.
-func (InventoryReservationStatus) EnumDescriptor() ([]byte, []int) {
-	return file_orders_v1_order_proto_rawDescGZIP(), []int{0}
-}
-
 type PaymentStatus int32
 
 const (
@@ -113,11 +58,11 @@ func (x PaymentStatus) String() string {
 }
 
 func (PaymentStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_orders_v1_order_proto_enumTypes[1].Descriptor()
+	return file_orders_v1_order_proto_enumTypes[0].Descriptor()
 }
 
 func (PaymentStatus) Type() protoreflect.EnumType {
-	return &file_orders_v1_order_proto_enumTypes[1]
+	return &file_orders_v1_order_proto_enumTypes[0]
 }
 
 func (x PaymentStatus) Number() protoreflect.EnumNumber {
@@ -126,7 +71,7 @@ func (x PaymentStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PaymentStatus.Descriptor instead.
 func (PaymentStatus) EnumDescriptor() ([]byte, []int) {
-	return file_orders_v1_order_proto_rawDescGZIP(), []int{1}
+	return file_orders_v1_order_proto_rawDescGZIP(), []int{0}
 }
 
 // Order status
@@ -172,11 +117,11 @@ func (x OrderStatus) String() string {
 }
 
 func (OrderStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_orders_v1_order_proto_enumTypes[2].Descriptor()
+	return file_orders_v1_order_proto_enumTypes[1].Descriptor()
 }
 
 func (OrderStatus) Type() protoreflect.EnumType {
-	return &file_orders_v1_order_proto_enumTypes[2]
+	return &file_orders_v1_order_proto_enumTypes[1]
 }
 
 func (x OrderStatus) Number() protoreflect.EnumNumber {
@@ -185,7 +130,7 @@ func (x OrderStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use OrderStatus.Descriptor instead.
 func (OrderStatus) EnumDescriptor() ([]byte, []int) {
-	return file_orders_v1_order_proto_rawDescGZIP(), []int{2}
+	return file_orders_v1_order_proto_rawDescGZIP(), []int{1}
 }
 
 type Order struct {
@@ -450,13 +395,7 @@ const file_orders_v1_order_proto_rawDesc = "" +
 	"\n" +
 	"deleted_at\x18\x17 \x01(\x04H\x01R\tdeletedAt\x88\x01\x01B\r\n" +
 	"\v_updated_atB\r\n" +
-	"\v_deleted_at*\xa0\x01\n" +
-	"\x1aInventoryReservationStatus\x12\x15\n" +
-	"\x11INVENTORY_UNKNOWN\x10\x00\x12\x16\n" +
-	"\x12INVENTORY_RESERVED\x10\x01\x12 \n" +
-	"\x1cINVENTORY_PARTIALLY_RESERVED\x10\x02\x12\x1a\n" +
-	"\x16INVENTORY_NOT_RESERVED\x10\x03\x12\x15\n" +
-	"\x11INVENTORY_PENDING\x10\x04*f\n" +
+	"\v_deleted_at*f\n" +
 	"\rPaymentStatus\x12\x13\n" +
 	"\x0fPAYMENT_UNKNOWN\x10\x00\x12\x16\n" +
 	"\x12PAYMENT_AUTHORIZED\x10\x01\x12\x14\n" +
@@ -484,20 +423,19 @@ func file_orders_v1_order_proto_rawDescGZIP() []byte {
 	return file_orders_v1_order_proto_rawDescData
 }
 
-var file_orders_v1_order_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_orders_v1_order_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_orders_v1_order_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_orders_v1_order_proto_goTypes = []any{
-	(InventoryReservationStatus)(0), // 0: orders.v1.InventoryReservationStatus
-	(PaymentStatus)(0),              // 1: orders.v1.PaymentStatus
-	(OrderStatus)(0),                // 2: orders.v1.OrderStatus
-	(*Order)(nil),                   // 3: orders.v1.Order
-	(*v1.Struct)(nil),               // 4: shared.v1.Struct
+	(PaymentStatus)(0), // 0: orders.v1.PaymentStatus
+	(OrderStatus)(0),   // 1: orders.v1.OrderStatus
+	(*Order)(nil),      // 2: orders.v1.Order
+	(*v1.Struct)(nil),  // 3: shared.v1.Struct
 }
 var file_orders_v1_order_proto_depIdxs = []int32{
-	4, // 0: orders.v1.Order.payment_provider_response:type_name -> shared.v1.Struct
-	4, // 1: orders.v1.Order.shipping_address:type_name -> shared.v1.Struct
-	4, // 2: orders.v1.Order.billing_address:type_name -> shared.v1.Struct
-	4, // 3: orders.v1.Order.metadata:type_name -> shared.v1.Struct
+	3, // 0: orders.v1.Order.payment_provider_response:type_name -> shared.v1.Struct
+	3, // 1: orders.v1.Order.shipping_address:type_name -> shared.v1.Struct
+	3, // 2: orders.v1.Order.billing_address:type_name -> shared.v1.Struct
+	3, // 3: orders.v1.Order.metadata:type_name -> shared.v1.Struct
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -516,7 +454,7 @@ func file_orders_v1_order_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_orders_v1_order_proto_rawDesc), len(file_orders_v1_order_proto_rawDesc)),
-			NumEnums:      3,
+			NumEnums:      2,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,

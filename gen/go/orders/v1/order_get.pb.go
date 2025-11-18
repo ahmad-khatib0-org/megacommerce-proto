@@ -7,6 +7,7 @@
 package v1
 
 import (
+	v11 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1"
 	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -41,7 +42,7 @@ type OrderItem struct {
 	Payment *PaymentSnapshot `protobuf:"bytes,12,opt,name=payment,proto3" json:"payment,omitempty"`
 	// Inventory reservation status - since inventory service is separate,
 	// we include reservation status in order so UI shows what's reserved.
-	InventoryReservationStatus InventoryReservationStatus `protobuf:"varint,13,opt,name=inventory_reservation_status,json=inventoryReservationStatus,proto3,enum=orders.v1.InventoryReservationStatus" json:"inventory_reservation_status,omitempty"`
+	InventoryReservationStatus v11.InventoryReservationStatus `protobuf:"varint,13,opt,name=inventory_reservation_status,json=inventoryReservationStatus,proto3,enum=inventory.v1.InventoryReservationStatus" json:"inventory_reservation_status,omitempty"`
 	// order lifecycle
 	Status    string  `protobuf:"bytes,14,opt,name=status,proto3" json:"status,omitempty"` // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
 	CreatedAt uint64  `protobuf:"varint,15,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
@@ -162,11 +163,11 @@ func (x *OrderItem) GetPayment() *PaymentSnapshot {
 	return nil
 }
 
-func (x *OrderItem) GetInventoryReservationStatus() InventoryReservationStatus {
+func (x *OrderItem) GetInventoryReservationStatus() v11.InventoryReservationStatus {
 	if x != nil {
 		return x.InventoryReservationStatus
 	}
-	return InventoryReservationStatus_INVENTORY_UNKNOWN
+	return v11.InventoryReservationStatus(0)
 }
 
 func (x *OrderItem) GetStatus() string {
@@ -434,7 +435,7 @@ var File_orders_v1_order_get_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_get_proto_rawDesc = "" +
 	"\n" +
-	"\x19orders/v1/order_get.proto\x12\torders.v1\x1a\x15orders/v1/order.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xf6\x06\n" +
+	"\x19orders/v1/order_get.proto\x12\torders.v1\x1a$inventory/v1/inventory_reserve.proto\x1a\x15orders/v1/order.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xf9\x06\n" +
 	"\tOrderItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
 	"\x0esubtotal_cents\x18\x03 \x01(\x04R\rsubtotalCents\x12%\n" +
@@ -449,8 +450,8 @@ const file_orders_v1_order_get_proto_rawDesc = "" +
 	"\x10shipping_address\x18\n" +
 	" \x01(\v2\x0e.shared.v1.AnyR\x0fshippingAddress\x127\n" +
 	"\x0fbilling_address\x18\v \x01(\v2\x0e.shared.v1.AnyR\x0ebillingAddress\x124\n" +
-	"\apayment\x18\f \x01(\v2\x1a.orders.v1.PaymentSnapshotR\apayment\x12g\n" +
-	"\x1cinventory_reservation_status\x18\r \x01(\x0e2%.orders.v1.InventoryReservationStatusR\x1ainventoryReservationStatus\x12\x16\n" +
+	"\apayment\x18\f \x01(\v2\x1a.orders.v1.PaymentSnapshotR\apayment\x12j\n" +
+	"\x1cinventory_reservation_status\x18\r \x01(\x0e2(.inventory.v1.InventoryReservationStatusR\x1ainventoryReservationStatus\x12\x16\n" +
 	"\x06status\x18\x0e \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
 	"created_at\x18\x0f \x01(\x04R\tcreatedAt\x12\"\n" +
@@ -495,22 +496,22 @@ func file_orders_v1_order_get_proto_rawDescGZIP() []byte {
 
 var file_orders_v1_order_get_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_orders_v1_order_get_proto_goTypes = []any{
-	(*OrderItem)(nil),               // 0: orders.v1.OrderItem
-	(*PaymentSnapshot)(nil),         // 1: orders.v1.PaymentSnapshot
-	(*OrderGetRequest)(nil),         // 2: orders.v1.OrderGetRequest
-	(*OrderGetResponse)(nil),        // 3: orders.v1.OrderGetResponse
-	nil,                             // 4: orders.v1.OrderItem.MetadataEntry
-	(*OrderLineItem)(nil),           // 5: orders.v1.OrderLineItem
-	(*v1.Any)(nil),                  // 6: shared.v1.Any
-	(InventoryReservationStatus)(0), // 7: orders.v1.InventoryReservationStatus
-	(*v1.AppError)(nil),             // 8: shared.v1.AppError
+	(*OrderItem)(nil),                   // 0: orders.v1.OrderItem
+	(*PaymentSnapshot)(nil),             // 1: orders.v1.PaymentSnapshot
+	(*OrderGetRequest)(nil),             // 2: orders.v1.OrderGetRequest
+	(*OrderGetResponse)(nil),            // 3: orders.v1.OrderGetResponse
+	nil,                                 // 4: orders.v1.OrderItem.MetadataEntry
+	(*OrderLineItem)(nil),               // 5: orders.v1.OrderLineItem
+	(*v1.Any)(nil),                      // 6: shared.v1.Any
+	(v11.InventoryReservationStatus)(0), // 7: inventory.v1.InventoryReservationStatus
+	(*v1.AppError)(nil),                 // 8: shared.v1.AppError
 }
 var file_orders_v1_order_get_proto_depIdxs = []int32{
 	5, // 0: orders.v1.OrderItem.line_items:type_name -> orders.v1.OrderLineItem
 	6, // 1: orders.v1.OrderItem.shipping_address:type_name -> shared.v1.Any
 	6, // 2: orders.v1.OrderItem.billing_address:type_name -> shared.v1.Any
 	1, // 3: orders.v1.OrderItem.payment:type_name -> orders.v1.PaymentSnapshot
-	7, // 4: orders.v1.OrderItem.inventory_reservation_status:type_name -> orders.v1.InventoryReservationStatus
+	7, // 4: orders.v1.OrderItem.inventory_reservation_status:type_name -> inventory.v1.InventoryReservationStatus
 	4, // 5: orders.v1.OrderItem.metadata:type_name -> orders.v1.OrderItem.MetadataEntry
 	6, // 6: orders.v1.PaymentSnapshot.provider_response:type_name -> shared.v1.Any
 	0, // 7: orders.v1.OrderGetResponse.data:type_name -> orders.v1.OrderItem

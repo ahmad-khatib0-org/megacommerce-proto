@@ -27,150 +27,6 @@ public final class OrderProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code orders.v1.InventoryReservationStatus}
-   */
-  public enum InventoryReservationStatus
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>INVENTORY_UNKNOWN = 0;</code>
-     */
-    INVENTORY_UNKNOWN(0),
-    /**
-     * <code>INVENTORY_RESERVED = 1;</code>
-     */
-    INVENTORY_RESERVED(1),
-    /**
-     * <code>INVENTORY_PARTIALLY_RESERVED = 2;</code>
-     */
-    INVENTORY_PARTIALLY_RESERVED(2),
-    /**
-     * <code>INVENTORY_NOT_RESERVED = 3;</code>
-     */
-    INVENTORY_NOT_RESERVED(3),
-    /**
-     * <code>INVENTORY_PENDING = 4;</code>
-     */
-    INVENTORY_PENDING(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-        /* major= */ 4,
-        /* minor= */ 31,
-        /* patch= */ 1,
-        /* suffix= */ "",
-        InventoryReservationStatus.class.getName());
-    }
-    /**
-     * <code>INVENTORY_UNKNOWN = 0;</code>
-     */
-    public static final int INVENTORY_UNKNOWN_VALUE = 0;
-    /**
-     * <code>INVENTORY_RESERVED = 1;</code>
-     */
-    public static final int INVENTORY_RESERVED_VALUE = 1;
-    /**
-     * <code>INVENTORY_PARTIALLY_RESERVED = 2;</code>
-     */
-    public static final int INVENTORY_PARTIALLY_RESERVED_VALUE = 2;
-    /**
-     * <code>INVENTORY_NOT_RESERVED = 3;</code>
-     */
-    public static final int INVENTORY_NOT_RESERVED_VALUE = 3;
-    /**
-     * <code>INVENTORY_PENDING = 4;</code>
-     */
-    public static final int INVENTORY_PENDING_VALUE = 4;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static InventoryReservationStatus valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static InventoryReservationStatus forNumber(int value) {
-      switch (value) {
-        case 0: return INVENTORY_UNKNOWN;
-        case 1: return INVENTORY_RESERVED;
-        case 2: return INVENTORY_PARTIALLY_RESERVED;
-        case 3: return INVENTORY_NOT_RESERVED;
-        case 4: return INVENTORY_PENDING;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<InventoryReservationStatus>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        InventoryReservationStatus> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<InventoryReservationStatus>() {
-            public InventoryReservationStatus findValueByNumber(int number) {
-              return InventoryReservationStatus.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return org.megacommerce.orders.v1.OrderProto.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final InventoryReservationStatus[] VALUES = values();
-
-    public static InventoryReservationStatus valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private InventoryReservationStatus(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:orders.v1.InventoryReservationStatus)
-  }
-
-  /**
    * Protobuf enum {@code orders.v1.PaymentStatus}
    */
   public enum PaymentStatus
@@ -279,7 +135,7 @@ public final class OrderProto {
     }
     public static com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.megacommerce.orders.v1.OrderProto.getDescriptor().getEnumTypes().get(1);
+      return org.megacommerce.orders.v1.OrderProto.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final PaymentStatus[] VALUES = values();
@@ -436,7 +292,7 @@ public final class OrderProto {
     }
     public static com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.megacommerce.orders.v1.OrderProto.getDescriptor().getEnumTypes().get(2);
+      return org.megacommerce.orders.v1.OrderProto.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final OrderStatus[] VALUES = values();
@@ -4131,19 +3987,15 @@ public final class OrderProto {
       "tus\022\035\n\ncreated_at\030\025 \001(\004R\tcreatedAt\022\"\n\nup" +
       "dated_at\030\026 \001(\004H\000R\tupdatedAt\210\001\001\022\"\n\ndelete" +
       "d_at\030\027 \001(\004H\001R\tdeletedAt\210\001\001B\r\n\013_updated_a" +
-      "tB\r\n\013_deleted_at*\240\001\n\032InventoryReservatio" +
-      "nStatus\022\025\n\021INVENTORY_UNKNOWN\020\000\022\026\n\022INVENT" +
-      "ORY_RESERVED\020\001\022 \n\034INVENTORY_PARTIALLY_RE" +
-      "SERVED\020\002\022\032\n\026INVENTORY_NOT_RESERVED\020\003\022\025\n\021" +
-      "INVENTORY_PENDING\020\004*f\n\rPaymentStatus\022\023\n\017" +
-      "PAYMENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020" +
-      "\001\022\024\n\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILE" +
-      "D\020\003*b\n\013OrderStatus\022\013\n\007CREATED\020\000\022\r\n\tCONFI" +
-      "RMED\020\001\022\013\n\007SHIPPED\020\002\022\r\n\tDELIVERED\020\003\022\r\n\tCA" +
-      "NCELLED\020\004\022\014\n\010REFUNDED\020\005Bp\n\032org.megacomme" +
-      "rce.orders.v1B\nOrderProtoZCgithub.com/ah" +
-      "mad-khatib0-org/megacommerce-proto/gen/g" +
-      "o/orders/v1;v1\370\001\001b\006proto3"
+      "tB\r\n\013_deleted_at*f\n\rPaymentStatus\022\023\n\017PAY" +
+      "MENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020\001\022\024" +
+      "\n\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILED\020\003" +
+      "*b\n\013OrderStatus\022\013\n\007CREATED\020\000\022\r\n\tCONFIRME" +
+      "D\020\001\022\013\n\007SHIPPED\020\002\022\r\n\tDELIVERED\020\003\022\r\n\tCANCE" +
+      "LLED\020\004\022\014\n\010REFUNDED\020\005Bp\n\032org.megacommerce" +
+      ".orders.v1B\nOrderProtoZCgithub.com/ahmad" +
+      "-khatib0-org/megacommerce-proto/gen/go/o" +
+      "rders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

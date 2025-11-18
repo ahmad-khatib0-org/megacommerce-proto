@@ -6,13 +6,13 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { AppError } from "../../shared/v1/error.js";
-import { Any } from "../../shared/v1/types.js";
 import {
   InventoryReservationStatus,
   inventoryReservationStatusFromJSON,
   inventoryReservationStatusToJSON,
-} from "./order.js";
+} from "../../inventory/v1/inventory_reserve.js";
+import { AppError } from "../../shared/v1/error.js";
+import { Any } from "../../shared/v1/types.js";
 import { OrderLineItem } from "./order_line_items.js";
 
 export const protobufPackage = "orders.v1";

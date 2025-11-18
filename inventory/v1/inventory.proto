@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package inventory.v1;
+
+import 'inventory/v1/inventory_reserve.proto';
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1";
+option java_outer_classname = "InventoryProto";
+option java_package = "org.megacommerce.inventory.v1";
+
+service InventoryService {
+  rpc InventoryReserve(inventory.v1.InventoryReserveRequest) returns (inventory.v1.InventoryReserveResponse) {}
+}

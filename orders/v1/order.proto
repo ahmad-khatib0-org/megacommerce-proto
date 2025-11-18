@@ -9,14 +9,6 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orde
 option java_outer_classname = "OrderProto";
 option java_package = "org.megacommerce.orders.v1";
 
-enum InventoryReservationStatus {
-  INVENTORY_UNKNOWN = 0;
-  INVENTORY_RESERVED = 1;
-  INVENTORY_PARTIALLY_RESERVED = 2;
-  INVENTORY_NOT_RESERVED = 3;
-  INVENTORY_PENDING = 4;
-}
-
 enum PaymentStatus {
   PAYMENT_UNKNOWN = 0;
   PAYMENT_AUTHORIZED = 1;

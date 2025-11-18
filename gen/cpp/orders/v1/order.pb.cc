@@ -96,7 +96,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 }  // namespace v1
 }  // namespace orders
 static const ::_pb::EnumDescriptor* PROTOBUF_NONNULL
-    file_level_enum_descriptors_orders_2fv1_2forder_2eproto[3];
+    file_level_enum_descriptors_orders_2fv1_2forder_2eproto[2];
 static constexpr const ::_pb::ServiceDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
     file_level_service_descriptors_orders_2fv1_2forder_2eproto = nullptr;
 const ::uint32_t
@@ -188,19 +188,15 @@ const char descriptor_table_protodef_orders_2fv1_2forder_2eproto[] ABSL_ATTRIBUT
     "tus\022\035\n\ncreated_at\030\025 \001(\004R\tcreatedAt\022\"\n\nup"
     "dated_at\030\026 \001(\004H\000R\tupdatedAt\210\001\001\022\"\n\ndelete"
     "d_at\030\027 \001(\004H\001R\tdeletedAt\210\001\001B\r\n\013_updated_a"
-    "tB\r\n\013_deleted_at*\240\001\n\032InventoryReservatio"
-    "nStatus\022\025\n\021INVENTORY_UNKNOWN\020\000\022\026\n\022INVENT"
-    "ORY_RESERVED\020\001\022 \n\034INVENTORY_PARTIALLY_RE"
-    "SERVED\020\002\022\032\n\026INVENTORY_NOT_RESERVED\020\003\022\025\n\021"
-    "INVENTORY_PENDING\020\004*f\n\rPaymentStatus\022\023\n\017"
-    "PAYMENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020"
-    "\001\022\024\n\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILE"
-    "D\020\003*b\n\013OrderStatus\022\013\n\007CREATED\020\000\022\r\n\tCONFI"
-    "RMED\020\001\022\013\n\007SHIPPED\020\002\022\r\n\tDELIVERED\020\003\022\r\n\tCA"
-    "NCELLED\020\004\022\014\n\010REFUNDED\020\005Bp\n\032org.megacomme"
-    "rce.orders.v1B\nOrderProtoZCgithub.com/ah"
-    "mad-khatib0-org/megacommerce-proto/gen/g"
-    "o/orders/v1;v1\370\001\001b\006proto3"
+    "tB\r\n\013_deleted_at*f\n\rPaymentStatus\022\023\n\017PAY"
+    "MENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020\001\022\024"
+    "\n\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILED\020\003"
+    "*b\n\013OrderStatus\022\013\n\007CREATED\020\000\022\r\n\tCONFIRME"
+    "D\020\001\022\013\n\007SHIPPED\020\002\022\r\n\tDELIVERED\020\003\022\r\n\tCANCE"
+    "LLED\020\004\022\014\n\010REFUNDED\020\005Bp\n\032org.megacommerce"
+    ".orders.v1B\nOrderProtoZCgithub.com/ahmad"
+    "-khatib0-org/megacommerce-proto/gen/go/o"
+    "rders/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_orders_2fv1_2forder_2eproto_deps[1] = {
@@ -210,7 +206,7 @@ static ::absl::once_flag descriptor_table_orders_2fv1_2forder_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_2eproto = {
     false,
     false,
-    1545,
+    1382,
     descriptor_table_protodef_orders_2fv1_2forder_2eproto,
     "orders/v1/order.proto",
     &descriptor_table_orders_2fv1_2forder_2eproto_once,
@@ -225,21 +221,15 @@ PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2f
 };
 namespace orders {
 namespace v1 {
-const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL InventoryReservationStatus_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_orders_2fv1_2forder_2eproto);
-  return file_level_enum_descriptors_orders_2fv1_2forder_2eproto[0];
-}
-PROTOBUF_CONSTINIT const uint32_t InventoryReservationStatus_internal_data_[] = {
-    327680u, 0u, };
 const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL PaymentStatus_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&descriptor_table_orders_2fv1_2forder_2eproto);
-  return file_level_enum_descriptors_orders_2fv1_2forder_2eproto[1];
+  return file_level_enum_descriptors_orders_2fv1_2forder_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t PaymentStatus_internal_data_[] = {
     262144u, 0u, };
 const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderStatus_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&descriptor_table_orders_2fv1_2forder_2eproto);
-  return file_level_enum_descriptors_orders_2fv1_2forder_2eproto[2];
+  return file_level_enum_descriptors_orders_2fv1_2forder_2eproto[1];
 }
 PROTOBUF_CONSTINIT const uint32_t OrderStatus_internal_data_[] = {
     393216u, 0u, };
