@@ -108,24 +108,25 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n&orders/v1/order_idempotency_keys.proto"
-    "\022\torders.v1\"\367\001\n\023OrderIdempotencyKey\022\016\n\002i"
+    "\022\torders.v1\"\235\002\n\023OrderIdempotencyKey\022\016\n\002i"
     "d\030\001 \001(\tR\002id\022\'\n\017idempotency_key\030\002 \001(\tR\016id"
-    "empotencyKey\022\027\n\007user_id\030\003 \001(\tR\006userId\022\031\n"
-    "\010order_id\030\004 \001(\tR\007orderId\022\026\n\006status\030\005 \001(\t"
-    "R\006status\022\035\n\ncreated_at\030\006 \001(\004R\tcreatedAt\022"
-    "\035\n\nupdated_at\030\007 \001(\004R\tupdatedAt\022\035\n\nexpire"
-    "s_at\030\010 \001(\004R\texpiresAt*G\n\031OrderIdempotenc"
-    "yKeyStatus\022\017\n\013IN_PROGRESS\020\000\022\r\n\tCOMPLETED"
-    "\020\001\022\n\n\006FAILED\020\002B\177\n\032org.megacommerce.order"
-    "s.v1B\031OrderIdempotencyKeysProtoZCgithub."
-    "com/ahmad-khatib0-org/megacommerce-proto"
-    "/gen/go/orders/v1;v1\370\001\001b\006proto3"
+    "empotencyKey\022\027\n\007user_id\030\003 \001(\tR\006userId\022\036\n"
+    "\010order_id\030\004 \001(\tH\000R\007orderId\210\001\001\022\026\n\006status\030"
+    "\005 \001(\tR\006status\022\035\n\ncreated_at\030\006 \001(\004R\tcreat"
+    "edAt\022\"\n\nupdated_at\030\007 \001(\004H\001R\tupdatedAt\210\001\001"
+    "\022\035\n\nexpires_at\030\010 \001(\004R\texpiresAtB\013\n\t_orde"
+    "r_idB\r\n\013_updated_at*G\n\031OrderIdempotencyK"
+    "eyStatus\022\017\n\013IN_PROGRESS\020\000\022\r\n\tCOMPLETED\020\001"
+    "\022\n\n\006FAILED\020\002B\177\n\032org.megacommerce.orders."
+    "v1B\031OrderIdempotencyKeysProtoZCgithub.co"
+    "m/ahmad-khatib0-org/megacommerce-proto/g"
+    "en/go/orders/v1;v1\370\001\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto = {
     false,
     false,
-    511,
+    549,
     descriptor_table_protodef_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto,
     "orders/v1/order_idempotency_keys.proto",
     &descriptor_table_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto_once,
@@ -309,7 +310,7 @@ OrderIdempotencyKey::_table_ = {
     // string user_id = 3 [json_name = "userId"];
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.user_id_)}},
-    // string order_id = 4 [json_name = "orderId"];
+    // optional string order_id = 4 [json_name = "orderId"];
     {::_pbi::TcParser::FastUS1,
      {34, 3, 0, PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.order_id_)}},
     // string status = 5 [json_name = "status"];
@@ -318,7 +319,7 @@ OrderIdempotencyKey::_table_ = {
     // uint64 created_at = 6 [json_name = "createdAt"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderIdempotencyKey, _impl_.created_at_), 5>(),
      {48, 5, 0, PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.created_at_)}},
-    // uint64 updated_at = 7 [json_name = "updatedAt"];
+    // optional uint64 updated_at = 7 [json_name = "updatedAt"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderIdempotencyKey, _impl_.updated_at_), 6>(),
      {56, 6, 0, PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.updated_at_)}},
   }}, {{
@@ -333,7 +334,7 @@ OrderIdempotencyKey::_table_ = {
     // string user_id = 3 [json_name = "userId"];
     {PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.user_id_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string order_id = 4 [json_name = "orderId"];
+    // optional string order_id = 4 [json_name = "orderId"];
     {PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.order_id_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string status = 5 [json_name = "status"];
@@ -342,7 +343,7 @@ OrderIdempotencyKey::_table_ = {
     // uint64 created_at = 6 [json_name = "createdAt"];
     {PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.created_at_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
-    // uint64 updated_at = 7 [json_name = "updatedAt"];
+    // optional uint64 updated_at = 7 [json_name = "updatedAt"];
     {PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.updated_at_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // uint64 expires_at = 8 [json_name = "expiresAt"];
@@ -439,18 +440,17 @@ PROTOBUF_NOINLINE void OrderIdempotencyKey::Clear() {
     }
   }
 
-  // string order_id = 4 [json_name = "orderId"];
-  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
-    if (!this_._internal_order_id().empty()) {
-      const ::std::string& _s = this_._internal_order_id();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "orders.v1.OrderIdempotencyKey.order_id");
-      target = stream->WriteStringMaybeAliased(4, _s, target);
-    }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // optional string order_id = 4 [json_name = "orderId"];
+  if ((cached_has_bits & 0x00000008u) != 0) {
+    const ::std::string& _s = this_._internal_order_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "orders.v1.OrderIdempotencyKey.order_id");
+    target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
   // string status = 5 [json_name = "status"];
-  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
+  if ((cached_has_bits & 0x00000010u) != 0) {
     if (!this_._internal_status().empty()) {
       const ::std::string& _s = this_._internal_status();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -460,7 +460,7 @@ PROTOBUF_NOINLINE void OrderIdempotencyKey::Clear() {
   }
 
   // uint64 created_at = 6 [json_name = "createdAt"];
-  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
+  if ((cached_has_bits & 0x00000020u) != 0) {
     if (this_._internal_created_at() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -468,17 +468,15 @@ PROTOBUF_NOINLINE void OrderIdempotencyKey::Clear() {
     }
   }
 
-  // uint64 updated_at = 7 [json_name = "updatedAt"];
-  if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
-    if (this_._internal_updated_at() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-          7, this_._internal_updated_at(), target);
-    }
+  // optional uint64 updated_at = 7 [json_name = "updatedAt"];
+  if ((cached_has_bits & 0x00000040u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        7, this_._internal_updated_at(), target);
   }
 
   // uint64 expires_at = 8 [json_name = "expiresAt"];
-  if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
+  if ((cached_has_bits & 0x00000080u) != 0) {
     if (this_._internal_expires_at() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -533,12 +531,10 @@ PROTOBUF_NOINLINE void OrderIdempotencyKey::Clear() {
                                         this_._internal_user_id());
       }
     }
-    // string order_id = 4 [json_name = "orderId"];
+    // optional string order_id = 4 [json_name = "orderId"];
     if ((cached_has_bits & 0x00000008u) != 0) {
-      if (!this_._internal_order_id().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_order_id());
-      }
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_order_id());
     }
     // string status = 5 [json_name = "status"];
     if ((cached_has_bits & 0x00000010u) != 0) {
@@ -554,12 +550,10 @@ PROTOBUF_NOINLINE void OrderIdempotencyKey::Clear() {
             this_._internal_created_at());
       }
     }
-    // uint64 updated_at = 7 [json_name = "updatedAt"];
+    // optional uint64 updated_at = 7 [json_name = "updatedAt"];
     if ((cached_has_bits & 0x00000040u) != 0) {
-      if (this_._internal_updated_at() != 0) {
-        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
-            this_._internal_updated_at());
-      }
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+          this_._internal_updated_at());
     }
     // uint64 expires_at = 8 [json_name = "expiresAt"];
     if ((cached_has_bits & 0x00000080u) != 0) {
@@ -611,13 +605,7 @@ void OrderIdempotencyKey::MergeImpl(::google::protobuf::MessageLite& to_msg, con
       }
     }
     if ((cached_has_bits & 0x00000008u) != 0) {
-      if (!from._internal_order_id().empty()) {
-        _this->_internal_set_order_id(from._internal_order_id());
-      } else {
-        if (_this->_impl_.order_id_.IsDefault()) {
-          _this->_internal_set_order_id("");
-        }
-      }
+      _this->_internal_set_order_id(from._internal_order_id());
     }
     if ((cached_has_bits & 0x00000010u) != 0) {
       if (!from._internal_status().empty()) {
@@ -634,9 +622,7 @@ void OrderIdempotencyKey::MergeImpl(::google::protobuf::MessageLite& to_msg, con
       }
     }
     if ((cached_has_bits & 0x00000040u) != 0) {
-      if (from._internal_updated_at() != 0) {
-        _this->_impl_.updated_at_ = from._impl_.updated_at_;
-      }
+      _this->_impl_.updated_at_ = from._impl_.updated_at_;
     }
     if ((cached_has_bits & 0x00000080u) != 0) {
       if (from._internal_expires_at() != 0) {

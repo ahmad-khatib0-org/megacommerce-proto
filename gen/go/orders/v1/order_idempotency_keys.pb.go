@@ -75,10 +75,10 @@ type OrderIdempotencyKey struct {
 	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	IdempotencyKey string                 `protobuf:"bytes,2,opt,name=idempotency_key,json=idempotencyKey,proto3" json:"idempotency_key,omitempty"`
 	UserId         string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	OrderId        string                 `protobuf:"bytes,4,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	OrderId        *string                `protobuf:"bytes,4,opt,name=order_id,json=orderId,proto3,oneof" json:"order_id,omitempty"`
 	Status         string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"` // "IN_PROGRESS", "COMPLETED", "FAILED"
 	CreatedAt      uint64                 `protobuf:"varint,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt      uint64                 `protobuf:"varint,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	UpdatedAt      *uint64                `protobuf:"varint,7,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
 	ExpiresAt      uint64                 `protobuf:"varint,8,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
@@ -136,8 +136,8 @@ func (x *OrderIdempotencyKey) GetUserId() string {
 }
 
 func (x *OrderIdempotencyKey) GetOrderId() string {
-	if x != nil {
-		return x.OrderId
+	if x != nil && x.OrderId != nil {
+		return *x.OrderId
 	}
 	return ""
 }
@@ -157,8 +157,8 @@ func (x *OrderIdempotencyKey) GetCreatedAt() uint64 {
 }
 
 func (x *OrderIdempotencyKey) GetUpdatedAt() uint64 {
-	if x != nil {
-		return x.UpdatedAt
+	if x != nil && x.UpdatedAt != nil {
+		return *x.UpdatedAt
 	}
 	return 0
 }
@@ -174,19 +174,21 @@ var File_orders_v1_order_idempotency_keys_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_idempotency_keys_proto_rawDesc = "" +
 	"\n" +
-	"&orders/v1/order_idempotency_keys.proto\x12\torders.v1\"\xf7\x01\n" +
+	"&orders/v1/order_idempotency_keys.proto\x12\torders.v1\"\x9d\x02\n" +
 	"\x13OrderIdempotencyKey\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
 	"\x0fidempotency_key\x18\x02 \x01(\tR\x0eidempotencyKey\x12\x17\n" +
-	"\auser_id\x18\x03 \x01(\tR\x06userId\x12\x19\n" +
-	"\border_id\x18\x04 \x01(\tR\aorderId\x12\x16\n" +
+	"\auser_id\x18\x03 \x01(\tR\x06userId\x12\x1e\n" +
+	"\border_id\x18\x04 \x01(\tH\x00R\aorderId\x88\x01\x01\x12\x16\n" +
 	"\x06status\x18\x05 \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x06 \x01(\x04R\tcreatedAt\x12\x1d\n" +
+	"created_at\x18\x06 \x01(\x04R\tcreatedAt\x12\"\n" +
 	"\n" +
-	"updated_at\x18\a \x01(\x04R\tupdatedAt\x12\x1d\n" +
+	"updated_at\x18\a \x01(\x04H\x01R\tupdatedAt\x88\x01\x01\x12\x1d\n" +
 	"\n" +
-	"expires_at\x18\b \x01(\x04R\texpiresAt*G\n" +
+	"expires_at\x18\b \x01(\x04R\texpiresAtB\v\n" +
+	"\t_order_idB\r\n" +
+	"\v_updated_at*G\n" +
 	"\x19OrderIdempotencyKeyStatus\x12\x0f\n" +
 	"\vIN_PROGRESS\x10\x00\x12\r\n" +
 	"\tCOMPLETED\x10\x01\x12\n" +
@@ -225,6 +227,7 @@ func file_orders_v1_order_idempotency_keys_proto_init() {
 	if File_orders_v1_order_idempotency_keys_proto != nil {
 		return
 	}
+	file_orders_v1_order_idempotency_keys_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

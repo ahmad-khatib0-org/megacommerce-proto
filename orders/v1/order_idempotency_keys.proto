@@ -11,10 +11,10 @@ message OrderIdempotencyKey {
   string id = 1;
   string idempotency_key = 2;
   string user_id = 3;
-  string order_id = 4;
+  optional string order_id = 4;
   string status = 5; // "IN_PROGRESS", "COMPLETED", "FAILED"
   uint64 created_at = 6;
-  uint64 updated_at = 7;
+  optional uint64 updated_at = 7;
   uint64 expires_at = 8;
 }
 

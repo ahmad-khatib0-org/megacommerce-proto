@@ -193,12 +193,17 @@ public final class OrderIdempotencyKeysProto {
         getUserIdBytes();
 
     /**
-     * <code>string order_id = 4 [json_name = "orderId"];</code>
+     * <code>optional string order_id = 4 [json_name = "orderId"];</code>
+     * @return Whether the orderId field is set.
+     */
+    boolean hasOrderId();
+    /**
+     * <code>optional string order_id = 4 [json_name = "orderId"];</code>
      * @return The orderId.
      */
     java.lang.String getOrderId();
     /**
-     * <code>string order_id = 4 [json_name = "orderId"];</code>
+     * <code>optional string order_id = 4 [json_name = "orderId"];</code>
      * @return The bytes for orderId.
      */
     com.google.protobuf.ByteString
@@ -231,7 +236,12 @@ public final class OrderIdempotencyKeysProto {
     long getCreatedAt();
 
     /**
-     * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 7 [json_name = "updatedAt"];</code>
+     * @return Whether the updatedAt field is set.
+     */
+    boolean hasUpdatedAt();
+    /**
+     * <code>optional uint64 updated_at = 7 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
@@ -284,6 +294,7 @@ public final class OrderIdempotencyKeysProto {
               org.megacommerce.orders.v1.OrderIdempotencyKeysProto.OrderIdempotencyKey.class, org.megacommerce.orders.v1.OrderIdempotencyKeysProto.OrderIdempotencyKey.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
@@ -405,7 +416,15 @@ public final class OrderIdempotencyKeysProto {
     @SuppressWarnings("serial")
     private volatile java.lang.Object orderId_ = "";
     /**
-     * <code>string order_id = 4 [json_name = "orderId"];</code>
+     * <code>optional string order_id = 4 [json_name = "orderId"];</code>
+     * @return Whether the orderId field is set.
+     */
+    @java.lang.Override
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string order_id = 4 [json_name = "orderId"];</code>
      * @return The orderId.
      */
     @java.lang.Override
@@ -422,7 +441,7 @@ public final class OrderIdempotencyKeysProto {
       }
     }
     /**
-     * <code>string order_id = 4 [json_name = "orderId"];</code>
+     * <code>optional string order_id = 4 [json_name = "orderId"];</code>
      * @return The bytes for orderId.
      */
     @java.lang.Override
@@ -501,7 +520,15 @@ public final class OrderIdempotencyKeysProto {
     public static final int UPDATED_AT_FIELD_NUMBER = 7;
     private long updatedAt_ = 0L;
     /**
-     * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 7 [json_name = "updatedAt"];</code>
+     * @return Whether the updatedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdatedAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional uint64 updated_at = 7 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -543,7 +570,7 @@ public final class OrderIdempotencyKeysProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderId_)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, orderId_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
@@ -552,7 +579,7 @@ public final class OrderIdempotencyKeysProto {
       if (createdAt_ != 0L) {
         output.writeUInt64(6, createdAt_);
       }
-      if (updatedAt_ != 0L) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeUInt64(7, updatedAt_);
       }
       if (expiresAt_ != 0L) {
@@ -576,7 +603,7 @@ public final class OrderIdempotencyKeysProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderId_)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(4, orderId_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
@@ -586,7 +613,7 @@ public final class OrderIdempotencyKeysProto {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(6, createdAt_);
       }
-      if (updatedAt_ != 0L) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(7, updatedAt_);
       }
@@ -615,14 +642,20 @@ public final class OrderIdempotencyKeysProto {
           .equals(other.getIdempotencyKey())) return false;
       if (!getUserId()
           .equals(other.getUserId())) return false;
-      if (!getOrderId()
-          .equals(other.getOrderId())) return false;
+      if (hasOrderId() != other.hasOrderId()) return false;
+      if (hasOrderId()) {
+        if (!getOrderId()
+            .equals(other.getOrderId())) return false;
+      }
       if (!getStatus()
           .equals(other.getStatus())) return false;
       if (getCreatedAt()
           != other.getCreatedAt()) return false;
-      if (getUpdatedAt()
-          != other.getUpdatedAt()) return false;
+      if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+      if (hasUpdatedAt()) {
+        if (getUpdatedAt()
+            != other.getUpdatedAt()) return false;
+      }
       if (getExpiresAt()
           != other.getExpiresAt()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -642,16 +675,20 @@ public final class OrderIdempotencyKeysProto {
       hash = (53 * hash) + getIdempotencyKey().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
-      hash = (37 * hash) + ORDER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrderId().hashCode();
+      if (hasOrderId()) {
+        hash = (37 * hash) + ORDER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getOrderId().hashCode();
+      }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreatedAt());
-      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUpdatedAt());
+      if (hasUpdatedAt()) {
+        hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUpdatedAt());
+      }
       hash = (37 * hash) + EXPIRES_AT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExpiresAt());
@@ -836,8 +873,10 @@ public final class OrderIdempotencyKeysProto {
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.userId_ = userId_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.orderId_ = orderId_;
+          to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.status_ = status_;
@@ -847,10 +886,12 @@ public final class OrderIdempotencyKeysProto {
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.updatedAt_ = updatedAt_;
+          to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.expiresAt_ = expiresAt_;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -880,7 +921,7 @@ public final class OrderIdempotencyKeysProto {
           bitField0_ |= 0x00000004;
           onChanged();
         }
-        if (!other.getOrderId().isEmpty()) {
+        if (other.hasOrderId()) {
           orderId_ = other.orderId_;
           bitField0_ |= 0x00000008;
           onChanged();
@@ -893,7 +934,7 @@ public final class OrderIdempotencyKeysProto {
         if (other.getCreatedAt() != 0L) {
           setCreatedAt(other.getCreatedAt());
         }
-        if (other.getUpdatedAt() != 0L) {
+        if (other.hasUpdatedAt()) {
           setUpdatedAt(other.getUpdatedAt());
         }
         if (other.getExpiresAt() != 0L) {
@@ -1200,7 +1241,14 @@ public final class OrderIdempotencyKeysProto {
 
       private java.lang.Object orderId_ = "";
       /**
-       * <code>string order_id = 4 [json_name = "orderId"];</code>
+       * <code>optional string order_id = 4 [json_name = "orderId"];</code>
+       * @return Whether the orderId field is set.
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>optional string order_id = 4 [json_name = "orderId"];</code>
        * @return The orderId.
        */
       public java.lang.String getOrderId() {
@@ -1216,7 +1264,7 @@ public final class OrderIdempotencyKeysProto {
         }
       }
       /**
-       * <code>string order_id = 4 [json_name = "orderId"];</code>
+       * <code>optional string order_id = 4 [json_name = "orderId"];</code>
        * @return The bytes for orderId.
        */
       public com.google.protobuf.ByteString
@@ -1233,7 +1281,7 @@ public final class OrderIdempotencyKeysProto {
         }
       }
       /**
-       * <code>string order_id = 4 [json_name = "orderId"];</code>
+       * <code>optional string order_id = 4 [json_name = "orderId"];</code>
        * @param value The orderId to set.
        * @return This builder for chaining.
        */
@@ -1246,7 +1294,7 @@ public final class OrderIdempotencyKeysProto {
         return this;
       }
       /**
-       * <code>string order_id = 4 [json_name = "orderId"];</code>
+       * <code>optional string order_id = 4 [json_name = "orderId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderId() {
@@ -1256,7 +1304,7 @@ public final class OrderIdempotencyKeysProto {
         return this;
       }
       /**
-       * <code>string order_id = 4 [json_name = "orderId"];</code>
+       * <code>optional string order_id = 4 [json_name = "orderId"];</code>
        * @param value The bytes for orderId to set.
        * @return This builder for chaining.
        */
@@ -1396,7 +1444,15 @@ public final class OrderIdempotencyKeysProto {
 
       private long updatedAt_ ;
       /**
-       * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 7 [json_name = "updatedAt"];</code>
+       * @return Whether the updatedAt field is set.
+       */
+      @java.lang.Override
+      public boolean hasUpdatedAt() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <code>optional uint64 updated_at = 7 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -1404,7 +1460,7 @@ public final class OrderIdempotencyKeysProto {
         return updatedAt_;
       }
       /**
-       * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 7 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
@@ -1416,7 +1472,7 @@ public final class OrderIdempotencyKeysProto {
         return this;
       }
       /**
-       * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 7 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
@@ -1524,18 +1580,19 @@ public final class OrderIdempotencyKeysProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&orders/v1/order_idempotency_keys.proto" +
-      "\022\torders.v1\"\367\001\n\023OrderIdempotencyKey\022\016\n\002i" +
+      "\022\torders.v1\"\235\002\n\023OrderIdempotencyKey\022\016\n\002i" +
       "d\030\001 \001(\tR\002id\022\'\n\017idempotency_key\030\002 \001(\tR\016id" +
-      "empotencyKey\022\027\n\007user_id\030\003 \001(\tR\006userId\022\031\n" +
-      "\010order_id\030\004 \001(\tR\007orderId\022\026\n\006status\030\005 \001(\t" +
-      "R\006status\022\035\n\ncreated_at\030\006 \001(\004R\tcreatedAt\022" +
-      "\035\n\nupdated_at\030\007 \001(\004R\tupdatedAt\022\035\n\nexpire" +
-      "s_at\030\010 \001(\004R\texpiresAt*G\n\031OrderIdempotenc" +
-      "yKeyStatus\022\017\n\013IN_PROGRESS\020\000\022\r\n\tCOMPLETED" +
-      "\020\001\022\n\n\006FAILED\020\002B\177\n\032org.megacommerce.order" +
-      "s.v1B\031OrderIdempotencyKeysProtoZCgithub." +
-      "com/ahmad-khatib0-org/megacommerce-proto" +
-      "/gen/go/orders/v1;v1\370\001\001b\006proto3"
+      "empotencyKey\022\027\n\007user_id\030\003 \001(\tR\006userId\022\036\n" +
+      "\010order_id\030\004 \001(\tH\000R\007orderId\210\001\001\022\026\n\006status\030" +
+      "\005 \001(\tR\006status\022\035\n\ncreated_at\030\006 \001(\004R\tcreat" +
+      "edAt\022\"\n\nupdated_at\030\007 \001(\004H\001R\tupdatedAt\210\001\001" +
+      "\022\035\n\nexpires_at\030\010 \001(\004R\texpiresAtB\013\n\t_orde" +
+      "r_idB\r\n\013_updated_at*G\n\031OrderIdempotencyK" +
+      "eyStatus\022\017\n\013IN_PROGRESS\020\000\022\r\n\tCOMPLETED\020\001" +
+      "\022\n\n\006FAILED\020\002B\177\n\032org.megacommerce.orders." +
+      "v1B\031OrderIdempotencyKeysProtoZCgithub.co" +
+      "m/ahmad-khatib0-org/megacommerce-proto/g" +
+      "en/go/orders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

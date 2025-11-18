@@ -518,15 +518,15 @@ pub struct OrderIdempotencyKey {
     pub idempotency_key: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
     pub user_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "4")]
-    pub order_id: ::prost::alloc::string::String,
+    #[prost(string, optional, tag = "4")]
+    pub order_id: ::core::option::Option<::prost::alloc::string::String>,
     /// "IN_PROGRESS", "COMPLETED", "FAILED"
     #[prost(string, tag = "5")]
     pub status: ::prost::alloc::string::String,
     #[prost(uint64, tag = "6")]
     pub created_at: u64,
-    #[prost(uint64, tag = "7")]
-    pub updated_at: u64,
+    #[prost(uint64, optional, tag = "7")]
+    pub updated_at: ::core::option::Option<u64>,
     #[prost(uint64, tag = "8")]
     pub expires_at: u64,
 }

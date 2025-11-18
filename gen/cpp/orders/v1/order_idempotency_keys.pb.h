@@ -313,7 +313,8 @@ class OrderIdempotencyKey final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_user_id();
 
   public:
-  // string order_id = 4 [json_name = "orderId"];
+  // optional string order_id = 4 [json_name = "orderId"];
+  bool has_order_id() const;
   void clear_order_id() ;
   const ::std::string& order_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -353,7 +354,8 @@ class OrderIdempotencyKey final : public ::google::protobuf::Message
   void _internal_set_created_at(::uint64_t value);
 
   public:
-  // uint64 updated_at = 7 [json_name = "updatedAt"];
+  // optional uint64 updated_at = 7 [json_name = "updatedAt"];
+  bool has_updated_at() const;
   void clear_updated_at() ;
   ::uint64_t updated_at() const;
   void set_updated_at(::uint64_t value);
@@ -626,7 +628,11 @@ inline void OrderIdempotencyKey::set_allocated_user_id(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderIdempotencyKey.user_id)
 }
 
-// string order_id = 4 [json_name = "orderId"];
+// optional string order_id = 4 [json_name = "orderId"];
+inline bool OrderIdempotencyKey::has_order_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
 inline void OrderIdempotencyKey::clear_order_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.order_id_.ClearToEmpty();
@@ -780,7 +786,11 @@ inline void OrderIdempotencyKey::_internal_set_created_at(::uint64_t value) {
   _impl_.created_at_ = value;
 }
 
-// uint64 updated_at = 7 [json_name = "updatedAt"];
+// optional uint64 updated_at = 7 [json_name = "updatedAt"];
+inline bool OrderIdempotencyKey::has_updated_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
 inline void OrderIdempotencyKey::clear_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_ = ::uint64_t{0u};

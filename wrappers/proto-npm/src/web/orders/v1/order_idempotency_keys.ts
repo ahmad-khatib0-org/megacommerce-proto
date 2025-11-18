@@ -52,11 +52,13 @@ export interface OrderIdempotencyKey {
   id: string;
   idempotencyKey: string;
   userId: string;
-  orderId: string;
+  orderId?:
+    | string
+    | undefined;
   /** "IN_PROGRESS", "COMPLETED", "FAILED" */
   status: string;
   createdAt: string;
-  updatedAt: string;
+  updatedAt?: string | undefined;
   expiresAt: string;
 }
 
@@ -65,10 +67,10 @@ function createBaseOrderIdempotencyKey(): OrderIdempotencyKey {
     id: "",
     idempotencyKey: "",
     userId: "",
-    orderId: "",
+    orderId: undefined,
     status: "",
     createdAt: "0",
-    updatedAt: "0",
+    updatedAt: undefined,
     expiresAt: "0",
   };
 }
@@ -84,7 +86,7 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
     if (message.userId !== "") {
       writer.uint32(26).string(message.userId);
     }
-    if (message.orderId !== "") {
+    if (message.orderId !== undefined) {
       writer.uint32(34).string(message.orderId);
     }
     if (message.status !== "") {
@@ -93,7 +95,7 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
     if (message.createdAt !== "0") {
       writer.uint32(48).uint64(message.createdAt);
     }
-    if (message.updatedAt !== "0") {
+    if (message.updatedAt !== undefined) {
       writer.uint32(56).uint64(message.updatedAt);
     }
     if (message.expiresAt !== "0") {
@@ -187,10 +189,10 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       idempotencyKey: isSet(object.idempotencyKey) ? globalThis.String(object.idempotencyKey) : "",
       userId: isSet(object.userId) ? globalThis.String(object.userId) : "",
-      orderId: isSet(object.orderId) ? globalThis.String(object.orderId) : "",
+      orderId: isSet(object.orderId) ? globalThis.String(object.orderId) : undefined,
       status: isSet(object.status) ? globalThis.String(object.status) : "",
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
-      updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : "0",
+      updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : undefined,
       expiresAt: isSet(object.expiresAt) ? globalThis.String(object.expiresAt) : "0",
     };
   },
@@ -206,7 +208,7 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
     if (message.userId !== "") {
       obj.userId = message.userId;
     }
-    if (message.orderId !== "") {
+    if (message.orderId !== undefined) {
       obj.orderId = message.orderId;
     }
     if (message.status !== "") {
@@ -215,7 +217,7 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
     if (message.createdAt !== "0") {
       obj.createdAt = message.createdAt;
     }
-    if (message.updatedAt !== "0") {
+    if (message.updatedAt !== undefined) {
       obj.updatedAt = message.updatedAt;
     }
     if (message.expiresAt !== "0") {
@@ -232,10 +234,10 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
     message.id = object.id ?? "";
     message.idempotencyKey = object.idempotencyKey ?? "";
     message.userId = object.userId ?? "";
-    message.orderId = object.orderId ?? "";
+    message.orderId = object.orderId ?? undefined;
     message.status = object.status ?? "";
     message.createdAt = object.createdAt ?? "0";
-    message.updatedAt = object.updatedAt ?? "0";
+    message.updatedAt = object.updatedAt ?? undefined;
     message.expiresAt = object.expiresAt ?? "0";
     return message;
   },
