@@ -26,6 +26,195 @@ public final class OrderEventsProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code orders.v1.OrderEventType}
+   */
+  public enum OrderEventType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>ORDER_EVENT_UNKNOWN = 0;</code>
+     */
+    ORDER_EVENT_UNKNOWN(0),
+    /**
+     * <code>ORDER_EVENT_ORDER_CREATED = 1;</code>
+     */
+    ORDER_EVENT_ORDER_CREATED(1),
+    /**
+     * <code>ORDER_EVENT_PAYMENT_CAPTURED = 2;</code>
+     */
+    ORDER_EVENT_PAYMENT_CAPTURED(2),
+    /**
+     * <code>ORDER_EVENT_PAYMENT_FAILED = 3;</code>
+     */
+    ORDER_EVENT_PAYMENT_FAILED(3),
+    /**
+     * <code>ORDER_EVENT_ORDER_SHIPPED = 4;</code>
+     */
+    ORDER_EVENT_ORDER_SHIPPED(4),
+    /**
+     * <code>ORDER_EVENT_ORDER_DELIVERED = 5;</code>
+     */
+    ORDER_EVENT_ORDER_DELIVERED(5),
+    /**
+     * <code>ORDER_EVENT_ORDER_CANCELLED = 6;</code>
+     */
+    ORDER_EVENT_ORDER_CANCELLED(6),
+    /**
+     * <code>ORDER_EVENT_ORDER_REFUNDED = 7;</code>
+     */
+    ORDER_EVENT_ORDER_REFUNDED(7),
+    /**
+     * <code>ORDER_EVENT_INVENTORY_RESERVED = 8;</code>
+     */
+    ORDER_EVENT_INVENTORY_RESERVED(8),
+    /**
+     * <code>ORDER_EVENT_INVENTORY_RELEASED = 9;</code>
+     */
+    ORDER_EVENT_INVENTORY_RELEASED(9),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        OrderEventType.class.getName());
+    }
+    /**
+     * <code>ORDER_EVENT_UNKNOWN = 0;</code>
+     */
+    public static final int ORDER_EVENT_UNKNOWN_VALUE = 0;
+    /**
+     * <code>ORDER_EVENT_ORDER_CREATED = 1;</code>
+     */
+    public static final int ORDER_EVENT_ORDER_CREATED_VALUE = 1;
+    /**
+     * <code>ORDER_EVENT_PAYMENT_CAPTURED = 2;</code>
+     */
+    public static final int ORDER_EVENT_PAYMENT_CAPTURED_VALUE = 2;
+    /**
+     * <code>ORDER_EVENT_PAYMENT_FAILED = 3;</code>
+     */
+    public static final int ORDER_EVENT_PAYMENT_FAILED_VALUE = 3;
+    /**
+     * <code>ORDER_EVENT_ORDER_SHIPPED = 4;</code>
+     */
+    public static final int ORDER_EVENT_ORDER_SHIPPED_VALUE = 4;
+    /**
+     * <code>ORDER_EVENT_ORDER_DELIVERED = 5;</code>
+     */
+    public static final int ORDER_EVENT_ORDER_DELIVERED_VALUE = 5;
+    /**
+     * <code>ORDER_EVENT_ORDER_CANCELLED = 6;</code>
+     */
+    public static final int ORDER_EVENT_ORDER_CANCELLED_VALUE = 6;
+    /**
+     * <code>ORDER_EVENT_ORDER_REFUNDED = 7;</code>
+     */
+    public static final int ORDER_EVENT_ORDER_REFUNDED_VALUE = 7;
+    /**
+     * <code>ORDER_EVENT_INVENTORY_RESERVED = 8;</code>
+     */
+    public static final int ORDER_EVENT_INVENTORY_RESERVED_VALUE = 8;
+    /**
+     * <code>ORDER_EVENT_INVENTORY_RELEASED = 9;</code>
+     */
+    public static final int ORDER_EVENT_INVENTORY_RELEASED_VALUE = 9;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OrderEventType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OrderEventType forNumber(int value) {
+      switch (value) {
+        case 0: return ORDER_EVENT_UNKNOWN;
+        case 1: return ORDER_EVENT_ORDER_CREATED;
+        case 2: return ORDER_EVENT_PAYMENT_CAPTURED;
+        case 3: return ORDER_EVENT_PAYMENT_FAILED;
+        case 4: return ORDER_EVENT_ORDER_SHIPPED;
+        case 5: return ORDER_EVENT_ORDER_DELIVERED;
+        case 6: return ORDER_EVENT_ORDER_CANCELLED;
+        case 7: return ORDER_EVENT_ORDER_REFUNDED;
+        case 8: return ORDER_EVENT_INVENTORY_RESERVED;
+        case 9: return ORDER_EVENT_INVENTORY_RELEASED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OrderEventType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        OrderEventType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OrderEventType>() {
+            public OrderEventType findValueByNumber(int number) {
+              return OrderEventType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.megacommerce.orders.v1.OrderEventsProto.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final OrderEventType[] VALUES = values();
+
+    public static OrderEventType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OrderEventType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:orders.v1.OrderEventType)
+  }
+
   public interface OrderEventOrBuilder extends
       // @@protoc_insertion_point(interface_extends:orders.v1.OrderEvent)
       com.google.protobuf.MessageOrBuilder {
@@ -1249,10 +1438,18 @@ public final class OrderEventsProto {
       "rId\022\035\n\nevent_type\030\003 \001(\tR\teventType\0226\n\rev" +
       "ent_payload\030\004 \001(\0132\021.shared.v1.StructR\014ev" +
       "entPayload\022\035\n\ncreated_at\030\005 \001(\003R\tcreatedA" +
-      "tBv\n\032org.megacommerce.orders.v1B\020OrderEv" +
-      "entsProtoZCgithub.com/ahmad-khatib0-org/" +
-      "megacommerce-proto/gen/go/orders/v1;v1\370\001" +
-      "\001b\006proto3"
+      "t*\323\002\n\016OrderEventType\022\027\n\023ORDER_EVENT_UNKN" +
+      "OWN\020\000\022\035\n\031ORDER_EVENT_ORDER_CREATED\020\001\022 \n\034" +
+      "ORDER_EVENT_PAYMENT_CAPTURED\020\002\022\036\n\032ORDER_" +
+      "EVENT_PAYMENT_FAILED\020\003\022\035\n\031ORDER_EVENT_OR" +
+      "DER_SHIPPED\020\004\022\037\n\033ORDER_EVENT_ORDER_DELIV" +
+      "ERED\020\005\022\037\n\033ORDER_EVENT_ORDER_CANCELLED\020\006\022" +
+      "\036\n\032ORDER_EVENT_ORDER_REFUNDED\020\007\022\"\n\036ORDER" +
+      "_EVENT_INVENTORY_RESERVED\020\010\022\"\n\036ORDER_EVE" +
+      "NT_INVENTORY_RELEASED\020\tBv\n\032org.megacomme" +
+      "rce.orders.v1B\020OrderEventsProtoZCgithub." +
+      "com/ahmad-khatib0-org/megacommerce-proto" +
+      "/gen/go/orders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -28,6 +28,7 @@
 #include "google/protobuf/message_lite.h"
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
+#include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
 #include "shared/v1/struct.pb.h"
 // @@protoc_insertion_point(includes)
@@ -55,6 +56,8 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_orde
 }  // extern "C"
 namespace orders {
 namespace v1 {
+enum OrderEventType : int;
+extern const uint32_t OrderEventType_internal_data_[];
 class OrderEvent;
 struct OrderEventDefaultTypeInternal;
 extern OrderEventDefaultTypeInternal _OrderEvent_default_instance_;
@@ -63,11 +66,58 @@ extern const ::google::protobuf::internal::ClassDataFull OrderEvent_class_data_;
 }  // namespace orders
 namespace google {
 namespace protobuf {
+template <>
+internal::EnumTraitsT<::orders::v1::OrderEventType_internal_data_>
+    internal::EnumTraitsImpl::value<::orders::v1::OrderEventType>;
 }  // namespace protobuf
 }  // namespace google
 
 namespace orders {
 namespace v1 {
+enum OrderEventType : int {
+  ORDER_EVENT_UNKNOWN = 0,
+  ORDER_EVENT_ORDER_CREATED = 1,
+  ORDER_EVENT_PAYMENT_CAPTURED = 2,
+  ORDER_EVENT_PAYMENT_FAILED = 3,
+  ORDER_EVENT_ORDER_SHIPPED = 4,
+  ORDER_EVENT_ORDER_DELIVERED = 5,
+  ORDER_EVENT_ORDER_CANCELLED = 6,
+  ORDER_EVENT_ORDER_REFUNDED = 7,
+  ORDER_EVENT_INVENTORY_RESERVED = 8,
+  ORDER_EVENT_INVENTORY_RELEASED = 9,
+  OrderEventType_INT_MIN_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::min(),
+  OrderEventType_INT_MAX_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::max(),
+};
+
+extern const uint32_t OrderEventType_internal_data_[];
+inline constexpr OrderEventType OrderEventType_MIN =
+    static_cast<OrderEventType>(0);
+inline constexpr OrderEventType OrderEventType_MAX =
+    static_cast<OrderEventType>(9);
+inline bool OrderEventType_IsValid(int value) {
+  return 0 <= value && value <= 9;
+}
+inline constexpr int OrderEventType_ARRAYSIZE = 9 + 1;
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderEventType_descriptor();
+template <typename T>
+const ::std::string& OrderEventType_Name(T value) {
+  static_assert(::std::is_same<T, OrderEventType>::value ||
+                    ::std::is_integral<T>::value,
+                "Incorrect type passed to OrderEventType_Name().");
+  return OrderEventType_Name(static_cast<OrderEventType>(value));
+}
+template <>
+inline const ::std::string& OrderEventType_Name(OrderEventType value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<OrderEventType_descriptor, 0, 9>(
+      static_cast<int>(value));
+}
+inline bool OrderEventType_Parse(
+    ::absl::string_view name, OrderEventType* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<OrderEventType>(OrderEventType_descriptor(), name,
+                                           value);
+}
 
 // ===================================================================
 
@@ -668,6 +718,19 @@ inline void OrderEvent::_internal_set_created_at(::int64_t value) {
 }  // namespace v1
 }  // namespace orders
 
+
+namespace google {
+namespace protobuf {
+
+template <>
+struct is_proto_enum<::orders::v1::OrderEventType> : std::true_type {};
+template <>
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::orders::v1::OrderEventType>() {
+  return ::orders::v1::OrderEventType_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

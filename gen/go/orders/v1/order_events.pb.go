@@ -22,6 +22,76 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type OrderEventType int32
+
+const (
+	OrderEventType_ORDER_EVENT_UNKNOWN            OrderEventType = 0
+	OrderEventType_ORDER_EVENT_ORDER_CREATED      OrderEventType = 1
+	OrderEventType_ORDER_EVENT_PAYMENT_CAPTURED   OrderEventType = 2
+	OrderEventType_ORDER_EVENT_PAYMENT_FAILED     OrderEventType = 3
+	OrderEventType_ORDER_EVENT_ORDER_SHIPPED      OrderEventType = 4
+	OrderEventType_ORDER_EVENT_ORDER_DELIVERED    OrderEventType = 5
+	OrderEventType_ORDER_EVENT_ORDER_CANCELLED    OrderEventType = 6
+	OrderEventType_ORDER_EVENT_ORDER_REFUNDED     OrderEventType = 7
+	OrderEventType_ORDER_EVENT_INVENTORY_RESERVED OrderEventType = 8
+	OrderEventType_ORDER_EVENT_INVENTORY_RELEASED OrderEventType = 9
+)
+
+// Enum value maps for OrderEventType.
+var (
+	OrderEventType_name = map[int32]string{
+		0: "ORDER_EVENT_UNKNOWN",
+		1: "ORDER_EVENT_ORDER_CREATED",
+		2: "ORDER_EVENT_PAYMENT_CAPTURED",
+		3: "ORDER_EVENT_PAYMENT_FAILED",
+		4: "ORDER_EVENT_ORDER_SHIPPED",
+		5: "ORDER_EVENT_ORDER_DELIVERED",
+		6: "ORDER_EVENT_ORDER_CANCELLED",
+		7: "ORDER_EVENT_ORDER_REFUNDED",
+		8: "ORDER_EVENT_INVENTORY_RESERVED",
+		9: "ORDER_EVENT_INVENTORY_RELEASED",
+	}
+	OrderEventType_value = map[string]int32{
+		"ORDER_EVENT_UNKNOWN":            0,
+		"ORDER_EVENT_ORDER_CREATED":      1,
+		"ORDER_EVENT_PAYMENT_CAPTURED":   2,
+		"ORDER_EVENT_PAYMENT_FAILED":     3,
+		"ORDER_EVENT_ORDER_SHIPPED":      4,
+		"ORDER_EVENT_ORDER_DELIVERED":    5,
+		"ORDER_EVENT_ORDER_CANCELLED":    6,
+		"ORDER_EVENT_ORDER_REFUNDED":     7,
+		"ORDER_EVENT_INVENTORY_RESERVED": 8,
+		"ORDER_EVENT_INVENTORY_RELEASED": 9,
+	}
+)
+
+func (x OrderEventType) Enum() *OrderEventType {
+	p := new(OrderEventType)
+	*p = x
+	return p
+}
+
+func (x OrderEventType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (OrderEventType) Descriptor() protoreflect.EnumDescriptor {
+	return file_orders_v1_order_events_proto_enumTypes[0].Descriptor()
+}
+
+func (OrderEventType) Type() protoreflect.EnumType {
+	return &file_orders_v1_order_events_proto_enumTypes[0]
+}
+
+func (x OrderEventType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use OrderEventType.Descriptor instead.
+func (OrderEventType) EnumDescriptor() ([]byte, []int) {
+	return file_orders_v1_order_events_proto_rawDescGZIP(), []int{0}
+}
+
 type OrderEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -111,7 +181,18 @@ const file_orders_v1_order_events_proto_rawDesc = "" +
 	"event_type\x18\x03 \x01(\tR\teventType\x126\n" +
 	"\revent_payload\x18\x04 \x01(\v2\x11.shared.v1.StructR\feventPayload\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\x03R\tcreatedAtBv\n" +
+	"created_at\x18\x05 \x01(\x03R\tcreatedAt*\xd3\x02\n" +
+	"\x0eOrderEventType\x12\x17\n" +
+	"\x13ORDER_EVENT_UNKNOWN\x10\x00\x12\x1d\n" +
+	"\x19ORDER_EVENT_ORDER_CREATED\x10\x01\x12 \n" +
+	"\x1cORDER_EVENT_PAYMENT_CAPTURED\x10\x02\x12\x1e\n" +
+	"\x1aORDER_EVENT_PAYMENT_FAILED\x10\x03\x12\x1d\n" +
+	"\x19ORDER_EVENT_ORDER_SHIPPED\x10\x04\x12\x1f\n" +
+	"\x1bORDER_EVENT_ORDER_DELIVERED\x10\x05\x12\x1f\n" +
+	"\x1bORDER_EVENT_ORDER_CANCELLED\x10\x06\x12\x1e\n" +
+	"\x1aORDER_EVENT_ORDER_REFUNDED\x10\a\x12\"\n" +
+	"\x1eORDER_EVENT_INVENTORY_RESERVED\x10\b\x12\"\n" +
+	"\x1eORDER_EVENT_INVENTORY_RELEASED\x10\tBv\n" +
 	"\x1aorg.megacommerce.orders.v1B\x10OrderEventsProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -126,13 +207,15 @@ func file_orders_v1_order_events_proto_rawDescGZIP() []byte {
 	return file_orders_v1_order_events_proto_rawDescData
 }
 
+var file_orders_v1_order_events_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_orders_v1_order_events_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_orders_v1_order_events_proto_goTypes = []any{
-	(*OrderEvent)(nil), // 0: orders.v1.OrderEvent
-	(*v1.Struct)(nil),  // 1: shared.v1.Struct
+	(OrderEventType)(0), // 0: orders.v1.OrderEventType
+	(*OrderEvent)(nil),  // 1: orders.v1.OrderEvent
+	(*v1.Struct)(nil),   // 2: shared.v1.Struct
 }
 var file_orders_v1_order_events_proto_depIdxs = []int32{
-	1, // 0: orders.v1.OrderEvent.event_payload:type_name -> shared.v1.Struct
+	2, // 0: orders.v1.OrderEvent.event_payload:type_name -> shared.v1.Struct
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -150,13 +233,14 @@ func file_orders_v1_order_events_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_orders_v1_order_events_proto_rawDesc), len(file_orders_v1_order_events_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_orders_v1_order_events_proto_goTypes,
 		DependencyIndexes: file_orders_v1_order_events_proto_depIdxs,
+		EnumInfos:         file_orders_v1_order_events_proto_enumTypes,
 		MessageInfos:      file_orders_v1_order_events_proto_msgTypes,
 	}.Build()
 	File_orders_v1_order_events_proto = out.File

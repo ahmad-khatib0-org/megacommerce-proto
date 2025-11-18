@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from shared.v1 import struct_pb2 as shared_dot_v1_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1corders/v1/order_events.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"|\n\nOrderEvent\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08order_id\x18\x02 \x01(\t\x12\x12\n\nevent_type\x18\x03 \x01(\t\x12(\n\revent_payload\x18\x04 \x01(\x0b\x32\x11.shared.v1.Struct\x12\x12\n\ncreated_at\x18\x05 \x01(\x03\x42v\n\x1aorg.megacommerce.orders.v1B\x10OrderEventsProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1corders/v1/order_events.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"|\n\nOrderEvent\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08order_id\x18\x02 \x01(\t\x12\x12\n\nevent_type\x18\x03 \x01(\t\x12(\n\revent_payload\x18\x04 \x01(\x0b\x32\x11.shared.v1.Struct\x12\x12\n\ncreated_at\x18\x05 \x01(\x03*\xd3\x02\n\x0eOrderEventType\x12\x17\n\x13ORDER_EVENT_UNKNOWN\x10\x00\x12\x1d\n\x19ORDER_EVENT_ORDER_CREATED\x10\x01\x12 \n\x1cORDER_EVENT_PAYMENT_CAPTURED\x10\x02\x12\x1e\n\x1aORDER_EVENT_PAYMENT_FAILED\x10\x03\x12\x1d\n\x19ORDER_EVENT_ORDER_SHIPPED\x10\x04\x12\x1f\n\x1bORDER_EVENT_ORDER_DELIVERED\x10\x05\x12\x1f\n\x1bORDER_EVENT_ORDER_CANCELLED\x10\x06\x12\x1e\n\x1aORDER_EVENT_ORDER_REFUNDED\x10\x07\x12\"\n\x1eORDER_EVENT_INVENTORY_RESERVED\x10\x08\x12\"\n\x1eORDER_EVENT_INVENTORY_RELEASED\x10\tBv\n\x1aorg.megacommerce.orders.v1B\x10OrderEventsProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,6 +33,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'orders.v1.order_events_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.orders.v1B\020OrderEventsProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\370\001\001'
+  _globals['_ORDEREVENTTYPE']._serialized_start=194
+  _globals['_ORDEREVENTTYPE']._serialized_end=533
   _globals['_ORDEREVENT']._serialized_start=67
   _globals['_ORDEREVENT']._serialized_end=191
 # @@protoc_insertion_point(module_scope)

@@ -16,3 +16,16 @@ message OrderEvent {
   shared.v1.Struct event_payload = 4; // arbitrary payload with details
   int64 created_at = 5; // UNIX timestamp
 }
+
+enum OrderEventType {
+  ORDER_EVENT_UNKNOWN = 0;
+  ORDER_EVENT_ORDER_CREATED = 1;
+  ORDER_EVENT_PAYMENT_CAPTURED = 2;
+  ORDER_EVENT_PAYMENT_FAILED = 3;
+  ORDER_EVENT_ORDER_SHIPPED = 4;
+  ORDER_EVENT_ORDER_DELIVERED = 5;
+  ORDER_EVENT_ORDER_CANCELLED = 6;
+  ORDER_EVENT_ORDER_REFUNDED = 7;
+  ORDER_EVENT_INVENTORY_RESERVED = 8;
+  ORDER_EVENT_INVENTORY_RELEASED = 9;
+}

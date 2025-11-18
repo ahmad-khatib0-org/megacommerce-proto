@@ -10,6 +10,87 @@ import { Struct } from "../../shared/v1/struct.js";
 
 export const protobufPackage = "orders.v1";
 
+export enum OrderEventType {
+  ORDER_EVENT_UNKNOWN = 0,
+  ORDER_EVENT_ORDER_CREATED = 1,
+  ORDER_EVENT_PAYMENT_CAPTURED = 2,
+  ORDER_EVENT_PAYMENT_FAILED = 3,
+  ORDER_EVENT_ORDER_SHIPPED = 4,
+  ORDER_EVENT_ORDER_DELIVERED = 5,
+  ORDER_EVENT_ORDER_CANCELLED = 6,
+  ORDER_EVENT_ORDER_REFUNDED = 7,
+  ORDER_EVENT_INVENTORY_RESERVED = 8,
+  ORDER_EVENT_INVENTORY_RELEASED = 9,
+  UNRECOGNIZED = -1,
+}
+
+export function orderEventTypeFromJSON(object: any): OrderEventType {
+  switch (object) {
+    case 0:
+    case "ORDER_EVENT_UNKNOWN":
+      return OrderEventType.ORDER_EVENT_UNKNOWN;
+    case 1:
+    case "ORDER_EVENT_ORDER_CREATED":
+      return OrderEventType.ORDER_EVENT_ORDER_CREATED;
+    case 2:
+    case "ORDER_EVENT_PAYMENT_CAPTURED":
+      return OrderEventType.ORDER_EVENT_PAYMENT_CAPTURED;
+    case 3:
+    case "ORDER_EVENT_PAYMENT_FAILED":
+      return OrderEventType.ORDER_EVENT_PAYMENT_FAILED;
+    case 4:
+    case "ORDER_EVENT_ORDER_SHIPPED":
+      return OrderEventType.ORDER_EVENT_ORDER_SHIPPED;
+    case 5:
+    case "ORDER_EVENT_ORDER_DELIVERED":
+      return OrderEventType.ORDER_EVENT_ORDER_DELIVERED;
+    case 6:
+    case "ORDER_EVENT_ORDER_CANCELLED":
+      return OrderEventType.ORDER_EVENT_ORDER_CANCELLED;
+    case 7:
+    case "ORDER_EVENT_ORDER_REFUNDED":
+      return OrderEventType.ORDER_EVENT_ORDER_REFUNDED;
+    case 8:
+    case "ORDER_EVENT_INVENTORY_RESERVED":
+      return OrderEventType.ORDER_EVENT_INVENTORY_RESERVED;
+    case 9:
+    case "ORDER_EVENT_INVENTORY_RELEASED":
+      return OrderEventType.ORDER_EVENT_INVENTORY_RELEASED;
+    case -1:
+    case "UNRECOGNIZED":
+    default:
+      return OrderEventType.UNRECOGNIZED;
+  }
+}
+
+export function orderEventTypeToJSON(object: OrderEventType): string {
+  switch (object) {
+    case OrderEventType.ORDER_EVENT_UNKNOWN:
+      return "ORDER_EVENT_UNKNOWN";
+    case OrderEventType.ORDER_EVENT_ORDER_CREATED:
+      return "ORDER_EVENT_ORDER_CREATED";
+    case OrderEventType.ORDER_EVENT_PAYMENT_CAPTURED:
+      return "ORDER_EVENT_PAYMENT_CAPTURED";
+    case OrderEventType.ORDER_EVENT_PAYMENT_FAILED:
+      return "ORDER_EVENT_PAYMENT_FAILED";
+    case OrderEventType.ORDER_EVENT_ORDER_SHIPPED:
+      return "ORDER_EVENT_ORDER_SHIPPED";
+    case OrderEventType.ORDER_EVENT_ORDER_DELIVERED:
+      return "ORDER_EVENT_ORDER_DELIVERED";
+    case OrderEventType.ORDER_EVENT_ORDER_CANCELLED:
+      return "ORDER_EVENT_ORDER_CANCELLED";
+    case OrderEventType.ORDER_EVENT_ORDER_REFUNDED:
+      return "ORDER_EVENT_ORDER_REFUNDED";
+    case OrderEventType.ORDER_EVENT_INVENTORY_RESERVED:
+      return "ORDER_EVENT_INVENTORY_RESERVED";
+    case OrderEventType.ORDER_EVENT_INVENTORY_RELEASED:
+      return "ORDER_EVENT_INVENTORY_RELEASED";
+    case OrderEventType.UNRECOGNIZED:
+    default:
+      return "UNRECOGNIZED";
+  }
+}
+
 export interface OrderEvent {
   id: string;
   orderId: string;
