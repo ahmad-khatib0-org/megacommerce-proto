@@ -52,7 +52,7 @@ message OrderLineItemRequest {
   // Optionally client can pass a desired price verification to aid checks:
   // e.g., unit_price_cents_client = 1000 (means client expected price = 10.00)
   // This helps detect mismatches (promotions or stale inventory).
-  optional int64 unit_price_cents_client = 5;
+  optional uint64 unit_price_cents_client = 5;
   // metadata for line (gift wrap, special options)
   map<string, string> metadata = 6;
 }

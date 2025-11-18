@@ -109,22 +109,22 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
       writer.uint32(64).int32(message.quantity);
     }
     if (message.unitPriceCents !== "0") {
-      writer.uint32(72).int64(message.unitPriceCents);
+      writer.uint32(72).uint64(message.unitPriceCents);
     }
     if (message.listPriceCents !== undefined) {
-      writer.uint32(80).int64(message.listPriceCents);
+      writer.uint32(80).uint64(message.listPriceCents);
     }
     if (message.salePriceCents !== undefined) {
-      writer.uint32(88).int64(message.salePriceCents);
+      writer.uint32(88).uint64(message.salePriceCents);
     }
     if (message.discountCents !== undefined) {
-      writer.uint32(96).int64(message.discountCents);
+      writer.uint32(96).uint64(message.discountCents);
     }
     if (message.taxCents !== undefined) {
-      writer.uint32(104).int64(message.taxCents);
+      writer.uint32(104).uint64(message.taxCents);
     }
     if (message.totalCents !== "0") {
-      writer.uint32(112).int64(message.totalCents);
+      writer.uint32(112).uint64(message.totalCents);
     }
     for (const v of message.appliedOfferIds) {
       writer.uint32(122).string(v!);
@@ -133,10 +133,10 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
       Any.encode(message.productSnapshot, writer.uint32(130).fork()).join();
     }
     if (message.createdAt !== "0") {
-      writer.uint32(136).int64(message.createdAt);
+      writer.uint32(136).uint64(message.createdAt);
     }
     if (message.updatedAt !== undefined) {
-      writer.uint32(144).int64(message.updatedAt);
+      writer.uint32(144).uint64(message.updatedAt);
     }
     return writer;
   },
@@ -220,7 +220,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.unitPriceCents = reader.int64().toString();
+          message.unitPriceCents = reader.uint64().toString();
           continue;
         }
         case 10: {
@@ -228,7 +228,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.listPriceCents = reader.int64().toString();
+          message.listPriceCents = reader.uint64().toString();
           continue;
         }
         case 11: {
@@ -236,7 +236,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.salePriceCents = reader.int64().toString();
+          message.salePriceCents = reader.uint64().toString();
           continue;
         }
         case 12: {
@@ -244,7 +244,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.discountCents = reader.int64().toString();
+          message.discountCents = reader.uint64().toString();
           continue;
         }
         case 13: {
@@ -252,7 +252,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.taxCents = reader.int64().toString();
+          message.taxCents = reader.uint64().toString();
           continue;
         }
         case 14: {
@@ -260,7 +260,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.totalCents = reader.int64().toString();
+          message.totalCents = reader.uint64().toString();
           continue;
         }
         case 15: {
@@ -284,7 +284,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.createdAt = reader.int64().toString();
+          message.createdAt = reader.uint64().toString();
           continue;
         }
         case 18: {
@@ -292,7 +292,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.updatedAt = reader.int64().toString();
+          message.updatedAt = reader.uint64().toString();
           continue;
         }
       }

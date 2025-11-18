@@ -47,31 +47,31 @@ public final class OrderGetProto {
      * monetary amounts are stored in minor units (cents) to avoid float errors
      * </pre>
      *
-     * <code>int64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+     * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
      * @return The subtotalCents.
      */
     long getSubtotalCents();
 
     /**
-     * <code>int64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+     * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
      * @return The shippingCents.
      */
     long getShippingCents();
 
     /**
-     * <code>int64 tax_cents = 5 [json_name = "taxCents"];</code>
+     * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
      * @return The taxCents.
      */
     long getTaxCents();
 
     /**
-     * <code>int64 discount_cents = 6 [json_name = "discountCents"];</code>
+     * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
      * @return The discountCents.
      */
     long getDiscountCents();
 
     /**
-     * <code>int64 total_cents = 7 [json_name = "totalCents"];</code>
+     * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
      * @return The totalCents.
      */
     long getTotalCents();
@@ -456,7 +456,7 @@ java.lang.String defaultValue);
      * monetary amounts are stored in minor units (cents) to avoid float errors
      * </pre>
      *
-     * <code>int64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+     * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
      * @return The subtotalCents.
      */
     @java.lang.Override
@@ -467,7 +467,7 @@ java.lang.String defaultValue);
     public static final int SHIPPING_CENTS_FIELD_NUMBER = 4;
     private long shippingCents_ = 0L;
     /**
-     * <code>int64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+     * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
      * @return The shippingCents.
      */
     @java.lang.Override
@@ -478,7 +478,7 @@ java.lang.String defaultValue);
     public static final int TAX_CENTS_FIELD_NUMBER = 5;
     private long taxCents_ = 0L;
     /**
-     * <code>int64 tax_cents = 5 [json_name = "taxCents"];</code>
+     * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
      * @return The taxCents.
      */
     @java.lang.Override
@@ -489,7 +489,7 @@ java.lang.String defaultValue);
     public static final int DISCOUNT_CENTS_FIELD_NUMBER = 6;
     private long discountCents_ = 0L;
     /**
-     * <code>int64 discount_cents = 6 [json_name = "discountCents"];</code>
+     * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
      * @return The discountCents.
      */
     @java.lang.Override
@@ -500,7 +500,7 @@ java.lang.String defaultValue);
     public static final int TOTAL_CENTS_FIELD_NUMBER = 7;
     private long totalCents_ = 0L;
     /**
-     * <code>int64 total_cents = 7 [json_name = "totalCents"];</code>
+     * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
      * @return The totalCents.
      */
     @java.lang.Override
@@ -1022,19 +1022,19 @@ java.lang.String defaultValue) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
       }
       if (subtotalCents_ != 0L) {
-        output.writeInt64(3, subtotalCents_);
+        output.writeUInt64(3, subtotalCents_);
       }
       if (shippingCents_ != 0L) {
-        output.writeInt64(4, shippingCents_);
+        output.writeUInt64(4, shippingCents_);
       }
       if (taxCents_ != 0L) {
-        output.writeInt64(5, taxCents_);
+        output.writeUInt64(5, taxCents_);
       }
       if (discountCents_ != 0L) {
-        output.writeInt64(6, discountCents_);
+        output.writeUInt64(6, discountCents_);
       }
       if (totalCents_ != 0L) {
-        output.writeInt64(7, totalCents_);
+        output.writeUInt64(7, totalCents_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currencyCode_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 8, currencyCode_);
@@ -1089,23 +1089,23 @@ java.lang.String defaultValue) {
       }
       if (subtotalCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, subtotalCents_);
+          .computeUInt64Size(3, subtotalCents_);
       }
       if (shippingCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, shippingCents_);
+          .computeUInt64Size(4, shippingCents_);
       }
       if (taxCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, taxCents_);
+          .computeUInt64Size(5, taxCents_);
       }
       if (discountCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, discountCents_);
+          .computeUInt64Size(6, discountCents_);
       }
       if (totalCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, totalCents_);
+          .computeUInt64Size(7, totalCents_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currencyCode_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(8, currencyCode_);
@@ -1726,27 +1726,27 @@ java.lang.String defaultValue) {
                 break;
               } // case 10
               case 24: {
-                subtotalCents_ = input.readInt64();
+                subtotalCents_ = input.readUInt64();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
               case 32: {
-                shippingCents_ = input.readInt64();
+                shippingCents_ = input.readUInt64();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 32
               case 40: {
-                taxCents_ = input.readInt64();
+                taxCents_ = input.readUInt64();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 40
               case 48: {
-                discountCents_ = input.readInt64();
+                discountCents_ = input.readUInt64();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 48
               case 56: {
-                totalCents_ = input.readInt64();
+                totalCents_ = input.readUInt64();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 56
@@ -1923,7 +1923,7 @@ java.lang.String defaultValue) {
        * monetary amounts are stored in minor units (cents) to avoid float errors
        * </pre>
        *
-       * <code>int64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+       * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
        * @return The subtotalCents.
        */
       @java.lang.Override
@@ -1935,7 +1935,7 @@ java.lang.String defaultValue) {
        * monetary amounts are stored in minor units (cents) to avoid float errors
        * </pre>
        *
-       * <code>int64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+       * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
        * @param value The subtotalCents to set.
        * @return This builder for chaining.
        */
@@ -1951,7 +1951,7 @@ java.lang.String defaultValue) {
        * monetary amounts are stored in minor units (cents) to avoid float errors
        * </pre>
        *
-       * <code>int64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+       * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSubtotalCents() {
@@ -1963,7 +1963,7 @@ java.lang.String defaultValue) {
 
       private long shippingCents_ ;
       /**
-       * <code>int64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+       * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
        * @return The shippingCents.
        */
       @java.lang.Override
@@ -1971,7 +1971,7 @@ java.lang.String defaultValue) {
         return shippingCents_;
       }
       /**
-       * <code>int64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+       * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
        * @param value The shippingCents to set.
        * @return This builder for chaining.
        */
@@ -1983,7 +1983,7 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
-       * <code>int64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+       * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearShippingCents() {
@@ -1995,7 +1995,7 @@ java.lang.String defaultValue) {
 
       private long taxCents_ ;
       /**
-       * <code>int64 tax_cents = 5 [json_name = "taxCents"];</code>
+       * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
        * @return The taxCents.
        */
       @java.lang.Override
@@ -2003,7 +2003,7 @@ java.lang.String defaultValue) {
         return taxCents_;
       }
       /**
-       * <code>int64 tax_cents = 5 [json_name = "taxCents"];</code>
+       * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
        * @param value The taxCents to set.
        * @return This builder for chaining.
        */
@@ -2015,7 +2015,7 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
-       * <code>int64 tax_cents = 5 [json_name = "taxCents"];</code>
+       * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTaxCents() {
@@ -2027,7 +2027,7 @@ java.lang.String defaultValue) {
 
       private long discountCents_ ;
       /**
-       * <code>int64 discount_cents = 6 [json_name = "discountCents"];</code>
+       * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
        * @return The discountCents.
        */
       @java.lang.Override
@@ -2035,7 +2035,7 @@ java.lang.String defaultValue) {
         return discountCents_;
       }
       /**
-       * <code>int64 discount_cents = 6 [json_name = "discountCents"];</code>
+       * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
        * @param value The discountCents to set.
        * @return This builder for chaining.
        */
@@ -2047,7 +2047,7 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
-       * <code>int64 discount_cents = 6 [json_name = "discountCents"];</code>
+       * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDiscountCents() {
@@ -2059,7 +2059,7 @@ java.lang.String defaultValue) {
 
       private long totalCents_ ;
       /**
-       * <code>int64 total_cents = 7 [json_name = "totalCents"];</code>
+       * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
        * @return The totalCents.
        */
       @java.lang.Override
@@ -2067,7 +2067,7 @@ java.lang.String defaultValue) {
         return totalCents_;
       }
       /**
-       * <code>int64 total_cents = 7 [json_name = "totalCents"];</code>
+       * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
        * @param value The totalCents to set.
        * @return This builder for chaining.
        */
@@ -2079,7 +2079,7 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
-       * <code>int64 total_cents = 7 [json_name = "totalCents"];</code>
+       * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalCents() {
@@ -3654,7 +3654,7 @@ java.lang.String defaultValue) {
      * payment fees (in cents) charged by gateway, optional
      * </pre>
      *
-     * <code>optional int64 fee_cents = 6 [json_name = "feeCents"];</code>
+     * <code>optional uint64 fee_cents = 6 [json_name = "feeCents"];</code>
      * @return Whether the feeCents field is set.
      */
     boolean hasFeeCents();
@@ -3663,7 +3663,7 @@ java.lang.String defaultValue) {
      * payment fees (in cents) charged by gateway, optional
      * </pre>
      *
-     * <code>optional int64 fee_cents = 6 [json_name = "feeCents"];</code>
+     * <code>optional uint64 fee_cents = 6 [json_name = "feeCents"];</code>
      * @return The feeCents.
      */
     long getFeeCents();
@@ -3949,7 +3949,7 @@ java.lang.String defaultValue) {
      * payment fees (in cents) charged by gateway, optional
      * </pre>
      *
-     * <code>optional int64 fee_cents = 6 [json_name = "feeCents"];</code>
+     * <code>optional uint64 fee_cents = 6 [json_name = "feeCents"];</code>
      * @return Whether the feeCents field is set.
      */
     @java.lang.Override
@@ -3961,7 +3961,7 @@ java.lang.String defaultValue) {
      * payment fees (in cents) charged by gateway, optional
      * </pre>
      *
-     * <code>optional int64 fee_cents = 6 [json_name = "feeCents"];</code>
+     * <code>optional uint64 fee_cents = 6 [json_name = "feeCents"];</code>
      * @return The feeCents.
      */
     @java.lang.Override
@@ -3999,7 +3999,7 @@ java.lang.String defaultValue) {
         output.writeMessage(5, getProviderResponse());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt64(6, feeCents_);
+        output.writeUInt64(6, feeCents_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4028,7 +4028,7 @@ java.lang.String defaultValue) {
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, feeCents_);
+          .computeUInt64Size(6, feeCents_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4395,7 +4395,7 @@ java.lang.String defaultValue) {
                 break;
               } // case 42
               case 48: {
-                feeCents_ = input.readInt64();
+                feeCents_ = input.readUInt64();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
@@ -4947,7 +4947,7 @@ java.lang.String defaultValue) {
        * payment fees (in cents) charged by gateway, optional
        * </pre>
        *
-       * <code>optional int64 fee_cents = 6 [json_name = "feeCents"];</code>
+       * <code>optional uint64 fee_cents = 6 [json_name = "feeCents"];</code>
        * @return Whether the feeCents field is set.
        */
       @java.lang.Override
@@ -4959,7 +4959,7 @@ java.lang.String defaultValue) {
        * payment fees (in cents) charged by gateway, optional
        * </pre>
        *
-       * <code>optional int64 fee_cents = 6 [json_name = "feeCents"];</code>
+       * <code>optional uint64 fee_cents = 6 [json_name = "feeCents"];</code>
        * @return The feeCents.
        */
       @java.lang.Override
@@ -4971,7 +4971,7 @@ java.lang.String defaultValue) {
        * payment fees (in cents) charged by gateway, optional
        * </pre>
        *
-       * <code>optional int64 fee_cents = 6 [json_name = "feeCents"];</code>
+       * <code>optional uint64 fee_cents = 6 [json_name = "feeCents"];</code>
        * @param value The feeCents to set.
        * @return This builder for chaining.
        */
@@ -4987,7 +4987,7 @@ java.lang.String defaultValue) {
        * payment fees (in cents) charged by gateway, optional
        * </pre>
        *
-       * <code>optional int64 fee_cents = 6 [json_name = "feeCents"];</code>
+       * <code>optional uint64 fee_cents = 6 [json_name = "feeCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearFeeCents() {
@@ -6481,11 +6481,11 @@ java.lang.String defaultValue) {
       "orders/v1/order.proto\032 orders/v1/order_l" +
       "ine_items.proto\032\025shared/v1/error.proto\032\025" +
       "shared/v1/types.proto\"\366\006\n\tOrderItem\022\016\n\002i" +
-      "d\030\001 \001(\tR\002id\022%\n\016subtotal_cents\030\003 \001(\003R\rsub" +
-      "totalCents\022%\n\016shipping_cents\030\004 \001(\003R\rship" +
-      "pingCents\022\033\n\ttax_cents\030\005 \001(\003R\010taxCents\022%" +
-      "\n\016discount_cents\030\006 \001(\003R\rdiscountCents\022\037\n" +
-      "\013total_cents\030\007 \001(\003R\ntotalCents\022#\n\rcurren" +
+      "d\030\001 \001(\tR\002id\022%\n\016subtotal_cents\030\003 \001(\004R\rsub" +
+      "totalCents\022%\n\016shipping_cents\030\004 \001(\004R\rship" +
+      "pingCents\022\033\n\ttax_cents\030\005 \001(\004R\010taxCents\022%" +
+      "\n\016discount_cents\030\006 \001(\004R\rdiscountCents\022\037\n" +
+      "\013total_cents\030\007 \001(\004R\ntotalCents\022#\n\rcurren" +
       "cy_code\030\010 \001(\tR\014currencyCode\0227\n\nline_item" +
       "s\030\t \003(\0132\030.orders.v1.OrderLineItemR\tlineI" +
       "tems\0229\n\020shipping_address\030\n \001(\0132\016.shared." +
@@ -6508,7 +6508,7 @@ java.lang.String defaultValue) {
       "\006status\030\003 \001(\tR\006status\022%\n\016payment_method\030" +
       "\004 \001(\tR\rpaymentMethod\022;\n\021provider_respons" +
       "e\030\005 \001(\0132\016.shared.v1.AnyR\020providerRespons" +
-      "e\022 \n\tfee_cents\030\006 \001(\003H\000R\010feeCents\210\001\001B\014\n\n_" +
+      "e\022 \n\tfee_cents\030\006 \001(\004H\000R\010feeCents\210\001\001B\014\n\n_" +
       "fee_cents\",\n\017OrderGetRequest\022\031\n\010order_id" +
       "\030\001 \001(\tR\007orderId\"w\n\020OrderGetResponse\022*\n\004d" +
       "ata\030\001 \001(\0132\024.orders.v1.OrderItemH\000R\004data\022" +

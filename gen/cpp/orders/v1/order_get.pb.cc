@@ -88,7 +88,7 @@ inline constexpr PaymentSnapshot::Impl_::Impl_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         provider_response_{nullptr},
-        fee_cents_{::int64_t{0}} {}
+        fee_cents_{::uint64_t{0u}} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR PaymentSnapshot::PaymentSnapshot(::_pbi::ConstantInitialized)
@@ -133,11 +133,11 @@ inline constexpr OrderItem::Impl_::Impl_(
         shipping_address_{nullptr},
         billing_address_{nullptr},
         payment_{nullptr},
-        subtotal_cents_{::int64_t{0}},
-        shipping_cents_{::int64_t{0}},
-        tax_cents_{::int64_t{0}},
-        discount_cents_{::int64_t{0}},
-        total_cents_{::int64_t{0}},
+        subtotal_cents_{::uint64_t{0u}},
+        shipping_cents_{::uint64_t{0u}},
+        tax_cents_{::uint64_t{0u}},
+        discount_cents_{::uint64_t{0u}},
+        total_cents_{::uint64_t{0u}},
         created_at_{::uint64_t{0u}},
         updated_at_{::uint64_t{0u}},
         inventory_reservation_status_{static_cast< ::orders::v1::InventoryReservationStatus >(0)} {}
@@ -290,11 +290,11 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fget_2eproto[] ABSL_AT
     "orders/v1/order.proto\032 orders/v1/order_l"
     "ine_items.proto\032\025shared/v1/error.proto\032\025"
     "shared/v1/types.proto\"\366\006\n\tOrderItem\022\016\n\002i"
-    "d\030\001 \001(\tR\002id\022%\n\016subtotal_cents\030\003 \001(\003R\rsub"
-    "totalCents\022%\n\016shipping_cents\030\004 \001(\003R\rship"
-    "pingCents\022\033\n\ttax_cents\030\005 \001(\003R\010taxCents\022%"
-    "\n\016discount_cents\030\006 \001(\003R\rdiscountCents\022\037\n"
-    "\013total_cents\030\007 \001(\003R\ntotalCents\022#\n\rcurren"
+    "d\030\001 \001(\tR\002id\022%\n\016subtotal_cents\030\003 \001(\004R\rsub"
+    "totalCents\022%\n\016shipping_cents\030\004 \001(\004R\rship"
+    "pingCents\022\033\n\ttax_cents\030\005 \001(\004R\010taxCents\022%"
+    "\n\016discount_cents\030\006 \001(\004R\rdiscountCents\022\037\n"
+    "\013total_cents\030\007 \001(\004R\ntotalCents\022#\n\rcurren"
     "cy_code\030\010 \001(\tR\014currencyCode\0227\n\nline_item"
     "s\030\t \003(\0132\030.orders.v1.OrderLineItemR\tlineI"
     "tems\0229\n\020shipping_address\030\n \001(\0132\016.shared."
@@ -317,7 +317,7 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fget_2eproto[] ABSL_AT
     "\006status\030\003 \001(\tR\006status\022%\n\016payment_method\030"
     "\004 \001(\tR\rpaymentMethod\022;\n\021provider_respons"
     "e\030\005 \001(\0132\016.shared.v1.AnyR\020providerRespons"
-    "e\022 \n\tfee_cents\030\006 \001(\003H\000R\010feeCents\210\001\001B\014\n\n_"
+    "e\022 \n\tfee_cents\030\006 \001(\004H\000R\010feeCents\210\001\001B\014\n\n_"
     "fee_cents\",\n\017OrderGetRequest\022\031\n\010order_id"
     "\030\001 \001(\tR\007orderId\"w\n\020OrderGetResponse\022*\n\004d"
     "ata\030\001 \001(\0132\024.orders.v1.OrderItemH\000R\004data\022"
@@ -658,19 +658,19 @@ OrderItem::_table_ = {
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.id_)}},
     {::_pbi::TcParser::MiniParse, {}},
-    // int64 subtotal_cents = 3 [json_name = "subtotalCents"];
+    // uint64 subtotal_cents = 3 [json_name = "subtotalCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderItem, _impl_.subtotal_cents_), 8>(),
      {24, 8, 0, PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.subtotal_cents_)}},
-    // int64 shipping_cents = 4 [json_name = "shippingCents"];
+    // uint64 shipping_cents = 4 [json_name = "shippingCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderItem, _impl_.shipping_cents_), 9>(),
      {32, 9, 0, PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.shipping_cents_)}},
-    // int64 tax_cents = 5 [json_name = "taxCents"];
+    // uint64 tax_cents = 5 [json_name = "taxCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderItem, _impl_.tax_cents_), 10>(),
      {40, 10, 0, PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.tax_cents_)}},
-    // int64 discount_cents = 6 [json_name = "discountCents"];
+    // uint64 discount_cents = 6 [json_name = "discountCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderItem, _impl_.discount_cents_), 11>(),
      {48, 11, 0, PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.discount_cents_)}},
-    // int64 total_cents = 7 [json_name = "totalCents"];
+    // uint64 total_cents = 7 [json_name = "totalCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderItem, _impl_.total_cents_), 12>(),
      {56, 12, 0, PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.total_cents_)}},
     // string currency_code = 8 [json_name = "currencyCode"];
@@ -725,21 +725,21 @@ OrderItem::_table_ = {
     // string id = 1 [json_name = "id"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // int64 subtotal_cents = 3 [json_name = "subtotalCents"];
+    // uint64 subtotal_cents = 3 [json_name = "subtotalCents"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.subtotal_cents_), _Internal::kHasBitsOffset + 8, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // int64 shipping_cents = 4 [json_name = "shippingCents"];
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 shipping_cents = 4 [json_name = "shippingCents"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.shipping_cents_), _Internal::kHasBitsOffset + 9, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // int64 tax_cents = 5 [json_name = "taxCents"];
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 tax_cents = 5 [json_name = "taxCents"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.tax_cents_), _Internal::kHasBitsOffset + 10, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // int64 discount_cents = 6 [json_name = "discountCents"];
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 discount_cents = 6 [json_name = "discountCents"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.discount_cents_), _Internal::kHasBitsOffset + 11, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // int64 total_cents = 7 [json_name = "totalCents"];
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 total_cents = 7 [json_name = "totalCents"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.total_cents_), _Internal::kHasBitsOffset + 12, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // string currency_code = 8 [json_name = "currencyCode"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.currency_code_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
@@ -870,48 +870,48 @@ PROTOBUF_NOINLINE void OrderItem::Clear() {
     }
   }
 
-  // int64 subtotal_cents = 3 [json_name = "subtotalCents"];
+  // uint64 subtotal_cents = 3 [json_name = "subtotalCents"];
   if ((this_._impl_._has_bits_[0] & 0x00000100u) != 0) {
     if (this_._internal_subtotal_cents() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<3>(
-              stream, this_._internal_subtotal_cents(), target);
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          3, this_._internal_subtotal_cents(), target);
     }
   }
 
-  // int64 shipping_cents = 4 [json_name = "shippingCents"];
+  // uint64 shipping_cents = 4 [json_name = "shippingCents"];
   if ((this_._impl_._has_bits_[0] & 0x00000200u) != 0) {
     if (this_._internal_shipping_cents() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<4>(
-              stream, this_._internal_shipping_cents(), target);
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          4, this_._internal_shipping_cents(), target);
     }
   }
 
-  // int64 tax_cents = 5 [json_name = "taxCents"];
+  // uint64 tax_cents = 5 [json_name = "taxCents"];
   if ((this_._impl_._has_bits_[0] & 0x00000400u) != 0) {
     if (this_._internal_tax_cents() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<5>(
-              stream, this_._internal_tax_cents(), target);
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          5, this_._internal_tax_cents(), target);
     }
   }
 
-  // int64 discount_cents = 6 [json_name = "discountCents"];
+  // uint64 discount_cents = 6 [json_name = "discountCents"];
   if ((this_._impl_._has_bits_[0] & 0x00000800u) != 0) {
     if (this_._internal_discount_cents() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<6>(
-              stream, this_._internal_discount_cents(), target);
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          6, this_._internal_discount_cents(), target);
     }
   }
 
-  // int64 total_cents = 7 [json_name = "totalCents"];
+  // uint64 total_cents = 7 [json_name = "totalCents"];
   if ((this_._impl_._has_bits_[0] & 0x00001000u) != 0) {
     if (this_._internal_total_cents() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<7>(
-              stream, this_._internal_total_cents(), target);
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          7, this_._internal_total_cents(), target);
     }
   }
 
@@ -1143,38 +1143,38 @@ PROTOBUF_NOINLINE void OrderItem::Clear() {
     }
   }
   if ((cached_has_bits & 0x0000ff00u) != 0) {
-    // int64 subtotal_cents = 3 [json_name = "subtotalCents"];
+    // uint64 subtotal_cents = 3 [json_name = "subtotalCents"];
     if ((cached_has_bits & 0x00000100u) != 0) {
       if (this_._internal_subtotal_cents() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_subtotal_cents());
       }
     }
-    // int64 shipping_cents = 4 [json_name = "shippingCents"];
+    // uint64 shipping_cents = 4 [json_name = "shippingCents"];
     if ((cached_has_bits & 0x00000200u) != 0) {
       if (this_._internal_shipping_cents() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_shipping_cents());
       }
     }
-    // int64 tax_cents = 5 [json_name = "taxCents"];
+    // uint64 tax_cents = 5 [json_name = "taxCents"];
     if ((cached_has_bits & 0x00000400u) != 0) {
       if (this_._internal_tax_cents() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_tax_cents());
       }
     }
-    // int64 discount_cents = 6 [json_name = "discountCents"];
+    // uint64 discount_cents = 6 [json_name = "discountCents"];
     if ((cached_has_bits & 0x00000800u) != 0) {
       if (this_._internal_discount_cents() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_discount_cents());
       }
     }
-    // int64 total_cents = 7 [json_name = "totalCents"];
+    // uint64 total_cents = 7 [json_name = "totalCents"];
     if ((cached_has_bits & 0x00001000u) != 0) {
       if (this_._internal_total_cents() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_total_cents());
       }
     }
@@ -1530,7 +1530,7 @@ PaymentSnapshot::_table_ = {
     // .shared.v1.Any provider_response = 5 [json_name = "providerResponse"];
     {::_pbi::TcParser::FastMtS1,
      {42, 4, 0, PROTOBUF_FIELD_OFFSET(PaymentSnapshot, _impl_.provider_response_)}},
-    // optional int64 fee_cents = 6 [json_name = "feeCents"];
+    // optional uint64 fee_cents = 6 [json_name = "feeCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(PaymentSnapshot, _impl_.fee_cents_), 5>(),
      {48, 5, 0, PROTOBUF_FIELD_OFFSET(PaymentSnapshot, _impl_.fee_cents_)}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -1552,9 +1552,9 @@ PaymentSnapshot::_table_ = {
     // .shared.v1.Any provider_response = 5 [json_name = "providerResponse"];
     {PROTOBUF_FIELD_OFFSET(PaymentSnapshot, _impl_.provider_response_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional int64 fee_cents = 6 [json_name = "feeCents"];
+    // optional uint64 fee_cents = 6 [json_name = "feeCents"];
     {PROTOBUF_FIELD_OFFSET(PaymentSnapshot, _impl_.fee_cents_), _Internal::kHasBitsOffset + 5, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
   {{
       {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
@@ -1594,7 +1594,7 @@ PROTOBUF_NOINLINE void PaymentSnapshot::Clear() {
       _impl_.provider_response_->Clear();
     }
   }
-  _impl_.fee_cents_ = ::int64_t{0};
+  _impl_.fee_cents_ = ::uint64_t{0u};
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -1662,11 +1662,11 @@ PROTOBUF_NOINLINE void PaymentSnapshot::Clear() {
         stream);
   }
 
-  // optional int64 fee_cents = 6 [json_name = "feeCents"];
+  // optional uint64 fee_cents = 6 [json_name = "feeCents"];
   if ((cached_has_bits & 0x00000020u) != 0) {
-    target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<6>(
-            stream, this_._internal_fee_cents(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        6, this_._internal_fee_cents(), target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -1728,9 +1728,9 @@ PROTOBUF_NOINLINE void PaymentSnapshot::Clear() {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.provider_response_);
     }
-    // optional int64 fee_cents = 6 [json_name = "feeCents"];
+    // optional uint64 fee_cents = 6 [json_name = "feeCents"];
     if ((cached_has_bits & 0x00000020u) != 0) {
-      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
           this_._internal_fee_cents());
     }
   }

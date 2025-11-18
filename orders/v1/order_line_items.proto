@@ -23,12 +23,12 @@ message OrderLineItem {
   int32 quantity = 8; // CHECK (quantity > 0)
 
   // Price fields in cents
-  int64 unit_price_cents = 9; // charged price per unit at order time
-  optional int64 list_price_cents = 10; // optional
-  optional int64 sale_price_cents = 11; // optional
-  optional int64 discount_cents = 12; // total discount applied to this line (all units)
-  optional int64 tax_cents = 13; // tax for this line (total)
-  int64 total_cents = 14; // (quantity * unit_price) - discount + tax
+  uint64 unit_price_cents = 9; // charged price per unit at order time
+  optional uint64 list_price_cents = 10; // optional
+  optional uint64 sale_price_cents = 11; // optional
+  optional uint64 discount_cents = 12; // total discount applied to this line (all units)
+  optional uint64 tax_cents = 13; // tax for this line (total)
+  uint64 total_cents = 14; // (quantity * unit_price) - discount + tax
 
   // array of applied offer/promotion ids
   repeated string applied_offer_ids = 15;
@@ -37,6 +37,6 @@ message OrderLineItem {
   shared.v1.Any product_snapshot = 16;
 
   // Timestamps
-  int64 created_at = 17; // UNIX timestamp
-  optional int64 updated_at = 18; // optional UNIX timestamp
+  uint64 created_at = 17; // UNIX timestamp
+  optional uint64 updated_at = 18; // optional UNIX timestamp
 }

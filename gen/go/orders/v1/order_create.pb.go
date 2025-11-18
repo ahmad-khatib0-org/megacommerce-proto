@@ -160,7 +160,7 @@ type OrderLineItemRequest struct {
 	// Optionally client can pass a desired price verification to aid checks:
 	// e.g., unit_price_cents_client = 1000 (means client expected price = 10.00)
 	// This helps detect mismatches (promotions or stale inventory).
-	UnitPriceCentsClient *int64 `protobuf:"varint,5,opt,name=unit_price_cents_client,json=unitPriceCentsClient,proto3,oneof" json:"unit_price_cents_client,omitempty"`
+	UnitPriceCentsClient *uint64 `protobuf:"varint,5,opt,name=unit_price_cents_client,json=unitPriceCentsClient,proto3,oneof" json:"unit_price_cents_client,omitempty"`
 	// metadata for line (gift wrap, special options)
 	Metadata      map[string]string `protobuf:"bytes,6,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields protoimpl.UnknownFields
@@ -225,7 +225,7 @@ func (x *OrderLineItemRequest) GetQuantity() uint32 {
 	return 0
 }
 
-func (x *OrderLineItemRequest) GetUnitPriceCentsClient() int64 {
+func (x *OrderLineItemRequest) GetUnitPriceCentsClient() uint64 {
 	if x != nil && x.UnitPriceCentsClient != nil {
 		return *x.UnitPriceCentsClient
 	}
@@ -348,7 +348,7 @@ const file_orders_v1_order_create_proto_rawDesc = "" +
 	"variant_id\x18\x02 \x01(\tR\tvariantId\x12\x10\n" +
 	"\x03sku\x18\x03 \x01(\tR\x03sku\x12\x1a\n" +
 	"\bquantity\x18\x04 \x01(\rR\bquantity\x12:\n" +
-	"\x17unit_price_cents_client\x18\x05 \x01(\x03H\x00R\x14unitPriceCentsClient\x88\x01\x01\x12I\n" +
+	"\x17unit_price_cents_client\x18\x05 \x01(\x04H\x00R\x14unitPriceCentsClient\x88\x01\x01\x12I\n" +
 	"\bmetadata\x18\x06 \x03(\v2-.orders.v1.OrderLineItemRequest.MetadataEntryR\bmetadata\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +

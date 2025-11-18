@@ -98,7 +98,7 @@ type OrderEvent struct {
 	OrderId       string                 `protobuf:"bytes,2,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	EventType     string                 `protobuf:"bytes,3,opt,name=event_type,json=eventType,proto3" json:"event_type,omitempty"`          // e.g., ORDER_CREATED, PAYMENT_CAPTURED
 	EventPayload  *v1.Struct             `protobuf:"bytes,4,opt,name=event_payload,json=eventPayload,proto3" json:"event_payload,omitempty"` // arbitrary payload with details
-	CreatedAt     int64                  `protobuf:"varint,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`         // UNIX timestamp
+	CreatedAt     uint64                 `protobuf:"varint,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`         // UNIX timestamp
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -161,7 +161,7 @@ func (x *OrderEvent) GetEventPayload() *v1.Struct {
 	return nil
 }
 
-func (x *OrderEvent) GetCreatedAt() int64 {
+func (x *OrderEvent) GetCreatedAt() uint64 {
 	if x != nil {
 		return x.CreatedAt
 	}
@@ -181,7 +181,7 @@ const file_orders_v1_order_events_proto_rawDesc = "" +
 	"event_type\x18\x03 \x01(\tR\teventType\x126\n" +
 	"\revent_payload\x18\x04 \x01(\v2\x11.shared.v1.StructR\feventPayload\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\x03R\tcreatedAt*\xd3\x02\n" +
+	"created_at\x18\x05 \x01(\x04R\tcreatedAt*\xd3\x02\n" +
 	"\x0eOrderEventType\x12\x17\n" +
 	"\x13ORDER_EVENT_UNKNOWN\x10\x00\x12\x1d\n" +
 	"\x19ORDER_EVENT_ORDER_CREATED\x10\x01\x12 \n" +

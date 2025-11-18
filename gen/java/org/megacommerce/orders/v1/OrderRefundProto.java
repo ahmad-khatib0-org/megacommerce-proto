@@ -2203,7 +2203,7 @@ public final class OrderRefundProto {
      * amount to refund in minor units (cents). If zero, compute pro-rata.
      * </pre>
      *
-     * <code>optional int64 amount_cents = 3 [json_name = "amountCents"];</code>
+     * <code>optional uint64 amount_cents = 3 [json_name = "amountCents"];</code>
      * @return Whether the amountCents field is set.
      */
     boolean hasAmountCents();
@@ -2212,7 +2212,7 @@ public final class OrderRefundProto {
      * amount to refund in minor units (cents). If zero, compute pro-rata.
      * </pre>
      *
-     * <code>optional int64 amount_cents = 3 [json_name = "amountCents"];</code>
+     * <code>optional uint64 amount_cents = 3 [json_name = "amountCents"];</code>
      * @return The amountCents.
      */
     long getAmountCents();
@@ -2321,7 +2321,7 @@ public final class OrderRefundProto {
      * amount to refund in minor units (cents). If zero, compute pro-rata.
      * </pre>
      *
-     * <code>optional int64 amount_cents = 3 [json_name = "amountCents"];</code>
+     * <code>optional uint64 amount_cents = 3 [json_name = "amountCents"];</code>
      * @return Whether the amountCents field is set.
      */
     @java.lang.Override
@@ -2333,7 +2333,7 @@ public final class OrderRefundProto {
      * amount to refund in minor units (cents). If zero, compute pro-rata.
      * </pre>
      *
-     * <code>optional int64 amount_cents = 3 [json_name = "amountCents"];</code>
+     * <code>optional uint64 amount_cents = 3 [json_name = "amountCents"];</code>
      * @return The amountCents.
      */
     @java.lang.Override
@@ -2362,7 +2362,7 @@ public final class OrderRefundProto {
         output.writeUInt32(2, quantity_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt64(3, amountCents_);
+        output.writeUInt64(3, amountCents_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2382,7 +2382,7 @@ public final class OrderRefundProto {
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, amountCents_);
+          .computeUInt64Size(3, amountCents_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2669,7 +2669,7 @@ public final class OrderRefundProto {
                 break;
               } // case 16
               case 24: {
-                amountCents_ = input.readInt64();
+                amountCents_ = input.readUInt64();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
@@ -2820,7 +2820,7 @@ public final class OrderRefundProto {
        * amount to refund in minor units (cents). If zero, compute pro-rata.
        * </pre>
        *
-       * <code>optional int64 amount_cents = 3 [json_name = "amountCents"];</code>
+       * <code>optional uint64 amount_cents = 3 [json_name = "amountCents"];</code>
        * @return Whether the amountCents field is set.
        */
       @java.lang.Override
@@ -2832,7 +2832,7 @@ public final class OrderRefundProto {
        * amount to refund in minor units (cents). If zero, compute pro-rata.
        * </pre>
        *
-       * <code>optional int64 amount_cents = 3 [json_name = "amountCents"];</code>
+       * <code>optional uint64 amount_cents = 3 [json_name = "amountCents"];</code>
        * @return The amountCents.
        */
       @java.lang.Override
@@ -2844,7 +2844,7 @@ public final class OrderRefundProto {
        * amount to refund in minor units (cents). If zero, compute pro-rata.
        * </pre>
        *
-       * <code>optional int64 amount_cents = 3 [json_name = "amountCents"];</code>
+       * <code>optional uint64 amount_cents = 3 [json_name = "amountCents"];</code>
        * @param value The amountCents to set.
        * @return This builder for chaining.
        */
@@ -2860,7 +2860,7 @@ public final class OrderRefundProto {
        * amount to refund in minor units (cents). If zero, compute pro-rata.
        * </pre>
        *
-       * <code>optional int64 amount_cents = 3 [json_name = "amountCents"];</code>
+       * <code>optional uint64 amount_cents = 3 [json_name = "amountCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmountCents() {
@@ -2957,7 +2957,7 @@ public final class OrderRefundProto {
       "\022\'\n\017refund_shipping\030\004 \001(\010R\016refundShippin" +
       "g\"\204\001\n\024RefundLineItemRefund\022\027\n\007line_id\030\001 " +
       "\001(\tR\006lineId\022\032\n\010quantity\030\002 \001(\rR\010quantity\022" +
-      "&\n\014amount_cents\030\003 \001(\003H\000R\013amountCents\210\001\001B" +
+      "&\n\014amount_cents\030\003 \001(\004H\000R\013amountCents\210\001\001B" +
       "\017\n\r_amount_centsBv\n\032org.megacommerce.ord" +
       "ers.v1B\020OrderRefundProtoZCgithub.com/ahm" +
       "ad-khatib0-org/megacommerce-proto/gen/go" +

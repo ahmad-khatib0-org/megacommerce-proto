@@ -34,19 +34,19 @@ type OrderLineItem struct {
 	Attributes map[string]string `protobuf:"bytes,7,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	Quantity   int32             `protobuf:"varint,8,opt,name=quantity,proto3" json:"quantity,omitempty"` // CHECK (quantity > 0)
 	// Price fields in cents
-	UnitPriceCents int64  `protobuf:"varint,9,opt,name=unit_price_cents,json=unitPriceCents,proto3" json:"unit_price_cents,omitempty"`        // charged price per unit at order time
-	ListPriceCents *int64 `protobuf:"varint,10,opt,name=list_price_cents,json=listPriceCents,proto3,oneof" json:"list_price_cents,omitempty"` // optional
-	SalePriceCents *int64 `protobuf:"varint,11,opt,name=sale_price_cents,json=salePriceCents,proto3,oneof" json:"sale_price_cents,omitempty"` // optional
-	DiscountCents  *int64 `protobuf:"varint,12,opt,name=discount_cents,json=discountCents,proto3,oneof" json:"discount_cents,omitempty"`      // total discount applied to this line (all units)
-	TaxCents       *int64 `protobuf:"varint,13,opt,name=tax_cents,json=taxCents,proto3,oneof" json:"tax_cents,omitempty"`                     // tax for this line (total)
-	TotalCents     int64  `protobuf:"varint,14,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`                     // (quantity * unit_price) - discount + tax
+	UnitPriceCents uint64  `protobuf:"varint,9,opt,name=unit_price_cents,json=unitPriceCents,proto3" json:"unit_price_cents,omitempty"`        // charged price per unit at order time
+	ListPriceCents *uint64 `protobuf:"varint,10,opt,name=list_price_cents,json=listPriceCents,proto3,oneof" json:"list_price_cents,omitempty"` // optional
+	SalePriceCents *uint64 `protobuf:"varint,11,opt,name=sale_price_cents,json=salePriceCents,proto3,oneof" json:"sale_price_cents,omitempty"` // optional
+	DiscountCents  *uint64 `protobuf:"varint,12,opt,name=discount_cents,json=discountCents,proto3,oneof" json:"discount_cents,omitempty"`      // total discount applied to this line (all units)
+	TaxCents       *uint64 `protobuf:"varint,13,opt,name=tax_cents,json=taxCents,proto3,oneof" json:"tax_cents,omitempty"`                     // tax for this line (total)
+	TotalCents     uint64  `protobuf:"varint,14,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`                     // (quantity * unit_price) - discount + tax
 	// array of applied offer/promotion ids
 	AppliedOfferIds []string `protobuf:"bytes,15,rep,name=applied_offer_ids,json=appliedOfferIds,proto3" json:"applied_offer_ids,omitempty"`
 	// full product snapshot for audit/debug
 	ProductSnapshot *v1.Any `protobuf:"bytes,16,opt,name=product_snapshot,json=productSnapshot,proto3" json:"product_snapshot,omitempty"`
 	// Timestamps
-	CreatedAt     int64  `protobuf:"varint,17,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`       // UNIX timestamp
-	UpdatedAt     *int64 `protobuf:"varint,18,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"` // optional UNIX timestamp
+	CreatedAt     uint64  `protobuf:"varint,17,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`       // UNIX timestamp
+	UpdatedAt     *uint64 `protobuf:"varint,18,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"` // optional UNIX timestamp
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -137,42 +137,42 @@ func (x *OrderLineItem) GetQuantity() int32 {
 	return 0
 }
 
-func (x *OrderLineItem) GetUnitPriceCents() int64 {
+func (x *OrderLineItem) GetUnitPriceCents() uint64 {
 	if x != nil {
 		return x.UnitPriceCents
 	}
 	return 0
 }
 
-func (x *OrderLineItem) GetListPriceCents() int64 {
+func (x *OrderLineItem) GetListPriceCents() uint64 {
 	if x != nil && x.ListPriceCents != nil {
 		return *x.ListPriceCents
 	}
 	return 0
 }
 
-func (x *OrderLineItem) GetSalePriceCents() int64 {
+func (x *OrderLineItem) GetSalePriceCents() uint64 {
 	if x != nil && x.SalePriceCents != nil {
 		return *x.SalePriceCents
 	}
 	return 0
 }
 
-func (x *OrderLineItem) GetDiscountCents() int64 {
+func (x *OrderLineItem) GetDiscountCents() uint64 {
 	if x != nil && x.DiscountCents != nil {
 		return *x.DiscountCents
 	}
 	return 0
 }
 
-func (x *OrderLineItem) GetTaxCents() int64 {
+func (x *OrderLineItem) GetTaxCents() uint64 {
 	if x != nil && x.TaxCents != nil {
 		return *x.TaxCents
 	}
 	return 0
 }
 
-func (x *OrderLineItem) GetTotalCents() int64 {
+func (x *OrderLineItem) GetTotalCents() uint64 {
 	if x != nil {
 		return x.TotalCents
 	}
@@ -193,14 +193,14 @@ func (x *OrderLineItem) GetProductSnapshot() *v1.Any {
 	return nil
 }
 
-func (x *OrderLineItem) GetCreatedAt() int64 {
+func (x *OrderLineItem) GetCreatedAt() uint64 {
 	if x != nil {
 		return x.CreatedAt
 	}
 	return 0
 }
 
-func (x *OrderLineItem) GetUpdatedAt() int64 {
+func (x *OrderLineItem) GetUpdatedAt() uint64 {
 	if x != nil && x.UpdatedAt != nil {
 		return *x.UpdatedAt
 	}
@@ -225,20 +225,20 @@ const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"attributes\x18\a \x03(\v2(.orders.v1.OrderLineItem.AttributesEntryR\n" +
 	"attributes\x12\x1a\n" +
 	"\bquantity\x18\b \x01(\x05R\bquantity\x12(\n" +
-	"\x10unit_price_cents\x18\t \x01(\x03R\x0eunitPriceCents\x12-\n" +
+	"\x10unit_price_cents\x18\t \x01(\x04R\x0eunitPriceCents\x12-\n" +
 	"\x10list_price_cents\x18\n" +
-	" \x01(\x03H\x00R\x0elistPriceCents\x88\x01\x01\x12-\n" +
-	"\x10sale_price_cents\x18\v \x01(\x03H\x01R\x0esalePriceCents\x88\x01\x01\x12*\n" +
-	"\x0ediscount_cents\x18\f \x01(\x03H\x02R\rdiscountCents\x88\x01\x01\x12 \n" +
-	"\ttax_cents\x18\r \x01(\x03H\x03R\btaxCents\x88\x01\x01\x12\x1f\n" +
-	"\vtotal_cents\x18\x0e \x01(\x03R\n" +
+	" \x01(\x04H\x00R\x0elistPriceCents\x88\x01\x01\x12-\n" +
+	"\x10sale_price_cents\x18\v \x01(\x04H\x01R\x0esalePriceCents\x88\x01\x01\x12*\n" +
+	"\x0ediscount_cents\x18\f \x01(\x04H\x02R\rdiscountCents\x88\x01\x01\x12 \n" +
+	"\ttax_cents\x18\r \x01(\x04H\x03R\btaxCents\x88\x01\x01\x12\x1f\n" +
+	"\vtotal_cents\x18\x0e \x01(\x04R\n" +
 	"totalCents\x12*\n" +
 	"\x11applied_offer_ids\x18\x0f \x03(\tR\x0fappliedOfferIds\x129\n" +
 	"\x10product_snapshot\x18\x10 \x01(\v2\x0e.shared.v1.AnyR\x0fproductSnapshot\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x11 \x01(\x03R\tcreatedAt\x12\"\n" +
+	"created_at\x18\x11 \x01(\x04R\tcreatedAt\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x12 \x01(\x03H\x04R\tupdatedAt\x88\x01\x01\x1a=\n" +
+	"updated_at\x18\x12 \x01(\x04H\x04R\tupdatedAt\x88\x01\x01\x1a=\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x13\n" +

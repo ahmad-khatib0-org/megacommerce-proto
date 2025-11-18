@@ -40,11 +40,11 @@ message Order {
   string currency_code = 3;
 
   // All price fields in cents
-  int64 subtotal_cents = 4;
-  int64 shipping_cents = 5;
-  int64 tax_cents = 6;
-  int64 discount_cents = 7;
-  int64 total_cents = 8;
+  uint64 subtotal_cents = 4;
+  uint64 shipping_cents = 5;
+  uint64 tax_cents = 6;
+  uint64 discount_cents = 7;
+  uint64 total_cents = 8;
 
   // Payment information
   string payment_provider = 9;
@@ -53,7 +53,7 @@ message Order {
   string payment_status = 11;
 
   shared.v1.Struct payment_provider_response = 12;
-  int64 payment_fee_cents = 13;
+  uint64 payment_fee_cents = 13;
 
   // Inventory status
   string inventory_reservation_status = 14;
@@ -72,7 +72,7 @@ message Order {
   string status = 20;
 
   // Timestamps
-  int64 created_at = 21;
-  optional int64 updated_at = 22;
-  optional int64 deleted_at = 23;
+  uint64 created_at = 21;
+  optional uint64 updated_at = 22;
+  optional uint64 deleted_at = 23;
 }

@@ -557,15 +557,15 @@ class PaymentSnapshot final : public ::google::protobuf::Message
   ::shared::v1::Any* PROTOBUF_NONNULL _internal_mutable_provider_response();
 
   public:
-  // optional int64 fee_cents = 6 [json_name = "feeCents"];
+  // optional uint64 fee_cents = 6 [json_name = "feeCents"];
   bool has_fee_cents() const;
   void clear_fee_cents() ;
-  ::int64_t fee_cents() const;
-  void set_fee_cents(::int64_t value);
+  ::uint64_t fee_cents() const;
+  void set_fee_cents(::uint64_t value);
 
   private:
-  ::int64_t _internal_fee_cents() const;
-  void _internal_set_fee_cents(::int64_t value);
+  ::uint64_t _internal_fee_cents() const;
+  void _internal_set_fee_cents(::uint64_t value);
 
   public:
   // @@protoc_insertion_point(class_scope:orders.v1.PaymentSnapshot)
@@ -599,7 +599,7 @@ class PaymentSnapshot final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr status_;
     ::google::protobuf::internal::ArenaStringPtr payment_method_;
     ::shared::v1::Any* PROTOBUF_NULLABLE provider_response_;
-    ::int64_t fee_cents_;
+    ::uint64_t fee_cents_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -923,54 +923,54 @@ class OrderItem final : public ::google::protobuf::Message
   ::orders::v1::PaymentSnapshot* PROTOBUF_NONNULL _internal_mutable_payment();
 
   public:
-  // int64 subtotal_cents = 3 [json_name = "subtotalCents"];
+  // uint64 subtotal_cents = 3 [json_name = "subtotalCents"];
   void clear_subtotal_cents() ;
-  ::int64_t subtotal_cents() const;
-  void set_subtotal_cents(::int64_t value);
+  ::uint64_t subtotal_cents() const;
+  void set_subtotal_cents(::uint64_t value);
 
   private:
-  ::int64_t _internal_subtotal_cents() const;
-  void _internal_set_subtotal_cents(::int64_t value);
+  ::uint64_t _internal_subtotal_cents() const;
+  void _internal_set_subtotal_cents(::uint64_t value);
 
   public:
-  // int64 shipping_cents = 4 [json_name = "shippingCents"];
+  // uint64 shipping_cents = 4 [json_name = "shippingCents"];
   void clear_shipping_cents() ;
-  ::int64_t shipping_cents() const;
-  void set_shipping_cents(::int64_t value);
+  ::uint64_t shipping_cents() const;
+  void set_shipping_cents(::uint64_t value);
 
   private:
-  ::int64_t _internal_shipping_cents() const;
-  void _internal_set_shipping_cents(::int64_t value);
+  ::uint64_t _internal_shipping_cents() const;
+  void _internal_set_shipping_cents(::uint64_t value);
 
   public:
-  // int64 tax_cents = 5 [json_name = "taxCents"];
+  // uint64 tax_cents = 5 [json_name = "taxCents"];
   void clear_tax_cents() ;
-  ::int64_t tax_cents() const;
-  void set_tax_cents(::int64_t value);
+  ::uint64_t tax_cents() const;
+  void set_tax_cents(::uint64_t value);
 
   private:
-  ::int64_t _internal_tax_cents() const;
-  void _internal_set_tax_cents(::int64_t value);
+  ::uint64_t _internal_tax_cents() const;
+  void _internal_set_tax_cents(::uint64_t value);
 
   public:
-  // int64 discount_cents = 6 [json_name = "discountCents"];
+  // uint64 discount_cents = 6 [json_name = "discountCents"];
   void clear_discount_cents() ;
-  ::int64_t discount_cents() const;
-  void set_discount_cents(::int64_t value);
+  ::uint64_t discount_cents() const;
+  void set_discount_cents(::uint64_t value);
 
   private:
-  ::int64_t _internal_discount_cents() const;
-  void _internal_set_discount_cents(::int64_t value);
+  ::uint64_t _internal_discount_cents() const;
+  void _internal_set_discount_cents(::uint64_t value);
 
   public:
-  // int64 total_cents = 7 [json_name = "totalCents"];
+  // uint64 total_cents = 7 [json_name = "totalCents"];
   void clear_total_cents() ;
-  ::int64_t total_cents() const;
-  void set_total_cents(::int64_t value);
+  ::uint64_t total_cents() const;
+  void set_total_cents(::uint64_t value);
 
   private:
-  ::int64_t _internal_total_cents() const;
-  void _internal_set_total_cents(::int64_t value);
+  ::uint64_t _internal_total_cents() const;
+  void _internal_set_total_cents(::uint64_t value);
 
   public:
   // uint64 created_at = 15 [json_name = "createdAt"];
@@ -1043,11 +1043,11 @@ class OrderItem final : public ::google::protobuf::Message
     ::shared::v1::Any* PROTOBUF_NULLABLE shipping_address_;
     ::shared::v1::Any* PROTOBUF_NULLABLE billing_address_;
     ::orders::v1::PaymentSnapshot* PROTOBUF_NULLABLE payment_;
-    ::int64_t subtotal_cents_;
-    ::int64_t shipping_cents_;
-    ::int64_t tax_cents_;
-    ::int64_t discount_cents_;
-    ::int64_t total_cents_;
+    ::uint64_t subtotal_cents_;
+    ::uint64_t shipping_cents_;
+    ::uint64_t tax_cents_;
+    ::uint64_t discount_cents_;
+    ::uint64_t total_cents_;
     ::uint64_t created_at_;
     ::uint64_t updated_at_;
     int inventory_reservation_status_;
@@ -1378,122 +1378,122 @@ inline void OrderItem::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) 
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderItem.id)
 }
 
-// int64 subtotal_cents = 3 [json_name = "subtotalCents"];
+// uint64 subtotal_cents = 3 [json_name = "subtotalCents"];
 inline void OrderItem::clear_subtotal_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.subtotal_cents_ = ::int64_t{0};
+  _impl_.subtotal_cents_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000100u;
 }
-inline ::int64_t OrderItem::subtotal_cents() const {
+inline ::uint64_t OrderItem::subtotal_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderItem.subtotal_cents)
   return _internal_subtotal_cents();
 }
-inline void OrderItem::set_subtotal_cents(::int64_t value) {
+inline void OrderItem::set_subtotal_cents(::uint64_t value) {
   _internal_set_subtotal_cents(value);
   _impl_._has_bits_[0] |= 0x00000100u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderItem.subtotal_cents)
 }
-inline ::int64_t OrderItem::_internal_subtotal_cents() const {
+inline ::uint64_t OrderItem::_internal_subtotal_cents() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.subtotal_cents_;
 }
-inline void OrderItem::_internal_set_subtotal_cents(::int64_t value) {
+inline void OrderItem::_internal_set_subtotal_cents(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.subtotal_cents_ = value;
 }
 
-// int64 shipping_cents = 4 [json_name = "shippingCents"];
+// uint64 shipping_cents = 4 [json_name = "shippingCents"];
 inline void OrderItem::clear_shipping_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.shipping_cents_ = ::int64_t{0};
+  _impl_.shipping_cents_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000200u;
 }
-inline ::int64_t OrderItem::shipping_cents() const {
+inline ::uint64_t OrderItem::shipping_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderItem.shipping_cents)
   return _internal_shipping_cents();
 }
-inline void OrderItem::set_shipping_cents(::int64_t value) {
+inline void OrderItem::set_shipping_cents(::uint64_t value) {
   _internal_set_shipping_cents(value);
   _impl_._has_bits_[0] |= 0x00000200u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderItem.shipping_cents)
 }
-inline ::int64_t OrderItem::_internal_shipping_cents() const {
+inline ::uint64_t OrderItem::_internal_shipping_cents() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.shipping_cents_;
 }
-inline void OrderItem::_internal_set_shipping_cents(::int64_t value) {
+inline void OrderItem::_internal_set_shipping_cents(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.shipping_cents_ = value;
 }
 
-// int64 tax_cents = 5 [json_name = "taxCents"];
+// uint64 tax_cents = 5 [json_name = "taxCents"];
 inline void OrderItem::clear_tax_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.tax_cents_ = ::int64_t{0};
+  _impl_.tax_cents_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000400u;
 }
-inline ::int64_t OrderItem::tax_cents() const {
+inline ::uint64_t OrderItem::tax_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderItem.tax_cents)
   return _internal_tax_cents();
 }
-inline void OrderItem::set_tax_cents(::int64_t value) {
+inline void OrderItem::set_tax_cents(::uint64_t value) {
   _internal_set_tax_cents(value);
   _impl_._has_bits_[0] |= 0x00000400u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderItem.tax_cents)
 }
-inline ::int64_t OrderItem::_internal_tax_cents() const {
+inline ::uint64_t OrderItem::_internal_tax_cents() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.tax_cents_;
 }
-inline void OrderItem::_internal_set_tax_cents(::int64_t value) {
+inline void OrderItem::_internal_set_tax_cents(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tax_cents_ = value;
 }
 
-// int64 discount_cents = 6 [json_name = "discountCents"];
+// uint64 discount_cents = 6 [json_name = "discountCents"];
 inline void OrderItem::clear_discount_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.discount_cents_ = ::int64_t{0};
+  _impl_.discount_cents_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000800u;
 }
-inline ::int64_t OrderItem::discount_cents() const {
+inline ::uint64_t OrderItem::discount_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderItem.discount_cents)
   return _internal_discount_cents();
 }
-inline void OrderItem::set_discount_cents(::int64_t value) {
+inline void OrderItem::set_discount_cents(::uint64_t value) {
   _internal_set_discount_cents(value);
   _impl_._has_bits_[0] |= 0x00000800u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderItem.discount_cents)
 }
-inline ::int64_t OrderItem::_internal_discount_cents() const {
+inline ::uint64_t OrderItem::_internal_discount_cents() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.discount_cents_;
 }
-inline void OrderItem::_internal_set_discount_cents(::int64_t value) {
+inline void OrderItem::_internal_set_discount_cents(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.discount_cents_ = value;
 }
 
-// int64 total_cents = 7 [json_name = "totalCents"];
+// uint64 total_cents = 7 [json_name = "totalCents"];
 inline void OrderItem::clear_total_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.total_cents_ = ::int64_t{0};
+  _impl_.total_cents_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00001000u;
 }
-inline ::int64_t OrderItem::total_cents() const {
+inline ::uint64_t OrderItem::total_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderItem.total_cents)
   return _internal_total_cents();
 }
-inline void OrderItem::set_total_cents(::int64_t value) {
+inline void OrderItem::set_total_cents(::uint64_t value) {
   _internal_set_total_cents(value);
   _impl_._has_bits_[0] |= 0x00001000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderItem.total_cents)
 }
-inline ::int64_t OrderItem::_internal_total_cents() const {
+inline ::uint64_t OrderItem::_internal_total_cents() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.total_cents_;
 }
-inline void OrderItem::_internal_set_total_cents(::int64_t value) {
+inline void OrderItem::_internal_set_total_cents(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.total_cents_ = value;
 }
@@ -2550,30 +2550,30 @@ inline void PaymentSnapshot::set_allocated_provider_response(::shared::v1::Any* 
   // @@protoc_insertion_point(field_set_allocated:orders.v1.PaymentSnapshot.provider_response)
 }
 
-// optional int64 fee_cents = 6 [json_name = "feeCents"];
+// optional uint64 fee_cents = 6 [json_name = "feeCents"];
 inline bool PaymentSnapshot::has_fee_cents() const {
   bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline void PaymentSnapshot::clear_fee_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.fee_cents_ = ::int64_t{0};
+  _impl_.fee_cents_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000020u;
 }
-inline ::int64_t PaymentSnapshot::fee_cents() const {
+inline ::uint64_t PaymentSnapshot::fee_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.PaymentSnapshot.fee_cents)
   return _internal_fee_cents();
 }
-inline void PaymentSnapshot::set_fee_cents(::int64_t value) {
+inline void PaymentSnapshot::set_fee_cents(::uint64_t value) {
   _internal_set_fee_cents(value);
   _impl_._has_bits_[0] |= 0x00000020u;
   // @@protoc_insertion_point(field_set:orders.v1.PaymentSnapshot.fee_cents)
 }
-inline ::int64_t PaymentSnapshot::_internal_fee_cents() const {
+inline ::uint64_t PaymentSnapshot::_internal_fee_cents() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.fee_cents_;
 }
-inline void PaymentSnapshot::_internal_set_fee_cents(::int64_t value) {
+inline void PaymentSnapshot::_internal_set_fee_cents(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.fee_cents_ = value;
 }

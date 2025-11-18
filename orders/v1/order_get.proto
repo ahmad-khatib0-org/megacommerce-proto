@@ -16,11 +16,11 @@ message OrderItem {
   string id = 1;
 
   // monetary amounts are stored in minor units (cents) to avoid float errors
-  int64 subtotal_cents = 3;
-  int64 shipping_cents = 4;
-  int64 tax_cents = 5;
-  int64 discount_cents = 6;
-  int64 total_cents = 7;
+  uint64 subtotal_cents = 3;
+  uint64 shipping_cents = 4;
+  uint64 tax_cents = 5;
+  uint64 discount_cents = 6;
+  uint64 total_cents = 7;
   string currency_code = 8;
 
   // line items snapshot
@@ -65,7 +65,7 @@ message PaymentSnapshot {
   // provider raw response for auditing (tokenized, avoid PII)
   shared.v1.Any provider_response = 5;
   // payment fees (in cents) charged by gateway, optional
-  optional int64 fee_cents = 6;
+  optional uint64 fee_cents = 6;
 }
 
 message OrderGetRequest {

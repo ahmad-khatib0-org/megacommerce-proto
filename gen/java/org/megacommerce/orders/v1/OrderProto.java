@@ -507,31 +507,31 @@ public final class OrderProto {
      * All price fields in cents
      * </pre>
      *
-     * <code>int64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
+     * <code>uint64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
      * @return The subtotalCents.
      */
     long getSubtotalCents();
 
     /**
-     * <code>int64 shipping_cents = 5 [json_name = "shippingCents"];</code>
+     * <code>uint64 shipping_cents = 5 [json_name = "shippingCents"];</code>
      * @return The shippingCents.
      */
     long getShippingCents();
 
     /**
-     * <code>int64 tax_cents = 6 [json_name = "taxCents"];</code>
+     * <code>uint64 tax_cents = 6 [json_name = "taxCents"];</code>
      * @return The taxCents.
      */
     long getTaxCents();
 
     /**
-     * <code>int64 discount_cents = 7 [json_name = "discountCents"];</code>
+     * <code>uint64 discount_cents = 7 [json_name = "discountCents"];</code>
      * @return The discountCents.
      */
     long getDiscountCents();
 
     /**
-     * <code>int64 total_cents = 8 [json_name = "totalCents"];</code>
+     * <code>uint64 total_cents = 8 [json_name = "totalCents"];</code>
      * @return The totalCents.
      */
     long getTotalCents();
@@ -596,7 +596,7 @@ public final class OrderProto {
     org.megacommerce.shared.v1.StructProto.StructOrBuilder getPaymentProviderResponseOrBuilder();
 
     /**
-     * <code>int64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
+     * <code>uint64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
      * @return The paymentFeeCents.
      */
     long getPaymentFeeCents();
@@ -739,29 +739,29 @@ public final class OrderProto {
      * Timestamps
      * </pre>
      *
-     * <code>int64 created_at = 21 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
 
     /**
-     * <code>optional int64 updated_at = 22 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     boolean hasUpdatedAt();
     /**
-     * <code>optional int64 updated_at = 22 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
 
     /**
-     * <code>optional int64 deleted_at = 23 [json_name = "deletedAt"];</code>
+     * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     boolean hasDeletedAt();
     /**
-     * <code>optional int64 deleted_at = 23 [json_name = "deletedAt"];</code>
+     * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     long getDeletedAt();
@@ -938,7 +938,7 @@ public final class OrderProto {
      * All price fields in cents
      * </pre>
      *
-     * <code>int64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
+     * <code>uint64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
      * @return The subtotalCents.
      */
     @java.lang.Override
@@ -949,7 +949,7 @@ public final class OrderProto {
     public static final int SHIPPING_CENTS_FIELD_NUMBER = 5;
     private long shippingCents_ = 0L;
     /**
-     * <code>int64 shipping_cents = 5 [json_name = "shippingCents"];</code>
+     * <code>uint64 shipping_cents = 5 [json_name = "shippingCents"];</code>
      * @return The shippingCents.
      */
     @java.lang.Override
@@ -960,7 +960,7 @@ public final class OrderProto {
     public static final int TAX_CENTS_FIELD_NUMBER = 6;
     private long taxCents_ = 0L;
     /**
-     * <code>int64 tax_cents = 6 [json_name = "taxCents"];</code>
+     * <code>uint64 tax_cents = 6 [json_name = "taxCents"];</code>
      * @return The taxCents.
      */
     @java.lang.Override
@@ -971,7 +971,7 @@ public final class OrderProto {
     public static final int DISCOUNT_CENTS_FIELD_NUMBER = 7;
     private long discountCents_ = 0L;
     /**
-     * <code>int64 discount_cents = 7 [json_name = "discountCents"];</code>
+     * <code>uint64 discount_cents = 7 [json_name = "discountCents"];</code>
      * @return The discountCents.
      */
     @java.lang.Override
@@ -982,7 +982,7 @@ public final class OrderProto {
     public static final int TOTAL_CENTS_FIELD_NUMBER = 8;
     private long totalCents_ = 0L;
     /**
-     * <code>int64 total_cents = 8 [json_name = "totalCents"];</code>
+     * <code>uint64 total_cents = 8 [json_name = "totalCents"];</code>
      * @return The totalCents.
      */
     @java.lang.Override
@@ -1144,7 +1144,7 @@ public final class OrderProto {
     public static final int PAYMENT_FEE_CENTS_FIELD_NUMBER = 13;
     private long paymentFeeCents_ = 0L;
     /**
-     * <code>int64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
+     * <code>uint64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
      * @return The paymentFeeCents.
      */
     @java.lang.Override
@@ -1433,7 +1433,7 @@ public final class OrderProto {
      * Timestamps
      * </pre>
      *
-     * <code>int64 created_at = 21 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -1444,7 +1444,7 @@ public final class OrderProto {
     public static final int UPDATED_AT_FIELD_NUMBER = 22;
     private long updatedAt_ = 0L;
     /**
-     * <code>optional int64 updated_at = 22 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     @java.lang.Override
@@ -1452,7 +1452,7 @@ public final class OrderProto {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional int64 updated_at = 22 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -1463,7 +1463,7 @@ public final class OrderProto {
     public static final int DELETED_AT_FIELD_NUMBER = 23;
     private long deletedAt_ = 0L;
     /**
-     * <code>optional int64 deleted_at = 23 [json_name = "deletedAt"];</code>
+     * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     @java.lang.Override
@@ -1471,7 +1471,7 @@ public final class OrderProto {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional int64 deleted_at = 23 [json_name = "deletedAt"];</code>
+     * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     @java.lang.Override
@@ -1503,19 +1503,19 @@ public final class OrderProto {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, currencyCode_);
       }
       if (subtotalCents_ != 0L) {
-        output.writeInt64(4, subtotalCents_);
+        output.writeUInt64(4, subtotalCents_);
       }
       if (shippingCents_ != 0L) {
-        output.writeInt64(5, shippingCents_);
+        output.writeUInt64(5, shippingCents_);
       }
       if (taxCents_ != 0L) {
-        output.writeInt64(6, taxCents_);
+        output.writeUInt64(6, taxCents_);
       }
       if (discountCents_ != 0L) {
-        output.writeInt64(7, discountCents_);
+        output.writeUInt64(7, discountCents_);
       }
       if (totalCents_ != 0L) {
-        output.writeInt64(8, totalCents_);
+        output.writeUInt64(8, totalCents_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(paymentProvider_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 9, paymentProvider_);
@@ -1530,7 +1530,7 @@ public final class OrderProto {
         output.writeMessage(12, getPaymentProviderResponse());
       }
       if (paymentFeeCents_ != 0L) {
-        output.writeInt64(13, paymentFeeCents_);
+        output.writeUInt64(13, paymentFeeCents_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(inventoryReservationStatus_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 14, inventoryReservationStatus_);
@@ -1554,13 +1554,13 @@ public final class OrderProto {
         com.google.protobuf.GeneratedMessage.writeString(output, 20, status_);
       }
       if (createdAt_ != 0L) {
-        output.writeInt64(21, createdAt_);
+        output.writeUInt64(21, createdAt_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeInt64(22, updatedAt_);
+        output.writeUInt64(22, updatedAt_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeInt64(23, deletedAt_);
+        output.writeUInt64(23, deletedAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1582,23 +1582,23 @@ public final class OrderProto {
       }
       if (subtotalCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, subtotalCents_);
+          .computeUInt64Size(4, subtotalCents_);
       }
       if (shippingCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, shippingCents_);
+          .computeUInt64Size(5, shippingCents_);
       }
       if (taxCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, taxCents_);
+          .computeUInt64Size(6, taxCents_);
       }
       if (discountCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, discountCents_);
+          .computeUInt64Size(7, discountCents_);
       }
       if (totalCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, totalCents_);
+          .computeUInt64Size(8, totalCents_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(paymentProvider_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(9, paymentProvider_);
@@ -1615,7 +1615,7 @@ public final class OrderProto {
       }
       if (paymentFeeCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(13, paymentFeeCents_);
+          .computeUInt64Size(13, paymentFeeCents_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(inventoryReservationStatus_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(14, inventoryReservationStatus_);
@@ -1643,15 +1643,15 @@ public final class OrderProto {
       }
       if (createdAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(21, createdAt_);
+          .computeUInt64Size(21, createdAt_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(22, updatedAt_);
+          .computeUInt64Size(22, updatedAt_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(23, deletedAt_);
+          .computeUInt64Size(23, deletedAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2252,27 +2252,27 @@ public final class OrderProto {
                 break;
               } // case 26
               case 32: {
-                subtotalCents_ = input.readInt64();
+                subtotalCents_ = input.readUInt64();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
               case 40: {
-                shippingCents_ = input.readInt64();
+                shippingCents_ = input.readUInt64();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
               case 48: {
-                taxCents_ = input.readInt64();
+                taxCents_ = input.readUInt64();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
               case 56: {
-                discountCents_ = input.readInt64();
+                discountCents_ = input.readUInt64();
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
               case 64: {
-                totalCents_ = input.readInt64();
+                totalCents_ = input.readUInt64();
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
@@ -2299,7 +2299,7 @@ public final class OrderProto {
                 break;
               } // case 98
               case 104: {
-                paymentFeeCents_ = input.readInt64();
+                paymentFeeCents_ = input.readUInt64();
                 bitField0_ |= 0x00001000;
                 break;
               } // case 104
@@ -2345,17 +2345,17 @@ public final class OrderProto {
                 break;
               } // case 162
               case 168: {
-                createdAt_ = input.readInt64();
+                createdAt_ = input.readUInt64();
                 bitField0_ |= 0x00100000;
                 break;
               } // case 168
               case 176: {
-                updatedAt_ = input.readInt64();
+                updatedAt_ = input.readUInt64();
                 bitField0_ |= 0x00200000;
                 break;
               } // case 176
               case 184: {
-                deletedAt_ = input.readInt64();
+                deletedAt_ = input.readUInt64();
                 bitField0_ |= 0x00400000;
                 break;
               } // case 184
@@ -2598,7 +2598,7 @@ public final class OrderProto {
        * All price fields in cents
        * </pre>
        *
-       * <code>int64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
+       * <code>uint64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
        * @return The subtotalCents.
        */
       @java.lang.Override
@@ -2610,7 +2610,7 @@ public final class OrderProto {
        * All price fields in cents
        * </pre>
        *
-       * <code>int64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
+       * <code>uint64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
        * @param value The subtotalCents to set.
        * @return This builder for chaining.
        */
@@ -2626,7 +2626,7 @@ public final class OrderProto {
        * All price fields in cents
        * </pre>
        *
-       * <code>int64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
+       * <code>uint64 subtotal_cents = 4 [json_name = "subtotalCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSubtotalCents() {
@@ -2638,7 +2638,7 @@ public final class OrderProto {
 
       private long shippingCents_ ;
       /**
-       * <code>int64 shipping_cents = 5 [json_name = "shippingCents"];</code>
+       * <code>uint64 shipping_cents = 5 [json_name = "shippingCents"];</code>
        * @return The shippingCents.
        */
       @java.lang.Override
@@ -2646,7 +2646,7 @@ public final class OrderProto {
         return shippingCents_;
       }
       /**
-       * <code>int64 shipping_cents = 5 [json_name = "shippingCents"];</code>
+       * <code>uint64 shipping_cents = 5 [json_name = "shippingCents"];</code>
        * @param value The shippingCents to set.
        * @return This builder for chaining.
        */
@@ -2658,7 +2658,7 @@ public final class OrderProto {
         return this;
       }
       /**
-       * <code>int64 shipping_cents = 5 [json_name = "shippingCents"];</code>
+       * <code>uint64 shipping_cents = 5 [json_name = "shippingCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearShippingCents() {
@@ -2670,7 +2670,7 @@ public final class OrderProto {
 
       private long taxCents_ ;
       /**
-       * <code>int64 tax_cents = 6 [json_name = "taxCents"];</code>
+       * <code>uint64 tax_cents = 6 [json_name = "taxCents"];</code>
        * @return The taxCents.
        */
       @java.lang.Override
@@ -2678,7 +2678,7 @@ public final class OrderProto {
         return taxCents_;
       }
       /**
-       * <code>int64 tax_cents = 6 [json_name = "taxCents"];</code>
+       * <code>uint64 tax_cents = 6 [json_name = "taxCents"];</code>
        * @param value The taxCents to set.
        * @return This builder for chaining.
        */
@@ -2690,7 +2690,7 @@ public final class OrderProto {
         return this;
       }
       /**
-       * <code>int64 tax_cents = 6 [json_name = "taxCents"];</code>
+       * <code>uint64 tax_cents = 6 [json_name = "taxCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTaxCents() {
@@ -2702,7 +2702,7 @@ public final class OrderProto {
 
       private long discountCents_ ;
       /**
-       * <code>int64 discount_cents = 7 [json_name = "discountCents"];</code>
+       * <code>uint64 discount_cents = 7 [json_name = "discountCents"];</code>
        * @return The discountCents.
        */
       @java.lang.Override
@@ -2710,7 +2710,7 @@ public final class OrderProto {
         return discountCents_;
       }
       /**
-       * <code>int64 discount_cents = 7 [json_name = "discountCents"];</code>
+       * <code>uint64 discount_cents = 7 [json_name = "discountCents"];</code>
        * @param value The discountCents to set.
        * @return This builder for chaining.
        */
@@ -2722,7 +2722,7 @@ public final class OrderProto {
         return this;
       }
       /**
-       * <code>int64 discount_cents = 7 [json_name = "discountCents"];</code>
+       * <code>uint64 discount_cents = 7 [json_name = "discountCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDiscountCents() {
@@ -2734,7 +2734,7 @@ public final class OrderProto {
 
       private long totalCents_ ;
       /**
-       * <code>int64 total_cents = 8 [json_name = "totalCents"];</code>
+       * <code>uint64 total_cents = 8 [json_name = "totalCents"];</code>
        * @return The totalCents.
        */
       @java.lang.Override
@@ -2742,7 +2742,7 @@ public final class OrderProto {
         return totalCents_;
       }
       /**
-       * <code>int64 total_cents = 8 [json_name = "totalCents"];</code>
+       * <code>uint64 total_cents = 8 [json_name = "totalCents"];</code>
        * @param value The totalCents to set.
        * @return This builder for chaining.
        */
@@ -2754,7 +2754,7 @@ public final class OrderProto {
         return this;
       }
       /**
-       * <code>int64 total_cents = 8 [json_name = "totalCents"];</code>
+       * <code>uint64 total_cents = 8 [json_name = "totalCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalCents() {
@@ -3123,7 +3123,7 @@ public final class OrderProto {
 
       private long paymentFeeCents_ ;
       /**
-       * <code>int64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
+       * <code>uint64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
        * @return The paymentFeeCents.
        */
       @java.lang.Override
@@ -3131,7 +3131,7 @@ public final class OrderProto {
         return paymentFeeCents_;
       }
       /**
-       * <code>int64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
+       * <code>uint64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
        * @param value The paymentFeeCents to set.
        * @return This builder for chaining.
        */
@@ -3143,7 +3143,7 @@ public final class OrderProto {
         return this;
       }
       /**
-       * <code>int64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
+       * <code>uint64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPaymentFeeCents() {
@@ -3922,7 +3922,7 @@ public final class OrderProto {
        * Timestamps
        * </pre>
        *
-       * <code>int64 created_at = 21 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -3934,7 +3934,7 @@ public final class OrderProto {
        * Timestamps
        * </pre>
        *
-       * <code>int64 created_at = 21 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
@@ -3950,7 +3950,7 @@ public final class OrderProto {
        * Timestamps
        * </pre>
        *
-       * <code>int64 created_at = 21 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
@@ -3962,7 +3962,7 @@ public final class OrderProto {
 
       private long updatedAt_ ;
       /**
-       * <code>optional int64 updated_at = 22 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
        * @return Whether the updatedAt field is set.
        */
       @java.lang.Override
@@ -3970,7 +3970,7 @@ public final class OrderProto {
         return ((bitField0_ & 0x00200000) != 0);
       }
       /**
-       * <code>optional int64 updated_at = 22 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -3978,7 +3978,7 @@ public final class OrderProto {
         return updatedAt_;
       }
       /**
-       * <code>optional int64 updated_at = 22 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
@@ -3990,7 +3990,7 @@ public final class OrderProto {
         return this;
       }
       /**
-       * <code>optional int64 updated_at = 22 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
@@ -4002,7 +4002,7 @@ public final class OrderProto {
 
       private long deletedAt_ ;
       /**
-       * <code>optional int64 deleted_at = 23 [json_name = "deletedAt"];</code>
+       * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
        * @return Whether the deletedAt field is set.
        */
       @java.lang.Override
@@ -4010,7 +4010,7 @@ public final class OrderProto {
         return ((bitField0_ & 0x00400000) != 0);
       }
       /**
-       * <code>optional int64 deleted_at = 23 [json_name = "deletedAt"];</code>
+       * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
        * @return The deletedAt.
        */
       @java.lang.Override
@@ -4018,7 +4018,7 @@ public final class OrderProto {
         return deletedAt_;
       }
       /**
-       * <code>optional int64 deleted_at = 23 [json_name = "deletedAt"];</code>
+       * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
        * @param value The deletedAt to set.
        * @return This builder for chaining.
        */
@@ -4030,7 +4030,7 @@ public final class OrderProto {
         return this;
       }
       /**
-       * <code>optional int64 deleted_at = 23 [json_name = "deletedAt"];</code>
+       * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDeletedAt() {
@@ -4109,17 +4109,17 @@ public final class OrderProto {
       "ed/v1/struct.proto\"\343\007\n\005Order\022\016\n\002id\030\001 \001(\t" +
       "R\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022#\n\rcurrenc" +
       "y_code\030\003 \001(\tR\014currencyCode\022%\n\016subtotal_c" +
-      "ents\030\004 \001(\003R\rsubtotalCents\022%\n\016shipping_ce" +
-      "nts\030\005 \001(\003R\rshippingCents\022\033\n\ttax_cents\030\006 " +
-      "\001(\003R\010taxCents\022%\n\016discount_cents\030\007 \001(\003R\rd" +
-      "iscountCents\022\037\n\013total_cents\030\010 \001(\003R\ntotal" +
+      "ents\030\004 \001(\004R\rsubtotalCents\022%\n\016shipping_ce" +
+      "nts\030\005 \001(\004R\rshippingCents\022\033\n\ttax_cents\030\006 " +
+      "\001(\004R\010taxCents\022%\n\016discount_cents\030\007 \001(\004R\rd" +
+      "iscountCents\022\037\n\013total_cents\030\010 \001(\004R\ntotal" +
       "Cents\022)\n\020payment_provider\030\t \001(\tR\017payment" +
       "Provider\0224\n\026payment_transaction_id\030\n \001(\t" +
       "R\024paymentTransactionId\022%\n\016payment_status" +
       "\030\013 \001(\tR\rpaymentStatus\022M\n\031payment_provide" +
       "r_response\030\014 \001(\0132\021.shared.v1.StructR\027pay" +
       "mentProviderResponse\022*\n\021payment_fee_cent" +
-      "s\030\r \001(\003R\017paymentFeeCents\022@\n\034inventory_re" +
+      "s\030\r \001(\004R\017paymentFeeCents\022@\n\034inventory_re" +
       "servation_status\030\016 \001(\tR\032inventoryReserva" +
       "tionStatus\022%\n\016product_source\030\017 \001(\tR\rprod" +
       "uctSource\022\'\n\017product_version\030\020 \001(\tR\016prod" +
@@ -4128,9 +4128,9 @@ public final class OrderProto {
       "ing_address\030\022 \001(\0132\021.shared.v1.StructR\016bi" +
       "llingAddress\022-\n\010metadata\030\023 \001(\0132\021.shared." +
       "v1.StructR\010metadata\022\026\n\006status\030\024 \001(\tR\006sta" +
-      "tus\022\035\n\ncreated_at\030\025 \001(\003R\tcreatedAt\022\"\n\nup" +
-      "dated_at\030\026 \001(\003H\000R\tupdatedAt\210\001\001\022\"\n\ndelete" +
-      "d_at\030\027 \001(\003H\001R\tdeletedAt\210\001\001B\r\n\013_updated_a" +
+      "tus\022\035\n\ncreated_at\030\025 \001(\004R\tcreatedAt\022\"\n\nup" +
+      "dated_at\030\026 \001(\004H\000R\tupdatedAt\210\001\001\022\"\n\ndelete" +
+      "d_at\030\027 \001(\004H\001R\tdeletedAt\210\001\001B\r\n\013_updated_a" +
       "tB\r\n\013_deleted_at*\240\001\n\032InventoryReservatio" +
       "nStatus\022\025\n\021INVENTORY_UNKNOWN\020\000\022\026\n\022INVENT" +
       "ORY_RESERVED\020\001\022 \n\034INVENTORY_PARTIALLY_RE" +

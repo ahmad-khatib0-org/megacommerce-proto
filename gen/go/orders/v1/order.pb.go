@@ -194,17 +194,17 @@ type Order struct {
 	UserId       string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	CurrencyCode string                 `protobuf:"bytes,3,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
 	// All price fields in cents
-	SubtotalCents int64 `protobuf:"varint,4,opt,name=subtotal_cents,json=subtotalCents,proto3" json:"subtotal_cents,omitempty"`
-	ShippingCents int64 `protobuf:"varint,5,opt,name=shipping_cents,json=shippingCents,proto3" json:"shipping_cents,omitempty"`
-	TaxCents      int64 `protobuf:"varint,6,opt,name=tax_cents,json=taxCents,proto3" json:"tax_cents,omitempty"`
-	DiscountCents int64 `protobuf:"varint,7,opt,name=discount_cents,json=discountCents,proto3" json:"discount_cents,omitempty"`
-	TotalCents    int64 `protobuf:"varint,8,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`
+	SubtotalCents uint64 `protobuf:"varint,4,opt,name=subtotal_cents,json=subtotalCents,proto3" json:"subtotal_cents,omitempty"`
+	ShippingCents uint64 `protobuf:"varint,5,opt,name=shipping_cents,json=shippingCents,proto3" json:"shipping_cents,omitempty"`
+	TaxCents      uint64 `protobuf:"varint,6,opt,name=tax_cents,json=taxCents,proto3" json:"tax_cents,omitempty"`
+	DiscountCents uint64 `protobuf:"varint,7,opt,name=discount_cents,json=discountCents,proto3" json:"discount_cents,omitempty"`
+	TotalCents    uint64 `protobuf:"varint,8,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`
 	// Payment information
 	PaymentProvider         string     `protobuf:"bytes,9,opt,name=payment_provider,json=paymentProvider,proto3" json:"payment_provider,omitempty"`
 	PaymentTransactionId    string     `protobuf:"bytes,10,opt,name=payment_transaction_id,json=paymentTransactionId,proto3" json:"payment_transaction_id,omitempty"`
 	PaymentStatus           string     `protobuf:"bytes,11,opt,name=payment_status,json=paymentStatus,proto3" json:"payment_status,omitempty"`
 	PaymentProviderResponse *v1.Struct `protobuf:"bytes,12,opt,name=payment_provider_response,json=paymentProviderResponse,proto3" json:"payment_provider_response,omitempty"`
-	PaymentFeeCents         int64      `protobuf:"varint,13,opt,name=payment_fee_cents,json=paymentFeeCents,proto3" json:"payment_fee_cents,omitempty"`
+	PaymentFeeCents         uint64     `protobuf:"varint,13,opt,name=payment_fee_cents,json=paymentFeeCents,proto3" json:"payment_fee_cents,omitempty"`
 	// Inventory status
 	InventoryReservationStatus string `protobuf:"bytes,14,opt,name=inventory_reservation_status,json=inventoryReservationStatus,proto3" json:"inventory_reservation_status,omitempty"`
 	// Product information
@@ -217,9 +217,9 @@ type Order struct {
 	Metadata *v1.Struct `protobuf:"bytes,19,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	Status   string     `protobuf:"bytes,20,opt,name=status,proto3" json:"status,omitempty"`
 	// Timestamps
-	CreatedAt     int64  `protobuf:"varint,21,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt     *int64 `protobuf:"varint,22,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
-	DeletedAt     *int64 `protobuf:"varint,23,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
+	CreatedAt     uint64  `protobuf:"varint,21,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *uint64 `protobuf:"varint,22,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
+	DeletedAt     *uint64 `protobuf:"varint,23,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -275,35 +275,35 @@ func (x *Order) GetCurrencyCode() string {
 	return ""
 }
 
-func (x *Order) GetSubtotalCents() int64 {
+func (x *Order) GetSubtotalCents() uint64 {
 	if x != nil {
 		return x.SubtotalCents
 	}
 	return 0
 }
 
-func (x *Order) GetShippingCents() int64 {
+func (x *Order) GetShippingCents() uint64 {
 	if x != nil {
 		return x.ShippingCents
 	}
 	return 0
 }
 
-func (x *Order) GetTaxCents() int64 {
+func (x *Order) GetTaxCents() uint64 {
 	if x != nil {
 		return x.TaxCents
 	}
 	return 0
 }
 
-func (x *Order) GetDiscountCents() int64 {
+func (x *Order) GetDiscountCents() uint64 {
 	if x != nil {
 		return x.DiscountCents
 	}
 	return 0
 }
 
-func (x *Order) GetTotalCents() int64 {
+func (x *Order) GetTotalCents() uint64 {
 	if x != nil {
 		return x.TotalCents
 	}
@@ -338,7 +338,7 @@ func (x *Order) GetPaymentProviderResponse() *v1.Struct {
 	return nil
 }
 
-func (x *Order) GetPaymentFeeCents() int64 {
+func (x *Order) GetPaymentFeeCents() uint64 {
 	if x != nil {
 		return x.PaymentFeeCents
 	}
@@ -394,21 +394,21 @@ func (x *Order) GetStatus() string {
 	return ""
 }
 
-func (x *Order) GetCreatedAt() int64 {
+func (x *Order) GetCreatedAt() uint64 {
 	if x != nil {
 		return x.CreatedAt
 	}
 	return 0
 }
 
-func (x *Order) GetUpdatedAt() int64 {
+func (x *Order) GetUpdatedAt() uint64 {
 	if x != nil && x.UpdatedAt != nil {
 		return *x.UpdatedAt
 	}
 	return 0
 }
 
-func (x *Order) GetDeletedAt() int64 {
+func (x *Order) GetDeletedAt() uint64 {
 	if x != nil && x.DeletedAt != nil {
 		return *x.DeletedAt
 	}
@@ -424,18 +424,18 @@ const file_orders_v1_order_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
 	"\rcurrency_code\x18\x03 \x01(\tR\fcurrencyCode\x12%\n" +
-	"\x0esubtotal_cents\x18\x04 \x01(\x03R\rsubtotalCents\x12%\n" +
-	"\x0eshipping_cents\x18\x05 \x01(\x03R\rshippingCents\x12\x1b\n" +
-	"\ttax_cents\x18\x06 \x01(\x03R\btaxCents\x12%\n" +
-	"\x0ediscount_cents\x18\a \x01(\x03R\rdiscountCents\x12\x1f\n" +
-	"\vtotal_cents\x18\b \x01(\x03R\n" +
+	"\x0esubtotal_cents\x18\x04 \x01(\x04R\rsubtotalCents\x12%\n" +
+	"\x0eshipping_cents\x18\x05 \x01(\x04R\rshippingCents\x12\x1b\n" +
+	"\ttax_cents\x18\x06 \x01(\x04R\btaxCents\x12%\n" +
+	"\x0ediscount_cents\x18\a \x01(\x04R\rdiscountCents\x12\x1f\n" +
+	"\vtotal_cents\x18\b \x01(\x04R\n" +
 	"totalCents\x12)\n" +
 	"\x10payment_provider\x18\t \x01(\tR\x0fpaymentProvider\x124\n" +
 	"\x16payment_transaction_id\x18\n" +
 	" \x01(\tR\x14paymentTransactionId\x12%\n" +
 	"\x0epayment_status\x18\v \x01(\tR\rpaymentStatus\x12M\n" +
 	"\x19payment_provider_response\x18\f \x01(\v2\x11.shared.v1.StructR\x17paymentProviderResponse\x12*\n" +
-	"\x11payment_fee_cents\x18\r \x01(\x03R\x0fpaymentFeeCents\x12@\n" +
+	"\x11payment_fee_cents\x18\r \x01(\x04R\x0fpaymentFeeCents\x12@\n" +
 	"\x1cinventory_reservation_status\x18\x0e \x01(\tR\x1ainventoryReservationStatus\x12%\n" +
 	"\x0eproduct_source\x18\x0f \x01(\tR\rproductSource\x12'\n" +
 	"\x0fproduct_version\x18\x10 \x01(\tR\x0eproductVersion\x12<\n" +
@@ -444,11 +444,11 @@ const file_orders_v1_order_proto_rawDesc = "" +
 	"\bmetadata\x18\x13 \x01(\v2\x11.shared.v1.StructR\bmetadata\x12\x16\n" +
 	"\x06status\x18\x14 \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x15 \x01(\x03R\tcreatedAt\x12\"\n" +
+	"created_at\x18\x15 \x01(\x04R\tcreatedAt\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x16 \x01(\x03H\x00R\tupdatedAt\x88\x01\x01\x12\"\n" +
+	"updated_at\x18\x16 \x01(\x04H\x00R\tupdatedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"deleted_at\x18\x17 \x01(\x03H\x01R\tdeletedAt\x88\x01\x01B\r\n" +
+	"deleted_at\x18\x17 \x01(\x04H\x01R\tdeletedAt\x88\x01\x01B\r\n" +
 	"\v_updated_atB\r\n" +
 	"\v_deleted_at*\xa0\x01\n" +
 	"\x1aInventoryReservationStatus\x12\x15\n" +

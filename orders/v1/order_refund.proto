@@ -30,5 +30,5 @@ message RefundLineItemRefund {
   string line_id = 1; // link to OrderLineItem.line_id
   uint32 quantity = 2;
   // amount to refund in minor units (cents). If zero, compute pro-rata.
-  optional int64 amount_cents = 3;
+  optional uint64 amount_cents = 3;
 }

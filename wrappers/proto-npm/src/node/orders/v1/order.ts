@@ -239,19 +239,19 @@ export const Order: MessageFns<Order> = {
       writer.uint32(26).string(message.currencyCode);
     }
     if (message.subtotalCents !== "0") {
-      writer.uint32(32).int64(message.subtotalCents);
+      writer.uint32(32).uint64(message.subtotalCents);
     }
     if (message.shippingCents !== "0") {
-      writer.uint32(40).int64(message.shippingCents);
+      writer.uint32(40).uint64(message.shippingCents);
     }
     if (message.taxCents !== "0") {
-      writer.uint32(48).int64(message.taxCents);
+      writer.uint32(48).uint64(message.taxCents);
     }
     if (message.discountCents !== "0") {
-      writer.uint32(56).int64(message.discountCents);
+      writer.uint32(56).uint64(message.discountCents);
     }
     if (message.totalCents !== "0") {
-      writer.uint32(64).int64(message.totalCents);
+      writer.uint32(64).uint64(message.totalCents);
     }
     if (message.paymentProvider !== "") {
       writer.uint32(74).string(message.paymentProvider);
@@ -266,7 +266,7 @@ export const Order: MessageFns<Order> = {
       Struct.encode(message.paymentProviderResponse, writer.uint32(98).fork()).join();
     }
     if (message.paymentFeeCents !== "0") {
-      writer.uint32(104).int64(message.paymentFeeCents);
+      writer.uint32(104).uint64(message.paymentFeeCents);
     }
     if (message.inventoryReservationStatus !== "") {
       writer.uint32(114).string(message.inventoryReservationStatus);
@@ -290,13 +290,13 @@ export const Order: MessageFns<Order> = {
       writer.uint32(162).string(message.status);
     }
     if (message.createdAt !== "0") {
-      writer.uint32(168).int64(message.createdAt);
+      writer.uint32(168).uint64(message.createdAt);
     }
     if (message.updatedAt !== undefined) {
-      writer.uint32(176).int64(message.updatedAt);
+      writer.uint32(176).uint64(message.updatedAt);
     }
     if (message.deletedAt !== undefined) {
-      writer.uint32(184).int64(message.deletedAt);
+      writer.uint32(184).uint64(message.deletedAt);
     }
     return writer;
   },
@@ -337,7 +337,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.subtotalCents = reader.int64().toString();
+          message.subtotalCents = reader.uint64().toString();
           continue;
         }
         case 5: {
@@ -345,7 +345,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.shippingCents = reader.int64().toString();
+          message.shippingCents = reader.uint64().toString();
           continue;
         }
         case 6: {
@@ -353,7 +353,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.taxCents = reader.int64().toString();
+          message.taxCents = reader.uint64().toString();
           continue;
         }
         case 7: {
@@ -361,7 +361,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.discountCents = reader.int64().toString();
+          message.discountCents = reader.uint64().toString();
           continue;
         }
         case 8: {
@@ -369,7 +369,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.totalCents = reader.int64().toString();
+          message.totalCents = reader.uint64().toString();
           continue;
         }
         case 9: {
@@ -409,7 +409,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.paymentFeeCents = reader.int64().toString();
+          message.paymentFeeCents = reader.uint64().toString();
           continue;
         }
         case 14: {
@@ -473,7 +473,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.createdAt = reader.int64().toString();
+          message.createdAt = reader.uint64().toString();
           continue;
         }
         case 22: {
@@ -481,7 +481,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.updatedAt = reader.int64().toString();
+          message.updatedAt = reader.uint64().toString();
           continue;
         }
         case 23: {
@@ -489,7 +489,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.deletedAt = reader.int64().toString();
+          message.deletedAt = reader.uint64().toString();
           continue;
         }
       }

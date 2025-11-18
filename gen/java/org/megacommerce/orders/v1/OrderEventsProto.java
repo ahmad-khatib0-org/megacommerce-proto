@@ -295,7 +295,7 @@ public final class OrderEventsProto {
      * UNIX timestamp
      * </pre>
      *
-     * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 5 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
@@ -511,7 +511,7 @@ public final class OrderEventsProto {
      * UNIX timestamp
      * </pre>
      *
-     * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 5 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -546,7 +546,7 @@ public final class OrderEventsProto {
         output.writeMessage(4, getEventPayload());
       }
       if (createdAt_ != 0L) {
-        output.writeInt64(5, createdAt_);
+        output.writeUInt64(5, createdAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -572,7 +572,7 @@ public final class OrderEventsProto {
       }
       if (createdAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, createdAt_);
+          .computeUInt64Size(5, createdAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -909,7 +909,7 @@ public final class OrderEventsProto {
                 break;
               } // case 34
               case 40: {
-                createdAt_ = input.readInt64();
+                createdAt_ = input.readUInt64();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
@@ -1329,7 +1329,7 @@ public final class OrderEventsProto {
        * UNIX timestamp
        * </pre>
        *
-       * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 5 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -1341,7 +1341,7 @@ public final class OrderEventsProto {
        * UNIX timestamp
        * </pre>
        *
-       * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 5 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
@@ -1357,7 +1357,7 @@ public final class OrderEventsProto {
        * UNIX timestamp
        * </pre>
        *
-       * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 5 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
@@ -1437,7 +1437,7 @@ public final class OrderEventsProto {
       "\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001(\tR\007orde" +
       "rId\022\035\n\nevent_type\030\003 \001(\tR\teventType\0226\n\rev" +
       "ent_payload\030\004 \001(\0132\021.shared.v1.StructR\014ev" +
-      "entPayload\022\035\n\ncreated_at\030\005 \001(\003R\tcreatedA" +
+      "entPayload\022\035\n\ncreated_at\030\005 \001(\004R\tcreatedA" +
       "t*\323\002\n\016OrderEventType\022\027\n\023ORDER_EVENT_UNKN" +
       "OWN\020\000\022\035\n\031ORDER_EVENT_ORDER_CREATED\020\001\022 \n\034" +
       "ORDER_EVENT_PAYMENT_CAPTURED\020\002\022\036\n\032ORDER_" +

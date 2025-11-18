@@ -9,16 +9,16 @@ pub struct Order {
     #[prost(string, tag = "3")]
     pub currency_code: ::prost::alloc::string::String,
     /// All price fields in cents
-    #[prost(int64, tag = "4")]
-    pub subtotal_cents: i64,
-    #[prost(int64, tag = "5")]
-    pub shipping_cents: i64,
-    #[prost(int64, tag = "6")]
-    pub tax_cents: i64,
-    #[prost(int64, tag = "7")]
-    pub discount_cents: i64,
-    #[prost(int64, tag = "8")]
-    pub total_cents: i64,
+    #[prost(uint64, tag = "4")]
+    pub subtotal_cents: u64,
+    #[prost(uint64, tag = "5")]
+    pub shipping_cents: u64,
+    #[prost(uint64, tag = "6")]
+    pub tax_cents: u64,
+    #[prost(uint64, tag = "7")]
+    pub discount_cents: u64,
+    #[prost(uint64, tag = "8")]
+    pub total_cents: u64,
     /// Payment information
     #[prost(string, tag = "9")]
     pub payment_provider: ::prost::alloc::string::String,
@@ -30,8 +30,8 @@ pub struct Order {
     pub payment_provider_response: ::core::option::Option<
         super::super::shared::v1::Struct,
     >,
-    #[prost(int64, tag = "13")]
-    pub payment_fee_cents: i64,
+    #[prost(uint64, tag = "13")]
+    pub payment_fee_cents: u64,
     /// Inventory status
     #[prost(string, tag = "14")]
     pub inventory_reservation_status: ::prost::alloc::string::String,
@@ -51,12 +51,12 @@ pub struct Order {
     #[prost(string, tag = "20")]
     pub status: ::prost::alloc::string::String,
     /// Timestamps
-    #[prost(int64, tag = "21")]
-    pub created_at: i64,
-    #[prost(int64, optional, tag = "22")]
-    pub updated_at: ::core::option::Option<i64>,
-    #[prost(int64, optional, tag = "23")]
-    pub deleted_at: ::core::option::Option<i64>,
+    #[prost(uint64, tag = "21")]
+    pub created_at: u64,
+    #[prost(uint64, optional, tag = "22")]
+    pub updated_at: ::core::option::Option<u64>,
+    #[prost(uint64, optional, tag = "23")]
+    pub deleted_at: ::core::option::Option<u64>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -250,8 +250,8 @@ pub struct OrderLineItemRequest {
     /// Optionally client can pass a desired price verification to aid checks:
     /// e.g., unit_price_cents_client = 1000 (means client expected price = 10.00)
     /// This helps detect mismatches (promotions or stale inventory).
-    #[prost(int64, optional, tag = "5")]
-    pub unit_price_cents_client: ::core::option::Option<i64>,
+    #[prost(uint64, optional, tag = "5")]
+    pub unit_price_cents_client: ::core::option::Option<u64>,
     /// metadata for line (gift wrap, special options)
     #[prost(map = "string, string", tag = "6")]
     pub metadata: ::std::collections::HashMap<
@@ -290,8 +290,8 @@ pub struct OrderEvent {
     #[prost(message, optional, tag = "4")]
     pub event_payload: ::core::option::Option<super::super::shared::v1::Struct>,
     /// UNIX timestamp
-    #[prost(int64, tag = "5")]
-    pub created_at: i64,
+    #[prost(uint64, tag = "5")]
+    pub created_at: u64,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -372,23 +372,23 @@ pub struct OrderLineItem {
     /// Price fields in cents
     ///
     /// charged price per unit at order time
-    #[prost(int64, tag = "9")]
-    pub unit_price_cents: i64,
+    #[prost(uint64, tag = "9")]
+    pub unit_price_cents: u64,
     /// optional
-    #[prost(int64, optional, tag = "10")]
-    pub list_price_cents: ::core::option::Option<i64>,
+    #[prost(uint64, optional, tag = "10")]
+    pub list_price_cents: ::core::option::Option<u64>,
     /// optional
-    #[prost(int64, optional, tag = "11")]
-    pub sale_price_cents: ::core::option::Option<i64>,
+    #[prost(uint64, optional, tag = "11")]
+    pub sale_price_cents: ::core::option::Option<u64>,
     /// total discount applied to this line (all units)
-    #[prost(int64, optional, tag = "12")]
-    pub discount_cents: ::core::option::Option<i64>,
+    #[prost(uint64, optional, tag = "12")]
+    pub discount_cents: ::core::option::Option<u64>,
     /// tax for this line (total)
-    #[prost(int64, optional, tag = "13")]
-    pub tax_cents: ::core::option::Option<i64>,
+    #[prost(uint64, optional, tag = "13")]
+    pub tax_cents: ::core::option::Option<u64>,
     /// (quantity * unit_price) - discount + tax
-    #[prost(int64, tag = "14")]
-    pub total_cents: i64,
+    #[prost(uint64, tag = "14")]
+    pub total_cents: u64,
     /// array of applied offer/promotion ids
     #[prost(string, repeated, tag = "15")]
     pub applied_offer_ids: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -398,11 +398,11 @@ pub struct OrderLineItem {
     /// Timestamps
     ///
     /// UNIX timestamp
-    #[prost(int64, tag = "17")]
-    pub created_at: i64,
+    #[prost(uint64, tag = "17")]
+    pub created_at: u64,
     /// optional UNIX timestamp
-    #[prost(int64, optional, tag = "18")]
-    pub updated_at: ::core::option::Option<i64>,
+    #[prost(uint64, optional, tag = "18")]
+    pub updated_at: ::core::option::Option<u64>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -410,16 +410,16 @@ pub struct OrderItem {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
     /// monetary amounts are stored in minor units (cents) to avoid float errors
-    #[prost(int64, tag = "3")]
-    pub subtotal_cents: i64,
-    #[prost(int64, tag = "4")]
-    pub shipping_cents: i64,
-    #[prost(int64, tag = "5")]
-    pub tax_cents: i64,
-    #[prost(int64, tag = "6")]
-    pub discount_cents: i64,
-    #[prost(int64, tag = "7")]
-    pub total_cents: i64,
+    #[prost(uint64, tag = "3")]
+    pub subtotal_cents: u64,
+    #[prost(uint64, tag = "4")]
+    pub shipping_cents: u64,
+    #[prost(uint64, tag = "5")]
+    pub tax_cents: u64,
+    #[prost(uint64, tag = "6")]
+    pub discount_cents: u64,
+    #[prost(uint64, tag = "7")]
+    pub total_cents: u64,
     #[prost(string, tag = "8")]
     pub currency_code: ::prost::alloc::string::String,
     /// line items snapshot
@@ -483,8 +483,8 @@ pub struct PaymentSnapshot {
     #[prost(message, optional, tag = "5")]
     pub provider_response: ::core::option::Option<super::super::shared::v1::Any>,
     /// payment fees (in cents) charged by gateway, optional
-    #[prost(int64, optional, tag = "6")]
-    pub fee_cents: ::core::option::Option<i64>,
+    #[prost(uint64, optional, tag = "6")]
+    pub fee_cents: ::core::option::Option<u64>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -523,12 +523,12 @@ pub struct OrderIdempotencyKey {
     /// "IN_PROGRESS", "COMPLETED", "FAILED"
     #[prost(string, tag = "5")]
     pub status: ::prost::alloc::string::String,
-    #[prost(int64, tag = "6")]
-    pub created_at: i64,
-    #[prost(int64, tag = "7")]
-    pub updated_at: i64,
-    #[prost(int64, tag = "8")]
-    pub expires_at: i64,
+    #[prost(uint64, tag = "6")]
+    pub created_at: u64,
+    #[prost(uint64, tag = "7")]
+    pub updated_at: u64,
+    #[prost(uint64, tag = "8")]
+    pub expires_at: u64,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -600,8 +600,8 @@ pub struct RefundLineItemRefund {
     #[prost(uint32, tag = "2")]
     pub quantity: u32,
     /// amount to refund in minor units (cents). If zero, compute pro-rata.
-    #[prost(int64, optional, tag = "3")]
-    pub amount_cents: ::core::option::Option<i64>,
+    #[prost(uint64, optional, tag = "3")]
+    pub amount_cents: ::core::option::Option<u64>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

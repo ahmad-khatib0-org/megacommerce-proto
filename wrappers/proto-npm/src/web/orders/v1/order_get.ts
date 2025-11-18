@@ -121,19 +121,19 @@ export const OrderItem: MessageFns<OrderItem> = {
       writer.uint32(10).string(message.id);
     }
     if (message.subtotalCents !== "0") {
-      writer.uint32(24).int64(message.subtotalCents);
+      writer.uint32(24).uint64(message.subtotalCents);
     }
     if (message.shippingCents !== "0") {
-      writer.uint32(32).int64(message.shippingCents);
+      writer.uint32(32).uint64(message.shippingCents);
     }
     if (message.taxCents !== "0") {
-      writer.uint32(40).int64(message.taxCents);
+      writer.uint32(40).uint64(message.taxCents);
     }
     if (message.discountCents !== "0") {
-      writer.uint32(48).int64(message.discountCents);
+      writer.uint32(48).uint64(message.discountCents);
     }
     if (message.totalCents !== "0") {
-      writer.uint32(56).int64(message.totalCents);
+      writer.uint32(56).uint64(message.totalCents);
     }
     if (message.currencyCode !== "") {
       writer.uint32(66).string(message.currencyCode);
@@ -194,7 +194,7 @@ export const OrderItem: MessageFns<OrderItem> = {
             break;
           }
 
-          message.subtotalCents = reader.int64().toString();
+          message.subtotalCents = reader.uint64().toString();
           continue;
         }
         case 4: {
@@ -202,7 +202,7 @@ export const OrderItem: MessageFns<OrderItem> = {
             break;
           }
 
-          message.shippingCents = reader.int64().toString();
+          message.shippingCents = reader.uint64().toString();
           continue;
         }
         case 5: {
@@ -210,7 +210,7 @@ export const OrderItem: MessageFns<OrderItem> = {
             break;
           }
 
-          message.taxCents = reader.int64().toString();
+          message.taxCents = reader.uint64().toString();
           continue;
         }
         case 6: {
@@ -218,7 +218,7 @@ export const OrderItem: MessageFns<OrderItem> = {
             break;
           }
 
-          message.discountCents = reader.int64().toString();
+          message.discountCents = reader.uint64().toString();
           continue;
         }
         case 7: {
@@ -226,7 +226,7 @@ export const OrderItem: MessageFns<OrderItem> = {
             break;
           }
 
-          message.totalCents = reader.int64().toString();
+          message.totalCents = reader.uint64().toString();
           continue;
         }
         case 8: {
@@ -577,7 +577,7 @@ export const PaymentSnapshot: MessageFns<PaymentSnapshot> = {
       Any.encode(message.providerResponse, writer.uint32(42).fork()).join();
     }
     if (message.feeCents !== undefined) {
-      writer.uint32(48).int64(message.feeCents);
+      writer.uint32(48).uint64(message.feeCents);
     }
     return writer;
   },
@@ -634,7 +634,7 @@ export const PaymentSnapshot: MessageFns<PaymentSnapshot> = {
             break;
           }
 
-          message.feeCents = reader.int64().toString();
+          message.feeCents = reader.uint64().toString();
           continue;
         }
       }

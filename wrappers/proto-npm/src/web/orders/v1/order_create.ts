@@ -417,7 +417,7 @@ export const OrderLineItemRequest: MessageFns<OrderLineItemRequest> = {
       writer.uint32(32).uint32(message.quantity);
     }
     if (message.unitPriceCentsClient !== undefined) {
-      writer.uint32(40).int64(message.unitPriceCentsClient);
+      writer.uint32(40).uint64(message.unitPriceCentsClient);
     }
     Object.entries(message.metadata).forEach(([key, value]) => {
       OrderLineItemRequest_MetadataEntry.encode({ key: key as any, value }, writer.uint32(50).fork()).join();
@@ -469,7 +469,7 @@ export const OrderLineItemRequest: MessageFns<OrderLineItemRequest> = {
             break;
           }
 
-          message.unitPriceCentsClient = reader.int64().toString();
+          message.unitPriceCentsClient = reader.uint64().toString();
           continue;
         }
         case 6: {

@@ -91,13 +91,13 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
       writer.uint32(42).string(message.status);
     }
     if (message.createdAt !== "0") {
-      writer.uint32(48).int64(message.createdAt);
+      writer.uint32(48).uint64(message.createdAt);
     }
     if (message.updatedAt !== "0") {
-      writer.uint32(56).int64(message.updatedAt);
+      writer.uint32(56).uint64(message.updatedAt);
     }
     if (message.expiresAt !== "0") {
-      writer.uint32(64).int64(message.expiresAt);
+      writer.uint32(64).uint64(message.expiresAt);
     }
     return writer;
   },
@@ -154,7 +154,7 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
             break;
           }
 
-          message.createdAt = reader.int64().toString();
+          message.createdAt = reader.uint64().toString();
           continue;
         }
         case 7: {
@@ -162,7 +162,7 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
             break;
           }
 
-          message.updatedAt = reader.int64().toString();
+          message.updatedAt = reader.uint64().toString();
           continue;
         }
         case 8: {
@@ -170,7 +170,7 @@ export const OrderIdempotencyKey: MessageFns<OrderIdempotencyKey> = {
             break;
           }
 
-          message.expiresAt = reader.int64().toString();
+          message.expiresAt = reader.uint64().toString();
           continue;
         }
       }

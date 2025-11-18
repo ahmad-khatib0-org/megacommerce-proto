@@ -26,11 +26,11 @@ type OrderItem struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// monetary amounts are stored in minor units (cents) to avoid float errors
-	SubtotalCents int64  `protobuf:"varint,3,opt,name=subtotal_cents,json=subtotalCents,proto3" json:"subtotal_cents,omitempty"`
-	ShippingCents int64  `protobuf:"varint,4,opt,name=shipping_cents,json=shippingCents,proto3" json:"shipping_cents,omitempty"`
-	TaxCents      int64  `protobuf:"varint,5,opt,name=tax_cents,json=taxCents,proto3" json:"tax_cents,omitempty"`
-	DiscountCents int64  `protobuf:"varint,6,opt,name=discount_cents,json=discountCents,proto3" json:"discount_cents,omitempty"`
-	TotalCents    int64  `protobuf:"varint,7,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`
+	SubtotalCents uint64 `protobuf:"varint,3,opt,name=subtotal_cents,json=subtotalCents,proto3" json:"subtotal_cents,omitempty"`
+	ShippingCents uint64 `protobuf:"varint,4,opt,name=shipping_cents,json=shippingCents,proto3" json:"shipping_cents,omitempty"`
+	TaxCents      uint64 `protobuf:"varint,5,opt,name=tax_cents,json=taxCents,proto3" json:"tax_cents,omitempty"`
+	DiscountCents uint64 `protobuf:"varint,6,opt,name=discount_cents,json=discountCents,proto3" json:"discount_cents,omitempty"`
+	TotalCents    uint64 `protobuf:"varint,7,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`
 	CurrencyCode  string `protobuf:"bytes,8,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
 	// line items snapshot
 	LineItems []*OrderLineItem `protobuf:"bytes,9,rep,name=line_items,json=lineItems,proto3" json:"line_items,omitempty"`
@@ -92,35 +92,35 @@ func (x *OrderItem) GetId() string {
 	return ""
 }
 
-func (x *OrderItem) GetSubtotalCents() int64 {
+func (x *OrderItem) GetSubtotalCents() uint64 {
 	if x != nil {
 		return x.SubtotalCents
 	}
 	return 0
 }
 
-func (x *OrderItem) GetShippingCents() int64 {
+func (x *OrderItem) GetShippingCents() uint64 {
 	if x != nil {
 		return x.ShippingCents
 	}
 	return 0
 }
 
-func (x *OrderItem) GetTaxCents() int64 {
+func (x *OrderItem) GetTaxCents() uint64 {
 	if x != nil {
 		return x.TaxCents
 	}
 	return 0
 }
 
-func (x *OrderItem) GetDiscountCents() int64 {
+func (x *OrderItem) GetDiscountCents() uint64 {
 	if x != nil {
 		return x.DiscountCents
 	}
 	return 0
 }
 
-func (x *OrderItem) GetTotalCents() int64 {
+func (x *OrderItem) GetTotalCents() uint64 {
 	if x != nil {
 		return x.TotalCents
 	}
@@ -227,7 +227,7 @@ type PaymentSnapshot struct {
 	// provider raw response for auditing (tokenized, avoid PII)
 	ProviderResponse *v1.Any `protobuf:"bytes,5,opt,name=provider_response,json=providerResponse,proto3" json:"provider_response,omitempty"`
 	// payment fees (in cents) charged by gateway, optional
-	FeeCents      *int64 `protobuf:"varint,6,opt,name=fee_cents,json=feeCents,proto3,oneof" json:"fee_cents,omitempty"`
+	FeeCents      *uint64 `protobuf:"varint,6,opt,name=fee_cents,json=feeCents,proto3,oneof" json:"fee_cents,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -297,7 +297,7 @@ func (x *PaymentSnapshot) GetProviderResponse() *v1.Any {
 	return nil
 }
 
-func (x *PaymentSnapshot) GetFeeCents() int64 {
+func (x *PaymentSnapshot) GetFeeCents() uint64 {
 	if x != nil && x.FeeCents != nil {
 		return *x.FeeCents
 	}
@@ -437,11 +437,11 @@ const file_orders_v1_order_get_proto_rawDesc = "" +
 	"\x19orders/v1/order_get.proto\x12\torders.v1\x1a\x15orders/v1/order.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xf6\x06\n" +
 	"\tOrderItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
-	"\x0esubtotal_cents\x18\x03 \x01(\x03R\rsubtotalCents\x12%\n" +
-	"\x0eshipping_cents\x18\x04 \x01(\x03R\rshippingCents\x12\x1b\n" +
-	"\ttax_cents\x18\x05 \x01(\x03R\btaxCents\x12%\n" +
-	"\x0ediscount_cents\x18\x06 \x01(\x03R\rdiscountCents\x12\x1f\n" +
-	"\vtotal_cents\x18\a \x01(\x03R\n" +
+	"\x0esubtotal_cents\x18\x03 \x01(\x04R\rsubtotalCents\x12%\n" +
+	"\x0eshipping_cents\x18\x04 \x01(\x04R\rshippingCents\x12\x1b\n" +
+	"\ttax_cents\x18\x05 \x01(\x04R\btaxCents\x12%\n" +
+	"\x0ediscount_cents\x18\x06 \x01(\x04R\rdiscountCents\x12\x1f\n" +
+	"\vtotal_cents\x18\a \x01(\x04R\n" +
 	"totalCents\x12#\n" +
 	"\rcurrency_code\x18\b \x01(\tR\fcurrencyCode\x127\n" +
 	"\n" +
@@ -469,7 +469,7 @@ const file_orders_v1_order_get_proto_rawDesc = "" +
 	"\x06status\x18\x03 \x01(\tR\x06status\x12%\n" +
 	"\x0epayment_method\x18\x04 \x01(\tR\rpaymentMethod\x12;\n" +
 	"\x11provider_response\x18\x05 \x01(\v2\x0e.shared.v1.AnyR\x10providerResponse\x12 \n" +
-	"\tfee_cents\x18\x06 \x01(\x03H\x00R\bfeeCents\x88\x01\x01B\f\n" +
+	"\tfee_cents\x18\x06 \x01(\x04H\x00R\bfeeCents\x88\x01\x01B\f\n" +
 	"\n" +
 	"_fee_cents\",\n" +
 	"\x0fOrderGetRequest\x12\x19\n" +

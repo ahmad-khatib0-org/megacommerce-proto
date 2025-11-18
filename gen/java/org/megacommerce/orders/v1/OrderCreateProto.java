@@ -3019,7 +3019,7 @@ java.lang.String defaultValue) {
      * This helps detect mismatches (promotions or stale inventory).
      * </pre>
      *
-     * <code>optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
+     * <code>optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
      * @return Whether the unitPriceCentsClient field is set.
      */
     boolean hasUnitPriceCentsClient();
@@ -3030,7 +3030,7 @@ java.lang.String defaultValue) {
      * This helps detect mismatches (promotions or stale inventory).
      * </pre>
      *
-     * <code>optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
+     * <code>optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
      * @return The unitPriceCentsClient.
      */
     long getUnitPriceCentsClient();
@@ -3291,7 +3291,7 @@ java.lang.String defaultValue);
      * This helps detect mismatches (promotions or stale inventory).
      * </pre>
      *
-     * <code>optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
+     * <code>optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
      * @return Whether the unitPriceCentsClient field is set.
      */
     @java.lang.Override
@@ -3305,7 +3305,7 @@ java.lang.String defaultValue);
      * This helps detect mismatches (promotions or stale inventory).
      * </pre>
      *
-     * <code>optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
+     * <code>optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
      * @return The unitPriceCentsClient.
      */
     @java.lang.Override
@@ -3435,7 +3435,7 @@ java.lang.String defaultValue) {
         output.writeUInt32(4, quantity_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt64(5, unitPriceCentsClient_);
+        output.writeUInt64(5, unitPriceCentsClient_);
       }
       com.google.protobuf.GeneratedMessage
         .serializeStringMapTo(
@@ -3467,7 +3467,7 @@ java.lang.String defaultValue) {
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, unitPriceCentsClient_);
+          .computeUInt64Size(5, unitPriceCentsClient_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetMetadata().getMap().entrySet()) {
@@ -3840,7 +3840,7 @@ java.lang.String defaultValue) {
                 break;
               } // case 32
               case 40: {
-                unitPriceCentsClient_ = input.readInt64();
+                unitPriceCentsClient_ = input.readUInt64();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
@@ -4146,7 +4146,7 @@ java.lang.String defaultValue) {
        * This helps detect mismatches (promotions or stale inventory).
        * </pre>
        *
-       * <code>optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
+       * <code>optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
        * @return Whether the unitPriceCentsClient field is set.
        */
       @java.lang.Override
@@ -4160,7 +4160,7 @@ java.lang.String defaultValue) {
        * This helps detect mismatches (promotions or stale inventory).
        * </pre>
        *
-       * <code>optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
+       * <code>optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
        * @return The unitPriceCentsClient.
        */
       @java.lang.Override
@@ -4174,7 +4174,7 @@ java.lang.String defaultValue) {
        * This helps detect mismatches (promotions or stale inventory).
        * </pre>
        *
-       * <code>optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
+       * <code>optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
        * @param value The unitPriceCentsClient to set.
        * @return This builder for chaining.
        */
@@ -4192,7 +4192,7 @@ java.lang.String defaultValue) {
        * This helps detect mismatches (promotions or stale inventory).
        * </pre>
        *
-       * <code>optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
+       * <code>optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUnitPriceCentsClient() {
@@ -5347,7 +5347,7 @@ java.lang.String defaultValue) {
       "Request\022\035\n\nproduct_id\030\001 \001(\tR\tproductId\022\035" +
       "\n\nvariant_id\030\002 \001(\tR\tvariantId\022\020\n\003sku\030\003 \001" +
       "(\tR\003sku\022\032\n\010quantity\030\004 \001(\rR\010quantity\022:\n\027u" +
-      "nit_price_cents_client\030\005 \001(\003H\000R\024unitPric" +
+      "nit_price_cents_client\030\005 \001(\004H\000R\024unitPric" +
       "eCentsClient\210\001\001\022I\n\010metadata\030\006 \003(\0132-.orde" +
       "rs.v1.OrderLineItemRequest.MetadataEntry" +
       "R\010metadata\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\t" +

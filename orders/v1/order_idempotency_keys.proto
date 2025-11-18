@@ -13,9 +13,9 @@ message OrderIdempotencyKey {
   string user_id = 3;
   string order_id = 4;
   string status = 5; // "IN_PROGRESS", "COMPLETED", "FAILED"
-  int64 created_at = 6;
-  int64 updated_at = 7;
-  int64 expires_at = 8;
+  uint64 created_at = 6;
+  uint64 updated_at = 7;
+  uint64 expires_at = 8;
 }
 
 enum OrderIdempotencyKeyStatus {

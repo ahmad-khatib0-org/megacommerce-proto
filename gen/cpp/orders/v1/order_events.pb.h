@@ -333,14 +333,14 @@ class OrderEvent final : public ::google::protobuf::Message
   ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_event_payload();
 
   public:
-  // int64 created_at = 5 [json_name = "createdAt"];
+  // uint64 created_at = 5 [json_name = "createdAt"];
   void clear_created_at() ;
-  ::int64_t created_at() const;
-  void set_created_at(::int64_t value);
+  ::uint64_t created_at() const;
+  void set_created_at(::uint64_t value);
 
   private:
-  ::int64_t _internal_created_at() const;
-  void _internal_set_created_at(::int64_t value);
+  ::uint64_t _internal_created_at() const;
+  void _internal_set_created_at(::uint64_t value);
 
   public:
   // @@protoc_insertion_point(class_scope:orders.v1.OrderEvent)
@@ -373,7 +373,7 @@ class OrderEvent final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr order_id_;
     ::google::protobuf::internal::ArenaStringPtr event_type_;
     ::shared::v1::Struct* PROTOBUF_NULLABLE event_payload_;
-    ::int64_t created_at_;
+    ::uint64_t created_at_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -686,26 +686,26 @@ inline void OrderEvent::set_allocated_event_payload(::shared::v1::Struct* PROTOB
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderEvent.event_payload)
 }
 
-// int64 created_at = 5 [json_name = "createdAt"];
+// uint64 created_at = 5 [json_name = "createdAt"];
 inline void OrderEvent::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.created_at_ = ::int64_t{0};
+  _impl_.created_at_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000010u;
 }
-inline ::int64_t OrderEvent::created_at() const {
+inline ::uint64_t OrderEvent::created_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderEvent.created_at)
   return _internal_created_at();
 }
-inline void OrderEvent::set_created_at(::int64_t value) {
+inline void OrderEvent::set_created_at(::uint64_t value) {
   _internal_set_created_at(value);
   _impl_._has_bits_[0] |= 0x00000010u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderEvent.created_at)
 }
-inline ::int64_t OrderEvent::_internal_created_at() const {
+inline ::uint64_t OrderEvent::_internal_created_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.created_at_;
 }
-inline void OrderEvent::_internal_set_created_at(::int64_t value) {
+inline void OrderEvent::_internal_set_created_at(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_ = value;
 }

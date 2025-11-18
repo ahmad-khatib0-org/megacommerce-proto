@@ -14,7 +14,7 @@ message OrderEvent {
   string order_id = 2;
   string event_type = 3; // e.g., ORDER_CREATED, PAYMENT_CAPTURED
   shared.v1.Struct event_payload = 4; // arbitrary payload with details
-  int64 created_at = 5; // UNIX timestamp
+  uint64 created_at = 5; // UNIX timestamp
 }
 
 enum OrderEventType {

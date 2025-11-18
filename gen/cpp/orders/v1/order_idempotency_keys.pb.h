@@ -343,34 +343,34 @@ class OrderIdempotencyKey final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_status();
 
   public:
-  // int64 created_at = 6 [json_name = "createdAt"];
+  // uint64 created_at = 6 [json_name = "createdAt"];
   void clear_created_at() ;
-  ::int64_t created_at() const;
-  void set_created_at(::int64_t value);
+  ::uint64_t created_at() const;
+  void set_created_at(::uint64_t value);
 
   private:
-  ::int64_t _internal_created_at() const;
-  void _internal_set_created_at(::int64_t value);
+  ::uint64_t _internal_created_at() const;
+  void _internal_set_created_at(::uint64_t value);
 
   public:
-  // int64 updated_at = 7 [json_name = "updatedAt"];
+  // uint64 updated_at = 7 [json_name = "updatedAt"];
   void clear_updated_at() ;
-  ::int64_t updated_at() const;
-  void set_updated_at(::int64_t value);
+  ::uint64_t updated_at() const;
+  void set_updated_at(::uint64_t value);
 
   private:
-  ::int64_t _internal_updated_at() const;
-  void _internal_set_updated_at(::int64_t value);
+  ::uint64_t _internal_updated_at() const;
+  void _internal_set_updated_at(::uint64_t value);
 
   public:
-  // int64 expires_at = 8 [json_name = "expiresAt"];
+  // uint64 expires_at = 8 [json_name = "expiresAt"];
   void clear_expires_at() ;
-  ::int64_t expires_at() const;
-  void set_expires_at(::int64_t value);
+  ::uint64_t expires_at() const;
+  void set_expires_at(::uint64_t value);
 
   private:
-  ::int64_t _internal_expires_at() const;
-  void _internal_set_expires_at(::int64_t value);
+  ::uint64_t _internal_expires_at() const;
+  void _internal_set_expires_at(::uint64_t value);
 
   public:
   // @@protoc_insertion_point(class_scope:orders.v1.OrderIdempotencyKey)
@@ -404,9 +404,9 @@ class OrderIdempotencyKey final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr user_id_;
     ::google::protobuf::internal::ArenaStringPtr order_id_;
     ::google::protobuf::internal::ArenaStringPtr status_;
-    ::int64_t created_at_;
-    ::int64_t updated_at_;
-    ::int64_t expires_at_;
+    ::uint64_t created_at_;
+    ::uint64_t updated_at_;
+    ::uint64_t expires_at_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -756,74 +756,74 @@ inline void OrderIdempotencyKey::set_allocated_status(::std::string* PROTOBUF_NU
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderIdempotencyKey.status)
 }
 
-// int64 created_at = 6 [json_name = "createdAt"];
+// uint64 created_at = 6 [json_name = "createdAt"];
 inline void OrderIdempotencyKey::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.created_at_ = ::int64_t{0};
+  _impl_.created_at_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000020u;
 }
-inline ::int64_t OrderIdempotencyKey::created_at() const {
+inline ::uint64_t OrderIdempotencyKey::created_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderIdempotencyKey.created_at)
   return _internal_created_at();
 }
-inline void OrderIdempotencyKey::set_created_at(::int64_t value) {
+inline void OrderIdempotencyKey::set_created_at(::uint64_t value) {
   _internal_set_created_at(value);
   _impl_._has_bits_[0] |= 0x00000020u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderIdempotencyKey.created_at)
 }
-inline ::int64_t OrderIdempotencyKey::_internal_created_at() const {
+inline ::uint64_t OrderIdempotencyKey::_internal_created_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.created_at_;
 }
-inline void OrderIdempotencyKey::_internal_set_created_at(::int64_t value) {
+inline void OrderIdempotencyKey::_internal_set_created_at(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_ = value;
 }
 
-// int64 updated_at = 7 [json_name = "updatedAt"];
+// uint64 updated_at = 7 [json_name = "updatedAt"];
 inline void OrderIdempotencyKey::clear_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.updated_at_ = ::int64_t{0};
+  _impl_.updated_at_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000040u;
 }
-inline ::int64_t OrderIdempotencyKey::updated_at() const {
+inline ::uint64_t OrderIdempotencyKey::updated_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderIdempotencyKey.updated_at)
   return _internal_updated_at();
 }
-inline void OrderIdempotencyKey::set_updated_at(::int64_t value) {
+inline void OrderIdempotencyKey::set_updated_at(::uint64_t value) {
   _internal_set_updated_at(value);
   _impl_._has_bits_[0] |= 0x00000040u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderIdempotencyKey.updated_at)
 }
-inline ::int64_t OrderIdempotencyKey::_internal_updated_at() const {
+inline ::uint64_t OrderIdempotencyKey::_internal_updated_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.updated_at_;
 }
-inline void OrderIdempotencyKey::_internal_set_updated_at(::int64_t value) {
+inline void OrderIdempotencyKey::_internal_set_updated_at(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_ = value;
 }
 
-// int64 expires_at = 8 [json_name = "expiresAt"];
+// uint64 expires_at = 8 [json_name = "expiresAt"];
 inline void OrderIdempotencyKey::clear_expires_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.expires_at_ = ::int64_t{0};
+  _impl_.expires_at_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000080u;
 }
-inline ::int64_t OrderIdempotencyKey::expires_at() const {
+inline ::uint64_t OrderIdempotencyKey::expires_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderIdempotencyKey.expires_at)
   return _internal_expires_at();
 }
-inline void OrderIdempotencyKey::set_expires_at(::int64_t value) {
+inline void OrderIdempotencyKey::set_expires_at(::uint64_t value) {
   _internal_set_expires_at(value);
   _impl_._has_bits_[0] |= 0x00000080u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderIdempotencyKey.expires_at)
 }
-inline ::int64_t OrderIdempotencyKey::_internal_expires_at() const {
+inline ::uint64_t OrderIdempotencyKey::_internal_expires_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.expires_at_;
 }
-inline void OrderIdempotencyKey::_internal_set_expires_at(::int64_t value) {
+inline void OrderIdempotencyKey::_internal_set_expires_at(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.expires_at_ = value;
 }

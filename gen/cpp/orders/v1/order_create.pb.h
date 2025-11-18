@@ -383,15 +383,15 @@ class OrderLineItemRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_sku();
 
   public:
-  // optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
+  // optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
   bool has_unit_price_cents_client() const;
   void clear_unit_price_cents_client() ;
-  ::int64_t unit_price_cents_client() const;
-  void set_unit_price_cents_client(::int64_t value);
+  ::uint64_t unit_price_cents_client() const;
+  void set_unit_price_cents_client(::uint64_t value);
 
   private:
-  ::int64_t _internal_unit_price_cents_client() const;
-  void _internal_set_unit_price_cents_client(::int64_t value);
+  ::uint64_t _internal_unit_price_cents_client() const;
+  void _internal_set_unit_price_cents_client(::uint64_t value);
 
   public:
   // uint32 quantity = 4 [json_name = "quantity"];
@@ -437,7 +437,7 @@ class OrderLineItemRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr product_id_;
     ::google::protobuf::internal::ArenaStringPtr variant_id_;
     ::google::protobuf::internal::ArenaStringPtr sku_;
-    ::int64_t unit_price_cents_client_;
+    ::uint64_t unit_price_cents_client_;
     ::uint32_t quantity_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1941,30 +1941,30 @@ inline void OrderLineItemRequest::_internal_set_quantity(::uint32_t value) {
   _impl_.quantity_ = value;
 }
 
-// optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
+// optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
 inline bool OrderLineItemRequest::has_unit_price_cents_client() const {
   bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline void OrderLineItemRequest::clear_unit_price_cents_client() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.unit_price_cents_client_ = ::int64_t{0};
+  _impl_.unit_price_cents_client_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000008u;
 }
-inline ::int64_t OrderLineItemRequest::unit_price_cents_client() const {
+inline ::uint64_t OrderLineItemRequest::unit_price_cents_client() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItemRequest.unit_price_cents_client)
   return _internal_unit_price_cents_client();
 }
-inline void OrderLineItemRequest::set_unit_price_cents_client(::int64_t value) {
+inline void OrderLineItemRequest::set_unit_price_cents_client(::uint64_t value) {
   _internal_set_unit_price_cents_client(value);
   _impl_._has_bits_[0] |= 0x00000008u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItemRequest.unit_price_cents_client)
 }
-inline ::int64_t OrderLineItemRequest::_internal_unit_price_cents_client() const {
+inline ::uint64_t OrderLineItemRequest::_internal_unit_price_cents_client() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.unit_price_cents_client_;
 }
-inline void OrderLineItemRequest::_internal_set_unit_price_cents_client(::int64_t value) {
+inline void OrderLineItemRequest::_internal_set_unit_price_cents_client(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.unit_price_cents_client_ = value;
 }

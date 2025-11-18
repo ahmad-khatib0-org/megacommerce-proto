@@ -225,19 +225,19 @@ public final class OrderIdempotencyKeysProto {
         getStatusBytes();
 
     /**
-     * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 6 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
 
     /**
-     * <code>int64 updated_at = 7 [json_name = "updatedAt"];</code>
+     * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
 
     /**
-     * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+     * <code>uint64 expires_at = 8 [json_name = "expiresAt"];</code>
      * @return The expiresAt.
      */
     long getExpiresAt();
@@ -490,7 +490,7 @@ public final class OrderIdempotencyKeysProto {
     public static final int CREATED_AT_FIELD_NUMBER = 6;
     private long createdAt_ = 0L;
     /**
-     * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 6 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -501,7 +501,7 @@ public final class OrderIdempotencyKeysProto {
     public static final int UPDATED_AT_FIELD_NUMBER = 7;
     private long updatedAt_ = 0L;
     /**
-     * <code>int64 updated_at = 7 [json_name = "updatedAt"];</code>
+     * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -512,7 +512,7 @@ public final class OrderIdempotencyKeysProto {
     public static final int EXPIRES_AT_FIELD_NUMBER = 8;
     private long expiresAt_ = 0L;
     /**
-     * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+     * <code>uint64 expires_at = 8 [json_name = "expiresAt"];</code>
      * @return The expiresAt.
      */
     @java.lang.Override
@@ -550,13 +550,13 @@ public final class OrderIdempotencyKeysProto {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, status_);
       }
       if (createdAt_ != 0L) {
-        output.writeInt64(6, createdAt_);
+        output.writeUInt64(6, createdAt_);
       }
       if (updatedAt_ != 0L) {
-        output.writeInt64(7, updatedAt_);
+        output.writeUInt64(7, updatedAt_);
       }
       if (expiresAt_ != 0L) {
-        output.writeInt64(8, expiresAt_);
+        output.writeUInt64(8, expiresAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -584,15 +584,15 @@ public final class OrderIdempotencyKeysProto {
       }
       if (createdAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, createdAt_);
+          .computeUInt64Size(6, createdAt_);
       }
       if (updatedAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, updatedAt_);
+          .computeUInt64Size(7, updatedAt_);
       }
       if (expiresAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, expiresAt_);
+          .computeUInt64Size(8, expiresAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -951,17 +951,17 @@ public final class OrderIdempotencyKeysProto {
                 break;
               } // case 42
               case 48: {
-                createdAt_ = input.readInt64();
+                createdAt_ = input.readUInt64();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
               case 56: {
-                updatedAt_ = input.readInt64();
+                updatedAt_ = input.readUInt64();
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
               case 64: {
-                expiresAt_ = input.readInt64();
+                expiresAt_ = input.readUInt64();
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
@@ -1364,7 +1364,7 @@ public final class OrderIdempotencyKeysProto {
 
       private long createdAt_ ;
       /**
-       * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 6 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -1372,7 +1372,7 @@ public final class OrderIdempotencyKeysProto {
         return createdAt_;
       }
       /**
-       * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 6 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
@@ -1384,7 +1384,7 @@ public final class OrderIdempotencyKeysProto {
         return this;
       }
       /**
-       * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 6 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
@@ -1396,7 +1396,7 @@ public final class OrderIdempotencyKeysProto {
 
       private long updatedAt_ ;
       /**
-       * <code>int64 updated_at = 7 [json_name = "updatedAt"];</code>
+       * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -1404,7 +1404,7 @@ public final class OrderIdempotencyKeysProto {
         return updatedAt_;
       }
       /**
-       * <code>int64 updated_at = 7 [json_name = "updatedAt"];</code>
+       * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
@@ -1416,7 +1416,7 @@ public final class OrderIdempotencyKeysProto {
         return this;
       }
       /**
-       * <code>int64 updated_at = 7 [json_name = "updatedAt"];</code>
+       * <code>uint64 updated_at = 7 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
@@ -1428,7 +1428,7 @@ public final class OrderIdempotencyKeysProto {
 
       private long expiresAt_ ;
       /**
-       * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+       * <code>uint64 expires_at = 8 [json_name = "expiresAt"];</code>
        * @return The expiresAt.
        */
       @java.lang.Override
@@ -1436,7 +1436,7 @@ public final class OrderIdempotencyKeysProto {
         return expiresAt_;
       }
       /**
-       * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+       * <code>uint64 expires_at = 8 [json_name = "expiresAt"];</code>
        * @param value The expiresAt to set.
        * @return This builder for chaining.
        */
@@ -1448,7 +1448,7 @@ public final class OrderIdempotencyKeysProto {
         return this;
       }
       /**
-       * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+       * <code>uint64 expires_at = 8 [json_name = "expiresAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearExpiresAt() {
@@ -1528,9 +1528,9 @@ public final class OrderIdempotencyKeysProto {
       "d\030\001 \001(\tR\002id\022\'\n\017idempotency_key\030\002 \001(\tR\016id" +
       "empotencyKey\022\027\n\007user_id\030\003 \001(\tR\006userId\022\031\n" +
       "\010order_id\030\004 \001(\tR\007orderId\022\026\n\006status\030\005 \001(\t" +
-      "R\006status\022\035\n\ncreated_at\030\006 \001(\003R\tcreatedAt\022" +
-      "\035\n\nupdated_at\030\007 \001(\003R\tupdatedAt\022\035\n\nexpire" +
-      "s_at\030\010 \001(\003R\texpiresAt*G\n\031OrderIdempotenc" +
+      "R\006status\022\035\n\ncreated_at\030\006 \001(\004R\tcreatedAt\022" +
+      "\035\n\nupdated_at\030\007 \001(\004R\tupdatedAt\022\035\n\nexpire" +
+      "s_at\030\010 \001(\004R\texpiresAt*G\n\031OrderIdempotenc" +
       "yKeyStatus\022\017\n\013IN_PROGRESS\020\000\022\r\n\tCOMPLETED" +
       "\020\001\022\n\n\006FAILED\020\002B\177\n\032org.megacommerce.order" +
       "s.v1B\031OrderIdempotencyKeysProtoZCgithub." +

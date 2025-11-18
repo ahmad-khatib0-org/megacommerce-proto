@@ -123,7 +123,7 @@ export const OrderEvent: MessageFns<OrderEvent> = {
       Struct.encode(message.eventPayload, writer.uint32(34).fork()).join();
     }
     if (message.createdAt !== "0") {
-      writer.uint32(40).int64(message.createdAt);
+      writer.uint32(40).uint64(message.createdAt);
     }
     return writer;
   },
@@ -172,7 +172,7 @@ export const OrderEvent: MessageFns<OrderEvent> = {
             break;
           }
 
-          message.createdAt = reader.int64().toString();
+          message.createdAt = reader.uint64().toString();
           continue;
         }
       }

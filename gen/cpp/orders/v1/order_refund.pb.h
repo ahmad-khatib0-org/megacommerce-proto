@@ -245,15 +245,15 @@ class RefundLineItemRefund final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_line_id();
 
   public:
-  // optional int64 amount_cents = 3 [json_name = "amountCents"];
+  // optional uint64 amount_cents = 3 [json_name = "amountCents"];
   bool has_amount_cents() const;
   void clear_amount_cents() ;
-  ::int64_t amount_cents() const;
-  void set_amount_cents(::int64_t value);
+  ::uint64_t amount_cents() const;
+  void set_amount_cents(::uint64_t value);
 
   private:
-  ::int64_t _internal_amount_cents() const;
-  void _internal_set_amount_cents(::int64_t value);
+  ::uint64_t _internal_amount_cents() const;
+  void _internal_set_amount_cents(::uint64_t value);
 
   public:
   // uint32 quantity = 2 [json_name = "quantity"];
@@ -293,7 +293,7 @@ class RefundLineItemRefund final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr line_id_;
-    ::int64_t amount_cents_;
+    ::uint64_t amount_cents_;
     ::uint32_t quantity_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1249,30 +1249,30 @@ inline void RefundLineItemRefund::_internal_set_quantity(::uint32_t value) {
   _impl_.quantity_ = value;
 }
 
-// optional int64 amount_cents = 3 [json_name = "amountCents"];
+// optional uint64 amount_cents = 3 [json_name = "amountCents"];
 inline bool RefundLineItemRefund::has_amount_cents() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline void RefundLineItemRefund::clear_amount_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.amount_cents_ = ::int64_t{0};
+  _impl_.amount_cents_ = ::uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline ::int64_t RefundLineItemRefund::amount_cents() const {
+inline ::uint64_t RefundLineItemRefund::amount_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.RefundLineItemRefund.amount_cents)
   return _internal_amount_cents();
 }
-inline void RefundLineItemRefund::set_amount_cents(::int64_t value) {
+inline void RefundLineItemRefund::set_amount_cents(::uint64_t value) {
   _internal_set_amount_cents(value);
   _impl_._has_bits_[0] |= 0x00000002u;
   // @@protoc_insertion_point(field_set:orders.v1.RefundLineItemRefund.amount_cents)
 }
-inline ::int64_t RefundLineItemRefund::_internal_amount_cents() const {
+inline ::uint64_t RefundLineItemRefund::_internal_amount_cents() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.amount_cents_;
 }
-inline void RefundLineItemRefund::_internal_set_amount_cents(::int64_t value) {
+inline void RefundLineItemRefund::_internal_set_amount_cents(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amount_cents_ = value;
 }

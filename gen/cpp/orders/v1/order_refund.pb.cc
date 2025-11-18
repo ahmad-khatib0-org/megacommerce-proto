@@ -33,7 +33,7 @@ inline constexpr RefundLineItemRefund::Impl_::Impl_(
         line_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        amount_cents_{::int64_t{0}},
+        amount_cents_{::uint64_t{0u}},
         quantity_{0u} {}
 
 template <typename>
@@ -174,7 +174,7 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5frefund_2eproto[] ABSL
     "\022\'\n\017refund_shipping\030\004 \001(\010R\016refundShippin"
     "g\"\204\001\n\024RefundLineItemRefund\022\027\n\007line_id\030\001 "
     "\001(\tR\006lineId\022\032\n\010quantity\030\002 \001(\rR\010quantity\022"
-    "&\n\014amount_cents\030\003 \001(\003H\000R\013amountCents\210\001\001B"
+    "&\n\014amount_cents\030\003 \001(\004H\000R\013amountCents\210\001\001B"
     "\017\n\r_amount_centsBv\n\032org.megacommerce.ord"
     "ers.v1B\020OrderRefundProtoZCgithub.com/ahm"
     "ad-khatib0-org/megacommerce-proto/gen/go"
@@ -1111,7 +1111,7 @@ RefundLineItemRefund::_table_ = {
     // uint32 quantity = 2 [json_name = "quantity"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RefundLineItemRefund, _impl_.quantity_), 2>(),
      {16, 2, 0, PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.quantity_)}},
-    // optional int64 amount_cents = 3 [json_name = "amountCents"];
+    // optional uint64 amount_cents = 3 [json_name = "amountCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(RefundLineItemRefund, _impl_.amount_cents_), 1>(),
      {24, 1, 0, PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.amount_cents_)}},
   }}, {{
@@ -1123,9 +1123,9 @@ RefundLineItemRefund::_table_ = {
     // uint32 quantity = 2 [json_name = "quantity"];
     {PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.quantity_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
-    // optional int64 amount_cents = 3 [json_name = "amountCents"];
+    // optional uint64 amount_cents = 3 [json_name = "amountCents"];
     {PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.amount_cents_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
   // no aux_entries
   {{
@@ -1189,11 +1189,11 @@ PROTOBUF_NOINLINE void RefundLineItemRefund::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // optional int64 amount_cents = 3 [json_name = "amountCents"];
+  // optional uint64 amount_cents = 3 [json_name = "amountCents"];
   if ((cached_has_bits & 0x00000002u) != 0) {
-    target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<3>(
-            stream, this_._internal_amount_cents(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        3, this_._internal_amount_cents(), target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -1229,9 +1229,9 @@ PROTOBUF_NOINLINE void RefundLineItemRefund::Clear() {
                                         this_._internal_line_id());
       }
     }
-    // optional int64 amount_cents = 3 [json_name = "amountCents"];
+    // optional uint64 amount_cents = 3 [json_name = "amountCents"];
     if ((cached_has_bits & 0x00000002u) != 0) {
-      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
           this_._internal_amount_cents());
     }
     // uint32 quantity = 2 [json_name = "quantity"];

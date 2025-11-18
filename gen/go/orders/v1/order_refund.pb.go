@@ -179,7 +179,7 @@ type RefundLineItemRefund struct {
 	LineId   string                 `protobuf:"bytes,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"` // link to OrderLineItem.line_id
 	Quantity uint32                 `protobuf:"varint,2,opt,name=quantity,proto3" json:"quantity,omitempty"`
 	// amount to refund in minor units (cents). If zero, compute pro-rata.
-	AmountCents   *int64 `protobuf:"varint,3,opt,name=amount_cents,json=amountCents,proto3,oneof" json:"amount_cents,omitempty"`
+	AmountCents   *uint64 `protobuf:"varint,3,opt,name=amount_cents,json=amountCents,proto3,oneof" json:"amount_cents,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -228,7 +228,7 @@ func (x *RefundLineItemRefund) GetQuantity() uint32 {
 	return 0
 }
 
-func (x *RefundLineItemRefund) GetAmountCents() int64 {
+func (x *RefundLineItemRefund) GetAmountCents() uint64 {
 	if x != nil && x.AmountCents != nil {
 		return *x.AmountCents
 	}
@@ -254,7 +254,7 @@ const file_orders_v1_order_refund_proto_rawDesc = "" +
 	"\x14RefundLineItemRefund\x12\x17\n" +
 	"\aline_id\x18\x01 \x01(\tR\x06lineId\x12\x1a\n" +
 	"\bquantity\x18\x02 \x01(\rR\bquantity\x12&\n" +
-	"\famount_cents\x18\x03 \x01(\x03H\x00R\vamountCents\x88\x01\x01B\x0f\n" +
+	"\famount_cents\x18\x03 \x01(\x04H\x00R\vamountCents\x88\x01\x01B\x0f\n" +
 	"\r_amount_centsBv\n" +
 	"\x1aorg.megacommerce.orders.v1B\x10OrderRefundProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 

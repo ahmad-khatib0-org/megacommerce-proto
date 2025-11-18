@@ -179,7 +179,7 @@ java.lang.String defaultValue);
      * Price fields in cents
      * </pre>
      *
-     * <code>int64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
+     * <code>uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
      * @return The unitPriceCents.
      */
     long getUnitPriceCents();
@@ -189,7 +189,7 @@ java.lang.String defaultValue);
      * optional
      * </pre>
      *
-     * <code>optional int64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
+     * <code>optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
      * @return Whether the listPriceCents field is set.
      */
     boolean hasListPriceCents();
@@ -198,7 +198,7 @@ java.lang.String defaultValue);
      * optional
      * </pre>
      *
-     * <code>optional int64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
+     * <code>optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
      * @return The listPriceCents.
      */
     long getListPriceCents();
@@ -208,7 +208,7 @@ java.lang.String defaultValue);
      * optional
      * </pre>
      *
-     * <code>optional int64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
+     * <code>optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
      * @return Whether the salePriceCents field is set.
      */
     boolean hasSalePriceCents();
@@ -217,7 +217,7 @@ java.lang.String defaultValue);
      * optional
      * </pre>
      *
-     * <code>optional int64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
+     * <code>optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
      * @return The salePriceCents.
      */
     long getSalePriceCents();
@@ -227,7 +227,7 @@ java.lang.String defaultValue);
      * total discount applied to this line (all units)
      * </pre>
      *
-     * <code>optional int64 discount_cents = 12 [json_name = "discountCents"];</code>
+     * <code>optional uint64 discount_cents = 12 [json_name = "discountCents"];</code>
      * @return Whether the discountCents field is set.
      */
     boolean hasDiscountCents();
@@ -236,7 +236,7 @@ java.lang.String defaultValue);
      * total discount applied to this line (all units)
      * </pre>
      *
-     * <code>optional int64 discount_cents = 12 [json_name = "discountCents"];</code>
+     * <code>optional uint64 discount_cents = 12 [json_name = "discountCents"];</code>
      * @return The discountCents.
      */
     long getDiscountCents();
@@ -246,7 +246,7 @@ java.lang.String defaultValue);
      * tax for this line (total)
      * </pre>
      *
-     * <code>optional int64 tax_cents = 13 [json_name = "taxCents"];</code>
+     * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
      * @return Whether the taxCents field is set.
      */
     boolean hasTaxCents();
@@ -255,7 +255,7 @@ java.lang.String defaultValue);
      * tax for this line (total)
      * </pre>
      *
-     * <code>optional int64 tax_cents = 13 [json_name = "taxCents"];</code>
+     * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
      * @return The taxCents.
      */
     long getTaxCents();
@@ -265,7 +265,7 @@ java.lang.String defaultValue);
      * (quantity * unit_price) - discount + tax
      * </pre>
      *
-     * <code>int64 total_cents = 14 [json_name = "totalCents"];</code>
+     * <code>uint64 total_cents = 14 [json_name = "totalCents"];</code>
      * @return The totalCents.
      */
     long getTotalCents();
@@ -343,7 +343,7 @@ java.lang.String defaultValue);
      * Timestamps
      * </pre>
      *
-     * <code>int64 created_at = 17 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
@@ -353,7 +353,7 @@ java.lang.String defaultValue);
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional int64 updated_at = 18 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     boolean hasUpdatedAt();
@@ -362,7 +362,7 @@ java.lang.String defaultValue);
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional int64 updated_at = 18 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
@@ -784,7 +784,7 @@ java.lang.String defaultValue) {
      * Price fields in cents
      * </pre>
      *
-     * <code>int64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
+     * <code>uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
      * @return The unitPriceCents.
      */
     @java.lang.Override
@@ -799,7 +799,7 @@ java.lang.String defaultValue) {
      * optional
      * </pre>
      *
-     * <code>optional int64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
+     * <code>optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
      * @return Whether the listPriceCents field is set.
      */
     @java.lang.Override
@@ -811,7 +811,7 @@ java.lang.String defaultValue) {
      * optional
      * </pre>
      *
-     * <code>optional int64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
+     * <code>optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
      * @return The listPriceCents.
      */
     @java.lang.Override
@@ -826,7 +826,7 @@ java.lang.String defaultValue) {
      * optional
      * </pre>
      *
-     * <code>optional int64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
+     * <code>optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
      * @return Whether the salePriceCents field is set.
      */
     @java.lang.Override
@@ -838,7 +838,7 @@ java.lang.String defaultValue) {
      * optional
      * </pre>
      *
-     * <code>optional int64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
+     * <code>optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
      * @return The salePriceCents.
      */
     @java.lang.Override
@@ -853,7 +853,7 @@ java.lang.String defaultValue) {
      * total discount applied to this line (all units)
      * </pre>
      *
-     * <code>optional int64 discount_cents = 12 [json_name = "discountCents"];</code>
+     * <code>optional uint64 discount_cents = 12 [json_name = "discountCents"];</code>
      * @return Whether the discountCents field is set.
      */
     @java.lang.Override
@@ -865,7 +865,7 @@ java.lang.String defaultValue) {
      * total discount applied to this line (all units)
      * </pre>
      *
-     * <code>optional int64 discount_cents = 12 [json_name = "discountCents"];</code>
+     * <code>optional uint64 discount_cents = 12 [json_name = "discountCents"];</code>
      * @return The discountCents.
      */
     @java.lang.Override
@@ -880,7 +880,7 @@ java.lang.String defaultValue) {
      * tax for this line (total)
      * </pre>
      *
-     * <code>optional int64 tax_cents = 13 [json_name = "taxCents"];</code>
+     * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
      * @return Whether the taxCents field is set.
      */
     @java.lang.Override
@@ -892,7 +892,7 @@ java.lang.String defaultValue) {
      * tax for this line (total)
      * </pre>
      *
-     * <code>optional int64 tax_cents = 13 [json_name = "taxCents"];</code>
+     * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
      * @return The taxCents.
      */
     @java.lang.Override
@@ -907,7 +907,7 @@ java.lang.String defaultValue) {
      * (quantity * unit_price) - discount + tax
      * </pre>
      *
-     * <code>int64 total_cents = 14 [json_name = "totalCents"];</code>
+     * <code>uint64 total_cents = 14 [json_name = "totalCents"];</code>
      * @return The totalCents.
      */
     @java.lang.Override
@@ -1013,7 +1013,7 @@ java.lang.String defaultValue) {
      * Timestamps
      * </pre>
      *
-     * <code>int64 created_at = 17 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -1028,7 +1028,7 @@ java.lang.String defaultValue) {
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional int64 updated_at = 18 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     @java.lang.Override
@@ -1040,7 +1040,7 @@ java.lang.String defaultValue) {
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional int64 updated_at = 18 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -1090,22 +1090,22 @@ java.lang.String defaultValue) {
         output.writeInt32(8, quantity_);
       }
       if (unitPriceCents_ != 0L) {
-        output.writeInt64(9, unitPriceCents_);
+        output.writeUInt64(9, unitPriceCents_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt64(10, listPriceCents_);
+        output.writeUInt64(10, listPriceCents_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt64(11, salePriceCents_);
+        output.writeUInt64(11, salePriceCents_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeInt64(12, discountCents_);
+        output.writeUInt64(12, discountCents_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeInt64(13, taxCents_);
+        output.writeUInt64(13, taxCents_);
       }
       if (totalCents_ != 0L) {
-        output.writeInt64(14, totalCents_);
+        output.writeUInt64(14, totalCents_);
       }
       for (int i = 0; i < appliedOfferIds_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 15, appliedOfferIds_.getRaw(i));
@@ -1114,10 +1114,10 @@ java.lang.String defaultValue) {
         output.writeMessage(16, getProductSnapshot());
       }
       if (createdAt_ != 0L) {
-        output.writeInt64(17, createdAt_);
+        output.writeUInt64(17, createdAt_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeInt64(18, updatedAt_);
+        output.writeUInt64(18, updatedAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1162,27 +1162,27 @@ java.lang.String defaultValue) {
       }
       if (unitPriceCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, unitPriceCents_);
+          .computeUInt64Size(9, unitPriceCents_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, listPriceCents_);
+          .computeUInt64Size(10, listPriceCents_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, salePriceCents_);
+          .computeUInt64Size(11, salePriceCents_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, discountCents_);
+          .computeUInt64Size(12, discountCents_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(13, taxCents_);
+          .computeUInt64Size(13, taxCents_);
       }
       if (totalCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(14, totalCents_);
+          .computeUInt64Size(14, totalCents_);
       }
       {
         int dataSize = 0;
@@ -1198,11 +1198,11 @@ java.lang.String defaultValue) {
       }
       if (createdAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(17, createdAt_);
+          .computeUInt64Size(17, createdAt_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(18, updatedAt_);
+          .computeUInt64Size(18, updatedAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1783,32 +1783,32 @@ java.lang.String defaultValue) {
                 break;
               } // case 64
               case 72: {
-                unitPriceCents_ = input.readInt64();
+                unitPriceCents_ = input.readUInt64();
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
               case 80: {
-                listPriceCents_ = input.readInt64();
+                listPriceCents_ = input.readUInt64();
                 bitField0_ |= 0x00000200;
                 break;
               } // case 80
               case 88: {
-                salePriceCents_ = input.readInt64();
+                salePriceCents_ = input.readUInt64();
                 bitField0_ |= 0x00000400;
                 break;
               } // case 88
               case 96: {
-                discountCents_ = input.readInt64();
+                discountCents_ = input.readUInt64();
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
               case 104: {
-                taxCents_ = input.readInt64();
+                taxCents_ = input.readUInt64();
                 bitField0_ |= 0x00001000;
                 break;
               } // case 104
               case 112: {
-                totalCents_ = input.readInt64();
+                totalCents_ = input.readUInt64();
                 bitField0_ |= 0x00002000;
                 break;
               } // case 112
@@ -1826,12 +1826,12 @@ java.lang.String defaultValue) {
                 break;
               } // case 130
               case 136: {
-                createdAt_ = input.readInt64();
+                createdAt_ = input.readUInt64();
                 bitField0_ |= 0x00010000;
                 break;
               } // case 136
               case 144: {
-                updatedAt_ = input.readInt64();
+                updatedAt_ = input.readUInt64();
                 bitField0_ |= 0x00020000;
                 break;
               } // case 144
@@ -2509,7 +2509,7 @@ java.lang.String defaultValue) {
        * Price fields in cents
        * </pre>
        *
-       * <code>int64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
+       * <code>uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
        * @return The unitPriceCents.
        */
       @java.lang.Override
@@ -2521,7 +2521,7 @@ java.lang.String defaultValue) {
        * Price fields in cents
        * </pre>
        *
-       * <code>int64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
+       * <code>uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
        * @param value The unitPriceCents to set.
        * @return This builder for chaining.
        */
@@ -2537,7 +2537,7 @@ java.lang.String defaultValue) {
        * Price fields in cents
        * </pre>
        *
-       * <code>int64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
+       * <code>uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUnitPriceCents() {
@@ -2553,7 +2553,7 @@ java.lang.String defaultValue) {
        * optional
        * </pre>
        *
-       * <code>optional int64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
+       * <code>optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
        * @return Whether the listPriceCents field is set.
        */
       @java.lang.Override
@@ -2565,7 +2565,7 @@ java.lang.String defaultValue) {
        * optional
        * </pre>
        *
-       * <code>optional int64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
+       * <code>optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
        * @return The listPriceCents.
        */
       @java.lang.Override
@@ -2577,7 +2577,7 @@ java.lang.String defaultValue) {
        * optional
        * </pre>
        *
-       * <code>optional int64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
+       * <code>optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
        * @param value The listPriceCents to set.
        * @return This builder for chaining.
        */
@@ -2593,7 +2593,7 @@ java.lang.String defaultValue) {
        * optional
        * </pre>
        *
-       * <code>optional int64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
+       * <code>optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearListPriceCents() {
@@ -2609,7 +2609,7 @@ java.lang.String defaultValue) {
        * optional
        * </pre>
        *
-       * <code>optional int64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
+       * <code>optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
        * @return Whether the salePriceCents field is set.
        */
       @java.lang.Override
@@ -2621,7 +2621,7 @@ java.lang.String defaultValue) {
        * optional
        * </pre>
        *
-       * <code>optional int64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
+       * <code>optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
        * @return The salePriceCents.
        */
       @java.lang.Override
@@ -2633,7 +2633,7 @@ java.lang.String defaultValue) {
        * optional
        * </pre>
        *
-       * <code>optional int64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
+       * <code>optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
        * @param value The salePriceCents to set.
        * @return This builder for chaining.
        */
@@ -2649,7 +2649,7 @@ java.lang.String defaultValue) {
        * optional
        * </pre>
        *
-       * <code>optional int64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
+       * <code>optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSalePriceCents() {
@@ -2665,7 +2665,7 @@ java.lang.String defaultValue) {
        * total discount applied to this line (all units)
        * </pre>
        *
-       * <code>optional int64 discount_cents = 12 [json_name = "discountCents"];</code>
+       * <code>optional uint64 discount_cents = 12 [json_name = "discountCents"];</code>
        * @return Whether the discountCents field is set.
        */
       @java.lang.Override
@@ -2677,7 +2677,7 @@ java.lang.String defaultValue) {
        * total discount applied to this line (all units)
        * </pre>
        *
-       * <code>optional int64 discount_cents = 12 [json_name = "discountCents"];</code>
+       * <code>optional uint64 discount_cents = 12 [json_name = "discountCents"];</code>
        * @return The discountCents.
        */
       @java.lang.Override
@@ -2689,7 +2689,7 @@ java.lang.String defaultValue) {
        * total discount applied to this line (all units)
        * </pre>
        *
-       * <code>optional int64 discount_cents = 12 [json_name = "discountCents"];</code>
+       * <code>optional uint64 discount_cents = 12 [json_name = "discountCents"];</code>
        * @param value The discountCents to set.
        * @return This builder for chaining.
        */
@@ -2705,7 +2705,7 @@ java.lang.String defaultValue) {
        * total discount applied to this line (all units)
        * </pre>
        *
-       * <code>optional int64 discount_cents = 12 [json_name = "discountCents"];</code>
+       * <code>optional uint64 discount_cents = 12 [json_name = "discountCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDiscountCents() {
@@ -2721,7 +2721,7 @@ java.lang.String defaultValue) {
        * tax for this line (total)
        * </pre>
        *
-       * <code>optional int64 tax_cents = 13 [json_name = "taxCents"];</code>
+       * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
        * @return Whether the taxCents field is set.
        */
       @java.lang.Override
@@ -2733,7 +2733,7 @@ java.lang.String defaultValue) {
        * tax for this line (total)
        * </pre>
        *
-       * <code>optional int64 tax_cents = 13 [json_name = "taxCents"];</code>
+       * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
        * @return The taxCents.
        */
       @java.lang.Override
@@ -2745,7 +2745,7 @@ java.lang.String defaultValue) {
        * tax for this line (total)
        * </pre>
        *
-       * <code>optional int64 tax_cents = 13 [json_name = "taxCents"];</code>
+       * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
        * @param value The taxCents to set.
        * @return This builder for chaining.
        */
@@ -2761,7 +2761,7 @@ java.lang.String defaultValue) {
        * tax for this line (total)
        * </pre>
        *
-       * <code>optional int64 tax_cents = 13 [json_name = "taxCents"];</code>
+       * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTaxCents() {
@@ -2777,7 +2777,7 @@ java.lang.String defaultValue) {
        * (quantity * unit_price) - discount + tax
        * </pre>
        *
-       * <code>int64 total_cents = 14 [json_name = "totalCents"];</code>
+       * <code>uint64 total_cents = 14 [json_name = "totalCents"];</code>
        * @return The totalCents.
        */
       @java.lang.Override
@@ -2789,7 +2789,7 @@ java.lang.String defaultValue) {
        * (quantity * unit_price) - discount + tax
        * </pre>
        *
-       * <code>int64 total_cents = 14 [json_name = "totalCents"];</code>
+       * <code>uint64 total_cents = 14 [json_name = "totalCents"];</code>
        * @param value The totalCents to set.
        * @return This builder for chaining.
        */
@@ -2805,7 +2805,7 @@ java.lang.String defaultValue) {
        * (quantity * unit_price) - discount + tax
        * </pre>
        *
-       * <code>int64 total_cents = 14 [json_name = "totalCents"];</code>
+       * <code>uint64 total_cents = 14 [json_name = "totalCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalCents() {
@@ -3125,7 +3125,7 @@ java.lang.String defaultValue) {
        * Timestamps
        * </pre>
        *
-       * <code>int64 created_at = 17 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -3137,7 +3137,7 @@ java.lang.String defaultValue) {
        * Timestamps
        * </pre>
        *
-       * <code>int64 created_at = 17 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
@@ -3153,7 +3153,7 @@ java.lang.String defaultValue) {
        * Timestamps
        * </pre>
        *
-       * <code>int64 created_at = 17 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
@@ -3169,7 +3169,7 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional int64 updated_at = 18 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
        * @return Whether the updatedAt field is set.
        */
       @java.lang.Override
@@ -3181,7 +3181,7 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional int64 updated_at = 18 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -3193,7 +3193,7 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional int64 updated_at = 18 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
@@ -3209,7 +3209,7 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional int64 updated_at = 18 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
@@ -3297,17 +3297,17 @@ java.lang.String defaultValue) {
       " \001(\tR\003sku\022\024\n\005title\030\006 \001(\tR\005title\022H\n\nattri" +
       "butes\030\007 \003(\0132(.orders.v1.OrderLineItem.At" +
       "tributesEntryR\nattributes\022\032\n\010quantity\030\010 " +
-      "\001(\005R\010quantity\022(\n\020unit_price_cents\030\t \001(\003R" +
+      "\001(\005R\010quantity\022(\n\020unit_price_cents\030\t \001(\004R" +
       "\016unitPriceCents\022-\n\020list_price_cents\030\n \001(" +
-      "\003H\000R\016listPriceCents\210\001\001\022-\n\020sale_price_cen" +
-      "ts\030\013 \001(\003H\001R\016salePriceCents\210\001\001\022*\n\016discoun" +
-      "t_cents\030\014 \001(\003H\002R\rdiscountCents\210\001\001\022 \n\ttax" +
-      "_cents\030\r \001(\003H\003R\010taxCents\210\001\001\022\037\n\013total_cen" +
-      "ts\030\016 \001(\003R\ntotalCents\022*\n\021applied_offer_id" +
+      "\004H\000R\016listPriceCents\210\001\001\022-\n\020sale_price_cen" +
+      "ts\030\013 \001(\004H\001R\016salePriceCents\210\001\001\022*\n\016discoun" +
+      "t_cents\030\014 \001(\004H\002R\rdiscountCents\210\001\001\022 \n\ttax" +
+      "_cents\030\r \001(\004H\003R\010taxCents\210\001\001\022\037\n\013total_cen" +
+      "ts\030\016 \001(\004R\ntotalCents\022*\n\021applied_offer_id" +
       "s\030\017 \003(\tR\017appliedOfferIds\0229\n\020product_snap" +
       "shot\030\020 \001(\0132\016.shared.v1.AnyR\017productSnaps" +
-      "hot\022\035\n\ncreated_at\030\021 \001(\003R\tcreatedAt\022\"\n\nup" +
-      "dated_at\030\022 \001(\003H\004R\tupdatedAt\210\001\001\032=\n\017Attrib" +
+      "hot\022\035\n\ncreated_at\030\021 \001(\004R\tcreatedAt\022\"\n\nup" +
+      "dated_at\030\022 \001(\004H\004R\tupdatedAt\210\001\001\032=\n\017Attrib" +
       "utesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
       "(\tR\005value:\0028\001B\023\n\021_list_price_centsB\023\n\021_s" +
       "ale_price_centsB\021\n\017_discount_centsB\014\n\n_t" +

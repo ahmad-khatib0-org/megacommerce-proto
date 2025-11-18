@@ -40,7 +40,7 @@ inline constexpr OrderEvent::Impl_::Impl_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         event_payload_{nullptr},
-        created_at_{::int64_t{0}} {}
+        created_at_{::uint64_t{0u}} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR OrderEvent::OrderEvent(::_pbi::ConstantInitialized)
@@ -99,7 +99,7 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fevents_2eproto[] ABSL
     "\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001(\tR\007orde"
     "rId\022\035\n\nevent_type\030\003 \001(\tR\teventType\0226\n\rev"
     "ent_payload\030\004 \001(\0132\021.shared.v1.StructR\014ev"
-    "entPayload\022\035\n\ncreated_at\030\005 \001(\003R\tcreatedA"
+    "entPayload\022\035\n\ncreated_at\030\005 \001(\004R\tcreatedA"
     "t*\323\002\n\016OrderEventType\022\027\n\023ORDER_EVENT_UNKN"
     "OWN\020\000\022\035\n\031ORDER_EVENT_ORDER_CREATED\020\001\022 \n\034"
     "ORDER_EVENT_PAYMENT_CAPTURED\020\002\022\036\n\032ORDER_"
@@ -304,7 +304,7 @@ OrderEvent::_table_ = {
     // .shared.v1.Struct event_payload = 4 [json_name = "eventPayload"];
     {::_pbi::TcParser::FastMtS1,
      {34, 3, 0, PROTOBUF_FIELD_OFFSET(OrderEvent, _impl_.event_payload_)}},
-    // int64 created_at = 5 [json_name = "createdAt"];
+    // uint64 created_at = 5 [json_name = "createdAt"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderEvent, _impl_.created_at_), 4>(),
      {40, 4, 0, PROTOBUF_FIELD_OFFSET(OrderEvent, _impl_.created_at_)}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -324,9 +324,9 @@ OrderEvent::_table_ = {
     // .shared.v1.Struct event_payload = 4 [json_name = "eventPayload"];
     {PROTOBUF_FIELD_OFFSET(OrderEvent, _impl_.event_payload_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // int64 created_at = 5 [json_name = "createdAt"];
+    // uint64 created_at = 5 [json_name = "createdAt"];
     {PROTOBUF_FIELD_OFFSET(OrderEvent, _impl_.created_at_), _Internal::kHasBitsOffset + 4, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
   {{
       {::_pbi::TcParser::GetTable<::shared::v1::Struct>()},
@@ -362,7 +362,7 @@ PROTOBUF_NOINLINE void OrderEvent::Clear() {
       _impl_.event_payload_->Clear();
     }
   }
-  _impl_.created_at_ = ::int64_t{0};
+  _impl_.created_at_ = ::uint64_t{0u};
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -420,12 +420,12 @@ PROTOBUF_NOINLINE void OrderEvent::Clear() {
         stream);
   }
 
-  // int64 created_at = 5 [json_name = "createdAt"];
+  // uint64 created_at = 5 [json_name = "createdAt"];
   if ((cached_has_bits & 0x00000010u) != 0) {
     if (this_._internal_created_at() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<5>(
-              stream, this_._internal_created_at(), target);
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          5, this_._internal_created_at(), target);
     }
   }
 
@@ -481,10 +481,10 @@ PROTOBUF_NOINLINE void OrderEvent::Clear() {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.event_payload_);
     }
-    // int64 created_at = 5 [json_name = "createdAt"];
+    // uint64 created_at = 5 [json_name = "createdAt"];
     if ((cached_has_bits & 0x00000010u) != 0) {
       if (this_._internal_created_at() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_created_at());
       }
     }

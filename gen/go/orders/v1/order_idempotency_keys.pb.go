@@ -77,9 +77,9 @@ type OrderIdempotencyKey struct {
 	UserId         string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	OrderId        string                 `protobuf:"bytes,4,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	Status         string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"` // "IN_PROGRESS", "COMPLETED", "FAILED"
-	CreatedAt      int64                  `protobuf:"varint,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt      int64                  `protobuf:"varint,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	ExpiresAt      int64                  `protobuf:"varint,8,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	CreatedAt      uint64                 `protobuf:"varint,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt      uint64                 `protobuf:"varint,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	ExpiresAt      uint64                 `protobuf:"varint,8,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -149,21 +149,21 @@ func (x *OrderIdempotencyKey) GetStatus() string {
 	return ""
 }
 
-func (x *OrderIdempotencyKey) GetCreatedAt() int64 {
+func (x *OrderIdempotencyKey) GetCreatedAt() uint64 {
 	if x != nil {
 		return x.CreatedAt
 	}
 	return 0
 }
 
-func (x *OrderIdempotencyKey) GetUpdatedAt() int64 {
+func (x *OrderIdempotencyKey) GetUpdatedAt() uint64 {
 	if x != nil {
 		return x.UpdatedAt
 	}
 	return 0
 }
 
-func (x *OrderIdempotencyKey) GetExpiresAt() int64 {
+func (x *OrderIdempotencyKey) GetExpiresAt() uint64 {
 	if x != nil {
 		return x.ExpiresAt
 	}
@@ -182,11 +182,11 @@ const file_orders_v1_order_idempotency_keys_proto_rawDesc = "" +
 	"\border_id\x18\x04 \x01(\tR\aorderId\x12\x16\n" +
 	"\x06status\x18\x05 \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x06 \x01(\x03R\tcreatedAt\x12\x1d\n" +
+	"created_at\x18\x06 \x01(\x04R\tcreatedAt\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\a \x01(\x03R\tupdatedAt\x12\x1d\n" +
+	"updated_at\x18\a \x01(\x04R\tupdatedAt\x12\x1d\n" +
 	"\n" +
-	"expires_at\x18\b \x01(\x03R\texpiresAt*G\n" +
+	"expires_at\x18\b \x01(\x04R\texpiresAt*G\n" +
 	"\x19OrderIdempotencyKeyStatus\x12\x0f\n" +
 	"\vIN_PROGRESS\x10\x00\x12\r\n" +
 	"\tCOMPLETED\x10\x01\x12\n" +

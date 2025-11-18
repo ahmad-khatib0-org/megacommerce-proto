@@ -236,7 +236,7 @@ export const RefundLineItemRefund: MessageFns<RefundLineItemRefund> = {
       writer.uint32(16).uint32(message.quantity);
     }
     if (message.amountCents !== undefined) {
-      writer.uint32(24).int64(message.amountCents);
+      writer.uint32(24).uint64(message.amountCents);
     }
     return writer;
   },
@@ -269,7 +269,7 @@ export const RefundLineItemRefund: MessageFns<RefundLineItemRefund> = {
             break;
           }
 
-          message.amountCents = reader.int64().toString();
+          message.amountCents = reader.uint64().toString();
           continue;
         }
       }

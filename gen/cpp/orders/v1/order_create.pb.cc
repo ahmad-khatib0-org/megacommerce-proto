@@ -76,7 +76,7 @@ inline constexpr OrderLineItemRequest::Impl_::Impl_(
         sku_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        unit_price_cents_client_{::int64_t{0}},
+        unit_price_cents_client_{::uint64_t{0u}},
         quantity_{0u} {}
 
 template <typename>
@@ -273,7 +273,7 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fcreate_2eproto[] ABSL
     "Request\022\035\n\nproduct_id\030\001 \001(\tR\tproductId\022\035"
     "\n\nvariant_id\030\002 \001(\tR\tvariantId\022\020\n\003sku\030\003 \001"
     "(\tR\003sku\022\032\n\010quantity\030\004 \001(\rR\010quantity\022:\n\027u"
-    "nit_price_cents_client\030\005 \001(\003H\000R\024unitPric"
+    "nit_price_cents_client\030\005 \001(\004H\000R\024unitPric"
     "eCentsClient\210\001\001\022I\n\010metadata\030\006 \003(\0132-.orde"
     "rs.v1.OrderLineItemRequest.MetadataEntry"
     "R\010metadata\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\t"
@@ -1354,7 +1354,7 @@ OrderLineItemRequest::_table_ = {
     // uint32 quantity = 4 [json_name = "quantity"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(OrderLineItemRequest, _impl_.quantity_), 4>(),
      {32, 4, 0, PROTOBUF_FIELD_OFFSET(OrderLineItemRequest, _impl_.quantity_)}},
-    // optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
+    // optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItemRequest, _impl_.unit_price_cents_client_), 3>(),
      {40, 3, 0, PROTOBUF_FIELD_OFFSET(OrderLineItemRequest, _impl_.unit_price_cents_client_)}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -1374,9 +1374,9 @@ OrderLineItemRequest::_table_ = {
     // uint32 quantity = 4 [json_name = "quantity"];
     {PROTOBUF_FIELD_OFFSET(OrderLineItemRequest, _impl_.quantity_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
-    // optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
+    // optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
     {PROTOBUF_FIELD_OFFSET(OrderLineItemRequest, _impl_.unit_price_cents_client_), _Internal::kHasBitsOffset + 3, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // map<string, string> metadata = 6 [json_name = "metadata"];
     {PROTOBUF_FIELD_OFFSET(OrderLineItemRequest, _impl_.metadata_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
@@ -1479,11 +1479,11 @@ PROTOBUF_NOINLINE void OrderLineItemRequest::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
+  // optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
   if ((cached_has_bits & 0x00000008u) != 0) {
-    target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<5>(
-            stream, this_._internal_unit_price_cents_client(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        5, this_._internal_unit_price_cents_client(), target);
   }
 
   // map<string, string> metadata = 6 [json_name = "metadata"];
@@ -1578,9 +1578,9 @@ PROTOBUF_NOINLINE void OrderLineItemRequest::Clear() {
                                         this_._internal_sku());
       }
     }
-    // optional int64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
+    // optional uint64 unit_price_cents_client = 5 [json_name = "unitPriceCentsClient"];
     if ((cached_has_bits & 0x00000008u) != 0) {
-      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
           this_._internal_unit_price_cents_client());
     }
     // uint32 quantity = 4 [json_name = "quantity"];

@@ -45,9 +45,9 @@ inline constexpr OrderIdempotencyKey::Impl_::Impl_(
         status_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        created_at_{::int64_t{0}},
-        updated_at_{::int64_t{0}},
-        expires_at_{::int64_t{0}} {}
+        created_at_{::uint64_t{0u}},
+        updated_at_{::uint64_t{0u}},
+        expires_at_{::uint64_t{0u}} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR OrderIdempotencyKey::OrderIdempotencyKey(::_pbi::ConstantInitialized)
@@ -112,9 +112,9 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fidempotency_5fkeys_2e
     "d\030\001 \001(\tR\002id\022\'\n\017idempotency_key\030\002 \001(\tR\016id"
     "empotencyKey\022\027\n\007user_id\030\003 \001(\tR\006userId\022\031\n"
     "\010order_id\030\004 \001(\tR\007orderId\022\026\n\006status\030\005 \001(\t"
-    "R\006status\022\035\n\ncreated_at\030\006 \001(\003R\tcreatedAt\022"
-    "\035\n\nupdated_at\030\007 \001(\003R\tupdatedAt\022\035\n\nexpire"
-    "s_at\030\010 \001(\003R\texpiresAt*G\n\031OrderIdempotenc"
+    "R\006status\022\035\n\ncreated_at\030\006 \001(\004R\tcreatedAt\022"
+    "\035\n\nupdated_at\030\007 \001(\004R\tupdatedAt\022\035\n\nexpire"
+    "s_at\030\010 \001(\004R\texpiresAt*G\n\031OrderIdempotenc"
     "yKeyStatus\022\017\n\013IN_PROGRESS\020\000\022\r\n\tCOMPLETED"
     "\020\001\022\n\n\006FAILED\020\002B\177\n\032org.megacommerce.order"
     "s.v1B\031OrderIdempotencyKeysProtoZCgithub."
@@ -297,7 +297,7 @@ OrderIdempotencyKey::_table_ = {
     ::_pbi::TcParser::GetTable<::orders::v1::OrderIdempotencyKey>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // int64 expires_at = 8 [json_name = "expiresAt"];
+    // uint64 expires_at = 8 [json_name = "expiresAt"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderIdempotencyKey, _impl_.expires_at_), 7>(),
      {64, 7, 0, PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.expires_at_)}},
     // string id = 1 [json_name = "id"];
@@ -315,10 +315,10 @@ OrderIdempotencyKey::_table_ = {
     // string status = 5 [json_name = "status"];
     {::_pbi::TcParser::FastUS1,
      {42, 4, 0, PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.status_)}},
-    // int64 created_at = 6 [json_name = "createdAt"];
+    // uint64 created_at = 6 [json_name = "createdAt"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderIdempotencyKey, _impl_.created_at_), 5>(),
      {48, 5, 0, PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.created_at_)}},
-    // int64 updated_at = 7 [json_name = "updatedAt"];
+    // uint64 updated_at = 7 [json_name = "updatedAt"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderIdempotencyKey, _impl_.updated_at_), 6>(),
      {56, 6, 0, PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.updated_at_)}},
   }}, {{
@@ -339,15 +339,15 @@ OrderIdempotencyKey::_table_ = {
     // string status = 5 [json_name = "status"];
     {PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.status_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // int64 created_at = 6 [json_name = "createdAt"];
+    // uint64 created_at = 6 [json_name = "createdAt"];
     {PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.created_at_), _Internal::kHasBitsOffset + 5, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // int64 updated_at = 7 [json_name = "updatedAt"];
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 updated_at = 7 [json_name = "updatedAt"];
     {PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.updated_at_), _Internal::kHasBitsOffset + 6, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // int64 expires_at = 8 [json_name = "expiresAt"];
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // uint64 expires_at = 8 [json_name = "expiresAt"];
     {PROTOBUF_FIELD_OFFSET(OrderIdempotencyKey, _impl_.expires_at_), _Internal::kHasBitsOffset + 7, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
   // no aux_entries
   {{
@@ -459,30 +459,30 @@ PROTOBUF_NOINLINE void OrderIdempotencyKey::Clear() {
     }
   }
 
-  // int64 created_at = 6 [json_name = "createdAt"];
+  // uint64 created_at = 6 [json_name = "createdAt"];
   if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
     if (this_._internal_created_at() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<6>(
-              stream, this_._internal_created_at(), target);
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          6, this_._internal_created_at(), target);
     }
   }
 
-  // int64 updated_at = 7 [json_name = "updatedAt"];
+  // uint64 updated_at = 7 [json_name = "updatedAt"];
   if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
     if (this_._internal_updated_at() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<7>(
-              stream, this_._internal_updated_at(), target);
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          7, this_._internal_updated_at(), target);
     }
   }
 
-  // int64 expires_at = 8 [json_name = "expiresAt"];
+  // uint64 expires_at = 8 [json_name = "expiresAt"];
   if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
     if (this_._internal_expires_at() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<8>(
-              stream, this_._internal_expires_at(), target);
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          8, this_._internal_expires_at(), target);
     }
   }
 
@@ -547,24 +547,24 @@ PROTOBUF_NOINLINE void OrderIdempotencyKey::Clear() {
                                         this_._internal_status());
       }
     }
-    // int64 created_at = 6 [json_name = "createdAt"];
+    // uint64 created_at = 6 [json_name = "createdAt"];
     if ((cached_has_bits & 0x00000020u) != 0) {
       if (this_._internal_created_at() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_created_at());
       }
     }
-    // int64 updated_at = 7 [json_name = "updatedAt"];
+    // uint64 updated_at = 7 [json_name = "updatedAt"];
     if ((cached_has_bits & 0x00000040u) != 0) {
       if (this_._internal_updated_at() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_updated_at());
       }
     }
-    // int64 expires_at = 8 [json_name = "expiresAt"];
+    // uint64 expires_at = 8 [json_name = "expiresAt"];
     if ((cached_has_bits & 0x00000080u) != 0) {
       if (this_._internal_expires_at() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_expires_at());
       }
     }
