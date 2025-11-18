@@ -3,7 +3,11 @@
 import grpc
 import warnings
 
-from orders.v1 import orders_pb2 as orders_dot_v1_dot_orders__pb2
+from orders.v1 import order_cancel_pb2 as orders_dot_v1_dot_order__cancel__pb2
+from orders.v1 import order_create_pb2 as orders_dot_v1_dot_order__create__pb2
+from orders.v1 import order_get_pb2 as orders_dot_v1_dot_order__get__pb2
+from orders.v1 import order_refund_pb2 as orders_dot_v1_dot_order__refund__pb2
+from orders.v1 import orders_list_pb2 as orders_dot_v1_dot_orders__list__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -36,28 +40,28 @@ class OrdersServiceStub(object):
         """
         self.OrderCreate = channel.unary_unary(
                 '/orders.v1.OrdersService/OrderCreate',
-                request_serializer=orders_dot_v1_dot_orders__pb2.OrderCreateRequest.SerializeToString,
-                response_deserializer=orders_dot_v1_dot_orders__pb2.OrderCreateResponse.FromString,
+                request_serializer=orders_dot_v1_dot_order__create__pb2.OrderCreateRequest.SerializeToString,
+                response_deserializer=orders_dot_v1_dot_order__create__pb2.OrderCreateResponse.FromString,
                 _registered_method=True)
         self.OrderGet = channel.unary_unary(
                 '/orders.v1.OrdersService/OrderGet',
-                request_serializer=orders_dot_v1_dot_orders__pb2.OrderGetRequest.SerializeToString,
-                response_deserializer=orders_dot_v1_dot_orders__pb2.OrderGetResponse.FromString,
+                request_serializer=orders_dot_v1_dot_order__get__pb2.OrderGetRequest.SerializeToString,
+                response_deserializer=orders_dot_v1_dot_order__get__pb2.OrderGetResponse.FromString,
                 _registered_method=True)
         self.OrdersList = channel.unary_unary(
                 '/orders.v1.OrdersService/OrdersList',
-                request_serializer=orders_dot_v1_dot_orders__pb2.OrdersListRequest.SerializeToString,
-                response_deserializer=orders_dot_v1_dot_orders__pb2.OrdersListResponse.FromString,
+                request_serializer=orders_dot_v1_dot_orders__list__pb2.OrdersListRequest.SerializeToString,
+                response_deserializer=orders_dot_v1_dot_orders__list__pb2.OrdersListResponse.FromString,
                 _registered_method=True)
         self.OrderCancel = channel.unary_unary(
                 '/orders.v1.OrdersService/OrderCancel',
-                request_serializer=orders_dot_v1_dot_orders__pb2.OrderCancelRequest.SerializeToString,
-                response_deserializer=orders_dot_v1_dot_orders__pb2.OrderCancelResponse.FromString,
+                request_serializer=orders_dot_v1_dot_order__cancel__pb2.OrderCancelRequest.SerializeToString,
+                response_deserializer=orders_dot_v1_dot_order__cancel__pb2.OrderCancelResponse.FromString,
                 _registered_method=True)
         self.OrderRefund = channel.unary_unary(
                 '/orders.v1.OrdersService/OrderRefund',
-                request_serializer=orders_dot_v1_dot_orders__pb2.OrderRefundRequest.SerializeToString,
-                response_deserializer=orders_dot_v1_dot_orders__pb2.OrderRefundResponse.FromString,
+                request_serializer=orders_dot_v1_dot_order__refund__pb2.OrderRefundRequest.SerializeToString,
+                response_deserializer=orders_dot_v1_dot_order__refund__pb2.OrderRefundResponse.FromString,
                 _registered_method=True)
 
 
@@ -104,28 +108,28 @@ def add_OrdersServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'OrderCreate': grpc.unary_unary_rpc_method_handler(
                     servicer.OrderCreate,
-                    request_deserializer=orders_dot_v1_dot_orders__pb2.OrderCreateRequest.FromString,
-                    response_serializer=orders_dot_v1_dot_orders__pb2.OrderCreateResponse.SerializeToString,
+                    request_deserializer=orders_dot_v1_dot_order__create__pb2.OrderCreateRequest.FromString,
+                    response_serializer=orders_dot_v1_dot_order__create__pb2.OrderCreateResponse.SerializeToString,
             ),
             'OrderGet': grpc.unary_unary_rpc_method_handler(
                     servicer.OrderGet,
-                    request_deserializer=orders_dot_v1_dot_orders__pb2.OrderGetRequest.FromString,
-                    response_serializer=orders_dot_v1_dot_orders__pb2.OrderGetResponse.SerializeToString,
+                    request_deserializer=orders_dot_v1_dot_order__get__pb2.OrderGetRequest.FromString,
+                    response_serializer=orders_dot_v1_dot_order__get__pb2.OrderGetResponse.SerializeToString,
             ),
             'OrdersList': grpc.unary_unary_rpc_method_handler(
                     servicer.OrdersList,
-                    request_deserializer=orders_dot_v1_dot_orders__pb2.OrdersListRequest.FromString,
-                    response_serializer=orders_dot_v1_dot_orders__pb2.OrdersListResponse.SerializeToString,
+                    request_deserializer=orders_dot_v1_dot_orders__list__pb2.OrdersListRequest.FromString,
+                    response_serializer=orders_dot_v1_dot_orders__list__pb2.OrdersListResponse.SerializeToString,
             ),
             'OrderCancel': grpc.unary_unary_rpc_method_handler(
                     servicer.OrderCancel,
-                    request_deserializer=orders_dot_v1_dot_orders__pb2.OrderCancelRequest.FromString,
-                    response_serializer=orders_dot_v1_dot_orders__pb2.OrderCancelResponse.SerializeToString,
+                    request_deserializer=orders_dot_v1_dot_order__cancel__pb2.OrderCancelRequest.FromString,
+                    response_serializer=orders_dot_v1_dot_order__cancel__pb2.OrderCancelResponse.SerializeToString,
             ),
             'OrderRefund': grpc.unary_unary_rpc_method_handler(
                     servicer.OrderRefund,
-                    request_deserializer=orders_dot_v1_dot_orders__pb2.OrderRefundRequest.FromString,
-                    response_serializer=orders_dot_v1_dot_orders__pb2.OrderRefundResponse.SerializeToString,
+                    request_deserializer=orders_dot_v1_dot_order__refund__pb2.OrderRefundRequest.FromString,
+                    response_serializer=orders_dot_v1_dot_order__refund__pb2.OrderRefundResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -153,8 +157,8 @@ class OrdersService(object):
             request,
             target,
             '/orders.v1.OrdersService/OrderCreate',
-            orders_dot_v1_dot_orders__pb2.OrderCreateRequest.SerializeToString,
-            orders_dot_v1_dot_orders__pb2.OrderCreateResponse.FromString,
+            orders_dot_v1_dot_order__create__pb2.OrderCreateRequest.SerializeToString,
+            orders_dot_v1_dot_order__create__pb2.OrderCreateResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -180,8 +184,8 @@ class OrdersService(object):
             request,
             target,
             '/orders.v1.OrdersService/OrderGet',
-            orders_dot_v1_dot_orders__pb2.OrderGetRequest.SerializeToString,
-            orders_dot_v1_dot_orders__pb2.OrderGetResponse.FromString,
+            orders_dot_v1_dot_order__get__pb2.OrderGetRequest.SerializeToString,
+            orders_dot_v1_dot_order__get__pb2.OrderGetResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -207,8 +211,8 @@ class OrdersService(object):
             request,
             target,
             '/orders.v1.OrdersService/OrdersList',
-            orders_dot_v1_dot_orders__pb2.OrdersListRequest.SerializeToString,
-            orders_dot_v1_dot_orders__pb2.OrdersListResponse.FromString,
+            orders_dot_v1_dot_orders__list__pb2.OrdersListRequest.SerializeToString,
+            orders_dot_v1_dot_orders__list__pb2.OrdersListResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -234,8 +238,8 @@ class OrdersService(object):
             request,
             target,
             '/orders.v1.OrdersService/OrderCancel',
-            orders_dot_v1_dot_orders__pb2.OrderCancelRequest.SerializeToString,
-            orders_dot_v1_dot_orders__pb2.OrderCancelResponse.FromString,
+            orders_dot_v1_dot_order__cancel__pb2.OrderCancelRequest.SerializeToString,
+            orders_dot_v1_dot_order__cancel__pb2.OrderCancelResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -261,8 +265,8 @@ class OrdersService(object):
             request,
             target,
             '/orders.v1.OrdersService/OrderRefund',
-            orders_dot_v1_dot_orders__pb2.OrderRefundRequest.SerializeToString,
-            orders_dot_v1_dot_orders__pb2.OrderRefundResponse.FromString,
+            orders_dot_v1_dot_order__refund__pb2.OrderRefundRequest.SerializeToString,
+            orders_dot_v1_dot_order__refund__pb2.OrderRefundResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package orders.v1;
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
+option java_outer_classname = "OrderIdempotencyKeysProto";
+option java_package = "org.megacommerce.orders.v1";
+
+message OrderIdempotencyKey {
+  string id = 1;
+  string idempotency_key = 2;
+  string user_id = 3;
+  string order_id = 4;
+  string status = 5; // "IN_PROGRESS", "COMPLETED", "FAILED"
+  int64 created_at = 6;
+  int64 updated_at = 7;
+  int64 expires_at = 8;
+}
+
+enum OrderIdempotencyKeyStatus {
+  IN_PROGRESS = 0;
+  COMPLETED = 1;
+  FAILED = 2;
+}

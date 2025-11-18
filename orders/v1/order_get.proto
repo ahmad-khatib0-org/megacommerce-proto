@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package orders.v1;
+
+import "orders/v1/order.proto";
+import "orders/v1/order_line_items.proto";
+import "shared/v1/error.proto";
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
+option java_outer_classname = "OrderGetProto";
+option java_package = "org.megacommerce.orders.v1";
+
+message OrderItem {
+  string id = 1;
+
+  // monetary amounts are stored in minor units (cents) to avoid float errors
+  int64 subtotal_cents = 3;
+  int64 shipping_cents = 4;
+  int64 tax_cents = 5;
+  int64 discount_cents = 6;
+  int64 total_cents = 7;
+  string currency_code = 8;
+
+  // line items snapshot
+  repeated orders.v1.OrderLineItem line_items = 9;
+
+  // shipping & billing addresses (snapshot)
+  shared.v1.Any shipping_address = 10;
+  shared.v1.Any billing_address = 11;
+
+  // Payment snapshot (synchronous capture info)
+  PaymentSnapshot payment = 12;
+
+  // Inventory reservation status - since inventory service is separate,
+  // we include reservation status in order so UI shows what's reserved.
+  orders.v1.InventoryReservationStatus inventory_reservation_status = 13;
+
+  // order lifecycle
+  string status = 14; // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
+  uint64 created_at = 15;
+  optional uint64 updated_at = 16;
+
+  // product/service traceability
+  string product_source = 17; // e.g., product service name/version
+  string product_version = 18; // product_version that was used for snapshot
+
+  // free-form metadata
+  map<string, string> metadata = 19;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Payment snapshot (synchronous capture)
+////////////////////////////////////////////////////////////////////////////////
+message PaymentSnapshot {
+  // provider e.g., "stripe"
+  string provider = 1;
+  // provider transaction id (gateway charge id)
+  string transaction_id = 2;
+  // capture status: AUTHORIZED/CAPTURED/FAILED
+  string status = 3;
+  // card token or payment method id (tokenized)
+  string payment_method = 4;
+  // provider raw response for auditing (tokenized, avoid PII)
+  shared.v1.Any provider_response = 5;
+  // payment fees (in cents) charged by gateway, optional
+  optional int64 fee_cents = 6;
+}
+
+message OrderGetRequest {
+  string order_id = 1;
+}
+
+message OrderGetResponse {
+  oneof response {
+    OrderItem data = 1;
+    shared.v1.AppError error = 2;
+  }
+}

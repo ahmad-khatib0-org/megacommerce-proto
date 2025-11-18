@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package orders.v1;
+
+import "orders/v1/order_get.proto";
+import "shared/v1/error.proto";
+import "shared/v1/pagination.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
+option java_outer_classname = "OrdersListProto";
+option java_package = "org.megacommerce.orders.v1";
+
+message OrdersListRequest {
+  shared.v1.PaginationRequest pagination = 1;
+  repeated string status = 2;
+}
+
+message OrdersListResponse {
+  oneof response {
+    OrdersListResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message OrdersListResponseData {
+  repeated orders.v1.OrderItem orders = 1;
+  shared.v1.PaginationResponse pagination = 2;
+}

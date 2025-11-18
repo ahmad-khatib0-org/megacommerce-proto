@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package orders.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
+option java_outer_classname = "OrderRefundProto";
+option java_package = "org.megacommerce.orders.v1";
+
+message OrderRefundResponse {
+  oneof response {
+    shared.v1.SuccessResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message OrderRefundRequest {
+  string order_id = 1;
+  // refund whole order or specific line items
+  repeated RefundLineItemRefund line_items = 2;
+  // reason code, external refund id, etc.
+  string reason = 3;
+  bool refund_shipping = 4;
+}
+
+message RefundLineItemRefund {
+  string line_id = 1; // link to OrderLineItem.line_id
+  uint32 quantity = 2;
+  // amount to refund in minor units (cents). If zero, compute pro-rata.
+  optional int64 amount_cents = 3;
+}

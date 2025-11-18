@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package orders.v1;
+
+import "shared/v1/struct.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
+option java_outer_classname = "OrderEventsProto";
+option java_package = "org.megacommerce.orders.v1";
+
+message OrderEvent {
+  string id = 1;
+  string order_id = 2;
+  string event_type = 3; // e.g., ORDER_CREATED, PAYMENT_CAPTURED
+  shared.v1.Struct event_payload = 4; // arbitrary payload with details
+  int64 created_at = 5; // UNIX timestamp
+}

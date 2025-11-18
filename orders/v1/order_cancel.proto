@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package orders.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
+option java_outer_classname = "OrderCancelProto";
+option java_package = "org.megacommerce.orders.v1";
+
+message OrderCancelRequest {
+  string order_id = 1;
+  string reason = 2;
+  // whether to attempt an immediate refund (if payment captured)
+  bool refund = 3;
+}
+
+message OrderCancelResponse {
+  oneof response {
+    shared.v1.SuccessResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}

@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package orders.v1;
+
+import "shared/v1/struct.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
+option java_outer_classname = "OrderProto";
+option java_package = "org.megacommerce.orders.v1";
+
+enum InventoryReservationStatus {
+  INVENTORY_UNKNOWN = 0;
+  INVENTORY_RESERVED = 1;
+  INVENTORY_PARTIALLY_RESERVED = 2;
+  INVENTORY_NOT_RESERVED = 3;
+  INVENTORY_PENDING = 4;
+}
+
+enum PaymentStatus {
+  PAYMENT_UNKNOWN = 0;
+  PAYMENT_AUTHORIZED = 1;
+  PAYMENT_CAPTURED = 2;
+  PAYMENT_FAILED = 3;
+}
+
+// Order status
+enum OrderStatus {
+  CREATED = 0;
+  CONFIRMED = 1;
+  SHIPPED = 2;
+  DELIVERED = 3;
+  CANCELLED = 4;
+  REFUNDED = 5;
+}
+
+message Order {
+  string id = 1;
+  string user_id = 2;
+  string currency_code = 3;
+
+  // All price fields in cents
+  int64 subtotal_cents = 4;
+  int64 shipping_cents = 5;
+  int64 tax_cents = 6;
+  int64 discount_cents = 7;
+  int64 total_cents = 8;
+
+  // Payment information
+  string payment_provider = 9;
+  string payment_transaction_id = 10;
+
+  string payment_status = 11;
+
+  shared.v1.Struct payment_provider_response = 12;
+  int64 payment_fee_cents = 13;
+
+  // Inventory status
+  string inventory_reservation_status = 14;
+
+  // Product information
+  string product_source = 15;
+  string product_version = 16;
+
+  // Address snapshots
+  shared.v1.Struct shipping_address = 17;
+  shared.v1.Struct billing_address = 18;
+
+  // Metadata
+  shared.v1.Struct metadata = 19;
+
+  string status = 20;
+
+  // Timestamps
+  int64 created_at = 21;
+  optional int64 updated_at = 22;
+  optional int64 deleted_at = 23;
+}

@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package orders.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
+option java_outer_classname = "OrderCreateProto";
+option java_package = "org.megacommerce.orders.v1";
+
+// CreateOrder: synchronous payment capture
+message OrderCreateRequest {
+  // idempotency key provided by client to avoid duplicate orders
+  string idempotency_key = 1;
+
+  // currency code (ISO 4217)
+  string currency_code = 3;
+
+  // order-level metadata (free-form, e.g., channel, campaign utm)
+  map<string, string> metadata = 4;
+
+  // shipping and billing addresses: use shared.v1.Any
+  // provide existing address type (keeps proto flexible)
+  shared.v1.Any shipping_address = 5;
+  shared.v1.Any billing_address = 6;
+
+  // list of items to order
+  repeated OrderLineItemRequest items = 7;
+
+  // shipping method id or chosen shipping service
+  string shipping_method = 8;
+
+  // coupon / promotion codes
+  repeated string promotion_codes = 9;
+
+  // payment information token (card token, stripe payment method id, etc.)
+  // For PCI, clients should use tokenization and not send raw card numbers.
+  string payment_method_token = 10;
+
+  // optional client-provided note
+  string customer_note = 11;
+}
+
+// Line item in create request. Qty + source product reference.
+message OrderLineItemRequest {
+  string product_id = 1;
+  string variant_id = 2; // optional SKU/variant id
+  string sku = 3;
+  uint32 quantity = 4;
+  // Optionally client can pass a desired price verification to aid checks:
+  // e.g., unit_price_cents_client = 1000 (means client expected price = 10.00)
+  // This helps detect mismatches (promotions or stale inventory).
+  optional int64 unit_price_cents_client = 5;
+  // metadata for line (gift wrap, special options)
+  map<string, string> metadata = 6;
+}
+
+message OrderCreateResponse {
+  oneof response {
+    shared.v1.SuccessResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
