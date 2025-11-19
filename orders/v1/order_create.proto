@@ -3,6 +3,7 @@ syntax = "proto3";
 package orders.v1;
 
 import "shared/v1/error.proto";
+import "shared/v1/struct.proto";
 import "shared/v1/types.proto";
 
 option cc_enable_arenas = true;
@@ -23,8 +24,8 @@ message OrderCreateRequest {
 
   // shipping and billing addresses: use shared.v1.Any
   // provide existing address type (keeps proto flexible)
-  shared.v1.Any shipping_address = 5;
-  shared.v1.Any billing_address = 6;
+  shared.v1.Struct shipping_address = 5;
+  shared.v1.Struct billing_address = 6;
 
   // list of items to order
   repeated OrderLineItemRequest items = 7;

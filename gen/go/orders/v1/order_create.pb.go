@@ -33,8 +33,8 @@ type OrderCreateRequest struct {
 	Metadata map[string]string `protobuf:"bytes,4,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// shipping and billing addresses: use shared.v1.Any
 	// provide existing address type (keeps proto flexible)
-	ShippingAddress *v1.Any `protobuf:"bytes,5,opt,name=shipping_address,json=shippingAddress,proto3" json:"shipping_address,omitempty"`
-	BillingAddress  *v1.Any `protobuf:"bytes,6,opt,name=billing_address,json=billingAddress,proto3" json:"billing_address,omitempty"`
+	ShippingAddress *v1.Struct `protobuf:"bytes,5,opt,name=shipping_address,json=shippingAddress,proto3" json:"shipping_address,omitempty"`
+	BillingAddress  *v1.Struct `protobuf:"bytes,6,opt,name=billing_address,json=billingAddress,proto3" json:"billing_address,omitempty"`
 	// list of items to order
 	Items []*OrderLineItemRequest `protobuf:"bytes,7,rep,name=items,proto3" json:"items,omitempty"`
 	// shipping method id or chosen shipping service
@@ -101,14 +101,14 @@ func (x *OrderCreateRequest) GetMetadata() map[string]string {
 	return nil
 }
 
-func (x *OrderCreateRequest) GetShippingAddress() *v1.Any {
+func (x *OrderCreateRequest) GetShippingAddress() *v1.Struct {
 	if x != nil {
 		return x.ShippingAddress
 	}
 	return nil
 }
 
-func (x *OrderCreateRequest) GetBillingAddress() *v1.Any {
+func (x *OrderCreateRequest) GetBillingAddress() *v1.Struct {
 	if x != nil {
 		return x.BillingAddress
 	}
@@ -325,13 +325,13 @@ var File_orders_v1_order_create_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_create_proto_rawDesc = "" +
 	"\n" +
-	"\x1corders/v1/order_create.proto\x12\torders.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xbc\x04\n" +
+	"\x1corders/v1/order_create.proto\x12\torders.v1\x1a\x15shared/v1/error.proto\x1a\x16shared/v1/struct.proto\x1a\x15shared/v1/types.proto\"\xc2\x04\n" +
 	"\x12OrderCreateRequest\x12'\n" +
 	"\x0fidempotency_key\x18\x01 \x01(\tR\x0eidempotencyKey\x12#\n" +
 	"\rcurrency_code\x18\x03 \x01(\tR\fcurrencyCode\x12G\n" +
-	"\bmetadata\x18\x04 \x03(\v2+.orders.v1.OrderCreateRequest.MetadataEntryR\bmetadata\x129\n" +
-	"\x10shipping_address\x18\x05 \x01(\v2\x0e.shared.v1.AnyR\x0fshippingAddress\x127\n" +
-	"\x0fbilling_address\x18\x06 \x01(\v2\x0e.shared.v1.AnyR\x0ebillingAddress\x125\n" +
+	"\bmetadata\x18\x04 \x03(\v2+.orders.v1.OrderCreateRequest.MetadataEntryR\bmetadata\x12<\n" +
+	"\x10shipping_address\x18\x05 \x01(\v2\x11.shared.v1.StructR\x0fshippingAddress\x12:\n" +
+	"\x0fbilling_address\x18\x06 \x01(\v2\x11.shared.v1.StructR\x0ebillingAddress\x125\n" +
 	"\x05items\x18\a \x03(\v2\x1f.orders.v1.OrderLineItemRequestR\x05items\x12'\n" +
 	"\x0fshipping_method\x18\b \x01(\tR\x0eshippingMethod\x12'\n" +
 	"\x0fpromotion_codes\x18\t \x03(\tR\x0epromotionCodes\x120\n" +
@@ -380,14 +380,14 @@ var file_orders_v1_order_create_proto_goTypes = []any{
 	(*OrderCreateResponse)(nil),    // 2: orders.v1.OrderCreateResponse
 	nil,                            // 3: orders.v1.OrderCreateRequest.MetadataEntry
 	nil,                            // 4: orders.v1.OrderLineItemRequest.MetadataEntry
-	(*v1.Any)(nil),                 // 5: shared.v1.Any
+	(*v1.Struct)(nil),              // 5: shared.v1.Struct
 	(*v1.SuccessResponseData)(nil), // 6: shared.v1.SuccessResponseData
 	(*v1.AppError)(nil),            // 7: shared.v1.AppError
 }
 var file_orders_v1_order_create_proto_depIdxs = []int32{
 	3, // 0: orders.v1.OrderCreateRequest.metadata:type_name -> orders.v1.OrderCreateRequest.MetadataEntry
-	5, // 1: orders.v1.OrderCreateRequest.shipping_address:type_name -> shared.v1.Any
-	5, // 2: orders.v1.OrderCreateRequest.billing_address:type_name -> shared.v1.Any
+	5, // 1: orders.v1.OrderCreateRequest.shipping_address:type_name -> shared.v1.Struct
+	5, // 2: orders.v1.OrderCreateRequest.billing_address:type_name -> shared.v1.Struct
 	1, // 3: orders.v1.OrderCreateRequest.items:type_name -> orders.v1.OrderLineItemRequest
 	4, // 4: orders.v1.OrderLineItemRequest.metadata:type_name -> orders.v1.OrderLineItemRequest.MetadataEntry
 	6, // 5: orders.v1.OrderCreateResponse.data:type_name -> shared.v1.SuccessResponseData

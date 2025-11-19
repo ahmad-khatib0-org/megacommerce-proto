@@ -153,18 +153,17 @@ type Order struct {
 	// Inventory status
 	InventoryReservationStatus string `protobuf:"bytes,14,opt,name=inventory_reservation_status,json=inventoryReservationStatus,proto3" json:"inventory_reservation_status,omitempty"`
 	// Product information
-	ProductSource  string `protobuf:"bytes,15,opt,name=product_source,json=productSource,proto3" json:"product_source,omitempty"`
-	ProductVersion string `protobuf:"bytes,16,opt,name=product_version,json=productVersion,proto3" json:"product_version,omitempty"`
+	ProductSource string `protobuf:"bytes,15,opt,name=product_source,json=productSource,proto3" json:"product_source,omitempty"`
 	// Address snapshots
-	ShippingAddress *v1.Struct `protobuf:"bytes,17,opt,name=shipping_address,json=shippingAddress,proto3" json:"shipping_address,omitempty"`
-	BillingAddress  *v1.Struct `protobuf:"bytes,18,opt,name=billing_address,json=billingAddress,proto3" json:"billing_address,omitempty"`
+	ShippingAddress *v1.Struct `protobuf:"bytes,16,opt,name=shipping_address,json=shippingAddress,proto3" json:"shipping_address,omitempty"`
+	BillingAddress  *v1.Struct `protobuf:"bytes,17,opt,name=billing_address,json=billingAddress,proto3" json:"billing_address,omitempty"`
 	// Metadata
-	Metadata *v1.Struct `protobuf:"bytes,19,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Status   string     `protobuf:"bytes,20,opt,name=status,proto3" json:"status,omitempty"`
+	Metadata *v1.Struct `protobuf:"bytes,18,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Status   string     `protobuf:"bytes,19,opt,name=status,proto3" json:"status,omitempty"`
 	// Timestamps
-	CreatedAt     uint64  `protobuf:"varint,21,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt     *uint64 `protobuf:"varint,22,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
-	DeletedAt     *uint64 `protobuf:"varint,23,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
+	CreatedAt     uint64  `protobuf:"varint,20,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *uint64 `protobuf:"varint,21,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
+	DeletedAt     *uint64 `protobuf:"varint,22,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -304,13 +303,6 @@ func (x *Order) GetProductSource() string {
 	return ""
 }
 
-func (x *Order) GetProductVersion() string {
-	if x != nil {
-		return x.ProductVersion
-	}
-	return ""
-}
-
 func (x *Order) GetShippingAddress() *v1.Struct {
 	if x != nil {
 		return x.ShippingAddress
@@ -364,7 +356,7 @@ var File_orders_v1_order_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_proto_rawDesc = "" +
 	"\n" +
-	"\x15orders/v1/order.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"\xe3\a\n" +
+	"\x15orders/v1/order.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"\xba\a\n" +
 	"\x05Order\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
@@ -382,18 +374,17 @@ const file_orders_v1_order_proto_rawDesc = "" +
 	"\x19payment_provider_response\x18\f \x01(\v2\x11.shared.v1.StructR\x17paymentProviderResponse\x12*\n" +
 	"\x11payment_fee_cents\x18\r \x01(\x04R\x0fpaymentFeeCents\x12@\n" +
 	"\x1cinventory_reservation_status\x18\x0e \x01(\tR\x1ainventoryReservationStatus\x12%\n" +
-	"\x0eproduct_source\x18\x0f \x01(\tR\rproductSource\x12'\n" +
-	"\x0fproduct_version\x18\x10 \x01(\tR\x0eproductVersion\x12<\n" +
-	"\x10shipping_address\x18\x11 \x01(\v2\x11.shared.v1.StructR\x0fshippingAddress\x12:\n" +
-	"\x0fbilling_address\x18\x12 \x01(\v2\x11.shared.v1.StructR\x0ebillingAddress\x12-\n" +
-	"\bmetadata\x18\x13 \x01(\v2\x11.shared.v1.StructR\bmetadata\x12\x16\n" +
-	"\x06status\x18\x14 \x01(\tR\x06status\x12\x1d\n" +
+	"\x0eproduct_source\x18\x0f \x01(\tR\rproductSource\x12<\n" +
+	"\x10shipping_address\x18\x10 \x01(\v2\x11.shared.v1.StructR\x0fshippingAddress\x12:\n" +
+	"\x0fbilling_address\x18\x11 \x01(\v2\x11.shared.v1.StructR\x0ebillingAddress\x12-\n" +
+	"\bmetadata\x18\x12 \x01(\v2\x11.shared.v1.StructR\bmetadata\x12\x16\n" +
+	"\x06status\x18\x13 \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x15 \x01(\x04R\tcreatedAt\x12\"\n" +
+	"created_at\x18\x14 \x01(\x04R\tcreatedAt\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x16 \x01(\x04H\x00R\tupdatedAt\x88\x01\x01\x12\"\n" +
+	"updated_at\x18\x15 \x01(\x04H\x00R\tupdatedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"deleted_at\x18\x17 \x01(\x04H\x01R\tdeletedAt\x88\x01\x01B\r\n" +
+	"deleted_at\x18\x16 \x01(\x04H\x01R\tdeletedAt\x88\x01\x01B\r\n" +
 	"\v_updated_atB\r\n" +
 	"\v_deleted_at*f\n" +
 	"\rPaymentStatus\x12\x13\n" +

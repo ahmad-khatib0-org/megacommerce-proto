@@ -52,19 +52,18 @@ message Order {
 
   // Product information
   string product_source = 15;
-  string product_version = 16;
 
   // Address snapshots
-  shared.v1.Struct shipping_address = 17;
-  shared.v1.Struct billing_address = 18;
+  shared.v1.Struct shipping_address = 16;
+  shared.v1.Struct billing_address = 17;
 
   // Metadata
-  shared.v1.Struct metadata = 19;
+  shared.v1.Struct metadata = 18;
 
-  string status = 20;
+  string status = 19;
 
   // Timestamps
-  uint64 created_at = 21;
-  optional uint64 updated_at = 22;
-  optional uint64 deleted_at = 23;
+  uint64 created_at = 20;
+  optional uint64 updated_at = 21;
+  optional uint64 deleted_at = 22;
 }

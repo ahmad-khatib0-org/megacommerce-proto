@@ -54,9 +54,6 @@ inline constexpr Order::Impl_::Impl_(
         product_source_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        product_version_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
         status_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
@@ -104,7 +101,7 @@ const ::uint32_t
         protodesc_cold) = {
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_._has_bits_),
-        26, // hasbit index offset
+        25, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.user_id_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.currency_code_),
@@ -120,7 +117,6 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.payment_fee_cents_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.inventory_reservation_status_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.product_source_),
-        PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.product_version_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.shipping_address_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.billing_address_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::Order, _impl_.metadata_),
@@ -131,26 +127,25 @@ const ::uint32_t
         0,
         1,
         2,
+        13,
         14,
         15,
         16,
         17,
-        18,
         3,
         4,
         5,
-        10,
-        19,
+        9,
+        18,
         6,
         7,
-        8,
+        10,
         11,
         12,
-        13,
-        9,
+        8,
+        19,
         20,
         21,
-        22,
 };
 
 static const ::_pbi::MigrationSchema
@@ -163,7 +158,7 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_orders_2fv1_2forder_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\025orders/v1/order.proto\022\torders.v1\032\026shar"
-    "ed/v1/struct.proto\"\343\007\n\005Order\022\016\n\002id\030\001 \001(\t"
+    "ed/v1/struct.proto\"\272\007\n\005Order\022\016\n\002id\030\001 \001(\t"
     "R\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022#\n\rcurrenc"
     "y_code\030\003 \001(\tR\014currencyCode\022%\n\016subtotal_c"
     "ents\030\004 \001(\004R\rsubtotalCents\022%\n\016shipping_ce"
@@ -179,24 +174,23 @@ const char descriptor_table_protodef_orders_2fv1_2forder_2eproto[] ABSL_ATTRIBUT
     "s\030\r \001(\004R\017paymentFeeCents\022@\n\034inventory_re"
     "servation_status\030\016 \001(\tR\032inventoryReserva"
     "tionStatus\022%\n\016product_source\030\017 \001(\tR\rprod"
-    "uctSource\022\'\n\017product_version\030\020 \001(\tR\016prod"
-    "uctVersion\022<\n\020shipping_address\030\021 \001(\0132\021.s"
-    "hared.v1.StructR\017shippingAddress\022:\n\017bill"
-    "ing_address\030\022 \001(\0132\021.shared.v1.StructR\016bi"
-    "llingAddress\022-\n\010metadata\030\023 \001(\0132\021.shared."
-    "v1.StructR\010metadata\022\026\n\006status\030\024 \001(\tR\006sta"
-    "tus\022\035\n\ncreated_at\030\025 \001(\004R\tcreatedAt\022\"\n\nup"
-    "dated_at\030\026 \001(\004H\000R\tupdatedAt\210\001\001\022\"\n\ndelete"
-    "d_at\030\027 \001(\004H\001R\tdeletedAt\210\001\001B\r\n\013_updated_a"
-    "tB\r\n\013_deleted_at*f\n\rPaymentStatus\022\023\n\017PAY"
-    "MENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020\001\022\024"
-    "\n\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILED\020\003"
-    "*b\n\013OrderStatus\022\013\n\007CREATED\020\000\022\r\n\tCONFIRME"
-    "D\020\001\022\013\n\007SHIPPED\020\002\022\r\n\tDELIVERED\020\003\022\r\n\tCANCE"
-    "LLED\020\004\022\014\n\010REFUNDED\020\005Bp\n\032org.megacommerce"
-    ".orders.v1B\nOrderProtoZCgithub.com/ahmad"
-    "-khatib0-org/megacommerce-proto/gen/go/o"
-    "rders/v1;v1\370\001\001b\006proto3"
+    "uctSource\022<\n\020shipping_address\030\020 \001(\0132\021.sh"
+    "ared.v1.StructR\017shippingAddress\022:\n\017billi"
+    "ng_address\030\021 \001(\0132\021.shared.v1.StructR\016bil"
+    "lingAddress\022-\n\010metadata\030\022 \001(\0132\021.shared.v"
+    "1.StructR\010metadata\022\026\n\006status\030\023 \001(\tR\006stat"
+    "us\022\035\n\ncreated_at\030\024 \001(\004R\tcreatedAt\022\"\n\nupd"
+    "ated_at\030\025 \001(\004H\000R\tupdatedAt\210\001\001\022\"\n\ndeleted"
+    "_at\030\026 \001(\004H\001R\tdeletedAt\210\001\001B\r\n\013_updated_at"
+    "B\r\n\013_deleted_at*f\n\rPaymentStatus\022\023\n\017PAYM"
+    "ENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020\001\022\024\n"
+    "\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILED\020\003*"
+    "b\n\013OrderStatus\022\013\n\007CREATED\020\000\022\r\n\tCONFIRMED"
+    "\020\001\022\013\n\007SHIPPED\020\002\022\r\n\tDELIVERED\020\003\022\r\n\tCANCEL"
+    "LED\020\004\022\014\n\010REFUNDED\020\005Bp\n\032org.megacommerce."
+    "orders.v1B\nOrderProtoZCgithub.com/ahmad-"
+    "khatib0-org/megacommerce-proto/gen/go/or"
+    "ders/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_orders_2fv1_2forder_2eproto_deps[1] = {
@@ -206,7 +200,7 @@ static ::absl::once_flag descriptor_table_orders_2fv1_2forder_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_2eproto = {
     false,
     false,
-    1382,
+    1341,
     descriptor_table_protodef_orders_2fv1_2forder_2eproto,
     "orders/v1/order.proto",
     &descriptor_table_orders_2fv1_2forder_2eproto_once,
@@ -246,22 +240,22 @@ class Order::_Internal {
 void Order::clear_payment_provider_response() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.payment_provider_response_ != nullptr) _impl_.payment_provider_response_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 void Order::clear_shipping_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.shipping_address_ != nullptr) _impl_.shipping_address_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
 }
 void Order::clear_billing_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.billing_address_ != nullptr) _impl_.billing_address_->Clear();
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 void Order::clear_metadata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.metadata_ != nullptr) _impl_.metadata_->Clear();
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 Order::Order(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -286,7 +280,6 @@ PROTOBUF_NDEBUG_INLINE Order::Impl_::Impl_(
         payment_status_(arena, from.payment_status_),
         inventory_reservation_status_(arena, from.inventory_reservation_status_),
         product_source_(arena, from.product_source_),
-        product_version_(arena, from.product_version_),
         status_(arena, from.status_) {}
 
 Order::Order(
@@ -303,16 +296,16 @@ Order::Order(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.payment_provider_response_ = ((cached_has_bits & 0x00000400u) != 0)
+  _impl_.payment_provider_response_ = ((cached_has_bits & 0x00000200u) != 0)
                 ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.payment_provider_response_)
                 : nullptr;
-  _impl_.shipping_address_ = ((cached_has_bits & 0x00000800u) != 0)
+  _impl_.shipping_address_ = ((cached_has_bits & 0x00000400u) != 0)
                 ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.shipping_address_)
                 : nullptr;
-  _impl_.billing_address_ = ((cached_has_bits & 0x00001000u) != 0)
+  _impl_.billing_address_ = ((cached_has_bits & 0x00000800u) != 0)
                 ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.billing_address_)
                 : nullptr;
-  _impl_.metadata_ = ((cached_has_bits & 0x00002000u) != 0)
+  _impl_.metadata_ = ((cached_has_bits & 0x00001000u) != 0)
                 ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.metadata_)
                 : nullptr;
   ::memcpy(reinterpret_cast<char *>(&_impl_) +
@@ -337,7 +330,6 @@ PROTOBUF_NDEBUG_INLINE Order::Impl_::Impl_(
         payment_status_(arena),
         inventory_reservation_status_(arena),
         product_source_(arena),
-        product_version_(arena),
         status_(arena) {}
 
 inline void Order::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
@@ -365,7 +357,6 @@ inline void Order::SharedDtor(MessageLite& self) {
   this_._impl_.payment_status_.Destroy();
   this_._impl_.inventory_reservation_status_.Destroy();
   this_._impl_.product_source_.Destroy();
-  this_._impl_.product_version_.Destroy();
   this_._impl_.status_.Destroy();
   delete this_._impl_.payment_provider_response_;
   delete this_._impl_.shipping_address_;
@@ -417,16 +408,16 @@ Order::GetClassData() const {
   return Order_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<5, 23, 4, 177, 2>
+const ::_pbi::TcParseTable<5, 22, 4, 162, 2>
 Order::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(Order, _impl_._has_bits_),
     0, // no _extensions_
-    23, 248,  // max_field_number, fast_idx_mask
+    22, 248,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4286578688,  // skipmap
+    4290772992,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    23,  // num_field_entries
+    22,  // num_field_entries
     4,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     Order_class_data_.base(),
@@ -447,20 +438,20 @@ Order::_table_ = {
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.currency_code_)}},
     // uint64 subtotal_cents = 4 [json_name = "subtotalCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.subtotal_cents_), 14>(),
-     {32, 14, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.subtotal_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.subtotal_cents_), 13>(),
+     {32, 13, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.subtotal_cents_)}},
     // uint64 shipping_cents = 5 [json_name = "shippingCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.shipping_cents_), 15>(),
-     {40, 15, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.shipping_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.shipping_cents_), 14>(),
+     {40, 14, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.shipping_cents_)}},
     // uint64 tax_cents = 6 [json_name = "taxCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.tax_cents_), 16>(),
-     {48, 16, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.tax_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.tax_cents_), 15>(),
+     {48, 15, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.tax_cents_)}},
     // uint64 discount_cents = 7 [json_name = "discountCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.discount_cents_), 17>(),
-     {56, 17, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.discount_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.discount_cents_), 16>(),
+     {56, 16, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.discount_cents_)}},
     // uint64 total_cents = 8 [json_name = "totalCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.total_cents_), 18>(),
-     {64, 18, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.total_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.total_cents_), 17>(),
+     {64, 17, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.total_cents_)}},
     // string payment_provider = 9 [json_name = "paymentProvider"];
     {::_pbi::TcParser::FastUS1,
      {74, 3, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_provider_)}},
@@ -472,40 +463,38 @@ Order::_table_ = {
      {90, 5, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_status_)}},
     // .shared.v1.Struct payment_provider_response = 12 [json_name = "paymentProviderResponse"];
     {::_pbi::TcParser::FastMtS1,
-     {98, 10, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_provider_response_)}},
+     {98, 9, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_provider_response_)}},
     // uint64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.payment_fee_cents_), 19>(),
-     {104, 19, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_fee_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Order, _impl_.payment_fee_cents_), 18>(),
+     {104, 18, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_fee_cents_)}},
     // string inventory_reservation_status = 14 [json_name = "inventoryReservationStatus"];
     {::_pbi::TcParser::FastUS1,
      {114, 6, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.inventory_reservation_status_)}},
     // string product_source = 15 [json_name = "productSource"];
     {::_pbi::TcParser::FastUS1,
      {122, 7, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.product_source_)}},
-    // string product_version = 16 [json_name = "productVersion"];
+    // .shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];
+    {::_pbi::TcParser::FastMtS2,
+     {386, 10, 1, PROTOBUF_FIELD_OFFSET(Order, _impl_.shipping_address_)}},
+    // .shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];
+    {::_pbi::TcParser::FastMtS2,
+     {394, 11, 2, PROTOBUF_FIELD_OFFSET(Order, _impl_.billing_address_)}},
+    // .shared.v1.Struct metadata = 18 [json_name = "metadata"];
+    {::_pbi::TcParser::FastMtS2,
+     {402, 12, 3, PROTOBUF_FIELD_OFFSET(Order, _impl_.metadata_)}},
+    // string status = 19 [json_name = "status"];
     {::_pbi::TcParser::FastUS2,
-     {386, 8, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.product_version_)}},
-    // .shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];
-    {::_pbi::TcParser::FastMtS2,
-     {394, 11, 1, PROTOBUF_FIELD_OFFSET(Order, _impl_.shipping_address_)}},
-    // .shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];
-    {::_pbi::TcParser::FastMtS2,
-     {402, 12, 2, PROTOBUF_FIELD_OFFSET(Order, _impl_.billing_address_)}},
-    // .shared.v1.Struct metadata = 19 [json_name = "metadata"];
-    {::_pbi::TcParser::FastMtS2,
-     {410, 13, 3, PROTOBUF_FIELD_OFFSET(Order, _impl_.metadata_)}},
-    // string status = 20 [json_name = "status"];
-    {::_pbi::TcParser::FastUS2,
-     {418, 9, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.status_)}},
-    // uint64 created_at = 21 [json_name = "createdAt"];
+     {410, 8, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.status_)}},
+    // uint64 created_at = 20 [json_name = "createdAt"];
     {::_pbi::TcParser::FastV64S2,
-     {424, 20, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.created_at_)}},
-    // optional uint64 updated_at = 22 [json_name = "updatedAt"];
+     {416, 19, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.created_at_)}},
+    // optional uint64 updated_at = 21 [json_name = "updatedAt"];
     {::_pbi::TcParser::FastV64S2,
-     {432, 21, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.updated_at_)}},
-    // optional uint64 deleted_at = 23 [json_name = "deletedAt"];
+     {424, 20, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.updated_at_)}},
+    // optional uint64 deleted_at = 22 [json_name = "deletedAt"];
     {::_pbi::TcParser::FastV64S2,
-     {440, 22, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.deleted_at_)}},
+     {432, 21, 0, PROTOBUF_FIELD_OFFSET(Order, _impl_.deleted_at_)}},
+    {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -527,19 +516,19 @@ Order::_table_ = {
     {PROTOBUF_FIELD_OFFSET(Order, _impl_.currency_code_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // uint64 subtotal_cents = 4 [json_name = "subtotalCents"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.subtotal_cents_), _Internal::kHasBitsOffset + 14, 0,
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.subtotal_cents_), _Internal::kHasBitsOffset + 13, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // uint64 shipping_cents = 5 [json_name = "shippingCents"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.shipping_cents_), _Internal::kHasBitsOffset + 15, 0,
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.shipping_cents_), _Internal::kHasBitsOffset + 14, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // uint64 tax_cents = 6 [json_name = "taxCents"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.tax_cents_), _Internal::kHasBitsOffset + 16, 0,
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.tax_cents_), _Internal::kHasBitsOffset + 15, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // uint64 discount_cents = 7 [json_name = "discountCents"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.discount_cents_), _Internal::kHasBitsOffset + 17, 0,
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.discount_cents_), _Internal::kHasBitsOffset + 16, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // uint64 total_cents = 8 [json_name = "totalCents"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.total_cents_), _Internal::kHasBitsOffset + 18, 0,
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.total_cents_), _Internal::kHasBitsOffset + 17, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // string payment_provider = 9 [json_name = "paymentProvider"];
     {PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_provider_), _Internal::kHasBitsOffset + 3, 0,
@@ -551,10 +540,10 @@ Order::_table_ = {
     {PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_status_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // .shared.v1.Struct payment_provider_response = 12 [json_name = "paymentProviderResponse"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_provider_response_), _Internal::kHasBitsOffset + 10, 0,
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_provider_response_), _Internal::kHasBitsOffset + 9, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // uint64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_fee_cents_), _Internal::kHasBitsOffset + 19, 0,
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.payment_fee_cents_), _Internal::kHasBitsOffset + 18, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // string inventory_reservation_status = 14 [json_name = "inventoryReservationStatus"];
     {PROTOBUF_FIELD_OFFSET(Order, _impl_.inventory_reservation_status_), _Internal::kHasBitsOffset + 6, 0,
@@ -562,29 +551,26 @@ Order::_table_ = {
     // string product_source = 15 [json_name = "productSource"];
     {PROTOBUF_FIELD_OFFSET(Order, _impl_.product_source_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string product_version = 16 [json_name = "productVersion"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.product_version_), _Internal::kHasBitsOffset + 8, 0,
+    // .shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.shipping_address_), _Internal::kHasBitsOffset + 10, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.billing_address_), _Internal::kHasBitsOffset + 11, 2,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .shared.v1.Struct metadata = 18 [json_name = "metadata"];
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.metadata_), _Internal::kHasBitsOffset + 12, 3,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // string status = 19 [json_name = "status"];
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.status_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // .shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.shipping_address_), _Internal::kHasBitsOffset + 11, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.billing_address_), _Internal::kHasBitsOffset + 12, 2,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .shared.v1.Struct metadata = 19 [json_name = "metadata"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.metadata_), _Internal::kHasBitsOffset + 13, 3,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // string status = 20 [json_name = "status"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.status_), _Internal::kHasBitsOffset + 9, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // uint64 created_at = 21 [json_name = "createdAt"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.created_at_), _Internal::kHasBitsOffset + 20, 0,
+    // uint64 created_at = 20 [json_name = "createdAt"];
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.created_at_), _Internal::kHasBitsOffset + 19, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
-    // optional uint64 updated_at = 22 [json_name = "updatedAt"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.updated_at_), _Internal::kHasBitsOffset + 21, 0,
+    // optional uint64 updated_at = 21 [json_name = "updatedAt"];
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.updated_at_), _Internal::kHasBitsOffset + 20, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
-    // optional uint64 deleted_at = 23 [json_name = "deletedAt"];
-    {PROTOBUF_FIELD_OFFSET(Order, _impl_.deleted_at_), _Internal::kHasBitsOffset + 22, 0,
+    // optional uint64 deleted_at = 22 [json_name = "deletedAt"];
+    {PROTOBUF_FIELD_OFFSET(Order, _impl_.deleted_at_), _Internal::kHasBitsOffset + 21, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
   {{
@@ -594,7 +580,7 @@ Order::_table_ = {
       {::_pbi::TcParser::GetTable<::shared::v1::Struct>()},
   }},
   {{
-    "\17\2\7\15\0\0\0\0\0\20\26\16\0\0\34\16\17\0\0\0\6\0\0\0"
+    "\17\2\7\15\0\0\0\0\0\20\26\16\0\0\34\16\0\0\0\6\0\0\0\0"
     "orders.v1.Order"
     "id"
     "user_id"
@@ -604,7 +590,6 @@ Order::_table_ = {
     "payment_status"
     "inventory_reservation_status"
     "product_source"
-    "product_version"
     "status"
   }},
 };
@@ -642,39 +627,36 @@ PROTOBUF_NOINLINE void Order::Clear() {
       _impl_.product_source_.ClearNonDefaultToEmpty();
     }
   }
-  if ((cached_has_bits & 0x00003f00u) != 0) {
+  if ((cached_has_bits & 0x00001f00u) != 0) {
     if ((cached_has_bits & 0x00000100u) != 0) {
-      _impl_.product_version_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000200u) != 0) {
       _impl_.status_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000400u) != 0) {
+    if ((cached_has_bits & 0x00000200u) != 0) {
       ABSL_DCHECK(_impl_.payment_provider_response_ != nullptr);
       _impl_.payment_provider_response_->Clear();
     }
-    if ((cached_has_bits & 0x00000800u) != 0) {
+    if ((cached_has_bits & 0x00000400u) != 0) {
       ABSL_DCHECK(_impl_.shipping_address_ != nullptr);
       _impl_.shipping_address_->Clear();
     }
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    if ((cached_has_bits & 0x00000800u) != 0) {
       ABSL_DCHECK(_impl_.billing_address_ != nullptr);
       _impl_.billing_address_->Clear();
     }
-    if ((cached_has_bits & 0x00002000u) != 0) {
+    if ((cached_has_bits & 0x00001000u) != 0) {
       ABSL_DCHECK(_impl_.metadata_ != nullptr);
       _impl_.metadata_->Clear();
     }
   }
-  if ((cached_has_bits & 0x0000c000u) != 0) {
+  if ((cached_has_bits & 0x0000e000u) != 0) {
     ::memset(&_impl_.subtotal_cents_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.shipping_cents_) -
-        reinterpret_cast<char*>(&_impl_.subtotal_cents_)) + sizeof(_impl_.shipping_cents_));
+        reinterpret_cast<char*>(&_impl_.tax_cents_) -
+        reinterpret_cast<char*>(&_impl_.subtotal_cents_)) + sizeof(_impl_.tax_cents_));
   }
-  if ((cached_has_bits & 0x007f0000u) != 0) {
-    ::memset(&_impl_.tax_cents_, 0, static_cast<::size_t>(
+  if ((cached_has_bits & 0x003f0000u) != 0) {
+    ::memset(&_impl_.discount_cents_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.deleted_at_) -
-        reinterpret_cast<char*>(&_impl_.tax_cents_)) + sizeof(_impl_.deleted_at_));
+        reinterpret_cast<char*>(&_impl_.discount_cents_)) + sizeof(_impl_.deleted_at_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -726,7 +708,7 @@ PROTOBUF_NOINLINE void Order::Clear() {
   }
 
   // uint64 subtotal_cents = 4 [json_name = "subtotalCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00004000u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00002000u) != 0) {
     if (this_._internal_subtotal_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -735,7 +717,7 @@ PROTOBUF_NOINLINE void Order::Clear() {
   }
 
   // uint64 shipping_cents = 5 [json_name = "shippingCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00008000u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00004000u) != 0) {
     if (this_._internal_shipping_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -744,7 +726,7 @@ PROTOBUF_NOINLINE void Order::Clear() {
   }
 
   // uint64 tax_cents = 6 [json_name = "taxCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00010000u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00008000u) != 0) {
     if (this_._internal_tax_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -753,7 +735,7 @@ PROTOBUF_NOINLINE void Order::Clear() {
   }
 
   // uint64 discount_cents = 7 [json_name = "discountCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00020000u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00010000u) != 0) {
     if (this_._internal_discount_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -762,7 +744,7 @@ PROTOBUF_NOINLINE void Order::Clear() {
   }
 
   // uint64 total_cents = 8 [json_name = "totalCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00040000u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00020000u) != 0) {
     if (this_._internal_total_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -802,14 +784,14 @@ PROTOBUF_NOINLINE void Order::Clear() {
 
   cached_has_bits = this_._impl_._has_bits_[0];
   // .shared.v1.Struct payment_provider_response = 12 [json_name = "paymentProviderResponse"];
-  if ((cached_has_bits & 0x00000400u) != 0) {
+  if ((cached_has_bits & 0x00000200u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         12, *this_._impl_.payment_provider_response_, this_._impl_.payment_provider_response_->GetCachedSize(), target,
         stream);
   }
 
   // uint64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];
-  if ((cached_has_bits & 0x00080000u) != 0) {
+  if ((cached_has_bits & 0x00040000u) != 0) {
     if (this_._internal_payment_fee_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -837,68 +819,58 @@ PROTOBUF_NOINLINE void Order::Clear() {
     }
   }
 
-  // string product_version = 16 [json_name = "productVersion"];
-  if ((cached_has_bits & 0x00000100u) != 0) {
-    if (!this_._internal_product_version().empty()) {
-      const ::std::string& _s = this_._internal_product_version();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "orders.v1.Order.product_version");
-      target = stream->WriteStringMaybeAliased(16, _s, target);
-    }
+  // .shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];
+  if ((cached_has_bits & 0x00000400u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        16, *this_._impl_.shipping_address_, this_._impl_.shipping_address_->GetCachedSize(), target,
+        stream);
   }
 
-  // .shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];
+  // .shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];
   if ((cached_has_bits & 0x00000800u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        17, *this_._impl_.shipping_address_, this_._impl_.shipping_address_->GetCachedSize(), target,
+        17, *this_._impl_.billing_address_, this_._impl_.billing_address_->GetCachedSize(), target,
         stream);
   }
 
-  // .shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];
+  // .shared.v1.Struct metadata = 18 [json_name = "metadata"];
   if ((cached_has_bits & 0x00001000u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        18, *this_._impl_.billing_address_, this_._impl_.billing_address_->GetCachedSize(), target,
+        18, *this_._impl_.metadata_, this_._impl_.metadata_->GetCachedSize(), target,
         stream);
   }
 
-  // .shared.v1.Struct metadata = 19 [json_name = "metadata"];
-  if ((cached_has_bits & 0x00002000u) != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        19, *this_._impl_.metadata_, this_._impl_.metadata_->GetCachedSize(), target,
-        stream);
-  }
-
-  // string status = 20 [json_name = "status"];
-  if ((cached_has_bits & 0x00000200u) != 0) {
+  // string status = 19 [json_name = "status"];
+  if ((cached_has_bits & 0x00000100u) != 0) {
     if (!this_._internal_status().empty()) {
       const ::std::string& _s = this_._internal_status();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "orders.v1.Order.status");
-      target = stream->WriteStringMaybeAliased(20, _s, target);
+      target = stream->WriteStringMaybeAliased(19, _s, target);
     }
   }
 
-  // uint64 created_at = 21 [json_name = "createdAt"];
-  if ((cached_has_bits & 0x00100000u) != 0) {
+  // uint64 created_at = 20 [json_name = "createdAt"];
+  if ((cached_has_bits & 0x00080000u) != 0) {
     if (this_._internal_created_at() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-          21, this_._internal_created_at(), target);
+          20, this_._internal_created_at(), target);
     }
   }
 
-  // optional uint64 updated_at = 22 [json_name = "updatedAt"];
+  // optional uint64 updated_at = 21 [json_name = "updatedAt"];
+  if ((cached_has_bits & 0x00100000u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        21, this_._internal_updated_at(), target);
+  }
+
+  // optional uint64 deleted_at = 22 [json_name = "deletedAt"];
   if ((cached_has_bits & 0x00200000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-        22, this_._internal_updated_at(), target);
-  }
-
-  // optional uint64 deleted_at = 23 [json_name = "deletedAt"];
-  if ((cached_has_bits & 0x00400000u) != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-        23, this_._internal_deleted_at(), target);
+        22, this_._internal_deleted_at(), target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -985,98 +957,91 @@ PROTOBUF_NOINLINE void Order::Clear() {
     }
   }
   if ((cached_has_bits & 0x0000ff00u) != 0) {
-    // string product_version = 16 [json_name = "productVersion"];
+    // string status = 19 [json_name = "status"];
     if ((cached_has_bits & 0x00000100u) != 0) {
-      if (!this_._internal_product_version().empty()) {
-        total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_product_version());
-      }
-    }
-    // string status = 20 [json_name = "status"];
-    if ((cached_has_bits & 0x00000200u) != 0) {
       if (!this_._internal_status().empty()) {
         total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_status());
       }
     }
     // .shared.v1.Struct payment_provider_response = 12 [json_name = "paymentProviderResponse"];
-    if ((cached_has_bits & 0x00000400u) != 0) {
+    if ((cached_has_bits & 0x00000200u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.payment_provider_response_);
     }
-    // .shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];
-    if ((cached_has_bits & 0x00000800u) != 0) {
+    // .shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];
+    if ((cached_has_bits & 0x00000400u) != 0) {
       total_size += 2 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.shipping_address_);
     }
-    // .shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    // .shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];
+    if ((cached_has_bits & 0x00000800u) != 0) {
       total_size += 2 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.billing_address_);
     }
-    // .shared.v1.Struct metadata = 19 [json_name = "metadata"];
-    if ((cached_has_bits & 0x00002000u) != 0) {
+    // .shared.v1.Struct metadata = 18 [json_name = "metadata"];
+    if ((cached_has_bits & 0x00001000u) != 0) {
       total_size += 2 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.metadata_);
     }
     // uint64 subtotal_cents = 4 [json_name = "subtotalCents"];
-    if ((cached_has_bits & 0x00004000u) != 0) {
+    if ((cached_has_bits & 0x00002000u) != 0) {
       if (this_._internal_subtotal_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_subtotal_cents());
       }
     }
     // uint64 shipping_cents = 5 [json_name = "shippingCents"];
-    if ((cached_has_bits & 0x00008000u) != 0) {
+    if ((cached_has_bits & 0x00004000u) != 0) {
       if (this_._internal_shipping_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_shipping_cents());
       }
     }
-  }
-  if ((cached_has_bits & 0x007f0000u) != 0) {
     // uint64 tax_cents = 6 [json_name = "taxCents"];
-    if ((cached_has_bits & 0x00010000u) != 0) {
+    if ((cached_has_bits & 0x00008000u) != 0) {
       if (this_._internal_tax_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_tax_cents());
       }
     }
+  }
+  if ((cached_has_bits & 0x003f0000u) != 0) {
     // uint64 discount_cents = 7 [json_name = "discountCents"];
-    if ((cached_has_bits & 0x00020000u) != 0) {
+    if ((cached_has_bits & 0x00010000u) != 0) {
       if (this_._internal_discount_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_discount_cents());
       }
     }
     // uint64 total_cents = 8 [json_name = "totalCents"];
-    if ((cached_has_bits & 0x00040000u) != 0) {
+    if ((cached_has_bits & 0x00020000u) != 0) {
       if (this_._internal_total_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_total_cents());
       }
     }
     // uint64 payment_fee_cents = 13 [json_name = "paymentFeeCents"];
-    if ((cached_has_bits & 0x00080000u) != 0) {
+    if ((cached_has_bits & 0x00040000u) != 0) {
       if (this_._internal_payment_fee_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_payment_fee_cents());
       }
     }
-    // uint64 created_at = 21 [json_name = "createdAt"];
-    if ((cached_has_bits & 0x00100000u) != 0) {
+    // uint64 created_at = 20 [json_name = "createdAt"];
+    if ((cached_has_bits & 0x00080000u) != 0) {
       if (this_._internal_created_at() != 0) {
         total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
                                         this_._internal_created_at());
       }
     }
-    // optional uint64 updated_at = 22 [json_name = "updatedAt"];
-    if ((cached_has_bits & 0x00200000u) != 0) {
+    // optional uint64 updated_at = 21 [json_name = "updatedAt"];
+    if ((cached_has_bits & 0x00100000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
                                       this_._internal_updated_at());
     }
-    // optional uint64 deleted_at = 23 [json_name = "deletedAt"];
-    if ((cached_has_bits & 0x00400000u) != 0) {
+    // optional uint64 deleted_at = 22 [json_name = "deletedAt"];
+    if ((cached_has_bits & 0x00200000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
                                       this_._internal_deleted_at());
     }
@@ -1171,15 +1136,6 @@ void Order::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
   }
   if ((cached_has_bits & 0x0000ff00u) != 0) {
     if ((cached_has_bits & 0x00000100u) != 0) {
-      if (!from._internal_product_version().empty()) {
-        _this->_internal_set_product_version(from._internal_product_version());
-      } else {
-        if (_this->_impl_.product_version_.IsDefault()) {
-          _this->_internal_set_product_version("");
-        }
-      }
-    }
-    if ((cached_has_bits & 0x00000200u) != 0) {
       if (!from._internal_status().empty()) {
         _this->_internal_set_status(from._internal_status());
       } else {
@@ -1188,7 +1144,7 @@ void Order::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
         }
       }
     }
-    if ((cached_has_bits & 0x00000400u) != 0) {
+    if ((cached_has_bits & 0x00000200u) != 0) {
       ABSL_DCHECK(from._impl_.payment_provider_response_ != nullptr);
       if (_this->_impl_.payment_provider_response_ == nullptr) {
         _this->_impl_.payment_provider_response_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.payment_provider_response_);
@@ -1196,7 +1152,7 @@ void Order::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
         _this->_impl_.payment_provider_response_->MergeFrom(*from._impl_.payment_provider_response_);
       }
     }
-    if ((cached_has_bits & 0x00000800u) != 0) {
+    if ((cached_has_bits & 0x00000400u) != 0) {
       ABSL_DCHECK(from._impl_.shipping_address_ != nullptr);
       if (_this->_impl_.shipping_address_ == nullptr) {
         _this->_impl_.shipping_address_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.shipping_address_);
@@ -1204,7 +1160,7 @@ void Order::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
         _this->_impl_.shipping_address_->MergeFrom(*from._impl_.shipping_address_);
       }
     }
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    if ((cached_has_bits & 0x00000800u) != 0) {
       ABSL_DCHECK(from._impl_.billing_address_ != nullptr);
       if (_this->_impl_.billing_address_ == nullptr) {
         _this->_impl_.billing_address_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.billing_address_);
@@ -1212,7 +1168,7 @@ void Order::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
         _this->_impl_.billing_address_->MergeFrom(*from._impl_.billing_address_);
       }
     }
-    if ((cached_has_bits & 0x00002000u) != 0) {
+    if ((cached_has_bits & 0x00001000u) != 0) {
       ABSL_DCHECK(from._impl_.metadata_ != nullptr);
       if (_this->_impl_.metadata_ == nullptr) {
         _this->_impl_.metadata_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.metadata_);
@@ -1220,47 +1176,47 @@ void Order::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
         _this->_impl_.metadata_->MergeFrom(*from._impl_.metadata_);
       }
     }
-    if ((cached_has_bits & 0x00004000u) != 0) {
+    if ((cached_has_bits & 0x00002000u) != 0) {
       if (from._internal_subtotal_cents() != 0) {
         _this->_impl_.subtotal_cents_ = from._impl_.subtotal_cents_;
       }
     }
-    if ((cached_has_bits & 0x00008000u) != 0) {
+    if ((cached_has_bits & 0x00004000u) != 0) {
       if (from._internal_shipping_cents() != 0) {
         _this->_impl_.shipping_cents_ = from._impl_.shipping_cents_;
       }
     }
-  }
-  if ((cached_has_bits & 0x007f0000u) != 0) {
-    if ((cached_has_bits & 0x00010000u) != 0) {
+    if ((cached_has_bits & 0x00008000u) != 0) {
       if (from._internal_tax_cents() != 0) {
         _this->_impl_.tax_cents_ = from._impl_.tax_cents_;
       }
     }
-    if ((cached_has_bits & 0x00020000u) != 0) {
+  }
+  if ((cached_has_bits & 0x003f0000u) != 0) {
+    if ((cached_has_bits & 0x00010000u) != 0) {
       if (from._internal_discount_cents() != 0) {
         _this->_impl_.discount_cents_ = from._impl_.discount_cents_;
       }
     }
-    if ((cached_has_bits & 0x00040000u) != 0) {
+    if ((cached_has_bits & 0x00020000u) != 0) {
       if (from._internal_total_cents() != 0) {
         _this->_impl_.total_cents_ = from._impl_.total_cents_;
       }
     }
-    if ((cached_has_bits & 0x00080000u) != 0) {
+    if ((cached_has_bits & 0x00040000u) != 0) {
       if (from._internal_payment_fee_cents() != 0) {
         _this->_impl_.payment_fee_cents_ = from._impl_.payment_fee_cents_;
       }
     }
-    if ((cached_has_bits & 0x00100000u) != 0) {
+    if ((cached_has_bits & 0x00080000u) != 0) {
       if (from._internal_created_at() != 0) {
         _this->_impl_.created_at_ = from._impl_.created_at_;
       }
     }
-    if ((cached_has_bits & 0x00200000u) != 0) {
+    if ((cached_has_bits & 0x00100000u) != 0) {
       _this->_impl_.updated_at_ = from._impl_.updated_at_;
     }
-    if ((cached_has_bits & 0x00400000u) != 0) {
+    if ((cached_has_bits & 0x00200000u) != 0) {
       _this->_impl_.deleted_at_ = from._impl_.deleted_at_;
     }
   }
@@ -1290,7 +1246,6 @@ void Order::InternalSwap(Order* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.payment_status_, &other->_impl_.payment_status_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.inventory_reservation_status_, &other->_impl_.inventory_reservation_status_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.product_source_, &other->_impl_.product_source_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.product_version_, &other->_impl_.product_version_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.status_, &other->_impl_.status_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Order, _impl_.deleted_at_)

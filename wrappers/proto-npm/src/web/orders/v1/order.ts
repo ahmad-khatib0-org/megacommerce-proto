@@ -133,7 +133,6 @@ export interface Order {
   inventoryReservationStatus: string;
   /** Product information */
   productSource: string;
-  productVersion: string;
   /** Address snapshots */
   shippingAddress?: Struct | undefined;
   billingAddress?:
@@ -165,7 +164,6 @@ function createBaseOrder(): Order {
     paymentFeeCents: "0",
     inventoryReservationStatus: "",
     productSource: "",
-    productVersion: "",
     shippingAddress: undefined,
     billingAddress: undefined,
     metadata: undefined,
@@ -223,29 +221,26 @@ export const Order: MessageFns<Order> = {
     if (message.productSource !== "") {
       writer.uint32(122).string(message.productSource);
     }
-    if (message.productVersion !== "") {
-      writer.uint32(130).string(message.productVersion);
-    }
     if (message.shippingAddress !== undefined) {
-      Struct.encode(message.shippingAddress, writer.uint32(138).fork()).join();
+      Struct.encode(message.shippingAddress, writer.uint32(130).fork()).join();
     }
     if (message.billingAddress !== undefined) {
-      Struct.encode(message.billingAddress, writer.uint32(146).fork()).join();
+      Struct.encode(message.billingAddress, writer.uint32(138).fork()).join();
     }
     if (message.metadata !== undefined) {
-      Struct.encode(message.metadata, writer.uint32(154).fork()).join();
+      Struct.encode(message.metadata, writer.uint32(146).fork()).join();
     }
     if (message.status !== "") {
-      writer.uint32(162).string(message.status);
+      writer.uint32(154).string(message.status);
     }
     if (message.createdAt !== "0") {
-      writer.uint32(168).uint64(message.createdAt);
+      writer.uint32(160).uint64(message.createdAt);
     }
     if (message.updatedAt !== undefined) {
-      writer.uint32(176).uint64(message.updatedAt);
+      writer.uint32(168).uint64(message.updatedAt);
     }
     if (message.deletedAt !== undefined) {
-      writer.uint32(184).uint64(message.deletedAt);
+      writer.uint32(176).uint64(message.deletedAt);
     }
     return writer;
   },
@@ -382,7 +377,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.productVersion = reader.string();
+          message.shippingAddress = Struct.decode(reader, reader.uint32());
           continue;
         }
         case 17: {
@@ -390,7 +385,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.shippingAddress = Struct.decode(reader, reader.uint32());
+          message.billingAddress = Struct.decode(reader, reader.uint32());
           continue;
         }
         case 18: {
@@ -398,7 +393,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.billingAddress = Struct.decode(reader, reader.uint32());
+          message.metadata = Struct.decode(reader, reader.uint32());
           continue;
         }
         case 19: {
@@ -406,15 +401,15 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.metadata = Struct.decode(reader, reader.uint32());
+          message.status = reader.string();
           continue;
         }
         case 20: {
-          if (tag !== 162) {
+          if (tag !== 160) {
             break;
           }
 
-          message.status = reader.string();
+          message.createdAt = reader.uint64().toString();
           continue;
         }
         case 21: {
@@ -422,19 +417,11 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.createdAt = reader.uint64().toString();
+          message.updatedAt = reader.uint64().toString();
           continue;
         }
         case 22: {
           if (tag !== 176) {
-            break;
-          }
-
-          message.updatedAt = reader.uint64().toString();
-          continue;
-        }
-        case 23: {
-          if (tag !== 184) {
             break;
           }
 
@@ -471,7 +458,6 @@ export const Order: MessageFns<Order> = {
         ? globalThis.String(object.inventoryReservationStatus)
         : "",
       productSource: isSet(object.productSource) ? globalThis.String(object.productSource) : "",
-      productVersion: isSet(object.productVersion) ? globalThis.String(object.productVersion) : "",
       shippingAddress: isSet(object.shippingAddress) ? Struct.fromJSON(object.shippingAddress) : undefined,
       billingAddress: isSet(object.billingAddress) ? Struct.fromJSON(object.billingAddress) : undefined,
       metadata: isSet(object.metadata) ? Struct.fromJSON(object.metadata) : undefined,
@@ -529,9 +515,6 @@ export const Order: MessageFns<Order> = {
     if (message.productSource !== "") {
       obj.productSource = message.productSource;
     }
-    if (message.productVersion !== "") {
-      obj.productVersion = message.productVersion;
-    }
     if (message.shippingAddress !== undefined) {
       obj.shippingAddress = Struct.toJSON(message.shippingAddress);
     }
@@ -579,7 +562,6 @@ export const Order: MessageFns<Order> = {
     message.paymentFeeCents = object.paymentFeeCents ?? "0";
     message.inventoryReservationStatus = object.inventoryReservationStatus ?? "";
     message.productSource = object.productSource ?? "";
-    message.productVersion = object.productVersion ?? "";
     message.shippingAddress = (object.shippingAddress !== undefined && object.shippingAddress !== null)
       ? Struct.fromPartial(object.shippingAddress)
       : undefined;

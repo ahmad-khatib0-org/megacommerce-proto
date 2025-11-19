@@ -254,54 +254,55 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_orders_2fv1_2forder_5fcreate_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\034orders/v1/order_create.proto\022\torders.v"
-    "1\032\025shared/v1/error.proto\032\025shared/v1/type"
-    "s.proto\"\274\004\n\022OrderCreateRequest\022\'\n\017idempo"
-    "tency_key\030\001 \001(\tR\016idempotencyKey\022#\n\rcurre"
-    "ncy_code\030\003 \001(\tR\014currencyCode\022G\n\010metadata"
-    "\030\004 \003(\0132+.orders.v1.OrderCreateRequest.Me"
-    "tadataEntryR\010metadata\0229\n\020shipping_addres"
-    "s\030\005 \001(\0132\016.shared.v1.AnyR\017shippingAddress"
-    "\0227\n\017billing_address\030\006 \001(\0132\016.shared.v1.An"
-    "yR\016billingAddress\0225\n\005items\030\007 \003(\0132\037.order"
-    "s.v1.OrderLineItemRequestR\005items\022\'\n\017ship"
-    "ping_method\030\010 \001(\tR\016shippingMethod\022\'\n\017pro"
-    "motion_codes\030\t \003(\tR\016promotionCodes\0220\n\024pa"
-    "yment_method_token\030\n \001(\tR\022paymentMethodT"
-    "oken\022#\n\rcustomer_note\030\013 \001(\tR\014customerNot"
-    "e\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005"
-    "value\030\002 \001(\tR\005value:\0028\001\"\342\002\n\024OrderLineItem"
-    "Request\022\035\n\nproduct_id\030\001 \001(\tR\tproductId\022\035"
-    "\n\nvariant_id\030\002 \001(\tR\tvariantId\022\020\n\003sku\030\003 \001"
-    "(\tR\003sku\022\032\n\010quantity\030\004 \001(\rR\010quantity\022:\n\027u"
-    "nit_price_cents_client\030\005 \001(\004H\000R\024unitPric"
-    "eCentsClient\210\001\001\022I\n\010metadata\030\006 \003(\0132-.orde"
-    "rs.v1.OrderLineItemRequest.MetadataEntry"
-    "R\010metadata\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\t"
-    "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\032\n\030_unit"
-    "_price_cents_client\"\204\001\n\023OrderCreateRespo"
-    "nse\0224\n\004data\030\001 \001(\0132\036.shared.v1.SuccessRes"
-    "ponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.share"
-    "d.v1.AppErrorH\000R\005errorB\n\n\010responseBv\n\032or"
-    "g.megacommerce.orders.v1B\020OrderCreatePro"
-    "toZCgithub.com/ahmad-khatib0-org/megacom"
-    "merce-proto/gen/go/orders/v1;v1\370\001\001b\006prot"
-    "o3"
+    "1\032\025shared/v1/error.proto\032\026shared/v1/stru"
+    "ct.proto\032\025shared/v1/types.proto\"\302\004\n\022Orde"
+    "rCreateRequest\022\'\n\017idempotency_key\030\001 \001(\tR"
+    "\016idempotencyKey\022#\n\rcurrency_code\030\003 \001(\tR\014"
+    "currencyCode\022G\n\010metadata\030\004 \003(\0132+.orders."
+    "v1.OrderCreateRequest.MetadataEntryR\010met"
+    "adata\022<\n\020shipping_address\030\005 \001(\0132\021.shared"
+    ".v1.StructR\017shippingAddress\022:\n\017billing_a"
+    "ddress\030\006 \001(\0132\021.shared.v1.StructR\016billing"
+    "Address\0225\n\005items\030\007 \003(\0132\037.orders.v1.Order"
+    "LineItemRequestR\005items\022\'\n\017shipping_metho"
+    "d\030\010 \001(\tR\016shippingMethod\022\'\n\017promotion_cod"
+    "es\030\t \003(\tR\016promotionCodes\0220\n\024payment_meth"
+    "od_token\030\n \001(\tR\022paymentMethodToken\022#\n\rcu"
+    "stomer_note\030\013 \001(\tR\014customerNote\032;\n\rMetad"
+    "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
+    "\tR\005value:\0028\001\"\342\002\n\024OrderLineItemRequest\022\035\n"
+    "\nproduct_id\030\001 \001(\tR\tproductId\022\035\n\nvariant_"
+    "id\030\002 \001(\tR\tvariantId\022\020\n\003sku\030\003 \001(\tR\003sku\022\032\n"
+    "\010quantity\030\004 \001(\rR\010quantity\022:\n\027unit_price_"
+    "cents_client\030\005 \001(\004H\000R\024unitPriceCentsClie"
+    "nt\210\001\001\022I\n\010metadata\030\006 \003(\0132-.orders.v1.Orde"
+    "rLineItemRequest.MetadataEntryR\010metadata"
+    "\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v"
+    "alue\030\002 \001(\tR\005value:\0028\001B\032\n\030_unit_price_cen"
+    "ts_client\"\204\001\n\023OrderCreateResponse\0224\n\004dat"
+    "a\030\001 \001(\0132\036.shared.v1.SuccessResponseDataH"
+    "\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppEr"
+    "rorH\000R\005errorB\n\n\010responseBv\n\032org.megacomm"
+    "erce.orders.v1B\020OrderCreateProtoZCgithub"
+    ".com/ahmad-khatib0-org/megacommerce-prot"
+    "o/gen/go/orders/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_orders_2fv1_2forder_5fcreate_2eproto_deps[2] = {
+    descriptor_table_orders_2fv1_2forder_5fcreate_2eproto_deps[3] = {
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
+        &::descriptor_table_shared_2fv1_2fstruct_2eproto,
         &::descriptor_table_shared_2fv1_2ftypes_2eproto,
 };
 static ::absl::once_flag descriptor_table_orders_2fv1_2forder_5fcreate_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_5fcreate_2eproto = {
     false,
     false,
-    1282,
+    1312,
     descriptor_table_protodef_orders_2fv1_2forder_5fcreate_2eproto,
     "orders/v1/order_create.proto",
     &descriptor_table_orders_2fv1_2forder_5fcreate_2eproto_once,
     descriptor_table_orders_2fv1_2forder_5fcreate_2eproto_deps,
-    2,
+    3,
     5,
     schemas,
     file_default_instances,
@@ -611,10 +612,10 @@ OrderCreateRequest::_table_ = {
     {::_pbi::TcParser::FastUS1,
      {26, 1, 0, PROTOBUF_FIELD_OFFSET(OrderCreateRequest, _impl_.currency_code_)}},
     {::_pbi::TcParser::MiniParse, {}},
-    // .shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];
+    // .shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];
     {::_pbi::TcParser::FastMtS1,
      {42, 5, 0, PROTOBUF_FIELD_OFFSET(OrderCreateRequest, _impl_.shipping_address_)}},
-    // .shared.v1.Any billing_address = 6 [json_name = "billingAddress"];
+    // .shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];
     {::_pbi::TcParser::FastMtS1,
      {50, 6, 1, PROTOBUF_FIELD_OFFSET(OrderCreateRequest, _impl_.billing_address_)}},
     // repeated .orders.v1.OrderLineItemRequest items = 7 [json_name = "items"];
@@ -648,10 +649,10 @@ OrderCreateRequest::_table_ = {
     // map<string, string> metadata = 4 [json_name = "metadata"];
     {PROTOBUF_FIELD_OFFSET(OrderCreateRequest, _impl_.metadata_), -1, 3,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
-    // .shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];
+    // .shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];
     {PROTOBUF_FIELD_OFFSET(OrderCreateRequest, _impl_.shipping_address_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .shared.v1.Any billing_address = 6 [json_name = "billingAddress"];
+    // .shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];
     {PROTOBUF_FIELD_OFFSET(OrderCreateRequest, _impl_.billing_address_), _Internal::kHasBitsOffset + 6, 1,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // repeated .orders.v1.OrderLineItemRequest items = 7 [json_name = "items"];
@@ -671,8 +672,8 @@ OrderCreateRequest::_table_ = {
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
-      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::Struct>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::Struct>()},
       {::_pbi::TcParser::GetTable<::orders::v1::OrderLineItemRequest>()},
       {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
                                        9, 9,
@@ -799,14 +800,14 @@ PROTOBUF_NOINLINE void OrderCreateRequest::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];
+  // .shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];
   if ((cached_has_bits & 0x00000020u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         5, *this_._impl_.shipping_address_, this_._impl_.shipping_address_->GetCachedSize(), target,
         stream);
   }
 
-  // .shared.v1.Any billing_address = 6 [json_name = "billingAddress"];
+  // .shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];
   if ((cached_has_bits & 0x00000040u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         6, *this_._impl_.billing_address_, this_._impl_.billing_address_->GetCachedSize(), target,
@@ -951,12 +952,12 @@ PROTOBUF_NOINLINE void OrderCreateRequest::Clear() {
                                         this_._internal_customer_note());
       }
     }
-    // .shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];
+    // .shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];
     if ((cached_has_bits & 0x00000020u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.shipping_address_);
     }
-    // .shared.v1.Any billing_address = 6 [json_name = "billingAddress"];
+    // .shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];
     if ((cached_has_bits & 0x00000040u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.billing_address_);

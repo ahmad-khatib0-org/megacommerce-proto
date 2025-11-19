@@ -38,24 +38,22 @@ pub struct Order {
     /// Product information
     #[prost(string, tag = "15")]
     pub product_source: ::prost::alloc::string::String,
-    #[prost(string, tag = "16")]
-    pub product_version: ::prost::alloc::string::String,
     /// Address snapshots
-    #[prost(message, optional, tag = "17")]
+    #[prost(message, optional, tag = "16")]
     pub shipping_address: ::core::option::Option<super::super::shared::v1::Struct>,
-    #[prost(message, optional, tag = "18")]
+    #[prost(message, optional, tag = "17")]
     pub billing_address: ::core::option::Option<super::super::shared::v1::Struct>,
     /// Metadata
-    #[prost(message, optional, tag = "19")]
+    #[prost(message, optional, tag = "18")]
     pub metadata: ::core::option::Option<super::super::shared::v1::Struct>,
-    #[prost(string, tag = "20")]
+    #[prost(string, tag = "19")]
     pub status: ::prost::alloc::string::String,
     /// Timestamps
-    #[prost(uint64, tag = "21")]
+    #[prost(uint64, tag = "20")]
     pub created_at: u64,
-    #[prost(uint64, optional, tag = "22")]
+    #[prost(uint64, optional, tag = "21")]
     pub updated_at: ::core::option::Option<u64>,
-    #[prost(uint64, optional, tag = "23")]
+    #[prost(uint64, optional, tag = "22")]
     pub deleted_at: ::core::option::Option<u64>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
@@ -178,9 +176,9 @@ pub struct OrderCreateRequest {
     /// shipping and billing addresses: use shared.v1.Any
     /// provide existing address type (keeps proto flexible)
     #[prost(message, optional, tag = "5")]
-    pub shipping_address: ::core::option::Option<super::super::shared::v1::Any>,
+    pub shipping_address: ::core::option::Option<super::super::shared::v1::Struct>,
     #[prost(message, optional, tag = "6")]
-    pub billing_address: ::core::option::Option<super::super::shared::v1::Any>,
+    pub billing_address: ::core::option::Option<super::super::shared::v1::Struct>,
     /// list of items to order
     #[prost(message, repeated, tag = "7")]
     pub items: ::prost::alloc::vec::Vec<OrderLineItemRequest>,

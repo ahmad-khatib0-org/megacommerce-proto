@@ -130,7 +130,7 @@ java.lang.String defaultValue);
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
-     * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
      * @return Whether the shippingAddress field is set.
      */
     boolean hasShippingAddress();
@@ -140,34 +140,34 @@ java.lang.String defaultValue);
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
-     * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
      * @return The shippingAddress.
      */
-    org.megacommerce.shared.v1.TypesProto.Any getShippingAddress();
+    org.megacommerce.shared.v1.StructProto.Struct getShippingAddress();
     /**
      * <pre>
      * shipping and billing addresses: use shared.v1.Any
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
-     * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
      */
-    org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getShippingAddressOrBuilder();
+    org.megacommerce.shared.v1.StructProto.StructOrBuilder getShippingAddressOrBuilder();
 
     /**
-     * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
      * @return Whether the billingAddress field is set.
      */
     boolean hasBillingAddress();
     /**
-     * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
      * @return The billingAddress.
      */
-    org.megacommerce.shared.v1.TypesProto.Any getBillingAddress();
+    org.megacommerce.shared.v1.StructProto.Struct getBillingAddress();
     /**
-     * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
      */
-    org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getBillingAddressOrBuilder();
+    org.megacommerce.shared.v1.StructProto.StructOrBuilder getBillingAddressOrBuilder();
 
     /**
      * <pre>
@@ -568,14 +568,14 @@ java.lang.String defaultValue) {
     }
 
     public static final int SHIPPING_ADDRESS_FIELD_NUMBER = 5;
-    private org.megacommerce.shared.v1.TypesProto.Any shippingAddress_;
+    private org.megacommerce.shared.v1.StructProto.Struct shippingAddress_;
     /**
      * <pre>
      * shipping and billing addresses: use shared.v1.Any
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
-     * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
      * @return Whether the shippingAddress field is set.
      */
     @java.lang.Override
@@ -588,12 +588,12 @@ java.lang.String defaultValue) {
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
-     * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
      * @return The shippingAddress.
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.Any getShippingAddress() {
-      return shippingAddress_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : shippingAddress_;
+    public org.megacommerce.shared.v1.StructProto.Struct getShippingAddress() {
+      return shippingAddress_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : shippingAddress_;
     }
     /**
      * <pre>
@@ -601,17 +601,17 @@ java.lang.String defaultValue) {
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
-     * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getShippingAddressOrBuilder() {
-      return shippingAddress_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : shippingAddress_;
+    public org.megacommerce.shared.v1.StructProto.StructOrBuilder getShippingAddressOrBuilder() {
+      return shippingAddress_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : shippingAddress_;
     }
 
     public static final int BILLING_ADDRESS_FIELD_NUMBER = 6;
-    private org.megacommerce.shared.v1.TypesProto.Any billingAddress_;
+    private org.megacommerce.shared.v1.StructProto.Struct billingAddress_;
     /**
-     * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
      * @return Whether the billingAddress field is set.
      */
     @java.lang.Override
@@ -619,19 +619,19 @@ java.lang.String defaultValue) {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
      * @return The billingAddress.
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.Any getBillingAddress() {
-      return billingAddress_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : billingAddress_;
+    public org.megacommerce.shared.v1.StructProto.Struct getBillingAddress() {
+      return billingAddress_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : billingAddress_;
     }
     /**
-     * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getBillingAddressOrBuilder() {
-      return billingAddress_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : billingAddress_;
+    public org.megacommerce.shared.v1.StructProto.StructOrBuilder getBillingAddressOrBuilder() {
+      return billingAddress_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : billingAddress_;
     }
 
     public static final int ITEMS_FIELD_NUMBER = 7;
@@ -1880,16 +1880,16 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private org.megacommerce.shared.v1.TypesProto.Any shippingAddress_;
+      private org.megacommerce.shared.v1.StructProto.Struct shippingAddress_;
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> shippingAddressBuilder_;
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> shippingAddressBuilder_;
       /**
        * <pre>
        * shipping and billing addresses: use shared.v1.Any
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
-       * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
        * @return Whether the shippingAddress field is set.
        */
       public boolean hasShippingAddress() {
@@ -1901,12 +1901,12 @@ java.lang.String defaultValue) {
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
-       * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
        * @return The shippingAddress.
        */
-      public org.megacommerce.shared.v1.TypesProto.Any getShippingAddress() {
+      public org.megacommerce.shared.v1.StructProto.Struct getShippingAddress() {
         if (shippingAddressBuilder_ == null) {
-          return shippingAddress_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : shippingAddress_;
+          return shippingAddress_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : shippingAddress_;
         } else {
           return shippingAddressBuilder_.getMessage();
         }
@@ -1917,9 +1917,9 @@ java.lang.String defaultValue) {
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
-       * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
        */
-      public Builder setShippingAddress(org.megacommerce.shared.v1.TypesProto.Any value) {
+      public Builder setShippingAddress(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (shippingAddressBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1938,10 +1938,10 @@ java.lang.String defaultValue) {
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
-       * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
        */
       public Builder setShippingAddress(
-          org.megacommerce.shared.v1.TypesProto.Any.Builder builderForValue) {
+          org.megacommerce.shared.v1.StructProto.Struct.Builder builderForValue) {
         if (shippingAddressBuilder_ == null) {
           shippingAddress_ = builderForValue.build();
         } else {
@@ -1957,13 +1957,13 @@ java.lang.String defaultValue) {
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
-       * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
        */
-      public Builder mergeShippingAddress(org.megacommerce.shared.v1.TypesProto.Any value) {
+      public Builder mergeShippingAddress(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (shippingAddressBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
             shippingAddress_ != null &&
-            shippingAddress_ != org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance()) {
+            shippingAddress_ != org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance()) {
             getShippingAddressBuilder().mergeFrom(value);
           } else {
             shippingAddress_ = value;
@@ -1983,7 +1983,7 @@ java.lang.String defaultValue) {
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
-       * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
        */
       public Builder clearShippingAddress() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -2001,9 +2001,9 @@ java.lang.String defaultValue) {
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
-       * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.Any.Builder getShippingAddressBuilder() {
+      public org.megacommerce.shared.v1.StructProto.Struct.Builder getShippingAddressBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
         return internalGetShippingAddressFieldBuilder().getBuilder();
@@ -2014,14 +2014,14 @@ java.lang.String defaultValue) {
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
-       * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getShippingAddressOrBuilder() {
+      public org.megacommerce.shared.v1.StructProto.StructOrBuilder getShippingAddressOrBuilder() {
         if (shippingAddressBuilder_ != null) {
           return shippingAddressBuilder_.getMessageOrBuilder();
         } else {
           return shippingAddress_ == null ?
-              org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : shippingAddress_;
+              org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : shippingAddress_;
         }
       }
       /**
@@ -2030,14 +2030,14 @@ java.lang.String defaultValue) {
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
-       * <code>.shared.v1.Any shipping_address = 5 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 5 [json_name = "shippingAddress"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> 
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> 
           internalGetShippingAddressFieldBuilder() {
         if (shippingAddressBuilder_ == null) {
           shippingAddressBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder>(
+              org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder>(
                   getShippingAddress(),
                   getParentForChildren(),
                   isClean());
@@ -2046,31 +2046,31 @@ java.lang.String defaultValue) {
         return shippingAddressBuilder_;
       }
 
-      private org.megacommerce.shared.v1.TypesProto.Any billingAddress_;
+      private org.megacommerce.shared.v1.StructProto.Struct billingAddress_;
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> billingAddressBuilder_;
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> billingAddressBuilder_;
       /**
-       * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
        * @return Whether the billingAddress field is set.
        */
       public boolean hasBillingAddress() {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
        * @return The billingAddress.
        */
-      public org.megacommerce.shared.v1.TypesProto.Any getBillingAddress() {
+      public org.megacommerce.shared.v1.StructProto.Struct getBillingAddress() {
         if (billingAddressBuilder_ == null) {
-          return billingAddress_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : billingAddress_;
+          return billingAddress_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : billingAddress_;
         } else {
           return billingAddressBuilder_.getMessage();
         }
       }
       /**
-       * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
        */
-      public Builder setBillingAddress(org.megacommerce.shared.v1.TypesProto.Any value) {
+      public Builder setBillingAddress(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (billingAddressBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2084,10 +2084,10 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
-       * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
        */
       public Builder setBillingAddress(
-          org.megacommerce.shared.v1.TypesProto.Any.Builder builderForValue) {
+          org.megacommerce.shared.v1.StructProto.Struct.Builder builderForValue) {
         if (billingAddressBuilder_ == null) {
           billingAddress_ = builderForValue.build();
         } else {
@@ -2098,13 +2098,13 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
-       * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
        */
-      public Builder mergeBillingAddress(org.megacommerce.shared.v1.TypesProto.Any value) {
+      public Builder mergeBillingAddress(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (billingAddressBuilder_ == null) {
           if (((bitField0_ & 0x00000010) != 0) &&
             billingAddress_ != null &&
-            billingAddress_ != org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance()) {
+            billingAddress_ != org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance()) {
             getBillingAddressBuilder().mergeFrom(value);
           } else {
             billingAddress_ = value;
@@ -2119,7 +2119,7 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
-       * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
        */
       public Builder clearBillingAddress() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -2132,33 +2132,33 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
-       * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.Any.Builder getBillingAddressBuilder() {
+      public org.megacommerce.shared.v1.StructProto.Struct.Builder getBillingAddressBuilder() {
         bitField0_ |= 0x00000010;
         onChanged();
         return internalGetBillingAddressFieldBuilder().getBuilder();
       }
       /**
-       * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getBillingAddressOrBuilder() {
+      public org.megacommerce.shared.v1.StructProto.StructOrBuilder getBillingAddressOrBuilder() {
         if (billingAddressBuilder_ != null) {
           return billingAddressBuilder_.getMessageOrBuilder();
         } else {
           return billingAddress_ == null ?
-              org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : billingAddress_;
+              org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : billingAddress_;
         }
       }
       /**
-       * <code>.shared.v1.Any billing_address = 6 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 6 [json_name = "billingAddress"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> 
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> 
           internalGetBillingAddressFieldBuilder() {
         if (billingAddressBuilder_ == null) {
           billingAddressBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder>(
+              org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder>(
                   getBillingAddress(),
                   getParentForChildren(),
                   isClean());
@@ -5328,43 +5328,44 @@ java.lang.String defaultValue) {
   static {
     java.lang.String[] descriptorData = {
       "\n\034orders/v1/order_create.proto\022\torders.v" +
-      "1\032\025shared/v1/error.proto\032\025shared/v1/type" +
-      "s.proto\"\274\004\n\022OrderCreateRequest\022\'\n\017idempo" +
-      "tency_key\030\001 \001(\tR\016idempotencyKey\022#\n\rcurre" +
-      "ncy_code\030\003 \001(\tR\014currencyCode\022G\n\010metadata" +
-      "\030\004 \003(\0132+.orders.v1.OrderCreateRequest.Me" +
-      "tadataEntryR\010metadata\0229\n\020shipping_addres" +
-      "s\030\005 \001(\0132\016.shared.v1.AnyR\017shippingAddress" +
-      "\0227\n\017billing_address\030\006 \001(\0132\016.shared.v1.An" +
-      "yR\016billingAddress\0225\n\005items\030\007 \003(\0132\037.order" +
-      "s.v1.OrderLineItemRequestR\005items\022\'\n\017ship" +
-      "ping_method\030\010 \001(\tR\016shippingMethod\022\'\n\017pro" +
-      "motion_codes\030\t \003(\tR\016promotionCodes\0220\n\024pa" +
-      "yment_method_token\030\n \001(\tR\022paymentMethodT" +
-      "oken\022#\n\rcustomer_note\030\013 \001(\tR\014customerNot" +
-      "e\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005" +
-      "value\030\002 \001(\tR\005value:\0028\001\"\342\002\n\024OrderLineItem" +
-      "Request\022\035\n\nproduct_id\030\001 \001(\tR\tproductId\022\035" +
-      "\n\nvariant_id\030\002 \001(\tR\tvariantId\022\020\n\003sku\030\003 \001" +
-      "(\tR\003sku\022\032\n\010quantity\030\004 \001(\rR\010quantity\022:\n\027u" +
-      "nit_price_cents_client\030\005 \001(\004H\000R\024unitPric" +
-      "eCentsClient\210\001\001\022I\n\010metadata\030\006 \003(\0132-.orde" +
-      "rs.v1.OrderLineItemRequest.MetadataEntry" +
-      "R\010metadata\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\t" +
-      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\032\n\030_unit" +
-      "_price_cents_client\"\204\001\n\023OrderCreateRespo" +
-      "nse\0224\n\004data\030\001 \001(\0132\036.shared.v1.SuccessRes" +
-      "ponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.share" +
-      "d.v1.AppErrorH\000R\005errorB\n\n\010responseBv\n\032or" +
-      "g.megacommerce.orders.v1B\020OrderCreatePro" +
-      "toZCgithub.com/ahmad-khatib0-org/megacom" +
-      "merce-proto/gen/go/orders/v1;v1\370\001\001b\006prot" +
-      "o3"
+      "1\032\025shared/v1/error.proto\032\026shared/v1/stru" +
+      "ct.proto\032\025shared/v1/types.proto\"\302\004\n\022Orde" +
+      "rCreateRequest\022\'\n\017idempotency_key\030\001 \001(\tR" +
+      "\016idempotencyKey\022#\n\rcurrency_code\030\003 \001(\tR\014" +
+      "currencyCode\022G\n\010metadata\030\004 \003(\0132+.orders." +
+      "v1.OrderCreateRequest.MetadataEntryR\010met" +
+      "adata\022<\n\020shipping_address\030\005 \001(\0132\021.shared" +
+      ".v1.StructR\017shippingAddress\022:\n\017billing_a" +
+      "ddress\030\006 \001(\0132\021.shared.v1.StructR\016billing" +
+      "Address\0225\n\005items\030\007 \003(\0132\037.orders.v1.Order" +
+      "LineItemRequestR\005items\022\'\n\017shipping_metho" +
+      "d\030\010 \001(\tR\016shippingMethod\022\'\n\017promotion_cod" +
+      "es\030\t \003(\tR\016promotionCodes\0220\n\024payment_meth" +
+      "od_token\030\n \001(\tR\022paymentMethodToken\022#\n\rcu" +
+      "stomer_note\030\013 \001(\tR\014customerNote\032;\n\rMetad" +
+      "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(" +
+      "\tR\005value:\0028\001\"\342\002\n\024OrderLineItemRequest\022\035\n" +
+      "\nproduct_id\030\001 \001(\tR\tproductId\022\035\n\nvariant_" +
+      "id\030\002 \001(\tR\tvariantId\022\020\n\003sku\030\003 \001(\tR\003sku\022\032\n" +
+      "\010quantity\030\004 \001(\rR\010quantity\022:\n\027unit_price_" +
+      "cents_client\030\005 \001(\004H\000R\024unitPriceCentsClie" +
+      "nt\210\001\001\022I\n\010metadata\030\006 \003(\0132-.orders.v1.Orde" +
+      "rLineItemRequest.MetadataEntryR\010metadata" +
+      "\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v" +
+      "alue\030\002 \001(\tR\005value:\0028\001B\032\n\030_unit_price_cen" +
+      "ts_client\"\204\001\n\023OrderCreateResponse\0224\n\004dat" +
+      "a\030\001 \001(\0132\036.shared.v1.SuccessResponseDataH" +
+      "\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppEr" +
+      "rorH\000R\005errorB\n\n\010responseBv\n\032org.megacomm" +
+      "erce.orders.v1B\020OrderCreateProtoZCgithub" +
+      ".com/ahmad-khatib0-org/megacommerce-prot" +
+      "o/gen/go/orders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
+          org.megacommerce.shared.v1.StructProto.getDescriptor(),
           org.megacommerce.shared.v1.TypesProto.getDescriptor(),
         });
     internal_static_orders_v1_OrderCreateRequest_descriptor =
@@ -5399,6 +5400,7 @@ java.lang.String defaultValue) {
         new java.lang.String[] { "Data", "Error", "Response", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
+    org.megacommerce.shared.v1.StructProto.getDescriptor();
     org.megacommerce.shared.v1.TypesProto.getDescriptor();
   }
 

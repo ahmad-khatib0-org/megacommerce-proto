@@ -498,23 +498,11 @@ public final class OrderProto {
         getProductSourceBytes();
 
     /**
-     * <code>string product_version = 16 [json_name = "productVersion"];</code>
-     * @return The productVersion.
-     */
-    java.lang.String getProductVersion();
-    /**
-     * <code>string product_version = 16 [json_name = "productVersion"];</code>
-     * @return The bytes for productVersion.
-     */
-    com.google.protobuf.ByteString
-        getProductVersionBytes();
-
-    /**
      * <pre>
      * Address snapshots
      * </pre>
      *
-     * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
      * @return Whether the shippingAddress field is set.
      */
     boolean hasShippingAddress();
@@ -523,7 +511,7 @@ public final class OrderProto {
      * Address snapshots
      * </pre>
      *
-     * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
      * @return The shippingAddress.
      */
     org.megacommerce.shared.v1.StructProto.Struct getShippingAddress();
@@ -532,22 +520,22 @@ public final class OrderProto {
      * Address snapshots
      * </pre>
      *
-     * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
      */
     org.megacommerce.shared.v1.StructProto.StructOrBuilder getShippingAddressOrBuilder();
 
     /**
-     * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
      * @return Whether the billingAddress field is set.
      */
     boolean hasBillingAddress();
     /**
-     * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
      * @return The billingAddress.
      */
     org.megacommerce.shared.v1.StructProto.Struct getBillingAddress();
     /**
-     * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
      */
     org.megacommerce.shared.v1.StructProto.StructOrBuilder getBillingAddressOrBuilder();
 
@@ -556,7 +544,7 @@ public final class OrderProto {
      * Metadata
      * </pre>
      *
-     * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+     * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
@@ -565,7 +553,7 @@ public final class OrderProto {
      * Metadata
      * </pre>
      *
-     * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+     * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
      * @return The metadata.
      */
     org.megacommerce.shared.v1.StructProto.Struct getMetadata();
@@ -574,17 +562,17 @@ public final class OrderProto {
      * Metadata
      * </pre>
      *
-     * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+     * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
      */
     org.megacommerce.shared.v1.StructProto.StructOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>string status = 20 [json_name = "status"];</code>
+     * <code>string status = 19 [json_name = "status"];</code>
      * @return The status.
      */
     java.lang.String getStatus();
     /**
-     * <code>string status = 20 [json_name = "status"];</code>
+     * <code>string status = 19 [json_name = "status"];</code>
      * @return The bytes for status.
      */
     com.google.protobuf.ByteString
@@ -595,29 +583,29 @@ public final class OrderProto {
      * Timestamps
      * </pre>
      *
-     * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 20 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
 
     /**
-     * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 21 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     boolean hasUpdatedAt();
     /**
-     * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 21 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
 
     /**
-     * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
+     * <code>optional uint64 deleted_at = 22 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     boolean hasDeletedAt();
     /**
-     * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
+     * <code>optional uint64 deleted_at = 22 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     long getDeletedAt();
@@ -652,7 +640,6 @@ public final class OrderProto {
       paymentStatus_ = "";
       inventoryReservationStatus_ = "";
       productSource_ = "";
-      productVersion_ = "";
       status_ = "";
     }
 
@@ -1102,53 +1089,14 @@ public final class OrderProto {
       }
     }
 
-    public static final int PRODUCT_VERSION_FIELD_NUMBER = 16;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object productVersion_ = "";
-    /**
-     * <code>string product_version = 16 [json_name = "productVersion"];</code>
-     * @return The productVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getProductVersion() {
-      java.lang.Object ref = productVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        productVersion_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string product_version = 16 [json_name = "productVersion"];</code>
-     * @return The bytes for productVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getProductVersionBytes() {
-      java.lang.Object ref = productVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        productVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SHIPPING_ADDRESS_FIELD_NUMBER = 17;
+    public static final int SHIPPING_ADDRESS_FIELD_NUMBER = 16;
     private org.megacommerce.shared.v1.StructProto.Struct shippingAddress_;
     /**
      * <pre>
      * Address snapshots
      * </pre>
      *
-     * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
      * @return Whether the shippingAddress field is set.
      */
     @java.lang.Override
@@ -1160,7 +1108,7 @@ public final class OrderProto {
      * Address snapshots
      * </pre>
      *
-     * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
      * @return The shippingAddress.
      */
     @java.lang.Override
@@ -1172,17 +1120,17 @@ public final class OrderProto {
      * Address snapshots
      * </pre>
      *
-     * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+     * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
      */
     @java.lang.Override
     public org.megacommerce.shared.v1.StructProto.StructOrBuilder getShippingAddressOrBuilder() {
       return shippingAddress_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : shippingAddress_;
     }
 
-    public static final int BILLING_ADDRESS_FIELD_NUMBER = 18;
+    public static final int BILLING_ADDRESS_FIELD_NUMBER = 17;
     private org.megacommerce.shared.v1.StructProto.Struct billingAddress_;
     /**
-     * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
      * @return Whether the billingAddress field is set.
      */
     @java.lang.Override
@@ -1190,7 +1138,7 @@ public final class OrderProto {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
      * @return The billingAddress.
      */
     @java.lang.Override
@@ -1198,21 +1146,21 @@ public final class OrderProto {
       return billingAddress_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : billingAddress_;
     }
     /**
-     * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+     * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
      */
     @java.lang.Override
     public org.megacommerce.shared.v1.StructProto.StructOrBuilder getBillingAddressOrBuilder() {
       return billingAddress_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : billingAddress_;
     }
 
-    public static final int METADATA_FIELD_NUMBER = 19;
+    public static final int METADATA_FIELD_NUMBER = 18;
     private org.megacommerce.shared.v1.StructProto.Struct metadata_;
     /**
      * <pre>
      * Metadata
      * </pre>
      *
-     * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+     * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
      * @return Whether the metadata field is set.
      */
     @java.lang.Override
@@ -1224,7 +1172,7 @@ public final class OrderProto {
      * Metadata
      * </pre>
      *
-     * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+     * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
      * @return The metadata.
      */
     @java.lang.Override
@@ -1236,18 +1184,18 @@ public final class OrderProto {
      * Metadata
      * </pre>
      *
-     * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+     * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
      */
     @java.lang.Override
     public org.megacommerce.shared.v1.StructProto.StructOrBuilder getMetadataOrBuilder() {
       return metadata_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : metadata_;
     }
 
-    public static final int STATUS_FIELD_NUMBER = 20;
+    public static final int STATUS_FIELD_NUMBER = 19;
     @SuppressWarnings("serial")
     private volatile java.lang.Object status_ = "";
     /**
-     * <code>string status = 20 [json_name = "status"];</code>
+     * <code>string status = 19 [json_name = "status"];</code>
      * @return The status.
      */
     @java.lang.Override
@@ -1264,7 +1212,7 @@ public final class OrderProto {
       }
     }
     /**
-     * <code>string status = 20 [json_name = "status"];</code>
+     * <code>string status = 19 [json_name = "status"];</code>
      * @return The bytes for status.
      */
     @java.lang.Override
@@ -1282,14 +1230,14 @@ public final class OrderProto {
       }
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 21;
+    public static final int CREATED_AT_FIELD_NUMBER = 20;
     private long createdAt_ = 0L;
     /**
      * <pre>
      * Timestamps
      * </pre>
      *
-     * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 20 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -1297,10 +1245,10 @@ public final class OrderProto {
       return createdAt_;
     }
 
-    public static final int UPDATED_AT_FIELD_NUMBER = 22;
+    public static final int UPDATED_AT_FIELD_NUMBER = 21;
     private long updatedAt_ = 0L;
     /**
-     * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 21 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     @java.lang.Override
@@ -1308,7 +1256,7 @@ public final class OrderProto {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 21 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -1316,10 +1264,10 @@ public final class OrderProto {
       return updatedAt_;
     }
 
-    public static final int DELETED_AT_FIELD_NUMBER = 23;
+    public static final int DELETED_AT_FIELD_NUMBER = 22;
     private long deletedAt_ = 0L;
     /**
-     * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
+     * <code>optional uint64 deleted_at = 22 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     @java.lang.Override
@@ -1327,7 +1275,7 @@ public final class OrderProto {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
+     * <code>optional uint64 deleted_at = 22 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     @java.lang.Override
@@ -1394,29 +1342,26 @@ public final class OrderProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productSource_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 15, productSource_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productVersion_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 16, productVersion_);
-      }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(17, getShippingAddress());
+        output.writeMessage(16, getShippingAddress());
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeMessage(18, getBillingAddress());
+        output.writeMessage(17, getBillingAddress());
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeMessage(19, getMetadata());
+        output.writeMessage(18, getMetadata());
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 20, status_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 19, status_);
       }
       if (createdAt_ != 0L) {
-        output.writeUInt64(21, createdAt_);
+        output.writeUInt64(20, createdAt_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeUInt64(22, updatedAt_);
+        output.writeUInt64(21, updatedAt_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeUInt64(23, deletedAt_);
+        output.writeUInt64(22, deletedAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1479,35 +1424,32 @@ public final class OrderProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productSource_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(15, productSource_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productVersion_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(16, productVersion_);
-      }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(17, getShippingAddress());
+          .computeMessageSize(16, getShippingAddress());
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(18, getBillingAddress());
+          .computeMessageSize(17, getBillingAddress());
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(19, getMetadata());
+          .computeMessageSize(18, getMetadata());
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(20, status_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(19, status_);
       }
       if (createdAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(21, createdAt_);
+          .computeUInt64Size(20, createdAt_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(22, updatedAt_);
+          .computeUInt64Size(21, updatedAt_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(23, deletedAt_);
+          .computeUInt64Size(22, deletedAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1557,8 +1499,6 @@ public final class OrderProto {
           .equals(other.getInventoryReservationStatus())) return false;
       if (!getProductSource()
           .equals(other.getProductSource())) return false;
-      if (!getProductVersion()
-          .equals(other.getProductVersion())) return false;
       if (hasShippingAddress() != other.hasShippingAddress()) return false;
       if (hasShippingAddress()) {
         if (!getShippingAddress()
@@ -1637,8 +1577,6 @@ public final class OrderProto {
       hash = (53 * hash) + getInventoryReservationStatus().hashCode();
       hash = (37 * hash) + PRODUCT_SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getProductSource().hashCode();
-      hash = (37 * hash) + PRODUCT_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getProductVersion().hashCode();
       if (hasShippingAddress()) {
         hash = (37 * hash) + SHIPPING_ADDRESS_FIELD_NUMBER;
         hash = (53 * hash) + getShippingAddress().hashCode();
@@ -1825,7 +1763,6 @@ public final class OrderProto {
         paymentFeeCents_ = 0L;
         inventoryReservationStatus_ = "";
         productSource_ = "";
-        productVersion_ = "";
         shippingAddress_ = null;
         if (shippingAddressBuilder_ != null) {
           shippingAddressBuilder_.dispose();
@@ -1928,37 +1865,34 @@ public final class OrderProto {
           result.productSource_ = productSource_;
         }
         if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.productVersion_ = productVersion_;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
           result.shippingAddress_ = shippingAddressBuilder_ == null
               ? shippingAddress_
               : shippingAddressBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
+        if (((from_bitField0_ & 0x00010000) != 0)) {
           result.billingAddress_ = billingAddressBuilder_ == null
               ? billingAddress_
               : billingAddressBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
+        if (((from_bitField0_ & 0x00020000) != 0)) {
           result.metadata_ = metadataBuilder_ == null
               ? metadata_
               : metadataBuilder_.build();
           to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00080000) != 0)) {
+        if (((from_bitField0_ & 0x00040000) != 0)) {
           result.status_ = status_;
         }
-        if (((from_bitField0_ & 0x00100000) != 0)) {
+        if (((from_bitField0_ & 0x00080000) != 0)) {
           result.createdAt_ = createdAt_;
         }
-        if (((from_bitField0_ & 0x00200000) != 0)) {
+        if (((from_bitField0_ & 0x00100000) != 0)) {
           result.updatedAt_ = updatedAt_;
           to_bitField0_ |= 0x00000010;
         }
-        if (((from_bitField0_ & 0x00400000) != 0)) {
+        if (((from_bitField0_ & 0x00200000) != 0)) {
           result.deletedAt_ = deletedAt_;
           to_bitField0_ |= 0x00000020;
         }
@@ -2038,11 +1972,6 @@ public final class OrderProto {
           bitField0_ |= 0x00004000;
           onChanged();
         }
-        if (!other.getProductVersion().isEmpty()) {
-          productVersion_ = other.productVersion_;
-          bitField0_ |= 0x00008000;
-          onChanged();
-        }
         if (other.hasShippingAddress()) {
           mergeShippingAddress(other.getShippingAddress());
         }
@@ -2054,7 +1983,7 @@ public final class OrderProto {
         }
         if (!other.getStatus().isEmpty()) {
           status_ = other.status_;
-          bitField0_ |= 0x00080000;
+          bitField0_ |= 0x00040000;
           onChanged();
         }
         if (other.getCreatedAt() != 0L) {
@@ -2170,51 +2099,46 @@ public final class OrderProto {
                 break;
               } // case 122
               case 130: {
-                productVersion_ = input.readStringRequireUtf8();
+                input.readMessage(
+                    internalGetShippingAddressFieldBuilder().getBuilder(),
+                    extensionRegistry);
                 bitField0_ |= 0x00008000;
                 break;
               } // case 130
               case 138: {
                 input.readMessage(
-                    internalGetShippingAddressFieldBuilder().getBuilder(),
+                    internalGetBillingAddressFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00010000;
                 break;
               } // case 138
               case 146: {
                 input.readMessage(
-                    internalGetBillingAddressFieldBuilder().getBuilder(),
+                    internalGetMetadataFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00020000;
                 break;
               } // case 146
               case 154: {
-                input.readMessage(
-                    internalGetMetadataFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                status_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00040000;
                 break;
               } // case 154
-              case 162: {
-                status_ = input.readStringRequireUtf8();
+              case 160: {
+                createdAt_ = input.readUInt64();
                 bitField0_ |= 0x00080000;
                 break;
-              } // case 162
+              } // case 160
               case 168: {
-                createdAt_ = input.readUInt64();
+                updatedAt_ = input.readUInt64();
                 bitField0_ |= 0x00100000;
                 break;
               } // case 168
               case 176: {
-                updatedAt_ = input.readUInt64();
+                deletedAt_ = input.readUInt64();
                 bitField0_ |= 0x00200000;
                 break;
               } // case 176
-              case 184: {
-                deletedAt_ = input.readUInt64();
-                bitField0_ |= 0x00400000;
-                break;
-              } // case 184
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3193,78 +3117,6 @@ public final class OrderProto {
         return this;
       }
 
-      private java.lang.Object productVersion_ = "";
-      /**
-       * <code>string product_version = 16 [json_name = "productVersion"];</code>
-       * @return The productVersion.
-       */
-      public java.lang.String getProductVersion() {
-        java.lang.Object ref = productVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          productVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string product_version = 16 [json_name = "productVersion"];</code>
-       * @return The bytes for productVersion.
-       */
-      public com.google.protobuf.ByteString
-          getProductVersionBytes() {
-        java.lang.Object ref = productVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          productVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string product_version = 16 [json_name = "productVersion"];</code>
-       * @param value The productVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProductVersion(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        productVersion_ = value;
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string product_version = 16 [json_name = "productVersion"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearProductVersion() {
-        productVersion_ = getDefaultInstance().getProductVersion();
-        bitField0_ = (bitField0_ & ~0x00008000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string product_version = 16 [json_name = "productVersion"];</code>
-       * @param value The bytes for productVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProductVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        productVersion_ = value;
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return this;
-      }
-
       private org.megacommerce.shared.v1.StructProto.Struct shippingAddress_;
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> shippingAddressBuilder_;
@@ -3273,18 +3125,18 @@ public final class OrderProto {
        * Address snapshots
        * </pre>
        *
-       * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
        * @return Whether the shippingAddress field is set.
        */
       public boolean hasShippingAddress() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00008000) != 0);
       }
       /**
        * <pre>
        * Address snapshots
        * </pre>
        *
-       * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
        * @return The shippingAddress.
        */
       public org.megacommerce.shared.v1.StructProto.Struct getShippingAddress() {
@@ -3299,7 +3151,7 @@ public final class OrderProto {
        * Address snapshots
        * </pre>
        *
-       * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
        */
       public Builder setShippingAddress(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (shippingAddressBuilder_ == null) {
@@ -3310,7 +3162,7 @@ public final class OrderProto {
         } else {
           shippingAddressBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -3319,7 +3171,7 @@ public final class OrderProto {
        * Address snapshots
        * </pre>
        *
-       * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
        */
       public Builder setShippingAddress(
           org.megacommerce.shared.v1.StructProto.Struct.Builder builderForValue) {
@@ -3328,7 +3180,7 @@ public final class OrderProto {
         } else {
           shippingAddressBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -3337,11 +3189,11 @@ public final class OrderProto {
        * Address snapshots
        * </pre>
        *
-       * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
        */
       public Builder mergeShippingAddress(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (shippingAddressBuilder_ == null) {
-          if (((bitField0_ & 0x00010000) != 0) &&
+          if (((bitField0_ & 0x00008000) != 0) &&
             shippingAddress_ != null &&
             shippingAddress_ != org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance()) {
             getShippingAddressBuilder().mergeFrom(value);
@@ -3352,7 +3204,7 @@ public final class OrderProto {
           shippingAddressBuilder_.mergeFrom(value);
         }
         if (shippingAddress_ != null) {
-          bitField0_ |= 0x00010000;
+          bitField0_ |= 0x00008000;
           onChanged();
         }
         return this;
@@ -3362,10 +3214,10 @@ public final class OrderProto {
        * Address snapshots
        * </pre>
        *
-       * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
        */
       public Builder clearShippingAddress() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         shippingAddress_ = null;
         if (shippingAddressBuilder_ != null) {
           shippingAddressBuilder_.dispose();
@@ -3379,10 +3231,10 @@ public final class OrderProto {
        * Address snapshots
        * </pre>
        *
-       * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
        */
       public org.megacommerce.shared.v1.StructProto.Struct.Builder getShippingAddressBuilder() {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         onChanged();
         return internalGetShippingAddressFieldBuilder().getBuilder();
       }
@@ -3391,7 +3243,7 @@ public final class OrderProto {
        * Address snapshots
        * </pre>
        *
-       * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
        */
       public org.megacommerce.shared.v1.StructProto.StructOrBuilder getShippingAddressOrBuilder() {
         if (shippingAddressBuilder_ != null) {
@@ -3406,7 +3258,7 @@ public final class OrderProto {
        * Address snapshots
        * </pre>
        *
-       * <code>.shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];</code>
+       * <code>.shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> 
@@ -3426,14 +3278,14 @@ public final class OrderProto {
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> billingAddressBuilder_;
       /**
-       * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
        * @return Whether the billingAddress field is set.
        */
       public boolean hasBillingAddress() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00010000) != 0);
       }
       /**
-       * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
        * @return The billingAddress.
        */
       public org.megacommerce.shared.v1.StructProto.Struct getBillingAddress() {
@@ -3444,7 +3296,7 @@ public final class OrderProto {
         }
       }
       /**
-       * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
        */
       public Builder setBillingAddress(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (billingAddressBuilder_ == null) {
@@ -3455,12 +3307,12 @@ public final class OrderProto {
         } else {
           billingAddressBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
       /**
-       * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
        */
       public Builder setBillingAddress(
           org.megacommerce.shared.v1.StructProto.Struct.Builder builderForValue) {
@@ -3469,16 +3321,16 @@ public final class OrderProto {
         } else {
           billingAddressBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
       /**
-       * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
        */
       public Builder mergeBillingAddress(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (billingAddressBuilder_ == null) {
-          if (((bitField0_ & 0x00020000) != 0) &&
+          if (((bitField0_ & 0x00010000) != 0) &&
             billingAddress_ != null &&
             billingAddress_ != org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance()) {
             getBillingAddressBuilder().mergeFrom(value);
@@ -3489,16 +3341,16 @@ public final class OrderProto {
           billingAddressBuilder_.mergeFrom(value);
         }
         if (billingAddress_ != null) {
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00010000;
           onChanged();
         }
         return this;
       }
       /**
-       * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
        */
       public Builder clearBillingAddress() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         billingAddress_ = null;
         if (billingAddressBuilder_ != null) {
           billingAddressBuilder_.dispose();
@@ -3508,15 +3360,15 @@ public final class OrderProto {
         return this;
       }
       /**
-       * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
        */
       public org.megacommerce.shared.v1.StructProto.Struct.Builder getBillingAddressBuilder() {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         onChanged();
         return internalGetBillingAddressFieldBuilder().getBuilder();
       }
       /**
-       * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
        */
       public org.megacommerce.shared.v1.StructProto.StructOrBuilder getBillingAddressOrBuilder() {
         if (billingAddressBuilder_ != null) {
@@ -3527,7 +3379,7 @@ public final class OrderProto {
         }
       }
       /**
-       * <code>.shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];</code>
+       * <code>.shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> 
@@ -3551,18 +3403,18 @@ public final class OrderProto {
        * Metadata
        * </pre>
        *
-       * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+       * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
        * @return Whether the metadata field is set.
        */
       public boolean hasMetadata() {
-        return ((bitField0_ & 0x00040000) != 0);
+        return ((bitField0_ & 0x00020000) != 0);
       }
       /**
        * <pre>
        * Metadata
        * </pre>
        *
-       * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+       * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
        * @return The metadata.
        */
       public org.megacommerce.shared.v1.StructProto.Struct getMetadata() {
@@ -3577,7 +3429,7 @@ public final class OrderProto {
        * Metadata
        * </pre>
        *
-       * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+       * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
        */
       public Builder setMetadata(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (metadataBuilder_ == null) {
@@ -3588,7 +3440,7 @@ public final class OrderProto {
         } else {
           metadataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -3597,7 +3449,7 @@ public final class OrderProto {
        * Metadata
        * </pre>
        *
-       * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+       * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
        */
       public Builder setMetadata(
           org.megacommerce.shared.v1.StructProto.Struct.Builder builderForValue) {
@@ -3606,7 +3458,7 @@ public final class OrderProto {
         } else {
           metadataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -3615,11 +3467,11 @@ public final class OrderProto {
        * Metadata
        * </pre>
        *
-       * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+       * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
        */
       public Builder mergeMetadata(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (metadataBuilder_ == null) {
-          if (((bitField0_ & 0x00040000) != 0) &&
+          if (((bitField0_ & 0x00020000) != 0) &&
             metadata_ != null &&
             metadata_ != org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance()) {
             getMetadataBuilder().mergeFrom(value);
@@ -3630,7 +3482,7 @@ public final class OrderProto {
           metadataBuilder_.mergeFrom(value);
         }
         if (metadata_ != null) {
-          bitField0_ |= 0x00040000;
+          bitField0_ |= 0x00020000;
           onChanged();
         }
         return this;
@@ -3640,10 +3492,10 @@ public final class OrderProto {
        * Metadata
        * </pre>
        *
-       * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+       * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
        */
       public Builder clearMetadata() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         metadata_ = null;
         if (metadataBuilder_ != null) {
           metadataBuilder_.dispose();
@@ -3657,10 +3509,10 @@ public final class OrderProto {
        * Metadata
        * </pre>
        *
-       * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+       * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
        */
       public org.megacommerce.shared.v1.StructProto.Struct.Builder getMetadataBuilder() {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return internalGetMetadataFieldBuilder().getBuilder();
       }
@@ -3669,7 +3521,7 @@ public final class OrderProto {
        * Metadata
        * </pre>
        *
-       * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+       * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
        */
       public org.megacommerce.shared.v1.StructProto.StructOrBuilder getMetadataOrBuilder() {
         if (metadataBuilder_ != null) {
@@ -3684,7 +3536,7 @@ public final class OrderProto {
        * Metadata
        * </pre>
        *
-       * <code>.shared.v1.Struct metadata = 19 [json_name = "metadata"];</code>
+       * <code>.shared.v1.Struct metadata = 18 [json_name = "metadata"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> 
@@ -3702,7 +3554,7 @@ public final class OrderProto {
 
       private java.lang.Object status_ = "";
       /**
-       * <code>string status = 20 [json_name = "status"];</code>
+       * <code>string status = 19 [json_name = "status"];</code>
        * @return The status.
        */
       public java.lang.String getStatus() {
@@ -3718,7 +3570,7 @@ public final class OrderProto {
         }
       }
       /**
-       * <code>string status = 20 [json_name = "status"];</code>
+       * <code>string status = 19 [json_name = "status"];</code>
        * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
@@ -3735,7 +3587,7 @@ public final class OrderProto {
         }
       }
       /**
-       * <code>string status = 20 [json_name = "status"];</code>
+       * <code>string status = 19 [json_name = "status"];</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -3743,22 +3595,22 @@ public final class OrderProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         status_ = value;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
       /**
-       * <code>string status = 20 [json_name = "status"];</code>
+       * <code>string status = 19 [json_name = "status"];</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
         status_ = getDefaultInstance().getStatus();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
         return this;
       }
       /**
-       * <code>string status = 20 [json_name = "status"];</code>
+       * <code>string status = 19 [json_name = "status"];</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
@@ -3767,7 +3619,7 @@ public final class OrderProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         status_ = value;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -3778,7 +3630,7 @@ public final class OrderProto {
        * Timestamps
        * </pre>
        *
-       * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 20 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -3790,14 +3642,14 @@ public final class OrderProto {
        * Timestamps
        * </pre>
        *
-       * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 20 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
       public Builder setCreatedAt(long value) {
 
         createdAt_ = value;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -3806,11 +3658,11 @@ public final class OrderProto {
        * Timestamps
        * </pre>
        *
-       * <code>uint64 created_at = 21 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 20 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         createdAt_ = 0L;
         onChanged();
         return this;
@@ -3818,15 +3670,15 @@ public final class OrderProto {
 
       private long updatedAt_ ;
       /**
-       * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 21 [json_name = "updatedAt"];</code>
        * @return Whether the updatedAt field is set.
        */
       @java.lang.Override
       public boolean hasUpdatedAt() {
-        return ((bitField0_ & 0x00200000) != 0);
+        return ((bitField0_ & 0x00100000) != 0);
       }
       /**
-       * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 21 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -3834,23 +3686,23 @@ public final class OrderProto {
         return updatedAt_;
       }
       /**
-       * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 21 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
       public Builder setUpdatedAt(long value) {
 
         updatedAt_ = value;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 updated_at = 22 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 21 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         updatedAt_ = 0L;
         onChanged();
         return this;
@@ -3858,15 +3710,15 @@ public final class OrderProto {
 
       private long deletedAt_ ;
       /**
-       * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
+       * <code>optional uint64 deleted_at = 22 [json_name = "deletedAt"];</code>
        * @return Whether the deletedAt field is set.
        */
       @java.lang.Override
       public boolean hasDeletedAt() {
-        return ((bitField0_ & 0x00400000) != 0);
+        return ((bitField0_ & 0x00200000) != 0);
       }
       /**
-       * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
+       * <code>optional uint64 deleted_at = 22 [json_name = "deletedAt"];</code>
        * @return The deletedAt.
        */
       @java.lang.Override
@@ -3874,23 +3726,23 @@ public final class OrderProto {
         return deletedAt_;
       }
       /**
-       * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
+       * <code>optional uint64 deleted_at = 22 [json_name = "deletedAt"];</code>
        * @param value The deletedAt to set.
        * @return This builder for chaining.
        */
       public Builder setDeletedAt(long value) {
 
         deletedAt_ = value;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 deleted_at = 23 [json_name = "deletedAt"];</code>
+       * <code>optional uint64 deleted_at = 22 [json_name = "deletedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDeletedAt() {
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         deletedAt_ = 0L;
         onChanged();
         return this;
@@ -3962,7 +3814,7 @@ public final class OrderProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025orders/v1/order.proto\022\torders.v1\032\026shar" +
-      "ed/v1/struct.proto\"\343\007\n\005Order\022\016\n\002id\030\001 \001(\t" +
+      "ed/v1/struct.proto\"\272\007\n\005Order\022\016\n\002id\030\001 \001(\t" +
       "R\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022#\n\rcurrenc" +
       "y_code\030\003 \001(\tR\014currencyCode\022%\n\016subtotal_c" +
       "ents\030\004 \001(\004R\rsubtotalCents\022%\n\016shipping_ce" +
@@ -3978,24 +3830,23 @@ public final class OrderProto {
       "s\030\r \001(\004R\017paymentFeeCents\022@\n\034inventory_re" +
       "servation_status\030\016 \001(\tR\032inventoryReserva" +
       "tionStatus\022%\n\016product_source\030\017 \001(\tR\rprod" +
-      "uctSource\022\'\n\017product_version\030\020 \001(\tR\016prod" +
-      "uctVersion\022<\n\020shipping_address\030\021 \001(\0132\021.s" +
-      "hared.v1.StructR\017shippingAddress\022:\n\017bill" +
-      "ing_address\030\022 \001(\0132\021.shared.v1.StructR\016bi" +
-      "llingAddress\022-\n\010metadata\030\023 \001(\0132\021.shared." +
-      "v1.StructR\010metadata\022\026\n\006status\030\024 \001(\tR\006sta" +
-      "tus\022\035\n\ncreated_at\030\025 \001(\004R\tcreatedAt\022\"\n\nup" +
-      "dated_at\030\026 \001(\004H\000R\tupdatedAt\210\001\001\022\"\n\ndelete" +
-      "d_at\030\027 \001(\004H\001R\tdeletedAt\210\001\001B\r\n\013_updated_a" +
-      "tB\r\n\013_deleted_at*f\n\rPaymentStatus\022\023\n\017PAY" +
-      "MENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020\001\022\024" +
-      "\n\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILED\020\003" +
-      "*b\n\013OrderStatus\022\013\n\007CREATED\020\000\022\r\n\tCONFIRME" +
-      "D\020\001\022\013\n\007SHIPPED\020\002\022\r\n\tDELIVERED\020\003\022\r\n\tCANCE" +
-      "LLED\020\004\022\014\n\010REFUNDED\020\005Bp\n\032org.megacommerce" +
-      ".orders.v1B\nOrderProtoZCgithub.com/ahmad" +
-      "-khatib0-org/megacommerce-proto/gen/go/o" +
-      "rders/v1;v1\370\001\001b\006proto3"
+      "uctSource\022<\n\020shipping_address\030\020 \001(\0132\021.sh" +
+      "ared.v1.StructR\017shippingAddress\022:\n\017billi" +
+      "ng_address\030\021 \001(\0132\021.shared.v1.StructR\016bil" +
+      "lingAddress\022-\n\010metadata\030\022 \001(\0132\021.shared.v" +
+      "1.StructR\010metadata\022\026\n\006status\030\023 \001(\tR\006stat" +
+      "us\022\035\n\ncreated_at\030\024 \001(\004R\tcreatedAt\022\"\n\nupd" +
+      "ated_at\030\025 \001(\004H\000R\tupdatedAt\210\001\001\022\"\n\ndeleted" +
+      "_at\030\026 \001(\004H\001R\tdeletedAt\210\001\001B\r\n\013_updated_at" +
+      "B\r\n\013_deleted_at*f\n\rPaymentStatus\022\023\n\017PAYM" +
+      "ENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020\001\022\024\n" +
+      "\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILED\020\003*" +
+      "b\n\013OrderStatus\022\013\n\007CREATED\020\000\022\r\n\tCONFIRMED" +
+      "\020\001\022\013\n\007SHIPPED\020\002\022\r\n\tDELIVERED\020\003\022\r\n\tCANCEL" +
+      "LED\020\004\022\014\n\010REFUNDED\020\005Bp\n\032org.megacommerce." +
+      "orders.v1B\nOrderProtoZCgithub.com/ahmad-" +
+      "khatib0-org/megacommerce-proto/gen/go/or" +
+      "ders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4007,7 +3858,7 @@ public final class OrderProto {
     internal_static_orders_v1_Order_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_orders_v1_Order_descriptor,
-        new java.lang.String[] { "Id", "UserId", "CurrencyCode", "SubtotalCents", "ShippingCents", "TaxCents", "DiscountCents", "TotalCents", "PaymentProvider", "PaymentTransactionId", "PaymentStatus", "PaymentProviderResponse", "PaymentFeeCents", "InventoryReservationStatus", "ProductSource", "ProductVersion", "ShippingAddress", "BillingAddress", "Metadata", "Status", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "UserId", "CurrencyCode", "SubtotalCents", "ShippingCents", "TaxCents", "DiscountCents", "TotalCents", "PaymentProvider", "PaymentTransactionId", "PaymentStatus", "PaymentProviderResponse", "PaymentFeeCents", "InventoryReservationStatus", "ProductSource", "ShippingAddress", "BillingAddress", "Metadata", "Status", "CreatedAt", "UpdatedAt", "DeletedAt", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.StructProto.getDescriptor();
   }

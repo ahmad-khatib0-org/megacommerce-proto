@@ -314,21 +314,20 @@ class Order final : public ::google::protobuf::Message
     kPaymentStatusFieldNumber = 11,
     kInventoryReservationStatusFieldNumber = 14,
     kProductSourceFieldNumber = 15,
-    kProductVersionFieldNumber = 16,
-    kStatusFieldNumber = 20,
+    kStatusFieldNumber = 19,
     kPaymentProviderResponseFieldNumber = 12,
-    kShippingAddressFieldNumber = 17,
-    kBillingAddressFieldNumber = 18,
-    kMetadataFieldNumber = 19,
+    kShippingAddressFieldNumber = 16,
+    kBillingAddressFieldNumber = 17,
+    kMetadataFieldNumber = 18,
     kSubtotalCentsFieldNumber = 4,
     kShippingCentsFieldNumber = 5,
     kTaxCentsFieldNumber = 6,
     kDiscountCentsFieldNumber = 7,
     kTotalCentsFieldNumber = 8,
     kPaymentFeeCentsFieldNumber = 13,
-    kCreatedAtFieldNumber = 21,
-    kUpdatedAtFieldNumber = 22,
-    kDeletedAtFieldNumber = 23,
+    kCreatedAtFieldNumber = 20,
+    kUpdatedAtFieldNumber = 21,
+    kDeletedAtFieldNumber = 22,
   };
   // string id = 1 [json_name = "id"];
   void clear_id() ;
@@ -450,22 +449,7 @@ class Order final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_product_source();
 
   public:
-  // string product_version = 16 [json_name = "productVersion"];
-  void clear_product_version() ;
-  const ::std::string& product_version() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_product_version(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_product_version();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_product_version();
-  void set_allocated_product_version(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_product_version() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_product_version(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_product_version();
-
-  public:
-  // string status = 20 [json_name = "status"];
+  // string status = 19 [json_name = "status"];
   void clear_status() ;
   const ::std::string& status() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -495,7 +479,7 @@ class Order final : public ::google::protobuf::Message
   ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_payment_provider_response();
 
   public:
-  // .shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];
+  // .shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];
   bool has_shipping_address() const;
   void clear_shipping_address() ;
   const ::shared::v1::Struct& shipping_address() const;
@@ -510,7 +494,7 @@ class Order final : public ::google::protobuf::Message
   ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_shipping_address();
 
   public:
-  // .shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];
+  // .shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];
   bool has_billing_address() const;
   void clear_billing_address() ;
   const ::shared::v1::Struct& billing_address() const;
@@ -525,7 +509,7 @@ class Order final : public ::google::protobuf::Message
   ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_billing_address();
 
   public:
-  // .shared.v1.Struct metadata = 19 [json_name = "metadata"];
+  // .shared.v1.Struct metadata = 18 [json_name = "metadata"];
   bool has_metadata() const;
   void clear_metadata() ;
   const ::shared::v1::Struct& metadata() const;
@@ -600,7 +584,7 @@ class Order final : public ::google::protobuf::Message
   void _internal_set_payment_fee_cents(::uint64_t value);
 
   public:
-  // uint64 created_at = 21 [json_name = "createdAt"];
+  // uint64 created_at = 20 [json_name = "createdAt"];
   void clear_created_at() ;
   ::uint64_t created_at() const;
   void set_created_at(::uint64_t value);
@@ -610,7 +594,7 @@ class Order final : public ::google::protobuf::Message
   void _internal_set_created_at(::uint64_t value);
 
   public:
-  // optional uint64 updated_at = 22 [json_name = "updatedAt"];
+  // optional uint64 updated_at = 21 [json_name = "updatedAt"];
   bool has_updated_at() const;
   void clear_updated_at() ;
   ::uint64_t updated_at() const;
@@ -621,7 +605,7 @@ class Order final : public ::google::protobuf::Message
   void _internal_set_updated_at(::uint64_t value);
 
   public:
-  // optional uint64 deleted_at = 23 [json_name = "deletedAt"];
+  // optional uint64 deleted_at = 22 [json_name = "deletedAt"];
   bool has_deleted_at() const;
   void clear_deleted_at() ;
   ::uint64_t deleted_at() const;
@@ -636,8 +620,8 @@ class Order final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 23,
-                                   4, 177,
+  static const ::google::protobuf::internal::TcParseTable<5, 22,
+                                   4, 162,
                                    2>
       _table_;
 
@@ -666,7 +650,6 @@ class Order final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr payment_status_;
     ::google::protobuf::internal::ArenaStringPtr inventory_reservation_status_;
     ::google::protobuf::internal::ArenaStringPtr product_source_;
-    ::google::protobuf::internal::ArenaStringPtr product_version_;
     ::google::protobuf::internal::ArenaStringPtr status_;
     ::shared::v1::Struct* PROTOBUF_NULLABLE payment_provider_response_;
     ::shared::v1::Struct* PROTOBUF_NULLABLE shipping_address_;
@@ -904,7 +887,7 @@ inline void Order::set_allocated_currency_code(::std::string* PROTOBUF_NULLABLE 
 inline void Order::clear_subtotal_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.subtotal_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00004000u;
+  _impl_._has_bits_[0] &= ~0x00002000u;
 }
 inline ::uint64_t Order::subtotal_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.Order.subtotal_cents)
@@ -912,7 +895,7 @@ inline ::uint64_t Order::subtotal_cents() const {
 }
 inline void Order::set_subtotal_cents(::uint64_t value) {
   _internal_set_subtotal_cents(value);
-  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_._has_bits_[0] |= 0x00002000u;
   // @@protoc_insertion_point(field_set:orders.v1.Order.subtotal_cents)
 }
 inline ::uint64_t Order::_internal_subtotal_cents() const {
@@ -928,7 +911,7 @@ inline void Order::_internal_set_subtotal_cents(::uint64_t value) {
 inline void Order::clear_shipping_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.shipping_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00008000u;
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
 inline ::uint64_t Order::shipping_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.Order.shipping_cents)
@@ -936,7 +919,7 @@ inline ::uint64_t Order::shipping_cents() const {
 }
 inline void Order::set_shipping_cents(::uint64_t value) {
   _internal_set_shipping_cents(value);
-  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_._has_bits_[0] |= 0x00004000u;
   // @@protoc_insertion_point(field_set:orders.v1.Order.shipping_cents)
 }
 inline ::uint64_t Order::_internal_shipping_cents() const {
@@ -952,7 +935,7 @@ inline void Order::_internal_set_shipping_cents(::uint64_t value) {
 inline void Order::clear_tax_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tax_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00010000u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 inline ::uint64_t Order::tax_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.Order.tax_cents)
@@ -960,7 +943,7 @@ inline ::uint64_t Order::tax_cents() const {
 }
 inline void Order::set_tax_cents(::uint64_t value) {
   _internal_set_tax_cents(value);
-  _impl_._has_bits_[0] |= 0x00010000u;
+  _impl_._has_bits_[0] |= 0x00008000u;
   // @@protoc_insertion_point(field_set:orders.v1.Order.tax_cents)
 }
 inline ::uint64_t Order::_internal_tax_cents() const {
@@ -976,7 +959,7 @@ inline void Order::_internal_set_tax_cents(::uint64_t value) {
 inline void Order::clear_discount_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.discount_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00020000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
 }
 inline ::uint64_t Order::discount_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.Order.discount_cents)
@@ -984,7 +967,7 @@ inline ::uint64_t Order::discount_cents() const {
 }
 inline void Order::set_discount_cents(::uint64_t value) {
   _internal_set_discount_cents(value);
-  _impl_._has_bits_[0] |= 0x00020000u;
+  _impl_._has_bits_[0] |= 0x00010000u;
   // @@protoc_insertion_point(field_set:orders.v1.Order.discount_cents)
 }
 inline ::uint64_t Order::_internal_discount_cents() const {
@@ -1000,7 +983,7 @@ inline void Order::_internal_set_discount_cents(::uint64_t value) {
 inline void Order::clear_total_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.total_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00040000u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
 }
 inline ::uint64_t Order::total_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.Order.total_cents)
@@ -1008,7 +991,7 @@ inline ::uint64_t Order::total_cents() const {
 }
 inline void Order::set_total_cents(::uint64_t value) {
   _internal_set_total_cents(value);
-  _impl_._has_bits_[0] |= 0x00040000u;
+  _impl_._has_bits_[0] |= 0x00020000u;
   // @@protoc_insertion_point(field_set:orders.v1.Order.total_cents)
 }
 inline ::uint64_t Order::_internal_total_cents() const {
@@ -1217,7 +1200,7 @@ inline void Order::set_allocated_payment_status(::std::string* PROTOBUF_NULLABLE
 
 // .shared.v1.Struct payment_provider_response = 12 [json_name = "paymentProviderResponse"];
 inline bool Order::has_payment_provider_response() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.payment_provider_response_ != nullptr);
   return value;
 }
@@ -1238,16 +1221,16 @@ inline void Order::unsafe_arena_set_allocated_payment_provider_response(
   }
   _impl_.payment_provider_response_ = reinterpret_cast<::shared::v1::Struct*>(value);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000400u;
+    _impl_._has_bits_[0] |= 0x00000200u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000400u;
+    _impl_._has_bits_[0] &= ~0x00000200u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.Order.payment_provider_response)
 }
 inline ::shared::v1::Struct* PROTOBUF_NULLABLE Order::release_payment_provider_response() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
   ::shared::v1::Struct* released = _impl_.payment_provider_response_;
   _impl_.payment_provider_response_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -1267,7 +1250,7 @@ inline ::shared::v1::Struct* PROTOBUF_NULLABLE Order::unsafe_arena_release_payme
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.Order.payment_provider_response)
 
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
   ::shared::v1::Struct* temp = _impl_.payment_provider_response_;
   _impl_.payment_provider_response_ = nullptr;
   return temp;
@@ -1282,7 +1265,7 @@ inline ::shared::v1::Struct* PROTOBUF_NONNULL Order::_internal_mutable_payment_p
 }
 inline ::shared::v1::Struct* PROTOBUF_NONNULL Order::mutable_payment_provider_response()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   ::shared::v1::Struct* _msg = _internal_mutable_payment_provider_response();
   // @@protoc_insertion_point(field_mutable:orders.v1.Order.payment_provider_response)
   return _msg;
@@ -1299,9 +1282,9 @@ inline void Order::set_allocated_payment_provider_response(::shared::v1::Struct*
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00000400u;
+    _impl_._has_bits_[0] |= 0x00000200u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000400u;
+    _impl_._has_bits_[0] &= ~0x00000200u;
   }
 
   _impl_.payment_provider_response_ = reinterpret_cast<::shared::v1::Struct*>(value);
@@ -1312,7 +1295,7 @@ inline void Order::set_allocated_payment_provider_response(::shared::v1::Struct*
 inline void Order::clear_payment_fee_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.payment_fee_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00080000u;
+  _impl_._has_bits_[0] &= ~0x00040000u;
 }
 inline ::uint64_t Order::payment_fee_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.Order.payment_fee_cents)
@@ -1320,7 +1303,7 @@ inline ::uint64_t Order::payment_fee_cents() const {
 }
 inline void Order::set_payment_fee_cents(::uint64_t value) {
   _internal_set_payment_fee_cents(value);
-  _impl_._has_bits_[0] |= 0x00080000u;
+  _impl_._has_bits_[0] |= 0x00040000u;
   // @@protoc_insertion_point(field_set:orders.v1.Order.payment_fee_cents)
 }
 inline ::uint64_t Order::_internal_payment_fee_cents() const {
@@ -1462,74 +1445,9 @@ inline void Order::set_allocated_product_source(::std::string* PROTOBUF_NULLABLE
   // @@protoc_insertion_point(field_set_allocated:orders.v1.Order.product_source)
 }
 
-// string product_version = 16 [json_name = "productVersion"];
-inline void Order::clear_product_version() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.product_version_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000100u;
-}
-inline const ::std::string& Order::product_version() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:orders.v1.Order.product_version)
-  return _internal_product_version();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void Order::set_product_version(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000100u;
-  _impl_.product_version_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:orders.v1.Order.product_version)
-}
-inline ::std::string* PROTOBUF_NONNULL Order::mutable_product_version()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_product_version();
-  // @@protoc_insertion_point(field_mutable:orders.v1.Order.product_version)
-  return _s;
-}
-inline const ::std::string& Order::_internal_product_version() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.product_version_.Get();
-}
-inline void Order::_internal_set_product_version(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000100u;
-  _impl_.product_version_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL Order::_internal_mutable_product_version() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000100u;
-  return _impl_.product_version_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE Order::release_product_version() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:orders.v1.Order.product_version)
-  if ((_impl_._has_bits_[0] & 0x00000100u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000100u;
-  auto* released = _impl_.product_version_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.product_version_.Set("", GetArena());
-  }
-  return released;
-}
-inline void Order::set_allocated_product_version(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000100u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000100u;
-  }
-  _impl_.product_version_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.product_version_.IsDefault()) {
-    _impl_.product_version_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:orders.v1.Order.product_version)
-}
-
-// .shared.v1.Struct shipping_address = 17 [json_name = "shippingAddress"];
+// .shared.v1.Struct shipping_address = 16 [json_name = "shippingAddress"];
 inline bool Order::has_shipping_address() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.shipping_address_ != nullptr);
   return value;
 }
@@ -1550,16 +1468,16 @@ inline void Order::unsafe_arena_set_allocated_shipping_address(
   }
   _impl_.shipping_address_ = reinterpret_cast<::shared::v1::Struct*>(value);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000800u;
+    _impl_._has_bits_[0] |= 0x00000400u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000800u;
+    _impl_._has_bits_[0] &= ~0x00000400u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.Order.shipping_address)
 }
 inline ::shared::v1::Struct* PROTOBUF_NULLABLE Order::release_shipping_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
   ::shared::v1::Struct* released = _impl_.shipping_address_;
   _impl_.shipping_address_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -1579,7 +1497,7 @@ inline ::shared::v1::Struct* PROTOBUF_NULLABLE Order::unsafe_arena_release_shipp
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.Order.shipping_address)
 
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
   ::shared::v1::Struct* temp = _impl_.shipping_address_;
   _impl_.shipping_address_ = nullptr;
   return temp;
@@ -1594,7 +1512,7 @@ inline ::shared::v1::Struct* PROTOBUF_NONNULL Order::_internal_mutable_shipping_
 }
 inline ::shared::v1::Struct* PROTOBUF_NONNULL Order::mutable_shipping_address()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   ::shared::v1::Struct* _msg = _internal_mutable_shipping_address();
   // @@protoc_insertion_point(field_mutable:orders.v1.Order.shipping_address)
   return _msg;
@@ -1611,18 +1529,18 @@ inline void Order::set_allocated_shipping_address(::shared::v1::Struct* PROTOBUF
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00000800u;
+    _impl_._has_bits_[0] |= 0x00000400u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000800u;
+    _impl_._has_bits_[0] &= ~0x00000400u;
   }
 
   _impl_.shipping_address_ = reinterpret_cast<::shared::v1::Struct*>(value);
   // @@protoc_insertion_point(field_set_allocated:orders.v1.Order.shipping_address)
 }
 
-// .shared.v1.Struct billing_address = 18 [json_name = "billingAddress"];
+// .shared.v1.Struct billing_address = 17 [json_name = "billingAddress"];
 inline bool Order::has_billing_address() const {
-  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.billing_address_ != nullptr);
   return value;
 }
@@ -1643,16 +1561,16 @@ inline void Order::unsafe_arena_set_allocated_billing_address(
   }
   _impl_.billing_address_ = reinterpret_cast<::shared::v1::Struct*>(value);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00001000u;
+    _impl_._has_bits_[0] |= 0x00000800u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00001000u;
+    _impl_._has_bits_[0] &= ~0x00000800u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.Order.billing_address)
 }
 inline ::shared::v1::Struct* PROTOBUF_NULLABLE Order::release_billing_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
   ::shared::v1::Struct* released = _impl_.billing_address_;
   _impl_.billing_address_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -1672,7 +1590,7 @@ inline ::shared::v1::Struct* PROTOBUF_NULLABLE Order::unsafe_arena_release_billi
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.Order.billing_address)
 
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
   ::shared::v1::Struct* temp = _impl_.billing_address_;
   _impl_.billing_address_ = nullptr;
   return temp;
@@ -1687,7 +1605,7 @@ inline ::shared::v1::Struct* PROTOBUF_NONNULL Order::_internal_mutable_billing_a
 }
 inline ::shared::v1::Struct* PROTOBUF_NONNULL Order::mutable_billing_address()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   ::shared::v1::Struct* _msg = _internal_mutable_billing_address();
   // @@protoc_insertion_point(field_mutable:orders.v1.Order.billing_address)
   return _msg;
@@ -1704,18 +1622,18 @@ inline void Order::set_allocated_billing_address(::shared::v1::Struct* PROTOBUF_
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00001000u;
+    _impl_._has_bits_[0] |= 0x00000800u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00001000u;
+    _impl_._has_bits_[0] &= ~0x00000800u;
   }
 
   _impl_.billing_address_ = reinterpret_cast<::shared::v1::Struct*>(value);
   // @@protoc_insertion_point(field_set_allocated:orders.v1.Order.billing_address)
 }
 
-// .shared.v1.Struct metadata = 19 [json_name = "metadata"];
+// .shared.v1.Struct metadata = 18 [json_name = "metadata"];
 inline bool Order::has_metadata() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.metadata_ != nullptr);
   return value;
 }
@@ -1736,16 +1654,16 @@ inline void Order::unsafe_arena_set_allocated_metadata(
   }
   _impl_.metadata_ = reinterpret_cast<::shared::v1::Struct*>(value);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00002000u;
+    _impl_._has_bits_[0] |= 0x00001000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00002000u;
+    _impl_._has_bits_[0] &= ~0x00001000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.Order.metadata)
 }
 inline ::shared::v1::Struct* PROTOBUF_NULLABLE Order::release_metadata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
   ::shared::v1::Struct* released = _impl_.metadata_;
   _impl_.metadata_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -1765,7 +1683,7 @@ inline ::shared::v1::Struct* PROTOBUF_NULLABLE Order::unsafe_arena_release_metad
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.Order.metadata)
 
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
   ::shared::v1::Struct* temp = _impl_.metadata_;
   _impl_.metadata_ = nullptr;
   return temp;
@@ -1780,7 +1698,7 @@ inline ::shared::v1::Struct* PROTOBUF_NONNULL Order::_internal_mutable_metadata(
 }
 inline ::shared::v1::Struct* PROTOBUF_NONNULL Order::mutable_metadata()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00001000u;
   ::shared::v1::Struct* _msg = _internal_mutable_metadata();
   // @@protoc_insertion_point(field_mutable:orders.v1.Order.metadata)
   return _msg;
@@ -1797,20 +1715,20 @@ inline void Order::set_allocated_metadata(::shared::v1::Struct* PROTOBUF_NULLABL
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00002000u;
+    _impl_._has_bits_[0] |= 0x00001000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00002000u;
+    _impl_._has_bits_[0] &= ~0x00001000u;
   }
 
   _impl_.metadata_ = reinterpret_cast<::shared::v1::Struct*>(value);
   // @@protoc_insertion_point(field_set_allocated:orders.v1.Order.metadata)
 }
 
-// string status = 20 [json_name = "status"];
+// string status = 19 [json_name = "status"];
 inline void Order::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline const ::std::string& Order::status() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1820,7 +1738,7 @@ inline const ::std::string& Order::status() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void Order::set_status(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   _impl_.status_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:orders.v1.Order.status)
 }
@@ -1836,21 +1754,21 @@ inline const ::std::string& Order::_internal_status() const {
 }
 inline void Order::_internal_set_status(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   _impl_.status_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL Order::_internal_mutable_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   return _impl_.status_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE Order::release_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.Order.status)
-  if ((_impl_._has_bits_[0] & 0x00000200u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000100u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
   auto* released = _impl_.status_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.status_.Set("", GetArena());
@@ -1860,9 +1778,9 @@ inline ::std::string* PROTOBUF_NULLABLE Order::release_status() {
 inline void Order::set_allocated_status(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000200u;
+    _impl_._has_bits_[0] |= 0x00000100u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000200u;
+    _impl_._has_bits_[0] &= ~0x00000100u;
   }
   _impl_.status_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.status_.IsDefault()) {
@@ -1871,11 +1789,11 @@ inline void Order::set_allocated_status(::std::string* PROTOBUF_NULLABLE value) 
   // @@protoc_insertion_point(field_set_allocated:orders.v1.Order.status)
 }
 
-// uint64 created_at = 21 [json_name = "createdAt"];
+// uint64 created_at = 20 [json_name = "createdAt"];
 inline void Order::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00100000u;
+  _impl_._has_bits_[0] &= ~0x00080000u;
 }
 inline ::uint64_t Order::created_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.Order.created_at)
@@ -1883,7 +1801,7 @@ inline ::uint64_t Order::created_at() const {
 }
 inline void Order::set_created_at(::uint64_t value) {
   _internal_set_created_at(value);
-  _impl_._has_bits_[0] |= 0x00100000u;
+  _impl_._has_bits_[0] |= 0x00080000u;
   // @@protoc_insertion_point(field_set:orders.v1.Order.created_at)
 }
 inline ::uint64_t Order::_internal_created_at() const {
@@ -1895,15 +1813,15 @@ inline void Order::_internal_set_created_at(::uint64_t value) {
   _impl_.created_at_ = value;
 }
 
-// optional uint64 updated_at = 22 [json_name = "updatedAt"];
+// optional uint64 updated_at = 21 [json_name = "updatedAt"];
 inline bool Order::has_updated_at() const {
-  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
   return value;
 }
 inline void Order::clear_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00200000u;
+  _impl_._has_bits_[0] &= ~0x00100000u;
 }
 inline ::uint64_t Order::updated_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.Order.updated_at)
@@ -1911,7 +1829,7 @@ inline ::uint64_t Order::updated_at() const {
 }
 inline void Order::set_updated_at(::uint64_t value) {
   _internal_set_updated_at(value);
-  _impl_._has_bits_[0] |= 0x00200000u;
+  _impl_._has_bits_[0] |= 0x00100000u;
   // @@protoc_insertion_point(field_set:orders.v1.Order.updated_at)
 }
 inline ::uint64_t Order::_internal_updated_at() const {
@@ -1923,15 +1841,15 @@ inline void Order::_internal_set_updated_at(::uint64_t value) {
   _impl_.updated_at_ = value;
 }
 
-// optional uint64 deleted_at = 23 [json_name = "deletedAt"];
+// optional uint64 deleted_at = 22 [json_name = "deletedAt"];
 inline bool Order::has_deleted_at() const {
-  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
   return value;
 }
 inline void Order::clear_deleted_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.deleted_at_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x00200000u;
 }
 inline ::uint64_t Order::deleted_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.Order.deleted_at)
@@ -1939,7 +1857,7 @@ inline ::uint64_t Order::deleted_at() const {
 }
 inline void Order::set_deleted_at(::uint64_t value) {
   _internal_set_deleted_at(value);
-  _impl_._has_bits_[0] |= 0x00400000u;
+  _impl_._has_bits_[0] |= 0x00200000u;
   // @@protoc_insertion_point(field_set:orders.v1.Order.deleted_at)
 }
 inline ::uint64_t Order::_internal_deleted_at() const {

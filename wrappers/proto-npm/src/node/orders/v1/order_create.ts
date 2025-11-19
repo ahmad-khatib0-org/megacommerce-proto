@@ -7,7 +7,8 @@
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { AppError } from "../../shared/v1/error";
-import { Any, SuccessResponseData } from "../../shared/v1/types";
+import { Struct } from "../../shared/v1/struct";
+import { SuccessResponseData } from "../../shared/v1/types";
 
 export const protobufPackage = "orders.v1";
 
@@ -23,9 +24,9 @@ export interface OrderCreateRequest {
    * shipping and billing addresses: use shared.v1.Any
    * provide existing address type (keeps proto flexible)
    */
-  shippingAddress?: Any | undefined;
+  shippingAddress?: Struct | undefined;
   billingAddress?:
-    | Any
+    | Struct
     | undefined;
   /** list of items to order */
   items: OrderLineItemRequest[];
@@ -103,10 +104,10 @@ export const OrderCreateRequest: MessageFns<OrderCreateRequest> = {
       OrderCreateRequest_MetadataEntry.encode({ key: key as any, value }, writer.uint32(34).fork()).join();
     });
     if (message.shippingAddress !== undefined) {
-      Any.encode(message.shippingAddress, writer.uint32(42).fork()).join();
+      Struct.encode(message.shippingAddress, writer.uint32(42).fork()).join();
     }
     if (message.billingAddress !== undefined) {
-      Any.encode(message.billingAddress, writer.uint32(50).fork()).join();
+      Struct.encode(message.billingAddress, writer.uint32(50).fork()).join();
     }
     for (const v of message.items) {
       OrderLineItemRequest.encode(v!, writer.uint32(58).fork()).join();
@@ -165,7 +166,7 @@ export const OrderCreateRequest: MessageFns<OrderCreateRequest> = {
             break;
           }
 
-          message.shippingAddress = Any.decode(reader, reader.uint32());
+          message.shippingAddress = Struct.decode(reader, reader.uint32());
           continue;
         }
         case 6: {
@@ -173,7 +174,7 @@ export const OrderCreateRequest: MessageFns<OrderCreateRequest> = {
             break;
           }
 
-          message.billingAddress = Any.decode(reader, reader.uint32());
+          message.billingAddress = Struct.decode(reader, reader.uint32());
           continue;
         }
         case 7: {
@@ -235,8 +236,8 @@ export const OrderCreateRequest: MessageFns<OrderCreateRequest> = {
           return acc;
         }, {})
         : {},
-      shippingAddress: isSet(object.shippingAddress) ? Any.fromJSON(object.shippingAddress) : undefined,
-      billingAddress: isSet(object.billingAddress) ? Any.fromJSON(object.billingAddress) : undefined,
+      shippingAddress: isSet(object.shippingAddress) ? Struct.fromJSON(object.shippingAddress) : undefined,
+      billingAddress: isSet(object.billingAddress) ? Struct.fromJSON(object.billingAddress) : undefined,
       items: globalThis.Array.isArray(object?.items)
         ? object.items.map((e: any) => OrderLineItemRequest.fromJSON(e))
         : [],
@@ -267,10 +268,10 @@ export const OrderCreateRequest: MessageFns<OrderCreateRequest> = {
       }
     }
     if (message.shippingAddress !== undefined) {
-      obj.shippingAddress = Any.toJSON(message.shippingAddress);
+      obj.shippingAddress = Struct.toJSON(message.shippingAddress);
     }
     if (message.billingAddress !== undefined) {
-      obj.billingAddress = Any.toJSON(message.billingAddress);
+      obj.billingAddress = Struct.toJSON(message.billingAddress);
     }
     if (message.items?.length) {
       obj.items = message.items.map((e) => OrderLineItemRequest.toJSON(e));
@@ -304,10 +305,10 @@ export const OrderCreateRequest: MessageFns<OrderCreateRequest> = {
       return acc;
     }, {});
     message.shippingAddress = (object.shippingAddress !== undefined && object.shippingAddress !== null)
-      ? Any.fromPartial(object.shippingAddress)
+      ? Struct.fromPartial(object.shippingAddress)
       : undefined;
     message.billingAddress = (object.billingAddress !== undefined && object.billingAddress !== null)
-      ? Any.fromPartial(object.billingAddress)
+      ? Struct.fromPartial(object.billingAddress)
       : undefined;
     message.items = object.items?.map((e) => OrderLineItemRequest.fromPartial(e)) || [];
     message.shippingMethod = object.shippingMethod ?? "";
