@@ -100,6 +100,7 @@ pub enum OrderStatus {
     Delivered = 3,
     Cancelled = 4,
     Refunded = 5,
+    PaymentFailed = 6,
 }
 impl OrderStatus {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -108,23 +109,25 @@ impl OrderStatus {
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Self::Created => "CREATED",
-            Self::Confirmed => "CONFIRMED",
-            Self::Shipped => "SHIPPED",
-            Self::Delivered => "DELIVERED",
-            Self::Cancelled => "CANCELLED",
-            Self::Refunded => "REFUNDED",
+            Self::Created => "ORDER_STATUS_CREATED",
+            Self::Confirmed => "ORDER_STATUS_CONFIRMED",
+            Self::Shipped => "ORDER_STATUS_SHIPPED",
+            Self::Delivered => "ORDER_STATUS_DELIVERED",
+            Self::Cancelled => "ORDER_STATUS_CANCELLED",
+            Self::Refunded => "ORDER_STATUS_REFUNDED",
+            Self::PaymentFailed => "ORDER_STATUS_PAYMENT_FAILED",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
     pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
         match value {
-            "CREATED" => Some(Self::Created),
-            "CONFIRMED" => Some(Self::Confirmed),
-            "SHIPPED" => Some(Self::Shipped),
-            "DELIVERED" => Some(Self::Delivered),
-            "CANCELLED" => Some(Self::Cancelled),
-            "REFUNDED" => Some(Self::Refunded),
+            "ORDER_STATUS_CREATED" => Some(Self::Created),
+            "ORDER_STATUS_CONFIRMED" => Some(Self::Confirmed),
+            "ORDER_STATUS_SHIPPED" => Some(Self::Shipped),
+            "ORDER_STATUS_DELIVERED" => Some(Self::Delivered),
+            "ORDER_STATUS_CANCELLED" => Some(Self::Cancelled),
+            "ORDER_STATUS_REFUNDED" => Some(Self::Refunded),
+            "ORDER_STATUS_PAYMENT_FAILED" => Some(Self::PaymentFailed),
             _ => None,
         }
     }
@@ -346,8 +349,8 @@ pub struct OrderLineItem {
     #[prost(uint64, optional, tag = "12")]
     pub discount_cents: ::core::option::Option<u64>,
     /// tax for this line (total)
-    #[prost(uint64, optional, tag = "13")]
-    pub tax_cents: ::core::option::Option<u64>,
+    #[prost(uint64, tag = "13")]
+    pub tax_cents: u64,
     /// (quantity * unit_price) - discount + tax
     #[prost(uint64, tag = "14")]
     pub total_cents: u64,

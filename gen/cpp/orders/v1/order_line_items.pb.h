@@ -468,8 +468,7 @@ class OrderLineItem final : public ::google::protobuf::Message
   void _internal_set_discount_cents(::uint64_t value);
 
   public:
-  // optional uint64 tax_cents = 13 [json_name = "taxCents"];
-  bool has_tax_cents() const;
+  // uint64 tax_cents = 13 [json_name = "taxCents"];
   void clear_tax_cents() ;
   ::uint64_t tax_cents() const;
   void set_tax_cents(::uint64_t value);
@@ -1144,11 +1143,7 @@ inline void OrderLineItem::_internal_set_discount_cents(::uint64_t value) {
   _impl_.discount_cents_ = value;
 }
 
-// optional uint64 tax_cents = 13 [json_name = "taxCents"];
-inline bool OrderLineItem::has_tax_cents() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
-  return value;
-}
+// uint64 tax_cents = 13 [json_name = "taxCents"];
 inline void OrderLineItem::clear_tax_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tax_cents_ = ::uint64_t{0u};

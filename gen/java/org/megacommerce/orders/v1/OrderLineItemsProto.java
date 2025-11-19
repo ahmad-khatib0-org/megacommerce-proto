@@ -246,16 +246,7 @@ java.lang.String defaultValue);
      * tax for this line (total)
      * </pre>
      *
-     * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
-     * @return Whether the taxCents field is set.
-     */
-    boolean hasTaxCents();
-    /**
-     * <pre>
-     * tax for this line (total)
-     * </pre>
-     *
-     * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
+     * <code>uint64 tax_cents = 13 [json_name = "taxCents"];</code>
      * @return The taxCents.
      */
     long getTaxCents();
@@ -880,19 +871,7 @@ java.lang.String defaultValue) {
      * tax for this line (total)
      * </pre>
      *
-     * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
-     * @return Whether the taxCents field is set.
-     */
-    @java.lang.Override
-    public boolean hasTaxCents() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     * tax for this line (total)
-     * </pre>
-     *
-     * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
+     * <code>uint64 tax_cents = 13 [json_name = "taxCents"];</code>
      * @return The taxCents.
      */
     @java.lang.Override
@@ -980,7 +959,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasProductSnapshot() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
@@ -1033,7 +1012,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasUpdatedAt() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
@@ -1101,7 +1080,7 @@ java.lang.String defaultValue) {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeUInt64(12, discountCents_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (taxCents_ != 0L) {
         output.writeUInt64(13, taxCents_);
       }
       if (totalCents_ != 0L) {
@@ -1110,13 +1089,13 @@ java.lang.String defaultValue) {
       for (int i = 0; i < appliedOfferIds_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 15, appliedOfferIds_.getRaw(i));
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(16, getProductSnapshot());
       }
       if (createdAt_ != 0L) {
         output.writeUInt64(17, createdAt_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeUInt64(18, updatedAt_);
       }
       getUnknownFields().writeTo(output);
@@ -1176,7 +1155,7 @@ java.lang.String defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(12, discountCents_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (taxCents_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(13, taxCents_);
       }
@@ -1192,7 +1171,7 @@ java.lang.String defaultValue) {
         size += dataSize;
         size += 1 * getAppliedOfferIdsList().size();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, getProductSnapshot());
       }
@@ -1200,7 +1179,7 @@ java.lang.String defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(17, createdAt_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(18, updatedAt_);
       }
@@ -1252,11 +1231,8 @@ java.lang.String defaultValue) {
         if (getDiscountCents()
             != other.getDiscountCents()) return false;
       }
-      if (hasTaxCents() != other.hasTaxCents()) return false;
-      if (hasTaxCents()) {
-        if (getTaxCents()
-            != other.getTaxCents()) return false;
-      }
+      if (getTaxCents()
+          != other.getTaxCents()) return false;
       if (getTotalCents()
           != other.getTotalCents()) return false;
       if (!getAppliedOfferIdsList()
@@ -1320,11 +1296,9 @@ java.lang.String defaultValue) {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getDiscountCents());
       }
-      if (hasTaxCents()) {
-        hash = (37 * hash) + TAX_CENTS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTaxCents());
-      }
+      hash = (37 * hash) + TAX_CENTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTaxCents());
       hash = (37 * hash) + TOTAL_CENTS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTotalCents());
@@ -1602,7 +1576,6 @@ java.lang.String defaultValue) {
         }
         if (((from_bitField0_ & 0x00001000) != 0)) {
           result.taxCents_ = taxCents_;
-          to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00002000) != 0)) {
           result.totalCents_ = totalCents_;
@@ -1615,14 +1588,14 @@ java.lang.String defaultValue) {
           result.productSnapshot_ = productSnapshotBuilder_ == null
               ? productSnapshot_
               : productSnapshotBuilder_.build();
-          to_bitField0_ |= 0x00000010;
+          to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00010000) != 0)) {
           result.createdAt_ = createdAt_;
         }
         if (((from_bitField0_ & 0x00020000) != 0)) {
           result.updatedAt_ = updatedAt_;
-          to_bitField0_ |= 0x00000020;
+          to_bitField0_ |= 0x00000010;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1687,7 +1660,7 @@ java.lang.String defaultValue) {
         if (other.hasDiscountCents()) {
           setDiscountCents(other.getDiscountCents());
         }
-        if (other.hasTaxCents()) {
+        if (other.getTaxCents() != 0L) {
           setTaxCents(other.getTaxCents());
         }
         if (other.getTotalCents() != 0L) {
@@ -2721,19 +2694,7 @@ java.lang.String defaultValue) {
        * tax for this line (total)
        * </pre>
        *
-       * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
-       * @return Whether the taxCents field is set.
-       */
-      @java.lang.Override
-      public boolean hasTaxCents() {
-        return ((bitField0_ & 0x00001000) != 0);
-      }
-      /**
-       * <pre>
-       * tax for this line (total)
-       * </pre>
-       *
-       * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
+       * <code>uint64 tax_cents = 13 [json_name = "taxCents"];</code>
        * @return The taxCents.
        */
       @java.lang.Override
@@ -2745,7 +2706,7 @@ java.lang.String defaultValue) {
        * tax for this line (total)
        * </pre>
        *
-       * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
+       * <code>uint64 tax_cents = 13 [json_name = "taxCents"];</code>
        * @param value The taxCents to set.
        * @return This builder for chaining.
        */
@@ -2761,7 +2722,7 @@ java.lang.String defaultValue) {
        * tax for this line (total)
        * </pre>
        *
-       * <code>optional uint64 tax_cents = 13 [json_name = "taxCents"];</code>
+       * <code>uint64 tax_cents = 13 [json_name = "taxCents"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTaxCents() {
@@ -3290,7 +3251,7 @@ java.lang.String defaultValue) {
   static {
     java.lang.String[] descriptorData = {
       "\n orders/v1/order_line_items.proto\022\torde" +
-      "rs.v1\032\026shared/v1/struct.proto\"\303\006\n\rOrderL" +
+      "rs.v1\032\026shared/v1/struct.proto\"\260\006\n\rOrderL" +
       "ineItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001(" +
       "\tR\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tproductI" +
       "d\022\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\020\n\003sku\030" +
@@ -3301,20 +3262,20 @@ java.lang.String defaultValue) {
       "R\016unitPriceCents\022-\n\020list_price_cents\030\n \001" +
       "(\004H\000R\016listPriceCents\210\001\001\022-\n\020sale_price_ce" +
       "nts\030\013 \001(\004H\001R\016salePriceCents\210\001\001\022*\n\016discou" +
-      "nt_cents\030\014 \001(\004H\002R\rdiscountCents\210\001\001\022 \n\tta" +
-      "x_cents\030\r \001(\004H\003R\010taxCents\210\001\001\022\037\n\013total_ce" +
-      "nts\030\016 \001(\004R\ntotalCents\022*\n\021applied_offer_i" +
-      "ds\030\017 \003(\tR\017appliedOfferIds\022<\n\020product_sna" +
-      "pshot\030\020 \001(\0132\021.shared.v1.StructR\017productS" +
-      "napshot\022\035\n\ncreated_at\030\021 \001(\004R\tcreatedAt\022\"" +
-      "\n\nupdated_at\030\022 \001(\004H\004R\tupdatedAt\210\001\001\032=\n\017At" +
-      "tributesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
-      "\030\002 \001(\tR\005value:\0028\001B\023\n\021_list_price_centsB\023" +
-      "\n\021_sale_price_centsB\021\n\017_discount_centsB\014" +
-      "\n\n_tax_centsB\r\n\013_updated_atBy\n\032org.megac" +
-      "ommerce.orders.v1B\023OrderLineItemsProtoZC" +
-      "github.com/ahmad-khatib0-org/megacommerc" +
-      "e-proto/gen/go/orders/v1;v1\370\001\001b\006proto3"
+      "nt_cents\030\014 \001(\004H\002R\rdiscountCents\210\001\001\022\033\n\tta" +
+      "x_cents\030\r \001(\004R\010taxCents\022\037\n\013total_cents\030\016" +
+      " \001(\004R\ntotalCents\022*\n\021applied_offer_ids\030\017 " +
+      "\003(\tR\017appliedOfferIds\022<\n\020product_snapshot" +
+      "\030\020 \001(\0132\021.shared.v1.StructR\017productSnapsh" +
+      "ot\022\035\n\ncreated_at\030\021 \001(\004R\tcreatedAt\022\"\n\nupd" +
+      "ated_at\030\022 \001(\004H\003R\tupdatedAt\210\001\001\032=\n\017Attribu" +
+      "tesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(" +
+      "\tR\005value:\0028\001B\023\n\021_list_price_centsB\023\n\021_sa" +
+      "le_price_centsB\021\n\017_discount_centsB\r\n\013_up" +
+      "dated_atBy\n\032org.megacommerce.orders.v1B\023" +
+      "OrderLineItemsProtoZCgithub.com/ahmad-kh" +
+      "atib0-org/megacommerce-proto/gen/go/orde" +
+      "rs/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

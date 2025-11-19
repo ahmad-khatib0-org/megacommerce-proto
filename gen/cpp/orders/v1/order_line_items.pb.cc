@@ -167,7 +167,7 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_orders_2fv1_2forder_5fline_5fitems_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n orders/v1/order_line_items.proto\022\torde"
-    "rs.v1\032\026shared/v1/struct.proto\"\303\006\n\rOrderL"
+    "rs.v1\032\026shared/v1/struct.proto\"\260\006\n\rOrderL"
     "ineItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001("
     "\tR\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tproductI"
     "d\022\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\020\n\003sku\030"
@@ -178,20 +178,20 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fline_5fitems_2eproto[
     "R\016unitPriceCents\022-\n\020list_price_cents\030\n \001"
     "(\004H\000R\016listPriceCents\210\001\001\022-\n\020sale_price_ce"
     "nts\030\013 \001(\004H\001R\016salePriceCents\210\001\001\022*\n\016discou"
-    "nt_cents\030\014 \001(\004H\002R\rdiscountCents\210\001\001\022 \n\tta"
-    "x_cents\030\r \001(\004H\003R\010taxCents\210\001\001\022\037\n\013total_ce"
-    "nts\030\016 \001(\004R\ntotalCents\022*\n\021applied_offer_i"
-    "ds\030\017 \003(\tR\017appliedOfferIds\022<\n\020product_sna"
-    "pshot\030\020 \001(\0132\021.shared.v1.StructR\017productS"
-    "napshot\022\035\n\ncreated_at\030\021 \001(\004R\tcreatedAt\022\""
-    "\n\nupdated_at\030\022 \001(\004H\004R\tupdatedAt\210\001\001\032=\n\017At"
-    "tributesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value"
-    "\030\002 \001(\tR\005value:\0028\001B\023\n\021_list_price_centsB\023"
-    "\n\021_sale_price_centsB\021\n\017_discount_centsB\014"
-    "\n\n_tax_centsB\r\n\013_updated_atBy\n\032org.megac"
-    "ommerce.orders.v1B\023OrderLineItemsProtoZC"
-    "github.com/ahmad-khatib0-org/megacommerc"
-    "e-proto/gen/go/orders/v1;v1\370\001\001b\006proto3"
+    "nt_cents\030\014 \001(\004H\002R\rdiscountCents\210\001\001\022\033\n\tta"
+    "x_cents\030\r \001(\004R\010taxCents\022\037\n\013total_cents\030\016"
+    " \001(\004R\ntotalCents\022*\n\021applied_offer_ids\030\017 "
+    "\003(\tR\017appliedOfferIds\022<\n\020product_snapshot"
+    "\030\020 \001(\0132\021.shared.v1.StructR\017productSnapsh"
+    "ot\022\035\n\ncreated_at\030\021 \001(\004R\tcreatedAt\022\"\n\nupd"
+    "ated_at\030\022 \001(\004H\003R\tupdatedAt\210\001\001\032=\n\017Attribu"
+    "tesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
+    "\tR\005value:\0028\001B\023\n\021_list_price_centsB\023\n\021_sa"
+    "le_price_centsB\021\n\017_discount_centsB\r\n\013_up"
+    "dated_atBy\n\032org.megacommerce.orders.v1B\023"
+    "OrderLineItemsProtoZCgithub.com/ahmad-kh"
+    "atib0-org/megacommerce-proto/gen/go/orde"
+    "rs/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto_deps[1] = {
@@ -201,7 +201,7 @@ static ::absl::once_flag descriptor_table_orders_2fv1_2forder_5fline_5fitems_2ep
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto = {
     false,
     false,
-    1038,
+    1019,
     descriptor_table_protodef_orders_2fv1_2forder_5fline_5fitems_2eproto,
     "orders/v1/order_line_items.proto",
     &descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto_once,
@@ -537,7 +537,7 @@ OrderLineItem::_table_ = {
     // optional uint64 discount_cents = 12 [json_name = "discountCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.discount_cents_), 10>(),
      {96, 10, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.discount_cents_)}},
-    // optional uint64 tax_cents = 13 [json_name = "taxCents"];
+    // uint64 tax_cents = 13 [json_name = "taxCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.tax_cents_), 11>(),
      {104, 11, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.tax_cents_)}},
     // uint64 total_cents = 14 [json_name = "totalCents"];
@@ -607,7 +607,7 @@ OrderLineItem::_table_ = {
     // optional uint64 discount_cents = 12 [json_name = "discountCents"];
     {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.discount_cents_), _Internal::kHasBitsOffset + 10, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
-    // optional uint64 tax_cents = 13 [json_name = "taxCents"];
+    // uint64 tax_cents = 13 [json_name = "taxCents"];
     {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.tax_cents_), _Internal::kHasBitsOffset + 11, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // uint64 total_cents = 14 [json_name = "totalCents"];
@@ -837,11 +837,13 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
         12, this_._internal_discount_cents(), target);
   }
 
-  // optional uint64 tax_cents = 13 [json_name = "taxCents"];
+  // uint64 tax_cents = 13 [json_name = "taxCents"];
   if ((cached_has_bits & 0x00000800u) != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-        13, this_._internal_tax_cents(), target);
+    if (this_._internal_tax_cents() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          13, this_._internal_tax_cents(), target);
+    }
   }
 
   // uint64 total_cents = 14 [json_name = "totalCents"];
@@ -1002,10 +1004,12 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
           this_._internal_discount_cents());
     }
-    // optional uint64 tax_cents = 13 [json_name = "taxCents"];
+    // uint64 tax_cents = 13 [json_name = "taxCents"];
     if ((cached_has_bits & 0x00000800u) != 0) {
-      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
-          this_._internal_tax_cents());
+      if (this_._internal_tax_cents() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_tax_cents());
+      }
     }
     // uint64 total_cents = 14 [json_name = "totalCents"];
     if ((cached_has_bits & 0x00001000u) != 0) {
@@ -1130,7 +1134,9 @@ void OrderLineItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::g
       _this->_impl_.discount_cents_ = from._impl_.discount_cents_;
     }
     if ((cached_has_bits & 0x00000800u) != 0) {
-      _this->_impl_.tax_cents_ = from._impl_.tax_cents_;
+      if (from._internal_tax_cents() != 0) {
+        _this->_impl_.tax_cents_ = from._impl_.tax_cents_;
+      }
     }
     if ((cached_has_bits & 0x00001000u) != 0) {
       if (from._internal_total_cents() != 0) {

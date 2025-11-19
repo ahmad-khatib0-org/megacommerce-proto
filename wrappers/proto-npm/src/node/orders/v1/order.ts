@@ -57,35 +57,39 @@ export function paymentStatusToJSON(object: PaymentStatus): string {
 
 /** Order status */
 export enum OrderStatus {
-  CREATED = 0,
-  CONFIRMED = 1,
-  SHIPPED = 2,
-  DELIVERED = 3,
-  CANCELLED = 4,
-  REFUNDED = 5,
+  ORDER_STATUS_CREATED = 0,
+  ORDER_STATUS_CONFIRMED = 1,
+  ORDER_STATUS_SHIPPED = 2,
+  ORDER_STATUS_DELIVERED = 3,
+  ORDER_STATUS_CANCELLED = 4,
+  ORDER_STATUS_REFUNDED = 5,
+  ORDER_STATUS_PAYMENT_FAILED = 6,
   UNRECOGNIZED = -1,
 }
 
 export function orderStatusFromJSON(object: any): OrderStatus {
   switch (object) {
     case 0:
-    case "CREATED":
-      return OrderStatus.CREATED;
+    case "ORDER_STATUS_CREATED":
+      return OrderStatus.ORDER_STATUS_CREATED;
     case 1:
-    case "CONFIRMED":
-      return OrderStatus.CONFIRMED;
+    case "ORDER_STATUS_CONFIRMED":
+      return OrderStatus.ORDER_STATUS_CONFIRMED;
     case 2:
-    case "SHIPPED":
-      return OrderStatus.SHIPPED;
+    case "ORDER_STATUS_SHIPPED":
+      return OrderStatus.ORDER_STATUS_SHIPPED;
     case 3:
-    case "DELIVERED":
-      return OrderStatus.DELIVERED;
+    case "ORDER_STATUS_DELIVERED":
+      return OrderStatus.ORDER_STATUS_DELIVERED;
     case 4:
-    case "CANCELLED":
-      return OrderStatus.CANCELLED;
+    case "ORDER_STATUS_CANCELLED":
+      return OrderStatus.ORDER_STATUS_CANCELLED;
     case 5:
-    case "REFUNDED":
-      return OrderStatus.REFUNDED;
+    case "ORDER_STATUS_REFUNDED":
+      return OrderStatus.ORDER_STATUS_REFUNDED;
+    case 6:
+    case "ORDER_STATUS_PAYMENT_FAILED":
+      return OrderStatus.ORDER_STATUS_PAYMENT_FAILED;
     case -1:
     case "UNRECOGNIZED":
     default:
@@ -95,18 +99,20 @@ export function orderStatusFromJSON(object: any): OrderStatus {
 
 export function orderStatusToJSON(object: OrderStatus): string {
   switch (object) {
-    case OrderStatus.CREATED:
-      return "CREATED";
-    case OrderStatus.CONFIRMED:
-      return "CONFIRMED";
-    case OrderStatus.SHIPPED:
-      return "SHIPPED";
-    case OrderStatus.DELIVERED:
-      return "DELIVERED";
-    case OrderStatus.CANCELLED:
-      return "CANCELLED";
-    case OrderStatus.REFUNDED:
-      return "REFUNDED";
+    case OrderStatus.ORDER_STATUS_CREATED:
+      return "ORDER_STATUS_CREATED";
+    case OrderStatus.ORDER_STATUS_CONFIRMED:
+      return "ORDER_STATUS_CONFIRMED";
+    case OrderStatus.ORDER_STATUS_SHIPPED:
+      return "ORDER_STATUS_SHIPPED";
+    case OrderStatus.ORDER_STATUS_DELIVERED:
+      return "ORDER_STATUS_DELIVERED";
+    case OrderStatus.ORDER_STATUS_CANCELLED:
+      return "ORDER_STATUS_CANCELLED";
+    case OrderStatus.ORDER_STATUS_REFUNDED:
+      return "ORDER_STATUS_REFUNDED";
+    case OrderStatus.ORDER_STATUS_PAYMENT_FAILED:
+      return "ORDER_STATUS_PAYMENT_FAILED";
     case OrderStatus.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";

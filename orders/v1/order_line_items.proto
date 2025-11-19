@@ -27,7 +27,7 @@ message OrderLineItem {
   optional uint64 list_price_cents = 10; // optional
   optional uint64 sale_price_cents = 11; // optional
   optional uint64 discount_cents = 12; // total discount applied to this line (all units)
-  optional uint64 tax_cents = 13; // tax for this line (total)
+  uint64 tax_cents = 13; // tax for this line (total)
   uint64 total_cents = 14; // (quantity * unit_price) - discount + tax
 
   // array of applied offer/promotion ids

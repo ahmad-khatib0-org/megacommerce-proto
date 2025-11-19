@@ -171,29 +171,33 @@ public final class OrderProto {
   public enum OrderStatus
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>CREATED = 0;</code>
+     * <code>ORDER_STATUS_CREATED = 0;</code>
      */
-    CREATED(0),
+    ORDER_STATUS_CREATED(0),
     /**
-     * <code>CONFIRMED = 1;</code>
+     * <code>ORDER_STATUS_CONFIRMED = 1;</code>
      */
-    CONFIRMED(1),
+    ORDER_STATUS_CONFIRMED(1),
     /**
-     * <code>SHIPPED = 2;</code>
+     * <code>ORDER_STATUS_SHIPPED = 2;</code>
      */
-    SHIPPED(2),
+    ORDER_STATUS_SHIPPED(2),
     /**
-     * <code>DELIVERED = 3;</code>
+     * <code>ORDER_STATUS_DELIVERED = 3;</code>
      */
-    DELIVERED(3),
+    ORDER_STATUS_DELIVERED(3),
     /**
-     * <code>CANCELLED = 4;</code>
+     * <code>ORDER_STATUS_CANCELLED = 4;</code>
      */
-    CANCELLED(4),
+    ORDER_STATUS_CANCELLED(4),
     /**
-     * <code>REFUNDED = 5;</code>
+     * <code>ORDER_STATUS_REFUNDED = 5;</code>
      */
-    REFUNDED(5),
+    ORDER_STATUS_REFUNDED(5),
+    /**
+     * <code>ORDER_STATUS_PAYMENT_FAILED = 6;</code>
+     */
+    ORDER_STATUS_PAYMENT_FAILED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -207,29 +211,33 @@ public final class OrderProto {
         OrderStatus.class.getName());
     }
     /**
-     * <code>CREATED = 0;</code>
+     * <code>ORDER_STATUS_CREATED = 0;</code>
      */
-    public static final int CREATED_VALUE = 0;
+    public static final int ORDER_STATUS_CREATED_VALUE = 0;
     /**
-     * <code>CONFIRMED = 1;</code>
+     * <code>ORDER_STATUS_CONFIRMED = 1;</code>
      */
-    public static final int CONFIRMED_VALUE = 1;
+    public static final int ORDER_STATUS_CONFIRMED_VALUE = 1;
     /**
-     * <code>SHIPPED = 2;</code>
+     * <code>ORDER_STATUS_SHIPPED = 2;</code>
      */
-    public static final int SHIPPED_VALUE = 2;
+    public static final int ORDER_STATUS_SHIPPED_VALUE = 2;
     /**
-     * <code>DELIVERED = 3;</code>
+     * <code>ORDER_STATUS_DELIVERED = 3;</code>
      */
-    public static final int DELIVERED_VALUE = 3;
+    public static final int ORDER_STATUS_DELIVERED_VALUE = 3;
     /**
-     * <code>CANCELLED = 4;</code>
+     * <code>ORDER_STATUS_CANCELLED = 4;</code>
      */
-    public static final int CANCELLED_VALUE = 4;
+    public static final int ORDER_STATUS_CANCELLED_VALUE = 4;
     /**
-     * <code>REFUNDED = 5;</code>
+     * <code>ORDER_STATUS_REFUNDED = 5;</code>
      */
-    public static final int REFUNDED_VALUE = 5;
+    public static final int ORDER_STATUS_REFUNDED_VALUE = 5;
+    /**
+     * <code>ORDER_STATUS_PAYMENT_FAILED = 6;</code>
+     */
+    public static final int ORDER_STATUS_PAYMENT_FAILED_VALUE = 6;
 
 
     public final int getNumber() {
@@ -256,12 +264,13 @@ public final class OrderProto {
      */
     public static OrderStatus forNumber(int value) {
       switch (value) {
-        case 0: return CREATED;
-        case 1: return CONFIRMED;
-        case 2: return SHIPPED;
-        case 3: return DELIVERED;
-        case 4: return CANCELLED;
-        case 5: return REFUNDED;
+        case 0: return ORDER_STATUS_CREATED;
+        case 1: return ORDER_STATUS_CONFIRMED;
+        case 2: return ORDER_STATUS_SHIPPED;
+        case 3: return ORDER_STATUS_DELIVERED;
+        case 4: return ORDER_STATUS_CANCELLED;
+        case 5: return ORDER_STATUS_REFUNDED;
+        case 6: return ORDER_STATUS_PAYMENT_FAILED;
         default: return null;
       }
     }
@@ -3841,12 +3850,15 @@ public final class OrderProto {
       "B\r\n\013_deleted_at*f\n\rPaymentStatus\022\023\n\017PAYM" +
       "ENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020\001\022\024\n" +
       "\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILED\020\003*" +
-      "b\n\013OrderStatus\022\013\n\007CREATED\020\000\022\r\n\tCONFIRMED" +
-      "\020\001\022\013\n\007SHIPPED\020\002\022\r\n\tDELIVERED\020\003\022\r\n\tCANCEL" +
-      "LED\020\004\022\014\n\010REFUNDED\020\005Bp\n\032org.megacommerce." +
-      "orders.v1B\nOrderProtoZCgithub.com/ahmad-" +
-      "khatib0-org/megacommerce-proto/gen/go/or" +
-      "ders/v1;v1\370\001\001b\006proto3"
+      "\321\001\n\013OrderStatus\022\030\n\024ORDER_STATUS_CREATED\020" +
+      "\000\022\032\n\026ORDER_STATUS_CONFIRMED\020\001\022\030\n\024ORDER_S" +
+      "TATUS_SHIPPED\020\002\022\032\n\026ORDER_STATUS_DELIVERE" +
+      "D\020\003\022\032\n\026ORDER_STATUS_CANCELLED\020\004\022\031\n\025ORDER" +
+      "_STATUS_REFUNDED\020\005\022\037\n\033ORDER_STATUS_PAYME" +
+      "NT_FAILED\020\006Bp\n\032org.megacommerce.orders.v" +
+      "1B\nOrderProtoZCgithub.com/ahmad-khatib0-" +
+      "org/megacommerce-proto/gen/go/orders/v1;" +
+      "v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

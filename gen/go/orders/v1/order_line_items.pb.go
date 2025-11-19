@@ -38,7 +38,7 @@ type OrderLineItem struct {
 	ListPriceCents *uint64 `protobuf:"varint,10,opt,name=list_price_cents,json=listPriceCents,proto3,oneof" json:"list_price_cents,omitempty"` // optional
 	SalePriceCents *uint64 `protobuf:"varint,11,opt,name=sale_price_cents,json=salePriceCents,proto3,oneof" json:"sale_price_cents,omitempty"` // optional
 	DiscountCents  *uint64 `protobuf:"varint,12,opt,name=discount_cents,json=discountCents,proto3,oneof" json:"discount_cents,omitempty"`      // total discount applied to this line (all units)
-	TaxCents       *uint64 `protobuf:"varint,13,opt,name=tax_cents,json=taxCents,proto3,oneof" json:"tax_cents,omitempty"`                     // tax for this line (total)
+	TaxCents       uint64  `protobuf:"varint,13,opt,name=tax_cents,json=taxCents,proto3" json:"tax_cents,omitempty"`                           // tax for this line (total)
 	TotalCents     uint64  `protobuf:"varint,14,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`                     // (quantity * unit_price) - discount + tax
 	// array of applied offer/promotion ids
 	AppliedOfferIds []string `protobuf:"bytes,15,rep,name=applied_offer_ids,json=appliedOfferIds,proto3" json:"applied_offer_ids,omitempty"`
@@ -166,8 +166,8 @@ func (x *OrderLineItem) GetDiscountCents() uint64 {
 }
 
 func (x *OrderLineItem) GetTaxCents() uint64 {
-	if x != nil && x.TaxCents != nil {
-		return *x.TaxCents
+	if x != nil {
+		return x.TaxCents
 	}
 	return 0
 }
@@ -211,7 +211,7 @@ var File_orders_v1_order_line_items_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"\n" +
-	" orders/v1/order_line_items.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"\xc3\x06\n" +
+	" orders/v1/order_line_items.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"\xb0\x06\n" +
 	"\rOrderLineItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\border_id\x18\x02 \x01(\tR\aorderId\x12\x1d\n" +
@@ -229,8 +229,8 @@ const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"\x10list_price_cents\x18\n" +
 	" \x01(\x04H\x00R\x0elistPriceCents\x88\x01\x01\x12-\n" +
 	"\x10sale_price_cents\x18\v \x01(\x04H\x01R\x0esalePriceCents\x88\x01\x01\x12*\n" +
-	"\x0ediscount_cents\x18\f \x01(\x04H\x02R\rdiscountCents\x88\x01\x01\x12 \n" +
-	"\ttax_cents\x18\r \x01(\x04H\x03R\btaxCents\x88\x01\x01\x12\x1f\n" +
+	"\x0ediscount_cents\x18\f \x01(\x04H\x02R\rdiscountCents\x88\x01\x01\x12\x1b\n" +
+	"\ttax_cents\x18\r \x01(\x04R\btaxCents\x12\x1f\n" +
 	"\vtotal_cents\x18\x0e \x01(\x04R\n" +
 	"totalCents\x12*\n" +
 	"\x11applied_offer_ids\x18\x0f \x03(\tR\x0fappliedOfferIds\x12<\n" +
@@ -238,15 +238,13 @@ const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x11 \x01(\x04R\tcreatedAt\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x12 \x01(\x04H\x04R\tupdatedAt\x88\x01\x01\x1a=\n" +
+	"updated_at\x18\x12 \x01(\x04H\x03R\tupdatedAt\x88\x01\x01\x1a=\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x13\n" +
 	"\x11_list_price_centsB\x13\n" +
 	"\x11_sale_price_centsB\x11\n" +
-	"\x0f_discount_centsB\f\n" +
-	"\n" +
-	"_tax_centsB\r\n" +
+	"\x0f_discount_centsB\r\n" +
 	"\v_updated_atBy\n" +
 	"\x1aorg.megacommerce.orders.v1B\x13OrderLineItemsProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 

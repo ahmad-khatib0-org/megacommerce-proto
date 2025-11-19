@@ -37,9 +37,7 @@ export interface OrderLineItem {
     | string
     | undefined;
   /** tax for this line (total) */
-  taxCents?:
-    | string
-    | undefined;
+  taxCents: string;
   /** (quantity * unit_price) - discount + tax */
   totalCents: string;
   /** array of applied offer/promotion ids */
@@ -73,7 +71,7 @@ function createBaseOrderLineItem(): OrderLineItem {
     listPriceCents: undefined,
     salePriceCents: undefined,
     discountCents: undefined,
-    taxCents: undefined,
+    taxCents: "0",
     totalCents: "0",
     appliedOfferIds: [],
     productSnapshot: undefined,
@@ -120,7 +118,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     if (message.discountCents !== undefined) {
       writer.uint32(96).uint64(message.discountCents);
     }
-    if (message.taxCents !== undefined) {
+    if (message.taxCents !== "0") {
       writer.uint32(104).uint64(message.taxCents);
     }
     if (message.totalCents !== "0") {
@@ -323,7 +321,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
       listPriceCents: isSet(object.listPriceCents) ? globalThis.String(object.listPriceCents) : undefined,
       salePriceCents: isSet(object.salePriceCents) ? globalThis.String(object.salePriceCents) : undefined,
       discountCents: isSet(object.discountCents) ? globalThis.String(object.discountCents) : undefined,
-      taxCents: isSet(object.taxCents) ? globalThis.String(object.taxCents) : undefined,
+      taxCents: isSet(object.taxCents) ? globalThis.String(object.taxCents) : "0",
       totalCents: isSet(object.totalCents) ? globalThis.String(object.totalCents) : "0",
       appliedOfferIds: globalThis.Array.isArray(object?.appliedOfferIds)
         ? object.appliedOfferIds.map((e: any) => globalThis.String(e))
@@ -378,7 +376,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     if (message.discountCents !== undefined) {
       obj.discountCents = message.discountCents;
     }
-    if (message.taxCents !== undefined) {
+    if (message.taxCents !== "0") {
       obj.taxCents = message.taxCents;
     }
     if (message.totalCents !== "0") {
@@ -424,7 +422,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     message.listPriceCents = object.listPriceCents ?? undefined;
     message.salePriceCents = object.salePriceCents ?? undefined;
     message.discountCents = object.discountCents ?? undefined;
-    message.taxCents = object.taxCents ?? undefined;
+    message.taxCents = object.taxCents ?? "0";
     message.totalCents = object.totalCents ?? "0";
     message.appliedOfferIds = object.appliedOfferIds?.map((e) => e) || [];
     message.productSnapshot = (object.productSnapshot !== undefined && object.productSnapshot !== null)
