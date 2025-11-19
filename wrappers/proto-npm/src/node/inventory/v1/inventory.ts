@@ -17,12 +17,17 @@ import {
   type ServiceError,
   type UntypedServiceImplementation,
 } from "@grpc/grpc-js";
+import { InventoryGetRequest, InventoryGetResponse } from "./inventory_get";
+import { InventoryReleaseRequest, InventoryReleaseResponse } from "./inventory_release";
 import { InventoryReserveRequest, InventoryReserveResponse } from "./inventory_reserve";
+import { InventoryUpdateRequest, InventoryUpdateResponse } from "./inventory_update";
+import { InventoryReservationGetRequest, InventoryReservationGetResponse } from "./reservation_get";
 
 export const protobufPackage = "inventory.v1";
 
 export type InventoryServiceService = typeof InventoryServiceService;
 export const InventoryServiceService = {
+  /** Reserve inventory for an order */
   inventoryReserve: {
     path: "/inventory.v1.InventoryService/InventoryReserve",
     requestStream: false,
@@ -34,13 +39,71 @@ export const InventoryServiceService = {
       Buffer.from(InventoryReserveResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): InventoryReserveResponse => InventoryReserveResponse.decode(value),
   },
+  /** Release inventory reservation */
+  inventoryRelease: {
+    path: "/inventory.v1.InventoryService/InventoryRelease",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: InventoryReleaseRequest): Buffer =>
+      Buffer.from(InventoryReleaseRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): InventoryReleaseRequest => InventoryReleaseRequest.decode(value),
+    responseSerialize: (value: InventoryReleaseResponse): Buffer =>
+      Buffer.from(InventoryReleaseResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): InventoryReleaseResponse => InventoryReleaseResponse.decode(value),
+  },
+  /** Get inventory levels for products */
+  inventoryGet: {
+    path: "/inventory.v1.InventoryService/InventoryGet",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: InventoryGetRequest): Buffer => Buffer.from(InventoryGetRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): InventoryGetRequest => InventoryGetRequest.decode(value),
+    responseSerialize: (value: InventoryGetResponse): Buffer =>
+      Buffer.from(InventoryGetResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): InventoryGetResponse => InventoryGetResponse.decode(value),
+  },
+  /** Update inventory levels */
+  inventoryUpdate: {
+    path: "/inventory.v1.InventoryService/InventoryUpdate",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: InventoryUpdateRequest): Buffer =>
+      Buffer.from(InventoryUpdateRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): InventoryUpdateRequest => InventoryUpdateRequest.decode(value),
+    responseSerialize: (value: InventoryUpdateResponse): Buffer =>
+      Buffer.from(InventoryUpdateResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): InventoryUpdateResponse => InventoryUpdateResponse.decode(value),
+  },
+  /** Get reservation details */
+  inventoryReservationGet: {
+    path: "/inventory.v1.InventoryService/InventoryReservationGet",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: InventoryReservationGetRequest): Buffer =>
+      Buffer.from(InventoryReservationGetRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): InventoryReservationGetRequest => InventoryReservationGetRequest.decode(value),
+    responseSerialize: (value: InventoryReservationGetResponse): Buffer =>
+      Buffer.from(InventoryReservationGetResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): InventoryReservationGetResponse =>
+      InventoryReservationGetResponse.decode(value),
+  },
 } as const;
 
 export interface InventoryServiceServer extends UntypedServiceImplementation {
+  /** Reserve inventory for an order */
   inventoryReserve: handleUnaryCall<InventoryReserveRequest, InventoryReserveResponse>;
+  /** Release inventory reservation */
+  inventoryRelease: handleUnaryCall<InventoryReleaseRequest, InventoryReleaseResponse>;
+  /** Get inventory levels for products */
+  inventoryGet: handleUnaryCall<InventoryGetRequest, InventoryGetResponse>;
+  /** Update inventory levels */
+  inventoryUpdate: handleUnaryCall<InventoryUpdateRequest, InventoryUpdateResponse>;
+  /** Get reservation details */
+  inventoryReservationGet: handleUnaryCall<InventoryReservationGetRequest, InventoryReservationGetResponse>;
 }
 
 export interface InventoryServiceClient extends Client {
+  /** Reserve inventory for an order */
   inventoryReserve(
     request: InventoryReserveRequest,
     callback: (error: ServiceError | null, response: InventoryReserveResponse) => void,
@@ -55,6 +118,70 @@ export interface InventoryServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: InventoryReserveResponse) => void,
+  ): ClientUnaryCall;
+  /** Release inventory reservation */
+  inventoryRelease(
+    request: InventoryReleaseRequest,
+    callback: (error: ServiceError | null, response: InventoryReleaseResponse) => void,
+  ): ClientUnaryCall;
+  inventoryRelease(
+    request: InventoryReleaseRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: InventoryReleaseResponse) => void,
+  ): ClientUnaryCall;
+  inventoryRelease(
+    request: InventoryReleaseRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: InventoryReleaseResponse) => void,
+  ): ClientUnaryCall;
+  /** Get inventory levels for products */
+  inventoryGet(
+    request: InventoryGetRequest,
+    callback: (error: ServiceError | null, response: InventoryGetResponse) => void,
+  ): ClientUnaryCall;
+  inventoryGet(
+    request: InventoryGetRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: InventoryGetResponse) => void,
+  ): ClientUnaryCall;
+  inventoryGet(
+    request: InventoryGetRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: InventoryGetResponse) => void,
+  ): ClientUnaryCall;
+  /** Update inventory levels */
+  inventoryUpdate(
+    request: InventoryUpdateRequest,
+    callback: (error: ServiceError | null, response: InventoryUpdateResponse) => void,
+  ): ClientUnaryCall;
+  inventoryUpdate(
+    request: InventoryUpdateRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: InventoryUpdateResponse) => void,
+  ): ClientUnaryCall;
+  inventoryUpdate(
+    request: InventoryUpdateRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: InventoryUpdateResponse) => void,
+  ): ClientUnaryCall;
+  /** Get reservation details */
+  inventoryReservationGet(
+    request: InventoryReservationGetRequest,
+    callback: (error: ServiceError | null, response: InventoryReservationGetResponse) => void,
+  ): ClientUnaryCall;
+  inventoryReservationGet(
+    request: InventoryReservationGetRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: InventoryReservationGetResponse) => void,
+  ): ClientUnaryCall;
+  inventoryReservationGet(
+    request: InventoryReservationGetRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: InventoryReservationGetResponse) => void,
   ): ClientUnaryCall;
 }
 

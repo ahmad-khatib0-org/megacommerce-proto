@@ -28,8 +28,8 @@
 #include "google/protobuf/message_lite.h"
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
-#include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
+#include "inventory/v1/reservation_get.pb.h"
 #include "shared/v1/error.pb.h"
 // @@protoc_insertion_point(includes)
 
@@ -56,8 +56,6 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_inve
 }  // extern "C"
 namespace inventory {
 namespace v1 {
-enum InventoryReservationStatus : int;
-extern const uint32_t InventoryReservationStatus_internal_data_[];
 class InventoryReserveRequest;
 struct InventoryReserveRequestDefaultTypeInternal;
 extern InventoryReserveRequestDefaultTypeInternal _InventoryReserveRequest_default_instance_;
@@ -78,253 +76,15 @@ extern const ::google::protobuf::internal::ClassDataFull InventoryReserveRespons
 }  // namespace inventory
 namespace google {
 namespace protobuf {
-template <>
-internal::EnumTraitsT<::inventory::v1::InventoryReservationStatus_internal_data_>
-    internal::EnumTraitsImpl::value<::inventory::v1::InventoryReservationStatus>;
 }  // namespace protobuf
 }  // namespace google
 
 namespace inventory {
 namespace v1 {
-enum InventoryReservationStatus : int {
-  INVENTORY_UNKNOWN = 0,
-  INVENTORY_RESERVED = 1,
-  INVENTORY_PARTIALLY_RESERVED = 2,
-  INVENTORY_NOT_RESERVED = 3,
-  INVENTORY_PENDING = 4,
-  InventoryReservationStatus_INT_MIN_SENTINEL_DO_NOT_USE_ =
-      ::std::numeric_limits<::int32_t>::min(),
-  InventoryReservationStatus_INT_MAX_SENTINEL_DO_NOT_USE_ =
-      ::std::numeric_limits<::int32_t>::max(),
-};
-
-extern const uint32_t InventoryReservationStatus_internal_data_[];
-inline constexpr InventoryReservationStatus InventoryReservationStatus_MIN =
-    static_cast<InventoryReservationStatus>(0);
-inline constexpr InventoryReservationStatus InventoryReservationStatus_MAX =
-    static_cast<InventoryReservationStatus>(4);
-inline bool InventoryReservationStatus_IsValid(int value) {
-  return 0 <= value && value <= 4;
-}
-inline constexpr int InventoryReservationStatus_ARRAYSIZE = 4 + 1;
-const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL InventoryReservationStatus_descriptor();
-template <typename T>
-const ::std::string& InventoryReservationStatus_Name(T value) {
-  static_assert(::std::is_same<T, InventoryReservationStatus>::value ||
-                    ::std::is_integral<T>::value,
-                "Incorrect type passed to InventoryReservationStatus_Name().");
-  return InventoryReservationStatus_Name(static_cast<InventoryReservationStatus>(value));
-}
-template <>
-inline const ::std::string& InventoryReservationStatus_Name(InventoryReservationStatus value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<InventoryReservationStatus_descriptor, 0, 4>(
-      static_cast<int>(value));
-}
-inline bool InventoryReservationStatus_Parse(
-    ::absl::string_view name, InventoryReservationStatus* PROTOBUF_NONNULL value) {
-  return ::google::protobuf::internal::ParseNamedEnum<InventoryReservationStatus>(InventoryReservationStatus_descriptor(), name,
-                                           value);
-}
 
 // ===================================================================
 
 
-// -------------------------------------------------------------------
-
-class InventoryReserveResponseData final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:inventory.v1.InventoryReserveResponseData) */ {
- public:
-  inline InventoryReserveResponseData() : InventoryReserveResponseData(nullptr) {}
-  ~InventoryReserveResponseData() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(InventoryReserveResponseData* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(InventoryReserveResponseData));
-  }
-#endif
-
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR InventoryReserveResponseData(::google::protobuf::internal::ConstantInitialized);
-
-  inline InventoryReserveResponseData(const InventoryReserveResponseData& from) : InventoryReserveResponseData(nullptr, from) {}
-  inline InventoryReserveResponseData(InventoryReserveResponseData&& from) noexcept
-      : InventoryReserveResponseData(nullptr, ::std::move(from)) {}
-  inline InventoryReserveResponseData& operator=(const InventoryReserveResponseData& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline InventoryReserveResponseData& operator=(InventoryReserveResponseData&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const InventoryReserveResponseData& default_instance() {
-    return *reinterpret_cast<const InventoryReserveResponseData*>(
-        &_InventoryReserveResponseData_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 3;
-  friend void swap(InventoryReserveResponseData& a, InventoryReserveResponseData& b) { a.Swap(&b); }
-  inline void Swap(InventoryReserveResponseData* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(InventoryReserveResponseData* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  InventoryReserveResponseData* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<InventoryReserveResponseData>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const InventoryReserveResponseData& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const InventoryReserveResponseData& from) { InventoryReserveResponseData::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(InventoryReserveResponseData* PROTOBUF_NONNULL other);
- private:
-  template <typename T>
-  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "inventory.v1.InventoryReserveResponseData"; }
-
- protected:
-  explicit InventoryReserveResponseData(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  InventoryReserveResponseData(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const InventoryReserveResponseData& from);
-  InventoryReserveResponseData(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, InventoryReserveResponseData&& from) noexcept
-      : InventoryReserveResponseData(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_();
-
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kStatusFieldNumber = 1,
-  };
-  // string status = 1 [json_name = "status"];
-  void clear_status() ;
-  const ::std::string& status() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_status(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_status();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_status();
-  void set_allocated_status(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_status() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_status(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_status();
-
-  public:
-  // @@protoc_insertion_point(class_scope:inventory.v1.InventoryReserveResponseData)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 1,
-                                   0, 56,
-                                   2>
-      _table_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const InventoryReserveResponseData& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr status_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_inventory_2fv1_2finventory_5freserve_2eproto;
-};
-
-extern const ::google::protobuf::internal::ClassDataFull InventoryReserveResponseData_class_data_;
 // -------------------------------------------------------------------
 
 class InventoryReserveRequestItem final : public ::google::protobuf::Message
@@ -470,28 +230,12 @@ class InventoryReserveRequestItem final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kOrderLineItemIdFieldNumber = 1,
-    kProductIdFieldNumber = 2,
-    kVariantIdFieldNumber = 3,
-    kSkuFieldNumber = 4,
-    kQuantityFieldNumber = 5,
+    kProductIdFieldNumber = 1,
+    kVariantIdFieldNumber = 2,
+    kSkuFieldNumber = 3,
+    kQuantityFieldNumber = 4,
   };
-  // string order_line_item_id = 1 [json_name = "orderLineItemId"];
-  void clear_order_line_item_id() ;
-  const ::std::string& order_line_item_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_order_line_item_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_order_line_item_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_order_line_item_id();
-  void set_allocated_order_line_item_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_order_line_item_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_order_line_item_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_order_line_item_id();
-
-  public:
-  // string product_id = 2 [json_name = "productId"];
+  // string product_id = 1 [json_name = "productId"];
   void clear_product_id() ;
   const ::std::string& product_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -506,7 +250,7 @@ class InventoryReserveRequestItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_product_id();
 
   public:
-  // string variant_id = 3 [json_name = "variantId"];
+  // string variant_id = 2 [json_name = "variantId"];
   void clear_variant_id() ;
   const ::std::string& variant_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -521,7 +265,7 @@ class InventoryReserveRequestItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_variant_id();
 
   public:
-  // string sku = 4 [json_name = "sku"];
+  // string sku = 3 [json_name = "sku"];
   void clear_sku() ;
   const ::std::string& sku() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -536,7 +280,7 @@ class InventoryReserveRequestItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_sku();
 
   public:
-  // uint32 quantity = 5 [json_name = "quantity"];
+  // uint32 quantity = 4 [json_name = "quantity"];
   void clear_quantity() ;
   ::uint32_t quantity() const;
   void set_quantity(::uint32_t value);
@@ -550,8 +294,8 @@ class InventoryReserveRequestItem final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 5,
-                                   0, 90,
+  static const ::google::protobuf::internal::TcParseTable<2, 4,
+                                   0, 72,
                                    2>
       _table_;
 
@@ -572,7 +316,6 @@ class InventoryReserveRequestItem final : public ::google::protobuf::Message
         const InventoryReserveRequestItem& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr order_line_item_id_;
     ::google::protobuf::internal::ArenaStringPtr product_id_;
     ::google::protobuf::internal::ArenaStringPtr variant_id_;
     ::google::protobuf::internal::ArenaStringPtr sku_;
@@ -584,6 +327,233 @@ class InventoryReserveRequestItem final : public ::google::protobuf::Message
 };
 
 extern const ::google::protobuf::internal::ClassDataFull InventoryReserveRequestItem_class_data_;
+// -------------------------------------------------------------------
+
+class InventoryReserveResponseData final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:inventory.v1.InventoryReserveResponseData) */ {
+ public:
+  inline InventoryReserveResponseData() : InventoryReserveResponseData(nullptr) {}
+  ~InventoryReserveResponseData() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(InventoryReserveResponseData* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(InventoryReserveResponseData));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR InventoryReserveResponseData(::google::protobuf::internal::ConstantInitialized);
+
+  inline InventoryReserveResponseData(const InventoryReserveResponseData& from) : InventoryReserveResponseData(nullptr, from) {}
+  inline InventoryReserveResponseData(InventoryReserveResponseData&& from) noexcept
+      : InventoryReserveResponseData(nullptr, ::std::move(from)) {}
+  inline InventoryReserveResponseData& operator=(const InventoryReserveResponseData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InventoryReserveResponseData& operator=(InventoryReserveResponseData&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InventoryReserveResponseData& default_instance() {
+    return *reinterpret_cast<const InventoryReserveResponseData*>(
+        &_InventoryReserveResponseData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 3;
+  friend void swap(InventoryReserveResponseData& a, InventoryReserveResponseData& b) { a.Swap(&b); }
+  inline void Swap(InventoryReserveResponseData* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InventoryReserveResponseData* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InventoryReserveResponseData* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<InventoryReserveResponseData>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const InventoryReserveResponseData& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const InventoryReserveResponseData& from) { InventoryReserveResponseData::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(InventoryReserveResponseData* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "inventory.v1.InventoryReserveResponseData"; }
+
+ protected:
+  explicit InventoryReserveResponseData(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  InventoryReserveResponseData(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const InventoryReserveResponseData& from);
+  InventoryReserveResponseData(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, InventoryReserveResponseData&& from) noexcept
+      : InventoryReserveResponseData(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kItemsFieldNumber = 3,
+    kReservationTokenFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+  int items_size() const;
+  private:
+  int _internal_items_size() const;
+
+  public:
+  void clear_items() ;
+  ::inventory::v1::InventoryReservationItem* PROTOBUF_NONNULL mutable_items(int index);
+  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>* PROTOBUF_NONNULL mutable_items();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>& _internal_items() const;
+  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>* PROTOBUF_NONNULL _internal_mutable_items();
+  public:
+  const ::inventory::v1::InventoryReservationItem& items(int index) const;
+  ::inventory::v1::InventoryReservationItem* PROTOBUF_NONNULL add_items();
+  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>& items() const;
+  // string reservation_token = 1 [json_name = "reservationToken"];
+  void clear_reservation_token() ;
+  const ::std::string& reservation_token() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_reservation_token(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_reservation_token();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_reservation_token();
+  void set_allocated_reservation_token(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_reservation_token() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_reservation_token(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_reservation_token();
+
+  public:
+  // .inventory.v1.InventoryReservationStatus status = 2 [json_name = "status"];
+  void clear_status() ;
+  ::inventory::v1::InventoryReservationStatus status() const;
+  void set_status(::inventory::v1::InventoryReservationStatus value);
+
+  private:
+  ::inventory::v1::InventoryReservationStatus _internal_status() const;
+  void _internal_set_status(::inventory::v1::InventoryReservationStatus value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:inventory.v1.InventoryReserveResponseData)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<2, 3,
+                                   1, 67,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const InventoryReserveResponseData& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField< ::inventory::v1::InventoryReservationItem > items_;
+    ::google::protobuf::internal::ArenaStringPtr reservation_token_;
+    int status_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_inventory_2fv1_2finventory_5freserve_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull InventoryReserveResponseData_class_data_;
 // -------------------------------------------------------------------
 
 class InventoryReserveRequest final : public ::google::protobuf::Message
@@ -729,9 +699,11 @@ class InventoryReserveRequest final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kItemsFieldNumber = 1,
+    kItemsFieldNumber = 2,
+    kOrderIdFieldNumber = 1,
+    kTtlSecondsFieldNumber = 3,
   };
-  // repeated .inventory.v1.InventoryReserveRequestItem items = 1 [json_name = "items"];
+  // repeated .inventory.v1.InventoryReserveRequestItem items = 2 [json_name = "items"];
   int items_size() const;
   private:
   int _internal_items_size() const;
@@ -748,12 +720,37 @@ class InventoryReserveRequest final : public ::google::protobuf::Message
   const ::inventory::v1::InventoryReserveRequestItem& items(int index) const;
   ::inventory::v1::InventoryReserveRequestItem* PROTOBUF_NONNULL add_items();
   const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReserveRequestItem>& items() const;
+  // string order_id = 1 [json_name = "orderId"];
+  void clear_order_id() ;
+  const ::std::string& order_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_order_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_order_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_order_id();
+  void set_allocated_order_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_order_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_order_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_order_id();
+
+  public:
+  // int64 ttl_seconds = 3 [json_name = "ttlSeconds"];
+  void clear_ttl_seconds() ;
+  ::int64_t ttl_seconds() const;
+  void set_ttl_seconds(::int64_t value);
+
+  private:
+  ::int64_t _internal_ttl_seconds() const;
+  void _internal_set_ttl_seconds(::int64_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:inventory.v1.InventoryReserveRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 1,
-                                   1, 0,
+  static const ::google::protobuf::internal::TcParseTable<2, 3,
+                                   1, 53,
                                    2>
       _table_;
 
@@ -772,8 +769,11 @@ class InventoryReserveRequest final : public ::google::protobuf::Message
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
         const InventoryReserveRequest& from_msg);
-    ::google::protobuf::RepeatedPtrField< ::inventory::v1::InventoryReserveRequestItem > items_;
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField< ::inventory::v1::InventoryReserveRequestItem > items_;
+    ::google::protobuf::internal::ArenaStringPtr order_id_;
+    ::int64_t ttl_seconds_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1034,7 +1034,72 @@ extern const ::google::protobuf::internal::ClassDataFull InventoryReserveRespons
 
 // InventoryReserveRequest
 
-// repeated .inventory.v1.InventoryReserveRequestItem items = 1 [json_name = "items"];
+// string order_id = 1 [json_name = "orderId"];
+inline void InventoryReserveRequest::clear_order_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.order_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::std::string& InventoryReserveRequest::order_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryReserveRequest.order_id)
+  return _internal_order_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void InventoryReserveRequest::set_order_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.order_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveRequest.order_id)
+}
+inline ::std::string* PROTOBUF_NONNULL InventoryReserveRequest::mutable_order_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_order_id();
+  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryReserveRequest.order_id)
+  return _s;
+}
+inline const ::std::string& InventoryReserveRequest::_internal_order_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.order_id_.Get();
+}
+inline void InventoryReserveRequest::_internal_set_order_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.order_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL InventoryReserveRequest::_internal_mutable_order_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.order_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE InventoryReserveRequest::release_order_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:inventory.v1.InventoryReserveRequest.order_id)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.order_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.order_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void InventoryReserveRequest::set_allocated_order_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.order_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.order_id_.IsDefault()) {
+    _impl_.order_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryReserveRequest.order_id)
+}
+
+// repeated .inventory.v1.InventoryReserveRequestItem items = 2 [json_name = "items"];
 inline int InventoryReserveRequest::_internal_items_size() const {
   return _internal_items().size();
 }
@@ -1084,80 +1149,39 @@ InventoryReserveRequest::_internal_mutable_items() {
   return &_impl_.items_;
 }
 
+// int64 ttl_seconds = 3 [json_name = "ttlSeconds"];
+inline void InventoryReserveRequest::clear_ttl_seconds() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.ttl_seconds_ = ::int64_t{0};
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::int64_t InventoryReserveRequest::ttl_seconds() const {
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryReserveRequest.ttl_seconds)
+  return _internal_ttl_seconds();
+}
+inline void InventoryReserveRequest::set_ttl_seconds(::int64_t value) {
+  _internal_set_ttl_seconds(value);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveRequest.ttl_seconds)
+}
+inline ::int64_t InventoryReserveRequest::_internal_ttl_seconds() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.ttl_seconds_;
+}
+inline void InventoryReserveRequest::_internal_set_ttl_seconds(::int64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.ttl_seconds_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // InventoryReserveRequestItem
 
-// string order_line_item_id = 1 [json_name = "orderLineItemId"];
-inline void InventoryReserveRequestItem::clear_order_line_item_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.order_line_item_id_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const ::std::string& InventoryReserveRequestItem::order_line_item_id() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryReserveRequestItem.order_line_item_id)
-  return _internal_order_line_item_id();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void InventoryReserveRequestItem::set_order_line_item_id(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.order_line_item_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveRequestItem.order_line_item_id)
-}
-inline ::std::string* PROTOBUF_NONNULL InventoryReserveRequestItem::mutable_order_line_item_id()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_order_line_item_id();
-  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryReserveRequestItem.order_line_item_id)
-  return _s;
-}
-inline const ::std::string& InventoryReserveRequestItem::_internal_order_line_item_id() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.order_line_item_id_.Get();
-}
-inline void InventoryReserveRequestItem::_internal_set_order_line_item_id(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.order_line_item_id_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL InventoryReserveRequestItem::_internal_mutable_order_line_item_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.order_line_item_id_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE InventoryReserveRequestItem::release_order_line_item_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:inventory.v1.InventoryReserveRequestItem.order_line_item_id)
-  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* released = _impl_.order_line_item_id_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.order_line_item_id_.Set("", GetArena());
-  }
-  return released;
-}
-inline void InventoryReserveRequestItem::set_allocated_order_line_item_id(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.order_line_item_id_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.order_line_item_id_.IsDefault()) {
-    _impl_.order_line_item_id_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryReserveRequestItem.order_line_item_id)
-}
-
-// string product_id = 2 [json_name = "productId"];
+// string product_id = 1 [json_name = "productId"];
 inline void InventoryReserveRequestItem::clear_product_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.product_id_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const ::std::string& InventoryReserveRequestItem::product_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1167,7 +1191,7 @@ inline const ::std::string& InventoryReserveRequestItem::product_id() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void InventoryReserveRequestItem::set_product_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.product_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveRequestItem.product_id)
 }
@@ -1183,21 +1207,21 @@ inline const ::std::string& InventoryReserveRequestItem::_internal_product_id() 
 }
 inline void InventoryReserveRequestItem::_internal_set_product_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.product_id_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL InventoryReserveRequestItem::_internal_mutable_product_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.product_id_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE InventoryReserveRequestItem::release_product_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:inventory.v1.InventoryReserveRequestItem.product_id)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
   auto* released = _impl_.product_id_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.product_id_.Set("", GetArena());
@@ -1207,9 +1231,9 @@ inline ::std::string* PROTOBUF_NULLABLE InventoryReserveRequestItem::release_pro
 inline void InventoryReserveRequestItem::set_allocated_product_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.product_id_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.product_id_.IsDefault()) {
@@ -1218,11 +1242,11 @@ inline void InventoryReserveRequestItem::set_allocated_product_id(::std::string*
   // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryReserveRequestItem.product_id)
 }
 
-// string variant_id = 3 [json_name = "variantId"];
+// string variant_id = 2 [json_name = "variantId"];
 inline void InventoryReserveRequestItem::clear_variant_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.variant_id_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const ::std::string& InventoryReserveRequestItem::variant_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1232,7 +1256,7 @@ inline const ::std::string& InventoryReserveRequestItem::variant_id() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void InventoryReserveRequestItem::set_variant_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.variant_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveRequestItem.variant_id)
 }
@@ -1248,21 +1272,21 @@ inline const ::std::string& InventoryReserveRequestItem::_internal_variant_id() 
 }
 inline void InventoryReserveRequestItem::_internal_set_variant_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.variant_id_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL InventoryReserveRequestItem::_internal_mutable_variant_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.variant_id_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE InventoryReserveRequestItem::release_variant_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:inventory.v1.InventoryReserveRequestItem.variant_id)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
   auto* released = _impl_.variant_id_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.variant_id_.Set("", GetArena());
@@ -1272,9 +1296,9 @@ inline ::std::string* PROTOBUF_NULLABLE InventoryReserveRequestItem::release_var
 inline void InventoryReserveRequestItem::set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.variant_id_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.variant_id_.IsDefault()) {
@@ -1283,11 +1307,11 @@ inline void InventoryReserveRequestItem::set_allocated_variant_id(::std::string*
   // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryReserveRequestItem.variant_id)
 }
 
-// string sku = 4 [json_name = "sku"];
+// string sku = 3 [json_name = "sku"];
 inline void InventoryReserveRequestItem::clear_sku() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.sku_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline const ::std::string& InventoryReserveRequestItem::sku() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1297,7 +1321,7 @@ inline const ::std::string& InventoryReserveRequestItem::sku() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void InventoryReserveRequestItem::set_sku(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.sku_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveRequestItem.sku)
 }
@@ -1313,21 +1337,21 @@ inline const ::std::string& InventoryReserveRequestItem::_internal_sku() const {
 }
 inline void InventoryReserveRequestItem::_internal_set_sku(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.sku_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL InventoryReserveRequestItem::_internal_mutable_sku() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   return _impl_.sku_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE InventoryReserveRequestItem::release_sku() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:inventory.v1.InventoryReserveRequestItem.sku)
-  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
   auto* released = _impl_.sku_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.sku_.Set("", GetArena());
@@ -1337,9 +1361,9 @@ inline ::std::string* PROTOBUF_NULLABLE InventoryReserveRequestItem::release_sku
 inline void InventoryReserveRequestItem::set_allocated_sku(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000008u;
+    _impl_._has_bits_[0] |= 0x00000004u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000008u;
+    _impl_._has_bits_[0] &= ~0x00000004u;
   }
   _impl_.sku_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.sku_.IsDefault()) {
@@ -1348,11 +1372,11 @@ inline void InventoryReserveRequestItem::set_allocated_sku(::std::string* PROTOB
   // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryReserveRequestItem.sku)
 }
 
-// uint32 quantity = 5 [json_name = "quantity"];
+// uint32 quantity = 4 [json_name = "quantity"];
 inline void InventoryReserveRequestItem::clear_quantity() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline ::uint32_t InventoryReserveRequestItem::quantity() const {
   // @@protoc_insertion_point(field_get:inventory.v1.InventoryReserveRequestItem.quantity)
@@ -1360,7 +1384,7 @@ inline ::uint32_t InventoryReserveRequestItem::quantity() const {
 }
 inline void InventoryReserveRequestItem::set_quantity(::uint32_t value) {
   _internal_set_quantity(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveRequestItem.quantity)
 }
 inline ::uint32_t InventoryReserveRequestItem::_internal_quantity() const {
@@ -1540,69 +1564,139 @@ inline InventoryReserveResponse::ResponseCase InventoryReserveResponse::response
 
 // InventoryReserveResponseData
 
-// string status = 1 [json_name = "status"];
-inline void InventoryReserveResponseData::clear_status() {
+// string reservation_token = 1 [json_name = "reservationToken"];
+inline void InventoryReserveResponseData::clear_reservation_token() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.status_.ClearToEmpty();
+  _impl_.reservation_token_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::std::string& InventoryReserveResponseData::status() const
+inline const ::std::string& InventoryReserveResponseData::reservation_token() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryReserveResponseData.status)
-  return _internal_status();
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryReserveResponseData.reservation_token)
+  return _internal_reservation_token();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void InventoryReserveResponseData::set_status(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void InventoryReserveResponseData::set_reservation_token(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.status_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveResponseData.status)
+  _impl_.reservation_token_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveResponseData.reservation_token)
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryReserveResponseData::mutable_status()
+inline ::std::string* PROTOBUF_NONNULL InventoryReserveResponseData::mutable_reservation_token()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryReserveResponseData.status)
+  ::std::string* _s = _internal_mutable_reservation_token();
+  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryReserveResponseData.reservation_token)
   return _s;
 }
-inline const ::std::string& InventoryReserveResponseData::_internal_status() const {
+inline const ::std::string& InventoryReserveResponseData::_internal_reservation_token() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.status_.Get();
+  return _impl_.reservation_token_.Get();
 }
-inline void InventoryReserveResponseData::_internal_set_status(const ::std::string& value) {
+inline void InventoryReserveResponseData::_internal_set_reservation_token(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.status_.Set(value, GetArena());
+  _impl_.reservation_token_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryReserveResponseData::_internal_mutable_status() {
+inline ::std::string* PROTOBUF_NONNULL InventoryReserveResponseData::_internal_mutable_reservation_token() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.status_.Mutable( GetArena());
+  return _impl_.reservation_token_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE InventoryReserveResponseData::release_status() {
+inline ::std::string* PROTOBUF_NULLABLE InventoryReserveResponseData::release_reservation_token() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:inventory.v1.InventoryReserveResponseData.status)
+  // @@protoc_insertion_point(field_release:inventory.v1.InventoryReserveResponseData.reservation_token)
   if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
     return nullptr;
   }
   _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* released = _impl_.status_.Release();
+  auto* released = _impl_.reservation_token_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.status_.Set("", GetArena());
+    _impl_.reservation_token_.Set("", GetArena());
   }
   return released;
 }
-inline void InventoryReserveResponseData::set_allocated_status(::std::string* PROTOBUF_NULLABLE value) {
+inline void InventoryReserveResponseData::set_allocated_reservation_token(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  _impl_.status_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArena());
+  _impl_.reservation_token_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.reservation_token_.IsDefault()) {
+    _impl_.reservation_token_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryReserveResponseData.status)
+  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryReserveResponseData.reservation_token)
+}
+
+// .inventory.v1.InventoryReservationStatus status = 2 [json_name = "status"];
+inline void InventoryReserveResponseData::clear_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.status_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::inventory::v1::InventoryReservationStatus InventoryReserveResponseData::status() const {
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryReserveResponseData.status)
+  return _internal_status();
+}
+inline void InventoryReserveResponseData::set_status(::inventory::v1::InventoryReservationStatus value) {
+  _internal_set_status(value);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryReserveResponseData.status)
+}
+inline ::inventory::v1::InventoryReservationStatus InventoryReserveResponseData::_internal_status() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return static_cast<::inventory::v1::InventoryReservationStatus>(_impl_.status_);
+}
+inline void InventoryReserveResponseData::_internal_set_status(::inventory::v1::InventoryReservationStatus value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.status_ = value;
+}
+
+// repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+inline int InventoryReserveResponseData::_internal_items_size() const {
+  return _internal_items().size();
+}
+inline int InventoryReserveResponseData::items_size() const {
+  return _internal_items_size();
+}
+inline ::inventory::v1::InventoryReservationItem* PROTOBUF_NONNULL InventoryReserveResponseData::mutable_items(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryReserveResponseData.items)
+  return _internal_mutable_items()->Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>* PROTOBUF_NONNULL InventoryReserveResponseData::mutable_items()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:inventory.v1.InventoryReserveResponseData.items)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_items();
+}
+inline const ::inventory::v1::InventoryReservationItem& InventoryReserveResponseData::items(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryReserveResponseData.items)
+  return _internal_items().Get(index);
+}
+inline ::inventory::v1::InventoryReservationItem* PROTOBUF_NONNULL InventoryReserveResponseData::add_items()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::inventory::v1::InventoryReservationItem* _add = _internal_mutable_items()->Add();
+  // @@protoc_insertion_point(field_add:inventory.v1.InventoryReserveResponseData.items)
+  return _add;
+}
+inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>& InventoryReserveResponseData::items() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:inventory.v1.InventoryReserveResponseData.items)
+  return _internal_items();
+}
+inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>&
+InventoryReserveResponseData::_internal_items() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.items_;
+}
+inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>* PROTOBUF_NONNULL
+InventoryReserveResponseData::_internal_mutable_items() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.items_;
 }
 
 #ifdef __GNUC__
@@ -1613,19 +1707,6 @@ inline void InventoryReserveResponseData::set_allocated_status(::std::string* PR
 }  // namespace v1
 }  // namespace inventory
 
-
-namespace google {
-namespace protobuf {
-
-template <>
-struct is_proto_enum<::inventory::v1::InventoryReservationStatus> : std::true_type {};
-template <>
-inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::inventory::v1::InventoryReservationStatus>() {
-  return ::inventory::v1::InventoryReservationStatus_descriptor();
-}
-
-}  // namespace protobuf
-}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

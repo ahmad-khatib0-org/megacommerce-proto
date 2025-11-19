@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package inventory.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1";
+option java_outer_classname = "InventoryReleaseProto";
+option java_package = "org.megacommerce.inventory.v1";
+
+// Request for inventory release
+message InventoryReleaseRequest {
+  string reservation_token = 1;
+}
+
+// Response for inventory release
+message InventoryReleaseResponse {
+  oneof response {
+    shared.v1.SuccessResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}

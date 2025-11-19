@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package orders.v1;
 
-import "inventory/v1/inventory_reserve.proto";
+import "inventory/v1/reservation_get.proto";
 import "orders/v1/order_line_items.proto";
 import "shared/v1/error.proto";
 import "shared/v1/types.proto";

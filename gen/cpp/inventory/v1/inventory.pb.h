@@ -26,7 +26,11 @@
 #include "google/protobuf/generated_message_reflection.h"
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
+#include "inventory/v1/inventory_get.pb.h"
+#include "inventory/v1/inventory_release.pb.h"
 #include "inventory/v1/inventory_reserve.pb.h"
+#include "inventory/v1/inventory_update.pb.h"
+#include "inventory/v1/reservation_get.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

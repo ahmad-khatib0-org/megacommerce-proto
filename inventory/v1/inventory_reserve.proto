@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package inventory.v1;
 
+import "inventory/v1/reservation_get.proto";
 import "shared/v1/error.proto";
 
 option cc_enable_arenas = true;
@@ -9,24 +10,18 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inve
 option java_outer_classname = "InventoryReserveProto";
 option java_package = "org.megacommerce.inventory.v1";
 
-enum InventoryReservationStatus {
-  INVENTORY_UNKNOWN = 0;
-  INVENTORY_RESERVED = 1;
-  INVENTORY_PARTIALLY_RESERVED = 2;
-  INVENTORY_NOT_RESERVED = 3;
-  INVENTORY_PENDING = 4;
-}
-
+// Request/Response for inventory reservation
 message InventoryReserveRequest {
-  repeated InventoryReserveRequestItem items = 1;
+  string order_id = 1;
+  repeated InventoryReserveRequestItem items = 2;
+  int64 ttl_seconds = 3; // Time to live for reservation
 }
 
 message InventoryReserveRequestItem {
-  string order_line_item_id = 1;
-  string product_id = 2;
-  string variant_id = 3;
-  string sku = 4;
-  uint32 quantity = 5;
+  string product_id = 1;
+  string variant_id = 2; // Optional if product has no variations
+  string sku = 3;
+  uint32 quantity = 4;
 }
 
 message InventoryReserveResponse {
@@ -37,5 +32,7 @@ message InventoryReserveResponse {
 }
 
 message InventoryReserveResponseData {
-  string status = 1;
+  string reservation_token = 1;
+  inventory.v1.InventoryReservationStatus status = 2;
+  repeated inventory.v1.InventoryReservationItem items = 3;
 }

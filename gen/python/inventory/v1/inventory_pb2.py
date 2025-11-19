@@ -22,10 +22,14 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from inventory.v1 import inventory_get_pb2 as inventory_dot_v1_dot_inventory__get__pb2
+from inventory.v1 import inventory_release_pb2 as inventory_dot_v1_dot_inventory__release__pb2
 from inventory.v1 import inventory_reserve_pb2 as inventory_dot_v1_dot_inventory__reserve__pb2
+from inventory.v1 import inventory_update_pb2 as inventory_dot_v1_dot_inventory__update__pb2
+from inventory.v1 import reservation_get_pb2 as inventory_dot_v1_dot_reservation__get__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cinventory/v1/inventory.proto\x12\x0cinventory.v1\x1a$inventory/v1/inventory_reserve.proto2w\n\x10InventoryService\x12\x63\n\x10InventoryReserve\x12%.inventory.v1.InventoryReserveRequest\x1a&.inventory.v1.InventoryReserveResponse\"\x00\x42z\n\x1dorg.megacommerce.inventory.v1B\x0eInventoryProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cinventory/v1/inventory.proto\x12\x0cinventory.v1\x1a inventory/v1/inventory_get.proto\x1a$inventory/v1/inventory_release.proto\x1a$inventory/v1/inventory_reserve.proto\x1a#inventory/v1/inventory_update.proto\x1a\"inventory/v1/reservation_get.proto2\x91\x04\n\x10InventoryService\x12\x63\n\x10InventoryReserve\x12%.inventory.v1.InventoryReserveRequest\x1a&.inventory.v1.InventoryReserveResponse\"\x00\x12\x63\n\x10InventoryRelease\x12%.inventory.v1.InventoryReleaseRequest\x1a&.inventory.v1.InventoryReleaseResponse\"\x00\x12W\n\x0cInventoryGet\x12!.inventory.v1.InventoryGetRequest\x1a\".inventory.v1.InventoryGetResponse\"\x00\x12`\n\x0fInventoryUpdate\x12$.inventory.v1.InventoryUpdateRequest\x1a%.inventory.v1.InventoryUpdateResponse\"\x00\x12x\n\x17InventoryReservationGet\x12,.inventory.v1.InventoryReservationGetRequest\x1a-.inventory.v1.InventoryReservationGetResponse\"\x00\x42z\n\x1dorg.megacommerce.inventory.v1B\x0eInventoryProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,6 +37,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'inventory.v1.inventory_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035org.megacommerce.inventory.v1B\016InventoryProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\370\001\001'
-  _globals['_INVENTORYSERVICE']._serialized_start=84
-  _globals['_INVENTORYSERVICE']._serialized_end=203
+  _globals['_INVENTORYSERVICE']._serialized_start=230
+  _globals['_INVENTORYSERVICE']._serialized_end=759
 # @@protoc_insertion_point(module_scope)

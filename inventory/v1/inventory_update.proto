@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package inventory.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1";
+option java_outer_classname = "InventoryUpdateProto";
+option java_package = "org.megacommerce.inventory.v1";
+
+// Request/Response for updating inventory
+message InventoryUpdateRequest {
+  repeated InventoryUpdateItem items = 1;
+  string reason = 2;
+}
+
+message InventoryUpdateItem {
+  string product_id = 1;
+  string variant_id = 2;
+  string sku = 3;
+  InventoryUpdateOperation operation = 4;
+  uint32 quantity = 5;
+}
+
+enum InventoryUpdateOperation {
+  INVENTORY_UPDATE_OPERATION_UNSPECIFIED = 0;
+  INVENTORY_UPDATE_OPERATION_SET = 1; // Set exact quantity
+  INVENTORY_UPDATE_OPERATION_ADD = 2; // Add to existing quantity
+  INVENTORY_UPDATE_OPERATION_SUBTRACT = 3; // Subtract from existing quantity
+}
+
+message InventoryUpdateResponse {
+  oneof response {
+    shared.v1.SuccessResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}

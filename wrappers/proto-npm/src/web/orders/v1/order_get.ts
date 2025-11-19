@@ -10,7 +10,7 @@ import {
   InventoryReservationStatus,
   inventoryReservationStatusFromJSON,
   inventoryReservationStatusToJSON,
-} from "../../inventory/v1/inventory_reserve.js";
+} from "../../inventory/v1/reservation_get.js";
 import { AppError } from "../../shared/v1/error.js";
 import { Any } from "../../shared/v1/types.js";
 import { OrderLineItem } from "./order_line_items.js";

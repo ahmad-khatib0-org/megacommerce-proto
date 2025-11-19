@@ -7,15 +7,37 @@
 /* eslint-disable */
 import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
+import { InventoryGetRequest, InventoryGetResponse } from "./inventory_get.js";
+import { InventoryReleaseRequest, InventoryReleaseResponse } from "./inventory_release.js";
 import { InventoryReserveRequest, InventoryReserveResponse } from "./inventory_reserve.js";
+import { InventoryUpdateRequest, InventoryUpdateResponse } from "./inventory_update.js";
+import { InventoryReservationGetRequest, InventoryReservationGetResponse } from "./reservation_get.js";
 
 export const protobufPackage = "inventory.v1";
 
 export interface InventoryService {
+  /** Reserve inventory for an order */
   InventoryReserve(
     request: DeepPartial<InventoryReserveRequest>,
     metadata?: grpc.Metadata,
   ): Promise<InventoryReserveResponse>;
+  /** Release inventory reservation */
+  InventoryRelease(
+    request: DeepPartial<InventoryReleaseRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<InventoryReleaseResponse>;
+  /** Get inventory levels for products */
+  InventoryGet(request: DeepPartial<InventoryGetRequest>, metadata?: grpc.Metadata): Promise<InventoryGetResponse>;
+  /** Update inventory levels */
+  InventoryUpdate(
+    request: DeepPartial<InventoryUpdateRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<InventoryUpdateResponse>;
+  /** Get reservation details */
+  InventoryReservationGet(
+    request: DeepPartial<InventoryReservationGetRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<InventoryReservationGetResponse>;
 }
 
 export class InventoryServiceClientImpl implements InventoryService {
@@ -24,6 +46,10 @@ export class InventoryServiceClientImpl implements InventoryService {
   constructor(rpc: Rpc) {
     this.rpc = rpc;
     this.InventoryReserve = this.InventoryReserve.bind(this);
+    this.InventoryRelease = this.InventoryRelease.bind(this);
+    this.InventoryGet = this.InventoryGet.bind(this);
+    this.InventoryUpdate = this.InventoryUpdate.bind(this);
+    this.InventoryReservationGet = this.InventoryReservationGet.bind(this);
   }
 
   InventoryReserve(
@@ -31,6 +57,35 @@ export class InventoryServiceClientImpl implements InventoryService {
     metadata?: grpc.Metadata,
   ): Promise<InventoryReserveResponse> {
     return this.rpc.unary(InventoryServiceInventoryReserveDesc, InventoryReserveRequest.fromPartial(request), metadata);
+  }
+
+  InventoryRelease(
+    request: DeepPartial<InventoryReleaseRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<InventoryReleaseResponse> {
+    return this.rpc.unary(InventoryServiceInventoryReleaseDesc, InventoryReleaseRequest.fromPartial(request), metadata);
+  }
+
+  InventoryGet(request: DeepPartial<InventoryGetRequest>, metadata?: grpc.Metadata): Promise<InventoryGetResponse> {
+    return this.rpc.unary(InventoryServiceInventoryGetDesc, InventoryGetRequest.fromPartial(request), metadata);
+  }
+
+  InventoryUpdate(
+    request: DeepPartial<InventoryUpdateRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<InventoryUpdateResponse> {
+    return this.rpc.unary(InventoryServiceInventoryUpdateDesc, InventoryUpdateRequest.fromPartial(request), metadata);
+  }
+
+  InventoryReservationGet(
+    request: DeepPartial<InventoryReservationGetRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<InventoryReservationGetResponse> {
+    return this.rpc.unary(
+      InventoryServiceInventoryReservationGetDesc,
+      InventoryReservationGetRequest.fromPartial(request),
+      metadata,
+    );
   }
 }
 
@@ -49,6 +104,98 @@ export const InventoryServiceInventoryReserveDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = InventoryReserveResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const InventoryServiceInventoryReleaseDesc: UnaryMethodDefinitionish = {
+  methodName: "InventoryRelease",
+  service: InventoryServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return InventoryReleaseRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = InventoryReleaseResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const InventoryServiceInventoryGetDesc: UnaryMethodDefinitionish = {
+  methodName: "InventoryGet",
+  service: InventoryServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return InventoryGetRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = InventoryGetResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const InventoryServiceInventoryUpdateDesc: UnaryMethodDefinitionish = {
+  methodName: "InventoryUpdate",
+  service: InventoryServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return InventoryUpdateRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = InventoryUpdateResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const InventoryServiceInventoryReservationGetDesc: UnaryMethodDefinitionish = {
+  methodName: "InventoryReservationGet",
+  service: InventoryServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return InventoryReservationGetRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = InventoryReservationGetResponse.decode(data);
       return {
         ...value,
         toObject() {

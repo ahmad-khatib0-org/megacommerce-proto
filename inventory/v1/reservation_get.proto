@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package inventory.v1;
+
+import "shared/v1/error.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1";
+option java_outer_classname = "InventoryReservationGetProto";
+option java_package = "org.megacommerce.inventory.v1";
+
+// Request for getting reservation details
+message InventoryReservationGetRequest {
+  string reservation_token = 1;
+}
+
+message InventoryReservationGetResponse {
+  oneof response {
+    InventoryReservationGetResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message InventoryReservationGetResponseData {
+  string reservation_token = 1;
+  string order_id = 2;
+  InventoryReservationStatus status = 3;
+  int64 expires_at = 4;
+  repeated InventoryReservationItem items = 5;
+}
+
+message InventoryReservationItem {
+  string product_id = 1;
+  string variant_id = 2;
+  string sku = 3;
+  uint32 quantity_requested = 4;
+  uint32 quantity_reserved = 5;
+  InventoryReservationItemStatus status = 6;
+}
+
+enum InventoryReservationStatus {
+  INVENTORY_RESERVATION_STATUS_UNSPECIFIED = 0;
+  INVENTORY_RESERVATION_STATUS_RESERVED = 1;
+  INVENTORY_RESERVATION_STATUS_PARTIALLY_RESERVED = 2;
+  INVENTORY_RESERVATION_STATUS_NOT_RESERVED = 3;
+  INVENTORY_RESERVATION_STATUS_PENDING = 4;
+  INVENTORY_RESERVATION_STATUS_RELEASED = 5;
+  INVENTORY_RESERVATION_STATUS_FULFILLED = 6;
+}
+
+enum InventoryReservationItemStatus {
+  INVENTORY_RESERVATION_ITEM_STATUS_UNSPECIFIED = 0;
+  INVENTORY_RESERVATION_ITEM_STATUS_RESERVED = 1;
+  INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED = 2;
+  INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK = 3;
+}

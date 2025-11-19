@@ -24,20 +24,40 @@ var File_inventory_v1_inventory_proto protoreflect.FileDescriptor
 
 const file_inventory_v1_inventory_proto_rawDesc = "" +
 	"\n" +
-	"\x1cinventory/v1/inventory.proto\x12\finventory.v1\x1a$inventory/v1/inventory_reserve.proto2w\n" +
+	"\x1cinventory/v1/inventory.proto\x12\finventory.v1\x1a inventory/v1/inventory_get.proto\x1a$inventory/v1/inventory_release.proto\x1a$inventory/v1/inventory_reserve.proto\x1a#inventory/v1/inventory_update.proto\x1a\"inventory/v1/reservation_get.proto2\x91\x04\n" +
 	"\x10InventoryService\x12c\n" +
-	"\x10InventoryReserve\x12%.inventory.v1.InventoryReserveRequest\x1a&.inventory.v1.InventoryReserveResponse\"\x00Bz\n" +
+	"\x10InventoryReserve\x12%.inventory.v1.InventoryReserveRequest\x1a&.inventory.v1.InventoryReserveResponse\"\x00\x12c\n" +
+	"\x10InventoryRelease\x12%.inventory.v1.InventoryReleaseRequest\x1a&.inventory.v1.InventoryReleaseResponse\"\x00\x12W\n" +
+	"\fInventoryGet\x12!.inventory.v1.InventoryGetRequest\x1a\".inventory.v1.InventoryGetResponse\"\x00\x12`\n" +
+	"\x0fInventoryUpdate\x12$.inventory.v1.InventoryUpdateRequest\x1a%.inventory.v1.InventoryUpdateResponse\"\x00\x12x\n" +
+	"\x17InventoryReservationGet\x12,.inventory.v1.InventoryReservationGetRequest\x1a-.inventory.v1.InventoryReservationGetResponse\"\x00Bz\n" +
 	"\x1dorg.megacommerce.inventory.v1B\x0eInventoryProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_inventory_v1_inventory_proto_goTypes = []any{
-	(*InventoryReserveRequest)(nil),  // 0: inventory.v1.InventoryReserveRequest
-	(*InventoryReserveResponse)(nil), // 1: inventory.v1.InventoryReserveResponse
+	(*InventoryReserveRequest)(nil),         // 0: inventory.v1.InventoryReserveRequest
+	(*InventoryReleaseRequest)(nil),         // 1: inventory.v1.InventoryReleaseRequest
+	(*InventoryGetRequest)(nil),             // 2: inventory.v1.InventoryGetRequest
+	(*InventoryUpdateRequest)(nil),          // 3: inventory.v1.InventoryUpdateRequest
+	(*InventoryReservationGetRequest)(nil),  // 4: inventory.v1.InventoryReservationGetRequest
+	(*InventoryReserveResponse)(nil),        // 5: inventory.v1.InventoryReserveResponse
+	(*InventoryReleaseResponse)(nil),        // 6: inventory.v1.InventoryReleaseResponse
+	(*InventoryGetResponse)(nil),            // 7: inventory.v1.InventoryGetResponse
+	(*InventoryUpdateResponse)(nil),         // 8: inventory.v1.InventoryUpdateResponse
+	(*InventoryReservationGetResponse)(nil), // 9: inventory.v1.InventoryReservationGetResponse
 }
 var file_inventory_v1_inventory_proto_depIdxs = []int32{
 	0, // 0: inventory.v1.InventoryService.InventoryReserve:input_type -> inventory.v1.InventoryReserveRequest
-	1, // 1: inventory.v1.InventoryService.InventoryReserve:output_type -> inventory.v1.InventoryReserveResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	1, // 1: inventory.v1.InventoryService.InventoryRelease:input_type -> inventory.v1.InventoryReleaseRequest
+	2, // 2: inventory.v1.InventoryService.InventoryGet:input_type -> inventory.v1.InventoryGetRequest
+	3, // 3: inventory.v1.InventoryService.InventoryUpdate:input_type -> inventory.v1.InventoryUpdateRequest
+	4, // 4: inventory.v1.InventoryService.InventoryReservationGet:input_type -> inventory.v1.InventoryReservationGetRequest
+	5, // 5: inventory.v1.InventoryService.InventoryReserve:output_type -> inventory.v1.InventoryReserveResponse
+	6, // 6: inventory.v1.InventoryService.InventoryRelease:output_type -> inventory.v1.InventoryReleaseResponse
+	7, // 7: inventory.v1.InventoryService.InventoryGet:output_type -> inventory.v1.InventoryGetResponse
+	8, // 8: inventory.v1.InventoryService.InventoryUpdate:output_type -> inventory.v1.InventoryUpdateResponse
+	9, // 9: inventory.v1.InventoryService.InventoryReservationGet:output_type -> inventory.v1.InventoryReservationGetResponse
+	5, // [5:10] is the sub-list for method output_type
+	0, // [0:5] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -48,7 +68,11 @@ func file_inventory_v1_inventory_proto_init() {
 	if File_inventory_v1_inventory_proto != nil {
 		return
 	}
+	file_inventory_v1_inventory_get_proto_init()
+	file_inventory_v1_inventory_release_proto_init()
 	file_inventory_v1_inventory_reserve_proto_init()
+	file_inventory_v1_inventory_update_proto_init()
+	file_inventory_v1_reservation_get_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

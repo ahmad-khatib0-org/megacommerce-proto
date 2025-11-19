@@ -3,7 +3,11 @@
 import grpc
 import warnings
 
+from inventory.v1 import inventory_get_pb2 as inventory_dot_v1_dot_inventory__get__pb2
+from inventory.v1 import inventory_release_pb2 as inventory_dot_v1_dot_inventory__release__pb2
 from inventory.v1 import inventory_reserve_pb2 as inventory_dot_v1_dot_inventory__reserve__pb2
+from inventory.v1 import inventory_update_pb2 as inventory_dot_v1_dot_inventory__update__pb2
+from inventory.v1 import reservation_get_pb2 as inventory_dot_v1_dot_reservation__get__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -39,13 +43,62 @@ class InventoryServiceStub(object):
                 request_serializer=inventory_dot_v1_dot_inventory__reserve__pb2.InventoryReserveRequest.SerializeToString,
                 response_deserializer=inventory_dot_v1_dot_inventory__reserve__pb2.InventoryReserveResponse.FromString,
                 _registered_method=True)
+        self.InventoryRelease = channel.unary_unary(
+                '/inventory.v1.InventoryService/InventoryRelease',
+                request_serializer=inventory_dot_v1_dot_inventory__release__pb2.InventoryReleaseRequest.SerializeToString,
+                response_deserializer=inventory_dot_v1_dot_inventory__release__pb2.InventoryReleaseResponse.FromString,
+                _registered_method=True)
+        self.InventoryGet = channel.unary_unary(
+                '/inventory.v1.InventoryService/InventoryGet',
+                request_serializer=inventory_dot_v1_dot_inventory__get__pb2.InventoryGetRequest.SerializeToString,
+                response_deserializer=inventory_dot_v1_dot_inventory__get__pb2.InventoryGetResponse.FromString,
+                _registered_method=True)
+        self.InventoryUpdate = channel.unary_unary(
+                '/inventory.v1.InventoryService/InventoryUpdate',
+                request_serializer=inventory_dot_v1_dot_inventory__update__pb2.InventoryUpdateRequest.SerializeToString,
+                response_deserializer=inventory_dot_v1_dot_inventory__update__pb2.InventoryUpdateResponse.FromString,
+                _registered_method=True)
+        self.InventoryReservationGet = channel.unary_unary(
+                '/inventory.v1.InventoryService/InventoryReservationGet',
+                request_serializer=inventory_dot_v1_dot_reservation__get__pb2.InventoryReservationGetRequest.SerializeToString,
+                response_deserializer=inventory_dot_v1_dot_reservation__get__pb2.InventoryReservationGetResponse.FromString,
+                _registered_method=True)
 
 
 class InventoryServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def InventoryReserve(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Reserve inventory for an order
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def InventoryRelease(self, request, context):
+        """Release inventory reservation
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def InventoryGet(self, request, context):
+        """Get inventory levels for products
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def InventoryUpdate(self, request, context):
+        """Update inventory levels
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def InventoryReservationGet(self, request, context):
+        """Get reservation details
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -57,6 +110,26 @@ def add_InventoryServiceServicer_to_server(servicer, server):
                     servicer.InventoryReserve,
                     request_deserializer=inventory_dot_v1_dot_inventory__reserve__pb2.InventoryReserveRequest.FromString,
                     response_serializer=inventory_dot_v1_dot_inventory__reserve__pb2.InventoryReserveResponse.SerializeToString,
+            ),
+            'InventoryRelease': grpc.unary_unary_rpc_method_handler(
+                    servicer.InventoryRelease,
+                    request_deserializer=inventory_dot_v1_dot_inventory__release__pb2.InventoryReleaseRequest.FromString,
+                    response_serializer=inventory_dot_v1_dot_inventory__release__pb2.InventoryReleaseResponse.SerializeToString,
+            ),
+            'InventoryGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.InventoryGet,
+                    request_deserializer=inventory_dot_v1_dot_inventory__get__pb2.InventoryGetRequest.FromString,
+                    response_serializer=inventory_dot_v1_dot_inventory__get__pb2.InventoryGetResponse.SerializeToString,
+            ),
+            'InventoryUpdate': grpc.unary_unary_rpc_method_handler(
+                    servicer.InventoryUpdate,
+                    request_deserializer=inventory_dot_v1_dot_inventory__update__pb2.InventoryUpdateRequest.FromString,
+                    response_serializer=inventory_dot_v1_dot_inventory__update__pb2.InventoryUpdateResponse.SerializeToString,
+            ),
+            'InventoryReservationGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.InventoryReservationGet,
+                    request_deserializer=inventory_dot_v1_dot_reservation__get__pb2.InventoryReservationGetRequest.FromString,
+                    response_serializer=inventory_dot_v1_dot_reservation__get__pb2.InventoryReservationGetResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -86,6 +159,114 @@ class InventoryService(object):
             '/inventory.v1.InventoryService/InventoryReserve',
             inventory_dot_v1_dot_inventory__reserve__pb2.InventoryReserveRequest.SerializeToString,
             inventory_dot_v1_dot_inventory__reserve__pb2.InventoryReserveResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def InventoryRelease(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/inventory.v1.InventoryService/InventoryRelease',
+            inventory_dot_v1_dot_inventory__release__pb2.InventoryReleaseRequest.SerializeToString,
+            inventory_dot_v1_dot_inventory__release__pb2.InventoryReleaseResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def InventoryGet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/inventory.v1.InventoryService/InventoryGet',
+            inventory_dot_v1_dot_inventory__get__pb2.InventoryGetRequest.SerializeToString,
+            inventory_dot_v1_dot_inventory__get__pb2.InventoryGetResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def InventoryUpdate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/inventory.v1.InventoryService/InventoryUpdate',
+            inventory_dot_v1_dot_inventory__update__pb2.InventoryUpdateRequest.SerializeToString,
+            inventory_dot_v1_dot_inventory__update__pb2.InventoryUpdateResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def InventoryReservationGet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/inventory.v1.InventoryService/InventoryReservationGet',
+            inventory_dot_v1_dot_reservation__get__pb2.InventoryReservationGetRequest.SerializeToString,
+            inventory_dot_v1_dot_reservation__get__pb2.InventoryReservationGetResponse.FromString,
             options,
             channel_credentials,
             insecure,

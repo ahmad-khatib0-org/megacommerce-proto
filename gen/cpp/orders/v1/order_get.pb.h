@@ -33,7 +33,7 @@
 #include "google/protobuf/map_entry.h"
 #include "google/protobuf/map_field.h"
 #include "google/protobuf/unknown_field_set.h"
-#include "inventory/v1/inventory_reserve.pb.h"
+#include "inventory/v1/reservation_get.pb.h"
 #include "orders/v1/order_line_items.pb.h"
 #include "shared/v1/error.pb.h"
 #include "shared/v1/types.pb.h"

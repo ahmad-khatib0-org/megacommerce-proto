@@ -27,39 +27,9 @@ namespace _fl = ::google::protobuf::internal::field_layout;
 namespace inventory {
 namespace v1 {
 
-inline constexpr InventoryReserveResponseData::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        status_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()) {}
-
-template <typename>
-PROTOBUF_CONSTEXPR InventoryReserveResponseData::InventoryReserveResponseData(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(InventoryReserveResponseData_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct InventoryReserveResponseDataDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR InventoryReserveResponseDataDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~InventoryReserveResponseDataDefaultTypeInternal() {}
-  union {
-    InventoryReserveResponseData _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InventoryReserveResponseDataDefaultTypeInternal _InventoryReserveResponseData_default_instance_;
-
 inline constexpr InventoryReserveRequestItem::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
-        order_line_item_id_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
         product_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
@@ -91,10 +61,43 @@ struct InventoryReserveRequestItemDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InventoryReserveRequestItemDefaultTypeInternal _InventoryReserveRequestItem_default_instance_;
 
+inline constexpr InventoryReserveResponseData::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        items_{},
+        reservation_token_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        status_{static_cast< ::inventory::v1::InventoryReservationStatus >(0)} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR InventoryReserveResponseData::InventoryReserveResponseData(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(InventoryReserveResponseData_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct InventoryReserveResponseDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InventoryReserveResponseDataDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InventoryReserveResponseDataDefaultTypeInternal() {}
+  union {
+    InventoryReserveResponseData _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InventoryReserveResponseDataDefaultTypeInternal _InventoryReserveResponseData_default_instance_;
+
 inline constexpr InventoryReserveRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : items_{},
-        _cached_size_{0} {}
+      : _cached_size_{0},
+        items_{},
+        order_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        ttl_seconds_{::int64_t{0}} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR InventoryReserveRequest::InventoryReserveRequest(::_pbi::ConstantInitialized)
@@ -143,19 +146,25 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InventoryReserveResponseDefaultTypeInternal _InventoryReserveResponse_default_instance_;
 }  // namespace v1
 }  // namespace inventory
-static const ::_pb::EnumDescriptor* PROTOBUF_NONNULL
-    file_level_enum_descriptors_inventory_2fv1_2finventory_5freserve_2eproto[1];
+static constexpr const ::_pb::EnumDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
+    file_level_enum_descriptors_inventory_2fv1_2finventory_5freserve_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
     file_level_service_descriptors_inventory_2fv1_2finventory_5freserve_2eproto = nullptr;
 const ::uint32_t
     TableStruct_inventory_2fv1_2finventory_5freserve_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
         protodesc_cold) = {
-        0x000, // bitmap
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveRequest, _impl_._has_bits_),
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveRequest, _impl_.order_id_),
         PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveRequest, _impl_.items_),
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveRequest, _impl_.ttl_seconds_),
+        0,
+        ~0u,
+        1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveRequestItem, _impl_._has_bits_),
-        8, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveRequestItem, _impl_.order_line_item_id_),
+        7, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveRequestItem, _impl_.product_id_),
         PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveRequestItem, _impl_.variant_id_),
         PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveRequestItem, _impl_.sku_),
@@ -164,7 +173,6 @@ const ::uint32_t
         1,
         2,
         3,
-        4,
         0x004, // bitmap
         PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveResponse, _impl_._oneof_case_[0]),
         ::_pbi::kInvalidFieldOffsetTag,
@@ -172,17 +180,21 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveResponse, _impl_.response_),
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveResponseData, _impl_._has_bits_),
-        4, // hasbit index offset
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveResponseData, _impl_.reservation_token_),
         PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveResponseData, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReserveResponseData, _impl_.items_),
         0,
+        1,
+        ~0u,
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::inventory::v1::InventoryReserveRequest)},
-        {2, sizeof(::inventory::v1::InventoryReserveRequestItem)},
-        {15, sizeof(::inventory::v1::InventoryReserveResponse)},
-        {20, sizeof(::inventory::v1::InventoryReserveResponseData)},
+        {9, sizeof(::inventory::v1::InventoryReserveRequestItem)},
+        {20, sizeof(::inventory::v1::InventoryReserveResponse)},
+        {25, sizeof(::inventory::v1::InventoryReserveResponseData)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::inventory::v1::_InventoryReserveRequest_default_instance_._instance,
@@ -193,42 +205,44 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_inventory_2fv1_2finventory_5freserve_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n$inventory/v1/inventory_reserve.proto\022\014"
-    "inventory.v1\032\025shared/v1/error.proto\"Z\n\027I"
-    "nventoryReserveRequest\022\?\n\005items\030\001 \003(\0132)."
-    "inventory.v1.InventoryReserveRequestItem"
-    "R\005items\"\266\001\n\033InventoryReserveRequestItem\022"
-    "+\n\022order_line_item_id\030\001 \001(\tR\017orderLineIt"
-    "emId\022\035\n\nproduct_id\030\002 \001(\tR\tproductId\022\035\n\nv"
-    "ariant_id\030\003 \001(\tR\tvariantId\022\020\n\003sku\030\004 \001(\tR"
-    "\003sku\022\032\n\010quantity\030\005 \001(\rR\010quantity\"\225\001\n\030Inv"
-    "entoryReserveResponse\022@\n\004data\030\001 \001(\0132*.in"
-    "ventory.v1.InventoryReserveResponseDataH"
-    "\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppEr"
-    "rorH\000R\005errorB\n\n\010response\"6\n\034InventoryRes"
-    "erveResponseData\022\026\n\006status\030\001 \001(\tR\006status"
-    "*\240\001\n\032InventoryReservationStatus\022\025\n\021INVEN"
-    "TORY_UNKNOWN\020\000\022\026\n\022INVENTORY_RESERVED\020\001\022 "
-    "\n\034INVENTORY_PARTIALLY_RESERVED\020\002\022\032\n\026INVE"
-    "NTORY_NOT_RESERVED\020\003\022\025\n\021INVENTORY_PENDIN"
-    "G\020\004B\201\001\n\035org.megacommerce.inventory.v1B\025I"
-    "nventoryReserveProtoZFgithub.com/ahmad-k"
-    "hatib0-org/megacommerce-proto/gen/go/inv"
-    "entory/v1;v1\370\001\001b\006proto3"
+    "inventory.v1\032\"inventory/v1/reservation_g"
+    "et.proto\032\025shared/v1/error.proto\"\226\001\n\027Inve"
+    "ntoryReserveRequest\022\031\n\010order_id\030\001 \001(\tR\007o"
+    "rderId\022\?\n\005items\030\002 \003(\0132).inventory.v1.Inv"
+    "entoryReserveRequestItemR\005items\022\037\n\013ttl_s"
+    "econds\030\003 \001(\003R\nttlSeconds\"\211\001\n\033InventoryRe"
+    "serveRequestItem\022\035\n\nproduct_id\030\001 \001(\tR\tpr"
+    "oductId\022\035\n\nvariant_id\030\002 \001(\tR\tvariantId\022\020"
+    "\n\003sku\030\003 \001(\tR\003sku\022\032\n\010quantity\030\004 \001(\rR\010quan"
+    "tity\"\225\001\n\030InventoryReserveResponse\022@\n\004dat"
+    "a\030\001 \001(\0132*.inventory.v1.InventoryReserveR"
+    "esponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.sha"
+    "red.v1.AppErrorH\000R\005errorB\n\n\010response\"\313\001\n"
+    "\034InventoryReserveResponseData\022+\n\021reserva"
+    "tion_token\030\001 \001(\tR\020reservationToken\022@\n\006st"
+    "atus\030\002 \001(\0162(.inventory.v1.InventoryReser"
+    "vationStatusR\006status\022<\n\005items\030\003 \003(\0132&.in"
+    "ventory.v1.InventoryReservationItemR\005ite"
+    "msB\201\001\n\035org.megacommerce.inventory.v1B\025In"
+    "ventoryReserveProtoZFgithub.com/ahmad-kh"
+    "atib0-org/megacommerce-proto/gen/go/inve"
+    "ntory/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto_deps[1] = {
+    descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto_deps[2] = {
+        &::descriptor_table_inventory_2fv1_2freservation_5fget_2eproto,
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
 };
 static ::absl::once_flag descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto = {
     false,
     false,
-    863,
+    902,
     descriptor_table_protodef_inventory_2fv1_2finventory_5freserve_2eproto,
     "inventory/v1/inventory_reserve.proto",
     &descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto_once,
     descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto_deps,
-    1,
+    2,
     4,
     schemas,
     file_default_instances,
@@ -238,16 +252,14 @@ PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_inventory_2fv1
 };
 namespace inventory {
 namespace v1 {
-const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL InventoryReservationStatus_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto);
-  return file_level_enum_descriptors_inventory_2fv1_2finventory_5freserve_2eproto[0];
-}
-PROTOBUF_CONSTINIT const uint32_t InventoryReservationStatus_internal_data_[] = {
-    327680u, 0u, };
 // ===================================================================
 
 class InventoryReserveRequest::_Internal {
  public:
+  using HasBits =
+      decltype(::std::declval<InventoryReserveRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_._has_bits_);
 };
 
 InventoryReserveRequest::InventoryReserveRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
@@ -263,8 +275,10 @@ PROTOBUF_NDEBUG_INLINE InventoryReserveRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
     const ::inventory::v1::InventoryReserveRequest& from_msg)
-      : items_{visibility, arena, from.items_},
-        _cached_size_{0} {}
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        items_{visibility, arena, from.items_},
+        order_id_(arena, from.order_id_) {}
 
 InventoryReserveRequest::InventoryReserveRequest(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -279,17 +293,20 @@ InventoryReserveRequest::InventoryReserveRequest(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.ttl_seconds_ = from._impl_.ttl_seconds_;
 
   // @@protoc_insertion_point(copy_constructor:inventory.v1.InventoryReserveRequest)
 }
 PROTOBUF_NDEBUG_INLINE InventoryReserveRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : items_{visibility, arena},
-        _cached_size_{0} {}
+      : _cached_size_{0},
+        items_{visibility, arena},
+        order_id_(arena) {}
 
 inline void InventoryReserveRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.ttl_seconds_ = {};
 }
 InventoryReserveRequest::~InventoryReserveRequest() {
   // @@protoc_insertion_point(destructor:inventory.v1.InventoryReserveRequest)
@@ -299,6 +316,7 @@ inline void InventoryReserveRequest::SharedDtor(MessageLite& self) {
   InventoryReserveRequest& this_ = static_cast<InventoryReserveRequest&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.order_id_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -315,7 +333,7 @@ constexpr auto InventoryReserveRequest::InternalNewImpl_() {
                   ::google::protobuf::Message::internal_visibility()),
   });
   if (arena_bits.has_value()) {
-    return ::google::protobuf::internal::MessageCreator::ZeroInit(
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
         sizeof(InventoryReserveRequest), alignof(InventoryReserveRequest), *arena_bits);
   } else {
     return ::google::protobuf::internal::MessageCreator(&InventoryReserveRequest::PlacementNew_,
@@ -357,16 +375,16 @@ InventoryReserveRequest::GetClassData() const {
   return InventoryReserveRequest_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2>
+const ::_pbi::TcParseTable<2, 3, 1, 53, 2>
 InventoryReserveRequest::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_._has_bits_),
     0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
+    3, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
+    4294967288,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
+    3,  // num_field_entries
     1,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     InventoryReserveRequest_class_data_.base(),
@@ -376,20 +394,36 @@ InventoryReserveRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::inventory::v1::InventoryReserveRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // repeated .inventory.v1.InventoryReserveRequestItem items = 1 [json_name = "items"];
+    {::_pbi::TcParser::MiniParse, {}},
+    // string order_id = 1 [json_name = "orderId"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_.order_id_)}},
+    // repeated .inventory.v1.InventoryReserveRequestItem items = 2 [json_name = "items"];
     {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_.items_)}},
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_.items_)}},
+    // int64 ttl_seconds = 3 [json_name = "ttlSeconds"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(InventoryReserveRequest, _impl_.ttl_seconds_), 1>(),
+     {24, 1, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_.ttl_seconds_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // repeated .inventory.v1.InventoryReserveRequestItem items = 1 [json_name = "items"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_.items_), 0, 0,
+    // string order_id = 1 [json_name = "orderId"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_.order_id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // repeated .inventory.v1.InventoryReserveRequestItem items = 2 [json_name = "items"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_.items_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // int64 ttl_seconds = 3 [json_name = "ttlSeconds"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequest, _impl_.ttl_seconds_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
   }},
   {{
       {::_pbi::TcParser::GetTable<::inventory::v1::InventoryReserveRequestItem>()},
   }},
   {{
+    "\44\10\0\0\0\0\0\0"
+    "inventory.v1.InventoryReserveRequest"
+    "order_id"
   }},
 };
 PROTOBUF_NOINLINE void InventoryReserveRequest::Clear() {
@@ -400,6 +434,12 @@ PROTOBUF_NOINLINE void InventoryReserveRequest::Clear() {
   (void) cached_has_bits;
 
   _impl_.items_.Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    _impl_.order_id_.ClearNonDefaultToEmpty();
+  }
+  _impl_.ttl_seconds_ = ::int64_t{0};
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -418,15 +458,34 @@ PROTOBUF_NOINLINE void InventoryReserveRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // repeated .inventory.v1.InventoryReserveRequestItem items = 1 [json_name = "items"];
+  // string order_id = 1 [json_name = "orderId"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_order_id().empty()) {
+      const ::std::string& _s = this_._internal_order_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReserveRequest.order_id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // repeated .inventory.v1.InventoryReserveRequestItem items = 2 [json_name = "items"];
   for (unsigned i = 0, n = static_cast<unsigned>(
                            this_._internal_items_size());
        i < n; i++) {
     const auto& repfield = this_._internal_items().Get(i);
     target =
         ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-            1, repfield, repfield.GetCachedSize(),
+            2, repfield, repfield.GetCachedSize(),
             target, stream);
+  }
+
+  // int64 ttl_seconds = 3 [json_name = "ttlSeconds"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (this_._internal_ttl_seconds() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<3>(
+              stream, this_._internal_ttl_seconds(), target);
+    }
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -454,11 +513,28 @@ PROTOBUF_NOINLINE void InventoryReserveRequest::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // repeated .inventory.v1.InventoryReserveRequestItem items = 1 [json_name = "items"];
+    // repeated .inventory.v1.InventoryReserveRequestItem items = 2 [json_name = "items"];
     {
       total_size += 1UL * this_._internal_items_size();
       for (const auto& msg : this_._internal_items()) {
         total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    // string order_id = 1 [json_name = "orderId"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_order_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_order_id());
+      }
+    }
+    // int64 ttl_seconds = 3 [json_name = "ttlSeconds"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (this_._internal_ttl_seconds() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+            this_._internal_ttl_seconds());
       }
     }
   }
@@ -476,6 +552,24 @@ void InventoryReserveRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
 
   _this->_internal_mutable_items()->MergeFrom(
       from._internal_items());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_order_id().empty()) {
+        _this->_internal_set_order_id(from._internal_order_id());
+      } else {
+        if (_this->_impl_.order_id_.IsDefault()) {
+          _this->_internal_set_order_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (from._internal_ttl_seconds() != 0) {
+        _this->_impl_.ttl_seconds_ = from._impl_.ttl_seconds_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -489,8 +583,13 @@ void InventoryReserveRequest::CopyFrom(const InventoryReserveRequest& from) {
 
 void InventoryReserveRequest::InternalSwap(InventoryReserveRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.items_.InternalSwap(&other->_impl_.items_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.order_id_, &other->_impl_.order_id_, arena);
+  swap(_impl_.ttl_seconds_, other->_impl_.ttl_seconds_);
 }
 
 ::google::protobuf::Metadata InventoryReserveRequest::GetMetadata() const {
@@ -521,7 +620,6 @@ PROTOBUF_NDEBUG_INLINE InventoryReserveRequestItem::Impl_::Impl_(
     const ::inventory::v1::InventoryReserveRequestItem& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        order_line_item_id_(arena, from.order_line_item_id_),
         product_id_(arena, from.product_id_),
         variant_id_(arena, from.variant_id_),
         sku_(arena, from.sku_) {}
@@ -547,7 +645,6 @@ PROTOBUF_NDEBUG_INLINE InventoryReserveRequestItem::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        order_line_item_id_(arena),
         product_id_(arena),
         variant_id_(arena),
         sku_(arena) {}
@@ -564,7 +661,6 @@ inline void InventoryReserveRequestItem::SharedDtor(MessageLite& self) {
   InventoryReserveRequestItem& this_ = static_cast<InventoryReserveRequestItem&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.order_line_item_id_.Destroy();
   this_._impl_.product_id_.Destroy();
   this_._impl_.variant_id_.Destroy();
   this_._impl_.sku_.Destroy();
@@ -614,16 +710,16 @@ InventoryReserveRequestItem::GetClassData() const {
   return InventoryReserveRequestItem_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 0, 90, 2>
+const ::_pbi::TcParseTable<2, 4, 0, 72, 2>
 InventoryReserveRequestItem::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_._has_bits_),
     0, // no _extensions_
-    5, 56,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967264,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    5,  // num_field_entries
+    4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     InventoryReserveRequestItem_class_data_.base(),
@@ -633,48 +729,38 @@ InventoryReserveRequestItem::_table_ = {
     ::_pbi::TcParser::GetTable<::inventory::v1::InventoryReserveRequestItem>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // string order_line_item_id = 1 [json_name = "orderLineItemId"];
+    // uint32 quantity = 4 [json_name = "quantity"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReserveRequestItem, _impl_.quantity_), 3>(),
+     {32, 3, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.quantity_)}},
+    // string product_id = 1 [json_name = "productId"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.order_line_item_id_)}},
-    // string product_id = 2 [json_name = "productId"];
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.product_id_)}},
+    // string variant_id = 2 [json_name = "variantId"];
     {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.product_id_)}},
-    // string variant_id = 3 [json_name = "variantId"];
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.variant_id_)}},
+    // string sku = 3 [json_name = "sku"];
     {::_pbi::TcParser::FastUS1,
-     {26, 2, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.variant_id_)}},
-    // string sku = 4 [json_name = "sku"];
-    {::_pbi::TcParser::FastUS1,
-     {34, 3, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.sku_)}},
-    // uint32 quantity = 5 [json_name = "quantity"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReserveRequestItem, _impl_.quantity_), 4>(),
-     {40, 4, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.quantity_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
+     {26, 2, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.sku_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string order_line_item_id = 1 [json_name = "orderLineItemId"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.order_line_item_id_), _Internal::kHasBitsOffset + 0, 0,
+    // string product_id = 1 [json_name = "productId"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.product_id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string product_id = 2 [json_name = "productId"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.product_id_), _Internal::kHasBitsOffset + 1, 0,
+    // string variant_id = 2 [json_name = "variantId"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.variant_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string variant_id = 3 [json_name = "variantId"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.variant_id_), _Internal::kHasBitsOffset + 2, 0,
+    // string sku = 3 [json_name = "sku"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.sku_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string sku = 4 [json_name = "sku"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.sku_), _Internal::kHasBitsOffset + 3, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // uint32 quantity = 5 [json_name = "quantity"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.quantity_), _Internal::kHasBitsOffset + 4, 0,
+    // uint32 quantity = 4 [json_name = "quantity"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveRequestItem, _impl_.quantity_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
   }},
   // no aux_entries
   {{
-    "\50\22\12\12\3\0\0\0"
+    "\50\12\12\3\0\0\0\0"
     "inventory.v1.InventoryReserveRequestItem"
-    "order_line_item_id"
     "product_id"
     "variant_id"
     "sku"
@@ -688,17 +774,14 @@ PROTOBUF_NOINLINE void InventoryReserveRequestItem::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000000fu) != 0) {
+  if ((cached_has_bits & 0x00000007u) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
-      _impl_.order_line_item_id_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
       _impl_.product_id_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    if ((cached_has_bits & 0x00000002u) != 0) {
       _impl_.variant_id_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000008u) != 0) {
+    if ((cached_has_bits & 0x00000004u) != 0) {
       _impl_.sku_.ClearNonDefaultToEmpty();
     }
   }
@@ -722,52 +805,42 @@ PROTOBUF_NOINLINE void InventoryReserveRequestItem::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string order_line_item_id = 1 [json_name = "orderLineItemId"];
+  // string product_id = 1 [json_name = "productId"];
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (!this_._internal_order_line_item_id().empty()) {
-      const ::std::string& _s = this_._internal_order_line_item_id();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReserveRequestItem.order_line_item_id");
-      target = stream->WriteStringMaybeAliased(1, _s, target);
-    }
-  }
-
-  // string product_id = 2 [json_name = "productId"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_product_id().empty()) {
       const ::std::string& _s = this_._internal_product_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReserveRequestItem.product_id");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
+      target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
 
-  // string variant_id = 3 [json_name = "variantId"];
-  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  // string variant_id = 2 [json_name = "variantId"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (!this_._internal_variant_id().empty()) {
       const ::std::string& _s = this_._internal_variant_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReserveRequestItem.variant_id");
-      target = stream->WriteStringMaybeAliased(3, _s, target);
+      target = stream->WriteStringMaybeAliased(2, _s, target);
     }
   }
 
-  // string sku = 4 [json_name = "sku"];
-  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+  // string sku = 3 [json_name = "sku"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
     if (!this_._internal_sku().empty()) {
       const ::std::string& _s = this_._internal_sku();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReserveRequestItem.sku");
-      target = stream->WriteStringMaybeAliased(4, _s, target);
+      target = stream->WriteStringMaybeAliased(3, _s, target);
     }
   }
 
-  // uint32 quantity = 5 [json_name = "quantity"];
-  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
+  // uint32 quantity = 4 [json_name = "quantity"];
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
     if (this_._internal_quantity() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-          5, this_._internal_quantity(), target);
+          4, this_._internal_quantity(), target);
     }
   }
 
@@ -796,37 +869,30 @@ PROTOBUF_NOINLINE void InventoryReserveRequestItem::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000001fu) != 0) {
-    // string order_line_item_id = 1 [json_name = "orderLineItemId"];
+  if ((cached_has_bits & 0x0000000fu) != 0) {
+    // string product_id = 1 [json_name = "productId"];
     if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!this_._internal_order_line_item_id().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_order_line_item_id());
-      }
-    }
-    // string product_id = 2 [json_name = "productId"];
-    if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_product_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_product_id());
       }
     }
-    // string variant_id = 3 [json_name = "variantId"];
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    // string variant_id = 2 [json_name = "variantId"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_variant_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_variant_id());
       }
     }
-    // string sku = 4 [json_name = "sku"];
-    if ((cached_has_bits & 0x00000008u) != 0) {
+    // string sku = 3 [json_name = "sku"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
       if (!this_._internal_sku().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_sku());
       }
     }
-    // uint32 quantity = 5 [json_name = "quantity"];
-    if ((cached_has_bits & 0x00000010u) != 0) {
+    // uint32 quantity = 4 [json_name = "quantity"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (this_._internal_quantity() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
             this_._internal_quantity());
@@ -846,17 +912,8 @@ void InventoryReserveRequestItem::MergeImpl(::google::protobuf::MessageLite& to_
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000001fu) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!from._internal_order_line_item_id().empty()) {
-        _this->_internal_set_order_line_item_id(from._internal_order_line_item_id());
-      } else {
-        if (_this->_impl_.order_line_item_id_.IsDefault()) {
-          _this->_internal_set_order_line_item_id("");
-        }
-      }
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
       if (!from._internal_product_id().empty()) {
         _this->_internal_set_product_id(from._internal_product_id());
       } else {
@@ -865,7 +922,7 @@ void InventoryReserveRequestItem::MergeImpl(::google::protobuf::MessageLite& to_
         }
       }
     }
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    if ((cached_has_bits & 0x00000002u) != 0) {
       if (!from._internal_variant_id().empty()) {
         _this->_internal_set_variant_id(from._internal_variant_id());
       } else {
@@ -874,7 +931,7 @@ void InventoryReserveRequestItem::MergeImpl(::google::protobuf::MessageLite& to_
         }
       }
     }
-    if ((cached_has_bits & 0x00000008u) != 0) {
+    if ((cached_has_bits & 0x00000004u) != 0) {
       if (!from._internal_sku().empty()) {
         _this->_internal_set_sku(from._internal_sku());
       } else {
@@ -883,7 +940,7 @@ void InventoryReserveRequestItem::MergeImpl(::google::protobuf::MessageLite& to_
         }
       }
     }
-    if ((cached_has_bits & 0x00000010u) != 0) {
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (from._internal_quantity() != 0) {
         _this->_impl_.quantity_ = from._impl_.quantity_;
       }
@@ -907,7 +964,6 @@ void InventoryReserveRequestItem::InternalSwap(InventoryReserveRequestItem* PROT
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.order_line_item_id_, &other->_impl_.order_line_item_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.product_id_, &other->_impl_.product_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.variant_id_, &other->_impl_.variant_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sku_, &other->_impl_.sku_, arena);
@@ -1294,6 +1350,10 @@ class InventoryReserveResponseData::_Internal {
       8 * PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_._has_bits_);
 };
 
+void InventoryReserveResponseData::clear_items() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.items_.Clear();
+}
 InventoryReserveResponseData::InventoryReserveResponseData(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, InventoryReserveResponseData_class_data_.base()) {
@@ -1309,7 +1369,8 @@ PROTOBUF_NDEBUG_INLINE InventoryReserveResponseData::Impl_::Impl_(
     const ::inventory::v1::InventoryReserveResponseData& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        status_(arena, from.status_) {}
+        items_{visibility, arena, from.items_},
+        reservation_token_(arena, from.reservation_token_) {}
 
 InventoryReserveResponseData::InventoryReserveResponseData(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -1324,6 +1385,7 @@ InventoryReserveResponseData::InventoryReserveResponseData(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.status_ = from._impl_.status_;
 
   // @@protoc_insertion_point(copy_constructor:inventory.v1.InventoryReserveResponseData)
 }
@@ -1331,10 +1393,12 @@ PROTOBUF_NDEBUG_INLINE InventoryReserveResponseData::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        status_(arena) {}
+        items_{visibility, arena},
+        reservation_token_(arena) {}
 
 inline void InventoryReserveResponseData::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.status_ = {};
 }
 InventoryReserveResponseData::~InventoryReserveResponseData() {
   // @@protoc_insertion_point(destructor:inventory.v1.InventoryReserveResponseData)
@@ -1344,7 +1408,7 @@ inline void InventoryReserveResponseData::SharedDtor(MessageLite& self) {
   InventoryReserveResponseData& this_ = static_cast<InventoryReserveResponseData&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.status_.Destroy();
+  this_._impl_.reservation_token_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -1354,8 +1418,20 @@ inline void* PROTOBUF_NONNULL InventoryReserveResponseData::PlacementNew_(
   return ::new (mem) InventoryReserveResponseData(arena);
 }
 constexpr auto InventoryReserveResponseData::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(InventoryReserveResponseData),
-                                            alignof(InventoryReserveResponseData));
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.items_) +
+          decltype(InventoryReserveResponseData::_impl_.items_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(InventoryReserveResponseData), alignof(InventoryReserveResponseData), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&InventoryReserveResponseData::PlacementNew_,
+                                 sizeof(InventoryReserveResponseData),
+                                 alignof(InventoryReserveResponseData));
+  }
 }
 constexpr auto InventoryReserveResponseData::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -1391,18 +1467,18 @@ InventoryReserveResponseData::GetClassData() const {
   return InventoryReserveResponseData_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 56, 2>
+const ::_pbi::TcParseTable<2, 3, 1, 67, 2>
 InventoryReserveResponseData::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_._has_bits_),
     0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
+    3, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
+    4294967288,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
+    3,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
     InventoryReserveResponseData_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
@@ -1410,21 +1486,36 @@ InventoryReserveResponseData::_table_ = {
     ::_pbi::TcParser::GetTable<::inventory::v1::InventoryReserveResponseData>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string status = 1 [json_name = "status"];
+    {::_pbi::TcParser::MiniParse, {}},
+    // string reservation_token = 1 [json_name = "reservationToken"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.status_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.reservation_token_)}},
+    // .inventory.v1.InventoryReservationStatus status = 2 [json_name = "status"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReserveResponseData, _impl_.status_), 1>(),
+     {16, 1, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.status_)}},
+    // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+    {::_pbi::TcParser::FastMtR1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.items_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string status = 1 [json_name = "status"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.status_), _Internal::kHasBitsOffset + 0, 0,
+    // string reservation_token = 1 [json_name = "reservationToken"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.reservation_token_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .inventory.v1.InventoryReservationStatus status = 2 [json_name = "status"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.status_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+    // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+    {PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.items_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
-  // no aux_entries
   {{
-    "\51\6\0\0\0\0\0\0"
+      {::_pbi::TcParser::GetTable<::inventory::v1::InventoryReservationItem>()},
+  }},
+  {{
+    "\51\21\0\0\0\0\0\0"
     "inventory.v1.InventoryReserveResponseData"
-    "status"
+    "reservation_token"
   }},
 };
 PROTOBUF_NOINLINE void InventoryReserveResponseData::Clear() {
@@ -1434,10 +1525,12 @@ PROTOBUF_NOINLINE void InventoryReserveResponseData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.items_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000001u) != 0) {
-    _impl_.status_.ClearNonDefaultToEmpty();
+    _impl_.reservation_token_.ClearNonDefaultToEmpty();
   }
+  _impl_.status_ = 0;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -1457,14 +1550,34 @@ PROTOBUF_NOINLINE void InventoryReserveResponseData::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string status = 1 [json_name = "status"];
+  // string reservation_token = 1 [json_name = "reservationToken"];
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (!this_._internal_status().empty()) {
-      const ::std::string& _s = this_._internal_status();
+    if (!this_._internal_reservation_token().empty()) {
+      const ::std::string& _s = this_._internal_reservation_token();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReserveResponseData.status");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReserveResponseData.reservation_token");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
+  }
+
+  // .inventory.v1.InventoryReservationStatus status = 2 [json_name = "status"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (this_._internal_status() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteEnumToArray(
+          2, this_._internal_status(), target);
+    }
+  }
+
+  // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_items_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_items().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            3, repfield, repfield.GetCachedSize(),
+            target, stream);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -1490,13 +1603,30 @@ PROTOBUF_NOINLINE void InventoryReserveResponseData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void)cached_has_bits;
 
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // string status = 1 [json_name = "status"];
-    cached_has_bits = this_._impl_._has_bits_[0];
+    // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+    {
+      total_size += 1UL * this_._internal_items_size();
+      for (const auto& msg : this_._internal_items()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    // string reservation_token = 1 [json_name = "reservationToken"];
     if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!this_._internal_status().empty()) {
+      if (!this_._internal_reservation_token().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_status());
+                                        this_._internal_reservation_token());
+      }
+    }
+    // .inventory.v1.InventoryReservationStatus status = 2 [json_name = "status"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (this_._internal_status() != 0) {
+        total_size += 1 +
+                      ::_pbi::WireFormatLite::EnumSize(this_._internal_status());
       }
     }
   }
@@ -1512,13 +1642,22 @@ void InventoryReserveResponseData::MergeImpl(::google::protobuf::MessageLite& to
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_internal_mutable_items()->MergeFrom(
+      from._internal_items());
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000001u) != 0) {
-    if (!from._internal_status().empty()) {
-      _this->_internal_set_status(from._internal_status());
-    } else {
-      if (_this->_impl_.status_.IsDefault()) {
-        _this->_internal_set_status("");
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_reservation_token().empty()) {
+        _this->_internal_set_reservation_token(from._internal_reservation_token());
+      } else {
+        if (_this->_impl_.reservation_token_.IsDefault()) {
+          _this->_internal_set_reservation_token("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (from._internal_status() != 0) {
+        _this->_impl_.status_ = from._impl_.status_;
       }
     }
   }
@@ -1540,7 +1679,9 @@ void InventoryReserveResponseData::InternalSwap(InventoryReserveResponseData* PR
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.status_, &other->_impl_.status_, arena);
+  _impl_.items_.InternalSwap(&other->_impl_.items_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.reservation_token_, &other->_impl_.reservation_token_, arena);
+  swap(_impl_.status_, other->_impl_.status_);
 }
 
 ::google::protobuf::Metadata InventoryReserveResponseData::GetMetadata() const {
