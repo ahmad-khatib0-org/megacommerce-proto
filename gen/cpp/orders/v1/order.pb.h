@@ -125,6 +125,7 @@ enum OrderStatus : int {
   ORDER_STATUS_CANCELLED = 4,
   ORDER_STATUS_REFUNDED = 5,
   ORDER_STATUS_PAYMENT_FAILED = 6,
+  ORDER_STATUS_PAYMENT_SUCCEEDED = 7,
   OrderStatus_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
   OrderStatus_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -135,11 +136,11 @@ extern const uint32_t OrderStatus_internal_data_[];
 inline constexpr OrderStatus OrderStatus_MIN =
     static_cast<OrderStatus>(0);
 inline constexpr OrderStatus OrderStatus_MAX =
-    static_cast<OrderStatus>(6);
+    static_cast<OrderStatus>(7);
 inline bool OrderStatus_IsValid(int value) {
-  return 0 <= value && value <= 6;
+  return 0 <= value && value <= 7;
 }
-inline constexpr int OrderStatus_ARRAYSIZE = 6 + 1;
+inline constexpr int OrderStatus_ARRAYSIZE = 7 + 1;
 const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderStatus_descriptor();
 template <typename T>
 const ::std::string& OrderStatus_Name(T value) {
@@ -150,7 +151,7 @@ const ::std::string& OrderStatus_Name(T value) {
 }
 template <>
 inline const ::std::string& OrderStatus_Name(OrderStatus value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<OrderStatus_descriptor, 0, 6>(
+  return ::google::protobuf::internal::NameOfDenseEnum<OrderStatus_descriptor, 0, 7>(
       static_cast<int>(value));
 }
 inline bool OrderStatus_Parse(

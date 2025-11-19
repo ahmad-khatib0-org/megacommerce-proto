@@ -78,13 +78,14 @@ func (PaymentStatus) EnumDescriptor() ([]byte, []int) {
 type OrderStatus int32
 
 const (
-	OrderStatus_ORDER_STATUS_CREATED        OrderStatus = 0
-	OrderStatus_ORDER_STATUS_CONFIRMED      OrderStatus = 1
-	OrderStatus_ORDER_STATUS_SHIPPED        OrderStatus = 2
-	OrderStatus_ORDER_STATUS_DELIVERED      OrderStatus = 3
-	OrderStatus_ORDER_STATUS_CANCELLED      OrderStatus = 4
-	OrderStatus_ORDER_STATUS_REFUNDED       OrderStatus = 5
-	OrderStatus_ORDER_STATUS_PAYMENT_FAILED OrderStatus = 6
+	OrderStatus_ORDER_STATUS_CREATED           OrderStatus = 0
+	OrderStatus_ORDER_STATUS_CONFIRMED         OrderStatus = 1
+	OrderStatus_ORDER_STATUS_SHIPPED           OrderStatus = 2
+	OrderStatus_ORDER_STATUS_DELIVERED         OrderStatus = 3
+	OrderStatus_ORDER_STATUS_CANCELLED         OrderStatus = 4
+	OrderStatus_ORDER_STATUS_REFUNDED          OrderStatus = 5
+	OrderStatus_ORDER_STATUS_PAYMENT_FAILED    OrderStatus = 6
+	OrderStatus_ORDER_STATUS_PAYMENT_SUCCEEDED OrderStatus = 7
 )
 
 // Enum value maps for OrderStatus.
@@ -97,15 +98,17 @@ var (
 		4: "ORDER_STATUS_CANCELLED",
 		5: "ORDER_STATUS_REFUNDED",
 		6: "ORDER_STATUS_PAYMENT_FAILED",
+		7: "ORDER_STATUS_PAYMENT_SUCCEEDED",
 	}
 	OrderStatus_value = map[string]int32{
-		"ORDER_STATUS_CREATED":        0,
-		"ORDER_STATUS_CONFIRMED":      1,
-		"ORDER_STATUS_SHIPPED":        2,
-		"ORDER_STATUS_DELIVERED":      3,
-		"ORDER_STATUS_CANCELLED":      4,
-		"ORDER_STATUS_REFUNDED":       5,
-		"ORDER_STATUS_PAYMENT_FAILED": 6,
+		"ORDER_STATUS_CREATED":           0,
+		"ORDER_STATUS_CONFIRMED":         1,
+		"ORDER_STATUS_SHIPPED":           2,
+		"ORDER_STATUS_DELIVERED":         3,
+		"ORDER_STATUS_CANCELLED":         4,
+		"ORDER_STATUS_REFUNDED":          5,
+		"ORDER_STATUS_PAYMENT_FAILED":    6,
+		"ORDER_STATUS_PAYMENT_SUCCEEDED": 7,
 	}
 )
 
@@ -394,7 +397,7 @@ const file_orders_v1_order_proto_rawDesc = "" +
 	"\x0fPAYMENT_UNKNOWN\x10\x00\x12\x16\n" +
 	"\x12PAYMENT_AUTHORIZED\x10\x01\x12\x14\n" +
 	"\x10PAYMENT_CAPTURED\x10\x02\x12\x12\n" +
-	"\x0ePAYMENT_FAILED\x10\x03*\xd1\x01\n" +
+	"\x0ePAYMENT_FAILED\x10\x03*\xf5\x01\n" +
 	"\vOrderStatus\x12\x18\n" +
 	"\x14ORDER_STATUS_CREATED\x10\x00\x12\x1a\n" +
 	"\x16ORDER_STATUS_CONFIRMED\x10\x01\x12\x18\n" +
@@ -402,7 +405,8 @@ const file_orders_v1_order_proto_rawDesc = "" +
 	"\x16ORDER_STATUS_DELIVERED\x10\x03\x12\x1a\n" +
 	"\x16ORDER_STATUS_CANCELLED\x10\x04\x12\x19\n" +
 	"\x15ORDER_STATUS_REFUNDED\x10\x05\x12\x1f\n" +
-	"\x1bORDER_STATUS_PAYMENT_FAILED\x10\x06Bp\n" +
+	"\x1bORDER_STATUS_PAYMENT_FAILED\x10\x06\x12\"\n" +
+	"\x1eORDER_STATUS_PAYMENT_SUCCEEDED\x10\aBp\n" +
 	"\x1aorg.megacommerce.orders.v1B\n" +
 	"OrderProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
