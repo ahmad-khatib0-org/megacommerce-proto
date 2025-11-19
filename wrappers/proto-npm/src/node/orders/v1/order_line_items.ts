@@ -6,7 +6,7 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Any } from "../../shared/v1/types";
+import { Struct } from "../../shared/v1/struct";
 
 export const protobufPackage = "orders.v1";
 
@@ -46,7 +46,7 @@ export interface OrderLineItem {
   appliedOfferIds: string[];
   /** full product snapshot for audit/debug */
   productSnapshot?:
-    | Any
+    | Struct
     | undefined;
   /** Timestamps */
   createdAt: string;
@@ -130,7 +130,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
       writer.uint32(122).string(v!);
     }
     if (message.productSnapshot !== undefined) {
-      Any.encode(message.productSnapshot, writer.uint32(130).fork()).join();
+      Struct.encode(message.productSnapshot, writer.uint32(130).fork()).join();
     }
     if (message.createdAt !== "0") {
       writer.uint32(136).uint64(message.createdAt);
@@ -276,7 +276,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.productSnapshot = Any.decode(reader, reader.uint32());
+          message.productSnapshot = Struct.decode(reader, reader.uint32());
           continue;
         }
         case 17: {
@@ -328,7 +328,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
       appliedOfferIds: globalThis.Array.isArray(object?.appliedOfferIds)
         ? object.appliedOfferIds.map((e: any) => globalThis.String(e))
         : [],
-      productSnapshot: isSet(object.productSnapshot) ? Any.fromJSON(object.productSnapshot) : undefined,
+      productSnapshot: isSet(object.productSnapshot) ? Struct.fromJSON(object.productSnapshot) : undefined,
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
       updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : undefined,
     };
@@ -388,7 +388,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
       obj.appliedOfferIds = message.appliedOfferIds;
     }
     if (message.productSnapshot !== undefined) {
-      obj.productSnapshot = Any.toJSON(message.productSnapshot);
+      obj.productSnapshot = Struct.toJSON(message.productSnapshot);
     }
     if (message.createdAt !== "0") {
       obj.createdAt = message.createdAt;
@@ -428,7 +428,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     message.totalCents = object.totalCents ?? "0";
     message.appliedOfferIds = object.appliedOfferIds?.map((e) => e) || [];
     message.productSnapshot = (object.productSnapshot !== undefined && object.productSnapshot !== null)
-      ? Any.fromPartial(object.productSnapshot)
+      ? Struct.fromPartial(object.productSnapshot)
       : undefined;
     message.createdAt = object.createdAt ?? "0";
     message.updatedAt = object.updatedAt ?? undefined;

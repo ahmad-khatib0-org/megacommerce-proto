@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package orders.v1;
 
-import "shared/v1/types.proto";
+import "shared/v1/struct.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
@@ -34,7 +34,7 @@ message OrderLineItem {
   repeated string applied_offer_ids = 15;
 
   // full product snapshot for audit/debug
-  shared.v1.Any product_snapshot = 16;
+  shared.v1.Struct product_snapshot = 16;
 
   // Timestamps
   uint64 created_at = 17; // UNIX timestamp

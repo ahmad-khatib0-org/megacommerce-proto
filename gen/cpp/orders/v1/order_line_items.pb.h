@@ -33,7 +33,7 @@
 #include "google/protobuf/map_entry.h"
 #include "google/protobuf/map_field.h"
 #include "google/protobuf/unknown_field_set.h"
-#include "shared/v1/types.pb.h"
+#include "shared/v1/struct.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -410,19 +410,19 @@ class OrderLineItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_title();
 
   public:
-  // .shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];
+  // .shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];
   bool has_product_snapshot() const;
   void clear_product_snapshot() ;
-  const ::shared::v1::Any& product_snapshot() const;
-  [[nodiscard]] ::shared::v1::Any* PROTOBUF_NULLABLE release_product_snapshot();
-  ::shared::v1::Any* PROTOBUF_NONNULL mutable_product_snapshot();
-  void set_allocated_product_snapshot(::shared::v1::Any* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_product_snapshot(::shared::v1::Any* PROTOBUF_NULLABLE value);
-  ::shared::v1::Any* PROTOBUF_NULLABLE unsafe_arena_release_product_snapshot();
+  const ::shared::v1::Struct& product_snapshot() const;
+  [[nodiscard]] ::shared::v1::Struct* PROTOBUF_NULLABLE release_product_snapshot();
+  ::shared::v1::Struct* PROTOBUF_NONNULL mutable_product_snapshot();
+  void set_allocated_product_snapshot(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_product_snapshot(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  ::shared::v1::Struct* PROTOBUF_NULLABLE unsafe_arena_release_product_snapshot();
 
   private:
-  const ::shared::v1::Any& _internal_product_snapshot() const;
-  ::shared::v1::Any* PROTOBUF_NONNULL _internal_mutable_product_snapshot();
+  const ::shared::v1::Struct& _internal_product_snapshot() const;
+  ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_product_snapshot();
 
   public:
   // uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];
@@ -557,7 +557,7 @@ class OrderLineItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr variant_id_;
     ::google::protobuf::internal::ArenaStringPtr sku_;
     ::google::protobuf::internal::ArenaStringPtr title_;
-    ::shared::v1::Any* PROTOBUF_NULLABLE product_snapshot_;
+    ::shared::v1::Struct* PROTOBUF_NULLABLE product_snapshot_;
     ::uint64_t unit_price_cents_;
     ::uint64_t list_price_cents_;
     ::uint64_t sale_price_cents_;
@@ -1260,28 +1260,28 @@ OrderLineItem::_internal_mutable_applied_offer_ids() {
   return &_impl_.applied_offer_ids_;
 }
 
-// .shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];
+// .shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];
 inline bool OrderLineItem::has_product_snapshot() const {
   bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.product_snapshot_ != nullptr);
   return value;
 }
-inline const ::shared::v1::Any& OrderLineItem::_internal_product_snapshot() const {
+inline const ::shared::v1::Struct& OrderLineItem::_internal_product_snapshot() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::shared::v1::Any* p = _impl_.product_snapshot_;
-  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Any&>(::shared::v1::_Any_default_instance_);
+  const ::shared::v1::Struct* p = _impl_.product_snapshot_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Struct&>(::shared::v1::_Struct_default_instance_);
 }
-inline const ::shared::v1::Any& OrderLineItem::product_snapshot() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::shared::v1::Struct& OrderLineItem::product_snapshot() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.product_snapshot)
   return _internal_product_snapshot();
 }
 inline void OrderLineItem::unsafe_arena_set_allocated_product_snapshot(
-    ::shared::v1::Any* PROTOBUF_NULLABLE value) {
+    ::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.product_snapshot_);
   }
-  _impl_.product_snapshot_ = reinterpret_cast<::shared::v1::Any*>(value);
+  _impl_.product_snapshot_ = reinterpret_cast<::shared::v1::Struct*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000040u;
   } else {
@@ -1289,11 +1289,11 @@ inline void OrderLineItem::unsafe_arena_set_allocated_product_snapshot(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.OrderLineItem.product_snapshot)
 }
-inline ::shared::v1::Any* PROTOBUF_NULLABLE OrderLineItem::release_product_snapshot() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE OrderLineItem::release_product_snapshot() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000040u;
-  ::shared::v1::Any* released = _impl_.product_snapshot_;
+  ::shared::v1::Struct* released = _impl_.product_snapshot_;
   _impl_.product_snapshot_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
     auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
@@ -1308,31 +1308,31 @@ inline ::shared::v1::Any* PROTOBUF_NULLABLE OrderLineItem::release_product_snaps
   }
   return released;
 }
-inline ::shared::v1::Any* PROTOBUF_NULLABLE OrderLineItem::unsafe_arena_release_product_snapshot() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE OrderLineItem::unsafe_arena_release_product_snapshot() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.OrderLineItem.product_snapshot)
 
   _impl_._has_bits_[0] &= ~0x00000040u;
-  ::shared::v1::Any* temp = _impl_.product_snapshot_;
+  ::shared::v1::Struct* temp = _impl_.product_snapshot_;
   _impl_.product_snapshot_ = nullptr;
   return temp;
 }
-inline ::shared::v1::Any* PROTOBUF_NONNULL OrderLineItem::_internal_mutable_product_snapshot() {
+inline ::shared::v1::Struct* PROTOBUF_NONNULL OrderLineItem::_internal_mutable_product_snapshot() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.product_snapshot_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Any>(GetArena());
-    _impl_.product_snapshot_ = reinterpret_cast<::shared::v1::Any*>(p);
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Struct>(GetArena());
+    _impl_.product_snapshot_ = reinterpret_cast<::shared::v1::Struct*>(p);
   }
   return _impl_.product_snapshot_;
 }
-inline ::shared::v1::Any* PROTOBUF_NONNULL OrderLineItem::mutable_product_snapshot()
+inline ::shared::v1::Struct* PROTOBUF_NONNULL OrderLineItem::mutable_product_snapshot()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000040u;
-  ::shared::v1::Any* _msg = _internal_mutable_product_snapshot();
+  ::shared::v1::Struct* _msg = _internal_mutable_product_snapshot();
   // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineItem.product_snapshot)
   return _msg;
 }
-inline void OrderLineItem::set_allocated_product_snapshot(::shared::v1::Any* PROTOBUF_NULLABLE value) {
+inline void OrderLineItem::set_allocated_product_snapshot(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
@@ -1349,7 +1349,7 @@ inline void OrderLineItem::set_allocated_product_snapshot(::shared::v1::Any* PRO
     _impl_._has_bits_[0] &= ~0x00000040u;
   }
 
-  _impl_.product_snapshot_ = reinterpret_cast<::shared::v1::Any*>(value);
+  _impl_.product_snapshot_ = reinterpret_cast<::shared::v1::Struct*>(value);
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineItem.product_snapshot)
 }
 

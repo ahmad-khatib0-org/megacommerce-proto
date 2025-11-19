@@ -287,51 +287,49 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_orders_2fv1_2forder_5fget_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\031orders/v1/order_get.proto\022\torders.v1\032$"
-    "inventory/v1/inventory_reserve.proto\032\025or"
-    "ders/v1/order.proto\032 orders/v1/order_lin"
-    "e_items.proto\032\025shared/v1/error.proto\032\025sh"
-    "ared/v1/types.proto\"\371\006\n\tOrderItem\022\016\n\002id\030"
-    "\001 \001(\tR\002id\022%\n\016subtotal_cents\030\003 \001(\004R\rsubto"
-    "talCents\022%\n\016shipping_cents\030\004 \001(\004R\rshippi"
-    "ngCents\022\033\n\ttax_cents\030\005 \001(\004R\010taxCents\022%\n\016"
-    "discount_cents\030\006 \001(\004R\rdiscountCents\022\037\n\013t"
-    "otal_cents\030\007 \001(\004R\ntotalCents\022#\n\rcurrency"
-    "_code\030\010 \001(\tR\014currencyCode\0227\n\nline_items\030"
-    "\t \003(\0132\030.orders.v1.OrderLineItemR\tlineIte"
-    "ms\0229\n\020shipping_address\030\n \001(\0132\016.shared.v1"
-    ".AnyR\017shippingAddress\0227\n\017billing_address"
-    "\030\013 \001(\0132\016.shared.v1.AnyR\016billingAddress\0224"
-    "\n\007payment\030\014 \001(\0132\032.orders.v1.PaymentSnaps"
-    "hotR\007payment\022j\n\034inventory_reservation_st"
-    "atus\030\r \001(\0162(.inventory.v1.InventoryReser"
-    "vationStatusR\032inventoryReservationStatus"
-    "\022\026\n\006status\030\016 \001(\tR\006status\022\035\n\ncreated_at\030\017"
-    " \001(\004R\tcreatedAt\022\"\n\nupdated_at\030\020 \001(\004H\000R\tu"
-    "pdatedAt\210\001\001\022%\n\016product_source\030\021 \001(\tR\rpro"
-    "ductSource\022\'\n\017product_version\030\022 \001(\tR\016pro"
-    "ductVersion\022>\n\010metadata\030\023 \003(\0132\".orders.v"
-    "1.OrderItem.MetadataEntryR\010metadata\032;\n\rM"
-    "etadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030"
-    "\002 \001(\tR\005value:\0028\001B\r\n\013_updated_at\"\200\002\n\017Paym"
-    "entSnapshot\022\032\n\010provider\030\001 \001(\tR\010provider\022"
-    "%\n\016transaction_id\030\002 \001(\tR\rtransactionId\022\026"
-    "\n\006status\030\003 \001(\tR\006status\022%\n\016payment_method"
-    "\030\004 \001(\tR\rpaymentMethod\022;\n\021provider_respon"
-    "se\030\005 \001(\0132\016.shared.v1.AnyR\020providerRespon"
-    "se\022 \n\tfee_cents\030\006 \001(\004H\000R\010feeCents\210\001\001B\014\n\n"
-    "_fee_cents\",\n\017OrderGetRequest\022\031\n\010order_i"
-    "d\030\001 \001(\tR\007orderId\"w\n\020OrderGetResponse\022*\n\004"
-    "data\030\001 \001(\0132\024.orders.v1.OrderItemH\000R\004data"
-    "\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005"
-    "errorB\n\n\010responseBs\n\032org.megacommerce.or"
-    "ders.v1B\rOrderGetProtoZCgithub.com/ahmad"
-    "-khatib0-org/megacommerce-proto/gen/go/o"
-    "rders/v1;v1\370\001\001b\006proto3"
+    "inventory/v1/inventory_reserve.proto\032 or"
+    "ders/v1/order_line_items.proto\032\025shared/v"
+    "1/error.proto\032\025shared/v1/types.proto\"\371\006\n"
+    "\tOrderItem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016subtotal_c"
+    "ents\030\003 \001(\004R\rsubtotalCents\022%\n\016shipping_ce"
+    "nts\030\004 \001(\004R\rshippingCents\022\033\n\ttax_cents\030\005 "
+    "\001(\004R\010taxCents\022%\n\016discount_cents\030\006 \001(\004R\rd"
+    "iscountCents\022\037\n\013total_cents\030\007 \001(\004R\ntotal"
+    "Cents\022#\n\rcurrency_code\030\010 \001(\tR\014currencyCo"
+    "de\0227\n\nline_items\030\t \003(\0132\030.orders.v1.Order"
+    "LineItemR\tlineItems\0229\n\020shipping_address\030"
+    "\n \001(\0132\016.shared.v1.AnyR\017shippingAddress\0227"
+    "\n\017billing_address\030\013 \001(\0132\016.shared.v1.AnyR"
+    "\016billingAddress\0224\n\007payment\030\014 \001(\0132\032.order"
+    "s.v1.PaymentSnapshotR\007payment\022j\n\034invento"
+    "ry_reservation_status\030\r \001(\0162(.inventory."
+    "v1.InventoryReservationStatusR\032inventory"
+    "ReservationStatus\022\026\n\006status\030\016 \001(\tR\006statu"
+    "s\022\035\n\ncreated_at\030\017 \001(\004R\tcreatedAt\022\"\n\nupda"
+    "ted_at\030\020 \001(\004H\000R\tupdatedAt\210\001\001\022%\n\016product_"
+    "source\030\021 \001(\tR\rproductSource\022\'\n\017product_v"
+    "ersion\030\022 \001(\tR\016productVersion\022>\n\010metadata"
+    "\030\023 \003(\0132\".orders.v1.OrderItem.MetadataEnt"
+    "ryR\010metadata\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001"
+    "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\r\n\013_up"
+    "dated_at\"\200\002\n\017PaymentSnapshot\022\032\n\010provider"
+    "\030\001 \001(\tR\010provider\022%\n\016transaction_id\030\002 \001(\t"
+    "R\rtransactionId\022\026\n\006status\030\003 \001(\tR\006status\022"
+    "%\n\016payment_method\030\004 \001(\tR\rpaymentMethod\022;"
+    "\n\021provider_response\030\005 \001(\0132\016.shared.v1.An"
+    "yR\020providerResponse\022 \n\tfee_cents\030\006 \001(\004H\000"
+    "R\010feeCents\210\001\001B\014\n\n_fee_cents\",\n\017OrderGetR"
+    "equest\022\031\n\010order_id\030\001 \001(\tR\007orderId\"w\n\020Ord"
+    "erGetResponse\022*\n\004data\030\001 \001(\0132\024.orders.v1."
+    "OrderItemH\000R\004data\022+\n\005error\030\002 \001(\0132\023.share"
+    "d.v1.AppErrorH\000R\005errorB\n\n\010responseBs\n\032or"
+    "g.megacommerce.orders.v1B\rOrderGetProtoZ"
+    "Cgithub.com/ahmad-khatib0-org/megacommer"
+    "ce-proto/gen/go/orders/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_orders_2fv1_2forder_5fget_2eproto_deps[5] = {
+    descriptor_table_orders_2fv1_2forder_5fget_2eproto_deps[4] = {
         &::descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto,
-        &::descriptor_table_orders_2fv1_2forder_2eproto,
         &::descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto,
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
         &::descriptor_table_shared_2fv1_2ftypes_2eproto,
@@ -340,12 +338,12 @@ static ::absl::once_flag descriptor_table_orders_2fv1_2forder_5fget_2eproto_once
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_5fget_2eproto = {
     false,
     false,
-    1622,
+    1599,
     descriptor_table_protodef_orders_2fv1_2forder_5fget_2eproto,
     "orders/v1/order_get.proto",
     &descriptor_table_orders_2fv1_2forder_5fget_2eproto_once,
     descriptor_table_orders_2fv1_2forder_5fget_2eproto_deps,
-    5,
+    4,
     5,
     schemas,
     file_default_instances,

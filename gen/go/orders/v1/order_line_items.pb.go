@@ -43,7 +43,7 @@ type OrderLineItem struct {
 	// array of applied offer/promotion ids
 	AppliedOfferIds []string `protobuf:"bytes,15,rep,name=applied_offer_ids,json=appliedOfferIds,proto3" json:"applied_offer_ids,omitempty"`
 	// full product snapshot for audit/debug
-	ProductSnapshot *v1.Any `protobuf:"bytes,16,opt,name=product_snapshot,json=productSnapshot,proto3" json:"product_snapshot,omitempty"`
+	ProductSnapshot *v1.Struct `protobuf:"bytes,16,opt,name=product_snapshot,json=productSnapshot,proto3" json:"product_snapshot,omitempty"`
 	// Timestamps
 	CreatedAt     uint64  `protobuf:"varint,17,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`       // UNIX timestamp
 	UpdatedAt     *uint64 `protobuf:"varint,18,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"` // optional UNIX timestamp
@@ -186,7 +186,7 @@ func (x *OrderLineItem) GetAppliedOfferIds() []string {
 	return nil
 }
 
-func (x *OrderLineItem) GetProductSnapshot() *v1.Any {
+func (x *OrderLineItem) GetProductSnapshot() *v1.Struct {
 	if x != nil {
 		return x.ProductSnapshot
 	}
@@ -211,7 +211,7 @@ var File_orders_v1_order_line_items_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"\n" +
-	" orders/v1/order_line_items.proto\x12\torders.v1\x1a\x15shared/v1/types.proto\"\xc0\x06\n" +
+	" orders/v1/order_line_items.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"\xc3\x06\n" +
 	"\rOrderLineItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\border_id\x18\x02 \x01(\tR\aorderId\x12\x1d\n" +
@@ -233,8 +233,8 @@ const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"\ttax_cents\x18\r \x01(\x04H\x03R\btaxCents\x88\x01\x01\x12\x1f\n" +
 	"\vtotal_cents\x18\x0e \x01(\x04R\n" +
 	"totalCents\x12*\n" +
-	"\x11applied_offer_ids\x18\x0f \x03(\tR\x0fappliedOfferIds\x129\n" +
-	"\x10product_snapshot\x18\x10 \x01(\v2\x0e.shared.v1.AnyR\x0fproductSnapshot\x12\x1d\n" +
+	"\x11applied_offer_ids\x18\x0f \x03(\tR\x0fappliedOfferIds\x12<\n" +
+	"\x10product_snapshot\x18\x10 \x01(\v2\x11.shared.v1.StructR\x0fproductSnapshot\x12\x1d\n" +
 	"\n" +
 	"created_at\x18\x11 \x01(\x04R\tcreatedAt\x12\"\n" +
 	"\n" +
@@ -266,11 +266,11 @@ var file_orders_v1_order_line_items_proto_msgTypes = make([]protoimpl.MessageInf
 var file_orders_v1_order_line_items_proto_goTypes = []any{
 	(*OrderLineItem)(nil), // 0: orders.v1.OrderLineItem
 	nil,                   // 1: orders.v1.OrderLineItem.AttributesEntry
-	(*v1.Any)(nil),        // 2: shared.v1.Any
+	(*v1.Struct)(nil),     // 2: shared.v1.Struct
 }
 var file_orders_v1_order_line_items_proto_depIdxs = []int32{
 	1, // 0: orders.v1.OrderLineItem.attributes:type_name -> orders.v1.OrderLineItem.AttributesEntry
-	2, // 1: orders.v1.OrderLineItem.product_snapshot:type_name -> shared.v1.Any
+	2, // 1: orders.v1.OrderLineItem.product_snapshot:type_name -> shared.v1.Struct
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

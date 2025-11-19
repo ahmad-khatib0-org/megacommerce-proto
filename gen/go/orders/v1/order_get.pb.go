@@ -435,7 +435,7 @@ var File_orders_v1_order_get_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_get_proto_rawDesc = "" +
 	"\n" +
-	"\x19orders/v1/order_get.proto\x12\torders.v1\x1a$inventory/v1/inventory_reserve.proto\x1a\x15orders/v1/order.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xf9\x06\n" +
+	"\x19orders/v1/order_get.proto\x12\torders.v1\x1a$inventory/v1/inventory_reserve.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xf9\x06\n" +
 	"\tOrderItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
 	"\x0esubtotal_cents\x18\x03 \x01(\x04R\rsubtotalCents\x12%\n" +
@@ -528,7 +528,6 @@ func file_orders_v1_order_get_proto_init() {
 	if File_orders_v1_order_get_proto != nil {
 		return
 	}
-	file_orders_v1_order_proto_init()
 	file_orders_v1_order_line_items_proto_init()
 	file_orders_v1_order_get_proto_msgTypes[0].OneofWrappers = []any{}
 	file_orders_v1_order_get_proto_msgTypes[1].OneofWrappers = []any{}

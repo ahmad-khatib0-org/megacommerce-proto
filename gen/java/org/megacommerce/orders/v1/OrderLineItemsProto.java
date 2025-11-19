@@ -316,7 +316,7 @@ java.lang.String defaultValue);
      * full product snapshot for audit/debug
      * </pre>
      *
-     * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+     * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
      * @return Whether the productSnapshot field is set.
      */
     boolean hasProductSnapshot();
@@ -325,18 +325,18 @@ java.lang.String defaultValue);
      * full product snapshot for audit/debug
      * </pre>
      *
-     * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+     * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
      * @return The productSnapshot.
      */
-    org.megacommerce.shared.v1.TypesProto.Any getProductSnapshot();
+    org.megacommerce.shared.v1.StructProto.Struct getProductSnapshot();
     /**
      * <pre>
      * full product snapshot for audit/debug
      * </pre>
      *
-     * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+     * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
      */
-    org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getProductSnapshotOrBuilder();
+    org.megacommerce.shared.v1.StructProto.StructOrBuilder getProductSnapshotOrBuilder();
 
     /**
      * <pre>
@@ -969,13 +969,13 @@ java.lang.String defaultValue) {
     }
 
     public static final int PRODUCT_SNAPSHOT_FIELD_NUMBER = 16;
-    private org.megacommerce.shared.v1.TypesProto.Any productSnapshot_;
+    private org.megacommerce.shared.v1.StructProto.Struct productSnapshot_;
     /**
      * <pre>
      * full product snapshot for audit/debug
      * </pre>
      *
-     * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+     * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
      * @return Whether the productSnapshot field is set.
      */
     @java.lang.Override
@@ -987,23 +987,23 @@ java.lang.String defaultValue) {
      * full product snapshot for audit/debug
      * </pre>
      *
-     * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+     * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
      * @return The productSnapshot.
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.Any getProductSnapshot() {
-      return productSnapshot_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : productSnapshot_;
+    public org.megacommerce.shared.v1.StructProto.Struct getProductSnapshot() {
+      return productSnapshot_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : productSnapshot_;
     }
     /**
      * <pre>
      * full product snapshot for audit/debug
      * </pre>
      *
-     * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+     * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getProductSnapshotOrBuilder() {
-      return productSnapshot_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : productSnapshot_;
+    public org.megacommerce.shared.v1.StructProto.StructOrBuilder getProductSnapshotOrBuilder() {
+      return productSnapshot_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : productSnapshot_;
     }
 
     public static final int CREATED_AT_FIELD_NUMBER = 17;
@@ -2962,15 +2962,15 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private org.megacommerce.shared.v1.TypesProto.Any productSnapshot_;
+      private org.megacommerce.shared.v1.StructProto.Struct productSnapshot_;
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> productSnapshotBuilder_;
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> productSnapshotBuilder_;
       /**
        * <pre>
        * full product snapshot for audit/debug
        * </pre>
        *
-       * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+       * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
        * @return Whether the productSnapshot field is set.
        */
       public boolean hasProductSnapshot() {
@@ -2981,12 +2981,12 @@ java.lang.String defaultValue) {
        * full product snapshot for audit/debug
        * </pre>
        *
-       * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+       * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
        * @return The productSnapshot.
        */
-      public org.megacommerce.shared.v1.TypesProto.Any getProductSnapshot() {
+      public org.megacommerce.shared.v1.StructProto.Struct getProductSnapshot() {
         if (productSnapshotBuilder_ == null) {
-          return productSnapshot_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : productSnapshot_;
+          return productSnapshot_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : productSnapshot_;
         } else {
           return productSnapshotBuilder_.getMessage();
         }
@@ -2996,9 +2996,9 @@ java.lang.String defaultValue) {
        * full product snapshot for audit/debug
        * </pre>
        *
-       * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+       * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
        */
-      public Builder setProductSnapshot(org.megacommerce.shared.v1.TypesProto.Any value) {
+      public Builder setProductSnapshot(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (productSnapshotBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3016,10 +3016,10 @@ java.lang.String defaultValue) {
        * full product snapshot for audit/debug
        * </pre>
        *
-       * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+       * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
        */
       public Builder setProductSnapshot(
-          org.megacommerce.shared.v1.TypesProto.Any.Builder builderForValue) {
+          org.megacommerce.shared.v1.StructProto.Struct.Builder builderForValue) {
         if (productSnapshotBuilder_ == null) {
           productSnapshot_ = builderForValue.build();
         } else {
@@ -3034,13 +3034,13 @@ java.lang.String defaultValue) {
        * full product snapshot for audit/debug
        * </pre>
        *
-       * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+       * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
        */
-      public Builder mergeProductSnapshot(org.megacommerce.shared.v1.TypesProto.Any value) {
+      public Builder mergeProductSnapshot(org.megacommerce.shared.v1.StructProto.Struct value) {
         if (productSnapshotBuilder_ == null) {
           if (((bitField0_ & 0x00008000) != 0) &&
             productSnapshot_ != null &&
-            productSnapshot_ != org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance()) {
+            productSnapshot_ != org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance()) {
             getProductSnapshotBuilder().mergeFrom(value);
           } else {
             productSnapshot_ = value;
@@ -3059,7 +3059,7 @@ java.lang.String defaultValue) {
        * full product snapshot for audit/debug
        * </pre>
        *
-       * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+       * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
        */
       public Builder clearProductSnapshot() {
         bitField0_ = (bitField0_ & ~0x00008000);
@@ -3076,9 +3076,9 @@ java.lang.String defaultValue) {
        * full product snapshot for audit/debug
        * </pre>
        *
-       * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+       * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.Any.Builder getProductSnapshotBuilder() {
+      public org.megacommerce.shared.v1.StructProto.Struct.Builder getProductSnapshotBuilder() {
         bitField0_ |= 0x00008000;
         onChanged();
         return internalGetProductSnapshotFieldBuilder().getBuilder();
@@ -3088,14 +3088,14 @@ java.lang.String defaultValue) {
        * full product snapshot for audit/debug
        * </pre>
        *
-       * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+       * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getProductSnapshotOrBuilder() {
+      public org.megacommerce.shared.v1.StructProto.StructOrBuilder getProductSnapshotOrBuilder() {
         if (productSnapshotBuilder_ != null) {
           return productSnapshotBuilder_.getMessageOrBuilder();
         } else {
           return productSnapshot_ == null ?
-              org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : productSnapshot_;
+              org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : productSnapshot_;
         }
       }
       /**
@@ -3103,14 +3103,14 @@ java.lang.String defaultValue) {
        * full product snapshot for audit/debug
        * </pre>
        *
-       * <code>.shared.v1.Any product_snapshot = 16 [json_name = "productSnapshot"];</code>
+       * <code>.shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> 
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> 
           internalGetProductSnapshotFieldBuilder() {
         if (productSnapshotBuilder_ == null) {
           productSnapshotBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder>(
+              org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder>(
                   getProductSnapshot(),
                   getParentForChildren(),
                   isClean());
@@ -3290,36 +3290,36 @@ java.lang.String defaultValue) {
   static {
     java.lang.String[] descriptorData = {
       "\n orders/v1/order_line_items.proto\022\torde" +
-      "rs.v1\032\025shared/v1/types.proto\"\300\006\n\rOrderLi" +
-      "neItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001(\t" +
-      "R\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tproductId" +
-      "\022\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\020\n\003sku\030\005" +
-      " \001(\tR\003sku\022\024\n\005title\030\006 \001(\tR\005title\022H\n\nattri" +
-      "butes\030\007 \003(\0132(.orders.v1.OrderLineItem.At" +
-      "tributesEntryR\nattributes\022\032\n\010quantity\030\010 " +
-      "\001(\005R\010quantity\022(\n\020unit_price_cents\030\t \001(\004R" +
-      "\016unitPriceCents\022-\n\020list_price_cents\030\n \001(" +
-      "\004H\000R\016listPriceCents\210\001\001\022-\n\020sale_price_cen" +
-      "ts\030\013 \001(\004H\001R\016salePriceCents\210\001\001\022*\n\016discoun" +
-      "t_cents\030\014 \001(\004H\002R\rdiscountCents\210\001\001\022 \n\ttax" +
-      "_cents\030\r \001(\004H\003R\010taxCents\210\001\001\022\037\n\013total_cen" +
-      "ts\030\016 \001(\004R\ntotalCents\022*\n\021applied_offer_id" +
-      "s\030\017 \003(\tR\017appliedOfferIds\0229\n\020product_snap" +
-      "shot\030\020 \001(\0132\016.shared.v1.AnyR\017productSnaps" +
-      "hot\022\035\n\ncreated_at\030\021 \001(\004R\tcreatedAt\022\"\n\nup" +
-      "dated_at\030\022 \001(\004H\004R\tupdatedAt\210\001\001\032=\n\017Attrib" +
-      "utesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
-      "(\tR\005value:\0028\001B\023\n\021_list_price_centsB\023\n\021_s" +
-      "ale_price_centsB\021\n\017_discount_centsB\014\n\n_t" +
-      "ax_centsB\r\n\013_updated_atBy\n\032org.megacomme" +
-      "rce.orders.v1B\023OrderLineItemsProtoZCgith" +
-      "ub.com/ahmad-khatib0-org/megacommerce-pr" +
-      "oto/gen/go/orders/v1;v1\370\001\001b\006proto3"
+      "rs.v1\032\026shared/v1/struct.proto\"\303\006\n\rOrderL" +
+      "ineItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001(" +
+      "\tR\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tproductI" +
+      "d\022\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\020\n\003sku\030" +
+      "\005 \001(\tR\003sku\022\024\n\005title\030\006 \001(\tR\005title\022H\n\nattr" +
+      "ibutes\030\007 \003(\0132(.orders.v1.OrderLineItem.A" +
+      "ttributesEntryR\nattributes\022\032\n\010quantity\030\010" +
+      " \001(\005R\010quantity\022(\n\020unit_price_cents\030\t \001(\004" +
+      "R\016unitPriceCents\022-\n\020list_price_cents\030\n \001" +
+      "(\004H\000R\016listPriceCents\210\001\001\022-\n\020sale_price_ce" +
+      "nts\030\013 \001(\004H\001R\016salePriceCents\210\001\001\022*\n\016discou" +
+      "nt_cents\030\014 \001(\004H\002R\rdiscountCents\210\001\001\022 \n\tta" +
+      "x_cents\030\r \001(\004H\003R\010taxCents\210\001\001\022\037\n\013total_ce" +
+      "nts\030\016 \001(\004R\ntotalCents\022*\n\021applied_offer_i" +
+      "ds\030\017 \003(\tR\017appliedOfferIds\022<\n\020product_sna" +
+      "pshot\030\020 \001(\0132\021.shared.v1.StructR\017productS" +
+      "napshot\022\035\n\ncreated_at\030\021 \001(\004R\tcreatedAt\022\"" +
+      "\n\nupdated_at\030\022 \001(\004H\004R\tupdatedAt\210\001\001\032=\n\017At" +
+      "tributesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
+      "\030\002 \001(\tR\005value:\0028\001B\023\n\021_list_price_centsB\023" +
+      "\n\021_sale_price_centsB\021\n\017_discount_centsB\014" +
+      "\n\n_tax_centsB\r\n\013_updated_atBy\n\032org.megac" +
+      "ommerce.orders.v1B\023OrderLineItemsProtoZC" +
+      "github.com/ahmad-khatib0-org/megacommerc" +
+      "e-proto/gen/go/orders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.megacommerce.shared.v1.TypesProto.getDescriptor(),
+          org.megacommerce.shared.v1.StructProto.getDescriptor(),
         });
     internal_static_orders_v1_OrderLineItem_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3334,7 +3334,7 @@ java.lang.String defaultValue) {
         internal_static_orders_v1_OrderLineItem_AttributesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     descriptor.resolveAllFeaturesImmutable();
-    org.megacommerce.shared.v1.TypesProto.getDescriptor();
+    org.megacommerce.shared.v1.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

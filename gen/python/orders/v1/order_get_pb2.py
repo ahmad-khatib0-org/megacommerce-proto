@@ -23,13 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from inventory.v1 import inventory_reserve_pb2 as inventory_dot_v1_dot_inventory__reserve__pb2
-from orders.v1 import order_pb2 as orders_dot_v1_dot_order__pb2
 from orders.v1 import order_line_items_pb2 as orders_dot_v1_dot_order__line__items__pb2
 from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19orders/v1/order_get.proto\x12\torders.v1\x1a$inventory/v1/inventory_reserve.proto\x1a\x15orders/v1/order.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\x80\x05\n\tOrderItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0esubtotal_cents\x18\x03 \x01(\x04\x12\x16\n\x0eshipping_cents\x18\x04 \x01(\x04\x12\x11\n\ttax_cents\x18\x05 \x01(\x04\x12\x16\n\x0e\x64iscount_cents\x18\x06 \x01(\x04\x12\x13\n\x0btotal_cents\x18\x07 \x01(\x04\x12\x15\n\rcurrency_code\x18\x08 \x01(\t\x12,\n\nline_items\x18\t \x03(\x0b\x32\x18.orders.v1.OrderLineItem\x12(\n\x10shipping_address\x18\n \x01(\x0b\x32\x0e.shared.v1.Any\x12\'\n\x0f\x62illing_address\x18\x0b \x01(\x0b\x32\x0e.shared.v1.Any\x12+\n\x07payment\x18\x0c \x01(\x0b\x32\x1a.orders.v1.PaymentSnapshot\x12N\n\x1cinventory_reservation_status\x18\r \x01(\x0e\x32(.inventory.v1.InventoryReservationStatus\x12\x0e\n\x06status\x18\x0e \x01(\t\x12\x12\n\ncreated_at\x18\x0f \x01(\x04\x12\x17\n\nupdated_at\x18\x10 \x01(\x04H\x00\x88\x01\x01\x12\x16\n\x0eproduct_source\x18\x11 \x01(\t\x12\x17\n\x0fproduct_version\x18\x12 \x01(\t\x12\x34\n\x08metadata\x18\x13 \x03(\x0b\x32\".orders.v1.OrderItem.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\r\n\x0b_updated_at\"\xb4\x01\n\x0fPaymentSnapshot\x12\x10\n\x08provider\x18\x01 \x01(\t\x12\x16\n\x0etransaction_id\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x16\n\x0epayment_method\x18\x04 \x01(\t\x12)\n\x11provider_response\x18\x05 \x01(\x0b\x32\x0e.shared.v1.Any\x12\x16\n\tfee_cents\x18\x06 \x01(\x04H\x00\x88\x01\x01\x42\x0c\n\n_fee_cents\"#\n\x0fOrderGetRequest\x12\x10\n\x08order_id\x18\x01 \x01(\t\"j\n\x10OrderGetResponse\x12$\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.orders.v1.OrderItemH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBs\n\x1aorg.megacommerce.orders.v1B\rOrderGetProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19orders/v1/order_get.proto\x12\torders.v1\x1a$inventory/v1/inventory_reserve.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\x80\x05\n\tOrderItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0esubtotal_cents\x18\x03 \x01(\x04\x12\x16\n\x0eshipping_cents\x18\x04 \x01(\x04\x12\x11\n\ttax_cents\x18\x05 \x01(\x04\x12\x16\n\x0e\x64iscount_cents\x18\x06 \x01(\x04\x12\x13\n\x0btotal_cents\x18\x07 \x01(\x04\x12\x15\n\rcurrency_code\x18\x08 \x01(\t\x12,\n\nline_items\x18\t \x03(\x0b\x32\x18.orders.v1.OrderLineItem\x12(\n\x10shipping_address\x18\n \x01(\x0b\x32\x0e.shared.v1.Any\x12\'\n\x0f\x62illing_address\x18\x0b \x01(\x0b\x32\x0e.shared.v1.Any\x12+\n\x07payment\x18\x0c \x01(\x0b\x32\x1a.orders.v1.PaymentSnapshot\x12N\n\x1cinventory_reservation_status\x18\r \x01(\x0e\x32(.inventory.v1.InventoryReservationStatus\x12\x0e\n\x06status\x18\x0e \x01(\t\x12\x12\n\ncreated_at\x18\x0f \x01(\x04\x12\x17\n\nupdated_at\x18\x10 \x01(\x04H\x00\x88\x01\x01\x12\x16\n\x0eproduct_source\x18\x11 \x01(\t\x12\x17\n\x0fproduct_version\x18\x12 \x01(\t\x12\x34\n\x08metadata\x18\x13 \x03(\x0b\x32\".orders.v1.OrderItem.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\r\n\x0b_updated_at\"\xb4\x01\n\x0fPaymentSnapshot\x12\x10\n\x08provider\x18\x01 \x01(\t\x12\x16\n\x0etransaction_id\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x16\n\x0epayment_method\x18\x04 \x01(\t\x12)\n\x11provider_response\x18\x05 \x01(\x0b\x32\x0e.shared.v1.Any\x12\x16\n\tfee_cents\x18\x06 \x01(\x04H\x00\x88\x01\x01\x42\x0c\n\n_fee_cents\"#\n\x0fOrderGetRequest\x12\x10\n\x08order_id\x18\x01 \x01(\t\"j\n\x10OrderGetResponse\x12$\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.orders.v1.OrderItemH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBs\n\x1aorg.megacommerce.orders.v1B\rOrderGetProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,14 +38,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.orders.v1B\rOrderGetProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\370\001\001'
   _globals['_ORDERITEM_METADATAENTRY']._loaded_options = None
   _globals['_ORDERITEM_METADATAENTRY']._serialized_options = b'8\001'
-  _globals['_ORDERITEM']._serialized_start=182
-  _globals['_ORDERITEM']._serialized_end=822
-  _globals['_ORDERITEM_METADATAENTRY']._serialized_start=760
-  _globals['_ORDERITEM_METADATAENTRY']._serialized_end=807
-  _globals['_PAYMENTSNAPSHOT']._serialized_start=825
-  _globals['_PAYMENTSNAPSHOT']._serialized_end=1005
-  _globals['_ORDERGETREQUEST']._serialized_start=1007
-  _globals['_ORDERGETREQUEST']._serialized_end=1042
-  _globals['_ORDERGETRESPONSE']._serialized_start=1044
-  _globals['_ORDERGETRESPONSE']._serialized_end=1150
+  _globals['_ORDERITEM']._serialized_start=159
+  _globals['_ORDERITEM']._serialized_end=799
+  _globals['_ORDERITEM_METADATAENTRY']._serialized_start=737
+  _globals['_ORDERITEM_METADATAENTRY']._serialized_end=784
+  _globals['_PAYMENTSNAPSHOT']._serialized_start=802
+  _globals['_PAYMENTSNAPSHOT']._serialized_end=982
+  _globals['_ORDERGETREQUEST']._serialized_start=984
+  _globals['_ORDERGETREQUEST']._serialized_end=1019
+  _globals['_ORDERGETRESPONSE']._serialized_start=1021
+  _globals['_ORDERGETRESPONSE']._serialized_end=1127
 # @@protoc_insertion_point(module_scope)

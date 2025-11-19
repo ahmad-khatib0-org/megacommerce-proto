@@ -356,7 +356,7 @@ pub struct OrderLineItem {
     pub applied_offer_ids: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// full product snapshot for audit/debug
     #[prost(message, optional, tag = "16")]
-    pub product_snapshot: ::core::option::Option<super::super::shared::v1::Any>,
+    pub product_snapshot: ::core::option::Option<super::super::shared::v1::Struct>,
     /// Timestamps
     ///
     /// UNIX timestamp
