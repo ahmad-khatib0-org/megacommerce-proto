@@ -47,6 +47,10 @@ export interface ConfigServices {
   authServicePrometheusUrl?: string | undefined;
   searchServiceGrpcUrl: string;
   searchServicePrometheusUrl: string;
+  ordersServiceGrpcUrl: string;
+  ordersServicePrometheusUrl: string;
+  inventoryServiceGrpcUrl: string;
+  inventoryServicePrometheusUrl: string;
 }
 
 export interface ConfigOAuth {
@@ -900,6 +904,10 @@ function createBaseConfigServices(): ConfigServices {
     authServicePrometheusUrl: undefined,
     searchServiceGrpcUrl: "",
     searchServicePrometheusUrl: "",
+    ordersServiceGrpcUrl: "",
+    ordersServicePrometheusUrl: "",
+    inventoryServiceGrpcUrl: "",
+    inventoryServicePrometheusUrl: "",
   };
 }
 
@@ -940,6 +948,18 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     }
     if (message.searchServicePrometheusUrl !== "") {
       writer.uint32(98).string(message.searchServicePrometheusUrl);
+    }
+    if (message.ordersServiceGrpcUrl !== "") {
+      writer.uint32(106).string(message.ordersServiceGrpcUrl);
+    }
+    if (message.ordersServicePrometheusUrl !== "") {
+      writer.uint32(114).string(message.ordersServicePrometheusUrl);
+    }
+    if (message.inventoryServiceGrpcUrl !== "") {
+      writer.uint32(122).string(message.inventoryServiceGrpcUrl);
+    }
+    if (message.inventoryServicePrometheusUrl !== "") {
+      writer.uint32(130).string(message.inventoryServicePrometheusUrl);
     }
     return writer;
   },
@@ -1047,6 +1067,38 @@ export const ConfigServices: MessageFns<ConfigServices> = {
           message.searchServicePrometheusUrl = reader.string();
           continue;
         }
+        case 13: {
+          if (tag !== 106) {
+            break;
+          }
+
+          message.ordersServiceGrpcUrl = reader.string();
+          continue;
+        }
+        case 14: {
+          if (tag !== 114) {
+            break;
+          }
+
+          message.ordersServicePrometheusUrl = reader.string();
+          continue;
+        }
+        case 15: {
+          if (tag !== 122) {
+            break;
+          }
+
+          message.inventoryServiceGrpcUrl = reader.string();
+          continue;
+        }
+        case 16: {
+          if (tag !== 130) {
+            break;
+          }
+
+          message.inventoryServicePrometheusUrl = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -1085,6 +1137,16 @@ export const ConfigServices: MessageFns<ConfigServices> = {
       searchServiceGrpcUrl: isSet(object.searchServiceGrpcUrl) ? globalThis.String(object.searchServiceGrpcUrl) : "",
       searchServicePrometheusUrl: isSet(object.searchServicePrometheusUrl)
         ? globalThis.String(object.searchServicePrometheusUrl)
+        : "",
+      ordersServiceGrpcUrl: isSet(object.ordersServiceGrpcUrl) ? globalThis.String(object.ordersServiceGrpcUrl) : "",
+      ordersServicePrometheusUrl: isSet(object.ordersServicePrometheusUrl)
+        ? globalThis.String(object.ordersServicePrometheusUrl)
+        : "",
+      inventoryServiceGrpcUrl: isSet(object.inventoryServiceGrpcUrl)
+        ? globalThis.String(object.inventoryServiceGrpcUrl)
+        : "",
+      inventoryServicePrometheusUrl: isSet(object.inventoryServicePrometheusUrl)
+        ? globalThis.String(object.inventoryServicePrometheusUrl)
         : "",
     };
   },
@@ -1127,6 +1189,18 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     if (message.searchServicePrometheusUrl !== "") {
       obj.searchServicePrometheusUrl = message.searchServicePrometheusUrl;
     }
+    if (message.ordersServiceGrpcUrl !== "") {
+      obj.ordersServiceGrpcUrl = message.ordersServiceGrpcUrl;
+    }
+    if (message.ordersServicePrometheusUrl !== "") {
+      obj.ordersServicePrometheusUrl = message.ordersServicePrometheusUrl;
+    }
+    if (message.inventoryServiceGrpcUrl !== "") {
+      obj.inventoryServiceGrpcUrl = message.inventoryServiceGrpcUrl;
+    }
+    if (message.inventoryServicePrometheusUrl !== "") {
+      obj.inventoryServicePrometheusUrl = message.inventoryServicePrometheusUrl;
+    }
     return obj;
   },
 
@@ -1147,6 +1221,10 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     message.authServicePrometheusUrl = object.authServicePrometheusUrl ?? undefined;
     message.searchServiceGrpcUrl = object.searchServiceGrpcUrl ?? "";
     message.searchServicePrometheusUrl = object.searchServicePrometheusUrl ?? "";
+    message.ordersServiceGrpcUrl = object.ordersServiceGrpcUrl ?? "";
+    message.ordersServicePrometheusUrl = object.ordersServicePrometheusUrl ?? "";
+    message.inventoryServiceGrpcUrl = object.inventoryServiceGrpcUrl ?? "";
+    message.inventoryServicePrometheusUrl = object.inventoryServicePrometheusUrl ?? "";
     return message;
   },
 };

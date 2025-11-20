@@ -240,6 +240,10 @@ type ConfigServices struct {
 	AuthServicePrometheusUrl               *string                `protobuf:"bytes,10,opt,name=auth_service_prometheus_url,json=authServicePrometheusUrl,proto3,oneof" json:"auth_service_prometheus_url,omitempty"`
 	SearchServiceGrpcUrl                   string                 `protobuf:"bytes,11,opt,name=search_service_grpc_url,json=searchServiceGrpcUrl,proto3" json:"search_service_grpc_url,omitempty"`
 	SearchServicePrometheusUrl             string                 `protobuf:"bytes,12,opt,name=search_service_prometheus_url,json=searchServicePrometheusUrl,proto3" json:"search_service_prometheus_url,omitempty"`
+	OrdersServiceGrpcUrl                   string                 `protobuf:"bytes,13,opt,name=orders_service_grpc_url,json=ordersServiceGrpcUrl,proto3" json:"orders_service_grpc_url,omitempty"`
+	OrdersServicePrometheusUrl             string                 `protobuf:"bytes,14,opt,name=orders_service_prometheus_url,json=ordersServicePrometheusUrl,proto3" json:"orders_service_prometheus_url,omitempty"`
+	InventoryServiceGrpcUrl                string                 `protobuf:"bytes,15,opt,name=inventory_service_grpc_url,json=inventoryServiceGrpcUrl,proto3" json:"inventory_service_grpc_url,omitempty"`
+	InventoryServicePrometheusUrl          string                 `protobuf:"bytes,16,opt,name=inventory_service_prometheus_url,json=inventoryServicePrometheusUrl,proto3" json:"inventory_service_prometheus_url,omitempty"`
 	unknownFields                          protoimpl.UnknownFields
 	sizeCache                              protoimpl.SizeCache
 }
@@ -354,6 +358,34 @@ func (x *ConfigServices) GetSearchServiceGrpcUrl() string {
 func (x *ConfigServices) GetSearchServicePrometheusUrl() string {
 	if x != nil {
 		return x.SearchServicePrometheusUrl
+	}
+	return ""
+}
+
+func (x *ConfigServices) GetOrdersServiceGrpcUrl() string {
+	if x != nil {
+		return x.OrdersServiceGrpcUrl
+	}
+	return ""
+}
+
+func (x *ConfigServices) GetOrdersServicePrometheusUrl() string {
+	if x != nil {
+		return x.OrdersServicePrometheusUrl
+	}
+	return ""
+}
+
+func (x *ConfigServices) GetInventoryServiceGrpcUrl() string {
+	if x != nil {
+		return x.InventoryServiceGrpcUrl
+	}
+	return ""
+}
+
+func (x *ConfigServices) GetInventoryServicePrometheusUrl() string {
+	if x != nil {
+		return x.InventoryServicePrometheusUrl
 	}
 	return ""
 }
@@ -3827,7 +3859,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\"_persistent_notification_max_countB)\n" +
 	"'_persistent_notification_max_recipientsB%\n" +
 	"#_feature_flag_sync_interval_secondsB\x16\n" +
-	"\x14_allow_synced_drafts\"\xea\b\n" +
+	"\x14_allow_synced_drafts\"\xea\n" +
+	"\n" +
 	"\x0eConfigServices\x12:\n" +
 	"\x17common_service_grpc_url\x18\x01 \x01(\tH\x00R\x14commonServiceGrpcUrl\x88\x01\x01\x126\n" +
 	"\x15user_service_grpc_url\x18\x02 \x01(\tH\x01R\x12userServiceGrpcUrl\x88\x01\x01\x12>\n" +
@@ -3841,7 +3874,11 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x1bauth_service_prometheus_url\x18\n" +
 	" \x01(\tH\tR\x18authServicePrometheusUrl\x88\x01\x01\x125\n" +
 	"\x17search_service_grpc_url\x18\v \x01(\tR\x14searchServiceGrpcUrl\x12A\n" +
-	"\x1dsearch_service_prometheus_url\x18\f \x01(\tR\x1asearchServicePrometheusUrlB\x1a\n" +
+	"\x1dsearch_service_prometheus_url\x18\f \x01(\tR\x1asearchServicePrometheusUrl\x125\n" +
+	"\x17orders_service_grpc_url\x18\r \x01(\tR\x14ordersServiceGrpcUrl\x12A\n" +
+	"\x1dorders_service_prometheus_url\x18\x0e \x01(\tR\x1aordersServicePrometheusUrl\x12;\n" +
+	"\x1ainventory_service_grpc_url\x18\x0f \x01(\tR\x17inventoryServiceGrpcUrl\x12G\n" +
+	" inventory_service_prometheus_url\x18\x10 \x01(\tR\x1dinventoryServicePrometheusUrlB\x1a\n" +
 	"\x18_common_service_grpc_urlB\x18\n" +
 	"\x16_user_service_grpc_urlB\x1c\n" +
 	"\x1a_products_service_grpc_urlB\x17\n" +

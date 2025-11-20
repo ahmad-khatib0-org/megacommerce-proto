@@ -974,6 +974,10 @@ class ConfigServices final : public ::google::protobuf::Message
     kAuthServicePrometheusUrlFieldNumber = 10,
     kSearchServiceGrpcUrlFieldNumber = 11,
     kSearchServicePrometheusUrlFieldNumber = 12,
+    kOrdersServiceGrpcUrlFieldNumber = 13,
+    kOrdersServicePrometheusUrlFieldNumber = 14,
+    kInventoryServiceGrpcUrlFieldNumber = 15,
+    kInventoryServicePrometheusUrlFieldNumber = 16,
     kUsersServiceMaxReceiveMessageSizeBytesFieldNumber = 8,
   };
   // optional string common_service_grpc_url = 1 [json_name = "commonServiceGrpcUrl"];
@@ -1150,6 +1154,66 @@ class ConfigServices final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_search_service_prometheus_url();
 
   public:
+  // string orders_service_grpc_url = 13 [json_name = "ordersServiceGrpcUrl"];
+  void clear_orders_service_grpc_url() ;
+  const ::std::string& orders_service_grpc_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_orders_service_grpc_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_orders_service_grpc_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_orders_service_grpc_url();
+  void set_allocated_orders_service_grpc_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_orders_service_grpc_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_orders_service_grpc_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_orders_service_grpc_url();
+
+  public:
+  // string orders_service_prometheus_url = 14 [json_name = "ordersServicePrometheusUrl"];
+  void clear_orders_service_prometheus_url() ;
+  const ::std::string& orders_service_prometheus_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_orders_service_prometheus_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_orders_service_prometheus_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_orders_service_prometheus_url();
+  void set_allocated_orders_service_prometheus_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_orders_service_prometheus_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_orders_service_prometheus_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_orders_service_prometheus_url();
+
+  public:
+  // string inventory_service_grpc_url = 15 [json_name = "inventoryServiceGrpcUrl"];
+  void clear_inventory_service_grpc_url() ;
+  const ::std::string& inventory_service_grpc_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_inventory_service_grpc_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_inventory_service_grpc_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_inventory_service_grpc_url();
+  void set_allocated_inventory_service_grpc_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_inventory_service_grpc_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_inventory_service_grpc_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_inventory_service_grpc_url();
+
+  public:
+  // string inventory_service_prometheus_url = 16 [json_name = "inventoryServicePrometheusUrl"];
+  void clear_inventory_service_prometheus_url() ;
+  const ::std::string& inventory_service_prometheus_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_inventory_service_prometheus_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_inventory_service_prometheus_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_inventory_service_prometheus_url();
+  void set_allocated_inventory_service_prometheus_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_inventory_service_prometheus_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_inventory_service_prometheus_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_inventory_service_prometheus_url();
+
+  public:
   // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
   bool has_users_service_max_receive_message_size_bytes() const;
   void clear_users_service_max_receive_message_size_bytes() ;
@@ -1165,8 +1229,8 @@ class ConfigServices final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<4, 12,
-                                   0, 317,
+  static const ::google::protobuf::internal::TcParseTable<4, 16,
+                                   0, 435,
                                    2>
       _table_;
 
@@ -1198,6 +1262,10 @@ class ConfigServices final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr auth_service_prometheus_url_;
     ::google::protobuf::internal::ArenaStringPtr search_service_grpc_url_;
     ::google::protobuf::internal::ArenaStringPtr search_service_prometheus_url_;
+    ::google::protobuf::internal::ArenaStringPtr orders_service_grpc_url_;
+    ::google::protobuf::internal::ArenaStringPtr orders_service_prometheus_url_;
+    ::google::protobuf::internal::ArenaStringPtr inventory_service_grpc_url_;
+    ::google::protobuf::internal::ArenaStringPtr inventory_service_prometheus_url_;
     ::int64_t users_service_max_receive_message_size_bytes_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -11917,13 +11985,13 @@ inline void ConfigServices::set_allocated_products_service_prometheus_url(::std:
 
 // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
 inline bool ConfigServices::has_users_service_max_receive_message_size_bytes() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline void ConfigServices::clear_users_service_max_receive_message_size_bytes() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.users_service_max_receive_message_size_bytes_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 inline ::int64_t ConfigServices::users_service_max_receive_message_size_bytes() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
@@ -11931,7 +11999,7 @@ inline ::int64_t ConfigServices::users_service_max_receive_message_size_bytes() 
 }
 inline void ConfigServices::set_users_service_max_receive_message_size_bytes(::int64_t value) {
   _internal_set_users_service_max_receive_message_size_bytes(value);
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00008000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
 }
 inline ::int64_t ConfigServices::_internal_users_service_max_receive_message_size_bytes() const {
@@ -12209,6 +12277,266 @@ inline void ConfigServices::set_allocated_search_service_prometheus_url(::std::s
     _impl_.search_service_prometheus_url_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.search_service_prometheus_url)
+}
+
+// string orders_service_grpc_url = 13 [json_name = "ordersServiceGrpcUrl"];
+inline void ConfigServices::clear_orders_service_grpc_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.orders_service_grpc_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000800u;
+}
+inline const ::std::string& ConfigServices::orders_service_grpc_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.orders_service_grpc_url)
+  return _internal_orders_service_grpc_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigServices::set_orders_service_grpc_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_.orders_service_grpc_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.orders_service_grpc_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_orders_service_grpc_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_orders_service_grpc_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.orders_service_grpc_url)
+  return _s;
+}
+inline const ::std::string& ConfigServices::_internal_orders_service_grpc_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.orders_service_grpc_url_.Get();
+}
+inline void ConfigServices::_internal_set_orders_service_grpc_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_.orders_service_grpc_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_orders_service_grpc_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000800u;
+  return _impl_.orders_service_grpc_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_orders_service_grpc_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.orders_service_grpc_url)
+  if ((_impl_._has_bits_[0] & 0x00000800u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000800u;
+  auto* released = _impl_.orders_service_grpc_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.orders_service_grpc_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigServices::set_allocated_orders_service_grpc_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000800u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000800u;
+  }
+  _impl_.orders_service_grpc_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.orders_service_grpc_url_.IsDefault()) {
+    _impl_.orders_service_grpc_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.orders_service_grpc_url)
+}
+
+// string orders_service_prometheus_url = 14 [json_name = "ordersServicePrometheusUrl"];
+inline void ConfigServices::clear_orders_service_prometheus_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.orders_service_prometheus_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00001000u;
+}
+inline const ::std::string& ConfigServices::orders_service_prometheus_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.orders_service_prometheus_url)
+  return _internal_orders_service_prometheus_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigServices::set_orders_service_prometheus_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_.orders_service_prometheus_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.orders_service_prometheus_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_orders_service_prometheus_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_orders_service_prometheus_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.orders_service_prometheus_url)
+  return _s;
+}
+inline const ::std::string& ConfigServices::_internal_orders_service_prometheus_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.orders_service_prometheus_url_.Get();
+}
+inline void ConfigServices::_internal_set_orders_service_prometheus_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_.orders_service_prometheus_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_orders_service_prometheus_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00001000u;
+  return _impl_.orders_service_prometheus_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_orders_service_prometheus_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.orders_service_prometheus_url)
+  if ((_impl_._has_bits_[0] & 0x00001000u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00001000u;
+  auto* released = _impl_.orders_service_prometheus_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.orders_service_prometheus_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigServices::set_allocated_orders_service_prometheus_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00001000u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00001000u;
+  }
+  _impl_.orders_service_prometheus_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.orders_service_prometheus_url_.IsDefault()) {
+    _impl_.orders_service_prometheus_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.orders_service_prometheus_url)
+}
+
+// string inventory_service_grpc_url = 15 [json_name = "inventoryServiceGrpcUrl"];
+inline void ConfigServices::clear_inventory_service_grpc_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.inventory_service_grpc_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00002000u;
+}
+inline const ::std::string& ConfigServices::inventory_service_grpc_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.inventory_service_grpc_url)
+  return _internal_inventory_service_grpc_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigServices::set_inventory_service_grpc_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_.inventory_service_grpc_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.inventory_service_grpc_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_inventory_service_grpc_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_inventory_service_grpc_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.inventory_service_grpc_url)
+  return _s;
+}
+inline const ::std::string& ConfigServices::_internal_inventory_service_grpc_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.inventory_service_grpc_url_.Get();
+}
+inline void ConfigServices::_internal_set_inventory_service_grpc_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_.inventory_service_grpc_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_inventory_service_grpc_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00002000u;
+  return _impl_.inventory_service_grpc_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_inventory_service_grpc_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.inventory_service_grpc_url)
+  if ((_impl_._has_bits_[0] & 0x00002000u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00002000u;
+  auto* released = _impl_.inventory_service_grpc_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.inventory_service_grpc_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigServices::set_allocated_inventory_service_grpc_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00002000u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00002000u;
+  }
+  _impl_.inventory_service_grpc_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.inventory_service_grpc_url_.IsDefault()) {
+    _impl_.inventory_service_grpc_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.inventory_service_grpc_url)
+}
+
+// string inventory_service_prometheus_url = 16 [json_name = "inventoryServicePrometheusUrl"];
+inline void ConfigServices::clear_inventory_service_prometheus_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.inventory_service_prometheus_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00004000u;
+}
+inline const ::std::string& ConfigServices::inventory_service_prometheus_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.inventory_service_prometheus_url)
+  return _internal_inventory_service_prometheus_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigServices::set_inventory_service_prometheus_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_.inventory_service_prometheus_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.inventory_service_prometheus_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_inventory_service_prometheus_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_inventory_service_prometheus_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.inventory_service_prometheus_url)
+  return _s;
+}
+inline const ::std::string& ConfigServices::_internal_inventory_service_prometheus_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.inventory_service_prometheus_url_.Get();
+}
+inline void ConfigServices::_internal_set_inventory_service_prometheus_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_.inventory_service_prometheus_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_inventory_service_prometheus_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00004000u;
+  return _impl_.inventory_service_prometheus_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_inventory_service_prometheus_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.inventory_service_prometheus_url)
+  if ((_impl_._has_bits_[0] & 0x00004000u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00004000u;
+  auto* released = _impl_.inventory_service_prometheus_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.inventory_service_prometheus_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigServices::set_allocated_inventory_service_prometheus_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00004000u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00004000u;
+  }
+  _impl_.inventory_service_prometheus_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.inventory_service_prometheus_url_.IsDefault()) {
+    _impl_.inventory_service_prometheus_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.inventory_service_prometheus_url)
 }
 
 // -------------------------------------------------------------------

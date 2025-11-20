@@ -82,6 +82,14 @@ pub struct ConfigServices {
     pub search_service_grpc_url: ::prost::alloc::string::String,
     #[prost(string, tag = "12")]
     pub search_service_prometheus_url: ::prost::alloc::string::String,
+    #[prost(string, tag = "13")]
+    pub orders_service_grpc_url: ::prost::alloc::string::String,
+    #[prost(string, tag = "14")]
+    pub orders_service_prometheus_url: ::prost::alloc::string::String,
+    #[prost(string, tag = "15")]
+    pub inventory_service_grpc_url: ::prost::alloc::string::String,
+    #[prost(string, tag = "16")]
+    pub inventory_service_prometheus_url: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
