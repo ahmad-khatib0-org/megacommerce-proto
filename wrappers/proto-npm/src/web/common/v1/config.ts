@@ -49,8 +49,10 @@ export interface ConfigServices {
   searchServicePrometheusUrl: string;
   ordersServiceGrpcUrl: string;
   ordersServicePrometheusUrl: string;
+  ordersServiceMaxReceiveMessageSizeBytes: string;
   inventoryServiceGrpcUrl: string;
   inventoryServicePrometheusUrl: string;
+  inventoryServiceMaxReceiveMessageSizeBytes: string;
 }
 
 export interface ConfigOAuth {
@@ -906,8 +908,10 @@ function createBaseConfigServices(): ConfigServices {
     searchServicePrometheusUrl: "",
     ordersServiceGrpcUrl: "",
     ordersServicePrometheusUrl: "",
+    ordersServiceMaxReceiveMessageSizeBytes: "0",
     inventoryServiceGrpcUrl: "",
     inventoryServicePrometheusUrl: "",
+    inventoryServiceMaxReceiveMessageSizeBytes: "0",
   };
 }
 
@@ -955,11 +959,17 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     if (message.ordersServicePrometheusUrl !== "") {
       writer.uint32(114).string(message.ordersServicePrometheusUrl);
     }
+    if (message.ordersServiceMaxReceiveMessageSizeBytes !== "0") {
+      writer.uint32(120).int64(message.ordersServiceMaxReceiveMessageSizeBytes);
+    }
     if (message.inventoryServiceGrpcUrl !== "") {
-      writer.uint32(122).string(message.inventoryServiceGrpcUrl);
+      writer.uint32(130).string(message.inventoryServiceGrpcUrl);
     }
     if (message.inventoryServicePrometheusUrl !== "") {
-      writer.uint32(130).string(message.inventoryServicePrometheusUrl);
+      writer.uint32(138).string(message.inventoryServicePrometheusUrl);
+    }
+    if (message.inventoryServiceMaxReceiveMessageSizeBytes !== "0") {
+      writer.uint32(144).int64(message.inventoryServiceMaxReceiveMessageSizeBytes);
     }
     return writer;
   },
@@ -1084,11 +1094,11 @@ export const ConfigServices: MessageFns<ConfigServices> = {
           continue;
         }
         case 15: {
-          if (tag !== 122) {
+          if (tag !== 120) {
             break;
           }
 
-          message.inventoryServiceGrpcUrl = reader.string();
+          message.ordersServiceMaxReceiveMessageSizeBytes = reader.int64().toString();
           continue;
         }
         case 16: {
@@ -1096,7 +1106,23 @@ export const ConfigServices: MessageFns<ConfigServices> = {
             break;
           }
 
+          message.inventoryServiceGrpcUrl = reader.string();
+          continue;
+        }
+        case 17: {
+          if (tag !== 138) {
+            break;
+          }
+
           message.inventoryServicePrometheusUrl = reader.string();
+          continue;
+        }
+        case 18: {
+          if (tag !== 144) {
+            break;
+          }
+
+          message.inventoryServiceMaxReceiveMessageSizeBytes = reader.int64().toString();
           continue;
         }
       }
@@ -1142,12 +1168,18 @@ export const ConfigServices: MessageFns<ConfigServices> = {
       ordersServicePrometheusUrl: isSet(object.ordersServicePrometheusUrl)
         ? globalThis.String(object.ordersServicePrometheusUrl)
         : "",
+      ordersServiceMaxReceiveMessageSizeBytes: isSet(object.ordersServiceMaxReceiveMessageSizeBytes)
+        ? globalThis.String(object.ordersServiceMaxReceiveMessageSizeBytes)
+        : "0",
       inventoryServiceGrpcUrl: isSet(object.inventoryServiceGrpcUrl)
         ? globalThis.String(object.inventoryServiceGrpcUrl)
         : "",
       inventoryServicePrometheusUrl: isSet(object.inventoryServicePrometheusUrl)
         ? globalThis.String(object.inventoryServicePrometheusUrl)
         : "",
+      inventoryServiceMaxReceiveMessageSizeBytes: isSet(object.inventoryServiceMaxReceiveMessageSizeBytes)
+        ? globalThis.String(object.inventoryServiceMaxReceiveMessageSizeBytes)
+        : "0",
     };
   },
 
@@ -1195,11 +1227,17 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     if (message.ordersServicePrometheusUrl !== "") {
       obj.ordersServicePrometheusUrl = message.ordersServicePrometheusUrl;
     }
+    if (message.ordersServiceMaxReceiveMessageSizeBytes !== "0") {
+      obj.ordersServiceMaxReceiveMessageSizeBytes = message.ordersServiceMaxReceiveMessageSizeBytes;
+    }
     if (message.inventoryServiceGrpcUrl !== "") {
       obj.inventoryServiceGrpcUrl = message.inventoryServiceGrpcUrl;
     }
     if (message.inventoryServicePrometheusUrl !== "") {
       obj.inventoryServicePrometheusUrl = message.inventoryServicePrometheusUrl;
+    }
+    if (message.inventoryServiceMaxReceiveMessageSizeBytes !== "0") {
+      obj.inventoryServiceMaxReceiveMessageSizeBytes = message.inventoryServiceMaxReceiveMessageSizeBytes;
     }
     return obj;
   },
@@ -1223,8 +1261,10 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     message.searchServicePrometheusUrl = object.searchServicePrometheusUrl ?? "";
     message.ordersServiceGrpcUrl = object.ordersServiceGrpcUrl ?? "";
     message.ordersServicePrometheusUrl = object.ordersServicePrometheusUrl ?? "";
+    message.ordersServiceMaxReceiveMessageSizeBytes = object.ordersServiceMaxReceiveMessageSizeBytes ?? "0";
     message.inventoryServiceGrpcUrl = object.inventoryServiceGrpcUrl ?? "";
     message.inventoryServicePrometheusUrl = object.inventoryServicePrometheusUrl ?? "";
+    message.inventoryServiceMaxReceiveMessageSizeBytes = object.inventoryServiceMaxReceiveMessageSizeBytes ?? "0";
     return message;
   },
 };

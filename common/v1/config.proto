@@ -48,8 +48,10 @@ message ConfigServices {
   string search_service_prometheus_url = 12;
   string orders_service_grpc_url = 13;
   string orders_service_prometheus_url = 14;
-  string inventory_service_grpc_url = 15;
-  string inventory_service_prometheus_url = 16;
+  int64 orders_service_max_receive_message_size_bytes = 15;
+  string inventory_service_grpc_url = 16;
+  string inventory_service_prometheus_url = 17;
+  int64 inventory_service_max_receive_message_size_bytes = 18;
 }
 
 message ConfigOAuth {

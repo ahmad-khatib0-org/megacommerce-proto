@@ -86,10 +86,14 @@ pub struct ConfigServices {
     pub orders_service_grpc_url: ::prost::alloc::string::String,
     #[prost(string, tag = "14")]
     pub orders_service_prometheus_url: ::prost::alloc::string::String,
-    #[prost(string, tag = "15")]
-    pub inventory_service_grpc_url: ::prost::alloc::string::String,
+    #[prost(int64, tag = "15")]
+    pub orders_service_max_receive_message_size_bytes: i64,
     #[prost(string, tag = "16")]
+    pub inventory_service_grpc_url: ::prost::alloc::string::String,
+    #[prost(string, tag = "17")]
     pub inventory_service_prometheus_url: ::prost::alloc::string::String,
+    #[prost(int64, tag = "18")]
+    pub inventory_service_max_receive_message_size_bytes: i64,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

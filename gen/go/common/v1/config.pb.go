@@ -227,25 +227,27 @@ func (x *ConfigMain) GetAllowSyncedDrafts() bool {
 }
 
 type ConfigServices struct {
-	state                                  protoimpl.MessageState `protogen:"open.v1"`
-	CommonServiceGrpcUrl                   *string                `protobuf:"bytes,1,opt,name=common_service_grpc_url,json=commonServiceGrpcUrl,proto3,oneof" json:"common_service_grpc_url,omitempty"`
-	UserServiceGrpcUrl                     *string                `protobuf:"bytes,2,opt,name=user_service_grpc_url,json=userServiceGrpcUrl,proto3,oneof" json:"user_service_grpc_url,omitempty"`
-	ProductsServiceGrpcUrl                 *string                `protobuf:"bytes,3,opt,name=products_service_grpc_url,json=productsServiceGrpcUrl,proto3,oneof" json:"products_service_grpc_url,omitempty"`
-	JaegerCollectorUrl                     *string                `protobuf:"bytes,4,opt,name=jaeger_collector_url,json=jaegerCollectorUrl,proto3,oneof" json:"jaeger_collector_url,omitempty"`
-	CommonServicePrometheusUrl             *string                `protobuf:"bytes,5,opt,name=common_service_prometheus_url,json=commonServicePrometheusUrl,proto3,oneof" json:"common_service_prometheus_url,omitempty"`
-	UserServicePrometheusUrl               *string                `protobuf:"bytes,6,opt,name=user_service_prometheus_url,json=userServicePrometheusUrl,proto3,oneof" json:"user_service_prometheus_url,omitempty"`
-	ProductsServicePrometheusUrl           *string                `protobuf:"bytes,7,opt,name=products_service_prometheus_url,json=productsServicePrometheusUrl,proto3,oneof" json:"products_service_prometheus_url,omitempty"`
-	UsersServiceMaxReceiveMessageSizeBytes *int64                 `protobuf:"varint,8,opt,name=users_service_max_receive_message_size_bytes,json=usersServiceMaxReceiveMessageSizeBytes,proto3,oneof" json:"users_service_max_receive_message_size_bytes,omitempty"`
-	AuthServiceGrpcUrl                     *string                `protobuf:"bytes,9,opt,name=auth_service_grpc_url,json=authServiceGrpcUrl,proto3,oneof" json:"auth_service_grpc_url,omitempty"`
-	AuthServicePrometheusUrl               *string                `protobuf:"bytes,10,opt,name=auth_service_prometheus_url,json=authServicePrometheusUrl,proto3,oneof" json:"auth_service_prometheus_url,omitempty"`
-	SearchServiceGrpcUrl                   string                 `protobuf:"bytes,11,opt,name=search_service_grpc_url,json=searchServiceGrpcUrl,proto3" json:"search_service_grpc_url,omitempty"`
-	SearchServicePrometheusUrl             string                 `protobuf:"bytes,12,opt,name=search_service_prometheus_url,json=searchServicePrometheusUrl,proto3" json:"search_service_prometheus_url,omitempty"`
-	OrdersServiceGrpcUrl                   string                 `protobuf:"bytes,13,opt,name=orders_service_grpc_url,json=ordersServiceGrpcUrl,proto3" json:"orders_service_grpc_url,omitempty"`
-	OrdersServicePrometheusUrl             string                 `protobuf:"bytes,14,opt,name=orders_service_prometheus_url,json=ordersServicePrometheusUrl,proto3" json:"orders_service_prometheus_url,omitempty"`
-	InventoryServiceGrpcUrl                string                 `protobuf:"bytes,15,opt,name=inventory_service_grpc_url,json=inventoryServiceGrpcUrl,proto3" json:"inventory_service_grpc_url,omitempty"`
-	InventoryServicePrometheusUrl          string                 `protobuf:"bytes,16,opt,name=inventory_service_prometheus_url,json=inventoryServicePrometheusUrl,proto3" json:"inventory_service_prometheus_url,omitempty"`
-	unknownFields                          protoimpl.UnknownFields
-	sizeCache                              protoimpl.SizeCache
+	state                                      protoimpl.MessageState `protogen:"open.v1"`
+	CommonServiceGrpcUrl                       *string                `protobuf:"bytes,1,opt,name=common_service_grpc_url,json=commonServiceGrpcUrl,proto3,oneof" json:"common_service_grpc_url,omitempty"`
+	UserServiceGrpcUrl                         *string                `protobuf:"bytes,2,opt,name=user_service_grpc_url,json=userServiceGrpcUrl,proto3,oneof" json:"user_service_grpc_url,omitempty"`
+	ProductsServiceGrpcUrl                     *string                `protobuf:"bytes,3,opt,name=products_service_grpc_url,json=productsServiceGrpcUrl,proto3,oneof" json:"products_service_grpc_url,omitempty"`
+	JaegerCollectorUrl                         *string                `protobuf:"bytes,4,opt,name=jaeger_collector_url,json=jaegerCollectorUrl,proto3,oneof" json:"jaeger_collector_url,omitempty"`
+	CommonServicePrometheusUrl                 *string                `protobuf:"bytes,5,opt,name=common_service_prometheus_url,json=commonServicePrometheusUrl,proto3,oneof" json:"common_service_prometheus_url,omitempty"`
+	UserServicePrometheusUrl                   *string                `protobuf:"bytes,6,opt,name=user_service_prometheus_url,json=userServicePrometheusUrl,proto3,oneof" json:"user_service_prometheus_url,omitempty"`
+	ProductsServicePrometheusUrl               *string                `protobuf:"bytes,7,opt,name=products_service_prometheus_url,json=productsServicePrometheusUrl,proto3,oneof" json:"products_service_prometheus_url,omitempty"`
+	UsersServiceMaxReceiveMessageSizeBytes     *int64                 `protobuf:"varint,8,opt,name=users_service_max_receive_message_size_bytes,json=usersServiceMaxReceiveMessageSizeBytes,proto3,oneof" json:"users_service_max_receive_message_size_bytes,omitempty"`
+	AuthServiceGrpcUrl                         *string                `protobuf:"bytes,9,opt,name=auth_service_grpc_url,json=authServiceGrpcUrl,proto3,oneof" json:"auth_service_grpc_url,omitempty"`
+	AuthServicePrometheusUrl                   *string                `protobuf:"bytes,10,opt,name=auth_service_prometheus_url,json=authServicePrometheusUrl,proto3,oneof" json:"auth_service_prometheus_url,omitempty"`
+	SearchServiceGrpcUrl                       string                 `protobuf:"bytes,11,opt,name=search_service_grpc_url,json=searchServiceGrpcUrl,proto3" json:"search_service_grpc_url,omitempty"`
+	SearchServicePrometheusUrl                 string                 `protobuf:"bytes,12,opt,name=search_service_prometheus_url,json=searchServicePrometheusUrl,proto3" json:"search_service_prometheus_url,omitempty"`
+	OrdersServiceGrpcUrl                       string                 `protobuf:"bytes,13,opt,name=orders_service_grpc_url,json=ordersServiceGrpcUrl,proto3" json:"orders_service_grpc_url,omitempty"`
+	OrdersServicePrometheusUrl                 string                 `protobuf:"bytes,14,opt,name=orders_service_prometheus_url,json=ordersServicePrometheusUrl,proto3" json:"orders_service_prometheus_url,omitempty"`
+	OrdersServiceMaxReceiveMessageSizeBytes    int64                  `protobuf:"varint,15,opt,name=orders_service_max_receive_message_size_bytes,json=ordersServiceMaxReceiveMessageSizeBytes,proto3" json:"orders_service_max_receive_message_size_bytes,omitempty"`
+	InventoryServiceGrpcUrl                    string                 `protobuf:"bytes,16,opt,name=inventory_service_grpc_url,json=inventoryServiceGrpcUrl,proto3" json:"inventory_service_grpc_url,omitempty"`
+	InventoryServicePrometheusUrl              string                 `protobuf:"bytes,17,opt,name=inventory_service_prometheus_url,json=inventoryServicePrometheusUrl,proto3" json:"inventory_service_prometheus_url,omitempty"`
+	InventoryServiceMaxReceiveMessageSizeBytes int64                  `protobuf:"varint,18,opt,name=inventory_service_max_receive_message_size_bytes,json=inventoryServiceMaxReceiveMessageSizeBytes,proto3" json:"inventory_service_max_receive_message_size_bytes,omitempty"`
+	unknownFields                              protoimpl.UnknownFields
+	sizeCache                                  protoimpl.SizeCache
 }
 
 func (x *ConfigServices) Reset() {
@@ -376,6 +378,13 @@ func (x *ConfigServices) GetOrdersServicePrometheusUrl() string {
 	return ""
 }
 
+func (x *ConfigServices) GetOrdersServiceMaxReceiveMessageSizeBytes() int64 {
+	if x != nil {
+		return x.OrdersServiceMaxReceiveMessageSizeBytes
+	}
+	return 0
+}
+
 func (x *ConfigServices) GetInventoryServiceGrpcUrl() string {
 	if x != nil {
 		return x.InventoryServiceGrpcUrl
@@ -388,6 +397,13 @@ func (x *ConfigServices) GetInventoryServicePrometheusUrl() string {
 		return x.InventoryServicePrometheusUrl
 	}
 	return ""
+}
+
+func (x *ConfigServices) GetInventoryServiceMaxReceiveMessageSizeBytes() int64 {
+	if x != nil {
+		return x.InventoryServiceMaxReceiveMessageSizeBytes
+	}
+	return 0
 }
 
 type ConfigOAuth struct {
@@ -3859,8 +3875,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\"_persistent_notification_max_countB)\n" +
 	"'_persistent_notification_max_recipientsB%\n" +
 	"#_feature_flag_sync_interval_secondsB\x16\n" +
-	"\x14_allow_synced_drafts\"\xea\n" +
-	"\n" +
+	"\x14_allow_synced_drafts\"\xb0\f\n" +
 	"\x0eConfigServices\x12:\n" +
 	"\x17common_service_grpc_url\x18\x01 \x01(\tH\x00R\x14commonServiceGrpcUrl\x88\x01\x01\x126\n" +
 	"\x15user_service_grpc_url\x18\x02 \x01(\tH\x01R\x12userServiceGrpcUrl\x88\x01\x01\x12>\n" +
@@ -3876,9 +3891,11 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x17search_service_grpc_url\x18\v \x01(\tR\x14searchServiceGrpcUrl\x12A\n" +
 	"\x1dsearch_service_prometheus_url\x18\f \x01(\tR\x1asearchServicePrometheusUrl\x125\n" +
 	"\x17orders_service_grpc_url\x18\r \x01(\tR\x14ordersServiceGrpcUrl\x12A\n" +
-	"\x1dorders_service_prometheus_url\x18\x0e \x01(\tR\x1aordersServicePrometheusUrl\x12;\n" +
-	"\x1ainventory_service_grpc_url\x18\x0f \x01(\tR\x17inventoryServiceGrpcUrl\x12G\n" +
-	" inventory_service_prometheus_url\x18\x10 \x01(\tR\x1dinventoryServicePrometheusUrlB\x1a\n" +
+	"\x1dorders_service_prometheus_url\x18\x0e \x01(\tR\x1aordersServicePrometheusUrl\x12^\n" +
+	"-orders_service_max_receive_message_size_bytes\x18\x0f \x01(\x03R'ordersServiceMaxReceiveMessageSizeBytes\x12;\n" +
+	"\x1ainventory_service_grpc_url\x18\x10 \x01(\tR\x17inventoryServiceGrpcUrl\x12G\n" +
+	" inventory_service_prometheus_url\x18\x11 \x01(\tR\x1dinventoryServicePrometheusUrl\x12d\n" +
+	"0inventory_service_max_receive_message_size_bytes\x18\x12 \x01(\x03R*inventoryServiceMaxReceiveMessageSizeBytesB\x1a\n" +
 	"\x18_common_service_grpc_urlB\x18\n" +
 	"\x16_user_service_grpc_urlB\x1c\n" +
 	"\x1a_products_service_grpc_urlB\x17\n" +

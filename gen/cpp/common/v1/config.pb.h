@@ -976,9 +976,11 @@ class ConfigServices final : public ::google::protobuf::Message
     kSearchServicePrometheusUrlFieldNumber = 12,
     kOrdersServiceGrpcUrlFieldNumber = 13,
     kOrdersServicePrometheusUrlFieldNumber = 14,
-    kInventoryServiceGrpcUrlFieldNumber = 15,
-    kInventoryServicePrometheusUrlFieldNumber = 16,
+    kInventoryServiceGrpcUrlFieldNumber = 16,
+    kInventoryServicePrometheusUrlFieldNumber = 17,
     kUsersServiceMaxReceiveMessageSizeBytesFieldNumber = 8,
+    kOrdersServiceMaxReceiveMessageSizeBytesFieldNumber = 15,
+    kInventoryServiceMaxReceiveMessageSizeBytesFieldNumber = 18,
   };
   // optional string common_service_grpc_url = 1 [json_name = "commonServiceGrpcUrl"];
   bool has_common_service_grpc_url() const;
@@ -1184,7 +1186,7 @@ class ConfigServices final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_orders_service_prometheus_url();
 
   public:
-  // string inventory_service_grpc_url = 15 [json_name = "inventoryServiceGrpcUrl"];
+  // string inventory_service_grpc_url = 16 [json_name = "inventoryServiceGrpcUrl"];
   void clear_inventory_service_grpc_url() ;
   const ::std::string& inventory_service_grpc_url() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1199,7 +1201,7 @@ class ConfigServices final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_inventory_service_grpc_url();
 
   public:
-  // string inventory_service_prometheus_url = 16 [json_name = "inventoryServicePrometheusUrl"];
+  // string inventory_service_prometheus_url = 17 [json_name = "inventoryServicePrometheusUrl"];
   void clear_inventory_service_prometheus_url() ;
   const ::std::string& inventory_service_prometheus_url() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -1225,11 +1227,31 @@ class ConfigServices final : public ::google::protobuf::Message
   void _internal_set_users_service_max_receive_message_size_bytes(::int64_t value);
 
   public:
+  // int64 orders_service_max_receive_message_size_bytes = 15 [json_name = "ordersServiceMaxReceiveMessageSizeBytes"];
+  void clear_orders_service_max_receive_message_size_bytes() ;
+  ::int64_t orders_service_max_receive_message_size_bytes() const;
+  void set_orders_service_max_receive_message_size_bytes(::int64_t value);
+
+  private:
+  ::int64_t _internal_orders_service_max_receive_message_size_bytes() const;
+  void _internal_set_orders_service_max_receive_message_size_bytes(::int64_t value);
+
+  public:
+  // int64 inventory_service_max_receive_message_size_bytes = 18 [json_name = "inventoryServiceMaxReceiveMessageSizeBytes"];
+  void clear_inventory_service_max_receive_message_size_bytes() ;
+  ::int64_t inventory_service_max_receive_message_size_bytes() const;
+  void set_inventory_service_max_receive_message_size_bytes(::int64_t value);
+
+  private:
+  ::int64_t _internal_inventory_service_max_receive_message_size_bytes() const;
+  void _internal_set_inventory_service_max_receive_message_size_bytes(::int64_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.ConfigServices)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<4, 16,
+  static const ::google::protobuf::internal::TcParseTable<5, 18,
                                    0, 435,
                                    2>
       _table_;
@@ -1267,6 +1289,8 @@ class ConfigServices final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr inventory_service_grpc_url_;
     ::google::protobuf::internal::ArenaStringPtr inventory_service_prometheus_url_;
     ::int64_t users_service_max_receive_message_size_bytes_;
+    ::int64_t orders_service_max_receive_message_size_bytes_;
+    ::int64_t inventory_service_max_receive_message_size_bytes_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -12409,7 +12433,31 @@ inline void ConfigServices::set_allocated_orders_service_prometheus_url(::std::s
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.orders_service_prometheus_url)
 }
 
-// string inventory_service_grpc_url = 15 [json_name = "inventoryServiceGrpcUrl"];
+// int64 orders_service_max_receive_message_size_bytes = 15 [json_name = "ordersServiceMaxReceiveMessageSizeBytes"];
+inline void ConfigServices::clear_orders_service_max_receive_message_size_bytes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.orders_service_max_receive_message_size_bytes_ = ::int64_t{0};
+  _impl_._has_bits_[0] &= ~0x00010000u;
+}
+inline ::int64_t ConfigServices::orders_service_max_receive_message_size_bytes() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.orders_service_max_receive_message_size_bytes)
+  return _internal_orders_service_max_receive_message_size_bytes();
+}
+inline void ConfigServices::set_orders_service_max_receive_message_size_bytes(::int64_t value) {
+  _internal_set_orders_service_max_receive_message_size_bytes(value);
+  _impl_._has_bits_[0] |= 0x00010000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.orders_service_max_receive_message_size_bytes)
+}
+inline ::int64_t ConfigServices::_internal_orders_service_max_receive_message_size_bytes() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.orders_service_max_receive_message_size_bytes_;
+}
+inline void ConfigServices::_internal_set_orders_service_max_receive_message_size_bytes(::int64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.orders_service_max_receive_message_size_bytes_ = value;
+}
+
+// string inventory_service_grpc_url = 16 [json_name = "inventoryServiceGrpcUrl"];
 inline void ConfigServices::clear_inventory_service_grpc_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.inventory_service_grpc_url_.ClearToEmpty();
@@ -12474,7 +12522,7 @@ inline void ConfigServices::set_allocated_inventory_service_grpc_url(::std::stri
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.inventory_service_grpc_url)
 }
 
-// string inventory_service_prometheus_url = 16 [json_name = "inventoryServicePrometheusUrl"];
+// string inventory_service_prometheus_url = 17 [json_name = "inventoryServicePrometheusUrl"];
 inline void ConfigServices::clear_inventory_service_prometheus_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.inventory_service_prometheus_url_.ClearToEmpty();
@@ -12537,6 +12585,30 @@ inline void ConfigServices::set_allocated_inventory_service_prometheus_url(::std
     _impl_.inventory_service_prometheus_url_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.inventory_service_prometheus_url)
+}
+
+// int64 inventory_service_max_receive_message_size_bytes = 18 [json_name = "inventoryServiceMaxReceiveMessageSizeBytes"];
+inline void ConfigServices::clear_inventory_service_max_receive_message_size_bytes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.inventory_service_max_receive_message_size_bytes_ = ::int64_t{0};
+  _impl_._has_bits_[0] &= ~0x00020000u;
+}
+inline ::int64_t ConfigServices::inventory_service_max_receive_message_size_bytes() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.inventory_service_max_receive_message_size_bytes)
+  return _internal_inventory_service_max_receive_message_size_bytes();
+}
+inline void ConfigServices::set_inventory_service_max_receive_message_size_bytes(::int64_t value) {
+  _internal_set_inventory_service_max_receive_message_size_bytes(value);
+  _impl_._has_bits_[0] |= 0x00020000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.inventory_service_max_receive_message_size_bytes)
+}
+inline ::int64_t ConfigServices::_internal_inventory_service_max_receive_message_size_bytes() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.inventory_service_max_receive_message_size_bytes_;
+}
+inline void ConfigServices::_internal_set_inventory_service_max_receive_message_size_bytes(::int64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.inventory_service_max_receive_message_size_bytes_ = value;
 }
 
 // -------------------------------------------------------------------

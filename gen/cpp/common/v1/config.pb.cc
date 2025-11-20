@@ -160,7 +160,9 @@ inline constexpr ConfigServices::Impl_::Impl_(
         inventory_service_prometheus_url_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        users_service_max_receive_message_size_bytes_{::int64_t{0}} {}
+        users_service_max_receive_message_size_bytes_{::int64_t{0}},
+        orders_service_max_receive_message_size_bytes_{::int64_t{0}},
+        inventory_service_max_receive_message_size_bytes_{::int64_t{0}} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR ConfigServices::ConfigServices(::_pbi::ConstantInitialized)
@@ -1413,7 +1415,7 @@ const ::uint32_t
         16,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_._has_bits_),
-        19, // hasbit index offset
+        21, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.common_service_grpc_url_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.user_service_grpc_url_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.products_service_grpc_url_),
@@ -1428,8 +1430,10 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.search_service_prometheus_url_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.orders_service_grpc_url_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.orders_service_prometheus_url_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.orders_service_max_receive_message_size_bytes_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.inventory_service_grpc_url_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.inventory_service_prometheus_url_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, _impl_.inventory_service_max_receive_message_size_bytes_),
         0,
         1,
         2,
@@ -1444,8 +1448,10 @@ const ::uint32_t
         10,
         11,
         12,
+        16,
         13,
         14,
+        17,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigOAuth, _impl_._has_bits_),
         17, // hasbit index offset
@@ -2104,34 +2110,34 @@ static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::common::v1::ConfigMain)},
         {45, sizeof(::common::v1::ConfigServices)},
-        {80, sizeof(::common::v1::ConfigOAuth)},
-        {111, sizeof(::common::v1::ConfigSecurity)},
-        {156, sizeof(::common::v1::CacheConfig)},
-        {171, sizeof(::common::v1::ConfigMetrics)},
-        {186, sizeof(::common::v1::ConfigSSO)},
-        {209, sizeof(::common::v1::ConfigSql)},
-        {232, sizeof(::common::v1::ConfigPassword)},
-        {249, sizeof(::common::v1::ConfigFile)},
-        {290, sizeof(::common::v1::ConfigEmail)},
-        {345, sizeof(::common::v1::ConfigRateLimit)},
-        {362, sizeof(::common::v1::ConfigPrivacy)},
-        {369, sizeof(::common::v1::ConfigSupport)},
-        {386, sizeof(::common::v1::ConfigLocalization)},
-        {395, sizeof(::common::v1::ConfigLdap)},
-        {460, sizeof(::common::v1::ConfigSaml)},
-        {529, sizeof(::common::v1::ConfigNativeApp)},
-        {548, sizeof(::common::v1::ConfigMeilisearch)},
-        {587, sizeof(::common::v1::ConfigBleve)},
-        {602, sizeof(::common::v1::ConfigDataRetention)},
-        {625, sizeof(::common::v1::ConfigImageProxy)},
-        {636, sizeof(::common::v1::ConfigProducts)},
-        {657, sizeof(::common::v1::Config)},
-        {706, sizeof(::common::v1::ConfigGetRequest)},
-        {707, sizeof(::common::v1::ConfigGetResponse)},
-        {712, sizeof(::common::v1::ConfigUpdateRequest)},
-        {717, sizeof(::common::v1::ConfigUpdateResponse)},
-        {722, sizeof(::common::v1::ConfigListenerResponse)},
-        {727, sizeof(::common::v1::ConfigListenerRequest)},
+        {84, sizeof(::common::v1::ConfigOAuth)},
+        {115, sizeof(::common::v1::ConfigSecurity)},
+        {160, sizeof(::common::v1::CacheConfig)},
+        {175, sizeof(::common::v1::ConfigMetrics)},
+        {190, sizeof(::common::v1::ConfigSSO)},
+        {213, sizeof(::common::v1::ConfigSql)},
+        {236, sizeof(::common::v1::ConfigPassword)},
+        {253, sizeof(::common::v1::ConfigFile)},
+        {294, sizeof(::common::v1::ConfigEmail)},
+        {349, sizeof(::common::v1::ConfigRateLimit)},
+        {366, sizeof(::common::v1::ConfigPrivacy)},
+        {373, sizeof(::common::v1::ConfigSupport)},
+        {390, sizeof(::common::v1::ConfigLocalization)},
+        {399, sizeof(::common::v1::ConfigLdap)},
+        {464, sizeof(::common::v1::ConfigSaml)},
+        {533, sizeof(::common::v1::ConfigNativeApp)},
+        {552, sizeof(::common::v1::ConfigMeilisearch)},
+        {591, sizeof(::common::v1::ConfigBleve)},
+        {606, sizeof(::common::v1::ConfigDataRetention)},
+        {629, sizeof(::common::v1::ConfigImageProxy)},
+        {640, sizeof(::common::v1::ConfigProducts)},
+        {661, sizeof(::common::v1::Config)},
+        {710, sizeof(::common::v1::ConfigGetRequest)},
+        {711, sizeof(::common::v1::ConfigGetResponse)},
+        {716, sizeof(::common::v1::ConfigUpdateRequest)},
+        {721, sizeof(::common::v1::ConfigUpdateResponse)},
+        {726, sizeof(::common::v1::ConfigListenerResponse)},
+        {731, sizeof(::common::v1::ConfigListenerRequest)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::common::v1::_ConfigMain_default_instance_._instance,
@@ -2216,7 +2222,7 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] ABSL_ATTRIBU
     "ation_max_countB)\n\'_persistent_notificat"
     "ion_max_recipientsB%\n#_feature_flag_sync"
     "_interval_secondsB\026\n\024_allow_synced_draft"
-    "s\"\352\n\n\016ConfigServices\022:\n\027common_service_g"
+    "s\"\260\014\n\016ConfigServices\022:\n\027common_service_g"
     "rpc_url\030\001 \001(\tH\000R\024commonServiceGrpcUrl\210\001\001"
     "\0226\n\025user_service_grpc_url\030\002 \001(\tH\001R\022userS"
     "erviceGrpcUrl\210\001\001\022>\n\031products_service_grp"
@@ -2239,548 +2245,553 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] ABSL_ATTRIBU
     "icePrometheusUrl\0225\n\027orders_service_grpc_"
     "url\030\r \001(\tR\024ordersServiceGrpcUrl\022A\n\035order"
     "s_service_prometheus_url\030\016 \001(\tR\032ordersSe"
-    "rvicePrometheusUrl\022;\n\032inventory_service_"
-    "grpc_url\030\017 \001(\tR\027inventoryServiceGrpcUrl\022"
-    "G\n inventory_service_prometheus_url\030\020 \001("
-    "\tR\035inventoryServicePrometheusUrlB\032\n\030_com"
-    "mon_service_grpc_urlB\030\n\026_user_service_gr"
-    "pc_urlB\034\n\032_products_service_grpc_urlB\027\n\025"
-    "_jaeger_collector_urlB \n\036_common_service"
-    "_prometheus_urlB\036\n\034_user_service_prometh"
-    "eus_urlB\"\n _products_service_prometheus_"
-    "urlB/\n-_users_service_max_receive_messag"
-    "e_size_bytesB\030\n\026_auth_service_grpc_urlB\036"
-    "\n\034_auth_service_prometheus_url\"\324\007\n\013Confi"
-    "gOAuth\0221\n\022oauth_provider_url\030\001 \001(\tH\000R\020oa"
-    "uthProviderUrl\210\001\001\022+\n\017oauth_client_id\030\002 \001"
-    "(\tH\001R\roauthClientId\210\001\001\0223\n\023oauth_client_s"
-    "ecret\030\003 \001(\tH\002R\021oauthClientSecret\210\001\001\022%\n\014o"
-    "auth_db_dsn\030\004 \001(\tH\003R\noauthDbDsn\210\001\001\0221\n\022oa"
-    "uth_redirect_url\030\005 \001(\tH\004R\020oauthRedirectU"
-    "rl\210\001\001\022+\n\017oauth_login_url\030\006 \001(\tH\005R\roauthL"
-    "oginUrl\210\001\001\022/\n\021oauth_consent_url\030\007 \001(\tH\006R"
-    "\017oauthConsentUrl\210\001\001\0223\n\023oauth_response_ty"
-    "pe\030\010 \001(\tH\007R\021oauthResponseType\210\001\001\022\037\n\013oaut"
-    "h_scope\030\t \003(\tR\noauthScope\022+\n\017oauth_admin"
-    "_url\030\n \001(\tH\010R\roauthAdminUrl\210\001\001\022/\n\021oauth_"
-    "backend_url\030\013 \001(\tH\tR\017oauthBackendUrl\210\001\001\022"
-    "1\n\022frontend_login_url\030\014 \001(\tH\nR\020frontendL"
-    "oginUrl\210\001\001\022<\n\030frontend_login_error_url\030\r"
-    " \001(\tH\013R\025frontendLoginErrorUrl\210\001\001\022H\n!oaut"
-    "h_grant_access_token_audience\030\016 \003(\tR\035oau"
-    "thGrantAccessTokenAudienceB\025\n\023_oauth_pro"
-    "vider_urlB\022\n\020_oauth_client_idB\026\n\024_oauth_"
-    "client_secretB\017\n\r_oauth_db_dsnB\025\n\023_oauth"
-    "_redirect_urlB\022\n\020_oauth_login_urlB\024\n\022_oa"
-    "uth_consent_urlB\026\n\024_oauth_response_typeB"
-    "\022\n\020_oauth_admin_urlB\024\n\022_oauth_backend_ur"
-    "lB\025\n\023_frontend_login_urlB\033\n\031_frontend_lo"
-    "gin_error_url\"\373\020\n\016ConfigSecurity\022J\n acce"
-    "ss_token_expiry_web_in_hours\030\001 \001(\005H\000R\033ac"
-    "cessTokenExpiryWebInHours\210\001\001\022P\n#access_t"
-    "oken_expiry_mobile_in_hours\030\002 \001(\005H\001R\036acc"
-    "essTokenExpiryMobileInHours\210\001\001\022J\n access"
-    "_token_expiry_sso_in_hours\030\003 \001(\005H\002R\033acce"
-    "ssTokenExpirySsoInHours\210\001\001\022E\n\035access_tok"
-    "en_cache_in_minutes\030\004 \001(\005H\003R\031accessToken"
-    "CacheInMinutes\210\001\001\022E\n\035refresh_token_expir"
-    "y_in_hours\030\005 \001(\005H\004R\031refreshTokenExpiryIn"
-    "Hours\210\001\001\0229\n\026maximum_login_attempts\030\006 \001(\005"
-    "H\005R\024maximumLoginAttempts\210\001\001\022U\n%terminate"
-    "_sessions_on_password_change\030\007 \001(\010H\006R!te"
-    "rminateSessionsOnPasswordChange\210\001\001\0229\n\026em"
-    "ail_confirmation_url\030\010 \001(\tH\007R\024emailConfi"
-    "rmationUrl\210\001\001\0221\n\022password_reset_url\030\t \001("
-    "\tH\010R\020passwordResetUrl\210\001\001\022O\n\"token_confir"
-    "mation_expiry_in_hours\030\n \001(\rH\tR\036tokenCon"
-    "firmationExpiryInHours\210\001\001\022R\n$token_passw"
-    "ord_reset_expiry_in_hours\030\013 \001(\rH\nR\037token"
-    "PasswordResetExpiryInHours\210\001\001\022T\n$enable_"
-    "insecure_outgoing_connections\030\014 \001(\010H\013R!e"
-    "nableInsecureOutgoingConnections\210\001\001\022O\n!e"
-    "nable_multifactor_authentication\030\r \001(\010H\014"
-    "R\037enableMultifactorAuthentication\210\001\001\022Q\n\""
-    "enforce_multifactor_authentication\030\016 \001(\010"
-    "H\rR enforceMultifactorAuthentication\210\001\001\022"
-    "F\n\035enable_oauth_service_provider\030\017 \001(\010H\016"
-    "R\032enableOauthServiceProvider\210\001\001\022N\n!enabl"
-    "e_outgoing_oauth_connections\030\020 \001(\010H\017R\036en"
-    "ableOutgoingOauthConnections\210\001\001\022+\n\017allow"
-    "_cors_from\030\021 \001(\tH\020R\rallowCorsFrom\210\001\001\0225\n\024"
-    "cors_exposed_headers\030\022 \001(\tH\021R\022corsExpose"
-    "dHeaders\210\001\001\0229\n\026cors_allow_credentials\030\023 "
-    "\001(\010H\022R\024corsAllowCredentials\210\001\001\022\"\n\ncors_d"
-    "ebug\030\024 \001(\010H\023R\tcorsDebug\210\001\001\022D\n\034allow_cook"
-    "ies_for_subdomains\030\025 \001(\010H\024R\031allowCookies"
-    "ForSubdomains\210\001\001B#\n!_access_token_expiry"
-    "_web_in_hoursB&\n$_access_token_expiry_mo"
-    "bile_in_hoursB#\n!_access_token_expiry_ss"
-    "o_in_hoursB \n\036_access_token_cache_in_min"
-    "utesB \n\036_refresh_token_expiry_in_hoursB\031"
-    "\n\027_maximum_login_attemptsB(\n&_terminate_"
-    "sessions_on_password_changeB\031\n\027_email_co"
-    "nfirmation_urlB\025\n\023_password_reset_urlB%\n"
-    "#_token_confirmation_expiry_in_hoursB\'\n%"
-    "_token_password_reset_expiry_in_hoursB\'\n"
-    "%_enable_insecure_outgoing_connectionsB$"
-    "\n\"_enable_multifactor_authenticationB%\n#"
-    "_enforce_multifactor_authenticationB \n\036_"
-    "enable_oauth_service_providerB$\n\"_enable"
-    "_outgoing_oauth_connectionsB\022\n\020_allow_co"
-    "rs_fromB\027\n\025_cors_exposed_headersB\031\n\027_cor"
-    "s_allow_credentialsB\r\n\013_cors_debugB\037\n\035_a"
-    "llow_cookies_for_subdomains\"\202\003\n\013CacheCon"
-    "fig\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheType\210\001\001\022"
-    "(\n\rredis_address\030\002 \001(\tH\001R\014redisAddress\210\001"
-    "\001\022*\n\016redis_password\030\003 \001(\tH\002R\rredisPasswo"
-    "rd\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb\210\001\001\0221\n"
-    "\022redis_cache_prefix\030\005 \001(\tH\004R\020redisCacheP"
-    "refix\210\001\001\0225\n\024disable_client_cache\030\006 \001(\010H\005"
-    "R\022disableClientCache\210\001\001B\r\n\013_cache_typeB\020"
-    "\n\016_redis_addressB\021\n\017_redis_passwordB\013\n\t_"
-    "redis_dbB\025\n\023_redis_cache_prefixB\027\n\025_disa"
-    "ble_client_cache\"\251\003\n\rConfigMetrics\022\033\n\006en"
-    "able\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_profile"
-    "_rate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001\022*\n\016li"
-    "sten_address\030\003 \001(\tH\002R\rlistenAddress\210\001\001\0227"
-    "\n\025enable_client_metrics\030\004 \001(\010H\003R\023enableC"
-    "lientMetrics\210\001\001\022C\n\033enable_notification_m"
-    "etrics\030\005 \001(\010H\004R\031enableNotificationMetric"
-    "s\210\001\001\022/\n\024client_side_user_ids\030\006 \003(\tR\021clie"
-    "ntSideUserIdsB\t\n\007_enableB\025\n\023_block_profi"
-    "le_rateB\021\n\017_listen_addressB\030\n\026_enable_cl"
-    "ient_metricsB\036\n\034_enable_notification_met"
-    "rics\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010H\000R\006en"
-    "able\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210\001\001\022\023\n\002"
-    "id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005scop"
-    "e\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014authEndpo"
-    "int\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\rtokenE"
-    "ndpoint\210\001\001\022/\n\021user_api_endpoint\030\007 \001(\tH\006R"
-    "\017userApiEndpoint\210\001\001\0222\n\022discovery_endpoin"
-    "t\030\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n\013butto"
-    "n_text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014button_"
-    "color\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_enable"
-    "B\t\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_auth_en"
-    "dpointB\021\n\017_token_endpointB\024\n\022_user_api_e"
-    "ndpointB\025\n\023_discovery_endpointB\016\n\014_butto"
-    "n_textB\017\n\r_button_color\"\325\005\n\tConfigSql\022$\n"
-    "\013driver_name\030\001 \001(\tH\000R\ndriverName\210\001\001\022$\n\013d"
-    "ata_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022)\n\016max"
-    "_idle_conns\030\003 \001(\005H\002R\014maxIdleConns\210\001\001\022H\n\036"
-    "conn_max_lifetime_milliseconds\030\004 \001(\005H\003R\033"
-    "connMaxLifetimeMilliseconds\210\001\001\022I\n\037conn_m"
-    "ax_idle_time_milliseconds\030\005 \001(\005H\004R\033connM"
-    "axIdleTimeMilliseconds\210\001\001\022)\n\016max_open_co"
-    "nns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005trace\030\007 "
-    "\001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt_key\030\010"
-    " \001(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rquery_tim"
-    "eout\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027disable"
-    "_database_search\030\n \001(\010H\tR\025disableDatabas"
-    "eSearch\210\001\001B\016\n\014_driver_nameB\016\n\014_data_sour"
-    "ceB\021\n\017_max_idle_connsB!\n\037_conn_max_lifet"
-    "ime_millisecondsB\"\n _conn_max_idle_time_"
-    "millisecondsB\021\n\017_max_open_connsB\010\n\006_trac"
-    "eB\026\n\024_at_rest_encrypt_keyB\020\n\016_query_time"
-    "outB\032\n\030_disable_database_search\"\212\003\n\016Conf"
-    "igPassword\022*\n\016minimum_length\030\001 \001(\005H\000R\rmi"
-    "nimumLength\210\001\001\022*\n\016maximum_length\030\002 \001(\005H\001"
-    "R\rmaximumLength\210\001\001\022!\n\tlowercase\030\003 \001(\010H\002R"
-    "\tlowercase\210\001\001\022\033\n\006number\030\004 \001(\010H\003R\006number\210"
-    "\001\001\022!\n\tuppercase\030\005 \001(\010H\004R\tuppercase\210\001\001\022\033\n"
-    "\006symbol\030\006 \001(\010H\005R\006symbol\210\001\001\0221\n\022enable_for"
-    "got_link\030\007 \001(\010H\006R\020enableForgotLink\210\001\001B\021\n"
-    "\017_minimum_lengthB\021\n\017_maximum_lengthB\014\n\n_"
-    "lowercaseB\t\n\007_numberB\014\n\n_uppercaseB\t\n\007_s"
-    "ymbolB\025\n\023_enable_forgot_link\"\243\014\n\nConfigF"
-    "ile\022;\n\027enable_file_attachments\030\001 \001(\010H\000R\025"
-    "enableFileAttachments\210\001\001\0225\n\024enable_mobil"
-    "e_upload\030\002 \001(\010H\001R\022enableMobileUpload\210\001\001\022"
-    "9\n\026enable_mobile_download\030\003 \001(\010H\002R\024enabl"
-    "eMobileDownload\210\001\001\0225\n\024max_image_resoluti"
-    "on\030\004 \001(\003H\003R\022maxImageResolution\210\001\001\022F\n\035max"
-    "_image_decoder_concurrency\030\005 \001(\003H\004R\032maxI"
-    "mageDecoderConcurrency\210\001\001\022$\n\013driver_name"
-    "\030\006 \001(\tH\005R\ndriverName\210\001\001\0229\n\027amazon_s3_acc"
-    "ess_key_id\030\007 \001(\tH\006R\023amazonS3AccessKeyId\210"
-    "\001\001\022A\n\033amazon_s3_secret_access_key\030\010 \001(\tH"
-    "\007R\027amazonS3SecretAccessKey\210\001\001\022-\n\020amazon_"
-    "s3_bucket\030\t \001(\tH\010R\016amazonS3Bucket\210\001\001\0226\n\025"
-    "amazon_s3_path_prefix\030\n \001(\tH\tR\022amazonS3P"
-    "athPrefix\210\001\001\022-\n\020amazon_s3_region\030\013 \001(\tH\n"
-    "R\016amazonS3Region\210\001\001\0221\n\022amazon_s3_endpoin"
-    "t\030\014 \001(\tH\013R\020amazonS3Endpoint\210\001\001\022\'\n\ramazon"
-    "_s3_ssl\030\r \001(\010H\014R\013amazonS3Ssl\210\001\001\022.\n\021amazo"
-    "n_s3_sign_v2\030\016 \001(\010H\rR\016amazonS3SignV2\210\001\001\022"
-    "\'\n\ramazon_s3_sse\030\017 \001(\010H\016R\013amazonS3Sse\210\001\001"
-    "\022+\n\017amazon_s3_trace\030\020 \001(\010H\017R\ramazonS3Tra"
-    "ce\210\001\001\022W\n&amazon_s3_request_timeout_milli"
-    "seconds\030\021 \001(\003H\020R\"amazonS3RequestTimeoutM"
-    "illiseconds\210\001\001\022J\n amazon_s3_upload_part_"
-    "size_bytes\030\022 \001(\003H\021R\033amazonS3UploadPartSi"
-    "zeBytes\210\001\001\022:\n\027amazon_s3_storage_class\030\023 "
-    "\001(\tH\022R\024amazonS3StorageClass\210\001\001B\032\n\030_enabl"
-    "e_file_attachmentsB\027\n\025_enable_mobile_upl"
-    "oadB\031\n\027_enable_mobile_downloadB\027\n\025_max_i"
-    "mage_resolutionB \n\036_max_image_decoder_co"
-    "ncurrencyB\016\n\014_driver_nameB\032\n\030_amazon_s3_"
-    "access_key_idB\036\n\034_amazon_s3_secret_acces"
-    "s_keyB\023\n\021_amazon_s3_bucketB\030\n\026_amazon_s3"
-    "_path_prefixB\023\n\021_amazon_s3_regionB\025\n\023_am"
-    "azon_s3_endpointB\020\n\016_amazon_s3_sslB\024\n\022_a"
-    "mazon_s3_sign_v2B\020\n\016_amazon_s3_sseB\022\n\020_a"
-    "mazon_s3_traceB)\n\'_amazon_s3_request_tim"
-    "eout_millisecondsB#\n!_amazon_s3_upload_p"
-    "art_size_bytesB\032\n\030_amazon_s3_storage_cla"
-    "ss\"\210\021\n\013ConfigEmail\022=\n\030send_email_notific"
-    "ations\030\001 \001(\010H\000R\026sendEmailNotifications\210\001"
-    "\001\022A\n\032require_email_verification\030\002 \001(\010H\001R"
-    "\030requireEmailVerification\210\001\001\022*\n\016feedback"
-    "_email\030\003 \001(\tH\002R\rfeedbackEmail\210\001\001\022-\n\020repl"
-    "y_to_address\030\004 \001(\tH\003R\016replyToAddress\210\001\001\022"
-    "-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016enableSmtpA"
-    "uth\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005R\014smtpUse"
-    "rname\210\001\001\022(\n\rsmtp_password\030\007 \001(\tH\006R\014smtpP"
-    "assword\210\001\001\022$\n\013smtp_server\030\010 \001(\tH\007R\nsmtpS"
-    "erver\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010smtpPort\210"
-    "\001\001\0223\n\023smtp_server_timeout\030\n \001(\005H\tR\021smtpS"
-    "erverTimeout\210\001\001\0224\n\023connection_security\030\013"
-    " \001(\tH\nR\022connectionSecurity\210\001\001\022;\n\027send_pu"
-    "sh_notifications\030\014 \001(\010H\013R\025sendPushNotifi"
-    "cations\210\001\001\022=\n\030push_notification_server\030\r"
-    " \001(\tH\014R\026pushNotificationServer\210\001\001\022A\n\032pus"
-    "h_notification_contents\030\016 \001(\tH\rR\030pushNot"
-    "ificationContents\210\001\001\022=\n\030push_notificatio"
-    "n_buffer\030\017 \001(\005H\016R\026pushNotificationBuffer"
-    "\210\001\001\0227\n\025enable_email_batching\030\020 \001(\010H\017R\023en"
-    "ableEmailBatching\210\001\001\022@\n\032email_batching_b"
-    "uffer_size\030\021 \001(\005H\020R\027emailBatchingBufferS"
-    "ize\210\001\001\022;\n\027email_batching_interval\030\022 \001(\005H"
-    "\021R\025emailBatchingInterval\210\001\001\022T\n$skip_serv"
-    "er_certificate_verification\030\023 \001(\010H\022R!ski"
-    "pServerCertificateVerification\210\001\001\022L\n ema"
-    "il_notification_contents_type\030\024 \001(\tH\023R\035e"
-    "mailNotificationContentsType\210\001\001\0221\n\022login"
-    "_button_color\030\025 \001(\tH\024R\020loginButtonColor\210"
-    "\001\001\022>\n\031login_button_border_color\030\026 \001(\tH\025R"
-    "\026loginButtonBorderColor\210\001\001\022:\n\027login_butt"
-    "on_text_color\030\027 \001(\tH\026R\024loginButtonTextCo"
-    "lor\210\001\001\022>\n\031rate_limiting_memory_size\030\030 \001("
-    "\005H\027R\026rateLimitingMemorySize\210\001\001\0228\n\026rate_l"
-    "imiting_per_hour\030\031 \001(\005H\030R\023rateLimitingPe"
-    "rHour\210\001\001\022:\n\027rate_limiting_max_burst\030\032 \001("
-    "\005H\031R\024rateLimitingMaxBurst\210\001\001B\033\n\031_send_em"
-    "ail_notificationsB\035\n\033_require_email_veri"
-    "ficationB\021\n\017_feedback_emailB\023\n\021_reply_to"
-    "_addressB\023\n\021_enable_smtp_authB\020\n\016_smtp_u"
-    "sernameB\020\n\016_smtp_passwordB\016\n\014_smtp_serve"
-    "rB\014\n\n_smtp_portB\026\n\024_smtp_server_timeoutB"
-    "\026\n\024_connection_securityB\032\n\030_send_push_no"
-    "tificationsB\033\n\031_push_notification_server"
-    "B\035\n\033_push_notification_contentsB\033\n\031_push"
-    "_notification_bufferB\030\n\026_enable_email_ba"
-    "tchingB\035\n\033_email_batching_buffer_sizeB\032\n"
-    "\030_email_batching_intervalB\'\n%_skip_serve"
-    "r_certificate_verificationB#\n!_email_not"
-    "ification_contents_typeB\025\n\023_login_button"
-    "_colorB\034\n\032_login_button_border_colorB\032\n\030"
-    "_login_button_text_colorB\034\n\032_rate_limiti"
-    "ng_memory_sizeB\031\n\027_rate_limiting_per_hou"
-    "rB\032\n\030_rate_limiting_max_burst\"\204\003\n\017Config"
-    "RateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022\034"
-    "\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tmax_burs"
-    "t\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_store_s"
-    "ize\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222\n\023vary_"
-    "by_remote_addr\030\005 \001(\010H\004R\020varyByRemoteAddr"
-    "\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvaryByUser\210"
-    "\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014varyByHeader"
-    "B\t\n\007_enableB\n\n\010_per_secB\014\n\n_max_burstB\024\n"
-    "\022_memory_store_sizeB\026\n\024_vary_by_remote_a"
-    "ddrB\017\n\r_vary_by_user\"\227\001\n\rConfigPrivacy\0221"
-    "\n\022show_email_address\030\001 \001(\010H\000R\020showEmailA"
-    "ddress\210\001\001\022)\n\016show_full_name\030\002 \001(\010H\001R\014sho"
-    "wFullName\210\001\001B\025\n\023_show_email_addressB\021\n\017_"
-    "show_full_name\"\357\003\n\rConfigSupport\0226\n\025term"
-    "s_of_service_link\030\001 \001(\tH\000R\022termsOfServic"
-    "eLink\210\001\001\0223\n\023privacy_policy_link\030\002 \001(\tH\001R"
-    "\021privacyPolicyLink\210\001\001\022\"\n\nabout_link\030\003 \001("
-    "\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 \001(\tH\003R\010"
-    "helpLink\210\001\001\0226\n\025report_a_problem_link\030\005 \001"
-    "(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024forgot_pa"
-    "ssword_link\030\006 \001(\tH\005R\022forgotPasswordLink\210"
-    "\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014supportEmai"
-    "l\210\001\001B\030\n\026_terms_of_service_linkB\026\n\024_priva"
-    "cy_policy_linkB\r\n\013_about_linkB\014\n\n_help_l"
-    "inkB\030\n\026_report_a_problem_linkB\027\n\025_forgot"
-    "_password_linkB\020\n\016_support_email\"\347\001\n\022Con"
-    "figLocalization\0227\n\025default_server_locale"
-    "\030\001 \001(\tH\000R\023defaultServerLocale\210\001\001\0227\n\025defa"
-    "ult_client_locale\030\002 \001(\tH\001R\023defaultClient"
-    "Locale\210\001\001\022+\n\021available_locales\030\003 \003(\tR\020av"
-    "ailableLocalesB\030\n\026_default_server_locale"
-    "B\030\n\026_default_client_locale\"\325\020\n\nConfigLda"
-    "p\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable"
-    "_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_ser"
-    "ver\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_port\030"
-    "\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connection_secur"
-    "ity\030\005 \001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007ba"
-    "se_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_usernam"
-    "e\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_passw"
-    "ord\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximum_"
-    "login_attempts\030\t \001(\005H\010R\024maximumLoginAtte"
-    "mpts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFilt"
-    "er\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013groupFilt"
-    "er\210\001\001\0223\n\023enable_admin_filter\030\014 \001(\010H\013R\021en"
-    "ableAdminFilter\210\001\001\022&\n\014admin_filter\030\r \001(\t"
-    "H\014R\013adminFilter\210\001\001\022D\n\034group_display_name"
-    "_attribute\030\016 \001(\tH\rR\031groupDisplayNameAttr"
-    "ibute\210\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016R\020"
-    "groupIdAttribute\210\001\001\0225\n\024first_name_attrib"
-    "ute\030\020 \001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023la"
-    "st_name_attribute\030\021 \001(\tH\020R\021lastNameAttri"
-    "bute\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016emai"
-    "lAttribute\210\001\001\0222\n\022username_attribute\030\023 \001("
-    "\tH\022R\021usernameAttribute\210\001\001\0222\n\022nickname_at"
-    "tribute\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022&\n"
-    "\014id_attribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n"
-    "\022position_attribute\030\026 \001(\tH\025R\021positionAtt"
-    "ribute\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH\026R"
-    "\020loginIdAttribute\210\001\001\0220\n\021picture_attribut"
-    "e\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync_i"
-    "nterval_minutes\030\031 \001(\005H\030R\023syncIntervalMin"
-    "utes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014queryT"
-    "imeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013maxP"
-    "ageSize\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033R\016"
-    "loginFieldName\210\001\001\0221\n\022login_button_color\030"
-    "\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n\031login_bu"
-    "tton_border_color\030\036 \001(\tH\035R\026loginButtonBo"
-    "rderColor\210\001\001\022:\n\027login_button_text_color\030"
-    "\037 \001(\tH\036R\024loginButtonTextColor\210\001\001B\t\n\007_ena"
-    "bleB\016\n\014_enable_syncB\016\n\014_ldap_serverB\014\n\n_"
-    "ldap_portB\026\n\024_connection_securityB\n\n\010_ba"
-    "se_dnB\020\n\016_bind_usernameB\020\n\016_bind_passwor"
-    "dB\031\n\027_maximum_login_attemptsB\016\n\014_user_fi"
-    "lterB\017\n\r_group_filterB\026\n\024_enable_admin_f"
-    "ilterB\017\n\r_admin_filterB\037\n\035_group_display"
-    "_name_attributeB\025\n\023_group_id_attributeB\027"
-    "\n\025_first_name_attributeB\026\n\024_last_name_at"
-    "tributeB\022\n\020_email_attributeB\025\n\023_username"
-    "_attributeB\025\n\023_nickname_attributeB\017\n\r_id"
-    "_attributeB\025\n\023_position_attributeB\025\n\023_lo"
-    "gin_id_attributeB\024\n\022_picture_attributeB\030"
-    "\n\026_sync_interval_minutesB\020\n\016_query_timeo"
-    "utB\020\n\016_max_page_sizeB\023\n\021_login_field_nam"
-    "eB\025\n\023_login_button_colorB\034\n\032_login_butto"
-    "n_border_colorB\032\n\030_login_button_text_col"
-    "or\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006ena"
-    "ble\210\001\001\0226\n\025enable_sync_with_ldap\030\002 \001(\010H\001R"
-    "\022enableSyncWithLdap\210\001\001\022N\n\"enable_sync_wi"
-    "th_ldap_include_auth\030\003 \001(\010H\002R\035enableSync"
-    "WithLdapIncludeAuth\210\001\001\022:\n\027ignore_guests_"
-    "ldap_sync\030\004 \001(\010H\003R\024ignoreGuestsLdapSync\210"
-    "\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encry"
-    "pt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request\030\007"
-    " \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\tH"
-    "\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_url\030\t \001(\t"
-    "H\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_metadata_"
-    "url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033servic"
-    "e_provider_identifier\030\013 \001(\tH\nR\031servicePr"
-    "oviderIdentifier\210\001\001\022H\n\036assertion_consume"
-    "r_service_url\030\014 \001(\tH\013R\033assertionConsumer"
-    "ServiceUrl\210\001\001\0224\n\023signature_algorithm\030\r \001"
-    "(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023canonical"
-    "_algorithm\030\016 \001(\tH\rR\022canonicalAlgorithm\210\001"
-    "\001\022:\n\027scoping_idp_provider_id\030\017 \001(\tH\016R\024sc"
-    "opingIdpProviderId\210\001\001\022-\n\020scoping_idp_nam"
-    "e\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_cert"
-    "ificate_file\030\021 \001(\tH\020R\022idpCertificateFile"
-    "\210\001\001\022;\n\027public_certificate_file\030\022 \001(\tH\021R\025"
-    "publicCertificateFile\210\001\001\022-\n\020private_key_"
-    "file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_at"
-    "tribute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026enabl"
-    "e_admin_attribute\030\025 \001(\010H\024R\024enableAdminAt"
-    "tribute\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R\016a"
-    "dminAttribute\210\001\001\0225\n\024first_name_attribute"
-    "\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023last_"
-    "name_attribute\030\030 \001(\tH\027R\021lastNameAttribut"
-    "e\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030R\016emailAt"
-    "tribute\210\001\001\0222\n\022username_attribute\030\032 \001(\tH\031"
-    "R\021usernameAttribute\210\001\001\0222\n\022nickname_attri"
-    "bute\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020lo"
-    "cale_attribute\030\034 \001(\tH\033R\017localeAttribute\210"
-    "\001\001\0222\n\022position_attribute\030\035 \001(\tH\034R\021positi"
-    "onAttribute\210\001\001\022/\n\021login_button_text\030\036 \001("
-    "\tH\035R\017loginButtonText\210\001\001\0221\n\022login_button_"
-    "color\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031lo"
-    "gin_button_border_color\030  \001(\tH\037R\026loginBu"
-    "ttonBorderColor\210\001\001\022:\n\027login_button_text_"
-    "color\030! \001(\tH R\024loginButtonTextColor\210\001\001B\t"
-    "\n\007_enableB\030\n\026_enable_sync_with_ldapB%\n#_"
-    "enable_sync_with_ldap_include_authB\032\n\030_i"
-    "gnore_guests_ldap_syncB\t\n\007_verifyB\n\n\010_en"
-    "cryptB\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023_i"
-    "dp_descriptor_urlB\023\n\021_idp_metadata_urlB\036"
-    "\n\034_service_provider_identifierB!\n\037_asser"
-    "tion_consumer_service_urlB\026\n\024_signature_"
-    "algorithmB\026\n\024_canonical_algorithmB\032\n\030_sc"
-    "oping_idp_provider_idB\023\n\021_scoping_idp_na"
-    "meB\027\n\025_idp_certificate_fileB\032\n\030_public_c"
-    "ertificate_fileB\023\n\021_private_key_fileB\017\n\r"
-    "_id_attributeB\031\n\027_enable_admin_attribute"
-    "B\022\n\020_admin_attributeB\027\n\025_first_name_attr"
-    "ibuteB\026\n\024_last_name_attributeB\022\n\020_email_"
-    "attributeB\025\n\023_username_attributeB\025\n\023_nic"
-    "kname_attributeB\023\n\021_locale_attributeB\025\n\023"
-    "_position_attributeB\024\n\022_login_button_tex"
-    "tB\025\n\023_login_button_colorB\034\n\032_login_butto"
-    "n_border_colorB\032\n\030_login_button_text_col"
-    "or\"\301\005\n\017ConfigNativeApp\0223\n\026app_custom_url"
-    "_schemes\030\001 \003(\tR\023appCustomUrlSchemes\022/\n\021a"
-    "pp_download_link\030\002 \001(\tH\000R\017appDownloadLin"
-    "k\210\001\001\022>\n\031android_app_download_link\030\003 \001(\tH"
-    "\001R\026androidAppDownloadLink\210\001\001\0226\n\025ios_app_"
-    "download_link\030\004 \001(\tH\002R\022iosAppDownloadLin"
-    "k\210\001\001\022;\n\027mobile_external_browser\030\005 \001(\010H\003R"
-    "\025mobileExternalBrowser\210\001\001\022=\n\030mobile_enab"
-    "le_biometrics\030\006 \001(\010H\004R\026mobileEnableBiome"
-    "trics\210\001\001\022F\n\035mobile_prevent_screen_captur"
-    "e\030\007 \001(\010H\005R\032mobilePreventScreenCapture\210\001\001"
-    "\022C\n\033mobile_jailbreak_protection\030\010 \001(\010H\006R"
-    "\031mobileJailbreakProtection\210\001\001B\024\n\022_app_do"
-    "wnload_linkB\034\n\032_android_app_download_lin"
-    "kB\030\n\026_ios_app_download_linkB\032\n\030_mobile_e"
-    "xternal_browserB\033\n\031_mobile_enable_biomet"
-    "ricsB \n\036_mobile_prevent_screen_captureB\036"
-    "\n\034_mobile_jailbreak_protection\"\332\010\n\021Confi"
-    "gMeilisearch\022 \n\013server_urls\030\001 \003(\tR\013serve"
-    "r_urls\022\"\n\nmaster_key\030\002 \001(\tH\000R\tmasterKey\210"
-    "\001\001\022,\n\017enable_indexing\030\003 \001(\010H\001R\016enableInd"
-    "exing\210\001\001\022.\n\020enable_searching\030\004 \001(\010H\002R\017en"
-    "ableSearching\210\001\001\0224\n\023enable_autocomplete\030"
-    "\005 \001(\010H\003R\022enableAutocomplete\210\001\001\022,\n\017max_co"
-    "ncurrency\030\006 \001(\005H\004R\016maxConcurrency\210\001\001\022;\n\027"
-    "request_timeout_seconds\030\007 \001(\005H\005R\025request"
-    "TimeoutSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH"
-    "\006R\013indexPrefix\210\001\001\022-\n\020search_cutoff_ms\030\t "
-    "\001(\005H\007R\016searchCutoffMs\210\001\001\0227\n\025enable_typo_"
-    "tolerance\030\n \001(\010H\010R\023enableTypoTolerance\210\001"
-    "\001\022!\n\014kafka_broker\030\013 \001(\tR\013kafkaBroker\022$\n\016"
-    "kafka_group_id\030\014 \001(\tR\014kafkaGroupId\022\037\n\013ka"
-    "fak_topic\030\r \001(\tR\nkafakTopic\022&\n\017kafak_top"
-    "ic_dlq\030\016 \001(\tR\rkafakTopicDlq\022,\n\020task_max_"
-    "wait_ms\030\017 \001(\005H\tR\rtaskMaxWaitMs\210\001\001\022-\n\020tas"
-    "k_max_retries\030\020 \001(\005H\nR\016taskMaxRetries\210\001\001"
-    "\0224\n\024task_backoff_base_ms\030\021 \001(\005H\013R\021taskBa"
-    "ckoffBaseMs\210\001\001\0221\n\022shutdown_wait_secs\030\022 \001"
-    "(\005H\014R\020shutdownWaitSecs\210\001\001B\r\n\013_master_key"
-    "B\022\n\020_enable_indexingB\023\n\021_enable_searchin"
-    "gB\026\n\024_enable_autocompleteB\022\n\020_max_concur"
-    "rencyB\032\n\030_request_timeout_secondsB\017\n\r_in"
-    "dex_prefixB\023\n\021_search_cutoff_msB\030\n\026_enab"
-    "le_typo_toleranceB\023\n\021_task_max_wait_msB\023"
-    "\n\021_task_max_retriesB\027\n\025_task_backoff_bas"
-    "e_msB\025\n\023_shutdown_wait_secs\"\272\003\n\013ConfigBl"
-    "eve\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001\022,\n"
-    "\017enable_indexing\030\002 \001(\010H\001R\016enableIndexing"
-    "\210\001\001\022.\n\020enable_searching\030\003 \001(\010H\002R\017enableS"
-    "earching\210\001\001\0224\n\023enable_autocomplete\030\004 \001(\010"
-    "H\003R\022enableAutocomplete\210\001\001\022M\n!bulk_indexi"
-    "ng_time_window_seconds\030\005 \001(\005H\004R\035bulkInde"
-    "xingTimeWindowSeconds\210\001\001\022\"\n\nbatch_size\030\006"
-    " \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB\022\n\020_e"
-    "nable_indexingB\023\n\021_enable_searchingB\026\n\024_"
-    "enable_autocompleteB$\n\"_bulk_indexing_ti"
-    "me_window_secondsB\r\n\013_batch_size\"\354\006\n\023Con"
-    "figDataRetention\022;\n\027enable_message_delet"
-    "ion\030\001 \001(\010H\000R\025enableMessageDeletion\210\001\001\0225\n"
-    "\024enable_file_deletion\030\002 \001(\010H\001R\022enableFil"
-    "eDeletion\210\001\001\0229\n\026enable_boards_deletion\030\003"
-    " \001(\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027messa"
-    "ge_retention_hours\030\004 \001(\005H\003R\025messageReten"
-    "tionHours\210\001\001\0225\n\024file_retention_hours\030\005 \001"
-    "(\005H\004R\022fileRetentionHours\210\001\001\0227\n\025boards_re"
-    "tention_days\030\006 \001(\005H\005R\023boardsRetentionDay"
-    "s\210\001\001\022:\n\027deletion_job_start_time\030\007 \001(\tH\006R"
-    "\024deletionJobStartTime\210\001\001\022\"\n\nbatch_size\030\010"
-    " \001(\005H\007R\tbatchSize\210\001\001\022N\n!time_between_bat"
-    "ches_milliseconds\030\t \001(\005H\010R\036timeBetweenBa"
-    "tchesMilliseconds\210\001\001\022<\n\030retention_ids_ba"
-    "tch_size\030\n \001(\005H\tR\025retentionIdsBatchSize\210"
-    "\001\001B\032\n\030_enable_message_deletionB\027\n\025_enabl"
-    "e_file_deletionB\031\n\027_enable_boards_deleti"
-    "onB\032\n\030_message_retention_hoursB\027\n\025_file_"
-    "retention_hoursB\030\n\026_boards_retention_day"
-    "sB\032\n\030_deletion_job_start_timeB\r\n\013_batch_"
-    "sizeB$\n\"_time_between_batches_millisecon"
-    "dsB\033\n\031_retention_ids_batch_size\"\264\002\n\020Conf"
-    "igImageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001"
-    "\001\022-\n\020image_proxy_type\030\002 \001(\tH\001R\016imageProx"
-    "yType\210\001\001\0228\n\026remote_image_proxy_url\030\003 \001(\t"
-    "H\002R\023remoteImageProxyUrl\210\001\001\022@\n\032remote_ima"
-    "ge_proxy_options\030\004 \001(\tH\003R\027remoteImagePro"
-    "xyOptions\210\001\001B\t\n\007_enableB\023\n\021_image_proxy_"
-    "typeB\031\n\027_remote_image_proxy_urlB\035\n\033_remo"
-    "te_image_proxy_options\"\347\004\n\016ConfigProduct"
-    "s\0228\n\031product_image_max_size_mb\030\001 \001(\004R\025pr"
-    "oductImageMaxSizeMb\022C\n\036product_image_acc"
-    "epted_formats\030\002 \003(\tR\033productImageAccepte"
-    "dFormats\0225\n\027product_image_max_width\030\003 \001("
-    "\004R\024productImageMaxWidth\0227\n\030product_image"
-    "_max_height\030\004 \001(\004R\025productImageMaxHeight"
-    "\0225\n\027product_image_min_width\030\005 \001(\004R\024produ"
-    "ctImageMinWidth\0227\n\030product_image_min_hei"
-    "ght\030\006 \001(\004R\025productImageMinHeight\022M\n$prod"
-    "uct_images_min_count_per_variant\030\007 \001(\004R\037"
-    "productImagesMinCountPerVariant\022M\n$produ"
-    "ct_images_max_count_per_variant\030\010 \001(\004R\037p"
-    "roductImagesMaxCountPerVariant\022X\n*produc"
-    "t_media_max_direct_uploading_size_mb\030\t \001"
-    "(\004R$productMediaMaxDirectUploadingSizeMb"
-    "\"\262\t\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1.Co"
-    "nfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.commo"
-    "n.v1.ConfigServicesR\010services\0225\n\010securit"
-    "y\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010secu"
-    "rity\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheCon"
-    "figR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v1."
-    "ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.co"
-    "mmon.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.co"
-    "mmon.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001(\013"
-    "2\031.common.v1.ConfigPasswordR\010password\022)\n"
-    "\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004file"
-    "\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEmailR"
-    "\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1.C"
-    "onfigRateLimitR\trateLimit\0222\n\007privacy\030\014 \001"
-    "(\0132\030.common.v1.ConfigPrivacyR\007privacy\0222\n"
-    "\007support\030\r \001(\0132\030.common.v1.ConfigSupport"
-    "R\007support\022A\n\014localization\030\016 \001(\0132\035.common"
-    ".v1.ConfigLocalizationR\014localization\022)\n\004"
-    "ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004ldap\022"
-    ")\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004sa"
-    "ml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.Confi"
-    "gNativeAppR\tnativeApp\022>\n\013meilisearch\030\022 \001"
-    "(\0132\034.common.v1.ConfigMeilisearchR\013meilis"
-    "earch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.ConfigB"
-    "leveR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036.co"
-    "mmon.v1.ConfigDataRetentionR\rdataRetenti"
-    "on\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.Conf"
-    "igImageProxyR\nimageProxy\022,\n\005oauth\030\026 \001(\0132"
-    "\026.common.v1.ConfigOAuthR\005oauth\0225\n\010produc"
-    "ts\030\027 \001(\0132\031.common.v1.ConfigProductsR\010pro"
-    "ducts\"\022\n\020ConfigGetRequest\"u\n\021ConfigGetRe"
-    "sponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH"
-    "\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppEr"
-    "rorH\000R\005errorB\n\n\010response\"@\n\023ConfigUpdate"
-    "Request\022)\n\006config\030\001 \001(\0132\021.common.v1.Conf"
-    "igR\006config\"x\n\024ConfigUpdateResponse\022\'\n\004da"
-    "ta\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005e"
-    "rror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005error"
-    "B\n\n\010response\"z\n\026ConfigListenerResponse\022\'"
-    "\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022"
-    "+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005e"
-    "rrorB\n\n\010response\"4\n\025ConfigListenerReques"
-    "t\022\033\n\tclient_id\030\001 \001(\tR\010clientIdBq\n\032org.me"
-    "gacommerce.common.v1B\013ConfigProtoZCgithu"
-    "b.com/ahmad-khatib0-org/megacommerce-pro"
-    "to/gen/go/common/v1;v1\370\001\001b\006proto3"
+    "rvicePrometheusUrl\022^\n-orders_service_max"
+    "_receive_message_size_bytes\030\017 \001(\003R\'order"
+    "sServiceMaxReceiveMessageSizeBytes\022;\n\032in"
+    "ventory_service_grpc_url\030\020 \001(\tR\027inventor"
+    "yServiceGrpcUrl\022G\n inventory_service_pro"
+    "metheus_url\030\021 \001(\tR\035inventoryServiceProme"
+    "theusUrl\022d\n0inventory_service_max_receiv"
+    "e_message_size_bytes\030\022 \001(\003R*inventorySer"
+    "viceMaxReceiveMessageSizeBytesB\032\n\030_commo"
+    "n_service_grpc_urlB\030\n\026_user_service_grpc"
+    "_urlB\034\n\032_products_service_grpc_urlB\027\n\025_j"
+    "aeger_collector_urlB \n\036_common_service_p"
+    "rometheus_urlB\036\n\034_user_service_prometheu"
+    "s_urlB\"\n _products_service_prometheus_ur"
+    "lB/\n-_users_service_max_receive_message_"
+    "size_bytesB\030\n\026_auth_service_grpc_urlB\036\n\034"
+    "_auth_service_prometheus_url\"\324\007\n\013ConfigO"
+    "Auth\0221\n\022oauth_provider_url\030\001 \001(\tH\000R\020oaut"
+    "hProviderUrl\210\001\001\022+\n\017oauth_client_id\030\002 \001(\t"
+    "H\001R\roauthClientId\210\001\001\0223\n\023oauth_client_sec"
+    "ret\030\003 \001(\tH\002R\021oauthClientSecret\210\001\001\022%\n\014oau"
+    "th_db_dsn\030\004 \001(\tH\003R\noauthDbDsn\210\001\001\0221\n\022oaut"
+    "h_redirect_url\030\005 \001(\tH\004R\020oauthRedirectUrl"
+    "\210\001\001\022+\n\017oauth_login_url\030\006 \001(\tH\005R\roauthLog"
+    "inUrl\210\001\001\022/\n\021oauth_consent_url\030\007 \001(\tH\006R\017o"
+    "authConsentUrl\210\001\001\0223\n\023oauth_response_type"
+    "\030\010 \001(\tH\007R\021oauthResponseType\210\001\001\022\037\n\013oauth_"
+    "scope\030\t \003(\tR\noauthScope\022+\n\017oauth_admin_u"
+    "rl\030\n \001(\tH\010R\roauthAdminUrl\210\001\001\022/\n\021oauth_ba"
+    "ckend_url\030\013 \001(\tH\tR\017oauthBackendUrl\210\001\001\0221\n"
+    "\022frontend_login_url\030\014 \001(\tH\nR\020frontendLog"
+    "inUrl\210\001\001\022<\n\030frontend_login_error_url\030\r \001"
+    "(\tH\013R\025frontendLoginErrorUrl\210\001\001\022H\n!oauth_"
+    "grant_access_token_audience\030\016 \003(\tR\035oauth"
+    "GrantAccessTokenAudienceB\025\n\023_oauth_provi"
+    "der_urlB\022\n\020_oauth_client_idB\026\n\024_oauth_cl"
+    "ient_secretB\017\n\r_oauth_db_dsnB\025\n\023_oauth_r"
+    "edirect_urlB\022\n\020_oauth_login_urlB\024\n\022_oaut"
+    "h_consent_urlB\026\n\024_oauth_response_typeB\022\n"
+    "\020_oauth_admin_urlB\024\n\022_oauth_backend_urlB"
+    "\025\n\023_frontend_login_urlB\033\n\031_frontend_logi"
+    "n_error_url\"\373\020\n\016ConfigSecurity\022J\n access"
+    "_token_expiry_web_in_hours\030\001 \001(\005H\000R\033acce"
+    "ssTokenExpiryWebInHours\210\001\001\022P\n#access_tok"
+    "en_expiry_mobile_in_hours\030\002 \001(\005H\001R\036acces"
+    "sTokenExpiryMobileInHours\210\001\001\022J\n access_t"
+    "oken_expiry_sso_in_hours\030\003 \001(\005H\002R\033access"
+    "TokenExpirySsoInHours\210\001\001\022E\n\035access_token"
+    "_cache_in_minutes\030\004 \001(\005H\003R\031accessTokenCa"
+    "cheInMinutes\210\001\001\022E\n\035refresh_token_expiry_"
+    "in_hours\030\005 \001(\005H\004R\031refreshTokenExpiryInHo"
+    "urs\210\001\001\0229\n\026maximum_login_attempts\030\006 \001(\005H\005"
+    "R\024maximumLoginAttempts\210\001\001\022U\n%terminate_s"
+    "essions_on_password_change\030\007 \001(\010H\006R!term"
+    "inateSessionsOnPasswordChange\210\001\001\0229\n\026emai"
+    "l_confirmation_url\030\010 \001(\tH\007R\024emailConfirm"
+    "ationUrl\210\001\001\0221\n\022password_reset_url\030\t \001(\tH"
+    "\010R\020passwordResetUrl\210\001\001\022O\n\"token_confirma"
+    "tion_expiry_in_hours\030\n \001(\rH\tR\036tokenConfi"
+    "rmationExpiryInHours\210\001\001\022R\n$token_passwor"
+    "d_reset_expiry_in_hours\030\013 \001(\rH\nR\037tokenPa"
+    "sswordResetExpiryInHours\210\001\001\022T\n$enable_in"
+    "secure_outgoing_connections\030\014 \001(\010H\013R!ena"
+    "bleInsecureOutgoingConnections\210\001\001\022O\n!ena"
+    "ble_multifactor_authentication\030\r \001(\010H\014R\037"
+    "enableMultifactorAuthentication\210\001\001\022Q\n\"en"
+    "force_multifactor_authentication\030\016 \001(\010H\r"
+    "R enforceMultifactorAuthentication\210\001\001\022F\n"
+    "\035enable_oauth_service_provider\030\017 \001(\010H\016R\032"
+    "enableOauthServiceProvider\210\001\001\022N\n!enable_"
+    "outgoing_oauth_connections\030\020 \001(\010H\017R\036enab"
+    "leOutgoingOauthConnections\210\001\001\022+\n\017allow_c"
+    "ors_from\030\021 \001(\tH\020R\rallowCorsFrom\210\001\001\0225\n\024co"
+    "rs_exposed_headers\030\022 \001(\tH\021R\022corsExposedH"
+    "eaders\210\001\001\0229\n\026cors_allow_credentials\030\023 \001("
+    "\010H\022R\024corsAllowCredentials\210\001\001\022\"\n\ncors_deb"
+    "ug\030\024 \001(\010H\023R\tcorsDebug\210\001\001\022D\n\034allow_cookie"
+    "s_for_subdomains\030\025 \001(\010H\024R\031allowCookiesFo"
+    "rSubdomains\210\001\001B#\n!_access_token_expiry_w"
+    "eb_in_hoursB&\n$_access_token_expiry_mobi"
+    "le_in_hoursB#\n!_access_token_expiry_sso_"
+    "in_hoursB \n\036_access_token_cache_in_minut"
+    "esB \n\036_refresh_token_expiry_in_hoursB\031\n\027"
+    "_maximum_login_attemptsB(\n&_terminate_se"
+    "ssions_on_password_changeB\031\n\027_email_conf"
+    "irmation_urlB\025\n\023_password_reset_urlB%\n#_"
+    "token_confirmation_expiry_in_hoursB\'\n%_t"
+    "oken_password_reset_expiry_in_hoursB\'\n%_"
+    "enable_insecure_outgoing_connectionsB$\n\""
+    "_enable_multifactor_authenticationB%\n#_e"
+    "nforce_multifactor_authenticationB \n\036_en"
+    "able_oauth_service_providerB$\n\"_enable_o"
+    "utgoing_oauth_connectionsB\022\n\020_allow_cors"
+    "_fromB\027\n\025_cors_exposed_headersB\031\n\027_cors_"
+    "allow_credentialsB\r\n\013_cors_debugB\037\n\035_all"
+    "ow_cookies_for_subdomains\"\202\003\n\013CacheConfi"
+    "g\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheType\210\001\001\022(\n"
+    "\rredis_address\030\002 \001(\tH\001R\014redisAddress\210\001\001\022"
+    "*\n\016redis_password\030\003 \001(\tH\002R\rredisPassword"
+    "\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb\210\001\001\0221\n\022r"
+    "edis_cache_prefix\030\005 \001(\tH\004R\020redisCachePre"
+    "fix\210\001\001\0225\n\024disable_client_cache\030\006 \001(\010H\005R\022"
+    "disableClientCache\210\001\001B\r\n\013_cache_typeB\020\n\016"
+    "_redis_addressB\021\n\017_redis_passwordB\013\n\t_re"
+    "dis_dbB\025\n\023_redis_cache_prefixB\027\n\025_disabl"
+    "e_client_cache\"\251\003\n\rConfigMetrics\022\033\n\006enab"
+    "le\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_profile_r"
+    "ate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001\022*\n\016list"
+    "en_address\030\003 \001(\tH\002R\rlistenAddress\210\001\001\0227\n\025"
+    "enable_client_metrics\030\004 \001(\010H\003R\023enableCli"
+    "entMetrics\210\001\001\022C\n\033enable_notification_met"
+    "rics\030\005 \001(\010H\004R\031enableNotificationMetrics\210"
+    "\001\001\022/\n\024client_side_user_ids\030\006 \003(\tR\021client"
+    "SideUserIdsB\t\n\007_enableB\025\n\023_block_profile"
+    "_rateB\021\n\017_listen_addressB\030\n\026_enable_clie"
+    "nt_metricsB\036\n\034_enable_notification_metri"
+    "cs\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010H\000R\006enab"
+    "le\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210\001\001\022\023\n\002id"
+    "\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005scope\210"
+    "\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014authEndpoin"
+    "t\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\rtokenEnd"
+    "point\210\001\001\022/\n\021user_api_endpoint\030\007 \001(\tH\006R\017u"
+    "serApiEndpoint\210\001\001\0222\n\022discovery_endpoint\030"
+    "\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n\013button_"
+    "text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014button_co"
+    "lor\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_enableB\t"
+    "\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_auth_endp"
+    "ointB\021\n\017_token_endpointB\024\n\022_user_api_end"
+    "pointB\025\n\023_discovery_endpointB\016\n\014_button_"
+    "textB\017\n\r_button_color\"\325\005\n\tConfigSql\022$\n\013d"
+    "river_name\030\001 \001(\tH\000R\ndriverName\210\001\001\022$\n\013dat"
+    "a_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022)\n\016max_i"
+    "dle_conns\030\003 \001(\005H\002R\014maxIdleConns\210\001\001\022H\n\036co"
+    "nn_max_lifetime_milliseconds\030\004 \001(\005H\003R\033co"
+    "nnMaxLifetimeMilliseconds\210\001\001\022I\n\037conn_max"
+    "_idle_time_milliseconds\030\005 \001(\005H\004R\033connMax"
+    "IdleTimeMilliseconds\210\001\001\022)\n\016max_open_conn"
+    "s\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005trace\030\007 \001("
+    "\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt_key\030\010 \001"
+    "(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rquery_timeo"
+    "ut\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027disable_d"
+    "atabase_search\030\n \001(\010H\tR\025disableDatabaseS"
+    "earch\210\001\001B\016\n\014_driver_nameB\016\n\014_data_source"
+    "B\021\n\017_max_idle_connsB!\n\037_conn_max_lifetim"
+    "e_millisecondsB\"\n _conn_max_idle_time_mi"
+    "llisecondsB\021\n\017_max_open_connsB\010\n\006_traceB"
+    "\026\n\024_at_rest_encrypt_keyB\020\n\016_query_timeou"
+    "tB\032\n\030_disable_database_search\"\212\003\n\016Config"
+    "Password\022*\n\016minimum_length\030\001 \001(\005H\000R\rmini"
+    "mumLength\210\001\001\022*\n\016maximum_length\030\002 \001(\005H\001R\r"
+    "maximumLength\210\001\001\022!\n\tlowercase\030\003 \001(\010H\002R\tl"
+    "owercase\210\001\001\022\033\n\006number\030\004 \001(\010H\003R\006number\210\001\001"
+    "\022!\n\tuppercase\030\005 \001(\010H\004R\tuppercase\210\001\001\022\033\n\006s"
+    "ymbol\030\006 \001(\010H\005R\006symbol\210\001\001\0221\n\022enable_forgo"
+    "t_link\030\007 \001(\010H\006R\020enableForgotLink\210\001\001B\021\n\017_"
+    "minimum_lengthB\021\n\017_maximum_lengthB\014\n\n_lo"
+    "wercaseB\t\n\007_numberB\014\n\n_uppercaseB\t\n\007_sym"
+    "bolB\025\n\023_enable_forgot_link\"\243\014\n\nConfigFil"
+    "e\022;\n\027enable_file_attachments\030\001 \001(\010H\000R\025en"
+    "ableFileAttachments\210\001\001\0225\n\024enable_mobile_"
+    "upload\030\002 \001(\010H\001R\022enableMobileUpload\210\001\001\0229\n"
+    "\026enable_mobile_download\030\003 \001(\010H\002R\024enableM"
+    "obileDownload\210\001\001\0225\n\024max_image_resolution"
+    "\030\004 \001(\003H\003R\022maxImageResolution\210\001\001\022F\n\035max_i"
+    "mage_decoder_concurrency\030\005 \001(\003H\004R\032maxIma"
+    "geDecoderConcurrency\210\001\001\022$\n\013driver_name\030\006"
+    " \001(\tH\005R\ndriverName\210\001\001\0229\n\027amazon_s3_acces"
+    "s_key_id\030\007 \001(\tH\006R\023amazonS3AccessKeyId\210\001\001"
+    "\022A\n\033amazon_s3_secret_access_key\030\010 \001(\tH\007R"
+    "\027amazonS3SecretAccessKey\210\001\001\022-\n\020amazon_s3"
+    "_bucket\030\t \001(\tH\010R\016amazonS3Bucket\210\001\001\0226\n\025am"
+    "azon_s3_path_prefix\030\n \001(\tH\tR\022amazonS3Pat"
+    "hPrefix\210\001\001\022-\n\020amazon_s3_region\030\013 \001(\tH\nR\016"
+    "amazonS3Region\210\001\001\0221\n\022amazon_s3_endpoint\030"
+    "\014 \001(\tH\013R\020amazonS3Endpoint\210\001\001\022\'\n\ramazon_s"
+    "3_ssl\030\r \001(\010H\014R\013amazonS3Ssl\210\001\001\022.\n\021amazon_"
+    "s3_sign_v2\030\016 \001(\010H\rR\016amazonS3SignV2\210\001\001\022\'\n"
+    "\ramazon_s3_sse\030\017 \001(\010H\016R\013amazonS3Sse\210\001\001\022+"
+    "\n\017amazon_s3_trace\030\020 \001(\010H\017R\ramazonS3Trace"
+    "\210\001\001\022W\n&amazon_s3_request_timeout_millise"
+    "conds\030\021 \001(\003H\020R\"amazonS3RequestTimeoutMil"
+    "liseconds\210\001\001\022J\n amazon_s3_upload_part_si"
+    "ze_bytes\030\022 \001(\003H\021R\033amazonS3UploadPartSize"
+    "Bytes\210\001\001\022:\n\027amazon_s3_storage_class\030\023 \001("
+    "\tH\022R\024amazonS3StorageClass\210\001\001B\032\n\030_enable_"
+    "file_attachmentsB\027\n\025_enable_mobile_uploa"
+    "dB\031\n\027_enable_mobile_downloadB\027\n\025_max_ima"
+    "ge_resolutionB \n\036_max_image_decoder_conc"
+    "urrencyB\016\n\014_driver_nameB\032\n\030_amazon_s3_ac"
+    "cess_key_idB\036\n\034_amazon_s3_secret_access_"
+    "keyB\023\n\021_amazon_s3_bucketB\030\n\026_amazon_s3_p"
+    "ath_prefixB\023\n\021_amazon_s3_regionB\025\n\023_amaz"
+    "on_s3_endpointB\020\n\016_amazon_s3_sslB\024\n\022_ama"
+    "zon_s3_sign_v2B\020\n\016_amazon_s3_sseB\022\n\020_ama"
+    "zon_s3_traceB)\n\'_amazon_s3_request_timeo"
+    "ut_millisecondsB#\n!_amazon_s3_upload_par"
+    "t_size_bytesB\032\n\030_amazon_s3_storage_class"
+    "\"\210\021\n\013ConfigEmail\022=\n\030send_email_notificat"
+    "ions\030\001 \001(\010H\000R\026sendEmailNotifications\210\001\001\022"
+    "A\n\032require_email_verification\030\002 \001(\010H\001R\030r"
+    "equireEmailVerification\210\001\001\022*\n\016feedback_e"
+    "mail\030\003 \001(\tH\002R\rfeedbackEmail\210\001\001\022-\n\020reply_"
+    "to_address\030\004 \001(\tH\003R\016replyToAddress\210\001\001\022-\n"
+    "\020enable_smtp_auth\030\005 \001(\010H\004R\016enableSmtpAut"
+    "h\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005R\014smtpUsern"
+    "ame\210\001\001\022(\n\rsmtp_password\030\007 \001(\tH\006R\014smtpPas"
+    "sword\210\001\001\022$\n\013smtp_server\030\010 \001(\tH\007R\nsmtpSer"
+    "ver\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010smtpPort\210\001\001"
+    "\0223\n\023smtp_server_timeout\030\n \001(\005H\tR\021smtpSer"
+    "verTimeout\210\001\001\0224\n\023connection_security\030\013 \001"
+    "(\tH\nR\022connectionSecurity\210\001\001\022;\n\027send_push"
+    "_notifications\030\014 \001(\010H\013R\025sendPushNotifica"
+    "tions\210\001\001\022=\n\030push_notification_server\030\r \001"
+    "(\tH\014R\026pushNotificationServer\210\001\001\022A\n\032push_"
+    "notification_contents\030\016 \001(\tH\rR\030pushNotif"
+    "icationContents\210\001\001\022=\n\030push_notification_"
+    "buffer\030\017 \001(\005H\016R\026pushNotificationBuffer\210\001"
+    "\001\0227\n\025enable_email_batching\030\020 \001(\010H\017R\023enab"
+    "leEmailBatching\210\001\001\022@\n\032email_batching_buf"
+    "fer_size\030\021 \001(\005H\020R\027emailBatchingBufferSiz"
+    "e\210\001\001\022;\n\027email_batching_interval\030\022 \001(\005H\021R"
+    "\025emailBatchingInterval\210\001\001\022T\n$skip_server"
+    "_certificate_verification\030\023 \001(\010H\022R!skipS"
+    "erverCertificateVerification\210\001\001\022L\n email"
+    "_notification_contents_type\030\024 \001(\tH\023R\035ema"
+    "ilNotificationContentsType\210\001\001\0221\n\022login_b"
+    "utton_color\030\025 \001(\tH\024R\020loginButtonColor\210\001\001"
+    "\022>\n\031login_button_border_color\030\026 \001(\tH\025R\026l"
+    "oginButtonBorderColor\210\001\001\022:\n\027login_button"
+    "_text_color\030\027 \001(\tH\026R\024loginButtonTextColo"
+    "r\210\001\001\022>\n\031rate_limiting_memory_size\030\030 \001(\005H"
+    "\027R\026rateLimitingMemorySize\210\001\001\0228\n\026rate_lim"
+    "iting_per_hour\030\031 \001(\005H\030R\023rateLimitingPerH"
+    "our\210\001\001\022:\n\027rate_limiting_max_burst\030\032 \001(\005H"
+    "\031R\024rateLimitingMaxBurst\210\001\001B\033\n\031_send_emai"
+    "l_notificationsB\035\n\033_require_email_verifi"
+    "cationB\021\n\017_feedback_emailB\023\n\021_reply_to_a"
+    "ddressB\023\n\021_enable_smtp_authB\020\n\016_smtp_use"
+    "rnameB\020\n\016_smtp_passwordB\016\n\014_smtp_serverB"
+    "\014\n\n_smtp_portB\026\n\024_smtp_server_timeoutB\026\n"
+    "\024_connection_securityB\032\n\030_send_push_noti"
+    "ficationsB\033\n\031_push_notification_serverB\035"
+    "\n\033_push_notification_contentsB\033\n\031_push_n"
+    "otification_bufferB\030\n\026_enable_email_batc"
+    "hingB\035\n\033_email_batching_buffer_sizeB\032\n\030_"
+    "email_batching_intervalB\'\n%_skip_server_"
+    "certificate_verificationB#\n!_email_notif"
+    "ication_contents_typeB\025\n\023_login_button_c"
+    "olorB\034\n\032_login_button_border_colorB\032\n\030_l"
+    "ogin_button_text_colorB\034\n\032_rate_limiting"
+    "_memory_sizeB\031\n\027_rate_limiting_per_hourB"
+    "\032\n\030_rate_limiting_max_burst\"\204\003\n\017ConfigRa"
+    "teLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022\034\n\007"
+    "per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tmax_burst\030"
+    "\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_store_siz"
+    "e\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222\n\023vary_by"
+    "_remote_addr\030\005 \001(\010H\004R\020varyByRemoteAddr\210\001"
+    "\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvaryByUser\210\001\001"
+    "\022$\n\016vary_by_header\030\007 \001(\tR\014varyByHeaderB\t"
+    "\n\007_enableB\n\n\010_per_secB\014\n\n_max_burstB\024\n\022_"
+    "memory_store_sizeB\026\n\024_vary_by_remote_add"
+    "rB\017\n\r_vary_by_user\"\227\001\n\rConfigPrivacy\0221\n\022"
+    "show_email_address\030\001 \001(\010H\000R\020showEmailAdd"
+    "ress\210\001\001\022)\n\016show_full_name\030\002 \001(\010H\001R\014showF"
+    "ullName\210\001\001B\025\n\023_show_email_addressB\021\n\017_sh"
+    "ow_full_name\"\357\003\n\rConfigSupport\0226\n\025terms_"
+    "of_service_link\030\001 \001(\tH\000R\022termsOfServiceL"
+    "ink\210\001\001\0223\n\023privacy_policy_link\030\002 \001(\tH\001R\021p"
+    "rivacyPolicyLink\210\001\001\022\"\n\nabout_link\030\003 \001(\tH"
+    "\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 \001(\tH\003R\010he"
+    "lpLink\210\001\001\0226\n\025report_a_problem_link\030\005 \001(\t"
+    "H\004R\022reportAProblemLink\210\001\001\0225\n\024forgot_pass"
+    "word_link\030\006 \001(\tH\005R\022forgotPasswordLink\210\001\001"
+    "\022(\n\rsupport_email\030\007 \001(\tH\006R\014supportEmail\210"
+    "\001\001B\030\n\026_terms_of_service_linkB\026\n\024_privacy"
+    "_policy_linkB\r\n\013_about_linkB\014\n\n_help_lin"
+    "kB\030\n\026_report_a_problem_linkB\027\n\025_forgot_p"
+    "assword_linkB\020\n\016_support_email\"\347\001\n\022Confi"
+    "gLocalization\0227\n\025default_server_locale\030\001"
+    " \001(\tH\000R\023defaultServerLocale\210\001\001\0227\n\025defaul"
+    "t_client_locale\030\002 \001(\tH\001R\023defaultClientLo"
+    "cale\210\001\001\022+\n\021available_locales\030\003 \003(\tR\020avai"
+    "lableLocalesB\030\n\026_default_server_localeB\030"
+    "\n\026_default_client_locale\"\325\020\n\nConfigLdap\022"
+    "\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable_s"
+    "ync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_serve"
+    "r\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_port\030\004 "
+    "\001(\005H\003R\010ldapPort\210\001\001\0224\n\023connection_securit"
+    "y\030\005 \001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007base"
+    "_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_username\030"
+    "\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_passwor"
+    "d\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximum_lo"
+    "gin_attempts\030\t \001(\005H\010R\024maximumLoginAttemp"
+    "ts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFilter"
+    "\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013groupFilter"
+    "\210\001\001\0223\n\023enable_admin_filter\030\014 \001(\010H\013R\021enab"
+    "leAdminFilter\210\001\001\022&\n\014admin_filter\030\r \001(\tH\014"
+    "R\013adminFilter\210\001\001\022D\n\034group_display_name_a"
+    "ttribute\030\016 \001(\tH\rR\031groupDisplayNameAttrib"
+    "ute\210\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016R\020gr"
+    "oupIdAttribute\210\001\001\0225\n\024first_name_attribut"
+    "e\030\020 \001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023last"
+    "_name_attribute\030\021 \001(\tH\020R\021lastNameAttribu"
+    "te\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016emailA"
+    "ttribute\210\001\001\0222\n\022username_attribute\030\023 \001(\tH"
+    "\022R\021usernameAttribute\210\001\001\0222\n\022nickname_attr"
+    "ibute\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022&\n\014i"
+    "d_attribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n\022p"
+    "osition_attribute\030\026 \001(\tH\025R\021positionAttri"
+    "bute\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH\026R\020l"
+    "oginIdAttribute\210\001\001\0220\n\021picture_attribute\030"
+    "\030 \001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync_int"
+    "erval_minutes\030\031 \001(\005H\030R\023syncIntervalMinut"
+    "es\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014queryTim"
+    "eout\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013maxPag"
+    "eSize\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033R\016lo"
+    "ginFieldName\210\001\001\0221\n\022login_button_color\030\035 "
+    "\001(\tH\034R\020loginButtonColor\210\001\001\022>\n\031login_butt"
+    "on_border_color\030\036 \001(\tH\035R\026loginButtonBord"
+    "erColor\210\001\001\022:\n\027login_button_text_color\030\037 "
+    "\001(\tH\036R\024loginButtonTextColor\210\001\001B\t\n\007_enabl"
+    "eB\016\n\014_enable_syncB\016\n\014_ldap_serverB\014\n\n_ld"
+    "ap_portB\026\n\024_connection_securityB\n\n\010_base"
+    "_dnB\020\n\016_bind_usernameB\020\n\016_bind_passwordB"
+    "\031\n\027_maximum_login_attemptsB\016\n\014_user_filt"
+    "erB\017\n\r_group_filterB\026\n\024_enable_admin_fil"
+    "terB\017\n\r_admin_filterB\037\n\035_group_display_n"
+    "ame_attributeB\025\n\023_group_id_attributeB\027\n\025"
+    "_first_name_attributeB\026\n\024_last_name_attr"
+    "ibuteB\022\n\020_email_attributeB\025\n\023_username_a"
+    "ttributeB\025\n\023_nickname_attributeB\017\n\r_id_a"
+    "ttributeB\025\n\023_position_attributeB\025\n\023_logi"
+    "n_id_attributeB\024\n\022_picture_attributeB\030\n\026"
+    "_sync_interval_minutesB\020\n\016_query_timeout"
+    "B\020\n\016_max_page_sizeB\023\n\021_login_field_nameB"
+    "\025\n\023_login_button_colorB\034\n\032_login_button_"
+    "border_colorB\032\n\030_login_button_text_color"
+    "\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006enabl"
+    "e\210\001\001\0226\n\025enable_sync_with_ldap\030\002 \001(\010H\001R\022e"
+    "nableSyncWithLdap\210\001\001\022N\n\"enable_sync_with"
+    "_ldap_include_auth\030\003 \001(\010H\002R\035enableSyncWi"
+    "thLdapIncludeAuth\210\001\001\022:\n\027ignore_guests_ld"
+    "ap_sync\030\004 \001(\010H\003R\024ignoreGuestsLdapSync\210\001\001"
+    "\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encrypt"
+    "\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request\030\007 \001"
+    "(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R"
+    "\006idpUrl\210\001\001\0221\n\022idp_descriptor_url\030\t \001(\tH\010"
+    "R\020idpDescriptorUrl\210\001\001\022-\n\020idp_metadata_ur"
+    "l\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033service_"
+    "provider_identifier\030\013 \001(\tH\nR\031serviceProv"
+    "iderIdentifier\210\001\001\022H\n\036assertion_consumer_"
+    "service_url\030\014 \001(\tH\013R\033assertionConsumerSe"
+    "rviceUrl\210\001\001\0224\n\023signature_algorithm\030\r \001(\t"
+    "H\014R\022signatureAlgorithm\210\001\001\0224\n\023canonical_a"
+    "lgorithm\030\016 \001(\tH\rR\022canonicalAlgorithm\210\001\001\022"
+    ":\n\027scoping_idp_provider_id\030\017 \001(\tH\016R\024scop"
+    "ingIdpProviderId\210\001\001\022-\n\020scoping_idp_name\030"
+    "\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_certif"
+    "icate_file\030\021 \001(\tH\020R\022idpCertificateFile\210\001"
+    "\001\022;\n\027public_certificate_file\030\022 \001(\tH\021R\025pu"
+    "blicCertificateFile\210\001\001\022-\n\020private_key_fi"
+    "le\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_attr"
+    "ibute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026enable_"
+    "admin_attribute\030\025 \001(\010H\024R\024enableAdminAttr"
+    "ibute\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R\016adm"
+    "inAttribute\210\001\001\0225\n\024first_name_attribute\030\027"
+    " \001(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023last_na"
+    "me_attribute\030\030 \001(\tH\027R\021lastNameAttribute\210"
+    "\001\001\022,\n\017email_attribute\030\031 \001(\tH\030R\016emailAttr"
+    "ibute\210\001\001\0222\n\022username_attribute\030\032 \001(\tH\031R\021"
+    "usernameAttribute\210\001\001\0222\n\022nickname_attribu"
+    "te\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020loca"
+    "le_attribute\030\034 \001(\tH\033R\017localeAttribute\210\001\001"
+    "\0222\n\022position_attribute\030\035 \001(\tH\034R\021position"
+    "Attribute\210\001\001\022/\n\021login_button_text\030\036 \001(\tH"
+    "\035R\017loginButtonText\210\001\001\0221\n\022login_button_co"
+    "lor\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031logi"
+    "n_button_border_color\030  \001(\tH\037R\026loginButt"
+    "onBorderColor\210\001\001\022:\n\027login_button_text_co"
+    "lor\030! \001(\tH R\024loginButtonTextColor\210\001\001B\t\n\007"
+    "_enableB\030\n\026_enable_sync_with_ldapB%\n#_en"
+    "able_sync_with_ldap_include_authB\032\n\030_ign"
+    "ore_guests_ldap_syncB\t\n\007_verifyB\n\n\010_encr"
+    "yptB\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023_idp"
+    "_descriptor_urlB\023\n\021_idp_metadata_urlB\036\n\034"
+    "_service_provider_identifierB!\n\037_asserti"
+    "on_consumer_service_urlB\026\n\024_signature_al"
+    "gorithmB\026\n\024_canonical_algorithmB\032\n\030_scop"
+    "ing_idp_provider_idB\023\n\021_scoping_idp_name"
+    "B\027\n\025_idp_certificate_fileB\032\n\030_public_cer"
+    "tificate_fileB\023\n\021_private_key_fileB\017\n\r_i"
+    "d_attributeB\031\n\027_enable_admin_attributeB\022"
+    "\n\020_admin_attributeB\027\n\025_first_name_attrib"
+    "uteB\026\n\024_last_name_attributeB\022\n\020_email_at"
+    "tributeB\025\n\023_username_attributeB\025\n\023_nickn"
+    "ame_attributeB\023\n\021_locale_attributeB\025\n\023_p"
+    "osition_attributeB\024\n\022_login_button_textB"
+    "\025\n\023_login_button_colorB\034\n\032_login_button_"
+    "border_colorB\032\n\030_login_button_text_color"
+    "\"\301\005\n\017ConfigNativeApp\0223\n\026app_custom_url_s"
+    "chemes\030\001 \003(\tR\023appCustomUrlSchemes\022/\n\021app"
+    "_download_link\030\002 \001(\tH\000R\017appDownloadLink\210"
+    "\001\001\022>\n\031android_app_download_link\030\003 \001(\tH\001R"
+    "\026androidAppDownloadLink\210\001\001\0226\n\025ios_app_do"
+    "wnload_link\030\004 \001(\tH\002R\022iosAppDownloadLink\210"
+    "\001\001\022;\n\027mobile_external_browser\030\005 \001(\010H\003R\025m"
+    "obileExternalBrowser\210\001\001\022=\n\030mobile_enable"
+    "_biometrics\030\006 \001(\010H\004R\026mobileEnableBiometr"
+    "ics\210\001\001\022F\n\035mobile_prevent_screen_capture\030"
+    "\007 \001(\010H\005R\032mobilePreventScreenCapture\210\001\001\022C"
+    "\n\033mobile_jailbreak_protection\030\010 \001(\010H\006R\031m"
+    "obileJailbreakProtection\210\001\001B\024\n\022_app_down"
+    "load_linkB\034\n\032_android_app_download_linkB"
+    "\030\n\026_ios_app_download_linkB\032\n\030_mobile_ext"
+    "ernal_browserB\033\n\031_mobile_enable_biometri"
+    "csB \n\036_mobile_prevent_screen_captureB\036\n\034"
+    "_mobile_jailbreak_protection\"\332\010\n\021ConfigM"
+    "eilisearch\022 \n\013server_urls\030\001 \003(\tR\013server_"
+    "urls\022\"\n\nmaster_key\030\002 \001(\tH\000R\tmasterKey\210\001\001"
+    "\022,\n\017enable_indexing\030\003 \001(\010H\001R\016enableIndex"
+    "ing\210\001\001\022.\n\020enable_searching\030\004 \001(\010H\002R\017enab"
+    "leSearching\210\001\001\0224\n\023enable_autocomplete\030\005 "
+    "\001(\010H\003R\022enableAutocomplete\210\001\001\022,\n\017max_conc"
+    "urrency\030\006 \001(\005H\004R\016maxConcurrency\210\001\001\022;\n\027re"
+    "quest_timeout_seconds\030\007 \001(\005H\005R\025requestTi"
+    "meoutSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\006R"
+    "\013indexPrefix\210\001\001\022-\n\020search_cutoff_ms\030\t \001("
+    "\005H\007R\016searchCutoffMs\210\001\001\0227\n\025enable_typo_to"
+    "lerance\030\n \001(\010H\010R\023enableTypoTolerance\210\001\001\022"
+    "!\n\014kafka_broker\030\013 \001(\tR\013kafkaBroker\022$\n\016ka"
+    "fka_group_id\030\014 \001(\tR\014kafkaGroupId\022\037\n\013kafa"
+    "k_topic\030\r \001(\tR\nkafakTopic\022&\n\017kafak_topic"
+    "_dlq\030\016 \001(\tR\rkafakTopicDlq\022,\n\020task_max_wa"
+    "it_ms\030\017 \001(\005H\tR\rtaskMaxWaitMs\210\001\001\022-\n\020task_"
+    "max_retries\030\020 \001(\005H\nR\016taskMaxRetries\210\001\001\0224"
+    "\n\024task_backoff_base_ms\030\021 \001(\005H\013R\021taskBack"
+    "offBaseMs\210\001\001\0221\n\022shutdown_wait_secs\030\022 \001(\005"
+    "H\014R\020shutdownWaitSecs\210\001\001B\r\n\013_master_keyB\022"
+    "\n\020_enable_indexingB\023\n\021_enable_searchingB"
+    "\026\n\024_enable_autocompleteB\022\n\020_max_concurre"
+    "ncyB\032\n\030_request_timeout_secondsB\017\n\r_inde"
+    "x_prefixB\023\n\021_search_cutoff_msB\030\n\026_enable"
+    "_typo_toleranceB\023\n\021_task_max_wait_msB\023\n\021"
+    "_task_max_retriesB\027\n\025_task_backoff_base_"
+    "msB\025\n\023_shutdown_wait_secs\"\272\003\n\013ConfigBlev"
+    "e\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001\022,\n\017e"
+    "nable_indexing\030\002 \001(\010H\001R\016enableIndexing\210\001"
+    "\001\022.\n\020enable_searching\030\003 \001(\010H\002R\017enableSea"
+    "rching\210\001\001\0224\n\023enable_autocomplete\030\004 \001(\010H\003"
+    "R\022enableAutocomplete\210\001\001\022M\n!bulk_indexing"
+    "_time_window_seconds\030\005 \001(\005H\004R\035bulkIndexi"
+    "ngTimeWindowSeconds\210\001\001\022\"\n\nbatch_size\030\006 \001"
+    "(\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB\022\n\020_ena"
+    "ble_indexingB\023\n\021_enable_searchingB\026\n\024_en"
+    "able_autocompleteB$\n\"_bulk_indexing_time"
+    "_window_secondsB\r\n\013_batch_size\"\354\006\n\023Confi"
+    "gDataRetention\022;\n\027enable_message_deletio"
+    "n\030\001 \001(\010H\000R\025enableMessageDeletion\210\001\001\0225\n\024e"
+    "nable_file_deletion\030\002 \001(\010H\001R\022enableFileD"
+    "eletion\210\001\001\0229\n\026enable_boards_deletion\030\003 \001"
+    "(\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027message"
+    "_retention_hours\030\004 \001(\005H\003R\025messageRetenti"
+    "onHours\210\001\001\0225\n\024file_retention_hours\030\005 \001(\005"
+    "H\004R\022fileRetentionHours\210\001\001\0227\n\025boards_rete"
+    "ntion_days\030\006 \001(\005H\005R\023boardsRetentionDays\210"
+    "\001\001\022:\n\027deletion_job_start_time\030\007 \001(\tH\006R\024d"
+    "eletionJobStartTime\210\001\001\022\"\n\nbatch_size\030\010 \001"
+    "(\005H\007R\tbatchSize\210\001\001\022N\n!time_between_batch"
+    "es_milliseconds\030\t \001(\005H\010R\036timeBetweenBatc"
+    "hesMilliseconds\210\001\001\022<\n\030retention_ids_batc"
+    "h_size\030\n \001(\005H\tR\025retentionIdsBatchSize\210\001\001"
+    "B\032\n\030_enable_message_deletionB\027\n\025_enable_"
+    "file_deletionB\031\n\027_enable_boards_deletion"
+    "B\032\n\030_message_retention_hoursB\027\n\025_file_re"
+    "tention_hoursB\030\n\026_boards_retention_daysB"
+    "\032\n\030_deletion_job_start_timeB\r\n\013_batch_si"
+    "zeB$\n\"_time_between_batches_milliseconds"
+    "B\033\n\031_retention_ids_batch_size\"\264\002\n\020Config"
+    "ImageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022"
+    "-\n\020image_proxy_type\030\002 \001(\tH\001R\016imageProxyT"
+    "ype\210\001\001\0228\n\026remote_image_proxy_url\030\003 \001(\tH\002"
+    "R\023remoteImageProxyUrl\210\001\001\022@\n\032remote_image"
+    "_proxy_options\030\004 \001(\tH\003R\027remoteImageProxy"
+    "Options\210\001\001B\t\n\007_enableB\023\n\021_image_proxy_ty"
+    "peB\031\n\027_remote_image_proxy_urlB\035\n\033_remote"
+    "_image_proxy_options\"\347\004\n\016ConfigProducts\022"
+    "8\n\031product_image_max_size_mb\030\001 \001(\004R\025prod"
+    "uctImageMaxSizeMb\022C\n\036product_image_accep"
+    "ted_formats\030\002 \003(\tR\033productImageAcceptedF"
+    "ormats\0225\n\027product_image_max_width\030\003 \001(\004R"
+    "\024productImageMaxWidth\0227\n\030product_image_m"
+    "ax_height\030\004 \001(\004R\025productImageMaxHeight\0225"
+    "\n\027product_image_min_width\030\005 \001(\004R\024product"
+    "ImageMinWidth\0227\n\030product_image_min_heigh"
+    "t\030\006 \001(\004R\025productImageMinHeight\022M\n$produc"
+    "t_images_min_count_per_variant\030\007 \001(\004R\037pr"
+    "oductImagesMinCountPerVariant\022M\n$product"
+    "_images_max_count_per_variant\030\010 \001(\004R\037pro"
+    "ductImagesMaxCountPerVariant\022X\n*product_"
+    "media_max_direct_uploading_size_mb\030\t \001(\004"
+    "R$productMediaMaxDirectUploadingSizeMb\"\262"
+    "\t\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1.Conf"
+    "igMainR\004main\0225\n\010services\030\002 \001(\0132\031.common."
+    "v1.ConfigServicesR\010services\0225\n\010security\030"
+    "\003 \001(\0132\031.common.v1.ConfigSecurityR\010securi"
+    "ty\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheConfi"
+    "gR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v1.Co"
+    "nfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.comm"
+    "on.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.comm"
+    "on.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001(\0132\031"
+    ".common.v1.ConfigPasswordR\010password\022)\n\004f"
+    "ile\030\t \001(\0132\025.common.v1.ConfigFileR\004file\022,"
+    "\n\005email\030\n \001(\0132\026.common.v1.ConfigEmailR\005e"
+    "mail\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1.Con"
+    "figRateLimitR\trateLimit\0222\n\007privacy\030\014 \001(\013"
+    "2\030.common.v1.ConfigPrivacyR\007privacy\0222\n\007s"
+    "upport\030\r \001(\0132\030.common.v1.ConfigSupportR\007"
+    "support\022A\n\014localization\030\016 \001(\0132\035.common.v"
+    "1.ConfigLocalizationR\014localization\022)\n\004ld"
+    "ap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n"
+    "\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004saml"
+    "\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.ConfigN"
+    "ativeAppR\tnativeApp\022>\n\013meilisearch\030\022 \001(\013"
+    "2\034.common.v1.ConfigMeilisearchR\013meilisea"
+    "rch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.ConfigBle"
+    "veR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036.comm"
+    "on.v1.ConfigDataRetentionR\rdataRetention"
+    "\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.Config"
+    "ImageProxyR\nimageProxy\022,\n\005oauth\030\026 \001(\0132\026."
+    "common.v1.ConfigOAuthR\005oauth\0225\n\010products"
+    "\030\027 \001(\0132\031.common.v1.ConfigProductsR\010produ"
+    "cts\"\022\n\020ConfigGetRequest\"u\n\021ConfigGetResp"
+    "onse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R"
+    "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro"
+    "rH\000R\005errorB\n\n\010response\"@\n\023ConfigUpdateRe"
+    "quest\022)\n\006config\030\001 \001(\0132\021.common.v1.Config"
+    "R\006config\"x\n\024ConfigUpdateResponse\022\'\n\004data"
+    "\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005err"
+    "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n"
+    "\n\010response\"z\n\026ConfigListenerResponse\022\'\n\004"
+    "data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n"
+    "\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005err"
+    "orB\n\n\010response\"4\n\025ConfigListenerRequest\022"
+    "\033\n\tclient_id\030\001 \001(\tR\010clientIdBq\n\032org.mega"
+    "commerce.common.v1B\013ConfigProtoZCgithub."
+    "com/ahmad-khatib0-org/megacommerce-proto"
+    "/gen/go/common/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_common_2fv1_2fconfig_2eproto_deps[1] = {
@@ -2790,7 +2801,7 @@ static ::absl::once_flag descriptor_table_common_2fv1_2fconfig_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_common_2fv1_2fconfig_2eproto = {
     false,
     false,
-    24553,
+    24751,
     descriptor_table_protodef_common_2fv1_2fconfig_2eproto,
     "common/v1/config.proto",
     &descriptor_table_common_2fv1_2fconfig_2eproto_once,
@@ -3559,7 +3570,13 @@ ConfigServices::ConfigServices(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  _impl_.users_service_max_receive_message_size_bytes_ = from._impl_.users_service_max_receive_message_size_bytes_;
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, users_service_max_receive_message_size_bytes_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, users_service_max_receive_message_size_bytes_),
+           offsetof(Impl_, inventory_service_max_receive_message_size_bytes_) -
+               offsetof(Impl_, users_service_max_receive_message_size_bytes_) +
+               sizeof(Impl_::inventory_service_max_receive_message_size_bytes_));
 
   // @@protoc_insertion_point(copy_constructor:common.v1.ConfigServices)
 }
@@ -3585,7 +3602,12 @@ PROTOBUF_NDEBUG_INLINE ConfigServices::Impl_::Impl_(
 
 inline void ConfigServices::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.users_service_max_receive_message_size_bytes_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, users_service_max_receive_message_size_bytes_),
+           0,
+           offsetof(Impl_, inventory_service_max_receive_message_size_bytes_) -
+               offsetof(Impl_, users_service_max_receive_message_size_bytes_) +
+               sizeof(Impl_::inventory_service_max_receive_message_size_bytes_));
 }
 ConfigServices::~ConfigServices() {
   // @@protoc_insertion_point(destructor:common.v1.ConfigServices)
@@ -3656,16 +3678,16 @@ ConfigServices::GetClassData() const {
   return ConfigServices_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 16, 0, 435, 2>
+const ::_pbi::TcParseTable<5, 18, 0, 435, 2>
 ConfigServices::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_._has_bits_),
     0, // no _extensions_
-    16, 120,  // max_field_number, fast_idx_mask
+    18, 248,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294901760,  // skipmap
+    4294705152,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    16,  // num_field_entries
+    18,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     ConfigServices_class_data_.base(),
@@ -3675,9 +3697,7 @@ ConfigServices::_table_ = {
     ::_pbi::TcParser::GetTable<::common::v1::ConfigServices>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string inventory_service_prometheus_url = 16 [json_name = "inventoryServicePrometheusUrl"];
-    {::_pbi::TcParser::FastUS2,
-     {386, 14, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.inventory_service_prometheus_url_)}},
+    {::_pbi::TcParser::MiniParse, {}},
     // optional string common_service_grpc_url = 1 [json_name = "commonServiceGrpcUrl"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.common_service_grpc_url_)}},
@@ -3720,9 +3740,31 @@ ConfigServices::_table_ = {
     // string orders_service_prometheus_url = 14 [json_name = "ordersServicePrometheusUrl"];
     {::_pbi::TcParser::FastUS1,
      {114, 12, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.orders_service_prometheus_url_)}},
-    // string inventory_service_grpc_url = 15 [json_name = "inventoryServiceGrpcUrl"];
-    {::_pbi::TcParser::FastUS1,
-     {122, 13, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.inventory_service_grpc_url_)}},
+    // int64 orders_service_max_receive_message_size_bytes = 15 [json_name = "ordersServiceMaxReceiveMessageSizeBytes"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigServices, _impl_.orders_service_max_receive_message_size_bytes_), 16>(),
+     {120, 16, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.orders_service_max_receive_message_size_bytes_)}},
+    // string inventory_service_grpc_url = 16 [json_name = "inventoryServiceGrpcUrl"];
+    {::_pbi::TcParser::FastUS2,
+     {386, 13, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.inventory_service_grpc_url_)}},
+    // string inventory_service_prometheus_url = 17 [json_name = "inventoryServicePrometheusUrl"];
+    {::_pbi::TcParser::FastUS2,
+     {394, 14, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.inventory_service_prometheus_url_)}},
+    // int64 inventory_service_max_receive_message_size_bytes = 18 [json_name = "inventoryServiceMaxReceiveMessageSizeBytes"];
+    {::_pbi::TcParser::FastV64S2,
+     {400, 17, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.inventory_service_max_receive_message_size_bytes_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
@@ -3768,16 +3810,22 @@ ConfigServices::_table_ = {
     // string orders_service_prometheus_url = 14 [json_name = "ordersServicePrometheusUrl"];
     {PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.orders_service_prometheus_url_), _Internal::kHasBitsOffset + 12, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string inventory_service_grpc_url = 15 [json_name = "inventoryServiceGrpcUrl"];
+    // int64 orders_service_max_receive_message_size_bytes = 15 [json_name = "ordersServiceMaxReceiveMessageSizeBytes"];
+    {PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.orders_service_max_receive_message_size_bytes_), _Internal::kHasBitsOffset + 16, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+    // string inventory_service_grpc_url = 16 [json_name = "inventoryServiceGrpcUrl"];
     {PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.inventory_service_grpc_url_), _Internal::kHasBitsOffset + 13, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string inventory_service_prometheus_url = 16 [json_name = "inventoryServicePrometheusUrl"];
+    // string inventory_service_prometheus_url = 17 [json_name = "inventoryServicePrometheusUrl"];
     {PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.inventory_service_prometheus_url_), _Internal::kHasBitsOffset + 14, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // int64 inventory_service_max_receive_message_size_bytes = 18 [json_name = "inventoryServiceMaxReceiveMessageSizeBytes"];
+    {PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.inventory_service_max_receive_message_size_bytes_), _Internal::kHasBitsOffset + 17, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
   }},
   // no aux_entries
   {{
-    "\30\27\25\31\24\35\33\37\0\25\33\27\35\27\35\32\40\0\0\0\0\0\0\0"
+    "\30\27\25\31\24\35\33\37\0\25\33\27\35\27\35\0\32\40\0\0\0\0\0\0"
     "common.v1.ConfigServices"
     "common_service_grpc_url"
     "user_service_grpc_url"
@@ -3854,6 +3902,11 @@ PROTOBUF_NOINLINE void ConfigServices::Clear() {
     }
   }
   _impl_.users_service_max_receive_message_size_bytes_ = ::int64_t{0};
+  if ((cached_has_bits & 0x00030000u) != 0) {
+    ::memset(&_impl_.orders_service_max_receive_message_size_bytes_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.inventory_service_max_receive_message_size_bytes_) -
+        reinterpret_cast<char*>(&_impl_.orders_service_max_receive_message_size_bytes_)) + sizeof(_impl_.inventory_service_max_receive_message_size_bytes_));
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -3993,23 +4046,41 @@ PROTOBUF_NOINLINE void ConfigServices::Clear() {
     }
   }
 
-  // string inventory_service_grpc_url = 15 [json_name = "inventoryServiceGrpcUrl"];
+  // int64 orders_service_max_receive_message_size_bytes = 15 [json_name = "ordersServiceMaxReceiveMessageSizeBytes"];
+  if ((cached_has_bits & 0x00010000u) != 0) {
+    if (this_._internal_orders_service_max_receive_message_size_bytes() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<15>(
+              stream, this_._internal_orders_service_max_receive_message_size_bytes(), target);
+    }
+  }
+
+  // string inventory_service_grpc_url = 16 [json_name = "inventoryServiceGrpcUrl"];
   if ((cached_has_bits & 0x00002000u) != 0) {
     if (!this_._internal_inventory_service_grpc_url().empty()) {
       const ::std::string& _s = this_._internal_inventory_service_grpc_url();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigServices.inventory_service_grpc_url");
-      target = stream->WriteStringMaybeAliased(15, _s, target);
+      target = stream->WriteStringMaybeAliased(16, _s, target);
     }
   }
 
-  // string inventory_service_prometheus_url = 16 [json_name = "inventoryServicePrometheusUrl"];
+  // string inventory_service_prometheus_url = 17 [json_name = "inventoryServicePrometheusUrl"];
   if ((cached_has_bits & 0x00004000u) != 0) {
     if (!this_._internal_inventory_service_prometheus_url().empty()) {
       const ::std::string& _s = this_._internal_inventory_service_prometheus_url();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigServices.inventory_service_prometheus_url");
-      target = stream->WriteStringMaybeAliased(16, _s, target);
+      target = stream->WriteStringMaybeAliased(17, _s, target);
+    }
+  }
+
+  // int64 inventory_service_max_receive_message_size_bytes = 18 [json_name = "inventoryServiceMaxReceiveMessageSizeBytes"];
+  if ((cached_has_bits & 0x00020000u) != 0) {
+    if (this_._internal_inventory_service_max_receive_message_size_bytes() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteInt64ToArray(
+          18, this_._internal_inventory_service_max_receive_message_size_bytes(), target);
     }
   }
 
@@ -4114,14 +4185,14 @@ PROTOBUF_NOINLINE void ConfigServices::Clear() {
                                         this_._internal_orders_service_prometheus_url());
       }
     }
-    // string inventory_service_grpc_url = 15 [json_name = "inventoryServiceGrpcUrl"];
+    // string inventory_service_grpc_url = 16 [json_name = "inventoryServiceGrpcUrl"];
     if ((cached_has_bits & 0x00002000u) != 0) {
       if (!this_._internal_inventory_service_grpc_url().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+        total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_inventory_service_grpc_url());
       }
     }
-    // string inventory_service_prometheus_url = 16 [json_name = "inventoryServicePrometheusUrl"];
+    // string inventory_service_prometheus_url = 17 [json_name = "inventoryServicePrometheusUrl"];
     if ((cached_has_bits & 0x00004000u) != 0) {
       if (!this_._internal_inventory_service_prometheus_url().empty()) {
         total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -4132,6 +4203,22 @@ PROTOBUF_NOINLINE void ConfigServices::Clear() {
     if ((cached_has_bits & 0x00008000u) != 0) {
       total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
           this_._internal_users_service_max_receive_message_size_bytes());
+    }
+  }
+  if ((cached_has_bits & 0x00030000u) != 0) {
+    // int64 orders_service_max_receive_message_size_bytes = 15 [json_name = "ordersServiceMaxReceiveMessageSizeBytes"];
+    if ((cached_has_bits & 0x00010000u) != 0) {
+      if (this_._internal_orders_service_max_receive_message_size_bytes() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+            this_._internal_orders_service_max_receive_message_size_bytes());
+      }
+    }
+    // int64 inventory_service_max_receive_message_size_bytes = 18 [json_name = "inventoryServiceMaxReceiveMessageSizeBytes"];
+    if ((cached_has_bits & 0x00020000u) != 0) {
+      if (this_._internal_inventory_service_max_receive_message_size_bytes() != 0) {
+        total_size += 2 + ::_pbi::WireFormatLite::Int64Size(
+                                        this_._internal_inventory_service_max_receive_message_size_bytes());
+      }
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -4235,6 +4322,18 @@ void ConfigServices::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::
       _this->_impl_.users_service_max_receive_message_size_bytes_ = from._impl_.users_service_max_receive_message_size_bytes_;
     }
   }
+  if ((cached_has_bits & 0x00030000u) != 0) {
+    if ((cached_has_bits & 0x00010000u) != 0) {
+      if (from._internal_orders_service_max_receive_message_size_bytes() != 0) {
+        _this->_impl_.orders_service_max_receive_message_size_bytes_ = from._impl_.orders_service_max_receive_message_size_bytes_;
+      }
+    }
+    if ((cached_has_bits & 0x00020000u) != 0) {
+      if (from._internal_inventory_service_max_receive_message_size_bytes() != 0) {
+        _this->_impl_.inventory_service_max_receive_message_size_bytes_ = from._impl_.inventory_service_max_receive_message_size_bytes_;
+      }
+    }
+  }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4268,7 +4367,12 @@ void ConfigServices::InternalSwap(ConfigServices* PROTOBUF_RESTRICT PROTOBUF_NON
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.orders_service_prometheus_url_, &other->_impl_.orders_service_prometheus_url_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.inventory_service_grpc_url_, &other->_impl_.inventory_service_grpc_url_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.inventory_service_prometheus_url_, &other->_impl_.inventory_service_prometheus_url_, arena);
-  swap(_impl_.users_service_max_receive_message_size_bytes_, other->_impl_.users_service_max_receive_message_size_bytes_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.inventory_service_max_receive_message_size_bytes_)
+      + sizeof(ConfigServices::_impl_.inventory_service_max_receive_message_size_bytes_)
+      - PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.users_service_max_receive_message_size_bytes_)>(
+          reinterpret_cast<char*>(&_impl_.users_service_max_receive_message_size_bytes_),
+          reinterpret_cast<char*>(&other->_impl_.users_service_max_receive_message_size_bytes_));
 }
 
 ::google::protobuf::Metadata ConfigServices::GetMetadata() const {
