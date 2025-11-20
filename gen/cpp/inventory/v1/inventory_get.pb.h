@@ -68,10 +68,10 @@ class InventoryGetResponseData;
 struct InventoryGetResponseDataDefaultTypeInternal;
 extern InventoryGetResponseDataDefaultTypeInternal _InventoryGetResponseData_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull InventoryGetResponseData_class_data_;
-class InventoryItem;
-struct InventoryItemDefaultTypeInternal;
-extern InventoryItemDefaultTypeInternal _InventoryItem_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull InventoryItem_class_data_;
+class InventoryItemList;
+struct InventoryItemListDefaultTypeInternal;
+extern InventoryItemListDefaultTypeInternal _InventoryItemList_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull InventoryItemList_class_data_;
 }  // namespace v1
 }  // namespace inventory
 namespace google {
@@ -337,30 +337,30 @@ class InventoryGetRequest final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull InventoryGetRequest_class_data_;
 // -------------------------------------------------------------------
 
-class InventoryItem final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:inventory.v1.InventoryItem) */ {
+class InventoryItemList final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:inventory.v1.InventoryItemList) */ {
  public:
-  inline InventoryItem() : InventoryItem(nullptr) {}
-  ~InventoryItem() PROTOBUF_FINAL;
+  inline InventoryItemList() : InventoryItemList(nullptr) {}
+  ~InventoryItemList() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(InventoryItem* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+  void operator delete(InventoryItemList* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(InventoryItem));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(InventoryItemList));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR InventoryItem(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR InventoryItemList(::google::protobuf::internal::ConstantInitialized);
 
-  inline InventoryItem(const InventoryItem& from) : InventoryItem(nullptr, from) {}
-  inline InventoryItem(InventoryItem&& from) noexcept
-      : InventoryItem(nullptr, ::std::move(from)) {}
-  inline InventoryItem& operator=(const InventoryItem& from) {
+  inline InventoryItemList(const InventoryItemList& from) : InventoryItemList(nullptr, from) {}
+  inline InventoryItemList(InventoryItemList&& from) noexcept
+      : InventoryItemList(nullptr, ::std::move(from)) {}
+  inline InventoryItemList& operator=(const InventoryItemList& from) {
     CopyFrom(from);
     return *this;
   }
-  inline InventoryItem& operator=(InventoryItem&& from) noexcept {
+  inline InventoryItemList& operator=(InventoryItemList&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -388,13 +388,13 @@ class InventoryItem final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const InventoryItem& default_instance() {
-    return *reinterpret_cast<const InventoryItem*>(
-        &_InventoryItem_default_instance_);
+  static const InventoryItemList& default_instance() {
+    return *reinterpret_cast<const InventoryItemList*>(
+        &_InventoryItemList_default_instance_);
   }
   static constexpr int kIndexInFileMessages = 3;
-  friend void swap(InventoryItem& a, InventoryItem& b) { a.Swap(&b); }
-  inline void Swap(InventoryItem* PROTOBUF_NONNULL other) {
+  friend void swap(InventoryItemList& a, InventoryItemList& b) { a.Swap(&b); }
+  inline void Swap(InventoryItemList* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -402,7 +402,7 @@ class InventoryItem final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(InventoryItem* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(InventoryItemList* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -410,13 +410,13 @@ class InventoryItem final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  InventoryItem* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<InventoryItem>(arena);
+  InventoryItemList* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<InventoryItemList>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const InventoryItem& from);
+  void CopyFrom(const InventoryItemList& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const InventoryItem& from) { InventoryItem::MergeImpl(*this, from); }
+  void MergeFrom(const InventoryItemList& from) { InventoryItemList::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -452,18 +452,18 @@ class InventoryItem final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(InventoryItem* PROTOBUF_NONNULL other);
+  void InternalSwap(InventoryItemList* PROTOBUF_NONNULL other);
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "inventory.v1.InventoryItem"; }
+  static ::absl::string_view FullMessageName() { return "inventory.v1.InventoryItemList"; }
 
  protected:
-  explicit InventoryItem(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  InventoryItem(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const InventoryItem& from);
-  InventoryItem(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, InventoryItem&& from) noexcept
-      : InventoryItem(arena) {
+  explicit InventoryItemList(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  InventoryItemList(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const InventoryItemList& from);
+  InventoryItemList(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, InventoryItemList&& from) noexcept
+      : InventoryItemList(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -610,12 +610,12 @@ class InventoryItem final : public ::google::protobuf::Message
   void _internal_set_quantity_available(::uint32_t value);
 
   public:
-  // @@protoc_insertion_point(class_scope:inventory.v1.InventoryItem)
+  // @@protoc_insertion_point(class_scope:inventory.v1.InventoryItemList)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<4, 9,
-                                   1, 79,
+                                   1, 83,
                                    2>
       _table_;
 
@@ -633,7 +633,7 @@ class InventoryItem final : public ::google::protobuf::Message
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const InventoryItem& from_msg);
+        const InventoryItemList& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr id_;
@@ -651,7 +651,7 @@ class InventoryItem final : public ::google::protobuf::Message
   friend struct ::TableStruct_inventory_2fv1_2finventory_5fget_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull InventoryItem_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull InventoryItemList_class_data_;
 // -------------------------------------------------------------------
 
 class InventoryGetResponseData final : public ::google::protobuf::Message
@@ -799,23 +799,23 @@ class InventoryGetResponseData final : public ::google::protobuf::Message
   enum : int {
     kItemsFieldNumber = 1,
   };
-  // repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];
+  // repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];
   int items_size() const;
   private:
   int _internal_items_size() const;
 
   public:
   void clear_items() ;
-  ::inventory::v1::InventoryItem* PROTOBUF_NONNULL mutable_items(int index);
-  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItem>* PROTOBUF_NONNULL mutable_items();
+  ::inventory::v1::InventoryItemList* PROTOBUF_NONNULL mutable_items(int index);
+  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItemList>* PROTOBUF_NONNULL mutable_items();
 
   private:
-  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItem>& _internal_items() const;
-  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItem>* PROTOBUF_NONNULL _internal_mutable_items();
+  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItemList>& _internal_items() const;
+  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItemList>* PROTOBUF_NONNULL _internal_mutable_items();
   public:
-  const ::inventory::v1::InventoryItem& items(int index) const;
-  ::inventory::v1::InventoryItem* PROTOBUF_NONNULL add_items();
-  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItem>& items() const;
+  const ::inventory::v1::InventoryItemList& items(int index) const;
+  ::inventory::v1::InventoryItemList* PROTOBUF_NONNULL add_items();
+  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItemList>& items() const;
   // @@protoc_insertion_point(class_scope:inventory.v1.InventoryGetResponseData)
  private:
   class _Internal;
@@ -840,7 +840,7 @@ class InventoryGetResponseData final : public ::google::protobuf::Message
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
         const InventoryGetResponseData& from_msg);
-    ::google::protobuf::RepeatedPtrField< ::inventory::v1::InventoryItem > items_;
+    ::google::protobuf::RepeatedPtrField< ::inventory::v1::InventoryItemList > items_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1462,7 +1462,7 @@ inline InventoryGetResponse::ResponseCase InventoryGetResponse::response_case() 
 
 // InventoryGetResponseData
 
-// repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];
+// repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];
 inline int InventoryGetResponseData::_internal_items_size() const {
   return _internal_items().size();
 }
@@ -1473,40 +1473,40 @@ inline void InventoryGetResponseData::clear_items() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.items_.Clear();
 }
-inline ::inventory::v1::InventoryItem* PROTOBUF_NONNULL InventoryGetResponseData::mutable_items(int index)
+inline ::inventory::v1::InventoryItemList* PROTOBUF_NONNULL InventoryGetResponseData::mutable_items(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryGetResponseData.items)
   return _internal_mutable_items()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItem>* PROTOBUF_NONNULL InventoryGetResponseData::mutable_items()
+inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItemList>* PROTOBUF_NONNULL InventoryGetResponseData::mutable_items()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:inventory.v1.InventoryGetResponseData.items)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _internal_mutable_items();
 }
-inline const ::inventory::v1::InventoryItem& InventoryGetResponseData::items(int index) const
+inline const ::inventory::v1::InventoryItemList& InventoryGetResponseData::items(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:inventory.v1.InventoryGetResponseData.items)
   return _internal_items().Get(index);
 }
-inline ::inventory::v1::InventoryItem* PROTOBUF_NONNULL InventoryGetResponseData::add_items()
+inline ::inventory::v1::InventoryItemList* PROTOBUF_NONNULL InventoryGetResponseData::add_items()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::inventory::v1::InventoryItem* _add = _internal_mutable_items()->Add();
+  ::inventory::v1::InventoryItemList* _add = _internal_mutable_items()->Add();
   // @@protoc_insertion_point(field_add:inventory.v1.InventoryGetResponseData.items)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItem>& InventoryGetResponseData::items() const
+inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItemList>& InventoryGetResponseData::items() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:inventory.v1.InventoryGetResponseData.items)
   return _internal_items();
 }
-inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItem>&
+inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItemList>&
 InventoryGetResponseData::_internal_items() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.items_;
 }
-inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItem>* PROTOBUF_NONNULL
+inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryItemList>* PROTOBUF_NONNULL
 InventoryGetResponseData::_internal_mutable_items() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.items_;
@@ -1514,49 +1514,49 @@ InventoryGetResponseData::_internal_mutable_items() {
 
 // -------------------------------------------------------------------
 
-// InventoryItem
+// InventoryItemList
 
 // string id = 1 [json_name = "id"];
-inline void InventoryItem::clear_id() {
+inline void InventoryItemList::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::std::string& InventoryItem::id() const
+inline const ::std::string& InventoryItemList::id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItem.id)
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItemList.id)
   return _internal_id();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void InventoryItem::set_id(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void InventoryItemList::set_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItem.id)
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItemList.id)
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::mutable_id()
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::mutable_id()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItem.id)
+  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItemList.id)
   return _s;
 }
-inline const ::std::string& InventoryItem::_internal_id() const {
+inline const ::std::string& InventoryItemList::_internal_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.id_.Get();
 }
-inline void InventoryItem::_internal_set_id(const ::std::string& value) {
+inline void InventoryItemList::_internal_set_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.id_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::_internal_mutable_id() {
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::_internal_mutable_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.id_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_id() {
+inline ::std::string* PROTOBUF_NULLABLE InventoryItemList::release_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItem.id)
+  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItemList.id)
   if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
     return nullptr;
   }
@@ -1567,7 +1567,7 @@ inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_id() {
   }
   return released;
 }
-inline void InventoryItem::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
+inline void InventoryItemList::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
@@ -1578,50 +1578,50 @@ inline void InventoryItem::set_allocated_id(::std::string* PROTOBUF_NULLABLE val
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.id_.IsDefault()) {
     _impl_.id_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItem.id)
+  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItemList.id)
 }
 
 // string product_id = 2 [json_name = "productId"];
-inline void InventoryItem::clear_product_id() {
+inline void InventoryItemList::clear_product_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.product_id_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline const ::std::string& InventoryItem::product_id() const
+inline const ::std::string& InventoryItemList::product_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItem.product_id)
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItemList.product_id)
   return _internal_product_id();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void InventoryItem::set_product_id(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void InventoryItemList::set_product_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.product_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItem.product_id)
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItemList.product_id)
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::mutable_product_id()
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::mutable_product_id()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_product_id();
-  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItem.product_id)
+  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItemList.product_id)
   return _s;
 }
-inline const ::std::string& InventoryItem::_internal_product_id() const {
+inline const ::std::string& InventoryItemList::_internal_product_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.product_id_.Get();
 }
-inline void InventoryItem::_internal_set_product_id(const ::std::string& value) {
+inline void InventoryItemList::_internal_set_product_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.product_id_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::_internal_mutable_product_id() {
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::_internal_mutable_product_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.product_id_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_product_id() {
+inline ::std::string* PROTOBUF_NULLABLE InventoryItemList::release_product_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItem.product_id)
+  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItemList.product_id)
   if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
@@ -1632,7 +1632,7 @@ inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_product_id() {
   }
   return released;
 }
-inline void InventoryItem::set_allocated_product_id(::std::string* PROTOBUF_NULLABLE value) {
+inline void InventoryItemList::set_allocated_product_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000002u;
@@ -1643,50 +1643,50 @@ inline void InventoryItem::set_allocated_product_id(::std::string* PROTOBUF_NULL
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.product_id_.IsDefault()) {
     _impl_.product_id_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItem.product_id)
+  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItemList.product_id)
 }
 
 // string variant_id = 3 [json_name = "variantId"];
-inline void InventoryItem::clear_variant_id() {
+inline void InventoryItemList::clear_variant_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.variant_id_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000004u;
 }
-inline const ::std::string& InventoryItem::variant_id() const
+inline const ::std::string& InventoryItemList::variant_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItem.variant_id)
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItemList.variant_id)
   return _internal_variant_id();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void InventoryItem::set_variant_id(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void InventoryItemList::set_variant_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.variant_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItem.variant_id)
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItemList.variant_id)
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::mutable_variant_id()
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::mutable_variant_id()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_variant_id();
-  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItem.variant_id)
+  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItemList.variant_id)
   return _s;
 }
-inline const ::std::string& InventoryItem::_internal_variant_id() const {
+inline const ::std::string& InventoryItemList::_internal_variant_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.variant_id_.Get();
 }
-inline void InventoryItem::_internal_set_variant_id(const ::std::string& value) {
+inline void InventoryItemList::_internal_set_variant_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.variant_id_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::_internal_mutable_variant_id() {
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::_internal_mutable_variant_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000004u;
   return _impl_.variant_id_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_variant_id() {
+inline ::std::string* PROTOBUF_NULLABLE InventoryItemList::release_variant_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItem.variant_id)
+  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItemList.variant_id)
   if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
     return nullptr;
   }
@@ -1697,7 +1697,7 @@ inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_variant_id() {
   }
   return released;
 }
-inline void InventoryItem::set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value) {
+inline void InventoryItemList::set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000004u;
@@ -1708,50 +1708,50 @@ inline void InventoryItem::set_allocated_variant_id(::std::string* PROTOBUF_NULL
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.variant_id_.IsDefault()) {
     _impl_.variant_id_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItem.variant_id)
+  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItemList.variant_id)
 }
 
 // string sku = 4 [json_name = "sku"];
-inline void InventoryItem::clear_sku() {
+inline void InventoryItemList::clear_sku() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.sku_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000008u;
 }
-inline const ::std::string& InventoryItem::sku() const
+inline const ::std::string& InventoryItemList::sku() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItem.sku)
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItemList.sku)
   return _internal_sku();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void InventoryItem::set_sku(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void InventoryItemList::set_sku(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.sku_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItem.sku)
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItemList.sku)
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::mutable_sku()
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::mutable_sku()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_sku();
-  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItem.sku)
+  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItemList.sku)
   return _s;
 }
-inline const ::std::string& InventoryItem::_internal_sku() const {
+inline const ::std::string& InventoryItemList::_internal_sku() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.sku_.Get();
 }
-inline void InventoryItem::_internal_set_sku(const ::std::string& value) {
+inline void InventoryItemList::_internal_set_sku(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.sku_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::_internal_mutable_sku() {
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::_internal_mutable_sku() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000008u;
   return _impl_.sku_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_sku() {
+inline ::std::string* PROTOBUF_NULLABLE InventoryItemList::release_sku() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItem.sku)
+  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItemList.sku)
   if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
     return nullptr;
   }
@@ -1762,7 +1762,7 @@ inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_sku() {
   }
   return released;
 }
-inline void InventoryItem::set_allocated_sku(::std::string* PROTOBUF_NULLABLE value) {
+inline void InventoryItemList::set_allocated_sku(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000008u;
@@ -1773,122 +1773,122 @@ inline void InventoryItem::set_allocated_sku(::std::string* PROTOBUF_NULLABLE va
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.sku_.IsDefault()) {
     _impl_.sku_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItem.sku)
+  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItemList.sku)
 }
 
 // uint32 quantity_total = 5 [json_name = "quantityTotal"];
-inline void InventoryItem::clear_quantity_total() {
+inline void InventoryItemList::clear_quantity_total() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_total_ = 0u;
   _impl_._has_bits_[0] &= ~0x00000040u;
 }
-inline ::uint32_t InventoryItem::quantity_total() const {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItem.quantity_total)
+inline ::uint32_t InventoryItemList::quantity_total() const {
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItemList.quantity_total)
   return _internal_quantity_total();
 }
-inline void InventoryItem::set_quantity_total(::uint32_t value) {
+inline void InventoryItemList::set_quantity_total(::uint32_t value) {
   _internal_set_quantity_total(value);
   _impl_._has_bits_[0] |= 0x00000040u;
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItem.quantity_total)
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItemList.quantity_total)
 }
-inline ::uint32_t InventoryItem::_internal_quantity_total() const {
+inline ::uint32_t InventoryItemList::_internal_quantity_total() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.quantity_total_;
 }
-inline void InventoryItem::_internal_set_quantity_total(::uint32_t value) {
+inline void InventoryItemList::_internal_set_quantity_total(::uint32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_total_ = value;
 }
 
 // uint32 quantity_reserved = 6 [json_name = "quantityReserved"];
-inline void InventoryItem::clear_quantity_reserved() {
+inline void InventoryItemList::clear_quantity_reserved() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_reserved_ = 0u;
   _impl_._has_bits_[0] &= ~0x00000080u;
 }
-inline ::uint32_t InventoryItem::quantity_reserved() const {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItem.quantity_reserved)
+inline ::uint32_t InventoryItemList::quantity_reserved() const {
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItemList.quantity_reserved)
   return _internal_quantity_reserved();
 }
-inline void InventoryItem::set_quantity_reserved(::uint32_t value) {
+inline void InventoryItemList::set_quantity_reserved(::uint32_t value) {
   _internal_set_quantity_reserved(value);
   _impl_._has_bits_[0] |= 0x00000080u;
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItem.quantity_reserved)
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItemList.quantity_reserved)
 }
-inline ::uint32_t InventoryItem::_internal_quantity_reserved() const {
+inline ::uint32_t InventoryItemList::_internal_quantity_reserved() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.quantity_reserved_;
 }
-inline void InventoryItem::_internal_set_quantity_reserved(::uint32_t value) {
+inline void InventoryItemList::_internal_set_quantity_reserved(::uint32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_reserved_ = value;
 }
 
 // uint32 quantity_available = 7 [json_name = "quantityAvailable"];
-inline void InventoryItem::clear_quantity_available() {
+inline void InventoryItemList::clear_quantity_available() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_available_ = 0u;
   _impl_._has_bits_[0] &= ~0x00000100u;
 }
-inline ::uint32_t InventoryItem::quantity_available() const {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItem.quantity_available)
+inline ::uint32_t InventoryItemList::quantity_available() const {
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItemList.quantity_available)
   return _internal_quantity_available();
 }
-inline void InventoryItem::set_quantity_available(::uint32_t value) {
+inline void InventoryItemList::set_quantity_available(::uint32_t value) {
   _internal_set_quantity_available(value);
   _impl_._has_bits_[0] |= 0x00000100u;
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItem.quantity_available)
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItemList.quantity_available)
 }
-inline ::uint32_t InventoryItem::_internal_quantity_available() const {
+inline ::uint32_t InventoryItemList::_internal_quantity_available() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.quantity_available_;
 }
-inline void InventoryItem::_internal_set_quantity_available(::uint32_t value) {
+inline void InventoryItemList::_internal_set_quantity_available(::uint32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_available_ = value;
 }
 
 // string location_id = 8 [json_name = "locationId"];
-inline void InventoryItem::clear_location_id() {
+inline void InventoryItemList::clear_location_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.location_id_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000010u;
 }
-inline const ::std::string& InventoryItem::location_id() const
+inline const ::std::string& InventoryItemList::location_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItem.location_id)
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItemList.location_id)
   return _internal_location_id();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void InventoryItem::set_location_id(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void InventoryItemList::set_location_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.location_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItem.location_id)
+  // @@protoc_insertion_point(field_set:inventory.v1.InventoryItemList.location_id)
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::mutable_location_id()
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::mutable_location_id()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_location_id();
-  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItem.location_id)
+  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItemList.location_id)
   return _s;
 }
-inline const ::std::string& InventoryItem::_internal_location_id() const {
+inline const ::std::string& InventoryItemList::_internal_location_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.location_id_.Get();
 }
-inline void InventoryItem::_internal_set_location_id(const ::std::string& value) {
+inline void InventoryItemList::_internal_set_location_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.location_id_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL InventoryItem::_internal_mutable_location_id() {
+inline ::std::string* PROTOBUF_NONNULL InventoryItemList::_internal_mutable_location_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000010u;
   return _impl_.location_id_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_location_id() {
+inline ::std::string* PROTOBUF_NULLABLE InventoryItemList::release_location_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItem.location_id)
+  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItemList.location_id)
   if ((_impl_._has_bits_[0] & 0x00000010u) == 0) {
     return nullptr;
   }
@@ -1899,7 +1899,7 @@ inline ::std::string* PROTOBUF_NULLABLE InventoryItem::release_location_id() {
   }
   return released;
 }
-inline void InventoryItem::set_allocated_location_id(::std::string* PROTOBUF_NULLABLE value) {
+inline void InventoryItemList::set_allocated_location_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000010u;
@@ -1910,25 +1910,25 @@ inline void InventoryItem::set_allocated_location_id(::std::string* PROTOBUF_NUL
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.location_id_.IsDefault()) {
     _impl_.location_id_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItem.location_id)
+  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItemList.location_id)
 }
 
 // .shared.v1.Struct metadata = 9 [json_name = "metadata"];
-inline bool InventoryItem::has_metadata() const {
+inline bool InventoryItemList::has_metadata() const {
   bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.metadata_ != nullptr);
   return value;
 }
-inline const ::shared::v1::Struct& InventoryItem::_internal_metadata() const {
+inline const ::shared::v1::Struct& InventoryItemList::_internal_metadata() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   const ::shared::v1::Struct* p = _impl_.metadata_;
   return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Struct&>(::shared::v1::_Struct_default_instance_);
 }
-inline const ::shared::v1::Struct& InventoryItem::metadata() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItem.metadata)
+inline const ::shared::v1::Struct& InventoryItemList::metadata() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:inventory.v1.InventoryItemList.metadata)
   return _internal_metadata();
 }
-inline void InventoryItem::unsafe_arena_set_allocated_metadata(
+inline void InventoryItemList::unsafe_arena_set_allocated_metadata(
     ::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
@@ -1940,9 +1940,9 @@ inline void InventoryItem::unsafe_arena_set_allocated_metadata(
   } else {
     _impl_._has_bits_[0] &= ~0x00000020u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inventory.v1.InventoryItem.metadata)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inventory.v1.InventoryItemList.metadata)
 }
-inline ::shared::v1::Struct* PROTOBUF_NULLABLE InventoryItem::release_metadata() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE InventoryItemList::release_metadata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000020u;
@@ -1961,16 +1961,16 @@ inline ::shared::v1::Struct* PROTOBUF_NULLABLE InventoryItem::release_metadata()
   }
   return released;
 }
-inline ::shared::v1::Struct* PROTOBUF_NULLABLE InventoryItem::unsafe_arena_release_metadata() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE InventoryItemList::unsafe_arena_release_metadata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItem.metadata)
+  // @@protoc_insertion_point(field_release:inventory.v1.InventoryItemList.metadata)
 
   _impl_._has_bits_[0] &= ~0x00000020u;
   ::shared::v1::Struct* temp = _impl_.metadata_;
   _impl_.metadata_ = nullptr;
   return temp;
 }
-inline ::shared::v1::Struct* PROTOBUF_NONNULL InventoryItem::_internal_mutable_metadata() {
+inline ::shared::v1::Struct* PROTOBUF_NONNULL InventoryItemList::_internal_mutable_metadata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.metadata_ == nullptr) {
     auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Struct>(GetArena());
@@ -1978,14 +1978,14 @@ inline ::shared::v1::Struct* PROTOBUF_NONNULL InventoryItem::_internal_mutable_m
   }
   return _impl_.metadata_;
 }
-inline ::shared::v1::Struct* PROTOBUF_NONNULL InventoryItem::mutable_metadata()
+inline ::shared::v1::Struct* PROTOBUF_NONNULL InventoryItemList::mutable_metadata()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000020u;
   ::shared::v1::Struct* _msg = _internal_mutable_metadata();
-  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItem.metadata)
+  // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryItemList.metadata)
   return _msg;
 }
-inline void InventoryItem::set_allocated_metadata(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
+inline void InventoryItemList::set_allocated_metadata(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
@@ -2003,7 +2003,7 @@ inline void InventoryItem::set_allocated_metadata(::shared::v1::Struct* PROTOBUF
   }
 
   _impl_.metadata_ = reinterpret_cast<::shared::v1::Struct*>(value);
-  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItem.metadata)
+  // @@protoc_insertion_point(field_set_allocated:inventory.v1.InventoryItemList.metadata)
 }
 
 #ifdef __GNUC__

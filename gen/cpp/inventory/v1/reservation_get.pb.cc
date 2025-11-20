@@ -27,7 +27,7 @@ namespace _fl = ::google::protobuf::internal::field_layout;
 namespace inventory {
 namespace v1 {
 
-inline constexpr InventoryReservationItem::Impl_::Impl_(
+inline constexpr InventoryReservationListItem::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
         product_id_(
@@ -44,24 +44,24 @@ inline constexpr InventoryReservationItem::Impl_::Impl_(
         status_{static_cast< ::inventory::v1::InventoryReservationItemStatus >(0)} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR InventoryReservationItem::InventoryReservationItem(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR InventoryReservationListItem::InventoryReservationListItem(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(InventoryReservationItem_class_data_.base()),
+    : ::google::protobuf::Message(InventoryReservationListItem_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(),
 #endif  // PROTOBUF_CUSTOM_VTABLE
       _impl_(::_pbi::ConstantInitialized()) {
 }
-struct InventoryReservationItemDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR InventoryReservationItemDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~InventoryReservationItemDefaultTypeInternal() {}
+struct InventoryReservationListItemDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InventoryReservationListItemDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InventoryReservationListItemDefaultTypeInternal() {}
   union {
-    InventoryReservationItem _instance;
+    InventoryReservationListItem _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InventoryReservationItemDefaultTypeInternal _InventoryReservationItem_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InventoryReservationListItemDefaultTypeInternal _InventoryReservationListItem_default_instance_;
 
 inline constexpr InventoryReservationGetRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -181,14 +181,14 @@ const ::uint32_t
         2,
         ~0u,
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationItem, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationListItem, _impl_._has_bits_),
         9, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationItem, _impl_.product_id_),
-        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationItem, _impl_.variant_id_),
-        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationItem, _impl_.sku_),
-        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationItem, _impl_.quantity_requested_),
-        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationItem, _impl_.quantity_reserved_),
-        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationItem, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationListItem, _impl_.product_id_),
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationListItem, _impl_.variant_id_),
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationListItem, _impl_.sku_),
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationListItem, _impl_.quantity_requested_),
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationListItem, _impl_.quantity_reserved_),
+        PROTOBUF_FIELD_OFFSET(::inventory::v1::InventoryReservationListItem, _impl_.status_),
         0,
         1,
         2,
@@ -202,13 +202,13 @@ static const ::_pbi::MigrationSchema
         {0, sizeof(::inventory::v1::InventoryReservationGetRequest)},
         {5, sizeof(::inventory::v1::InventoryReservationGetResponse)},
         {10, sizeof(::inventory::v1::InventoryReservationGetResponseData)},
-        {23, sizeof(::inventory::v1::InventoryReservationItem)},
+        {23, sizeof(::inventory::v1::InventoryReservationListItem)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::inventory::v1::_InventoryReservationGetRequest_default_instance_._instance,
     &::inventory::v1::_InventoryReservationGetResponse_default_instance_._instance,
     &::inventory::v1::_InventoryReservationGetResponseData_default_instance_._instance,
-    &::inventory::v1::_InventoryReservationItem_default_instance_._instance,
+    &::inventory::v1::_InventoryReservationListItem_default_instance_._instance,
 };
 const char descriptor_table_protodef_inventory_2fv1_2freservation_5fget_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
@@ -219,39 +219,40 @@ const char descriptor_table_protodef_inventory_2fv1_2freservation_5fget_2eproto[
     "entoryReservationGetResponse\022G\n\004data\030\001 \001"
     "(\01321.inventory.v1.InventoryReservationGe"
     "tResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.s"
-    "hared.v1.AppErrorH\000R\005errorB\n\n\010response\"\214"
+    "hared.v1.AppErrorH\000R\005errorB\n\n\010response\"\220"
     "\002\n#InventoryReservationGetResponseData\022+"
     "\n\021reservation_token\030\001 \001(\tR\020reservationTo"
     "ken\022\031\n\010order_id\030\002 \001(\tR\007orderId\022@\n\006status"
     "\030\003 \001(\0162(.inventory.v1.InventoryReservati"
     "onStatusR\006status\022\035\n\nexpires_at\030\004 \001(\003R\tex"
-    "piresAt\022<\n\005items\030\005 \003(\0132&.inventory.v1.In"
-    "ventoryReservationItemR\005items\"\214\002\n\030Invent"
-    "oryReservationItem\022\035\n\nproduct_id\030\001 \001(\tR\t"
-    "productId\022\035\n\nvariant_id\030\002 \001(\tR\tvariantId"
-    "\022\020\n\003sku\030\003 \001(\tR\003sku\022-\n\022quantity_requested"
-    "\030\004 \001(\rR\021quantityRequested\022+\n\021quantity_re"
-    "served\030\005 \001(\rR\020quantityReserved\022D\n\006status"
-    "\030\006 \001(\0162,.inventory.v1.InventoryReservati"
-    "onItemStatusR\006status*\332\002\n\032InventoryReserv"
-    "ationStatus\022,\n(INVENTORY_RESERVATION_STA"
-    "TUS_UNSPECIFIED\020\000\022)\n%INVENTORY_RESERVATI"
-    "ON_STATUS_RESERVED\020\001\0223\n/INVENTORY_RESERV"
-    "ATION_STATUS_PARTIALLY_RESERVED\020\002\022-\n)INV"
-    "ENTORY_RESERVATION_STATUS_NOT_RESERVED\020\003"
-    "\022(\n$INVENTORY_RESERVATION_STATUS_PENDING"
-    "\020\004\022)\n%INVENTORY_RESERVATION_STATUS_RELEA"
-    "SED\020\005\022*\n&INVENTORY_RESERVATION_STATUS_FU"
-    "LFILLED\020\006*\353\001\n\036InventoryReservationItemSt"
-    "atus\0221\n-INVENTORY_RESERVATION_ITEM_STATU"
-    "S_UNSPECIFIED\020\000\022.\n*INVENTORY_RESERVATION"
-    "_ITEM_STATUS_RESERVED\020\001\0222\n.INVENTORY_RES"
-    "ERVATION_ITEM_STATUS_NOT_RESERVED\020\002\0222\n.I"
-    "NVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_"
-    "STOCK\020\003B\210\001\n\035org.megacommerce.inventory.v"
-    "1B\034InventoryReservationGetProtoZFgithub."
-    "com/ahmad-khatib0-org/megacommerce-proto"
-    "/gen/go/inventory/v1;v1\370\001\001b\006proto3"
+    "piresAt\022@\n\005items\030\005 \003(\0132*.inventory.v1.In"
+    "ventoryReservationListItemR\005items\"\220\002\n\034In"
+    "ventoryReservationListItem\022\035\n\nproduct_id"
+    "\030\001 \001(\tR\tproductId\022\035\n\nvariant_id\030\002 \001(\tR\tv"
+    "ariantId\022\020\n\003sku\030\003 \001(\tR\003sku\022-\n\022quantity_r"
+    "equested\030\004 \001(\rR\021quantityRequested\022+\n\021qua"
+    "ntity_reserved\030\005 \001(\rR\020quantityReserved\022D"
+    "\n\006status\030\006 \001(\0162,.inventory.v1.InventoryR"
+    "eservationItemStatusR\006status*\332\002\n\032Invento"
+    "ryReservationStatus\022,\n(INVENTORY_RESERVA"
+    "TION_STATUS_UNSPECIFIED\020\000\022)\n%INVENTORY_R"
+    "ESERVATION_STATUS_RESERVED\020\001\0223\n/INVENTOR"
+    "Y_RESERVATION_STATUS_PARTIALLY_RESERVED\020"
+    "\002\022-\n)INVENTORY_RESERVATION_STATUS_NOT_RE"
+    "SERVED\020\003\022(\n$INVENTORY_RESERVATION_STATUS"
+    "_PENDING\020\004\022)\n%INVENTORY_RESERVATION_STAT"
+    "US_RELEASED\020\005\022*\n&INVENTORY_RESERVATION_S"
+    "TATUS_FULFILLED\020\006*\353\001\n\036InventoryReservati"
+    "onItemStatus\0221\n-INVENTORY_RESERVATION_IT"
+    "EM_STATUS_UNSPECIFIED\020\000\022.\n*INVENTORY_RES"
+    "ERVATION_ITEM_STATUS_RESERVED\020\001\0222\n.INVEN"
+    "TORY_RESERVATION_ITEM_STATUS_NOT_RESERVE"
+    "D\020\002\0222\n.INVENTORY_RESERVATION_ITEM_STATUS"
+    "_OUT_OF_STOCK\020\003B\210\001\n\035org.megacommerce.inv"
+    "entory.v1B\034InventoryReservationGetProtoZ"
+    "Fgithub.com/ahmad-khatib0-org/megacommer"
+    "ce-proto/gen/go/inventory/v1;v1\370\001\001b\006prot"
+    "o3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_inventory_2fv1_2freservation_5fget_2eproto_deps[1] = {
@@ -261,7 +262,7 @@ static ::absl::once_flag descriptor_table_inventory_2fv1_2freservation_5fget_2ep
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_inventory_2fv1_2freservation_5fget_2eproto = {
     false,
     false,
-    1594,
+    1602,
     descriptor_table_protodef_inventory_2fv1_2freservation_5fget_2eproto,
     "inventory/v1/reservation_get.proto",
     &descriptor_table_inventory_2fv1_2freservation_5fget_2eproto_once,
@@ -1086,7 +1087,7 @@ InventoryReservationGetResponseData::_table_ = {
     // int64 expires_at = 4 [json_name = "expiresAt"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(InventoryReservationGetResponseData, _impl_.expires_at_), 2>(),
      {32, 2, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationGetResponseData, _impl_.expires_at_)}},
-    // repeated .inventory.v1.InventoryReservationItem items = 5 [json_name = "items"];
+    // repeated .inventory.v1.InventoryReservationListItem items = 5 [json_name = "items"];
     {::_pbi::TcParser::FastMtR1,
      {42, 63, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationGetResponseData, _impl_.items_)}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -1106,12 +1107,12 @@ InventoryReservationGetResponseData::_table_ = {
     // int64 expires_at = 4 [json_name = "expiresAt"];
     {PROTOBUF_FIELD_OFFSET(InventoryReservationGetResponseData, _impl_.expires_at_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // repeated .inventory.v1.InventoryReservationItem items = 5 [json_name = "items"];
+    // repeated .inventory.v1.InventoryReservationListItem items = 5 [json_name = "items"];
     {PROTOBUF_FIELD_OFFSET(InventoryReservationGetResponseData, _impl_.items_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::inventory::v1::InventoryReservationItem>()},
+      {::_pbi::TcParser::GetTable<::inventory::v1::InventoryReservationListItem>()},
   }},
   {{
     "\60\21\10\0\0\0\0\0"
@@ -1199,7 +1200,7 @@ PROTOBUF_NOINLINE void InventoryReservationGetResponseData::Clear() {
     }
   }
 
-  // repeated .inventory.v1.InventoryReservationItem items = 5 [json_name = "items"];
+  // repeated .inventory.v1.InventoryReservationListItem items = 5 [json_name = "items"];
   for (unsigned i = 0, n = static_cast<unsigned>(
                            this_._internal_items_size());
        i < n; i++) {
@@ -1235,7 +1236,7 @@ PROTOBUF_NOINLINE void InventoryReservationGetResponseData::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // repeated .inventory.v1.InventoryReservationItem items = 5 [json_name = "items"];
+    // repeated .inventory.v1.InventoryReservationListItem items = 5 [json_name = "items"];
     {
       total_size += 1UL * this_._internal_items_size();
       for (const auto& msg : this_._internal_items()) {
@@ -1353,42 +1354,42 @@ void InventoryReservationGetResponseData::InternalSwap(InventoryReservationGetRe
 }
 // ===================================================================
 
-class InventoryReservationItem::_Internal {
+class InventoryReservationListItem::_Internal {
  public:
   using HasBits =
-      decltype(::std::declval<InventoryReservationItem>()._impl_._has_bits_);
+      decltype(::std::declval<InventoryReservationListItem>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_._has_bits_);
+      8 * PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_._has_bits_);
 };
 
-InventoryReservationItem::InventoryReservationItem(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+InventoryReservationListItem::InventoryReservationListItem(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, InventoryReservationItem_class_data_.base()) {
+    : ::google::protobuf::Message(arena, InventoryReservationListItem_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:inventory.v1.InventoryReservationItem)
+  // @@protoc_insertion_point(arena_constructor:inventory.v1.InventoryReservationListItem)
 }
-PROTOBUF_NDEBUG_INLINE InventoryReservationItem::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE InventoryReservationListItem::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    const ::inventory::v1::InventoryReservationItem& from_msg)
+    const ::inventory::v1::InventoryReservationListItem& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         product_id_(arena, from.product_id_),
         variant_id_(arena, from.variant_id_),
         sku_(arena, from.sku_) {}
 
-InventoryReservationItem::InventoryReservationItem(
+InventoryReservationListItem::InventoryReservationListItem(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const InventoryReservationItem& from)
+    const InventoryReservationListItem& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, InventoryReservationItem_class_data_.base()) {
+    : ::google::protobuf::Message(arena, InventoryReservationListItem_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  InventoryReservationItem* const _this = this;
+  InventoryReservationListItem* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
@@ -1401,9 +1402,9 @@ InventoryReservationItem::InventoryReservationItem(
                offsetof(Impl_, quantity_requested_) +
                sizeof(Impl_::status_));
 
-  // @@protoc_insertion_point(copy_constructor:inventory.v1.InventoryReservationItem)
+  // @@protoc_insertion_point(copy_constructor:inventory.v1.InventoryReservationListItem)
 }
-PROTOBUF_NDEBUG_INLINE InventoryReservationItem::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE InventoryReservationListItem::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
@@ -1411,7 +1412,7 @@ PROTOBUF_NDEBUG_INLINE InventoryReservationItem::Impl_::Impl_(
         variant_id_(arena),
         sku_(arena) {}
 
-inline void InventoryReservationItem::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void InventoryReservationListItem::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, quantity_requested_),
@@ -1420,12 +1421,12 @@ inline void InventoryReservationItem::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE
                offsetof(Impl_, quantity_requested_) +
                sizeof(Impl_::status_));
 }
-InventoryReservationItem::~InventoryReservationItem() {
-  // @@protoc_insertion_point(destructor:inventory.v1.InventoryReservationItem)
+InventoryReservationListItem::~InventoryReservationListItem() {
+  // @@protoc_insertion_point(destructor:inventory.v1.InventoryReservationListItem)
   SharedDtor(*this);
 }
-inline void InventoryReservationItem::SharedDtor(MessageLite& self) {
-  InventoryReservationItem& this_ = static_cast<InventoryReservationItem&>(self);
+inline void InventoryReservationListItem::SharedDtor(MessageLite& self) {
+  InventoryReservationListItem& this_ = static_cast<InventoryReservationListItem&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.product_id_.Destroy();
@@ -1434,53 +1435,53 @@ inline void InventoryReservationItem::SharedDtor(MessageLite& self) {
   this_._impl_.~Impl_();
 }
 
-inline void* PROTOBUF_NONNULL InventoryReservationItem::PlacementNew_(
+inline void* PROTOBUF_NONNULL InventoryReservationListItem::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) InventoryReservationItem(arena);
+  return ::new (mem) InventoryReservationListItem(arena);
 }
-constexpr auto InventoryReservationItem::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(InventoryReservationItem),
-                                            alignof(InventoryReservationItem));
+constexpr auto InventoryReservationListItem::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(InventoryReservationListItem),
+                                            alignof(InventoryReservationListItem));
 }
-constexpr auto InventoryReservationItem::InternalGenerateClassData_() {
+constexpr auto InventoryReservationListItem::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
       ::google::protobuf::internal::ClassData{
-          &_InventoryReservationItem_default_instance_._instance,
+          &_InventoryReservationListItem_default_instance_._instance,
           &_table_.header,
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
-          &InventoryReservationItem::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<InventoryReservationItem>(),
+          &InventoryReservationListItem::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<InventoryReservationListItem>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &InventoryReservationItem::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<InventoryReservationItem>(), &InventoryReservationItem::ByteSizeLong,
-              &InventoryReservationItem::_InternalSerialize,
+          &InventoryReservationListItem::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<InventoryReservationListItem>(), &InventoryReservationListItem::ByteSizeLong,
+              &InventoryReservationListItem::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_._cached_size_),
           false,
       },
-      &InventoryReservationItem::kDescriptorMethods,
+      &InventoryReservationListItem::kDescriptorMethods,
       &descriptor_table_inventory_2fv1_2freservation_5fget_2eproto,
       nullptr,  // tracker
   };
 }
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull InventoryReservationItem_class_data_ =
-        InventoryReservationItem::InternalGenerateClassData_();
+    ::google::protobuf::internal::ClassDataFull InventoryReservationListItem_class_data_ =
+        InventoryReservationListItem::InternalGenerateClassData_();
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-InventoryReservationItem::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&InventoryReservationItem_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(InventoryReservationItem_class_data_.tc_table);
-  return InventoryReservationItem_class_data_.base();
+InventoryReservationListItem::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&InventoryReservationListItem_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(InventoryReservationListItem_class_data_.tc_table);
+  return InventoryReservationListItem_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 6, 0, 69, 2>
-InventoryReservationItem::_table_ = {
+const ::_pbi::TcParseTable<3, 6, 0, 73, 2>
+InventoryReservationListItem::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_._has_bits_),
     0, // no _extensions_
     6, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
@@ -1489,66 +1490,66 @@ InventoryReservationItem::_table_ = {
     6,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
-    InventoryReservationItem_class_data_.base(),
+    InventoryReservationListItem_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::inventory::v1::InventoryReservationItem>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::inventory::v1::InventoryReservationListItem>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
     // string product_id = 1 [json_name = "productId"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.product_id_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.product_id_)}},
     // string variant_id = 2 [json_name = "variantId"];
     {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.variant_id_)}},
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.variant_id_)}},
     // string sku = 3 [json_name = "sku"];
     {::_pbi::TcParser::FastUS1,
-     {26, 2, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.sku_)}},
+     {26, 2, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.sku_)}},
     // uint32 quantity_requested = 4 [json_name = "quantityRequested"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReservationItem, _impl_.quantity_requested_), 3>(),
-     {32, 3, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.quantity_requested_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReservationListItem, _impl_.quantity_requested_), 3>(),
+     {32, 3, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.quantity_requested_)}},
     // uint32 quantity_reserved = 5 [json_name = "quantityReserved"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReservationItem, _impl_.quantity_reserved_), 4>(),
-     {40, 4, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.quantity_reserved_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReservationListItem, _impl_.quantity_reserved_), 4>(),
+     {40, 4, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.quantity_reserved_)}},
     // .inventory.v1.InventoryReservationItemStatus status = 6 [json_name = "status"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReservationItem, _impl_.status_), 5>(),
-     {48, 5, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.status_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReservationListItem, _impl_.status_), 5>(),
+     {48, 5, 0, PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.status_)}},
     {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
     // string product_id = 1 [json_name = "productId"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.product_id_), _Internal::kHasBitsOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.product_id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string variant_id = 2 [json_name = "variantId"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.variant_id_), _Internal::kHasBitsOffset + 1, 0,
+    {PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.variant_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string sku = 3 [json_name = "sku"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.sku_), _Internal::kHasBitsOffset + 2, 0,
+    {PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.sku_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // uint32 quantity_requested = 4 [json_name = "quantityRequested"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.quantity_requested_), _Internal::kHasBitsOffset + 3, 0,
+    {PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.quantity_requested_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
     // uint32 quantity_reserved = 5 [json_name = "quantityReserved"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.quantity_reserved_), _Internal::kHasBitsOffset + 4, 0,
+    {PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.quantity_reserved_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
     // .inventory.v1.InventoryReservationItemStatus status = 6 [json_name = "status"];
-    {PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.status_), _Internal::kHasBitsOffset + 5, 0,
+    {PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.status_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
   }},
   // no aux_entries
   {{
-    "\45\12\12\3\0\0\0\0"
-    "inventory.v1.InventoryReservationItem"
+    "\51\12\12\3\0\0\0\0"
+    "inventory.v1.InventoryReservationListItem"
     "product_id"
     "variant_id"
     "sku"
   }},
 };
-PROTOBUF_NOINLINE void InventoryReservationItem::Clear() {
-// @@protoc_insertion_point(message_clear_start:inventory.v1.InventoryReservationItem)
+PROTOBUF_NOINLINE void InventoryReservationListItem::Clear() {
+// @@protoc_insertion_point(message_clear_start:inventory.v1.InventoryReservationListItem)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -1576,17 +1577,17 @@ PROTOBUF_NOINLINE void InventoryReservationItem::Clear() {
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL InventoryReservationItem::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL InventoryReservationListItem::_InternalSerialize(
     const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const InventoryReservationItem& this_ = static_cast<const InventoryReservationItem&>(base);
+  const InventoryReservationListItem& this_ = static_cast<const InventoryReservationListItem&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL InventoryReservationItem::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL InventoryReservationListItem::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const InventoryReservationItem& this_ = *this;
+  const InventoryReservationListItem& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:inventory.v1.InventoryReservationItem)
+  // @@protoc_insertion_point(serialize_to_array_start:inventory.v1.InventoryReservationListItem)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -1595,7 +1596,7 @@ PROTOBUF_NOINLINE void InventoryReservationItem::Clear() {
     if (!this_._internal_product_id().empty()) {
       const ::std::string& _s = this_._internal_product_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReservationItem.product_id");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReservationListItem.product_id");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
@@ -1605,7 +1606,7 @@ PROTOBUF_NOINLINE void InventoryReservationItem::Clear() {
     if (!this_._internal_variant_id().empty()) {
       const ::std::string& _s = this_._internal_variant_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReservationItem.variant_id");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReservationListItem.variant_id");
       target = stream->WriteStringMaybeAliased(2, _s, target);
     }
   }
@@ -1615,7 +1616,7 @@ PROTOBUF_NOINLINE void InventoryReservationItem::Clear() {
     if (!this_._internal_sku().empty()) {
       const ::std::string& _s = this_._internal_sku();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReservationItem.sku");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "inventory.v1.InventoryReservationListItem.sku");
       target = stream->WriteStringMaybeAliased(3, _s, target);
     }
   }
@@ -1652,18 +1653,18 @@ PROTOBUF_NOINLINE void InventoryReservationItem::Clear() {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:inventory.v1.InventoryReservationItem)
+  // @@protoc_insertion_point(serialize_to_array_end:inventory.v1.InventoryReservationListItem)
   return target;
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t InventoryReservationItem::ByteSizeLong(const MessageLite& base) {
-  const InventoryReservationItem& this_ = static_cast<const InventoryReservationItem&>(base);
+::size_t InventoryReservationListItem::ByteSizeLong(const MessageLite& base) {
+  const InventoryReservationListItem& this_ = static_cast<const InventoryReservationListItem&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::size_t InventoryReservationItem::ByteSizeLong() const {
-  const InventoryReservationItem& this_ = *this;
+::size_t InventoryReservationListItem::ByteSizeLong() const {
+  const InventoryReservationListItem& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:inventory.v1.InventoryReservationItem)
+  // @@protoc_insertion_point(message_byte_size_start:inventory.v1.InventoryReservationListItem)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -1720,10 +1721,10 @@ PROTOBUF_NOINLINE void InventoryReservationItem::Clear() {
                                              &this_._impl_._cached_size_);
 }
 
-void InventoryReservationItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<InventoryReservationItem*>(&to_msg);
-  auto& from = static_cast<const InventoryReservationItem&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:inventory.v1.InventoryReservationItem)
+void InventoryReservationListItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<InventoryReservationListItem*>(&to_msg);
+  auto& from = static_cast<const InventoryReservationListItem&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:inventory.v1.InventoryReservationListItem)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1777,15 +1778,15 @@ void InventoryReservationItem::MergeImpl(::google::protobuf::MessageLite& to_msg
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void InventoryReservationItem::CopyFrom(const InventoryReservationItem& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:inventory.v1.InventoryReservationItem)
+void InventoryReservationListItem::CopyFrom(const InventoryReservationListItem& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inventory.v1.InventoryReservationListItem)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void InventoryReservationItem::InternalSwap(InventoryReservationItem* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void InventoryReservationListItem::InternalSwap(InventoryReservationListItem* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
@@ -1795,14 +1796,14 @@ void InventoryReservationItem::InternalSwap(InventoryReservationItem* PROTOBUF_R
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.variant_id_, &other->_impl_.variant_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sku_, &other->_impl_.sku_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.status_)
-      + sizeof(InventoryReservationItem::_impl_.status_)
-      - PROTOBUF_FIELD_OFFSET(InventoryReservationItem, _impl_.quantity_requested_)>(
+      PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.status_)
+      + sizeof(InventoryReservationListItem::_impl_.status_)
+      - PROTOBUF_FIELD_OFFSET(InventoryReservationListItem, _impl_.quantity_requested_)>(
           reinterpret_cast<char*>(&_impl_.quantity_requested_),
           reinterpret_cast<char*>(&other->_impl_.quantity_requested_));
 }
 
-::google::protobuf::Metadata InventoryReservationItem::GetMetadata() const {
+::google::protobuf::Metadata InventoryReservationListItem::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)

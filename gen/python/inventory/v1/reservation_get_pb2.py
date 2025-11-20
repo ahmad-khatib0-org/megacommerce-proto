@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"inventory/v1/reservation_get.proto\x12\x0cinventory.v1\x1a\x15shared/v1/error.proto\";\n\x1eInventoryReservationGetRequest\x12\x19\n\x11reservation_token\x18\x01 \x01(\t\"\x96\x01\n\x1fInventoryReservationGetResponse\x12\x41\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x31.inventory.v1.InventoryReservationGetResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\xd7\x01\n#InventoryReservationGetResponseData\x12\x19\n\x11reservation_token\x18\x01 \x01(\t\x12\x10\n\x08order_id\x18\x02 \x01(\t\x12\x38\n\x06status\x18\x03 \x01(\x0e\x32(.inventory.v1.InventoryReservationStatus\x12\x12\n\nexpires_at\x18\x04 \x01(\x03\x12\x35\n\x05items\x18\x05 \x03(\x0b\x32&.inventory.v1.InventoryReservationItem\"\xc4\x01\n\x18InventoryReservationItem\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\x0b\n\x03sku\x18\x03 \x01(\t\x12\x1a\n\x12quantity_requested\x18\x04 \x01(\r\x12\x19\n\x11quantity_reserved\x18\x05 \x01(\r\x12<\n\x06status\x18\x06 \x01(\x0e\x32,.inventory.v1.InventoryReservationItemStatus*\xda\x02\n\x1aInventoryReservationStatus\x12,\n(INVENTORY_RESERVATION_STATUS_UNSPECIFIED\x10\x00\x12)\n%INVENTORY_RESERVATION_STATUS_RESERVED\x10\x01\x12\x33\n/INVENTORY_RESERVATION_STATUS_PARTIALLY_RESERVED\x10\x02\x12-\n)INVENTORY_RESERVATION_STATUS_NOT_RESERVED\x10\x03\x12(\n$INVENTORY_RESERVATION_STATUS_PENDING\x10\x04\x12)\n%INVENTORY_RESERVATION_STATUS_RELEASED\x10\x05\x12*\n&INVENTORY_RESERVATION_STATUS_FULFILLED\x10\x06*\xeb\x01\n\x1eInventoryReservationItemStatus\x12\x31\n-INVENTORY_RESERVATION_ITEM_STATUS_UNSPECIFIED\x10\x00\x12.\n*INVENTORY_RESERVATION_ITEM_STATUS_RESERVED\x10\x01\x12\x32\n.INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED\x10\x02\x12\x32\n.INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK\x10\x03\x42\x88\x01\n\x1dorg.megacommerce.inventory.v1B\x1cInventoryReservationGetProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"inventory/v1/reservation_get.proto\x12\x0cinventory.v1\x1a\x15shared/v1/error.proto\";\n\x1eInventoryReservationGetRequest\x12\x19\n\x11reservation_token\x18\x01 \x01(\t\"\x96\x01\n\x1fInventoryReservationGetResponse\x12\x41\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x31.inventory.v1.InventoryReservationGetResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\xdb\x01\n#InventoryReservationGetResponseData\x12\x19\n\x11reservation_token\x18\x01 \x01(\t\x12\x10\n\x08order_id\x18\x02 \x01(\t\x12\x38\n\x06status\x18\x03 \x01(\x0e\x32(.inventory.v1.InventoryReservationStatus\x12\x12\n\nexpires_at\x18\x04 \x01(\x03\x12\x39\n\x05items\x18\x05 \x03(\x0b\x32*.inventory.v1.InventoryReservationListItem\"\xc8\x01\n\x1cInventoryReservationListItem\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\x0b\n\x03sku\x18\x03 \x01(\t\x12\x1a\n\x12quantity_requested\x18\x04 \x01(\r\x12\x19\n\x11quantity_reserved\x18\x05 \x01(\r\x12<\n\x06status\x18\x06 \x01(\x0e\x32,.inventory.v1.InventoryReservationItemStatus*\xda\x02\n\x1aInventoryReservationStatus\x12,\n(INVENTORY_RESERVATION_STATUS_UNSPECIFIED\x10\x00\x12)\n%INVENTORY_RESERVATION_STATUS_RESERVED\x10\x01\x12\x33\n/INVENTORY_RESERVATION_STATUS_PARTIALLY_RESERVED\x10\x02\x12-\n)INVENTORY_RESERVATION_STATUS_NOT_RESERVED\x10\x03\x12(\n$INVENTORY_RESERVATION_STATUS_PENDING\x10\x04\x12)\n%INVENTORY_RESERVATION_STATUS_RELEASED\x10\x05\x12*\n&INVENTORY_RESERVATION_STATUS_FULFILLED\x10\x06*\xeb\x01\n\x1eInventoryReservationItemStatus\x12\x31\n-INVENTORY_RESERVATION_ITEM_STATUS_UNSPECIFIED\x10\x00\x12.\n*INVENTORY_RESERVATION_ITEM_STATUS_RESERVED\x10\x01\x12\x32\n.INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED\x10\x02\x12\x32\n.INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK\x10\x03\x42\x88\x01\n\x1dorg.megacommerce.inventory.v1B\x1cInventoryReservationGetProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,16 +33,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'inventory.v1.reservation_ge
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035org.megacommerce.inventory.v1B\034InventoryReservationGetProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\370\001\001'
-  _globals['_INVENTORYRESERVATIONSTATUS']._serialized_start=707
-  _globals['_INVENTORYRESERVATIONSTATUS']._serialized_end=1053
-  _globals['_INVENTORYRESERVATIONITEMSTATUS']._serialized_start=1056
-  _globals['_INVENTORYRESERVATIONITEMSTATUS']._serialized_end=1291
+  _globals['_INVENTORYRESERVATIONSTATUS']._serialized_start=715
+  _globals['_INVENTORYRESERVATIONSTATUS']._serialized_end=1061
+  _globals['_INVENTORYRESERVATIONITEMSTATUS']._serialized_start=1064
+  _globals['_INVENTORYRESERVATIONITEMSTATUS']._serialized_end=1299
   _globals['_INVENTORYRESERVATIONGETREQUEST']._serialized_start=75
   _globals['_INVENTORYRESERVATIONGETREQUEST']._serialized_end=134
   _globals['_INVENTORYRESERVATIONGETRESPONSE']._serialized_start=137
   _globals['_INVENTORYRESERVATIONGETRESPONSE']._serialized_end=287
   _globals['_INVENTORYRESERVATIONGETRESPONSEDATA']._serialized_start=290
-  _globals['_INVENTORYRESERVATIONGETRESPONSEDATA']._serialized_end=505
-  _globals['_INVENTORYRESERVATIONITEM']._serialized_start=508
-  _globals['_INVENTORYRESERVATIONITEM']._serialized_end=704
+  _globals['_INVENTORYRESERVATIONGETRESPONSEDATA']._serialized_end=509
+  _globals['_INVENTORYRESERVATIONLISTITEM']._serialized_start=512
+  _globals['_INVENTORYRESERVATIONLISTITEM']._serialized_end=712
 # @@protoc_insertion_point(module_scope)

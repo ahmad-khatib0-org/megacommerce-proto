@@ -8,7 +8,7 @@
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { AppError } from "../../shared/v1/error";
 import {
-  InventoryReservationItem,
+  InventoryReservationListItem,
   InventoryReservationStatus,
   inventoryReservationStatusFromJSON,
   inventoryReservationStatusToJSON,
@@ -40,7 +40,7 @@ export interface InventoryReserveResponse {
 export interface InventoryReserveResponseData {
   reservationToken: string;
   status: InventoryReservationStatus;
-  items: InventoryReservationItem[];
+  items: InventoryReservationListItem[];
 }
 
 function createBaseInventoryReserveRequest(): InventoryReserveRequest {
@@ -338,7 +338,7 @@ export const InventoryReserveResponseData: MessageFns<InventoryReserveResponseDa
       writer.uint32(16).int32(message.status);
     }
     for (const v of message.items) {
-      InventoryReservationItem.encode(v!, writer.uint32(26).fork()).join();
+      InventoryReservationListItem.encode(v!, writer.uint32(26).fork()).join();
     }
     return writer;
   },
@@ -371,7 +371,7 @@ export const InventoryReserveResponseData: MessageFns<InventoryReserveResponseDa
             break;
           }
 
-          message.items.push(InventoryReservationItem.decode(reader, reader.uint32()));
+          message.items.push(InventoryReservationListItem.decode(reader, reader.uint32()));
           continue;
         }
       }
@@ -388,7 +388,7 @@ export const InventoryReserveResponseData: MessageFns<InventoryReserveResponseDa
       reservationToken: isSet(object.reservationToken) ? globalThis.String(object.reservationToken) : "",
       status: isSet(object.status) ? inventoryReservationStatusFromJSON(object.status) : 0,
       items: globalThis.Array.isArray(object?.items)
-        ? object.items.map((e: any) => InventoryReservationItem.fromJSON(e))
+        ? object.items.map((e: any) => InventoryReservationListItem.fromJSON(e))
         : [],
     };
   },
@@ -402,7 +402,7 @@ export const InventoryReserveResponseData: MessageFns<InventoryReserveResponseDa
       obj.status = inventoryReservationStatusToJSON(message.status);
     }
     if (message.items?.length) {
-      obj.items = message.items.map((e) => InventoryReservationItem.toJSON(e));
+      obj.items = message.items.map((e) => InventoryReservationListItem.toJSON(e));
     }
     return obj;
   },
@@ -414,7 +414,7 @@ export const InventoryReserveResponseData: MessageFns<InventoryReserveResponseDa
     const message = createBaseInventoryReserveResponseData();
     message.reservationToken = object.reservationToken ?? "";
     message.status = object.status ?? 0;
-    message.items = object.items?.map((e) => InventoryReservationItem.fromPartial(e)) || [];
+    message.items = object.items?.map((e) => InventoryReservationListItem.fromPartial(e)) || [];
     return message;
   },
 };

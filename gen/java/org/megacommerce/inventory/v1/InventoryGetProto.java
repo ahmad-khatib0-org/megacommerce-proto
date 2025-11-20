@@ -1928,27 +1928,27 @@ public final class InventoryGetProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
-    java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem> 
+    java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList> 
         getItemsList();
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
-    org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem getItems(int index);
+    org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList getItems(int index);
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
     int getItemsCount();
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
-    java.util.List<? extends org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder> 
+    java.util.List<? extends org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder> 
         getItemsOrBuilderList();
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
-    org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder getItemsOrBuilder(
+    org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder getItemsOrBuilder(
         int index);
   }
   /**
@@ -1991,41 +1991,41 @@ public final class InventoryGetProto {
 
     public static final int ITEMS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem> items_;
+    private java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList> items_;
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
     @java.lang.Override
-    public java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem> getItemsList() {
+    public java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList> getItemsList() {
       return items_;
     }
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder> 
+    public java.util.List<? extends org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder> 
         getItemsOrBuilderList() {
       return items_;
     }
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
     @java.lang.Override
     public int getItemsCount() {
       return items_.size();
     }
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem getItems(int index) {
+    public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList getItems(int index) {
       return items_.get(index);
     }
     /**
-     * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder getItemsOrBuilder(
+    public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder getItemsOrBuilder(
         int index) {
       return items_.get(index);
     }
@@ -2343,9 +2343,9 @@ public final class InventoryGetProto {
                 done = true;
                 break;
               case 10: {
-                org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem m =
+                org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList m =
                     input.readMessage(
-                        org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.parser(),
+                        org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.parser(),
                         extensionRegistry);
                 if (itemsBuilder_ == null) {
                   ensureItemsIsMutable();
@@ -2372,22 +2372,22 @@ public final class InventoryGetProto {
       }
       private int bitField0_;
 
-      private java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem> items_ =
+      private java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList> items_ =
         java.util.Collections.emptyList();
       private void ensureItemsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          items_ = new java.util.ArrayList<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem>(items_);
+          items_ = new java.util.ArrayList<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList>(items_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder> itemsBuilder_;
+          org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder> itemsBuilder_;
 
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
-      public java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem> getItemsList() {
+      public java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList> getItemsList() {
         if (itemsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(items_);
         } else {
@@ -2395,7 +2395,7 @@ public final class InventoryGetProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
       public int getItemsCount() {
         if (itemsBuilder_ == null) {
@@ -2405,9 +2405,9 @@ public final class InventoryGetProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem getItems(int index) {
+      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList getItems(int index) {
         if (itemsBuilder_ == null) {
           return items_.get(index);
         } else {
@@ -2415,10 +2415,10 @@ public final class InventoryGetProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
       public Builder setItems(
-          int index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem value) {
+          int index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList value) {
         if (itemsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2432,10 +2432,10 @@ public final class InventoryGetProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
       public Builder setItems(
-          int index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder builderForValue) {
+          int index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder builderForValue) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           items_.set(index, builderForValue.build());
@@ -2446,9 +2446,9 @@ public final class InventoryGetProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
-      public Builder addItems(org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem value) {
+      public Builder addItems(org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList value) {
         if (itemsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2462,10 +2462,10 @@ public final class InventoryGetProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
       public Builder addItems(
-          int index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem value) {
+          int index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList value) {
         if (itemsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2479,10 +2479,10 @@ public final class InventoryGetProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
       public Builder addItems(
-          org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder builderForValue) {
+          org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder builderForValue) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           items_.add(builderForValue.build());
@@ -2493,10 +2493,10 @@ public final class InventoryGetProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
       public Builder addItems(
-          int index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder builderForValue) {
+          int index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder builderForValue) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           items_.add(index, builderForValue.build());
@@ -2507,10 +2507,10 @@ public final class InventoryGetProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
       public Builder addAllItems(
-          java.lang.Iterable<? extends org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem> values) {
+          java.lang.Iterable<? extends org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList> values) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2522,7 +2522,7 @@ public final class InventoryGetProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
       public Builder clearItems() {
         if (itemsBuilder_ == null) {
@@ -2535,7 +2535,7 @@ public final class InventoryGetProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
       public Builder removeItems(int index) {
         if (itemsBuilder_ == null) {
@@ -2548,16 +2548,16 @@ public final class InventoryGetProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder getItemsBuilder(
+      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder getItemsBuilder(
           int index) {
         return internalGetItemsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder getItemsOrBuilder(
+      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder getItemsOrBuilder(
           int index) {
         if (itemsBuilder_ == null) {
           return items_.get(index);  } else {
@@ -2565,9 +2565,9 @@ public final class InventoryGetProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
-      public java.util.List<? extends org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder> 
+      public java.util.List<? extends org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder> 
            getItemsOrBuilderList() {
         if (itemsBuilder_ != null) {
           return itemsBuilder_.getMessageOrBuilderList();
@@ -2576,33 +2576,33 @@ public final class InventoryGetProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder addItemsBuilder() {
+      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder addItemsBuilder() {
         return internalGetItemsFieldBuilder().addBuilder(
-            org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.getDefaultInstance());
+            org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.getDefaultInstance());
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder addItemsBuilder(
+      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder addItemsBuilder(
           int index) {
         return internalGetItemsFieldBuilder().addBuilder(
-            index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.getDefaultInstance());
+            index, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.getDefaultInstance());
       }
       /**
-       * <code>repeated .inventory.v1.InventoryItem items = 1 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryItemList items = 1 [json_name = "items"];</code>
        */
-      public java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder> 
+      public java.util.List<org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder> 
            getItemsBuilderList() {
         return internalGetItemsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder> 
+          org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder> 
           internalGetItemsFieldBuilder() {
         if (itemsBuilder_ == null) {
           itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder>(
+              org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder>(
                   items_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2663,8 +2663,8 @@ public final class InventoryGetProto {
 
   }
 
-  public interface InventoryItemOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:inventory.v1.InventoryItem)
+  public interface InventoryItemListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:inventory.v1.InventoryItemList)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2769,12 +2769,12 @@ public final class InventoryGetProto {
     org.megacommerce.shared.v1.StructProto.StructOrBuilder getMetadataOrBuilder();
   }
   /**
-   * Protobuf type {@code inventory.v1.InventoryItem}
+   * Protobuf type {@code inventory.v1.InventoryItemList}
    */
-  public static final class InventoryItem extends
+  public static final class InventoryItemList extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:inventory.v1.InventoryItem)
-      InventoryItemOrBuilder {
+      // @@protoc_insertion_point(message_implements:inventory.v1.InventoryItemList)
+      InventoryItemListOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -2783,13 +2783,13 @@ public final class InventoryGetProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        InventoryItem.class.getName());
+        InventoryItemList.class.getName());
     }
-    // Use InventoryItem.newBuilder() to construct.
-    private InventoryItem(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use InventoryItemList.newBuilder() to construct.
+    private InventoryItemList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private InventoryItem() {
+    private InventoryItemList() {
       id_ = "";
       productId_ = "";
       variantId_ = "";
@@ -2799,15 +2799,15 @@ public final class InventoryGetProto {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItem_descriptor;
+      return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItemList_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItem_fieldAccessorTable
+      return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItemList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.class, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder.class);
+              org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.class, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder.class);
     }
 
     private int bitField0_;
@@ -3164,10 +3164,10 @@ public final class InventoryGetProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem)) {
+      if (!(obj instanceof org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList)) {
         return super.equals(obj);
       }
-      org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem other = (org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem) obj;
+      org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList other = (org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -3226,44 +3226,44 @@ public final class InventoryGetProto {
       return hash;
     }
 
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(byte[] data)
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(java.io.InputStream input)
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3271,26 +3271,26 @@ public final class InventoryGetProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseDelimitedFrom(
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem parseFrom(
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3303,7 +3303,7 @@ public final class InventoryGetProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem prototype) {
+    public static Builder newBuilder(org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3319,26 +3319,26 @@ public final class InventoryGetProto {
       return builder;
     }
     /**
-     * Protobuf type {@code inventory.v1.InventoryItem}
+     * Protobuf type {@code inventory.v1.InventoryItemList}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:inventory.v1.InventoryItem)
-        org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemOrBuilder {
+        // @@protoc_insertion_point(builder_implements:inventory.v1.InventoryItemList)
+        org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemListOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItem_descriptor;
+        return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItemList_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItem_fieldAccessorTable
+        return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItemList_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.class, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.Builder.class);
+                org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.class, org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.Builder.class);
       }
 
-      // Construct using org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.newBuilder()
+      // Construct using org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3377,17 +3377,17 @@ public final class InventoryGetProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItem_descriptor;
+        return org.megacommerce.inventory.v1.InventoryGetProto.internal_static_inventory_v1_InventoryItemList_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem getDefaultInstanceForType() {
-        return org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.getDefaultInstance();
+      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList getDefaultInstanceForType() {
+        return org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem build() {
-        org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem result = buildPartial();
+      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList build() {
+        org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3395,14 +3395,14 @@ public final class InventoryGetProto {
       }
 
       @java.lang.Override
-      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem buildPartial() {
-        org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem result = new org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem(this);
+      public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList buildPartial() {
+        org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList result = new org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem result) {
+      private void buildPartial0(org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
@@ -3440,16 +3440,16 @@ public final class InventoryGetProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem) {
-          return mergeFrom((org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem)other);
+        if (other instanceof org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList) {
+          return mergeFrom((org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem other) {
-        if (other == org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList other) {
+        if (other == org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           bitField0_ |= 0x00000001;
@@ -4174,23 +4174,23 @@ public final class InventoryGetProto {
         return metadataBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:inventory.v1.InventoryItem)
+      // @@protoc_insertion_point(builder_scope:inventory.v1.InventoryItemList)
     }
 
-    // @@protoc_insertion_point(class_scope:inventory.v1.InventoryItem)
-    private static final org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:inventory.v1.InventoryItemList)
+    private static final org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem();
+      DEFAULT_INSTANCE = new org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList();
     }
 
-    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem getDefaultInstance() {
+    public static org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<InventoryItem>
-        PARSER = new com.google.protobuf.AbstractParser<InventoryItem>() {
+    private static final com.google.protobuf.Parser<InventoryItemList>
+        PARSER = new com.google.protobuf.AbstractParser<InventoryItemList>() {
       @java.lang.Override
-      public InventoryItem parsePartialFrom(
+      public InventoryItemList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4209,17 +4209,17 @@ public final class InventoryGetProto {
       }
     };
 
-    public static com.google.protobuf.Parser<InventoryItem> parser() {
+    public static com.google.protobuf.Parser<InventoryItemList> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<InventoryItem> getParserForType() {
+    public com.google.protobuf.Parser<InventoryItemList> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItem getDefaultInstanceForType() {
+    public org.megacommerce.inventory.v1.InventoryGetProto.InventoryItemList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4241,10 +4241,10 @@ public final class InventoryGetProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_inventory_v1_InventoryGetResponseData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_inventory_v1_InventoryItem_descriptor;
+    internal_static_inventory_v1_InventoryItemList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_inventory_v1_InventoryItem_fieldAccessorTable;
+      internal_static_inventory_v1_InventoryItemList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4262,21 +4262,21 @@ public final class InventoryGetProto {
       "skus\"\215\001\n\024InventoryGetResponse\022<\n\004data\030\001 " +
       "\001(\0132&.inventory.v1.InventoryGetResponseD" +
       "ataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.A" +
-      "ppErrorH\000R\005errorB\n\n\010response\"M\n\030Inventor" +
-      "yGetResponseData\0221\n\005items\030\001 \003(\0132\033.invent" +
-      "ory.v1.InventoryItemR\005items\"\302\002\n\rInventor" +
-      "yItem\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproduct_id\030\002 \001(" +
-      "\tR\tproductId\022\035\n\nvariant_id\030\003 \001(\tR\tvarian" +
-      "tId\022\020\n\003sku\030\004 \001(\tR\003sku\022%\n\016quantity_total\030" +
-      "\005 \001(\rR\rquantityTotal\022+\n\021quantity_reserve" +
-      "d\030\006 \001(\rR\020quantityReserved\022-\n\022quantity_av" +
-      "ailable\030\007 \001(\rR\021quantityAvailable\022\037\n\013loca" +
-      "tion_id\030\010 \001(\tR\nlocationId\022-\n\010metadata\030\t " +
-      "\001(\0132\021.shared.v1.StructR\010metadataB}\n\035org." +
-      "megacommerce.inventory.v1B\021InventoryGetP" +
-      "rotoZFgithub.com/ahmad-khatib0-org/megac" +
-      "ommerce-proto/gen/go/inventory/v1;v1\370\001\001b" +
-      "\006proto3"
+      "ppErrorH\000R\005errorB\n\n\010response\"Q\n\030Inventor" +
+      "yGetResponseData\0225\n\005items\030\001 \003(\0132\037.invent" +
+      "ory.v1.InventoryItemListR\005items\"\306\002\n\021Inve" +
+      "ntoryItemList\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproduct" +
+      "_id\030\002 \001(\tR\tproductId\022\035\n\nvariant_id\030\003 \001(\t" +
+      "R\tvariantId\022\020\n\003sku\030\004 \001(\tR\003sku\022%\n\016quantit" +
+      "y_total\030\005 \001(\rR\rquantityTotal\022+\n\021quantity" +
+      "_reserved\030\006 \001(\rR\020quantityReserved\022-\n\022qua" +
+      "ntity_available\030\007 \001(\rR\021quantityAvailable" +
+      "\022\037\n\013location_id\030\010 \001(\tR\nlocationId\022-\n\010met" +
+      "adata\030\t \001(\0132\021.shared.v1.StructR\010metadata" +
+      "B}\n\035org.megacommerce.inventory.v1B\021Inven" +
+      "toryGetProtoZFgithub.com/ahmad-khatib0-o" +
+      "rg/megacommerce-proto/gen/go/inventory/v" +
+      "1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4302,11 +4302,11 @@ public final class InventoryGetProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_inventory_v1_InventoryGetResponseData_descriptor,
         new java.lang.String[] { "Items", });
-    internal_static_inventory_v1_InventoryItem_descriptor =
+    internal_static_inventory_v1_InventoryItemList_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_inventory_v1_InventoryItem_fieldAccessorTable = new
+    internal_static_inventory_v1_InventoryItemList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_inventory_v1_InventoryItem_descriptor,
+        internal_static_inventory_v1_InventoryItemList_descriptor,
         new java.lang.String[] { "Id", "ProductId", "VariantId", "Sku", "QuantityTotal", "QuantityReserved", "QuantityAvailable", "LocationId", "Metadata", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();

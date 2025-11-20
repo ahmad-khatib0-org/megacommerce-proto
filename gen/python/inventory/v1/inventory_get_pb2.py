@@ -26,7 +26,7 @@ from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import struct_pb2 as shared_dot_v1_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n inventory/v1/inventory_get.proto\x12\x0cinventory.v1\x1a\x15shared/v1/error.proto\x1a\x16shared/v1/struct.proto\"M\n\x13InventoryGetRequest\x12\x13\n\x0bproduct_ids\x18\x01 \x03(\t\x12\x13\n\x0bvariant_ids\x18\x02 \x03(\t\x12\x0c\n\x04skus\x18\x03 \x03(\t\"\x80\x01\n\x14InventoryGetResponse\x12\x36\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32&.inventory.v1.InventoryGetResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"F\n\x18InventoryGetResponseData\x12*\n\x05items\x18\x01 \x03(\x0b\x32\x1b.inventory.v1.InventoryItem\"\xd9\x01\n\rInventoryItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproduct_id\x18\x02 \x01(\t\x12\x12\n\nvariant_id\x18\x03 \x01(\t\x12\x0b\n\x03sku\x18\x04 \x01(\t\x12\x16\n\x0equantity_total\x18\x05 \x01(\r\x12\x19\n\x11quantity_reserved\x18\x06 \x01(\r\x12\x1a\n\x12quantity_available\x18\x07 \x01(\r\x12\x13\n\x0blocation_id\x18\x08 \x01(\t\x12#\n\x08metadata\x18\t \x01(\x0b\x32\x11.shared.v1.StructB}\n\x1dorg.megacommerce.inventory.v1B\x11InventoryGetProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n inventory/v1/inventory_get.proto\x12\x0cinventory.v1\x1a\x15shared/v1/error.proto\x1a\x16shared/v1/struct.proto\"M\n\x13InventoryGetRequest\x12\x13\n\x0bproduct_ids\x18\x01 \x03(\t\x12\x13\n\x0bvariant_ids\x18\x02 \x03(\t\x12\x0c\n\x04skus\x18\x03 \x03(\t\"\x80\x01\n\x14InventoryGetResponse\x12\x36\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32&.inventory.v1.InventoryGetResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"J\n\x18InventoryGetResponseData\x12.\n\x05items\x18\x01 \x03(\x0b\x32\x1f.inventory.v1.InventoryItemList\"\xdd\x01\n\x11InventoryItemList\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproduct_id\x18\x02 \x01(\t\x12\x12\n\nvariant_id\x18\x03 \x01(\t\x12\x0b\n\x03sku\x18\x04 \x01(\t\x12\x16\n\x0equantity_total\x18\x05 \x01(\r\x12\x19\n\x11quantity_reserved\x18\x06 \x01(\r\x12\x1a\n\x12quantity_available\x18\x07 \x01(\r\x12\x13\n\x0blocation_id\x18\x08 \x01(\t\x12#\n\x08metadata\x18\t \x01(\x0b\x32\x11.shared.v1.StructB}\n\x1dorg.megacommerce.inventory.v1B\x11InventoryGetProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,7 +39,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_INVENTORYGETRESPONSE']._serialized_start=177
   _globals['_INVENTORYGETRESPONSE']._serialized_end=305
   _globals['_INVENTORYGETRESPONSEDATA']._serialized_start=307
-  _globals['_INVENTORYGETRESPONSEDATA']._serialized_end=377
-  _globals['_INVENTORYITEM']._serialized_start=380
-  _globals['_INVENTORYITEM']._serialized_end=597
+  _globals['_INVENTORYGETRESPONSEDATA']._serialized_end=381
+  _globals['_INVENTORYITEMLIST']._serialized_start=384
+  _globals['_INVENTORYITEMLIST']._serialized_end=605
 # @@protoc_insertion_point(module_scope)

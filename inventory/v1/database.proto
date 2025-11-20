@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package inventory.v1;
+
+import "shared/v1/struct.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1";
+option java_outer_classname = "DatabaseProto";
+option java_package = "org.megacommerce.inventory.v1";
+
+message InventoryItem {
+  string id = 1;
+  string product_id = 2;
+  string variant_id = 3;
+  string sku = 4;
+  int32 quantity_available = 5;
+  int32 quantity_reserved = 6;
+  int32 quantity_total = 7;
+  string location_id = 8;
+  shared.v1.Struct metadata = 9;
+  int64 created_at = 10; // Unix timestamp
+  optional int64 updated_at = 11; // Unix timestamp
+}
+
+message InventoryReservation {
+  string id = 1;
+  string reservation_token = 2;
+  string order_id = 3;
+  string status = 4;
+  int64 expires_at = 5;
+  int64 created_at = 6;
+  optional int64 updated_at = 7;
+}
+
+message InventoryReservationItem {
+  string id = 1;
+  string reservation_id = 2;
+  string inventory_item_id = 3;
+  int32 quantity = 4;
+  int64 created_at = 5;
+}
+
+message InventoryMovement {
+  string id = 1;
+  string inventory_item_id = 2;
+  string movement_type = 3;
+  int32 quantity = 4;
+  string reference_id = 5;
+  string reason = 6;
+  shared.v1.Struct metadata = 7;
+  int64 created_at = 8;
+}

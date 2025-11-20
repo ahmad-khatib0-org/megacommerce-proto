@@ -26,7 +26,7 @@ from inventory.v1 import reservation_get_pb2 as inventory_dot_v1_dot_reservation
 from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$inventory/v1/inventory_reserve.proto\x12\x0cinventory.v1\x1a\"inventory/v1/reservation_get.proto\x1a\x15shared/v1/error.proto\"z\n\x17InventoryReserveRequest\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12\x38\n\x05items\x18\x02 \x03(\x0b\x32).inventory.v1.InventoryReserveRequestItem\x12\x13\n\x0bttl_seconds\x18\x03 \x01(\x03\"d\n\x1bInventoryReserveRequestItem\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\x0b\n\x03sku\x18\x03 \x01(\t\x12\x10\n\x08quantity\x18\x04 \x01(\r\"\x88\x01\n\x18InventoryReserveResponse\x12:\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32*.inventory.v1.InventoryReserveResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\xaa\x01\n\x1cInventoryReserveResponseData\x12\x19\n\x11reservation_token\x18\x01 \x01(\t\x12\x38\n\x06status\x18\x02 \x01(\x0e\x32(.inventory.v1.InventoryReservationStatus\x12\x35\n\x05items\x18\x03 \x03(\x0b\x32&.inventory.v1.InventoryReservationItemB\x81\x01\n\x1dorg.megacommerce.inventory.v1B\x15InventoryReserveProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$inventory/v1/inventory_reserve.proto\x12\x0cinventory.v1\x1a\"inventory/v1/reservation_get.proto\x1a\x15shared/v1/error.proto\"z\n\x17InventoryReserveRequest\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12\x38\n\x05items\x18\x02 \x03(\x0b\x32).inventory.v1.InventoryReserveRequestItem\x12\x13\n\x0bttl_seconds\x18\x03 \x01(\x03\"d\n\x1bInventoryReserveRequestItem\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\x0b\n\x03sku\x18\x03 \x01(\t\x12\x10\n\x08quantity\x18\x04 \x01(\r\"\x88\x01\n\x18InventoryReserveResponse\x12:\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32*.inventory.v1.InventoryReserveResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\xae\x01\n\x1cInventoryReserveResponseData\x12\x19\n\x11reservation_token\x18\x01 \x01(\t\x12\x38\n\x06status\x18\x02 \x01(\x0e\x32(.inventory.v1.InventoryReservationStatus\x12\x39\n\x05items\x18\x03 \x03(\x0b\x32*.inventory.v1.InventoryReservationListItemB\x81\x01\n\x1dorg.megacommerce.inventory.v1B\x15InventoryReserveProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,5 +41,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_INVENTORYRESERVERESPONSE']._serialized_start=340
   _globals['_INVENTORYRESERVERESPONSE']._serialized_end=476
   _globals['_INVENTORYRESERVERESPONSEDATA']._serialized_start=479
-  _globals['_INVENTORYRESERVERESPONSEDATA']._serialized_end=649
+  _globals['_INVENTORYRESERVERESPONSEDATA']._serialized_end=653
 # @@protoc_insertion_point(module_scope)

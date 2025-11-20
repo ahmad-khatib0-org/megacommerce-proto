@@ -34,5 +34,5 @@ message InventoryReserveResponse {
 message InventoryReserveResponseData {
   string reservation_token = 1;
   inventory.v1.InventoryReservationStatus status = 2;
-  repeated inventory.v1.InventoryReservationItem items = 3;
+  repeated inventory.v1.InventoryReservationListItem items = 3;
 }

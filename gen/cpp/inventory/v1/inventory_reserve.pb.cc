@@ -217,16 +217,16 @@ const char descriptor_table_protodef_inventory_2fv1_2finventory_5freserve_2eprot
     "tity\"\225\001\n\030InventoryReserveResponse\022@\n\004dat"
     "a\030\001 \001(\0132*.inventory.v1.InventoryReserveR"
     "esponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.sha"
-    "red.v1.AppErrorH\000R\005errorB\n\n\010response\"\313\001\n"
+    "red.v1.AppErrorH\000R\005errorB\n\n\010response\"\317\001\n"
     "\034InventoryReserveResponseData\022+\n\021reserva"
     "tion_token\030\001 \001(\tR\020reservationToken\022@\n\006st"
     "atus\030\002 \001(\0162(.inventory.v1.InventoryReser"
-    "vationStatusR\006status\022<\n\005items\030\003 \003(\0132&.in"
-    "ventory.v1.InventoryReservationItemR\005ite"
-    "msB\201\001\n\035org.megacommerce.inventory.v1B\025In"
-    "ventoryReserveProtoZFgithub.com/ahmad-kh"
-    "atib0-org/megacommerce-proto/gen/go/inve"
-    "ntory/v1;v1\370\001\001b\006proto3"
+    "vationStatusR\006status\022@\n\005items\030\003 \003(\0132*.in"
+    "ventory.v1.InventoryReservationListItemR"
+    "\005itemsB\201\001\n\035org.megacommerce.inventory.v1"
+    "B\025InventoryReserveProtoZFgithub.com/ahma"
+    "d-khatib0-org/megacommerce-proto/gen/go/"
+    "inventory/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto_deps[2] = {
@@ -237,7 +237,7 @@ static ::absl::once_flag descriptor_table_inventory_2fv1_2finventory_5freserve_2
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto = {
     false,
     false,
-    902,
+    906,
     descriptor_table_protodef_inventory_2fv1_2finventory_5freserve_2eproto,
     "inventory/v1/inventory_reserve.proto",
     &descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto_once,
@@ -1493,7 +1493,7 @@ InventoryReserveResponseData::_table_ = {
     // .inventory.v1.InventoryReservationStatus status = 2 [json_name = "status"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InventoryReserveResponseData, _impl_.status_), 1>(),
      {16, 1, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.status_)}},
-    // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+    // repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];
     {::_pbi::TcParser::FastMtR1,
      {26, 63, 0, PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.items_)}},
   }}, {{
@@ -1505,12 +1505,12 @@ InventoryReserveResponseData::_table_ = {
     // .inventory.v1.InventoryReservationStatus status = 2 [json_name = "status"];
     {PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.status_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+    // repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];
     {PROTOBUF_FIELD_OFFSET(InventoryReserveResponseData, _impl_.items_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::inventory::v1::InventoryReservationItem>()},
+      {::_pbi::TcParser::GetTable<::inventory::v1::InventoryReservationListItem>()},
   }},
   {{
     "\51\21\0\0\0\0\0\0"
@@ -1569,7 +1569,7 @@ PROTOBUF_NOINLINE void InventoryReserveResponseData::Clear() {
     }
   }
 
-  // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+  // repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];
   for (unsigned i = 0, n = static_cast<unsigned>(
                            this_._internal_items_size());
        i < n; i++) {
@@ -1605,7 +1605,7 @@ PROTOBUF_NOINLINE void InventoryReserveResponseData::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+    // repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];
     {
       total_size += 1UL * this_._internal_items_size();
       for (const auto& msg : this_._internal_items()) {

@@ -2842,27 +2842,27 @@ public final class InventoryReserveProto {
     org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus getStatus();
 
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
-    java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem> 
+    java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem> 
         getItemsList();
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
-    org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem getItems(int index);
+    org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem getItems(int index);
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
     int getItemsCount();
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
-    java.util.List<? extends org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItemOrBuilder> 
+    java.util.List<? extends org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItemOrBuilder> 
         getItemsOrBuilderList();
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
-    org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItemOrBuilder getItemsOrBuilder(
+    org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItemOrBuilder getItemsOrBuilder(
         int index);
   }
   /**
@@ -2964,41 +2964,41 @@ public final class InventoryReserveProto {
 
     public static final int ITEMS_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem> items_;
+    private java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem> items_;
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
     @java.lang.Override
-    public java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem> getItemsList() {
+    public java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem> getItemsList() {
       return items_;
     }
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItemOrBuilder> 
+    public java.util.List<? extends org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItemOrBuilder> 
         getItemsOrBuilderList() {
       return items_;
     }
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
     @java.lang.Override
     public int getItemsCount() {
       return items_.size();
     }
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem getItems(int index) {
+    public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem getItems(int index) {
       return items_.get(index);
     }
     /**
-     * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+     * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItemOrBuilder getItemsOrBuilder(
+    public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItemOrBuilder getItemsOrBuilder(
         int index) {
       return items_.get(index);
     }
@@ -3362,9 +3362,9 @@ public final class InventoryReserveProto {
                 break;
               } // case 16
               case 26: {
-                org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem m =
+                org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem m =
                     input.readMessage(
-                        org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.parser(),
+                        org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.parser(),
                         extensionRegistry);
                 if (itemsBuilder_ == null) {
                   ensureItemsIsMutable();
@@ -3514,22 +3514,22 @@ public final class InventoryReserveProto {
         return this;
       }
 
-      private java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem> items_ =
+      private java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem> items_ =
         java.util.Collections.emptyList();
       private void ensureItemsIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
-          items_ = new java.util.ArrayList<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem>(items_);
+          items_ = new java.util.ArrayList<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem>(items_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItemOrBuilder> itemsBuilder_;
+          org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItemOrBuilder> itemsBuilder_;
 
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
-      public java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem> getItemsList() {
+      public java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem> getItemsList() {
         if (itemsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(items_);
         } else {
@@ -3537,7 +3537,7 @@ public final class InventoryReserveProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
       public int getItemsCount() {
         if (itemsBuilder_ == null) {
@@ -3547,9 +3547,9 @@ public final class InventoryReserveProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem getItems(int index) {
+      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem getItems(int index) {
         if (itemsBuilder_ == null) {
           return items_.get(index);
         } else {
@@ -3557,10 +3557,10 @@ public final class InventoryReserveProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
       public Builder setItems(
-          int index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem value) {
+          int index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem value) {
         if (itemsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3574,10 +3574,10 @@ public final class InventoryReserveProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
       public Builder setItems(
-          int index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder builderForValue) {
+          int index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder builderForValue) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           items_.set(index, builderForValue.build());
@@ -3588,9 +3588,9 @@ public final class InventoryReserveProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
-      public Builder addItems(org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem value) {
+      public Builder addItems(org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem value) {
         if (itemsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3604,10 +3604,10 @@ public final class InventoryReserveProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
       public Builder addItems(
-          int index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem value) {
+          int index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem value) {
         if (itemsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3621,10 +3621,10 @@ public final class InventoryReserveProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
       public Builder addItems(
-          org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder builderForValue) {
+          org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder builderForValue) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           items_.add(builderForValue.build());
@@ -3635,10 +3635,10 @@ public final class InventoryReserveProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
       public Builder addItems(
-          int index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder builderForValue) {
+          int index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder builderForValue) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           items_.add(index, builderForValue.build());
@@ -3649,10 +3649,10 @@ public final class InventoryReserveProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
       public Builder addAllItems(
-          java.lang.Iterable<? extends org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem> values) {
+          java.lang.Iterable<? extends org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem> values) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3664,7 +3664,7 @@ public final class InventoryReserveProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
       public Builder clearItems() {
         if (itemsBuilder_ == null) {
@@ -3677,7 +3677,7 @@ public final class InventoryReserveProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
       public Builder removeItems(int index) {
         if (itemsBuilder_ == null) {
@@ -3690,16 +3690,16 @@ public final class InventoryReserveProto {
         return this;
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder getItemsBuilder(
+      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder getItemsBuilder(
           int index) {
         return internalGetItemsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItemOrBuilder getItemsOrBuilder(
+      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItemOrBuilder getItemsOrBuilder(
           int index) {
         if (itemsBuilder_ == null) {
           return items_.get(index);  } else {
@@ -3707,9 +3707,9 @@ public final class InventoryReserveProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
-      public java.util.List<? extends org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItemOrBuilder> 
+      public java.util.List<? extends org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItemOrBuilder> 
            getItemsOrBuilderList() {
         if (itemsBuilder_ != null) {
           return itemsBuilder_.getMessageOrBuilderList();
@@ -3718,33 +3718,33 @@ public final class InventoryReserveProto {
         }
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder addItemsBuilder() {
+      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder addItemsBuilder() {
         return internalGetItemsFieldBuilder().addBuilder(
-            org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.getDefaultInstance());
+            org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.getDefaultInstance());
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
-      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder addItemsBuilder(
+      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder addItemsBuilder(
           int index) {
         return internalGetItemsFieldBuilder().addBuilder(
-            index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.getDefaultInstance());
+            index, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.getDefaultInstance());
       }
       /**
-       * <code>repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];</code>
+       * <code>repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];</code>
        */
-      public java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder> 
+      public java.util.List<org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder> 
            getItemsBuilderList() {
         return internalGetItemsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItemOrBuilder> 
+          org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItemOrBuilder> 
           internalGetItemsFieldBuilder() {
         if (itemsBuilder_ == null) {
           itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItem.Builder, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationItemOrBuilder>(
+              org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItem.Builder, org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationListItemOrBuilder>(
                   items_,
                   ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
@@ -3847,16 +3847,16 @@ public final class InventoryReserveProto {
       "tity\"\225\001\n\030InventoryReserveResponse\022@\n\004dat" +
       "a\030\001 \001(\0132*.inventory.v1.InventoryReserveR" +
       "esponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.sha" +
-      "red.v1.AppErrorH\000R\005errorB\n\n\010response\"\313\001\n" +
+      "red.v1.AppErrorH\000R\005errorB\n\n\010response\"\317\001\n" +
       "\034InventoryReserveResponseData\022+\n\021reserva" +
       "tion_token\030\001 \001(\tR\020reservationToken\022@\n\006st" +
       "atus\030\002 \001(\0162(.inventory.v1.InventoryReser" +
-      "vationStatusR\006status\022<\n\005items\030\003 \003(\0132&.in" +
-      "ventory.v1.InventoryReservationItemR\005ite" +
-      "msB\201\001\n\035org.megacommerce.inventory.v1B\025In" +
-      "ventoryReserveProtoZFgithub.com/ahmad-kh" +
-      "atib0-org/megacommerce-proto/gen/go/inve" +
-      "ntory/v1;v1\370\001\001b\006proto3"
+      "vationStatusR\006status\022@\n\005items\030\003 \003(\0132*.in" +
+      "ventory.v1.InventoryReservationListItemR" +
+      "\005itemsB\201\001\n\035org.megacommerce.inventory.v1" +
+      "B\025InventoryReserveProtoZFgithub.com/ahma" +
+      "d-khatib0-org/megacommerce-proto/gen/go/" +
+      "inventory/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -133,10 +133,10 @@ export interface InventoryReservationGetResponseData {
   orderId: string;
   status: InventoryReservationStatus;
   expiresAt: string;
-  items: InventoryReservationItem[];
+  items: InventoryReservationListItem[];
 }
 
-export interface InventoryReservationItem {
+export interface InventoryReservationListItem {
   productId: string;
   variantId: string;
   sku: string;
@@ -306,7 +306,7 @@ export const InventoryReservationGetResponseData: MessageFns<InventoryReservatio
       writer.uint32(32).int64(message.expiresAt);
     }
     for (const v of message.items) {
-      InventoryReservationItem.encode(v!, writer.uint32(42).fork()).join();
+      InventoryReservationListItem.encode(v!, writer.uint32(42).fork()).join();
     }
     return writer;
   },
@@ -355,7 +355,7 @@ export const InventoryReservationGetResponseData: MessageFns<InventoryReservatio
             break;
           }
 
-          message.items.push(InventoryReservationItem.decode(reader, reader.uint32()));
+          message.items.push(InventoryReservationListItem.decode(reader, reader.uint32()));
           continue;
         }
       }
@@ -374,7 +374,7 @@ export const InventoryReservationGetResponseData: MessageFns<InventoryReservatio
       status: isSet(object.status) ? inventoryReservationStatusFromJSON(object.status) : 0,
       expiresAt: isSet(object.expiresAt) ? globalThis.String(object.expiresAt) : "0",
       items: globalThis.Array.isArray(object?.items)
-        ? object.items.map((e: any) => InventoryReservationItem.fromJSON(e))
+        ? object.items.map((e: any) => InventoryReservationListItem.fromJSON(e))
         : [],
     };
   },
@@ -394,7 +394,7 @@ export const InventoryReservationGetResponseData: MessageFns<InventoryReservatio
       obj.expiresAt = message.expiresAt;
     }
     if (message.items?.length) {
-      obj.items = message.items.map((e) => InventoryReservationItem.toJSON(e));
+      obj.items = message.items.map((e) => InventoryReservationListItem.toJSON(e));
     }
     return obj;
   },
@@ -412,17 +412,17 @@ export const InventoryReservationGetResponseData: MessageFns<InventoryReservatio
     message.orderId = object.orderId ?? "";
     message.status = object.status ?? 0;
     message.expiresAt = object.expiresAt ?? "0";
-    message.items = object.items?.map((e) => InventoryReservationItem.fromPartial(e)) || [];
+    message.items = object.items?.map((e) => InventoryReservationListItem.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBaseInventoryReservationItem(): InventoryReservationItem {
+function createBaseInventoryReservationListItem(): InventoryReservationListItem {
   return { productId: "", variantId: "", sku: "", quantityRequested: 0, quantityReserved: 0, status: 0 };
 }
 
-export const InventoryReservationItem: MessageFns<InventoryReservationItem> = {
-  encode(message: InventoryReservationItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const InventoryReservationListItem: MessageFns<InventoryReservationListItem> = {
+  encode(message: InventoryReservationListItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.productId !== "") {
       writer.uint32(10).string(message.productId);
     }
@@ -444,10 +444,10 @@ export const InventoryReservationItem: MessageFns<InventoryReservationItem> = {
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): InventoryReservationItem {
+  decode(input: BinaryReader | Uint8Array, length?: number): InventoryReservationListItem {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseInventoryReservationItem();
+    const message = createBaseInventoryReservationListItem();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -508,7 +508,7 @@ export const InventoryReservationItem: MessageFns<InventoryReservationItem> = {
     return message;
   },
 
-  fromJSON(object: any): InventoryReservationItem {
+  fromJSON(object: any): InventoryReservationListItem {
     return {
       productId: isSet(object.productId) ? globalThis.String(object.productId) : "",
       variantId: isSet(object.variantId) ? globalThis.String(object.variantId) : "",
@@ -519,7 +519,7 @@ export const InventoryReservationItem: MessageFns<InventoryReservationItem> = {
     };
   },
 
-  toJSON(message: InventoryReservationItem): unknown {
+  toJSON(message: InventoryReservationListItem): unknown {
     const obj: any = {};
     if (message.productId !== "") {
       obj.productId = message.productId;
@@ -542,11 +542,11 @@ export const InventoryReservationItem: MessageFns<InventoryReservationItem> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<InventoryReservationItem>, I>>(base?: I): InventoryReservationItem {
-    return InventoryReservationItem.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<InventoryReservationListItem>, I>>(base?: I): InventoryReservationListItem {
+    return InventoryReservationListItem.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<InventoryReservationItem>, I>>(object: I): InventoryReservationItem {
-    const message = createBaseInventoryReservationItem();
+  fromPartial<I extends Exact<DeepPartial<InventoryReservationListItem>, I>>(object: I): InventoryReservationListItem {
+    const message = createBaseInventoryReservationListItem();
     message.productId = object.productId ?? "";
     message.variantId = object.variantId ?? "";
     message.sku = object.sku ?? "";

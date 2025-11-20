@@ -25,10 +25,10 @@ message InventoryGetResponse {
 }
 
 message InventoryGetResponseData {
-  repeated InventoryItem items = 1;
+  repeated InventoryItemList items = 1;
 }
 
-message InventoryItem {
+message InventoryItemList {
   string id = 1;
   string product_id = 2;
   string variant_id = 3;

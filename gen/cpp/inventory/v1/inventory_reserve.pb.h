@@ -476,23 +476,23 @@ class InventoryReserveResponseData final : public ::google::protobuf::Message
     kReservationTokenFieldNumber = 1,
     kStatusFieldNumber = 2,
   };
-  // repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+  // repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];
   int items_size() const;
   private:
   int _internal_items_size() const;
 
   public:
   void clear_items() ;
-  ::inventory::v1::InventoryReservationItem* PROTOBUF_NONNULL mutable_items(int index);
-  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>* PROTOBUF_NONNULL mutable_items();
+  ::inventory::v1::InventoryReservationListItem* PROTOBUF_NONNULL mutable_items(int index);
+  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationListItem>* PROTOBUF_NONNULL mutable_items();
 
   private:
-  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>& _internal_items() const;
-  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>* PROTOBUF_NONNULL _internal_mutable_items();
+  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationListItem>& _internal_items() const;
+  ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationListItem>* PROTOBUF_NONNULL _internal_mutable_items();
   public:
-  const ::inventory::v1::InventoryReservationItem& items(int index) const;
-  ::inventory::v1::InventoryReservationItem* PROTOBUF_NONNULL add_items();
-  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>& items() const;
+  const ::inventory::v1::InventoryReservationListItem& items(int index) const;
+  ::inventory::v1::InventoryReservationListItem* PROTOBUF_NONNULL add_items();
+  const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationListItem>& items() const;
   // string reservation_token = 1 [json_name = "reservationToken"];
   void clear_reservation_token() ;
   const ::std::string& reservation_token() const;
@@ -544,7 +544,7 @@ class InventoryReserveResponseData final : public ::google::protobuf::Message
         const InventoryReserveResponseData& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::RepeatedPtrField< ::inventory::v1::InventoryReservationItem > items_;
+    ::google::protobuf::RepeatedPtrField< ::inventory::v1::InventoryReservationListItem > items_;
     ::google::protobuf::internal::ArenaStringPtr reservation_token_;
     int status_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -1653,47 +1653,47 @@ inline void InventoryReserveResponseData::_internal_set_status(::inventory::v1::
   _impl_.status_ = value;
 }
 
-// repeated .inventory.v1.InventoryReservationItem items = 3 [json_name = "items"];
+// repeated .inventory.v1.InventoryReservationListItem items = 3 [json_name = "items"];
 inline int InventoryReserveResponseData::_internal_items_size() const {
   return _internal_items().size();
 }
 inline int InventoryReserveResponseData::items_size() const {
   return _internal_items_size();
 }
-inline ::inventory::v1::InventoryReservationItem* PROTOBUF_NONNULL InventoryReserveResponseData::mutable_items(int index)
+inline ::inventory::v1::InventoryReservationListItem* PROTOBUF_NONNULL InventoryReserveResponseData::mutable_items(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:inventory.v1.InventoryReserveResponseData.items)
   return _internal_mutable_items()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>* PROTOBUF_NONNULL InventoryReserveResponseData::mutable_items()
+inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationListItem>* PROTOBUF_NONNULL InventoryReserveResponseData::mutable_items()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:inventory.v1.InventoryReserveResponseData.items)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _internal_mutable_items();
 }
-inline const ::inventory::v1::InventoryReservationItem& InventoryReserveResponseData::items(int index) const
+inline const ::inventory::v1::InventoryReservationListItem& InventoryReserveResponseData::items(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:inventory.v1.InventoryReserveResponseData.items)
   return _internal_items().Get(index);
 }
-inline ::inventory::v1::InventoryReservationItem* PROTOBUF_NONNULL InventoryReserveResponseData::add_items()
+inline ::inventory::v1::InventoryReservationListItem* PROTOBUF_NONNULL InventoryReserveResponseData::add_items()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::inventory::v1::InventoryReservationItem* _add = _internal_mutable_items()->Add();
+  ::inventory::v1::InventoryReservationListItem* _add = _internal_mutable_items()->Add();
   // @@protoc_insertion_point(field_add:inventory.v1.InventoryReserveResponseData.items)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>& InventoryReserveResponseData::items() const
+inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationListItem>& InventoryReserveResponseData::items() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:inventory.v1.InventoryReserveResponseData.items)
   return _internal_items();
 }
-inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>&
+inline const ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationListItem>&
 InventoryReserveResponseData::_internal_items() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.items_;
 }
-inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationItem>* PROTOBUF_NONNULL
+inline ::google::protobuf::RepeatedPtrField<::inventory::v1::InventoryReservationListItem>* PROTOBUF_NONNULL
 InventoryReserveResponseData::_internal_mutable_items() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.items_;

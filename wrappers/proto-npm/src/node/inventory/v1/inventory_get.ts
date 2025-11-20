@@ -24,10 +24,10 @@ export interface InventoryGetResponse {
 }
 
 export interface InventoryGetResponseData {
-  items: InventoryItem[];
+  items: InventoryItemList[];
 }
 
-export interface InventoryItem {
+export interface InventoryItemList {
   id: string;
   productId: string;
   variantId: string;
@@ -223,7 +223,7 @@ function createBaseInventoryGetResponseData(): InventoryGetResponseData {
 export const InventoryGetResponseData: MessageFns<InventoryGetResponseData> = {
   encode(message: InventoryGetResponseData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     for (const v of message.items) {
-      InventoryItem.encode(v!, writer.uint32(10).fork()).join();
+      InventoryItemList.encode(v!, writer.uint32(10).fork()).join();
     }
     return writer;
   },
@@ -240,7 +240,7 @@ export const InventoryGetResponseData: MessageFns<InventoryGetResponseData> = {
             break;
           }
 
-          message.items.push(InventoryItem.decode(reader, reader.uint32()));
+          message.items.push(InventoryItemList.decode(reader, reader.uint32()));
           continue;
         }
       }
@@ -254,14 +254,14 @@ export const InventoryGetResponseData: MessageFns<InventoryGetResponseData> = {
 
   fromJSON(object: any): InventoryGetResponseData {
     return {
-      items: globalThis.Array.isArray(object?.items) ? object.items.map((e: any) => InventoryItem.fromJSON(e)) : [],
+      items: globalThis.Array.isArray(object?.items) ? object.items.map((e: any) => InventoryItemList.fromJSON(e)) : [],
     };
   },
 
   toJSON(message: InventoryGetResponseData): unknown {
     const obj: any = {};
     if (message.items?.length) {
-      obj.items = message.items.map((e) => InventoryItem.toJSON(e));
+      obj.items = message.items.map((e) => InventoryItemList.toJSON(e));
     }
     return obj;
   },
@@ -271,12 +271,12 @@ export const InventoryGetResponseData: MessageFns<InventoryGetResponseData> = {
   },
   fromPartial<I extends Exact<DeepPartial<InventoryGetResponseData>, I>>(object: I): InventoryGetResponseData {
     const message = createBaseInventoryGetResponseData();
-    message.items = object.items?.map((e) => InventoryItem.fromPartial(e)) || [];
+    message.items = object.items?.map((e) => InventoryItemList.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBaseInventoryItem(): InventoryItem {
+function createBaseInventoryItemList(): InventoryItemList {
   return {
     id: "",
     productId: "",
@@ -290,8 +290,8 @@ function createBaseInventoryItem(): InventoryItem {
   };
 }
 
-export const InventoryItem: MessageFns<InventoryItem> = {
-  encode(message: InventoryItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const InventoryItemList: MessageFns<InventoryItemList> = {
+  encode(message: InventoryItemList, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
@@ -322,10 +322,10 @@ export const InventoryItem: MessageFns<InventoryItem> = {
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): InventoryItem {
+  decode(input: BinaryReader | Uint8Array, length?: number): InventoryItemList {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseInventoryItem();
+    const message = createBaseInventoryItemList();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -410,7 +410,7 @@ export const InventoryItem: MessageFns<InventoryItem> = {
     return message;
   },
 
-  fromJSON(object: any): InventoryItem {
+  fromJSON(object: any): InventoryItemList {
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       productId: isSet(object.productId) ? globalThis.String(object.productId) : "",
@@ -424,7 +424,7 @@ export const InventoryItem: MessageFns<InventoryItem> = {
     };
   },
 
-  toJSON(message: InventoryItem): unknown {
+  toJSON(message: InventoryItemList): unknown {
     const obj: any = {};
     if (message.id !== "") {
       obj.id = message.id;
@@ -456,11 +456,11 @@ export const InventoryItem: MessageFns<InventoryItem> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<InventoryItem>, I>>(base?: I): InventoryItem {
-    return InventoryItem.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<InventoryItemList>, I>>(base?: I): InventoryItemList {
+    return InventoryItemList.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<InventoryItem>, I>>(object: I): InventoryItem {
-    const message = createBaseInventoryItem();
+  fromPartial<I extends Exact<DeepPartial<InventoryItemList>, I>>(object: I): InventoryItemList {
+    const message = createBaseInventoryItemList();
     message.id = object.id ?? "";
     message.productId = object.productId ?? "";
     message.variantId = object.variantId ?? "";

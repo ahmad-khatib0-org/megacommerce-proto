@@ -26,10 +26,10 @@ message InventoryReservationGetResponseData {
   string order_id = 2;
   InventoryReservationStatus status = 3;
   int64 expires_at = 4;
-  repeated InventoryReservationItem items = 5;
+  repeated InventoryReservationListItem items = 5;
 }
 
-message InventoryReservationItem {
+message InventoryReservationListItem {
   string product_id = 1;
   string variant_id = 2;
   string sku = 3;

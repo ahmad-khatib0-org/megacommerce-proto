@@ -23,6 +23,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "common/v1/common.proto",
         "common/v1/config.proto",
         "common/v1/trans.proto",
+        "inventory/v1/database.proto",
         "inventory/v1/inventory.proto",
         "inventory/v1/inventory_get.proto",
         "inventory/v1/inventory_release.proto",

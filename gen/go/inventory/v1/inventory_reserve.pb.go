@@ -234,10 +234,10 @@ func (*InventoryReserveResponse_Data) isInventoryReserveResponse_Response() {}
 func (*InventoryReserveResponse_Error) isInventoryReserveResponse_Response() {}
 
 type InventoryReserveResponseData struct {
-	state            protoimpl.MessageState      `protogen:"open.v1"`
-	ReservationToken string                      `protobuf:"bytes,1,opt,name=reservation_token,json=reservationToken,proto3" json:"reservation_token,omitempty"`
-	Status           InventoryReservationStatus  `protobuf:"varint,2,opt,name=status,proto3,enum=inventory.v1.InventoryReservationStatus" json:"status,omitempty"`
-	Items            []*InventoryReservationItem `protobuf:"bytes,3,rep,name=items,proto3" json:"items,omitempty"`
+	state            protoimpl.MessageState          `protogen:"open.v1"`
+	ReservationToken string                          `protobuf:"bytes,1,opt,name=reservation_token,json=reservationToken,proto3" json:"reservation_token,omitempty"`
+	Status           InventoryReservationStatus      `protobuf:"varint,2,opt,name=status,proto3,enum=inventory.v1.InventoryReservationStatus" json:"status,omitempty"`
+	Items            []*InventoryReservationListItem `protobuf:"bytes,3,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -286,7 +286,7 @@ func (x *InventoryReserveResponseData) GetStatus() InventoryReservationStatus {
 	return InventoryReservationStatus_INVENTORY_RESERVATION_STATUS_UNSPECIFIED
 }
 
-func (x *InventoryReserveResponseData) GetItems() []*InventoryReservationItem {
+func (x *InventoryReserveResponseData) GetItems() []*InventoryReservationListItem {
 	if x != nil {
 		return x.Items
 	}
@@ -314,11 +314,11 @@ const file_inventory_v1_inventory_reserve_proto_rawDesc = "" +
 	"\x04data\x18\x01 \x01(\v2*.inventory.v1.InventoryReserveResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
-	"\bresponse\"\xcb\x01\n" +
+	"\bresponse\"\xcf\x01\n" +
 	"\x1cInventoryReserveResponseData\x12+\n" +
 	"\x11reservation_token\x18\x01 \x01(\tR\x10reservationToken\x12@\n" +
-	"\x06status\x18\x02 \x01(\x0e2(.inventory.v1.InventoryReservationStatusR\x06status\x12<\n" +
-	"\x05items\x18\x03 \x03(\v2&.inventory.v1.InventoryReservationItemR\x05itemsB\x81\x01\n" +
+	"\x06status\x18\x02 \x01(\x0e2(.inventory.v1.InventoryReservationStatusR\x06status\x12@\n" +
+	"\x05items\x18\x03 \x03(\v2*.inventory.v1.InventoryReservationListItemR\x05itemsB\x81\x01\n" +
 	"\x1dorg.megacommerce.inventory.v1B\x15InventoryReserveProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -341,14 +341,14 @@ var file_inventory_v1_inventory_reserve_proto_goTypes = []any{
 	(*InventoryReserveResponseData)(nil), // 3: inventory.v1.InventoryReserveResponseData
 	(*v1.AppError)(nil),                  // 4: shared.v1.AppError
 	(InventoryReservationStatus)(0),      // 5: inventory.v1.InventoryReservationStatus
-	(*InventoryReservationItem)(nil),     // 6: inventory.v1.InventoryReservationItem
+	(*InventoryReservationListItem)(nil), // 6: inventory.v1.InventoryReservationListItem
 }
 var file_inventory_v1_inventory_reserve_proto_depIdxs = []int32{
 	1, // 0: inventory.v1.InventoryReserveRequest.items:type_name -> inventory.v1.InventoryReserveRequestItem
 	3, // 1: inventory.v1.InventoryReserveResponse.data:type_name -> inventory.v1.InventoryReserveResponseData
 	4, // 2: inventory.v1.InventoryReserveResponse.error:type_name -> shared.v1.AppError
 	5, // 3: inventory.v1.InventoryReserveResponseData.status:type_name -> inventory.v1.InventoryReservationStatus
-	6, // 4: inventory.v1.InventoryReserveResponseData.items:type_name -> inventory.v1.InventoryReservationItem
+	6, // 4: inventory.v1.InventoryReserveResponseData.items:type_name -> inventory.v1.InventoryReservationListItem
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
