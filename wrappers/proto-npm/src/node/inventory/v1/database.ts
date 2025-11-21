@@ -10,6 +10,63 @@ import { Struct } from "../../shared/v1/struct";
 
 export const protobufPackage = "inventory.v1";
 
+export enum InventoryMovementType {
+  INVENTORY_MOVEMENT_TYPE_UNSPECIFIED = 0,
+  INVENTORY_MOVEMENT_TYPE_IN = 1,
+  INVENTORY_MOVEMENT_TYPE_OUT = 2,
+  INVENTORY_MOVEMENT_TYPE_ADJUSTMENT = 3,
+  INVENTORY_MOVEMENT_TYPE_RESERVATION = 4,
+  INVENTORY_MOVEMENT_TYPE_RELEASE = 5,
+  UNRECOGNIZED = -1,
+}
+
+export function inventoryMovementTypeFromJSON(object: any): InventoryMovementType {
+  switch (object) {
+    case 0:
+    case "INVENTORY_MOVEMENT_TYPE_UNSPECIFIED":
+      return InventoryMovementType.INVENTORY_MOVEMENT_TYPE_UNSPECIFIED;
+    case 1:
+    case "INVENTORY_MOVEMENT_TYPE_IN":
+      return InventoryMovementType.INVENTORY_MOVEMENT_TYPE_IN;
+    case 2:
+    case "INVENTORY_MOVEMENT_TYPE_OUT":
+      return InventoryMovementType.INVENTORY_MOVEMENT_TYPE_OUT;
+    case 3:
+    case "INVENTORY_MOVEMENT_TYPE_ADJUSTMENT":
+      return InventoryMovementType.INVENTORY_MOVEMENT_TYPE_ADJUSTMENT;
+    case 4:
+    case "INVENTORY_MOVEMENT_TYPE_RESERVATION":
+      return InventoryMovementType.INVENTORY_MOVEMENT_TYPE_RESERVATION;
+    case 5:
+    case "INVENTORY_MOVEMENT_TYPE_RELEASE":
+      return InventoryMovementType.INVENTORY_MOVEMENT_TYPE_RELEASE;
+    case -1:
+    case "UNRECOGNIZED":
+    default:
+      return InventoryMovementType.UNRECOGNIZED;
+  }
+}
+
+export function inventoryMovementTypeToJSON(object: InventoryMovementType): string {
+  switch (object) {
+    case InventoryMovementType.INVENTORY_MOVEMENT_TYPE_UNSPECIFIED:
+      return "INVENTORY_MOVEMENT_TYPE_UNSPECIFIED";
+    case InventoryMovementType.INVENTORY_MOVEMENT_TYPE_IN:
+      return "INVENTORY_MOVEMENT_TYPE_IN";
+    case InventoryMovementType.INVENTORY_MOVEMENT_TYPE_OUT:
+      return "INVENTORY_MOVEMENT_TYPE_OUT";
+    case InventoryMovementType.INVENTORY_MOVEMENT_TYPE_ADJUSTMENT:
+      return "INVENTORY_MOVEMENT_TYPE_ADJUSTMENT";
+    case InventoryMovementType.INVENTORY_MOVEMENT_TYPE_RESERVATION:
+      return "INVENTORY_MOVEMENT_TYPE_RESERVATION";
+    case InventoryMovementType.INVENTORY_MOVEMENT_TYPE_RELEASE:
+      return "INVENTORY_MOVEMENT_TYPE_RELEASE";
+    case InventoryMovementType.UNRECOGNIZED:
+    default:
+      return "UNRECOGNIZED";
+  }
+}
+
 export interface InventoryItem {
   id: string;
   productId: string;

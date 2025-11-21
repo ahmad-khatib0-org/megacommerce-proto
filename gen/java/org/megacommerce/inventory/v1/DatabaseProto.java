@@ -26,6 +26,159 @@ public final class DatabaseProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code inventory.v1.InventoryMovementType}
+   */
+  public enum InventoryMovementType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    INVENTORY_MOVEMENT_TYPE_UNSPECIFIED(0),
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_IN = 1;</code>
+     */
+    INVENTORY_MOVEMENT_TYPE_IN(1),
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_OUT = 2;</code>
+     */
+    INVENTORY_MOVEMENT_TYPE_OUT(2),
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_ADJUSTMENT = 3;</code>
+     */
+    INVENTORY_MOVEMENT_TYPE_ADJUSTMENT(3),
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_RESERVATION = 4;</code>
+     */
+    INVENTORY_MOVEMENT_TYPE_RESERVATION(4),
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_RELEASE = 5;</code>
+     */
+    INVENTORY_MOVEMENT_TYPE_RELEASE(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        InventoryMovementType.class.getName());
+    }
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int INVENTORY_MOVEMENT_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_IN = 1;</code>
+     */
+    public static final int INVENTORY_MOVEMENT_TYPE_IN_VALUE = 1;
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_OUT = 2;</code>
+     */
+    public static final int INVENTORY_MOVEMENT_TYPE_OUT_VALUE = 2;
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_ADJUSTMENT = 3;</code>
+     */
+    public static final int INVENTORY_MOVEMENT_TYPE_ADJUSTMENT_VALUE = 3;
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_RESERVATION = 4;</code>
+     */
+    public static final int INVENTORY_MOVEMENT_TYPE_RESERVATION_VALUE = 4;
+    /**
+     * <code>INVENTORY_MOVEMENT_TYPE_RELEASE = 5;</code>
+     */
+    public static final int INVENTORY_MOVEMENT_TYPE_RELEASE_VALUE = 5;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InventoryMovementType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static InventoryMovementType forNumber(int value) {
+      switch (value) {
+        case 0: return INVENTORY_MOVEMENT_TYPE_UNSPECIFIED;
+        case 1: return INVENTORY_MOVEMENT_TYPE_IN;
+        case 2: return INVENTORY_MOVEMENT_TYPE_OUT;
+        case 3: return INVENTORY_MOVEMENT_TYPE_ADJUSTMENT;
+        case 4: return INVENTORY_MOVEMENT_TYPE_RESERVATION;
+        case 5: return INVENTORY_MOVEMENT_TYPE_RELEASE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<InventoryMovementType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        InventoryMovementType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<InventoryMovementType>() {
+            public InventoryMovementType findValueByNumber(int number) {
+              return InventoryMovementType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.megacommerce.inventory.v1.DatabaseProto.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final InventoryMovementType[] VALUES = values();
+
+    public static InventoryMovementType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private InventoryMovementType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:inventory.v1.InventoryMovementType)
+  }
+
   public interface InventoryItemOrBuilder extends
       // @@protoc_insertion_point(interface_extends:inventory.v1.InventoryItem)
       com.google.protobuf.MessageOrBuilder {
@@ -5444,11 +5597,17 @@ public final class DatabaseProto {
       "ty\030\004 \001(\005R\010quantity\022!\n\014reference_id\030\005 \001(\t" +
       "R\013referenceId\022\026\n\006reason\030\006 \001(\tR\006reason\022-\n" +
       "\010metadata\030\007 \001(\0132\021.shared.v1.StructR\010meta" +
-      "data\022\035\n\ncreated_at\030\010 \001(\003R\tcreatedAtBy\n\035o" +
-      "rg.megacommerce.inventory.v1B\rDatabasePr" +
-      "otoZFgithub.com/ahmad-khatib0-org/megaco" +
-      "mmerce-proto/gen/go/inventory/v1;v1\370\001\001b\006" +
-      "proto3"
+      "data\022\035\n\ncreated_at\030\010 \001(\003R\tcreatedAt*\367\001\n\025" +
+      "InventoryMovementType\022\'\n#INVENTORY_MOVEM" +
+      "ENT_TYPE_UNSPECIFIED\020\000\022\036\n\032INVENTORY_MOVE" +
+      "MENT_TYPE_IN\020\001\022\037\n\033INVENTORY_MOVEMENT_TYP" +
+      "E_OUT\020\002\022&\n\"INVENTORY_MOVEMENT_TYPE_ADJUS" +
+      "TMENT\020\003\022\'\n#INVENTORY_MOVEMENT_TYPE_RESER" +
+      "VATION\020\004\022#\n\037INVENTORY_MOVEMENT_TYPE_RELE" +
+      "ASE\020\005By\n\035org.megacommerce.inventory.v1B\r" +
+      "DatabaseProtoZFgithub.com/ahmad-khatib0-" +
+      "org/megacommerce-proto/gen/go/inventory/" +
+      "v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

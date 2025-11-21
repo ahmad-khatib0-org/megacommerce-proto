@@ -28,6 +28,7 @@
 #include "google/protobuf/message_lite.h"
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
+#include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
 #include "shared/v1/struct.pb.h"
 // @@protoc_insertion_point(includes)
@@ -55,6 +56,8 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_inve
 }  // extern "C"
 namespace inventory {
 namespace v1 {
+enum InventoryMovementType : int;
+extern const uint32_t InventoryMovementType_internal_data_[];
 class InventoryItem;
 struct InventoryItemDefaultTypeInternal;
 extern InventoryItemDefaultTypeInternal _InventoryItem_default_instance_;
@@ -75,11 +78,54 @@ extern const ::google::protobuf::internal::ClassDataFull InventoryReservationIte
 }  // namespace inventory
 namespace google {
 namespace protobuf {
+template <>
+internal::EnumTraitsT<::inventory::v1::InventoryMovementType_internal_data_>
+    internal::EnumTraitsImpl::value<::inventory::v1::InventoryMovementType>;
 }  // namespace protobuf
 }  // namespace google
 
 namespace inventory {
 namespace v1 {
+enum InventoryMovementType : int {
+  INVENTORY_MOVEMENT_TYPE_UNSPECIFIED = 0,
+  INVENTORY_MOVEMENT_TYPE_IN = 1,
+  INVENTORY_MOVEMENT_TYPE_OUT = 2,
+  INVENTORY_MOVEMENT_TYPE_ADJUSTMENT = 3,
+  INVENTORY_MOVEMENT_TYPE_RESERVATION = 4,
+  INVENTORY_MOVEMENT_TYPE_RELEASE = 5,
+  InventoryMovementType_INT_MIN_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::min(),
+  InventoryMovementType_INT_MAX_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::max(),
+};
+
+extern const uint32_t InventoryMovementType_internal_data_[];
+inline constexpr InventoryMovementType InventoryMovementType_MIN =
+    static_cast<InventoryMovementType>(0);
+inline constexpr InventoryMovementType InventoryMovementType_MAX =
+    static_cast<InventoryMovementType>(5);
+inline bool InventoryMovementType_IsValid(int value) {
+  return 0 <= value && value <= 5;
+}
+inline constexpr int InventoryMovementType_ARRAYSIZE = 5 + 1;
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL InventoryMovementType_descriptor();
+template <typename T>
+const ::std::string& InventoryMovementType_Name(T value) {
+  static_assert(::std::is_same<T, InventoryMovementType>::value ||
+                    ::std::is_integral<T>::value,
+                "Incorrect type passed to InventoryMovementType_Name().");
+  return InventoryMovementType_Name(static_cast<InventoryMovementType>(value));
+}
+template <>
+inline const ::std::string& InventoryMovementType_Name(InventoryMovementType value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<InventoryMovementType_descriptor, 0, 5>(
+      static_cast<int>(value));
+}
+inline bool InventoryMovementType_Parse(
+    ::absl::string_view name, InventoryMovementType* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<InventoryMovementType>(InventoryMovementType_descriptor(), name,
+                                           value);
+}
 
 // ===================================================================
 
@@ -2893,6 +2939,19 @@ inline void InventoryMovement::_internal_set_created_at(::int64_t value) {
 }  // namespace v1
 }  // namespace inventory
 
+
+namespace google {
+namespace protobuf {
+
+template <>
+struct is_proto_enum<::inventory::v1::InventoryMovementType> : std::true_type {};
+template <>
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::inventory::v1::InventoryMovementType>() {
+  return ::inventory::v1::InventoryMovementType_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

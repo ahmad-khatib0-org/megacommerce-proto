@@ -189,8 +189,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InventoryItemDefaultTypeInternal _InventoryItem_default_instance_;
 }  // namespace v1
 }  // namespace inventory
-static constexpr const ::_pb::EnumDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
-    file_level_enum_descriptors_inventory_2fv1_2fdatabase_2eproto = nullptr;
+static const ::_pb::EnumDescriptor* PROTOBUF_NONNULL
+    file_level_enum_descriptors_inventory_2fv1_2fdatabase_2eproto[1];
 static constexpr const ::_pb::ServiceDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
     file_level_service_descriptors_inventory_2fv1_2fdatabase_2eproto = nullptr;
 const ::uint32_t
@@ -316,11 +316,17 @@ const char descriptor_table_protodef_inventory_2fv1_2fdatabase_2eproto[] ABSL_AT
     "ty\030\004 \001(\005R\010quantity\022!\n\014reference_id\030\005 \001(\t"
     "R\013referenceId\022\026\n\006reason\030\006 \001(\tR\006reason\022-\n"
     "\010metadata\030\007 \001(\0132\021.shared.v1.StructR\010meta"
-    "data\022\035\n\ncreated_at\030\010 \001(\003R\tcreatedAtBy\n\035o"
-    "rg.megacommerce.inventory.v1B\rDatabasePr"
-    "otoZFgithub.com/ahmad-khatib0-org/megaco"
-    "mmerce-proto/gen/go/inventory/v1;v1\370\001\001b\006"
-    "proto3"
+    "data\022\035\n\ncreated_at\030\010 \001(\003R\tcreatedAt*\367\001\n\025"
+    "InventoryMovementType\022\'\n#INVENTORY_MOVEM"
+    "ENT_TYPE_UNSPECIFIED\020\000\022\036\n\032INVENTORY_MOVE"
+    "MENT_TYPE_IN\020\001\022\037\n\033INVENTORY_MOVEMENT_TYP"
+    "E_OUT\020\002\022&\n\"INVENTORY_MOVEMENT_TYPE_ADJUS"
+    "TMENT\020\003\022\'\n#INVENTORY_MOVEMENT_TYPE_RESER"
+    "VATION\020\004\022#\n\037INVENTORY_MOVEMENT_TYPE_RELE"
+    "ASE\020\005By\n\035org.megacommerce.inventory.v1B\r"
+    "DatabaseProtoZFgithub.com/ahmad-khatib0-"
+    "org/megacommerce-proto/gen/go/inventory/"
+    "v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_inventory_2fv1_2fdatabase_2eproto_deps[1] = {
@@ -330,7 +336,7 @@ static ::absl::once_flag descriptor_table_inventory_2fv1_2fdatabase_2eproto_once
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_inventory_2fv1_2fdatabase_2eproto = {
     false,
     false,
-    1326,
+    1576,
     descriptor_table_protodef_inventory_2fv1_2fdatabase_2eproto,
     "inventory/v1/database.proto",
     &descriptor_table_inventory_2fv1_2fdatabase_2eproto_once,
@@ -345,6 +351,12 @@ PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_inventory_2fv1
 };
 namespace inventory {
 namespace v1 {
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL InventoryMovementType_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_inventory_2fv1_2fdatabase_2eproto);
+  return file_level_enum_descriptors_inventory_2fv1_2fdatabase_2eproto[0];
+}
+PROTOBUF_CONSTINIT const uint32_t InventoryMovementType_internal_data_[] = {
+    393216u, 0u, };
 // ===================================================================
 
 class InventoryItem::_Internal {

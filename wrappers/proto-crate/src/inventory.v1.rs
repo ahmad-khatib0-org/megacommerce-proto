@@ -79,6 +79,45 @@ pub struct InventoryMovement {
     #[prost(int64, tag = "8")]
     pub created_at: i64,
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum InventoryMovementType {
+    Unspecified = 0,
+    In = 1,
+    Out = 2,
+    Adjustment = 3,
+    Reservation = 4,
+    Release = 5,
+}
+impl InventoryMovementType {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Unspecified => "INVENTORY_MOVEMENT_TYPE_UNSPECIFIED",
+            Self::In => "INVENTORY_MOVEMENT_TYPE_IN",
+            Self::Out => "INVENTORY_MOVEMENT_TYPE_OUT",
+            Self::Adjustment => "INVENTORY_MOVEMENT_TYPE_ADJUSTMENT",
+            Self::Reservation => "INVENTORY_MOVEMENT_TYPE_RESERVATION",
+            Self::Release => "INVENTORY_MOVEMENT_TYPE_RELEASE",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "INVENTORY_MOVEMENT_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
+            "INVENTORY_MOVEMENT_TYPE_IN" => Some(Self::In),
+            "INVENTORY_MOVEMENT_TYPE_OUT" => Some(Self::Out),
+            "INVENTORY_MOVEMENT_TYPE_ADJUSTMENT" => Some(Self::Adjustment),
+            "INVENTORY_MOVEMENT_TYPE_RESERVATION" => Some(Self::Reservation),
+            "INVENTORY_MOVEMENT_TYPE_RELEASE" => Some(Self::Release),
+            _ => None,
+        }
+    }
+}
 /// Request for getting inventory
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

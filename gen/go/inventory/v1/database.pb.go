@@ -22,6 +22,64 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type InventoryMovementType int32
+
+const (
+	InventoryMovementType_INVENTORY_MOVEMENT_TYPE_UNSPECIFIED InventoryMovementType = 0
+	InventoryMovementType_INVENTORY_MOVEMENT_TYPE_IN          InventoryMovementType = 1
+	InventoryMovementType_INVENTORY_MOVEMENT_TYPE_OUT         InventoryMovementType = 2
+	InventoryMovementType_INVENTORY_MOVEMENT_TYPE_ADJUSTMENT  InventoryMovementType = 3
+	InventoryMovementType_INVENTORY_MOVEMENT_TYPE_RESERVATION InventoryMovementType = 4
+	InventoryMovementType_INVENTORY_MOVEMENT_TYPE_RELEASE     InventoryMovementType = 5
+)
+
+// Enum value maps for InventoryMovementType.
+var (
+	InventoryMovementType_name = map[int32]string{
+		0: "INVENTORY_MOVEMENT_TYPE_UNSPECIFIED",
+		1: "INVENTORY_MOVEMENT_TYPE_IN",
+		2: "INVENTORY_MOVEMENT_TYPE_OUT",
+		3: "INVENTORY_MOVEMENT_TYPE_ADJUSTMENT",
+		4: "INVENTORY_MOVEMENT_TYPE_RESERVATION",
+		5: "INVENTORY_MOVEMENT_TYPE_RELEASE",
+	}
+	InventoryMovementType_value = map[string]int32{
+		"INVENTORY_MOVEMENT_TYPE_UNSPECIFIED": 0,
+		"INVENTORY_MOVEMENT_TYPE_IN":          1,
+		"INVENTORY_MOVEMENT_TYPE_OUT":         2,
+		"INVENTORY_MOVEMENT_TYPE_ADJUSTMENT":  3,
+		"INVENTORY_MOVEMENT_TYPE_RESERVATION": 4,
+		"INVENTORY_MOVEMENT_TYPE_RELEASE":     5,
+	}
+)
+
+func (x InventoryMovementType) Enum() *InventoryMovementType {
+	p := new(InventoryMovementType)
+	*p = x
+	return p
+}
+
+func (x InventoryMovementType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (InventoryMovementType) Descriptor() protoreflect.EnumDescriptor {
+	return file_inventory_v1_database_proto_enumTypes[0].Descriptor()
+}
+
+func (InventoryMovementType) Type() protoreflect.EnumType {
+	return &file_inventory_v1_database_proto_enumTypes[0]
+}
+
+func (x InventoryMovementType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use InventoryMovementType.Descriptor instead.
+func (InventoryMovementType) EnumDescriptor() ([]byte, []int) {
+	return file_inventory_v1_database_proto_rawDescGZIP(), []int{0}
+}
+
 type InventoryItem struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -466,7 +524,14 @@ const file_inventory_v1_database_proto_rawDesc = "" +
 	"\x06reason\x18\x06 \x01(\tR\x06reason\x12-\n" +
 	"\bmetadata\x18\a \x01(\v2\x11.shared.v1.StructR\bmetadata\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\b \x01(\x03R\tcreatedAtBy\n" +
+	"created_at\x18\b \x01(\x03R\tcreatedAt*\xf7\x01\n" +
+	"\x15InventoryMovementType\x12'\n" +
+	"#INVENTORY_MOVEMENT_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n" +
+	"\x1aINVENTORY_MOVEMENT_TYPE_IN\x10\x01\x12\x1f\n" +
+	"\x1bINVENTORY_MOVEMENT_TYPE_OUT\x10\x02\x12&\n" +
+	"\"INVENTORY_MOVEMENT_TYPE_ADJUSTMENT\x10\x03\x12'\n" +
+	"#INVENTORY_MOVEMENT_TYPE_RESERVATION\x10\x04\x12#\n" +
+	"\x1fINVENTORY_MOVEMENT_TYPE_RELEASE\x10\x05By\n" +
 	"\x1dorg.megacommerce.inventory.v1B\rDatabaseProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -481,17 +546,19 @@ func file_inventory_v1_database_proto_rawDescGZIP() []byte {
 	return file_inventory_v1_database_proto_rawDescData
 }
 
+var file_inventory_v1_database_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_inventory_v1_database_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_inventory_v1_database_proto_goTypes = []any{
-	(*InventoryItem)(nil),            // 0: inventory.v1.InventoryItem
-	(*InventoryReservation)(nil),     // 1: inventory.v1.InventoryReservation
-	(*InventoryReservationItem)(nil), // 2: inventory.v1.InventoryReservationItem
-	(*InventoryMovement)(nil),        // 3: inventory.v1.InventoryMovement
-	(*v1.Struct)(nil),                // 4: shared.v1.Struct
+	(InventoryMovementType)(0),       // 0: inventory.v1.InventoryMovementType
+	(*InventoryItem)(nil),            // 1: inventory.v1.InventoryItem
+	(*InventoryReservation)(nil),     // 2: inventory.v1.InventoryReservation
+	(*InventoryReservationItem)(nil), // 3: inventory.v1.InventoryReservationItem
+	(*InventoryMovement)(nil),        // 4: inventory.v1.InventoryMovement
+	(*v1.Struct)(nil),                // 5: shared.v1.Struct
 }
 var file_inventory_v1_database_proto_depIdxs = []int32{
-	4, // 0: inventory.v1.InventoryItem.metadata:type_name -> shared.v1.Struct
-	4, // 1: inventory.v1.InventoryMovement.metadata:type_name -> shared.v1.Struct
+	5, // 0: inventory.v1.InventoryItem.metadata:type_name -> shared.v1.Struct
+	5, // 1: inventory.v1.InventoryMovement.metadata:type_name -> shared.v1.Struct
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -511,13 +578,14 @@ func file_inventory_v1_database_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_inventory_v1_database_proto_rawDesc), len(file_inventory_v1_database_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_inventory_v1_database_proto_goTypes,
 		DependencyIndexes: file_inventory_v1_database_proto_depIdxs,
+		EnumInfos:         file_inventory_v1_database_proto_enumTypes,
 		MessageInfos:      file_inventory_v1_database_proto_msgTypes,
 	}.Build()
 	File_inventory_v1_database_proto = out.File
