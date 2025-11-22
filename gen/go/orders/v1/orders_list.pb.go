@@ -7,6 +7,7 @@
 package v1
 
 import (
+	v11 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1"
 	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -158,7 +159,7 @@ func (*OrdersListResponse_Error) isOrdersListResponse_Response() {}
 
 type OrdersListResponseData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Orders        []*OrderItem           `protobuf:"bytes,1,rep,name=orders,proto3" json:"orders,omitempty"`
+	Orders        []*OrderListItem       `protobuf:"bytes,1,rep,name=orders,proto3" json:"orders,omitempty"`
 	Pagination    *v1.PaginationResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -194,7 +195,7 @@ func (*OrdersListResponseData) Descriptor() ([]byte, []int) {
 	return file_orders_v1_orders_list_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *OrdersListResponseData) GetOrders() []*OrderItem {
+func (x *OrdersListResponseData) GetOrders() []*OrderListItem {
 	if x != nil {
 		return x.Orders
 	}
@@ -208,11 +209,131 @@ func (x *OrdersListResponseData) GetPagination() *v1.PaginationResponse {
 	return nil
 }
 
+type OrderListItem struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// monetary amounts are stored in minor units (cents) to avoid float errors
+	SubtotalCents uint64 `protobuf:"varint,3,opt,name=subtotal_cents,json=subtotalCents,proto3" json:"subtotal_cents,omitempty"`
+	ShippingCents uint64 `protobuf:"varint,4,opt,name=shipping_cents,json=shippingCents,proto3" json:"shipping_cents,omitempty"`
+	TaxCents      uint64 `protobuf:"varint,5,opt,name=tax_cents,json=taxCents,proto3" json:"tax_cents,omitempty"`
+	DiscountCents uint64 `protobuf:"varint,6,opt,name=discount_cents,json=discountCents,proto3" json:"discount_cents,omitempty"`
+	TotalCents    uint64 `protobuf:"varint,7,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`
+	CurrencyCode  string `protobuf:"bytes,8,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
+	// Inventory reservation status - since inventory service is separate,
+	// we include reservation status in order so UI shows what's reserved.
+	InventoryReservationStatus v11.InventoryReservationStatus `protobuf:"varint,9,opt,name=inventory_reservation_status,json=inventoryReservationStatus,proto3,enum=inventory.v1.InventoryReservationStatus" json:"inventory_reservation_status,omitempty"`
+	// order lifecycle
+	Status        string `protobuf:"bytes,19,opt,name=status,proto3" json:"status,omitempty"` // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
+	CreatedAt     uint64 `protobuf:"varint,11,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *OrderListItem) Reset() {
+	*x = OrderListItem{}
+	mi := &file_orders_v1_orders_list_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OrderListItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OrderListItem) ProtoMessage() {}
+
+func (x *OrderListItem) ProtoReflect() protoreflect.Message {
+	mi := &file_orders_v1_orders_list_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OrderListItem.ProtoReflect.Descriptor instead.
+func (*OrderListItem) Descriptor() ([]byte, []int) {
+	return file_orders_v1_orders_list_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *OrderListItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OrderListItem) GetSubtotalCents() uint64 {
+	if x != nil {
+		return x.SubtotalCents
+	}
+	return 0
+}
+
+func (x *OrderListItem) GetShippingCents() uint64 {
+	if x != nil {
+		return x.ShippingCents
+	}
+	return 0
+}
+
+func (x *OrderListItem) GetTaxCents() uint64 {
+	if x != nil {
+		return x.TaxCents
+	}
+	return 0
+}
+
+func (x *OrderListItem) GetDiscountCents() uint64 {
+	if x != nil {
+		return x.DiscountCents
+	}
+	return 0
+}
+
+func (x *OrderListItem) GetTotalCents() uint64 {
+	if x != nil {
+		return x.TotalCents
+	}
+	return 0
+}
+
+func (x *OrderListItem) GetCurrencyCode() string {
+	if x != nil {
+		return x.CurrencyCode
+	}
+	return ""
+}
+
+func (x *OrderListItem) GetInventoryReservationStatus() v11.InventoryReservationStatus {
+	if x != nil {
+		return x.InventoryReservationStatus
+	}
+	return v11.InventoryReservationStatus(0)
+}
+
+func (x *OrderListItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *OrderListItem) GetCreatedAt() uint64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
 var File_orders_v1_orders_list_proto protoreflect.FileDescriptor
 
 const file_orders_v1_orders_list_proto_rawDesc = "" +
 	"\n" +
-	"\x1borders/v1/orders_list.proto\x12\torders.v1\x1a\x19orders/v1/order_get.proto\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\"i\n" +
+	"\x1borders/v1/orders_list.proto\x12\torders.v1\x1a\"inventory/v1/reservation_get.proto\x1a\x19orders/v1/order_get.proto\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\"i\n" +
 	"\x11OrdersListRequest\x12<\n" +
 	"\n" +
 	"pagination\x18\x01 \x01(\v2\x1c.shared.v1.PaginationRequestR\n" +
@@ -222,12 +343,25 @@ const file_orders_v1_orders_list_proto_rawDesc = "" +
 	"\x04data\x18\x01 \x01(\v2!.orders.v1.OrdersListResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
-	"\bresponse\"\x85\x01\n" +
-	"\x16OrdersListResponseData\x12,\n" +
-	"\x06orders\x18\x01 \x03(\v2\x14.orders.v1.OrderItemR\x06orders\x12=\n" +
+	"\bresponse\"\x89\x01\n" +
+	"\x16OrdersListResponseData\x120\n" +
+	"\x06orders\x18\x01 \x03(\v2\x18.orders.v1.OrderListItemR\x06orders\x12=\n" +
 	"\n" +
 	"pagination\x18\x02 \x01(\v2\x1d.shared.v1.PaginationResponseR\n" +
-	"paginationBu\n" +
+	"pagination\"\x9a\x03\n" +
+	"\rOrderListItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
+	"\x0esubtotal_cents\x18\x03 \x01(\x04R\rsubtotalCents\x12%\n" +
+	"\x0eshipping_cents\x18\x04 \x01(\x04R\rshippingCents\x12\x1b\n" +
+	"\ttax_cents\x18\x05 \x01(\x04R\btaxCents\x12%\n" +
+	"\x0ediscount_cents\x18\x06 \x01(\x04R\rdiscountCents\x12\x1f\n" +
+	"\vtotal_cents\x18\a \x01(\x04R\n" +
+	"totalCents\x12#\n" +
+	"\rcurrency_code\x18\b \x01(\tR\fcurrencyCode\x12j\n" +
+	"\x1cinventory_reservation_status\x18\t \x01(\x0e2(.inventory.v1.InventoryReservationStatusR\x1ainventoryReservationStatus\x12\x16\n" +
+	"\x06status\x18\x13 \x01(\tR\x06status\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\v \x01(\x04R\tcreatedAtBu\n" +
 	"\x1aorg.megacommerce.orders.v1B\x0fOrdersListProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -242,27 +376,29 @@ func file_orders_v1_orders_list_proto_rawDescGZIP() []byte {
 	return file_orders_v1_orders_list_proto_rawDescData
 }
 
-var file_orders_v1_orders_list_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_orders_v1_orders_list_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_orders_v1_orders_list_proto_goTypes = []any{
-	(*OrdersListRequest)(nil),      // 0: orders.v1.OrdersListRequest
-	(*OrdersListResponse)(nil),     // 1: orders.v1.OrdersListResponse
-	(*OrdersListResponseData)(nil), // 2: orders.v1.OrdersListResponseData
-	(*v1.PaginationRequest)(nil),   // 3: shared.v1.PaginationRequest
-	(*v1.AppError)(nil),            // 4: shared.v1.AppError
-	(*OrderItem)(nil),              // 5: orders.v1.OrderItem
-	(*v1.PaginationResponse)(nil),  // 6: shared.v1.PaginationResponse
+	(*OrdersListRequest)(nil),           // 0: orders.v1.OrdersListRequest
+	(*OrdersListResponse)(nil),          // 1: orders.v1.OrdersListResponse
+	(*OrdersListResponseData)(nil),      // 2: orders.v1.OrdersListResponseData
+	(*OrderListItem)(nil),               // 3: orders.v1.OrderListItem
+	(*v1.PaginationRequest)(nil),        // 4: shared.v1.PaginationRequest
+	(*v1.AppError)(nil),                 // 5: shared.v1.AppError
+	(*v1.PaginationResponse)(nil),       // 6: shared.v1.PaginationResponse
+	(v11.InventoryReservationStatus)(0), // 7: inventory.v1.InventoryReservationStatus
 }
 var file_orders_v1_orders_list_proto_depIdxs = []int32{
-	3, // 0: orders.v1.OrdersListRequest.pagination:type_name -> shared.v1.PaginationRequest
+	4, // 0: orders.v1.OrdersListRequest.pagination:type_name -> shared.v1.PaginationRequest
 	2, // 1: orders.v1.OrdersListResponse.data:type_name -> orders.v1.OrdersListResponseData
-	4, // 2: orders.v1.OrdersListResponse.error:type_name -> shared.v1.AppError
-	5, // 3: orders.v1.OrdersListResponseData.orders:type_name -> orders.v1.OrderItem
+	5, // 2: orders.v1.OrdersListResponse.error:type_name -> shared.v1.AppError
+	3, // 3: orders.v1.OrdersListResponseData.orders:type_name -> orders.v1.OrderListItem
 	6, // 4: orders.v1.OrdersListResponseData.pagination:type_name -> shared.v1.PaginationResponse
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	7, // 5: orders.v1.OrderListItem.inventory_reservation_status:type_name -> inventory.v1.InventoryReservationStatus
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_orders_v1_orders_list_proto_init() }
@@ -281,7 +417,7 @@ func file_orders_v1_orders_list_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_orders_v1_orders_list_proto_rawDesc), len(file_orders_v1_orders_list_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

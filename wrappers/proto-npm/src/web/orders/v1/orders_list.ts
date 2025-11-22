@@ -6,9 +6,13 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import {
+  InventoryReservationStatus,
+  inventoryReservationStatusFromJSON,
+  inventoryReservationStatusToJSON,
+} from "../../inventory/v1/reservation_get.js";
 import { AppError } from "../../shared/v1/error.js";
 import { PaginationRequest, PaginationResponse } from "../../shared/v1/pagination.js";
-import { OrderItem } from "./order_get.js";
 
 export const protobufPackage = "orders.v1";
 
@@ -23,8 +27,27 @@ export interface OrdersListResponse {
 }
 
 export interface OrdersListResponseData {
-  orders: OrderItem[];
+  orders: OrderListItem[];
   pagination?: PaginationResponse | undefined;
+}
+
+export interface OrderListItem {
+  id: string;
+  /** monetary amounts are stored in minor units (cents) to avoid float errors */
+  subtotalCents: string;
+  shippingCents: string;
+  taxCents: string;
+  discountCents: string;
+  totalCents: string;
+  currencyCode: string;
+  /**
+   * Inventory reservation status - since inventory service is separate,
+   * we include reservation status in order so UI shows what's reserved.
+   */
+  inventoryReservationStatus: InventoryReservationStatus;
+  /** order lifecycle */
+  status: string;
+  createdAt: string;
 }
 
 function createBaseOrdersListRequest(): OrdersListRequest {
@@ -192,7 +215,7 @@ function createBaseOrdersListResponseData(): OrdersListResponseData {
 export const OrdersListResponseData: MessageFns<OrdersListResponseData> = {
   encode(message: OrdersListResponseData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     for (const v of message.orders) {
-      OrderItem.encode(v!, writer.uint32(10).fork()).join();
+      OrderListItem.encode(v!, writer.uint32(10).fork()).join();
     }
     if (message.pagination !== undefined) {
       PaginationResponse.encode(message.pagination, writer.uint32(18).fork()).join();
@@ -212,7 +235,7 @@ export const OrdersListResponseData: MessageFns<OrdersListResponseData> = {
             break;
           }
 
-          message.orders.push(OrderItem.decode(reader, reader.uint32()));
+          message.orders.push(OrderListItem.decode(reader, reader.uint32()));
           continue;
         }
         case 2: {
@@ -234,7 +257,7 @@ export const OrdersListResponseData: MessageFns<OrdersListResponseData> = {
 
   fromJSON(object: any): OrdersListResponseData {
     return {
-      orders: globalThis.Array.isArray(object?.orders) ? object.orders.map((e: any) => OrderItem.fromJSON(e)) : [],
+      orders: globalThis.Array.isArray(object?.orders) ? object.orders.map((e: any) => OrderListItem.fromJSON(e)) : [],
       pagination: isSet(object.pagination) ? PaginationResponse.fromJSON(object.pagination) : undefined,
     };
   },
@@ -242,7 +265,7 @@ export const OrdersListResponseData: MessageFns<OrdersListResponseData> = {
   toJSON(message: OrdersListResponseData): unknown {
     const obj: any = {};
     if (message.orders?.length) {
-      obj.orders = message.orders.map((e) => OrderItem.toJSON(e));
+      obj.orders = message.orders.map((e) => OrderListItem.toJSON(e));
     }
     if (message.pagination !== undefined) {
       obj.pagination = PaginationResponse.toJSON(message.pagination);
@@ -255,10 +278,227 @@ export const OrdersListResponseData: MessageFns<OrdersListResponseData> = {
   },
   fromPartial<I extends Exact<DeepPartial<OrdersListResponseData>, I>>(object: I): OrdersListResponseData {
     const message = createBaseOrdersListResponseData();
-    message.orders = object.orders?.map((e) => OrderItem.fromPartial(e)) || [];
+    message.orders = object.orders?.map((e) => OrderListItem.fromPartial(e)) || [];
     message.pagination = (object.pagination !== undefined && object.pagination !== null)
       ? PaginationResponse.fromPartial(object.pagination)
       : undefined;
+    return message;
+  },
+};
+
+function createBaseOrderListItem(): OrderListItem {
+  return {
+    id: "",
+    subtotalCents: "0",
+    shippingCents: "0",
+    taxCents: "0",
+    discountCents: "0",
+    totalCents: "0",
+    currencyCode: "",
+    inventoryReservationStatus: 0,
+    status: "",
+    createdAt: "0",
+  };
+}
+
+export const OrderListItem: MessageFns<OrderListItem> = {
+  encode(message: OrderListItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.subtotalCents !== "0") {
+      writer.uint32(24).uint64(message.subtotalCents);
+    }
+    if (message.shippingCents !== "0") {
+      writer.uint32(32).uint64(message.shippingCents);
+    }
+    if (message.taxCents !== "0") {
+      writer.uint32(40).uint64(message.taxCents);
+    }
+    if (message.discountCents !== "0") {
+      writer.uint32(48).uint64(message.discountCents);
+    }
+    if (message.totalCents !== "0") {
+      writer.uint32(56).uint64(message.totalCents);
+    }
+    if (message.currencyCode !== "") {
+      writer.uint32(66).string(message.currencyCode);
+    }
+    if (message.inventoryReservationStatus !== 0) {
+      writer.uint32(72).int32(message.inventoryReservationStatus);
+    }
+    if (message.status !== "") {
+      writer.uint32(154).string(message.status);
+    }
+    if (message.createdAt !== "0") {
+      writer.uint32(88).uint64(message.createdAt);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): OrderListItem {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseOrderListItem();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.subtotalCents = reader.uint64().toString();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
+            break;
+          }
+
+          message.shippingCents = reader.uint64().toString();
+          continue;
+        }
+        case 5: {
+          if (tag !== 40) {
+            break;
+          }
+
+          message.taxCents = reader.uint64().toString();
+          continue;
+        }
+        case 6: {
+          if (tag !== 48) {
+            break;
+          }
+
+          message.discountCents = reader.uint64().toString();
+          continue;
+        }
+        case 7: {
+          if (tag !== 56) {
+            break;
+          }
+
+          message.totalCents = reader.uint64().toString();
+          continue;
+        }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.currencyCode = reader.string();
+          continue;
+        }
+        case 9: {
+          if (tag !== 72) {
+            break;
+          }
+
+          message.inventoryReservationStatus = reader.int32() as any;
+          continue;
+        }
+        case 19: {
+          if (tag !== 154) {
+            break;
+          }
+
+          message.status = reader.string();
+          continue;
+        }
+        case 11: {
+          if (tag !== 88) {
+            break;
+          }
+
+          message.createdAt = reader.uint64().toString();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): OrderListItem {
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
+      subtotalCents: isSet(object.subtotalCents) ? globalThis.String(object.subtotalCents) : "0",
+      shippingCents: isSet(object.shippingCents) ? globalThis.String(object.shippingCents) : "0",
+      taxCents: isSet(object.taxCents) ? globalThis.String(object.taxCents) : "0",
+      discountCents: isSet(object.discountCents) ? globalThis.String(object.discountCents) : "0",
+      totalCents: isSet(object.totalCents) ? globalThis.String(object.totalCents) : "0",
+      currencyCode: isSet(object.currencyCode) ? globalThis.String(object.currencyCode) : "",
+      inventoryReservationStatus: isSet(object.inventoryReservationStatus)
+        ? inventoryReservationStatusFromJSON(object.inventoryReservationStatus)
+        : 0,
+      status: isSet(object.status) ? globalThis.String(object.status) : "",
+      createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
+    };
+  },
+
+  toJSON(message: OrderListItem): unknown {
+    const obj: any = {};
+    if (message.id !== "") {
+      obj.id = message.id;
+    }
+    if (message.subtotalCents !== "0") {
+      obj.subtotalCents = message.subtotalCents;
+    }
+    if (message.shippingCents !== "0") {
+      obj.shippingCents = message.shippingCents;
+    }
+    if (message.taxCents !== "0") {
+      obj.taxCents = message.taxCents;
+    }
+    if (message.discountCents !== "0") {
+      obj.discountCents = message.discountCents;
+    }
+    if (message.totalCents !== "0") {
+      obj.totalCents = message.totalCents;
+    }
+    if (message.currencyCode !== "") {
+      obj.currencyCode = message.currencyCode;
+    }
+    if (message.inventoryReservationStatus !== 0) {
+      obj.inventoryReservationStatus = inventoryReservationStatusToJSON(message.inventoryReservationStatus);
+    }
+    if (message.status !== "") {
+      obj.status = message.status;
+    }
+    if (message.createdAt !== "0") {
+      obj.createdAt = message.createdAt;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<OrderListItem>, I>>(base?: I): OrderListItem {
+    return OrderListItem.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<OrderListItem>, I>>(object: I): OrderListItem {
+    const message = createBaseOrderListItem();
+    message.id = object.id ?? "";
+    message.subtotalCents = object.subtotalCents ?? "0";
+    message.shippingCents = object.shippingCents ?? "0";
+    message.taxCents = object.taxCents ?? "0";
+    message.discountCents = object.discountCents ?? "0";
+    message.totalCents = object.totalCents ?? "0";
+    message.currencyCode = object.currencyCode ?? "";
+    message.inventoryReservationStatus = object.inventoryReservationStatus ?? 0;
+    message.status = object.status ?? "";
+    message.createdAt = object.createdAt ?? "0";
     return message;
   },
 };

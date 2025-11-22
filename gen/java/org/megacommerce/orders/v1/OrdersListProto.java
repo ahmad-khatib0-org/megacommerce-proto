@@ -1700,27 +1700,27 @@ public final class OrdersListProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
-    java.util.List<org.megacommerce.orders.v1.OrderGetProto.OrderItem> 
+    java.util.List<org.megacommerce.orders.v1.OrdersListProto.OrderListItem> 
         getOrdersList();
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
-    org.megacommerce.orders.v1.OrderGetProto.OrderItem getOrders(int index);
+    org.megacommerce.orders.v1.OrdersListProto.OrderListItem getOrders(int index);
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
     int getOrdersCount();
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
-    java.util.List<? extends org.megacommerce.orders.v1.OrderGetProto.OrderItemOrBuilder> 
+    java.util.List<? extends org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder> 
         getOrdersOrBuilderList();
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
-    org.megacommerce.orders.v1.OrderGetProto.OrderItemOrBuilder getOrdersOrBuilder(
+    org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder getOrdersOrBuilder(
         int index);
 
     /**
@@ -1779,41 +1779,41 @@ public final class OrdersListProto {
     private int bitField0_;
     public static final int ORDERS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.orders.v1.OrderGetProto.OrderItem> orders_;
+    private java.util.List<org.megacommerce.orders.v1.OrdersListProto.OrderListItem> orders_;
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
     @java.lang.Override
-    public java.util.List<org.megacommerce.orders.v1.OrderGetProto.OrderItem> getOrdersList() {
+    public java.util.List<org.megacommerce.orders.v1.OrdersListProto.OrderListItem> getOrdersList() {
       return orders_;
     }
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends org.megacommerce.orders.v1.OrderGetProto.OrderItemOrBuilder> 
+    public java.util.List<? extends org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder> 
         getOrdersOrBuilderList() {
       return orders_;
     }
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
     @java.lang.Override
     public int getOrdersCount() {
       return orders_.size();
     }
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.orders.v1.OrderGetProto.OrderItem getOrders(int index) {
+    public org.megacommerce.orders.v1.OrdersListProto.OrderListItem getOrders(int index) {
       return orders_.get(index);
     }
     /**
-     * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+     * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.orders.v1.OrderGetProto.OrderItemOrBuilder getOrdersOrBuilder(
+    public org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder getOrdersOrBuilder(
         int index) {
       return orders_.get(index);
     }
@@ -2196,9 +2196,9 @@ public final class OrdersListProto {
                 done = true;
                 break;
               case 10: {
-                org.megacommerce.orders.v1.OrderGetProto.OrderItem m =
+                org.megacommerce.orders.v1.OrdersListProto.OrderListItem m =
                     input.readMessage(
-                        org.megacommerce.orders.v1.OrderGetProto.OrderItem.parser(),
+                        org.megacommerce.orders.v1.OrdersListProto.OrderListItem.parser(),
                         extensionRegistry);
                 if (ordersBuilder_ == null) {
                   ensureOrdersIsMutable();
@@ -2232,22 +2232,22 @@ public final class OrdersListProto {
       }
       private int bitField0_;
 
-      private java.util.List<org.megacommerce.orders.v1.OrderGetProto.OrderItem> orders_ =
+      private java.util.List<org.megacommerce.orders.v1.OrdersListProto.OrderListItem> orders_ =
         java.util.Collections.emptyList();
       private void ensureOrdersIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          orders_ = new java.util.ArrayList<org.megacommerce.orders.v1.OrderGetProto.OrderItem>(orders_);
+          orders_ = new java.util.ArrayList<org.megacommerce.orders.v1.OrdersListProto.OrderListItem>(orders_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.orders.v1.OrderGetProto.OrderItem, org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder, org.megacommerce.orders.v1.OrderGetProto.OrderItemOrBuilder> ordersBuilder_;
+          org.megacommerce.orders.v1.OrdersListProto.OrderListItem, org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder, org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder> ordersBuilder_;
 
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
-      public java.util.List<org.megacommerce.orders.v1.OrderGetProto.OrderItem> getOrdersList() {
+      public java.util.List<org.megacommerce.orders.v1.OrdersListProto.OrderListItem> getOrdersList() {
         if (ordersBuilder_ == null) {
           return java.util.Collections.unmodifiableList(orders_);
         } else {
@@ -2255,7 +2255,7 @@ public final class OrdersListProto {
         }
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
       public int getOrdersCount() {
         if (ordersBuilder_ == null) {
@@ -2265,9 +2265,9 @@ public final class OrdersListProto {
         }
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
-      public org.megacommerce.orders.v1.OrderGetProto.OrderItem getOrders(int index) {
+      public org.megacommerce.orders.v1.OrdersListProto.OrderListItem getOrders(int index) {
         if (ordersBuilder_ == null) {
           return orders_.get(index);
         } else {
@@ -2275,10 +2275,10 @@ public final class OrdersListProto {
         }
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
       public Builder setOrders(
-          int index, org.megacommerce.orders.v1.OrderGetProto.OrderItem value) {
+          int index, org.megacommerce.orders.v1.OrdersListProto.OrderListItem value) {
         if (ordersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2292,10 +2292,10 @@ public final class OrdersListProto {
         return this;
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
       public Builder setOrders(
-          int index, org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder builderForValue) {
+          int index, org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder builderForValue) {
         if (ordersBuilder_ == null) {
           ensureOrdersIsMutable();
           orders_.set(index, builderForValue.build());
@@ -2306,9 +2306,9 @@ public final class OrdersListProto {
         return this;
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
-      public Builder addOrders(org.megacommerce.orders.v1.OrderGetProto.OrderItem value) {
+      public Builder addOrders(org.megacommerce.orders.v1.OrdersListProto.OrderListItem value) {
         if (ordersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2322,10 +2322,10 @@ public final class OrdersListProto {
         return this;
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
       public Builder addOrders(
-          int index, org.megacommerce.orders.v1.OrderGetProto.OrderItem value) {
+          int index, org.megacommerce.orders.v1.OrdersListProto.OrderListItem value) {
         if (ordersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2339,10 +2339,10 @@ public final class OrdersListProto {
         return this;
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
       public Builder addOrders(
-          org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder builderForValue) {
+          org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder builderForValue) {
         if (ordersBuilder_ == null) {
           ensureOrdersIsMutable();
           orders_.add(builderForValue.build());
@@ -2353,10 +2353,10 @@ public final class OrdersListProto {
         return this;
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
       public Builder addOrders(
-          int index, org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder builderForValue) {
+          int index, org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder builderForValue) {
         if (ordersBuilder_ == null) {
           ensureOrdersIsMutable();
           orders_.add(index, builderForValue.build());
@@ -2367,10 +2367,10 @@ public final class OrdersListProto {
         return this;
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
       public Builder addAllOrders(
-          java.lang.Iterable<? extends org.megacommerce.orders.v1.OrderGetProto.OrderItem> values) {
+          java.lang.Iterable<? extends org.megacommerce.orders.v1.OrdersListProto.OrderListItem> values) {
         if (ordersBuilder_ == null) {
           ensureOrdersIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2382,7 +2382,7 @@ public final class OrdersListProto {
         return this;
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
       public Builder clearOrders() {
         if (ordersBuilder_ == null) {
@@ -2395,7 +2395,7 @@ public final class OrdersListProto {
         return this;
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
       public Builder removeOrders(int index) {
         if (ordersBuilder_ == null) {
@@ -2408,16 +2408,16 @@ public final class OrdersListProto {
         return this;
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
-      public org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder getOrdersBuilder(
+      public org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder getOrdersBuilder(
           int index) {
         return internalGetOrdersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
-      public org.megacommerce.orders.v1.OrderGetProto.OrderItemOrBuilder getOrdersOrBuilder(
+      public org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder getOrdersOrBuilder(
           int index) {
         if (ordersBuilder_ == null) {
           return orders_.get(index);  } else {
@@ -2425,9 +2425,9 @@ public final class OrdersListProto {
         }
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
-      public java.util.List<? extends org.megacommerce.orders.v1.OrderGetProto.OrderItemOrBuilder> 
+      public java.util.List<? extends org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder> 
            getOrdersOrBuilderList() {
         if (ordersBuilder_ != null) {
           return ordersBuilder_.getMessageOrBuilderList();
@@ -2436,33 +2436,33 @@ public final class OrdersListProto {
         }
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
-      public org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder addOrdersBuilder() {
+      public org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder addOrdersBuilder() {
         return internalGetOrdersFieldBuilder().addBuilder(
-            org.megacommerce.orders.v1.OrderGetProto.OrderItem.getDefaultInstance());
+            org.megacommerce.orders.v1.OrdersListProto.OrderListItem.getDefaultInstance());
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
-      public org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder addOrdersBuilder(
+      public org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder addOrdersBuilder(
           int index) {
         return internalGetOrdersFieldBuilder().addBuilder(
-            index, org.megacommerce.orders.v1.OrderGetProto.OrderItem.getDefaultInstance());
+            index, org.megacommerce.orders.v1.OrdersListProto.OrderListItem.getDefaultInstance());
       }
       /**
-       * <code>repeated .orders.v1.OrderItem orders = 1 [json_name = "orders"];</code>
+       * <code>repeated .orders.v1.OrderListItem orders = 1 [json_name = "orders"];</code>
        */
-      public java.util.List<org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder> 
+      public java.util.List<org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder> 
            getOrdersBuilderList() {
         return internalGetOrdersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.orders.v1.OrderGetProto.OrderItem, org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder, org.megacommerce.orders.v1.OrderGetProto.OrderItemOrBuilder> 
+          org.megacommerce.orders.v1.OrdersListProto.OrderListItem, org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder, org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder> 
           internalGetOrdersFieldBuilder() {
         if (ordersBuilder_ == null) {
           ordersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.orders.v1.OrderGetProto.OrderItem, org.megacommerce.orders.v1.OrderGetProto.OrderItem.Builder, org.megacommerce.orders.v1.OrderGetProto.OrderItemOrBuilder>(
+              org.megacommerce.orders.v1.OrdersListProto.OrderListItem, org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder, org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder>(
                   orders_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2644,6 +2644,1454 @@ public final class OrdersListProto {
 
   }
 
+  public interface OrderListItemOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:orders.v1.OrderListItem)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * monetary amounts are stored in minor units (cents) to avoid float errors
+     * </pre>
+     *
+     * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+     * @return The subtotalCents.
+     */
+    long getSubtotalCents();
+
+    /**
+     * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+     * @return The shippingCents.
+     */
+    long getShippingCents();
+
+    /**
+     * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
+     * @return The taxCents.
+     */
+    long getTaxCents();
+
+    /**
+     * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
+     * @return The discountCents.
+     */
+    long getDiscountCents();
+
+    /**
+     * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
+     * @return The totalCents.
+     */
+    long getTotalCents();
+
+    /**
+     * <code>string currency_code = 8 [json_name = "currencyCode"];</code>
+     * @return The currencyCode.
+     */
+    java.lang.String getCurrencyCode();
+    /**
+     * <code>string currency_code = 8 [json_name = "currencyCode"];</code>
+     * @return The bytes for currencyCode.
+     */
+    com.google.protobuf.ByteString
+        getCurrencyCodeBytes();
+
+    /**
+     * <pre>
+     * Inventory reservation status - since inventory service is separate,
+     * we include reservation status in order so UI shows what's reserved.
+     * </pre>
+     *
+     * <code>.inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];</code>
+     * @return The enum numeric value on the wire for inventoryReservationStatus.
+     */
+    int getInventoryReservationStatusValue();
+    /**
+     * <pre>
+     * Inventory reservation status - since inventory service is separate,
+     * we include reservation status in order so UI shows what's reserved.
+     * </pre>
+     *
+     * <code>.inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];</code>
+     * @return The inventoryReservationStatus.
+     */
+    org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus getInventoryReservationStatus();
+
+    /**
+     * <pre>
+     * order lifecycle
+     * </pre>
+     *
+     * <code>string status = 19 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <pre>
+     * order lifecycle
+     * </pre>
+     *
+     * <code>string status = 19 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <code>uint64 created_at = 11 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    long getCreatedAt();
+  }
+  /**
+   * Protobuf type {@code orders.v1.OrderListItem}
+   */
+  public static final class OrderListItem extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:orders.v1.OrderListItem)
+      OrderListItemOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        OrderListItem.class.getName());
+    }
+    // Use OrderListItem.newBuilder() to construct.
+    private OrderListItem(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private OrderListItem() {
+      id_ = "";
+      currencyCode_ = "";
+      inventoryReservationStatus_ = 0;
+      status_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.orders.v1.OrdersListProto.internal_static_orders_v1_OrderListItem_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.orders.v1.OrdersListProto.internal_static_orders_v1_OrderListItem_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.orders.v1.OrdersListProto.OrderListItem.class, org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUBTOTAL_CENTS_FIELD_NUMBER = 3;
+    private long subtotalCents_ = 0L;
+    /**
+     * <pre>
+     * monetary amounts are stored in minor units (cents) to avoid float errors
+     * </pre>
+     *
+     * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+     * @return The subtotalCents.
+     */
+    @java.lang.Override
+    public long getSubtotalCents() {
+      return subtotalCents_;
+    }
+
+    public static final int SHIPPING_CENTS_FIELD_NUMBER = 4;
+    private long shippingCents_ = 0L;
+    /**
+     * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+     * @return The shippingCents.
+     */
+    @java.lang.Override
+    public long getShippingCents() {
+      return shippingCents_;
+    }
+
+    public static final int TAX_CENTS_FIELD_NUMBER = 5;
+    private long taxCents_ = 0L;
+    /**
+     * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
+     * @return The taxCents.
+     */
+    @java.lang.Override
+    public long getTaxCents() {
+      return taxCents_;
+    }
+
+    public static final int DISCOUNT_CENTS_FIELD_NUMBER = 6;
+    private long discountCents_ = 0L;
+    /**
+     * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
+     * @return The discountCents.
+     */
+    @java.lang.Override
+    public long getDiscountCents() {
+      return discountCents_;
+    }
+
+    public static final int TOTAL_CENTS_FIELD_NUMBER = 7;
+    private long totalCents_ = 0L;
+    /**
+     * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
+     * @return The totalCents.
+     */
+    @java.lang.Override
+    public long getTotalCents() {
+      return totalCents_;
+    }
+
+    public static final int CURRENCY_CODE_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object currencyCode_ = "";
+    /**
+     * <code>string currency_code = 8 [json_name = "currencyCode"];</code>
+     * @return The currencyCode.
+     */
+    @java.lang.Override
+    public java.lang.String getCurrencyCode() {
+      java.lang.Object ref = currencyCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currencyCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string currency_code = 8 [json_name = "currencyCode"];</code>
+     * @return The bytes for currencyCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCurrencyCodeBytes() {
+      java.lang.Object ref = currencyCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currencyCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INVENTORY_RESERVATION_STATUS_FIELD_NUMBER = 9;
+    private int inventoryReservationStatus_ = 0;
+    /**
+     * <pre>
+     * Inventory reservation status - since inventory service is separate,
+     * we include reservation status in order so UI shows what's reserved.
+     * </pre>
+     *
+     * <code>.inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];</code>
+     * @return The enum numeric value on the wire for inventoryReservationStatus.
+     */
+    @java.lang.Override public int getInventoryReservationStatusValue() {
+      return inventoryReservationStatus_;
+    }
+    /**
+     * <pre>
+     * Inventory reservation status - since inventory service is separate,
+     * we include reservation status in order so UI shows what's reserved.
+     * </pre>
+     *
+     * <code>.inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];</code>
+     * @return The inventoryReservationStatus.
+     */
+    @java.lang.Override public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus getInventoryReservationStatus() {
+      org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus result = org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus.forNumber(inventoryReservationStatus_);
+      return result == null ? org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 19;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object status_ = "";
+    /**
+     * <pre>
+     * order lifecycle
+     * </pre>
+     *
+     * <code>string status = 19 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * order lifecycle
+     * </pre>
+     *
+     * <code>string status = 19 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 11;
+    private long createdAt_ = 0L;
+    /**
+     * <code>uint64 created_at = 11 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public long getCreatedAt() {
+      return createdAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      }
+      if (subtotalCents_ != 0L) {
+        output.writeUInt64(3, subtotalCents_);
+      }
+      if (shippingCents_ != 0L) {
+        output.writeUInt64(4, shippingCents_);
+      }
+      if (taxCents_ != 0L) {
+        output.writeUInt64(5, taxCents_);
+      }
+      if (discountCents_ != 0L) {
+        output.writeUInt64(6, discountCents_);
+      }
+      if (totalCents_ != 0L) {
+        output.writeUInt64(7, totalCents_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currencyCode_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, currencyCode_);
+      }
+      if (inventoryReservationStatus_ != org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus.INVENTORY_RESERVATION_STATUS_UNSPECIFIED.getNumber()) {
+        output.writeEnum(9, inventoryReservationStatus_);
+      }
+      if (createdAt_ != 0L) {
+        output.writeUInt64(11, createdAt_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 19, status_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      }
+      if (subtotalCents_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, subtotalCents_);
+      }
+      if (shippingCents_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, shippingCents_);
+      }
+      if (taxCents_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, taxCents_);
+      }
+      if (discountCents_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, discountCents_);
+      }
+      if (totalCents_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(7, totalCents_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currencyCode_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, currencyCode_);
+      }
+      if (inventoryReservationStatus_ != org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus.INVENTORY_RESERVATION_STATUS_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, inventoryReservationStatus_);
+      }
+      if (createdAt_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(11, createdAt_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(19, status_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.orders.v1.OrdersListProto.OrderListItem)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.orders.v1.OrdersListProto.OrderListItem other = (org.megacommerce.orders.v1.OrdersListProto.OrderListItem) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (getSubtotalCents()
+          != other.getSubtotalCents()) return false;
+      if (getShippingCents()
+          != other.getShippingCents()) return false;
+      if (getTaxCents()
+          != other.getTaxCents()) return false;
+      if (getDiscountCents()
+          != other.getDiscountCents()) return false;
+      if (getTotalCents()
+          != other.getTotalCents()) return false;
+      if (!getCurrencyCode()
+          .equals(other.getCurrencyCode())) return false;
+      if (inventoryReservationStatus_ != other.inventoryReservationStatus_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (getCreatedAt()
+          != other.getCreatedAt()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + SUBTOTAL_CENTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSubtotalCents());
+      hash = (37 * hash) + SHIPPING_CENTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShippingCents());
+      hash = (37 * hash) + TAX_CENTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTaxCents());
+      hash = (37 * hash) + DISCOUNT_CENTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDiscountCents());
+      hash = (37 * hash) + TOTAL_CENTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalCents());
+      hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrencyCode().hashCode();
+      hash = (37 * hash) + INVENTORY_RESERVATION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + inventoryReservationStatus_;
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCreatedAt());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.orders.v1.OrdersListProto.OrderListItem prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code orders.v1.OrderListItem}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:orders.v1.OrderListItem)
+        org.megacommerce.orders.v1.OrdersListProto.OrderListItemOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.orders.v1.OrdersListProto.internal_static_orders_v1_OrderListItem_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.orders.v1.OrdersListProto.internal_static_orders_v1_OrderListItem_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.orders.v1.OrdersListProto.OrderListItem.class, org.megacommerce.orders.v1.OrdersListProto.OrderListItem.Builder.class);
+      }
+
+      // Construct using org.megacommerce.orders.v1.OrdersListProto.OrderListItem.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = "";
+        subtotalCents_ = 0L;
+        shippingCents_ = 0L;
+        taxCents_ = 0L;
+        discountCents_ = 0L;
+        totalCents_ = 0L;
+        currencyCode_ = "";
+        inventoryReservationStatus_ = 0;
+        status_ = "";
+        createdAt_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.orders.v1.OrdersListProto.internal_static_orders_v1_OrderListItem_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.orders.v1.OrdersListProto.OrderListItem getDefaultInstanceForType() {
+        return org.megacommerce.orders.v1.OrdersListProto.OrderListItem.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.orders.v1.OrdersListProto.OrderListItem build() {
+        org.megacommerce.orders.v1.OrdersListProto.OrderListItem result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.orders.v1.OrdersListProto.OrderListItem buildPartial() {
+        org.megacommerce.orders.v1.OrdersListProto.OrderListItem result = new org.megacommerce.orders.v1.OrdersListProto.OrderListItem(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.orders.v1.OrdersListProto.OrderListItem result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.subtotalCents_ = subtotalCents_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.shippingCents_ = shippingCents_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.taxCents_ = taxCents_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.discountCents_ = discountCents_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.totalCents_ = totalCents_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.currencyCode_ = currencyCode_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.inventoryReservationStatus_ = inventoryReservationStatus_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.createdAt_ = createdAt_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.orders.v1.OrdersListProto.OrderListItem) {
+          return mergeFrom((org.megacommerce.orders.v1.OrdersListProto.OrderListItem)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.orders.v1.OrdersListProto.OrderListItem other) {
+        if (other == org.megacommerce.orders.v1.OrdersListProto.OrderListItem.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getSubtotalCents() != 0L) {
+          setSubtotalCents(other.getSubtotalCents());
+        }
+        if (other.getShippingCents() != 0L) {
+          setShippingCents(other.getShippingCents());
+        }
+        if (other.getTaxCents() != 0L) {
+          setTaxCents(other.getTaxCents());
+        }
+        if (other.getDiscountCents() != 0L) {
+          setDiscountCents(other.getDiscountCents());
+        }
+        if (other.getTotalCents() != 0L) {
+          setTotalCents(other.getTotalCents());
+        }
+        if (!other.getCurrencyCode().isEmpty()) {
+          currencyCode_ = other.currencyCode_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (other.inventoryReservationStatus_ != 0) {
+          setInventoryReservationStatusValue(other.getInventoryReservationStatusValue());
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        if (other.getCreatedAt() != 0L) {
+          setCreatedAt(other.getCreatedAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 24: {
+                subtotalCents_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 32: {
+                shippingCents_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 40: {
+                taxCents_ = input.readUInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 48: {
+                discountCents_ = input.readUInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+              case 56: {
+                totalCents_ = input.readUInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 66: {
+                currencyCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
+              case 72: {
+                inventoryReservationStatus_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
+              case 88: {
+                createdAt_ = input.readUInt64();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
+              case 154: {
+                status_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 154
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private long subtotalCents_ ;
+      /**
+       * <pre>
+       * monetary amounts are stored in minor units (cents) to avoid float errors
+       * </pre>
+       *
+       * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+       * @return The subtotalCents.
+       */
+      @java.lang.Override
+      public long getSubtotalCents() {
+        return subtotalCents_;
+      }
+      /**
+       * <pre>
+       * monetary amounts are stored in minor units (cents) to avoid float errors
+       * </pre>
+       *
+       * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+       * @param value The subtotalCents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubtotalCents(long value) {
+
+        subtotalCents_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * monetary amounts are stored in minor units (cents) to avoid float errors
+       * </pre>
+       *
+       * <code>uint64 subtotal_cents = 3 [json_name = "subtotalCents"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSubtotalCents() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        subtotalCents_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long shippingCents_ ;
+      /**
+       * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+       * @return The shippingCents.
+       */
+      @java.lang.Override
+      public long getShippingCents() {
+        return shippingCents_;
+      }
+      /**
+       * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+       * @param value The shippingCents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShippingCents(long value) {
+
+        shippingCents_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 shipping_cents = 4 [json_name = "shippingCents"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShippingCents() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        shippingCents_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long taxCents_ ;
+      /**
+       * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
+       * @return The taxCents.
+       */
+      @java.lang.Override
+      public long getTaxCents() {
+        return taxCents_;
+      }
+      /**
+       * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
+       * @param value The taxCents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaxCents(long value) {
+
+        taxCents_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 tax_cents = 5 [json_name = "taxCents"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaxCents() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        taxCents_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long discountCents_ ;
+      /**
+       * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
+       * @return The discountCents.
+       */
+      @java.lang.Override
+      public long getDiscountCents() {
+        return discountCents_;
+      }
+      /**
+       * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
+       * @param value The discountCents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDiscountCents(long value) {
+
+        discountCents_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 discount_cents = 6 [json_name = "discountCents"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDiscountCents() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        discountCents_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long totalCents_ ;
+      /**
+       * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
+       * @return The totalCents.
+       */
+      @java.lang.Override
+      public long getTotalCents() {
+        return totalCents_;
+      }
+      /**
+       * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
+       * @param value The totalCents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalCents(long value) {
+
+        totalCents_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 total_cents = 7 [json_name = "totalCents"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalCents() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        totalCents_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object currencyCode_ = "";
+      /**
+       * <code>string currency_code = 8 [json_name = "currencyCode"];</code>
+       * @return The currencyCode.
+       */
+      public java.lang.String getCurrencyCode() {
+        java.lang.Object ref = currencyCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          currencyCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string currency_code = 8 [json_name = "currencyCode"];</code>
+       * @return The bytes for currencyCode.
+       */
+      public com.google.protobuf.ByteString
+          getCurrencyCodeBytes() {
+        java.lang.Object ref = currencyCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          currencyCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string currency_code = 8 [json_name = "currencyCode"];</code>
+       * @param value The currencyCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrencyCode(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        currencyCode_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string currency_code = 8 [json_name = "currencyCode"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrencyCode() {
+        currencyCode_ = getDefaultInstance().getCurrencyCode();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string currency_code = 8 [json_name = "currencyCode"];</code>
+       * @param value The bytes for currencyCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrencyCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        currencyCode_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private int inventoryReservationStatus_ = 0;
+      /**
+       * <pre>
+       * Inventory reservation status - since inventory service is separate,
+       * we include reservation status in order so UI shows what's reserved.
+       * </pre>
+       *
+       * <code>.inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];</code>
+       * @return The enum numeric value on the wire for inventoryReservationStatus.
+       */
+      @java.lang.Override public int getInventoryReservationStatusValue() {
+        return inventoryReservationStatus_;
+      }
+      /**
+       * <pre>
+       * Inventory reservation status - since inventory service is separate,
+       * we include reservation status in order so UI shows what's reserved.
+       * </pre>
+       *
+       * <code>.inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];</code>
+       * @param value The enum numeric value on the wire for inventoryReservationStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInventoryReservationStatusValue(int value) {
+        inventoryReservationStatus_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Inventory reservation status - since inventory service is separate,
+       * we include reservation status in order so UI shows what's reserved.
+       * </pre>
+       *
+       * <code>.inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];</code>
+       * @return The inventoryReservationStatus.
+       */
+      @java.lang.Override
+      public org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus getInventoryReservationStatus() {
+        org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus result = org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus.forNumber(inventoryReservationStatus_);
+        return result == null ? org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Inventory reservation status - since inventory service is separate,
+       * we include reservation status in order so UI shows what's reserved.
+       * </pre>
+       *
+       * <code>.inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];</code>
+       * @param value The inventoryReservationStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInventoryReservationStatus(org.megacommerce.inventory.v1.InventoryReservationGetProto.InventoryReservationStatus value) {
+        if (value == null) { throw new NullPointerException(); }
+        bitField0_ |= 0x00000080;
+        inventoryReservationStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Inventory reservation status - since inventory service is separate,
+       * we include reservation status in order so UI shows what's reserved.
+       * </pre>
+       *
+       * <code>.inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInventoryReservationStatus() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        inventoryReservationStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <pre>
+       * order lifecycle
+       * </pre>
+       *
+       * <code>string status = 19 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * order lifecycle
+       * </pre>
+       *
+       * <code>string status = 19 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * order lifecycle
+       * </pre>
+       *
+       * <code>string status = 19 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        status_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * order lifecycle
+       * </pre>
+       *
+       * <code>string status = 19 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        status_ = getDefaultInstance().getStatus();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * order lifecycle
+       * </pre>
+       *
+       * <code>string status = 19 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        status_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      private long createdAt_ ;
+      /**
+       * <code>uint64 created_at = 11 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      @java.lang.Override
+      public long getCreatedAt() {
+        return createdAt_;
+      }
+      /**
+       * <code>uint64 created_at = 11 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(long value) {
+
+        createdAt_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 created_at = 11 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        createdAt_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:orders.v1.OrderListItem)
+    }
+
+    // @@protoc_insertion_point(class_scope:orders.v1.OrderListItem)
+    private static final org.megacommerce.orders.v1.OrdersListProto.OrderListItem DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.orders.v1.OrdersListProto.OrderListItem();
+    }
+
+    public static org.megacommerce.orders.v1.OrdersListProto.OrderListItem getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OrderListItem>
+        PARSER = new com.google.protobuf.AbstractParser<OrderListItem>() {
+      @java.lang.Override
+      public OrderListItem parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<OrderListItem> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OrderListItem> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.orders.v1.OrdersListProto.OrderListItem getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_orders_v1_OrdersListRequest_descriptor;
   private static final 
@@ -2659,6 +4107,11 @@ public final class OrdersListProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_orders_v1_OrdersListResponseData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_orders_v1_OrderListItem_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_orders_v1_OrderListItem_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2669,25 +4122,37 @@ public final class OrdersListProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033orders/v1/orders_list.proto\022\torders.v1" +
-      "\032\031orders/v1/order_get.proto\032\025shared/v1/e" +
-      "rror.proto\032\032shared/v1/pagination.proto\"i" +
-      "\n\021OrdersListRequest\022<\n\npagination\030\001 \001(\0132" +
-      "\034.shared.v1.PaginationRequestR\npaginatio" +
-      "n\022\026\n\006status\030\002 \003(\tR\006status\"\206\001\n\022OrdersList" +
-      "Response\0227\n\004data\030\001 \001(\0132!.orders.v1.Order" +
-      "sListResponseDataH\000R\004data\022+\n\005error\030\002 \001(\013" +
-      "2\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respon" +
-      "se\"\205\001\n\026OrdersListResponseData\022,\n\006orders\030" +
-      "\001 \003(\0132\024.orders.v1.OrderItemR\006orders\022=\n\np" +
+      "\032\"inventory/v1/reservation_get.proto\032\031or" +
+      "ders/v1/order_get.proto\032\025shared/v1/error" +
+      ".proto\032\032shared/v1/pagination.proto\"i\n\021Or" +
+      "dersListRequest\022<\n\npagination\030\001 \001(\0132\034.sh" +
+      "ared.v1.PaginationRequestR\npagination\022\026\n" +
+      "\006status\030\002 \003(\tR\006status\"\206\001\n\022OrdersListResp" +
+      "onse\0227\n\004data\030\001 \001(\0132!.orders.v1.OrdersLis" +
+      "tResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.s" +
+      "hared.v1.AppErrorH\000R\005errorB\n\n\010response\"\211" +
+      "\001\n\026OrdersListResponseData\0220\n\006orders\030\001 \003(" +
+      "\0132\030.orders.v1.OrderListItemR\006orders\022=\n\np" +
       "agination\030\002 \001(\0132\035.shared.v1.PaginationRe" +
-      "sponseR\npaginationBu\n\032org.megacommerce.o" +
-      "rders.v1B\017OrdersListProtoZCgithub.com/ah" +
-      "mad-khatib0-org/megacommerce-proto/gen/g" +
-      "o/orders/v1;v1\370\001\001b\006proto3"
+      "sponseR\npagination\"\232\003\n\rOrderListItem\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022%\n\016subtotal_cents\030\003 \001(\004R\rsu" +
+      "btotalCents\022%\n\016shipping_cents\030\004 \001(\004R\rshi" +
+      "ppingCents\022\033\n\ttax_cents\030\005 \001(\004R\010taxCents\022" +
+      "%\n\016discount_cents\030\006 \001(\004R\rdiscountCents\022\037" +
+      "\n\013total_cents\030\007 \001(\004R\ntotalCents\022#\n\rcurre" +
+      "ncy_code\030\010 \001(\tR\014currencyCode\022j\n\034inventor" +
+      "y_reservation_status\030\t \001(\0162(.inventory.v" +
+      "1.InventoryReservationStatusR\032inventoryR" +
+      "eservationStatus\022\026\n\006status\030\023 \001(\tR\006status" +
+      "\022\035\n\ncreated_at\030\013 \001(\004R\tcreatedAtBu\n\032org.m" +
+      "egacommerce.orders.v1B\017OrdersListProtoZC" +
+      "github.com/ahmad-khatib0-org/megacommerc" +
+      "e-proto/gen/go/orders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          org.megacommerce.inventory.v1.InventoryReservationGetProto.getDescriptor(),
           org.megacommerce.orders.v1.OrderGetProto.getDescriptor(),
           org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
           org.megacommerce.shared.v1.PaginationProto.getDescriptor(),
@@ -2710,7 +4175,14 @@ public final class OrdersListProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_orders_v1_OrdersListResponseData_descriptor,
         new java.lang.String[] { "Orders", "Pagination", });
+    internal_static_orders_v1_OrderListItem_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_orders_v1_OrderListItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_orders_v1_OrderListItem_descriptor,
+        new java.lang.String[] { "Id", "SubtotalCents", "ShippingCents", "TaxCents", "DiscountCents", "TotalCents", "CurrencyCode", "InventoryReservationStatus", "Status", "CreatedAt", });
     descriptor.resolveAllFeaturesImmutable();
+    org.megacommerce.inventory.v1.InventoryReservationGetProto.getDescriptor();
     org.megacommerce.orders.v1.OrderGetProto.getDescriptor();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
     org.megacommerce.shared.v1.PaginationProto.getDescriptor();

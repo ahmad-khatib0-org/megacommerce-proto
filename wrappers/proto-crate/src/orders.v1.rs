@@ -606,9 +606,42 @@ pub mod orders_list_response {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct OrdersListResponseData {
     #[prost(message, repeated, tag = "1")]
-    pub orders: ::prost::alloc::vec::Vec<OrderItem>,
+    pub orders: ::prost::alloc::vec::Vec<OrderListItem>,
     #[prost(message, optional, tag = "2")]
     pub pagination: ::core::option::Option<super::super::shared::v1::PaginationResponse>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct OrderListItem {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    /// monetary amounts are stored in minor units (cents) to avoid float errors
+    #[prost(uint64, tag = "3")]
+    pub subtotal_cents: u64,
+    #[prost(uint64, tag = "4")]
+    pub shipping_cents: u64,
+    #[prost(uint64, tag = "5")]
+    pub tax_cents: u64,
+    #[prost(uint64, tag = "6")]
+    pub discount_cents: u64,
+    #[prost(uint64, tag = "7")]
+    pub total_cents: u64,
+    #[prost(string, tag = "8")]
+    pub currency_code: ::prost::alloc::string::String,
+    /// Inventory reservation status - since inventory service is separate,
+    /// we include reservation status in order so UI shows what's reserved.
+    #[prost(
+        enumeration = "super::super::inventory::v1::InventoryReservationStatus",
+        tag = "9"
+    )]
+    pub inventory_reservation_status: i32,
+    /// order lifecycle
+    ///
+    /// e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
+    #[prost(string, tag = "19")]
+    pub status: ::prost::alloc::string::String,
+    #[prost(uint64, tag = "11")]
+    pub created_at: u64,
 }
 /// Generated client implementations.
 pub mod orders_service_client {

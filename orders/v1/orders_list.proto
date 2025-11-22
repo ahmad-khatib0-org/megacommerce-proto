@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package orders.v1;
 
+import "inventory/v1/reservation_get.proto";
 import "orders/v1/order_get.proto";
 import "shared/v1/error.proto";
 import "shared/v1/pagination.proto";
@@ -24,6 +25,26 @@ message OrdersListResponse {
 }
 
 message OrdersListResponseData {
-  repeated orders.v1.OrderItem orders = 1;
+  repeated OrderListItem orders = 1;
   shared.v1.PaginationResponse pagination = 2;
+}
+
+message OrderListItem {
+  string id = 1;
+
+  // monetary amounts are stored in minor units (cents) to avoid float errors
+  uint64 subtotal_cents = 3;
+  uint64 shipping_cents = 4;
+  uint64 tax_cents = 5;
+  uint64 discount_cents = 6;
+  uint64 total_cents = 7;
+  string currency_code = 8;
+
+  // Inventory reservation status - since inventory service is separate,
+  // we include reservation status in order so UI shows what's reserved.
+  inventory.v1.InventoryReservationStatus inventory_reservation_status = 9;
+
+  // order lifecycle
+  string status = 19; // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
+  uint64 created_at = 11;
 }
