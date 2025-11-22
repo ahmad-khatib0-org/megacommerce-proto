@@ -32,17 +32,21 @@ public final class OrderIdempotencyKeysProto {
   public enum OrderIdempotencyKeyStatus
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>IN_PROGRESS = 0;</code>
+     * <code>ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED = 0;</code>
      */
-    IN_PROGRESS(0),
+    ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED(0),
     /**
-     * <code>COMPLETED = 1;</code>
+     * <code>ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS = 1;</code>
      */
-    COMPLETED(1),
+    ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS(1),
     /**
-     * <code>FAILED = 2;</code>
+     * <code>ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED = 2;</code>
      */
-    FAILED(2),
+    ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED(2),
+    /**
+     * <code>ORDER_IDEMPOTENCY_KEY_STATUS_FAILED = 3;</code>
+     */
+    ORDER_IDEMPOTENCY_KEY_STATUS_FAILED(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -56,17 +60,21 @@ public final class OrderIdempotencyKeysProto {
         OrderIdempotencyKeyStatus.class.getName());
     }
     /**
-     * <code>IN_PROGRESS = 0;</code>
+     * <code>ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED = 0;</code>
      */
-    public static final int IN_PROGRESS_VALUE = 0;
+    public static final int ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>COMPLETED = 1;</code>
+     * <code>ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS = 1;</code>
      */
-    public static final int COMPLETED_VALUE = 1;
+    public static final int ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS_VALUE = 1;
     /**
-     * <code>FAILED = 2;</code>
+     * <code>ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED = 2;</code>
      */
-    public static final int FAILED_VALUE = 2;
+    public static final int ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED_VALUE = 2;
+    /**
+     * <code>ORDER_IDEMPOTENCY_KEY_STATUS_FAILED = 3;</code>
+     */
+    public static final int ORDER_IDEMPOTENCY_KEY_STATUS_FAILED_VALUE = 3;
 
 
     public final int getNumber() {
@@ -93,9 +101,10 @@ public final class OrderIdempotencyKeysProto {
      */
     public static OrderIdempotencyKeyStatus forNumber(int value) {
       switch (value) {
-        case 0: return IN_PROGRESS;
-        case 1: return COMPLETED;
-        case 2: return FAILED;
+        case 0: return ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED;
+        case 1: return ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS;
+        case 2: return ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED;
+        case 3: return ORDER_IDEMPOTENCY_KEY_STATUS_FAILED;
         default: return null;
       }
     }
@@ -1587,12 +1596,16 @@ public final class OrderIdempotencyKeysProto {
       "\005 \001(\tR\006status\022\035\n\ncreated_at\030\006 \001(\004R\tcreat" +
       "edAt\022\"\n\nupdated_at\030\007 \001(\004H\001R\tupdatedAt\210\001\001" +
       "\022\035\n\nexpires_at\030\010 \001(\004R\texpiresAtB\013\n\t_orde" +
-      "r_idB\r\n\013_updated_at*G\n\031OrderIdempotencyK" +
-      "eyStatus\022\017\n\013IN_PROGRESS\020\000\022\r\n\tCOMPLETED\020\001" +
-      "\022\n\n\006FAILED\020\002B\177\n\032org.megacommerce.orders." +
-      "v1B\031OrderIdempotencyKeysProtoZCgithub.co" +
-      "m/ahmad-khatib0-org/megacommerce-proto/g" +
-      "en/go/orders/v1;v1\370\001\001b\006proto3"
+      "r_idB\r\n\013_updated_at*\314\001\n\031OrderIdempotency" +
+      "KeyStatus\022,\n(ORDER_IDEMPOTENCY_KEY_STATU" +
+      "S_UNSPECIFIED\020\000\022,\n(ORDER_IDEMPOTENCY_KEY" +
+      "_STATUS_IN_PROGRESS\020\001\022*\n&ORDER_IDEMPOTEN" +
+      "CY_KEY_STATUS_COMPLETED\020\002\022\'\n#ORDER_IDEMP" +
+      "OTENCY_KEY_STATUS_FAILED\020\003B\177\n\032org.megaco" +
+      "mmerce.orders.v1B\031OrderIdempotencyKeysPr" +
+      "otoZCgithub.com/ahmad-khatib0-org/megaco" +
+      "mmerce-proto/gen/go/orders/v1;v1\370\001\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

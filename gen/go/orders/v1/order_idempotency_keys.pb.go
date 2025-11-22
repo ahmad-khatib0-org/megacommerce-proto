@@ -24,22 +24,25 @@ const (
 type OrderIdempotencyKeyStatus int32
 
 const (
-	OrderIdempotencyKeyStatus_IN_PROGRESS OrderIdempotencyKeyStatus = 0
-	OrderIdempotencyKeyStatus_COMPLETED   OrderIdempotencyKeyStatus = 1
-	OrderIdempotencyKeyStatus_FAILED      OrderIdempotencyKeyStatus = 2
+	OrderIdempotencyKeyStatus_ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED OrderIdempotencyKeyStatus = 0
+	OrderIdempotencyKeyStatus_ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS OrderIdempotencyKeyStatus = 1
+	OrderIdempotencyKeyStatus_ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED   OrderIdempotencyKeyStatus = 2
+	OrderIdempotencyKeyStatus_ORDER_IDEMPOTENCY_KEY_STATUS_FAILED      OrderIdempotencyKeyStatus = 3
 )
 
 // Enum value maps for OrderIdempotencyKeyStatus.
 var (
 	OrderIdempotencyKeyStatus_name = map[int32]string{
-		0: "IN_PROGRESS",
-		1: "COMPLETED",
-		2: "FAILED",
+		0: "ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED",
+		1: "ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS",
+		2: "ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED",
+		3: "ORDER_IDEMPOTENCY_KEY_STATUS_FAILED",
 	}
 	OrderIdempotencyKeyStatus_value = map[string]int32{
-		"IN_PROGRESS": 0,
-		"COMPLETED":   1,
-		"FAILED":      2,
+		"ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED": 0,
+		"ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS": 1,
+		"ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED":   2,
+		"ORDER_IDEMPOTENCY_KEY_STATUS_FAILED":      3,
 	}
 )
 
@@ -188,12 +191,12 @@ const file_orders_v1_order_idempotency_keys_proto_rawDesc = "" +
 	"\n" +
 	"expires_at\x18\b \x01(\x04R\texpiresAtB\v\n" +
 	"\t_order_idB\r\n" +
-	"\v_updated_at*G\n" +
-	"\x19OrderIdempotencyKeyStatus\x12\x0f\n" +
-	"\vIN_PROGRESS\x10\x00\x12\r\n" +
-	"\tCOMPLETED\x10\x01\x12\n" +
-	"\n" +
-	"\x06FAILED\x10\x02B\x7f\n" +
+	"\v_updated_at*\xcc\x01\n" +
+	"\x19OrderIdempotencyKeyStatus\x12,\n" +
+	"(ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED\x10\x00\x12,\n" +
+	"(ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS\x10\x01\x12*\n" +
+	"&ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED\x10\x02\x12'\n" +
+	"#ORDER_IDEMPOTENCY_KEY_STATUS_FAILED\x10\x03B\x7f\n" +
 	"\x1aorg.megacommerce.orders.v1B\x19OrderIdempotencyKeysProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (

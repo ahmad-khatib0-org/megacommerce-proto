@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&orders/v1/order_idempotency_keys.proto\x12\torders.v1\"\xcf\x01\n\x13OrderIdempotencyKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fidempotency_key\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\x12\x15\n\x08order_id\x18\x04 \x01(\tH\x00\x88\x01\x01\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\x12\n\ncreated_at\x18\x06 \x01(\x04\x12\x17\n\nupdated_at\x18\x07 \x01(\x04H\x01\x88\x01\x01\x12\x12\n\nexpires_at\x18\x08 \x01(\x04\x42\x0b\n\t_order_idB\r\n\x0b_updated_at*G\n\x19OrderIdempotencyKeyStatus\x12\x0f\n\x0bIN_PROGRESS\x10\x00\x12\r\n\tCOMPLETED\x10\x01\x12\n\n\x06\x46\x41ILED\x10\x02\x42\x7f\n\x1aorg.megacommerce.orders.v1B\x19OrderIdempotencyKeysProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&orders/v1/order_idempotency_keys.proto\x12\torders.v1\"\xcf\x01\n\x13OrderIdempotencyKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fidempotency_key\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\x12\x15\n\x08order_id\x18\x04 \x01(\tH\x00\x88\x01\x01\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\x12\n\ncreated_at\x18\x06 \x01(\x04\x12\x17\n\nupdated_at\x18\x07 \x01(\x04H\x01\x88\x01\x01\x12\x12\n\nexpires_at\x18\x08 \x01(\x04\x42\x0b\n\t_order_idB\r\n\x0b_updated_at*\xcc\x01\n\x19OrderIdempotencyKeyStatus\x12,\n(ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED\x10\x00\x12,\n(ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS\x10\x01\x12*\n&ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED\x10\x02\x12\'\n#ORDER_IDEMPOTENCY_KEY_STATUS_FAILED\x10\x03\x42\x7f\n\x1aorg.megacommerce.orders.v1B\x19OrderIdempotencyKeysProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +32,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'orders.v1.order_idempotency
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.orders.v1B\031OrderIdempotencyKeysProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\370\001\001'
-  _globals['_ORDERIDEMPOTENCYKEYSTATUS']._serialized_start=263
-  _globals['_ORDERIDEMPOTENCYKEYSTATUS']._serialized_end=334
+  _globals['_ORDERIDEMPOTENCYKEYSTATUS']._serialized_start=264
+  _globals['_ORDERIDEMPOTENCYKEYSTATUS']._serialized_end=468
   _globals['_ORDERIDEMPOTENCYKEY']._serialized_start=54
   _globals['_ORDERIDEMPOTENCYKEY']._serialized_end=261
 # @@protoc_insertion_point(module_scope)

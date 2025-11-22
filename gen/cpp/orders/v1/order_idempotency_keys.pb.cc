@@ -115,18 +115,22 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fidempotency_5fkeys_2e
     "\005 \001(\tR\006status\022\035\n\ncreated_at\030\006 \001(\004R\tcreat"
     "edAt\022\"\n\nupdated_at\030\007 \001(\004H\001R\tupdatedAt\210\001\001"
     "\022\035\n\nexpires_at\030\010 \001(\004R\texpiresAtB\013\n\t_orde"
-    "r_idB\r\n\013_updated_at*G\n\031OrderIdempotencyK"
-    "eyStatus\022\017\n\013IN_PROGRESS\020\000\022\r\n\tCOMPLETED\020\001"
-    "\022\n\n\006FAILED\020\002B\177\n\032org.megacommerce.orders."
-    "v1B\031OrderIdempotencyKeysProtoZCgithub.co"
-    "m/ahmad-khatib0-org/megacommerce-proto/g"
-    "en/go/orders/v1;v1\370\001\001b\006proto3"
+    "r_idB\r\n\013_updated_at*\314\001\n\031OrderIdempotency"
+    "KeyStatus\022,\n(ORDER_IDEMPOTENCY_KEY_STATU"
+    "S_UNSPECIFIED\020\000\022,\n(ORDER_IDEMPOTENCY_KEY"
+    "_STATUS_IN_PROGRESS\020\001\022*\n&ORDER_IDEMPOTEN"
+    "CY_KEY_STATUS_COMPLETED\020\002\022\'\n#ORDER_IDEMP"
+    "OTENCY_KEY_STATUS_FAILED\020\003B\177\n\032org.megaco"
+    "mmerce.orders.v1B\031OrderIdempotencyKeysPr"
+    "otoZCgithub.com/ahmad-khatib0-org/megaco"
+    "mmerce-proto/gen/go/orders/v1;v1\370\001\001b\006pro"
+    "to3"
 };
 static ::absl::once_flag descriptor_table_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto = {
     false,
     false,
-    549,
+    683,
     descriptor_table_protodef_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto,
     "orders/v1/order_idempotency_keys.proto",
     &descriptor_table_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto_once,
@@ -146,7 +150,7 @@ const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderIdempotencyKeySt
   return file_level_enum_descriptors_orders_2fv1_2forder_5fidempotency_5fkeys_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t OrderIdempotencyKeyStatus_internal_data_[] = {
-    196608u, 0u, };
+    262144u, 0u, };
 // ===================================================================
 
 class OrderIdempotencyKey::_Internal {

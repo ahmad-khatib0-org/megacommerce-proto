@@ -74,9 +74,10 @@ internal::EnumTraitsT<::orders::v1::OrderIdempotencyKeyStatus_internal_data_>
 namespace orders {
 namespace v1 {
 enum OrderIdempotencyKeyStatus : int {
-  IN_PROGRESS = 0,
-  COMPLETED = 1,
-  FAILED = 2,
+  ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED = 0,
+  ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS = 1,
+  ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED = 2,
+  ORDER_IDEMPOTENCY_KEY_STATUS_FAILED = 3,
   OrderIdempotencyKeyStatus_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
   OrderIdempotencyKeyStatus_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -87,11 +88,11 @@ extern const uint32_t OrderIdempotencyKeyStatus_internal_data_[];
 inline constexpr OrderIdempotencyKeyStatus OrderIdempotencyKeyStatus_MIN =
     static_cast<OrderIdempotencyKeyStatus>(0);
 inline constexpr OrderIdempotencyKeyStatus OrderIdempotencyKeyStatus_MAX =
-    static_cast<OrderIdempotencyKeyStatus>(2);
+    static_cast<OrderIdempotencyKeyStatus>(3);
 inline bool OrderIdempotencyKeyStatus_IsValid(int value) {
-  return 0 <= value && value <= 2;
+  return 0 <= value && value <= 3;
 }
-inline constexpr int OrderIdempotencyKeyStatus_ARRAYSIZE = 2 + 1;
+inline constexpr int OrderIdempotencyKeyStatus_ARRAYSIZE = 3 + 1;
 const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderIdempotencyKeyStatus_descriptor();
 template <typename T>
 const ::std::string& OrderIdempotencyKeyStatus_Name(T value) {
@@ -102,7 +103,7 @@ const ::std::string& OrderIdempotencyKeyStatus_Name(T value) {
 }
 template <>
 inline const ::std::string& OrderIdempotencyKeyStatus_Name(OrderIdempotencyKeyStatus value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<OrderIdempotencyKeyStatus_descriptor, 0, 2>(
+  return ::google::protobuf::internal::NameOfDenseEnum<OrderIdempotencyKeyStatus_descriptor, 0, 3>(
       static_cast<int>(value));
 }
 inline bool OrderIdempotencyKeyStatus_Parse(

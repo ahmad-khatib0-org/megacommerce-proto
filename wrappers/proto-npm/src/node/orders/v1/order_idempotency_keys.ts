@@ -10,23 +10,27 @@ import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export const protobufPackage = "orders.v1";
 
 export enum OrderIdempotencyKeyStatus {
-  IN_PROGRESS = 0,
-  COMPLETED = 1,
-  FAILED = 2,
+  ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED = 0,
+  ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS = 1,
+  ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED = 2,
+  ORDER_IDEMPOTENCY_KEY_STATUS_FAILED = 3,
   UNRECOGNIZED = -1,
 }
 
 export function orderIdempotencyKeyStatusFromJSON(object: any): OrderIdempotencyKeyStatus {
   switch (object) {
     case 0:
-    case "IN_PROGRESS":
-      return OrderIdempotencyKeyStatus.IN_PROGRESS;
+    case "ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED":
+      return OrderIdempotencyKeyStatus.ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED;
     case 1:
-    case "COMPLETED":
-      return OrderIdempotencyKeyStatus.COMPLETED;
+    case "ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS":
+      return OrderIdempotencyKeyStatus.ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS;
     case 2:
-    case "FAILED":
-      return OrderIdempotencyKeyStatus.FAILED;
+    case "ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED":
+      return OrderIdempotencyKeyStatus.ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED;
+    case 3:
+    case "ORDER_IDEMPOTENCY_KEY_STATUS_FAILED":
+      return OrderIdempotencyKeyStatus.ORDER_IDEMPOTENCY_KEY_STATUS_FAILED;
     case -1:
     case "UNRECOGNIZED":
     default:
@@ -36,12 +40,14 @@ export function orderIdempotencyKeyStatusFromJSON(object: any): OrderIdempotency
 
 export function orderIdempotencyKeyStatusToJSON(object: OrderIdempotencyKeyStatus): string {
   switch (object) {
-    case OrderIdempotencyKeyStatus.IN_PROGRESS:
-      return "IN_PROGRESS";
-    case OrderIdempotencyKeyStatus.COMPLETED:
-      return "COMPLETED";
-    case OrderIdempotencyKeyStatus.FAILED:
-      return "FAILED";
+    case OrderIdempotencyKeyStatus.ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED:
+      return "ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED";
+    case OrderIdempotencyKeyStatus.ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS:
+      return "ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS";
+    case OrderIdempotencyKeyStatus.ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED:
+      return "ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED";
+    case OrderIdempotencyKeyStatus.ORDER_IDEMPOTENCY_KEY_STATUS_FAILED:
+      return "ORDER_IDEMPOTENCY_KEY_STATUS_FAILED";
     case OrderIdempotencyKeyStatus.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";

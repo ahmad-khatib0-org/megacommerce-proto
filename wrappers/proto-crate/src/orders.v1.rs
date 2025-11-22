@@ -508,9 +508,10 @@ pub struct OrderIdempotencyKey {
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum OrderIdempotencyKeyStatus {
-    InProgress = 0,
-    Completed = 1,
-    Failed = 2,
+    Unspecified = 0,
+    InProgress = 1,
+    Completed = 2,
+    Failed = 3,
 }
 impl OrderIdempotencyKeyStatus {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -519,17 +520,19 @@ impl OrderIdempotencyKeyStatus {
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Self::InProgress => "IN_PROGRESS",
-            Self::Completed => "COMPLETED",
-            Self::Failed => "FAILED",
+            Self::Unspecified => "ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED",
+            Self::InProgress => "ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS",
+            Self::Completed => "ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED",
+            Self::Failed => "ORDER_IDEMPOTENCY_KEY_STATUS_FAILED",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
     pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
         match value {
-            "IN_PROGRESS" => Some(Self::InProgress),
-            "COMPLETED" => Some(Self::Completed),
-            "FAILED" => Some(Self::Failed),
+            "ORDER_IDEMPOTENCY_KEY_STATUS_UNSPECIFIED" => Some(Self::Unspecified),
+            "ORDER_IDEMPOTENCY_KEY_STATUS_IN_PROGRESS" => Some(Self::InProgress),
+            "ORDER_IDEMPOTENCY_KEY_STATUS_COMPLETED" => Some(Self::Completed),
+            "ORDER_IDEMPOTENCY_KEY_STATUS_FAILED" => Some(Self::Failed),
             _ => None,
         }
     }
