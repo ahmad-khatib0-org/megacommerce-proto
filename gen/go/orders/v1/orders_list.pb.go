@@ -210,21 +210,17 @@ func (x *OrdersListResponseData) GetPagination() *v1.PaginationResponse {
 }
 
 type OrderListItem struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// monetary amounts are stored in minor units (cents) to avoid float errors
-	SubtotalCents uint64 `protobuf:"varint,3,opt,name=subtotal_cents,json=subtotalCents,proto3" json:"subtotal_cents,omitempty"`
-	ShippingCents uint64 `protobuf:"varint,4,opt,name=shipping_cents,json=shippingCents,proto3" json:"shipping_cents,omitempty"`
-	TaxCents      uint64 `protobuf:"varint,5,opt,name=tax_cents,json=taxCents,proto3" json:"tax_cents,omitempty"`
-	DiscountCents uint64 `protobuf:"varint,6,opt,name=discount_cents,json=discountCents,proto3" json:"discount_cents,omitempty"`
-	TotalCents    uint64 `protobuf:"varint,7,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`
-	CurrencyCode  string `protobuf:"bytes,8,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ShippingCents int64                  `protobuf:"varint,2,opt,name=shipping_cents,json=shippingCents,proto3" json:"shipping_cents,omitempty"`
+	TotalCents    int64                  `protobuf:"varint,3,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`
+	CurrencyCode  string                 `protobuf:"bytes,4,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
 	// Inventory reservation status - since inventory service is separate,
 	// we include reservation status in order so UI shows what's reserved.
-	InventoryReservationStatus v11.InventoryReservationStatus `protobuf:"varint,9,opt,name=inventory_reservation_status,json=inventoryReservationStatus,proto3,enum=inventory.v1.InventoryReservationStatus" json:"inventory_reservation_status,omitempty"`
+	InventoryReservationStatus v11.InventoryReservationStatus `protobuf:"varint,5,opt,name=inventory_reservation_status,json=inventoryReservationStatus,proto3,enum=inventory.v1.InventoryReservationStatus" json:"inventory_reservation_status,omitempty"`
 	// order lifecycle
-	Status        string `protobuf:"bytes,19,opt,name=status,proto3" json:"status,omitempty"` // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
-	CreatedAt     uint64 `protobuf:"varint,11,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	Status        string `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"` // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
+	CreatedAt     uint64 `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -266,35 +262,14 @@ func (x *OrderListItem) GetId() string {
 	return ""
 }
 
-func (x *OrderListItem) GetSubtotalCents() uint64 {
-	if x != nil {
-		return x.SubtotalCents
-	}
-	return 0
-}
-
-func (x *OrderListItem) GetShippingCents() uint64 {
+func (x *OrderListItem) GetShippingCents() int64 {
 	if x != nil {
 		return x.ShippingCents
 	}
 	return 0
 }
 
-func (x *OrderListItem) GetTaxCents() uint64 {
-	if x != nil {
-		return x.TaxCents
-	}
-	return 0
-}
-
-func (x *OrderListItem) GetDiscountCents() uint64 {
-	if x != nil {
-		return x.DiscountCents
-	}
-	return 0
-}
-
-func (x *OrderListItem) GetTotalCents() uint64 {
+func (x *OrderListItem) GetTotalCents() int64 {
 	if x != nil {
 		return x.TotalCents
 	}
@@ -348,20 +323,17 @@ const file_orders_v1_orders_list_proto_rawDesc = "" +
 	"\x06orders\x18\x01 \x03(\v2\x18.orders.v1.OrderListItemR\x06orders\x12=\n" +
 	"\n" +
 	"pagination\x18\x02 \x01(\v2\x1d.shared.v1.PaginationResponseR\n" +
-	"pagination\"\x9a\x03\n" +
+	"pagination\"\xaf\x02\n" +
 	"\rOrderListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
-	"\x0esubtotal_cents\x18\x03 \x01(\x04R\rsubtotalCents\x12%\n" +
-	"\x0eshipping_cents\x18\x04 \x01(\x04R\rshippingCents\x12\x1b\n" +
-	"\ttax_cents\x18\x05 \x01(\x04R\btaxCents\x12%\n" +
-	"\x0ediscount_cents\x18\x06 \x01(\x04R\rdiscountCents\x12\x1f\n" +
-	"\vtotal_cents\x18\a \x01(\x04R\n" +
+	"\x0eshipping_cents\x18\x02 \x01(\x03R\rshippingCents\x12\x1f\n" +
+	"\vtotal_cents\x18\x03 \x01(\x03R\n" +
 	"totalCents\x12#\n" +
-	"\rcurrency_code\x18\b \x01(\tR\fcurrencyCode\x12j\n" +
-	"\x1cinventory_reservation_status\x18\t \x01(\x0e2(.inventory.v1.InventoryReservationStatusR\x1ainventoryReservationStatus\x12\x16\n" +
-	"\x06status\x18\x13 \x01(\tR\x06status\x12\x1d\n" +
+	"\rcurrency_code\x18\x04 \x01(\tR\fcurrencyCode\x12j\n" +
+	"\x1cinventory_reservation_status\x18\x05 \x01(\x0e2(.inventory.v1.InventoryReservationStatusR\x1ainventoryReservationStatus\x12\x16\n" +
+	"\x06status\x18\x06 \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\v \x01(\x04R\tcreatedAtBu\n" +
+	"created_at\x18\a \x01(\x04R\tcreatedAtBu\n" +
 	"\x1aorg.megacommerce.orders.v1B\x0fOrdersListProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (

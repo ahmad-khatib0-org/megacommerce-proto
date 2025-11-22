@@ -33,11 +33,7 @@ export interface OrdersListResponseData {
 
 export interface OrderListItem {
   id: string;
-  /** monetary amounts are stored in minor units (cents) to avoid float errors */
-  subtotalCents: string;
   shippingCents: string;
-  taxCents: string;
-  discountCents: string;
   totalCents: string;
   currencyCode: string;
   /**
@@ -289,10 +285,7 @@ export const OrdersListResponseData: MessageFns<OrdersListResponseData> = {
 function createBaseOrderListItem(): OrderListItem {
   return {
     id: "",
-    subtotalCents: "0",
     shippingCents: "0",
-    taxCents: "0",
-    discountCents: "0",
     totalCents: "0",
     currencyCode: "",
     inventoryReservationStatus: 0,
@@ -306,32 +299,23 @@ export const OrderListItem: MessageFns<OrderListItem> = {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
-    if (message.subtotalCents !== "0") {
-      writer.uint32(24).uint64(message.subtotalCents);
-    }
     if (message.shippingCents !== "0") {
-      writer.uint32(32).uint64(message.shippingCents);
-    }
-    if (message.taxCents !== "0") {
-      writer.uint32(40).uint64(message.taxCents);
-    }
-    if (message.discountCents !== "0") {
-      writer.uint32(48).uint64(message.discountCents);
+      writer.uint32(16).int64(message.shippingCents);
     }
     if (message.totalCents !== "0") {
-      writer.uint32(56).uint64(message.totalCents);
+      writer.uint32(24).int64(message.totalCents);
     }
     if (message.currencyCode !== "") {
-      writer.uint32(66).string(message.currencyCode);
+      writer.uint32(34).string(message.currencyCode);
     }
     if (message.inventoryReservationStatus !== 0) {
-      writer.uint32(72).int32(message.inventoryReservationStatus);
+      writer.uint32(40).int32(message.inventoryReservationStatus);
     }
     if (message.status !== "") {
-      writer.uint32(154).string(message.status);
+      writer.uint32(50).string(message.status);
     }
     if (message.createdAt !== "0") {
-      writer.uint32(88).uint64(message.createdAt);
+      writer.uint32(56).uint64(message.createdAt);
     }
     return writer;
   },
@@ -351,20 +335,28 @@ export const OrderListItem: MessageFns<OrderListItem> = {
           message.id = reader.string();
           continue;
         }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.shippingCents = reader.int64().toString();
+          continue;
+        }
         case 3: {
           if (tag !== 24) {
             break;
           }
 
-          message.subtotalCents = reader.uint64().toString();
+          message.totalCents = reader.int64().toString();
           continue;
         }
         case 4: {
-          if (tag !== 32) {
+          if (tag !== 34) {
             break;
           }
 
-          message.shippingCents = reader.uint64().toString();
+          message.currencyCode = reader.string();
           continue;
         }
         case 5: {
@@ -372,51 +364,19 @@ export const OrderListItem: MessageFns<OrderListItem> = {
             break;
           }
 
-          message.taxCents = reader.uint64().toString();
-          continue;
-        }
-        case 6: {
-          if (tag !== 48) {
-            break;
-          }
-
-          message.discountCents = reader.uint64().toString();
-          continue;
-        }
-        case 7: {
-          if (tag !== 56) {
-            break;
-          }
-
-          message.totalCents = reader.uint64().toString();
-          continue;
-        }
-        case 8: {
-          if (tag !== 66) {
-            break;
-          }
-
-          message.currencyCode = reader.string();
-          continue;
-        }
-        case 9: {
-          if (tag !== 72) {
-            break;
-          }
-
           message.inventoryReservationStatus = reader.int32() as any;
           continue;
         }
-        case 19: {
-          if (tag !== 154) {
+        case 6: {
+          if (tag !== 50) {
             break;
           }
 
           message.status = reader.string();
           continue;
         }
-        case 11: {
-          if (tag !== 88) {
+        case 7: {
+          if (tag !== 56) {
             break;
           }
 
@@ -435,10 +395,7 @@ export const OrderListItem: MessageFns<OrderListItem> = {
   fromJSON(object: any): OrderListItem {
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
-      subtotalCents: isSet(object.subtotalCents) ? globalThis.String(object.subtotalCents) : "0",
       shippingCents: isSet(object.shippingCents) ? globalThis.String(object.shippingCents) : "0",
-      taxCents: isSet(object.taxCents) ? globalThis.String(object.taxCents) : "0",
-      discountCents: isSet(object.discountCents) ? globalThis.String(object.discountCents) : "0",
       totalCents: isSet(object.totalCents) ? globalThis.String(object.totalCents) : "0",
       currencyCode: isSet(object.currencyCode) ? globalThis.String(object.currencyCode) : "",
       inventoryReservationStatus: isSet(object.inventoryReservationStatus)
@@ -454,17 +411,8 @@ export const OrderListItem: MessageFns<OrderListItem> = {
     if (message.id !== "") {
       obj.id = message.id;
     }
-    if (message.subtotalCents !== "0") {
-      obj.subtotalCents = message.subtotalCents;
-    }
     if (message.shippingCents !== "0") {
       obj.shippingCents = message.shippingCents;
-    }
-    if (message.taxCents !== "0") {
-      obj.taxCents = message.taxCents;
-    }
-    if (message.discountCents !== "0") {
-      obj.discountCents = message.discountCents;
     }
     if (message.totalCents !== "0") {
       obj.totalCents = message.totalCents;
@@ -490,10 +438,7 @@ export const OrderListItem: MessageFns<OrderListItem> = {
   fromPartial<I extends Exact<DeepPartial<OrderListItem>, I>>(object: I): OrderListItem {
     const message = createBaseOrderListItem();
     message.id = object.id ?? "";
-    message.subtotalCents = object.subtotalCents ?? "0";
     message.shippingCents = object.shippingCents ?? "0";
-    message.taxCents = object.taxCents ?? "0";
-    message.discountCents = object.discountCents ?? "0";
     message.totalCents = object.totalCents ?? "0";
     message.currencyCode = object.currencyCode ?? "";
     message.inventoryReservationStatus = object.inventoryReservationStatus ?? 0;

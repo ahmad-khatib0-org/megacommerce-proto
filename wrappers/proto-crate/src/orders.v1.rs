@@ -615,32 +615,25 @@ pub struct OrdersListResponseData {
 pub struct OrderListItem {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
-    /// monetary amounts are stored in minor units (cents) to avoid float errors
-    #[prost(uint64, tag = "3")]
-    pub subtotal_cents: u64,
-    #[prost(uint64, tag = "4")]
-    pub shipping_cents: u64,
-    #[prost(uint64, tag = "5")]
-    pub tax_cents: u64,
-    #[prost(uint64, tag = "6")]
-    pub discount_cents: u64,
-    #[prost(uint64, tag = "7")]
-    pub total_cents: u64,
-    #[prost(string, tag = "8")]
+    #[prost(int64, tag = "2")]
+    pub shipping_cents: i64,
+    #[prost(int64, tag = "3")]
+    pub total_cents: i64,
+    #[prost(string, tag = "4")]
     pub currency_code: ::prost::alloc::string::String,
     /// Inventory reservation status - since inventory service is separate,
     /// we include reservation status in order so UI shows what's reserved.
     #[prost(
         enumeration = "super::super::inventory::v1::InventoryReservationStatus",
-        tag = "9"
+        tag = "5"
     )]
     pub inventory_reservation_status: i32,
     /// order lifecycle
     ///
     /// e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
-    #[prost(string, tag = "19")]
+    #[prost(string, tag = "6")]
     pub status: ::prost::alloc::string::String,
-    #[prost(uint64, tag = "11")]
+    #[prost(uint64, tag = "7")]
     pub created_at: u64,
 }
 /// Generated client implementations.

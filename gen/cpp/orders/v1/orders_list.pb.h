@@ -233,15 +233,12 @@ class OrderListItem final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kIdFieldNumber = 1,
-    kCurrencyCodeFieldNumber = 8,
-    kStatusFieldNumber = 19,
-    kSubtotalCentsFieldNumber = 3,
-    kShippingCentsFieldNumber = 4,
-    kTaxCentsFieldNumber = 5,
-    kDiscountCentsFieldNumber = 6,
-    kTotalCentsFieldNumber = 7,
-    kCreatedAtFieldNumber = 11,
-    kInventoryReservationStatusFieldNumber = 9,
+    kCurrencyCodeFieldNumber = 4,
+    kStatusFieldNumber = 6,
+    kShippingCentsFieldNumber = 2,
+    kTotalCentsFieldNumber = 3,
+    kCreatedAtFieldNumber = 7,
+    kInventoryReservationStatusFieldNumber = 5,
   };
   // string id = 1 [json_name = "id"];
   void clear_id() ;
@@ -258,7 +255,7 @@ class OrderListItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string currency_code = 8 [json_name = "currencyCode"];
+  // string currency_code = 4 [json_name = "currencyCode"];
   void clear_currency_code() ;
   const ::std::string& currency_code() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -273,7 +270,7 @@ class OrderListItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_currency_code();
 
   public:
-  // string status = 19 [json_name = "status"];
+  // string status = 6 [json_name = "status"];
   void clear_status() ;
   const ::std::string& status() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -288,57 +285,27 @@ class OrderListItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_status();
 
   public:
-  // uint64 subtotal_cents = 3 [json_name = "subtotalCents"];
-  void clear_subtotal_cents() ;
-  ::uint64_t subtotal_cents() const;
-  void set_subtotal_cents(::uint64_t value);
-
-  private:
-  ::uint64_t _internal_subtotal_cents() const;
-  void _internal_set_subtotal_cents(::uint64_t value);
-
-  public:
-  // uint64 shipping_cents = 4 [json_name = "shippingCents"];
+  // int64 shipping_cents = 2 [json_name = "shippingCents"];
   void clear_shipping_cents() ;
-  ::uint64_t shipping_cents() const;
-  void set_shipping_cents(::uint64_t value);
+  ::int64_t shipping_cents() const;
+  void set_shipping_cents(::int64_t value);
 
   private:
-  ::uint64_t _internal_shipping_cents() const;
-  void _internal_set_shipping_cents(::uint64_t value);
+  ::int64_t _internal_shipping_cents() const;
+  void _internal_set_shipping_cents(::int64_t value);
 
   public:
-  // uint64 tax_cents = 5 [json_name = "taxCents"];
-  void clear_tax_cents() ;
-  ::uint64_t tax_cents() const;
-  void set_tax_cents(::uint64_t value);
-
-  private:
-  ::uint64_t _internal_tax_cents() const;
-  void _internal_set_tax_cents(::uint64_t value);
-
-  public:
-  // uint64 discount_cents = 6 [json_name = "discountCents"];
-  void clear_discount_cents() ;
-  ::uint64_t discount_cents() const;
-  void set_discount_cents(::uint64_t value);
-
-  private:
-  ::uint64_t _internal_discount_cents() const;
-  void _internal_set_discount_cents(::uint64_t value);
-
-  public:
-  // uint64 total_cents = 7 [json_name = "totalCents"];
+  // int64 total_cents = 3 [json_name = "totalCents"];
   void clear_total_cents() ;
-  ::uint64_t total_cents() const;
-  void set_total_cents(::uint64_t value);
+  ::int64_t total_cents() const;
+  void set_total_cents(::int64_t value);
 
   private:
-  ::uint64_t _internal_total_cents() const;
-  void _internal_set_total_cents(::uint64_t value);
+  ::int64_t _internal_total_cents() const;
+  void _internal_set_total_cents(::int64_t value);
 
   public:
-  // uint64 created_at = 11 [json_name = "createdAt"];
+  // uint64 created_at = 7 [json_name = "createdAt"];
   void clear_created_at() ;
   ::uint64_t created_at() const;
   void set_created_at(::uint64_t value);
@@ -348,7 +315,7 @@ class OrderListItem final : public ::google::protobuf::Message
   void _internal_set_created_at(::uint64_t value);
 
   public:
-  // .inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];
+  // .inventory.v1.InventoryReservationStatus inventory_reservation_status = 5 [json_name = "inventoryReservationStatus"];
   void clear_inventory_reservation_status() ;
   ::inventory::v1::InventoryReservationStatus inventory_reservation_status() const;
   void set_inventory_reservation_status(::inventory::v1::InventoryReservationStatus value);
@@ -362,8 +329,8 @@ class OrderListItem final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<4, 10,
-                                   0, 61,
+  static const ::google::protobuf::internal::TcParseTable<3, 7,
+                                   0, 53,
                                    2>
       _table_;
 
@@ -387,11 +354,8 @@ class OrderListItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr id_;
     ::google::protobuf::internal::ArenaStringPtr currency_code_;
     ::google::protobuf::internal::ArenaStringPtr status_;
-    ::uint64_t subtotal_cents_;
-    ::uint64_t shipping_cents_;
-    ::uint64_t tax_cents_;
-    ::uint64_t discount_cents_;
-    ::uint64_t total_cents_;
+    ::int64_t shipping_cents_;
+    ::int64_t total_cents_;
     ::uint64_t created_at_;
     int inventory_reservation_status_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -1626,127 +1590,55 @@ inline void OrderListItem::set_allocated_id(::std::string* PROTOBUF_NULLABLE val
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderListItem.id)
 }
 
-// uint64 subtotal_cents = 3 [json_name = "subtotalCents"];
-inline void OrderListItem::clear_subtotal_cents() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.subtotal_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000008u;
-}
-inline ::uint64_t OrderListItem::subtotal_cents() const {
-  // @@protoc_insertion_point(field_get:orders.v1.OrderListItem.subtotal_cents)
-  return _internal_subtotal_cents();
-}
-inline void OrderListItem::set_subtotal_cents(::uint64_t value) {
-  _internal_set_subtotal_cents(value);
-  _impl_._has_bits_[0] |= 0x00000008u;
-  // @@protoc_insertion_point(field_set:orders.v1.OrderListItem.subtotal_cents)
-}
-inline ::uint64_t OrderListItem::_internal_subtotal_cents() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.subtotal_cents_;
-}
-inline void OrderListItem::_internal_set_subtotal_cents(::uint64_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.subtotal_cents_ = value;
-}
-
-// uint64 shipping_cents = 4 [json_name = "shippingCents"];
+// int64 shipping_cents = 2 [json_name = "shippingCents"];
 inline void OrderListItem::clear_shipping_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.shipping_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_.shipping_cents_ = ::int64_t{0};
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
-inline ::uint64_t OrderListItem::shipping_cents() const {
+inline ::int64_t OrderListItem::shipping_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderListItem.shipping_cents)
   return _internal_shipping_cents();
 }
-inline void OrderListItem::set_shipping_cents(::uint64_t value) {
+inline void OrderListItem::set_shipping_cents(::int64_t value) {
   _internal_set_shipping_cents(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderListItem.shipping_cents)
 }
-inline ::uint64_t OrderListItem::_internal_shipping_cents() const {
+inline ::int64_t OrderListItem::_internal_shipping_cents() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.shipping_cents_;
 }
-inline void OrderListItem::_internal_set_shipping_cents(::uint64_t value) {
+inline void OrderListItem::_internal_set_shipping_cents(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.shipping_cents_ = value;
 }
 
-// uint64 tax_cents = 5 [json_name = "taxCents"];
-inline void OrderListItem::clear_tax_cents() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.tax_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000020u;
-}
-inline ::uint64_t OrderListItem::tax_cents() const {
-  // @@protoc_insertion_point(field_get:orders.v1.OrderListItem.tax_cents)
-  return _internal_tax_cents();
-}
-inline void OrderListItem::set_tax_cents(::uint64_t value) {
-  _internal_set_tax_cents(value);
-  _impl_._has_bits_[0] |= 0x00000020u;
-  // @@protoc_insertion_point(field_set:orders.v1.OrderListItem.tax_cents)
-}
-inline ::uint64_t OrderListItem::_internal_tax_cents() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.tax_cents_;
-}
-inline void OrderListItem::_internal_set_tax_cents(::uint64_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.tax_cents_ = value;
-}
-
-// uint64 discount_cents = 6 [json_name = "discountCents"];
-inline void OrderListItem::clear_discount_cents() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.discount_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000040u;
-}
-inline ::uint64_t OrderListItem::discount_cents() const {
-  // @@protoc_insertion_point(field_get:orders.v1.OrderListItem.discount_cents)
-  return _internal_discount_cents();
-}
-inline void OrderListItem::set_discount_cents(::uint64_t value) {
-  _internal_set_discount_cents(value);
-  _impl_._has_bits_[0] |= 0x00000040u;
-  // @@protoc_insertion_point(field_set:orders.v1.OrderListItem.discount_cents)
-}
-inline ::uint64_t OrderListItem::_internal_discount_cents() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.discount_cents_;
-}
-inline void OrderListItem::_internal_set_discount_cents(::uint64_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.discount_cents_ = value;
-}
-
-// uint64 total_cents = 7 [json_name = "totalCents"];
+// int64 total_cents = 3 [json_name = "totalCents"];
 inline void OrderListItem::clear_total_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.total_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_.total_cents_ = ::int64_t{0};
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
-inline ::uint64_t OrderListItem::total_cents() const {
+inline ::int64_t OrderListItem::total_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderListItem.total_cents)
   return _internal_total_cents();
 }
-inline void OrderListItem::set_total_cents(::uint64_t value) {
+inline void OrderListItem::set_total_cents(::int64_t value) {
   _internal_set_total_cents(value);
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderListItem.total_cents)
 }
-inline ::uint64_t OrderListItem::_internal_total_cents() const {
+inline ::int64_t OrderListItem::_internal_total_cents() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.total_cents_;
 }
-inline void OrderListItem::_internal_set_total_cents(::uint64_t value) {
+inline void OrderListItem::_internal_set_total_cents(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.total_cents_ = value;
 }
 
-// string currency_code = 8 [json_name = "currencyCode"];
+// string currency_code = 4 [json_name = "currencyCode"];
 inline void OrderListItem::clear_currency_code() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.currency_code_.ClearToEmpty();
@@ -1811,11 +1703,11 @@ inline void OrderListItem::set_allocated_currency_code(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderListItem.currency_code)
 }
 
-// .inventory.v1.InventoryReservationStatus inventory_reservation_status = 9 [json_name = "inventoryReservationStatus"];
+// .inventory.v1.InventoryReservationStatus inventory_reservation_status = 5 [json_name = "inventoryReservationStatus"];
 inline void OrderListItem::clear_inventory_reservation_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.inventory_reservation_status_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline ::inventory::v1::InventoryReservationStatus OrderListItem::inventory_reservation_status() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderListItem.inventory_reservation_status)
@@ -1823,7 +1715,7 @@ inline ::inventory::v1::InventoryReservationStatus OrderListItem::inventory_rese
 }
 inline void OrderListItem::set_inventory_reservation_status(::inventory::v1::InventoryReservationStatus value) {
   _internal_set_inventory_reservation_status(value);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderListItem.inventory_reservation_status)
 }
 inline ::inventory::v1::InventoryReservationStatus OrderListItem::_internal_inventory_reservation_status() const {
@@ -1835,7 +1727,7 @@ inline void OrderListItem::_internal_set_inventory_reservation_status(::inventor
   _impl_.inventory_reservation_status_ = value;
 }
 
-// string status = 19 [json_name = "status"];
+// string status = 6 [json_name = "status"];
 inline void OrderListItem::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_.ClearToEmpty();
@@ -1900,11 +1792,11 @@ inline void OrderListItem::set_allocated_status(::std::string* PROTOBUF_NULLABLE
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderListItem.status)
 }
 
-// uint64 created_at = 11 [json_name = "createdAt"];
+// uint64 created_at = 7 [json_name = "createdAt"];
 inline void OrderListItem::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline ::uint64_t OrderListItem::created_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderListItem.created_at)
@@ -1912,7 +1804,7 @@ inline ::uint64_t OrderListItem::created_at() const {
 }
 inline void OrderListItem::set_created_at(::uint64_t value) {
   _internal_set_created_at(value);
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderListItem.created_at)
 }
 inline ::uint64_t OrderListItem::_internal_created_at() const {
