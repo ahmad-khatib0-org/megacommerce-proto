@@ -31,6 +31,7 @@ export interface OrdersListResponseData {
   pagination?: PaginationResponse | undefined;
 }
 
+/** OrderListItem for minimal listing */
 export interface OrderListItem {
   id: string;
   shippingCents: string;

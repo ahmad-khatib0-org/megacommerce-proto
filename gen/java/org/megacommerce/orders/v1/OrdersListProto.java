@@ -2732,6 +2732,10 @@ public final class OrdersListProto {
     long getCreatedAt();
   }
   /**
+   * <pre>
+   * OrderListItem for minimal listing
+   * </pre>
+   *
    * Protobuf type {@code orders.v1.OrderListItem}
    */
   public static final class OrderListItem extends
@@ -3181,6 +3185,10 @@ public final class OrdersListProto {
       return builder;
     }
     /**
+     * <pre>
+     * OrderListItem for minimal listing
+     * </pre>
+     *
      * Protobuf type {@code orders.v1.OrderListItem}
      */
     public static final class Builder extends

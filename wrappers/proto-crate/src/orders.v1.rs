@@ -610,6 +610,7 @@ pub struct OrdersListResponseData {
     #[prost(message, optional, tag = "2")]
     pub pagination: ::core::option::Option<super::super::shared::v1::PaginationResponse>,
 }
+/// OrderListItem for minimal listing
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct OrderListItem {

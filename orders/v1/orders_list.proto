@@ -29,6 +29,7 @@ message OrdersListResponseData {
   shared.v1.PaginationResponse pagination = 2;
 }
 
+// OrderListItem for minimal listing
 message OrderListItem {
   string id = 1;
 

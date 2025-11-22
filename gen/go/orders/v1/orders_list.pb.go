@@ -209,6 +209,7 @@ func (x *OrdersListResponseData) GetPagination() *v1.PaginationResponse {
 	return nil
 }
 
+// OrderListItem for minimal listing
 type OrderListItem struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
