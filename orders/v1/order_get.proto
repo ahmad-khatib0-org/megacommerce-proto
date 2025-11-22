@@ -5,7 +5,7 @@ package orders.v1;
 import "inventory/v1/reservation_get.proto";
 import "orders/v1/order_line_items.proto";
 import "shared/v1/error.proto";
-import "shared/v1/types.proto";
+import "shared/v1/struct.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
@@ -27,8 +27,8 @@ message OrderItem {
   repeated orders.v1.OrderLineItem line_items = 9;
 
   // shipping & billing addresses (snapshot)
-  shared.v1.Any shipping_address = 10;
-  shared.v1.Any billing_address = 11;
+  shared.v1.Struct shipping_address = 10;
+  shared.v1.Struct billing_address = 11;
 
   // Payment snapshot (synchronous capture info)
   PaymentSnapshot payment = 12;
@@ -63,7 +63,7 @@ message PaymentSnapshot {
   // card token or payment method id (tokenized)
   string payment_method = 4;
   // provider raw response for auditing (tokenized, avoid PII)
-  shared.v1.Any provider_response = 5;
+  shared.v1.Struct provider_response = 5;
   // payment fees (in cents) charged by gateway, optional
   optional uint64 fee_cents = 6;
 }

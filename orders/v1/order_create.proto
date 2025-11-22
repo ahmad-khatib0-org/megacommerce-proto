@@ -22,7 +22,7 @@ message OrderCreateRequest {
   // order-level metadata (free-form, e.g., channel, campaign utm)
   map<string, string> metadata = 4;
 
-  // shipping and billing addresses: use shared.v1.Any
+  // shipping and billing addresses: use shared.v1.Struct
   // provide existing address type (keeps proto flexible)
   shared.v1.Struct shipping_address = 5;
   shared.v1.Struct billing_address = 6;

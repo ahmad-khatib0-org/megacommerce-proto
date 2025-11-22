@@ -21,7 +21,7 @@ export interface OrderCreateRequest {
   /** order-level metadata (free-form, e.g., channel, campaign utm) */
   metadata: { [key: string]: string };
   /**
-   * shipping and billing addresses: use shared.v1.Any
+   * shipping and billing addresses: use shared.v1.Struct
    * provide existing address type (keeps proto flexible)
    */
   shippingAddress?: Struct | undefined;

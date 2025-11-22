@@ -126,7 +126,7 @@ java.lang.String defaultValue);
 
     /**
      * <pre>
-     * shipping and billing addresses: use shared.v1.Any
+     * shipping and billing addresses: use shared.v1.Struct
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
@@ -136,7 +136,7 @@ java.lang.String defaultValue);
     boolean hasShippingAddress();
     /**
      * <pre>
-     * shipping and billing addresses: use shared.v1.Any
+     * shipping and billing addresses: use shared.v1.Struct
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
@@ -146,7 +146,7 @@ java.lang.String defaultValue);
     org.megacommerce.shared.v1.StructProto.Struct getShippingAddress();
     /**
      * <pre>
-     * shipping and billing addresses: use shared.v1.Any
+     * shipping and billing addresses: use shared.v1.Struct
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
@@ -571,7 +571,7 @@ java.lang.String defaultValue) {
     private org.megacommerce.shared.v1.StructProto.Struct shippingAddress_;
     /**
      * <pre>
-     * shipping and billing addresses: use shared.v1.Any
+     * shipping and billing addresses: use shared.v1.Struct
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
@@ -584,7 +584,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * shipping and billing addresses: use shared.v1.Any
+     * shipping and billing addresses: use shared.v1.Struct
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
@@ -597,7 +597,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * shipping and billing addresses: use shared.v1.Any
+     * shipping and billing addresses: use shared.v1.Struct
      * provide existing address type (keeps proto flexible)
      * </pre>
      *
@@ -1885,7 +1885,7 @@ java.lang.String defaultValue) {
           org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> shippingAddressBuilder_;
       /**
        * <pre>
-       * shipping and billing addresses: use shared.v1.Any
+       * shipping and billing addresses: use shared.v1.Struct
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
@@ -1897,7 +1897,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * shipping and billing addresses: use shared.v1.Any
+       * shipping and billing addresses: use shared.v1.Struct
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
@@ -1913,7 +1913,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * shipping and billing addresses: use shared.v1.Any
+       * shipping and billing addresses: use shared.v1.Struct
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
@@ -1934,7 +1934,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * shipping and billing addresses: use shared.v1.Any
+       * shipping and billing addresses: use shared.v1.Struct
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
@@ -1953,7 +1953,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * shipping and billing addresses: use shared.v1.Any
+       * shipping and billing addresses: use shared.v1.Struct
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
@@ -1979,7 +1979,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * shipping and billing addresses: use shared.v1.Any
+       * shipping and billing addresses: use shared.v1.Struct
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
@@ -1997,7 +1997,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * shipping and billing addresses: use shared.v1.Any
+       * shipping and billing addresses: use shared.v1.Struct
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
@@ -2010,7 +2010,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * shipping and billing addresses: use shared.v1.Any
+       * shipping and billing addresses: use shared.v1.Struct
        * provide existing address type (keeps proto flexible)
        * </pre>
        *
@@ -2026,7 +2026,7 @@ java.lang.String defaultValue) {
       }
       /**
        * <pre>
-       * shipping and billing addresses: use shared.v1.Any
+       * shipping and billing addresses: use shared.v1.Struct
        * provide existing address type (keeps proto flexible)
        * </pre>
        *

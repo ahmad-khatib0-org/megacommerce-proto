@@ -36,8 +36,8 @@ type OrderItem struct {
 	// line items snapshot
 	LineItems []*OrderLineItem `protobuf:"bytes,9,rep,name=line_items,json=lineItems,proto3" json:"line_items,omitempty"`
 	// shipping & billing addresses (snapshot)
-	ShippingAddress *v1.Any `protobuf:"bytes,10,opt,name=shipping_address,json=shippingAddress,proto3" json:"shipping_address,omitempty"`
-	BillingAddress  *v1.Any `protobuf:"bytes,11,opt,name=billing_address,json=billingAddress,proto3" json:"billing_address,omitempty"`
+	ShippingAddress *v1.Struct `protobuf:"bytes,10,opt,name=shipping_address,json=shippingAddress,proto3" json:"shipping_address,omitempty"`
+	BillingAddress  *v1.Struct `protobuf:"bytes,11,opt,name=billing_address,json=billingAddress,proto3" json:"billing_address,omitempty"`
 	// Payment snapshot (synchronous capture info)
 	Payment *PaymentSnapshot `protobuf:"bytes,12,opt,name=payment,proto3" json:"payment,omitempty"`
 	// Inventory reservation status - since inventory service is separate,
@@ -142,14 +142,14 @@ func (x *OrderItem) GetLineItems() []*OrderLineItem {
 	return nil
 }
 
-func (x *OrderItem) GetShippingAddress() *v1.Any {
+func (x *OrderItem) GetShippingAddress() *v1.Struct {
 	if x != nil {
 		return x.ShippingAddress
 	}
 	return nil
 }
 
-func (x *OrderItem) GetBillingAddress() *v1.Any {
+func (x *OrderItem) GetBillingAddress() *v1.Struct {
 	if x != nil {
 		return x.BillingAddress
 	}
@@ -226,7 +226,7 @@ type PaymentSnapshot struct {
 	// card token or payment method id (tokenized)
 	PaymentMethod string `protobuf:"bytes,4,opt,name=payment_method,json=paymentMethod,proto3" json:"payment_method,omitempty"`
 	// provider raw response for auditing (tokenized, avoid PII)
-	ProviderResponse *v1.Any `protobuf:"bytes,5,opt,name=provider_response,json=providerResponse,proto3" json:"provider_response,omitempty"`
+	ProviderResponse *v1.Struct `protobuf:"bytes,5,opt,name=provider_response,json=providerResponse,proto3" json:"provider_response,omitempty"`
 	// payment fees (in cents) charged by gateway, optional
 	FeeCents      *uint64 `protobuf:"varint,6,opt,name=fee_cents,json=feeCents,proto3,oneof" json:"fee_cents,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -291,7 +291,7 @@ func (x *PaymentSnapshot) GetPaymentMethod() string {
 	return ""
 }
 
-func (x *PaymentSnapshot) GetProviderResponse() *v1.Any {
+func (x *PaymentSnapshot) GetProviderResponse() *v1.Struct {
 	if x != nil {
 		return x.ProviderResponse
 	}
@@ -435,7 +435,7 @@ var File_orders_v1_order_get_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_get_proto_rawDesc = "" +
 	"\n" +
-	"\x19orders/v1/order_get.proto\x12\torders.v1\x1a\"inventory/v1/reservation_get.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xf9\x06\n" +
+	"\x19orders/v1/order_get.proto\x12\torders.v1\x1a\"inventory/v1/reservation_get.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x16shared/v1/struct.proto\"\xff\x06\n" +
 	"\tOrderItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
 	"\x0esubtotal_cents\x18\x03 \x01(\x04R\rsubtotalCents\x12%\n" +
@@ -446,10 +446,10 @@ const file_orders_v1_order_get_proto_rawDesc = "" +
 	"totalCents\x12#\n" +
 	"\rcurrency_code\x18\b \x01(\tR\fcurrencyCode\x127\n" +
 	"\n" +
-	"line_items\x18\t \x03(\v2\x18.orders.v1.OrderLineItemR\tlineItems\x129\n" +
+	"line_items\x18\t \x03(\v2\x18.orders.v1.OrderLineItemR\tlineItems\x12<\n" +
 	"\x10shipping_address\x18\n" +
-	" \x01(\v2\x0e.shared.v1.AnyR\x0fshippingAddress\x127\n" +
-	"\x0fbilling_address\x18\v \x01(\v2\x0e.shared.v1.AnyR\x0ebillingAddress\x124\n" +
+	" \x01(\v2\x11.shared.v1.StructR\x0fshippingAddress\x12:\n" +
+	"\x0fbilling_address\x18\v \x01(\v2\x11.shared.v1.StructR\x0ebillingAddress\x124\n" +
 	"\apayment\x18\f \x01(\v2\x1a.orders.v1.PaymentSnapshotR\apayment\x12j\n" +
 	"\x1cinventory_reservation_status\x18\r \x01(\x0e2(.inventory.v1.InventoryReservationStatusR\x1ainventoryReservationStatus\x12\x16\n" +
 	"\x06status\x18\x0e \x01(\tR\x06status\x12\x1d\n" +
@@ -463,13 +463,13 @@ const file_orders_v1_order_get_proto_rawDesc = "" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\r\n" +
-	"\v_updated_at\"\x80\x02\n" +
+	"\v_updated_at\"\x83\x02\n" +
 	"\x0fPaymentSnapshot\x12\x1a\n" +
 	"\bprovider\x18\x01 \x01(\tR\bprovider\x12%\n" +
 	"\x0etransaction_id\x18\x02 \x01(\tR\rtransactionId\x12\x16\n" +
 	"\x06status\x18\x03 \x01(\tR\x06status\x12%\n" +
-	"\x0epayment_method\x18\x04 \x01(\tR\rpaymentMethod\x12;\n" +
-	"\x11provider_response\x18\x05 \x01(\v2\x0e.shared.v1.AnyR\x10providerResponse\x12 \n" +
+	"\x0epayment_method\x18\x04 \x01(\tR\rpaymentMethod\x12>\n" +
+	"\x11provider_response\x18\x05 \x01(\v2\x11.shared.v1.StructR\x10providerResponse\x12 \n" +
 	"\tfee_cents\x18\x06 \x01(\x04H\x00R\bfeeCents\x88\x01\x01B\f\n" +
 	"\n" +
 	"_fee_cents\",\n" +
@@ -502,18 +502,18 @@ var file_orders_v1_order_get_proto_goTypes = []any{
 	(*OrderGetResponse)(nil),            // 3: orders.v1.OrderGetResponse
 	nil,                                 // 4: orders.v1.OrderItem.MetadataEntry
 	(*OrderLineItem)(nil),               // 5: orders.v1.OrderLineItem
-	(*v1.Any)(nil),                      // 6: shared.v1.Any
+	(*v1.Struct)(nil),                   // 6: shared.v1.Struct
 	(v11.InventoryReservationStatus)(0), // 7: inventory.v1.InventoryReservationStatus
 	(*v1.AppError)(nil),                 // 8: shared.v1.AppError
 }
 var file_orders_v1_order_get_proto_depIdxs = []int32{
 	5, // 0: orders.v1.OrderItem.line_items:type_name -> orders.v1.OrderLineItem
-	6, // 1: orders.v1.OrderItem.shipping_address:type_name -> shared.v1.Any
-	6, // 2: orders.v1.OrderItem.billing_address:type_name -> shared.v1.Any
+	6, // 1: orders.v1.OrderItem.shipping_address:type_name -> shared.v1.Struct
+	6, // 2: orders.v1.OrderItem.billing_address:type_name -> shared.v1.Struct
 	1, // 3: orders.v1.OrderItem.payment:type_name -> orders.v1.PaymentSnapshot
 	7, // 4: orders.v1.OrderItem.inventory_reservation_status:type_name -> inventory.v1.InventoryReservationStatus
 	4, // 5: orders.v1.OrderItem.metadata:type_name -> orders.v1.OrderItem.MetadataEntry
-	6, // 6: orders.v1.PaymentSnapshot.provider_response:type_name -> shared.v1.Any
+	6, // 6: orders.v1.PaymentSnapshot.provider_response:type_name -> shared.v1.Struct
 	0, // 7: orders.v1.OrderGetResponse.data:type_name -> orders.v1.OrderItem
 	8, // 8: orders.v1.OrderGetResponse.error:type_name -> shared.v1.AppError
 	9, // [9:9] is the sub-list for method output_type

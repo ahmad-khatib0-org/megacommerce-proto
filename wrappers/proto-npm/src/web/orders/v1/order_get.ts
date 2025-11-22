@@ -12,7 +12,7 @@ import {
   inventoryReservationStatusToJSON,
 } from "../../inventory/v1/reservation_get.js";
 import { AppError } from "../../shared/v1/error.js";
-import { Any } from "../../shared/v1/types.js";
+import { Struct } from "../../shared/v1/struct.js";
 import { OrderLineItem } from "./order_line_items.js";
 
 export const protobufPackage = "orders.v1";
@@ -29,9 +29,9 @@ export interface OrderItem {
   /** line items snapshot */
   lineItems: OrderLineItem[];
   /** shipping & billing addresses (snapshot) */
-  shippingAddress?: Any | undefined;
+  shippingAddress?: Struct | undefined;
   billingAddress?:
-    | Any
+    | Struct
     | undefined;
   /** Payment snapshot (synchronous capture info) */
   payment?:
@@ -77,7 +77,7 @@ export interface PaymentSnapshot {
   paymentMethod: string;
   /** provider raw response for auditing (tokenized, avoid PII) */
   providerResponse?:
-    | Any
+    | Struct
     | undefined;
   /** payment fees (in cents) charged by gateway, optional */
   feeCents?: string | undefined;
@@ -142,10 +142,10 @@ export const OrderItem: MessageFns<OrderItem> = {
       OrderLineItem.encode(v!, writer.uint32(74).fork()).join();
     }
     if (message.shippingAddress !== undefined) {
-      Any.encode(message.shippingAddress, writer.uint32(82).fork()).join();
+      Struct.encode(message.shippingAddress, writer.uint32(82).fork()).join();
     }
     if (message.billingAddress !== undefined) {
-      Any.encode(message.billingAddress, writer.uint32(90).fork()).join();
+      Struct.encode(message.billingAddress, writer.uint32(90).fork()).join();
     }
     if (message.payment !== undefined) {
       PaymentSnapshot.encode(message.payment, writer.uint32(98).fork()).join();
@@ -250,7 +250,7 @@ export const OrderItem: MessageFns<OrderItem> = {
             break;
           }
 
-          message.shippingAddress = Any.decode(reader, reader.uint32());
+          message.shippingAddress = Struct.decode(reader, reader.uint32());
           continue;
         }
         case 11: {
@@ -258,7 +258,7 @@ export const OrderItem: MessageFns<OrderItem> = {
             break;
           }
 
-          message.billingAddress = Any.decode(reader, reader.uint32());
+          message.billingAddress = Struct.decode(reader, reader.uint32());
           continue;
         }
         case 12: {
@@ -349,8 +349,8 @@ export const OrderItem: MessageFns<OrderItem> = {
       lineItems: globalThis.Array.isArray(object?.lineItems)
         ? object.lineItems.map((e: any) => OrderLineItem.fromJSON(e))
         : [],
-      shippingAddress: isSet(object.shippingAddress) ? Any.fromJSON(object.shippingAddress) : undefined,
-      billingAddress: isSet(object.billingAddress) ? Any.fromJSON(object.billingAddress) : undefined,
+      shippingAddress: isSet(object.shippingAddress) ? Struct.fromJSON(object.shippingAddress) : undefined,
+      billingAddress: isSet(object.billingAddress) ? Struct.fromJSON(object.billingAddress) : undefined,
       payment: isSet(object.payment) ? PaymentSnapshot.fromJSON(object.payment) : undefined,
       inventoryReservationStatus: isSet(object.inventoryReservationStatus)
         ? inventoryReservationStatusFromJSON(object.inventoryReservationStatus)
@@ -396,10 +396,10 @@ export const OrderItem: MessageFns<OrderItem> = {
       obj.lineItems = message.lineItems.map((e) => OrderLineItem.toJSON(e));
     }
     if (message.shippingAddress !== undefined) {
-      obj.shippingAddress = Any.toJSON(message.shippingAddress);
+      obj.shippingAddress = Struct.toJSON(message.shippingAddress);
     }
     if (message.billingAddress !== undefined) {
-      obj.billingAddress = Any.toJSON(message.billingAddress);
+      obj.billingAddress = Struct.toJSON(message.billingAddress);
     }
     if (message.payment !== undefined) {
       obj.payment = PaymentSnapshot.toJSON(message.payment);
@@ -448,10 +448,10 @@ export const OrderItem: MessageFns<OrderItem> = {
     message.currencyCode = object.currencyCode ?? "";
     message.lineItems = object.lineItems?.map((e) => OrderLineItem.fromPartial(e)) || [];
     message.shippingAddress = (object.shippingAddress !== undefined && object.shippingAddress !== null)
-      ? Any.fromPartial(object.shippingAddress)
+      ? Struct.fromPartial(object.shippingAddress)
       : undefined;
     message.billingAddress = (object.billingAddress !== undefined && object.billingAddress !== null)
-      ? Any.fromPartial(object.billingAddress)
+      ? Struct.fromPartial(object.billingAddress)
       : undefined;
     message.payment = (object.payment !== undefined && object.payment !== null)
       ? PaymentSnapshot.fromPartial(object.payment)
@@ -574,7 +574,7 @@ export const PaymentSnapshot: MessageFns<PaymentSnapshot> = {
       writer.uint32(34).string(message.paymentMethod);
     }
     if (message.providerResponse !== undefined) {
-      Any.encode(message.providerResponse, writer.uint32(42).fork()).join();
+      Struct.encode(message.providerResponse, writer.uint32(42).fork()).join();
     }
     if (message.feeCents !== undefined) {
       writer.uint32(48).uint64(message.feeCents);
@@ -626,7 +626,7 @@ export const PaymentSnapshot: MessageFns<PaymentSnapshot> = {
             break;
           }
 
-          message.providerResponse = Any.decode(reader, reader.uint32());
+          message.providerResponse = Struct.decode(reader, reader.uint32());
           continue;
         }
         case 6: {
@@ -652,7 +652,7 @@ export const PaymentSnapshot: MessageFns<PaymentSnapshot> = {
       transactionId: isSet(object.transactionId) ? globalThis.String(object.transactionId) : "",
       status: isSet(object.status) ? globalThis.String(object.status) : "",
       paymentMethod: isSet(object.paymentMethod) ? globalThis.String(object.paymentMethod) : "",
-      providerResponse: isSet(object.providerResponse) ? Any.fromJSON(object.providerResponse) : undefined,
+      providerResponse: isSet(object.providerResponse) ? Struct.fromJSON(object.providerResponse) : undefined,
       feeCents: isSet(object.feeCents) ? globalThis.String(object.feeCents) : undefined,
     };
   },
@@ -672,7 +672,7 @@ export const PaymentSnapshot: MessageFns<PaymentSnapshot> = {
       obj.paymentMethod = message.paymentMethod;
     }
     if (message.providerResponse !== undefined) {
-      obj.providerResponse = Any.toJSON(message.providerResponse);
+      obj.providerResponse = Struct.toJSON(message.providerResponse);
     }
     if (message.feeCents !== undefined) {
       obj.feeCents = message.feeCents;
@@ -690,7 +690,7 @@ export const PaymentSnapshot: MessageFns<PaymentSnapshot> = {
     message.status = object.status ?? "";
     message.paymentMethod = object.paymentMethod ?? "";
     message.providerResponse = (object.providerResponse !== undefined && object.providerResponse !== null)
-      ? Any.fromPartial(object.providerResponse)
+      ? Struct.fromPartial(object.providerResponse)
       : undefined;
     message.feeCents = object.feeCents ?? undefined;
     return message;

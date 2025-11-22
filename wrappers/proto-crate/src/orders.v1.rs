@@ -182,7 +182,7 @@ pub struct OrderCreateRequest {
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
-    /// shipping and billing addresses: use shared.v1.Any
+    /// shipping and billing addresses: use shared.v1.Struct
     /// provide existing address type (keeps proto flexible)
     #[prost(message, optional, tag = "5")]
     pub shipping_address: ::core::option::Option<super::super::shared::v1::Struct>,
@@ -398,9 +398,9 @@ pub struct OrderItem {
     pub line_items: ::prost::alloc::vec::Vec<OrderLineItem>,
     /// shipping & billing addresses (snapshot)
     #[prost(message, optional, tag = "10")]
-    pub shipping_address: ::core::option::Option<super::super::shared::v1::Any>,
+    pub shipping_address: ::core::option::Option<super::super::shared::v1::Struct>,
     #[prost(message, optional, tag = "11")]
-    pub billing_address: ::core::option::Option<super::super::shared::v1::Any>,
+    pub billing_address: ::core::option::Option<super::super::shared::v1::Struct>,
     /// Payment snapshot (synchronous capture info)
     #[prost(message, optional, tag = "12")]
     pub payment: ::core::option::Option<PaymentSnapshot>,
@@ -455,7 +455,7 @@ pub struct PaymentSnapshot {
     pub payment_method: ::prost::alloc::string::String,
     /// provider raw response for auditing (tokenized, avoid PII)
     #[prost(message, optional, tag = "5")]
-    pub provider_response: ::core::option::Option<super::super::shared::v1::Any>,
+    pub provider_response: ::core::option::Option<super::super::shared::v1::Struct>,
     /// payment fees (in cents) charged by gateway, optional
     #[prost(uint64, optional, tag = "6")]
     pub fee_cents: ::core::option::Option<u64>,

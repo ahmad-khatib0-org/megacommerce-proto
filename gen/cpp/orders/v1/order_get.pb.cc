@@ -289,56 +289,57 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fget_2eproto[] ABSL_AT
     "\n\031orders/v1/order_get.proto\022\torders.v1\032\""
     "inventory/v1/reservation_get.proto\032 orde"
     "rs/v1/order_line_items.proto\032\025shared/v1/"
-    "error.proto\032\025shared/v1/types.proto\"\371\006\n\tO"
-    "rderItem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016subtotal_cen"
-    "ts\030\003 \001(\004R\rsubtotalCents\022%\n\016shipping_cent"
-    "s\030\004 \001(\004R\rshippingCents\022\033\n\ttax_cents\030\005 \001("
-    "\004R\010taxCents\022%\n\016discount_cents\030\006 \001(\004R\rdis"
-    "countCents\022\037\n\013total_cents\030\007 \001(\004R\ntotalCe"
-    "nts\022#\n\rcurrency_code\030\010 \001(\tR\014currencyCode"
-    "\0227\n\nline_items\030\t \003(\0132\030.orders.v1.OrderLi"
-    "neItemR\tlineItems\0229\n\020shipping_address\030\n "
-    "\001(\0132\016.shared.v1.AnyR\017shippingAddress\0227\n\017"
-    "billing_address\030\013 \001(\0132\016.shared.v1.AnyR\016b"
-    "illingAddress\0224\n\007payment\030\014 \001(\0132\032.orders."
-    "v1.PaymentSnapshotR\007payment\022j\n\034inventory"
-    "_reservation_status\030\r \001(\0162(.inventory.v1"
-    ".InventoryReservationStatusR\032inventoryRe"
-    "servationStatus\022\026\n\006status\030\016 \001(\tR\006status\022"
-    "\035\n\ncreated_at\030\017 \001(\004R\tcreatedAt\022\"\n\nupdate"
-    "d_at\030\020 \001(\004H\000R\tupdatedAt\210\001\001\022%\n\016product_so"
-    "urce\030\021 \001(\tR\rproductSource\022\'\n\017product_ver"
-    "sion\030\022 \001(\tR\016productVersion\022>\n\010metadata\030\023"
-    " \003(\0132\".orders.v1.OrderItem.MetadataEntry"
-    "R\010metadata\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\t"
-    "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\r\n\013_upda"
-    "ted_at\"\200\002\n\017PaymentSnapshot\022\032\n\010provider\030\001"
-    " \001(\tR\010provider\022%\n\016transaction_id\030\002 \001(\tR\r"
-    "transactionId\022\026\n\006status\030\003 \001(\tR\006status\022%\n"
-    "\016payment_method\030\004 \001(\tR\rpaymentMethod\022;\n\021"
-    "provider_response\030\005 \001(\0132\016.shared.v1.AnyR"
-    "\020providerResponse\022 \n\tfee_cents\030\006 \001(\004H\000R\010"
-    "feeCents\210\001\001B\014\n\n_fee_cents\",\n\017OrderGetReq"
-    "uest\022\031\n\010order_id\030\001 \001(\tR\007orderId\"w\n\020Order"
-    "GetResponse\022*\n\004data\030\001 \001(\0132\024.orders.v1.Or"
-    "derItemH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared."
-    "v1.AppErrorH\000R\005errorB\n\n\010responseBs\n\032org."
-    "megacommerce.orders.v1B\rOrderGetProtoZCg"
-    "ithub.com/ahmad-khatib0-org/megacommerce"
-    "-proto/gen/go/orders/v1;v1\370\001\001b\006proto3"
+    "error.proto\032\026shared/v1/struct.proto\"\377\006\n\t"
+    "OrderItem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016subtotal_ce"
+    "nts\030\003 \001(\004R\rsubtotalCents\022%\n\016shipping_cen"
+    "ts\030\004 \001(\004R\rshippingCents\022\033\n\ttax_cents\030\005 \001"
+    "(\004R\010taxCents\022%\n\016discount_cents\030\006 \001(\004R\rdi"
+    "scountCents\022\037\n\013total_cents\030\007 \001(\004R\ntotalC"
+    "ents\022#\n\rcurrency_code\030\010 \001(\tR\014currencyCod"
+    "e\0227\n\nline_items\030\t \003(\0132\030.orders.v1.OrderL"
+    "ineItemR\tlineItems\022<\n\020shipping_address\030\n"
+    " \001(\0132\021.shared.v1.StructR\017shippingAddress"
+    "\022:\n\017billing_address\030\013 \001(\0132\021.shared.v1.St"
+    "ructR\016billingAddress\0224\n\007payment\030\014 \001(\0132\032."
+    "orders.v1.PaymentSnapshotR\007payment\022j\n\034in"
+    "ventory_reservation_status\030\r \001(\0162(.inven"
+    "tory.v1.InventoryReservationStatusR\032inve"
+    "ntoryReservationStatus\022\026\n\006status\030\016 \001(\tR\006"
+    "status\022\035\n\ncreated_at\030\017 \001(\004R\tcreatedAt\022\"\n"
+    "\nupdated_at\030\020 \001(\004H\000R\tupdatedAt\210\001\001\022%\n\016pro"
+    "duct_source\030\021 \001(\tR\rproductSource\022\'\n\017prod"
+    "uct_version\030\022 \001(\tR\016productVersion\022>\n\010met"
+    "adata\030\023 \003(\0132\".orders.v1.OrderItem.Metada"
+    "taEntryR\010metadata\032;\n\rMetadataEntry\022\020\n\003ke"
+    "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\r"
+    "\n\013_updated_at\"\203\002\n\017PaymentSnapshot\022\032\n\010pro"
+    "vider\030\001 \001(\tR\010provider\022%\n\016transaction_id\030"
+    "\002 \001(\tR\rtransactionId\022\026\n\006status\030\003 \001(\tR\006st"
+    "atus\022%\n\016payment_method\030\004 \001(\tR\rpaymentMet"
+    "hod\022>\n\021provider_response\030\005 \001(\0132\021.shared."
+    "v1.StructR\020providerResponse\022 \n\tfee_cents"
+    "\030\006 \001(\004H\000R\010feeCents\210\001\001B\014\n\n_fee_cents\",\n\017O"
+    "rderGetRequest\022\031\n\010order_id\030\001 \001(\tR\007orderI"
+    "d\"w\n\020OrderGetResponse\022*\n\004data\030\001 \001(\0132\024.or"
+    "ders.v1.OrderItemH\000R\004data\022+\n\005error\030\002 \001(\013"
+    "2\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respon"
+    "seBs\n\032org.megacommerce.orders.v1B\rOrderG"
+    "etProtoZCgithub.com/ahmad-khatib0-org/me"
+    "gacommerce-proto/gen/go/orders/v1;v1\370\001\001b"
+    "\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_orders_2fv1_2forder_5fget_2eproto_deps[4] = {
         &::descriptor_table_inventory_2fv1_2freservation_5fget_2eproto,
         &::descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto,
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
-        &::descriptor_table_shared_2fv1_2ftypes_2eproto,
+        &::descriptor_table_shared_2fv1_2fstruct_2eproto,
 };
 static ::absl::once_flag descriptor_table_orders_2fv1_2forder_5fget_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_5fget_2eproto = {
     false,
     false,
-    1597,
+    1607,
     descriptor_table_protodef_orders_2fv1_2forder_5fget_2eproto,
     "orders/v1/order_get.proto",
     &descriptor_table_orders_2fv1_2forder_5fget_2eproto_once,
@@ -679,10 +680,10 @@ OrderItem::_table_ = {
     // repeated .orders.v1.OrderLineItem line_items = 9 [json_name = "lineItems"];
     {::_pbi::TcParser::FastMtR1,
      {74, 63, 0, PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.line_items_)}},
-    // .shared.v1.Any shipping_address = 10 [json_name = "shippingAddress"];
+    // .shared.v1.Struct shipping_address = 10 [json_name = "shippingAddress"];
     {::_pbi::TcParser::FastMtS1,
      {82, 5, 1, PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.shipping_address_)}},
-    // .shared.v1.Any billing_address = 11 [json_name = "billingAddress"];
+    // .shared.v1.Struct billing_address = 11 [json_name = "billingAddress"];
     {::_pbi::TcParser::FastMtS1,
      {90, 6, 2, PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.billing_address_)}},
     // .orders.v1.PaymentSnapshot payment = 12 [json_name = "payment"];
@@ -746,10 +747,10 @@ OrderItem::_table_ = {
     // repeated .orders.v1.OrderLineItem line_items = 9 [json_name = "lineItems"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.line_items_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .shared.v1.Any shipping_address = 10 [json_name = "shippingAddress"];
+    // .shared.v1.Struct shipping_address = 10 [json_name = "shippingAddress"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.shipping_address_), _Internal::kHasBitsOffset + 5, 1,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .shared.v1.Any billing_address = 11 [json_name = "billingAddress"];
+    // .shared.v1.Struct billing_address = 11 [json_name = "billingAddress"];
     {PROTOBUF_FIELD_OFFSET(OrderItem, _impl_.billing_address_), _Internal::kHasBitsOffset + 6, 2,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // .orders.v1.PaymentSnapshot payment = 12 [json_name = "payment"];
@@ -779,8 +780,8 @@ OrderItem::_table_ = {
   }},
   {{
       {::_pbi::TcParser::GetTable<::orders::v1::OrderLineItem>()},
-      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
-      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::Struct>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::Struct>()},
       {::_pbi::TcParser::GetTable<::orders::v1::PaymentSnapshot>()},
       {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
                                        9, 9,
@@ -937,14 +938,14 @@ PROTOBUF_NOINLINE void OrderItem::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .shared.v1.Any shipping_address = 10 [json_name = "shippingAddress"];
+  // .shared.v1.Struct shipping_address = 10 [json_name = "shippingAddress"];
   if ((cached_has_bits & 0x00000020u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         10, *this_._impl_.shipping_address_, this_._impl_.shipping_address_->GetCachedSize(), target,
         stream);
   }
 
-  // .shared.v1.Any billing_address = 11 [json_name = "billingAddress"];
+  // .shared.v1.Struct billing_address = 11 [json_name = "billingAddress"];
   if ((cached_has_bits & 0x00000040u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         11, *this_._impl_.billing_address_, this_._impl_.billing_address_->GetCachedSize(), target,
@@ -1126,12 +1127,12 @@ PROTOBUF_NOINLINE void OrderItem::Clear() {
                                         this_._internal_product_version());
       }
     }
-    // .shared.v1.Any shipping_address = 10 [json_name = "shippingAddress"];
+    // .shared.v1.Struct shipping_address = 10 [json_name = "shippingAddress"];
     if ((cached_has_bits & 0x00000020u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.shipping_address_);
     }
-    // .shared.v1.Any billing_address = 11 [json_name = "billingAddress"];
+    // .shared.v1.Struct billing_address = 11 [json_name = "billingAddress"];
     if ((cached_has_bits & 0x00000040u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.billing_address_);
@@ -1527,7 +1528,7 @@ PaymentSnapshot::_table_ = {
     // string payment_method = 4 [json_name = "paymentMethod"];
     {::_pbi::TcParser::FastUS1,
      {34, 3, 0, PROTOBUF_FIELD_OFFSET(PaymentSnapshot, _impl_.payment_method_)}},
-    // .shared.v1.Any provider_response = 5 [json_name = "providerResponse"];
+    // .shared.v1.Struct provider_response = 5 [json_name = "providerResponse"];
     {::_pbi::TcParser::FastMtS1,
      {42, 4, 0, PROTOBUF_FIELD_OFFSET(PaymentSnapshot, _impl_.provider_response_)}},
     // optional uint64 fee_cents = 6 [json_name = "feeCents"];
@@ -1549,7 +1550,7 @@ PaymentSnapshot::_table_ = {
     // string payment_method = 4 [json_name = "paymentMethod"];
     {PROTOBUF_FIELD_OFFSET(PaymentSnapshot, _impl_.payment_method_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // .shared.v1.Any provider_response = 5 [json_name = "providerResponse"];
+    // .shared.v1.Struct provider_response = 5 [json_name = "providerResponse"];
     {PROTOBUF_FIELD_OFFSET(PaymentSnapshot, _impl_.provider_response_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // optional uint64 fee_cents = 6 [json_name = "feeCents"];
@@ -1557,7 +1558,7 @@ PaymentSnapshot::_table_ = {
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::Struct>()},
   }},
   {{
     "\31\10\16\6\16\0\0\0"
@@ -1655,7 +1656,7 @@ PROTOBUF_NOINLINE void PaymentSnapshot::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .shared.v1.Any provider_response = 5 [json_name = "providerResponse"];
+  // .shared.v1.Struct provider_response = 5 [json_name = "providerResponse"];
   if ((cached_has_bits & 0x00000010u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         5, *this_._impl_.provider_response_, this_._impl_.provider_response_->GetCachedSize(), target,
@@ -1723,7 +1724,7 @@ PROTOBUF_NOINLINE void PaymentSnapshot::Clear() {
                                         this_._internal_payment_method());
       }
     }
-    // .shared.v1.Any provider_response = 5 [json_name = "providerResponse"];
+    // .shared.v1.Struct provider_response = 5 [json_name = "providerResponse"];
     if ((cached_has_bits & 0x00000010u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.provider_response_);

@@ -31,7 +31,7 @@ type OrderCreateRequest struct {
 	CurrencyCode string `protobuf:"bytes,3,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
 	// order-level metadata (free-form, e.g., channel, campaign utm)
 	Metadata map[string]string `protobuf:"bytes,4,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	// shipping and billing addresses: use shared.v1.Any
+	// shipping and billing addresses: use shared.v1.Struct
 	// provide existing address type (keeps proto flexible)
 	ShippingAddress *v1.Struct `protobuf:"bytes,5,opt,name=shipping_address,json=shippingAddress,proto3" json:"shipping_address,omitempty"`
 	BillingAddress  *v1.Struct `protobuf:"bytes,6,opt,name=billing_address,json=billingAddress,proto3" json:"billing_address,omitempty"`

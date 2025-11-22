@@ -36,7 +36,7 @@
 #include "inventory/v1/reservation_get.pb.h"
 #include "orders/v1/order_line_items.pb.h"
 #include "shared/v1/error.pb.h"
-#include "shared/v1/types.pb.h"
+#include "shared/v1/struct.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -542,19 +542,19 @@ class PaymentSnapshot final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_payment_method();
 
   public:
-  // .shared.v1.Any provider_response = 5 [json_name = "providerResponse"];
+  // .shared.v1.Struct provider_response = 5 [json_name = "providerResponse"];
   bool has_provider_response() const;
   void clear_provider_response() ;
-  const ::shared::v1::Any& provider_response() const;
-  [[nodiscard]] ::shared::v1::Any* PROTOBUF_NULLABLE release_provider_response();
-  ::shared::v1::Any* PROTOBUF_NONNULL mutable_provider_response();
-  void set_allocated_provider_response(::shared::v1::Any* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_provider_response(::shared::v1::Any* PROTOBUF_NULLABLE value);
-  ::shared::v1::Any* PROTOBUF_NULLABLE unsafe_arena_release_provider_response();
+  const ::shared::v1::Struct& provider_response() const;
+  [[nodiscard]] ::shared::v1::Struct* PROTOBUF_NULLABLE release_provider_response();
+  ::shared::v1::Struct* PROTOBUF_NONNULL mutable_provider_response();
+  void set_allocated_provider_response(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_provider_response(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  ::shared::v1::Struct* PROTOBUF_NULLABLE unsafe_arena_release_provider_response();
 
   private:
-  const ::shared::v1::Any& _internal_provider_response() const;
-  ::shared::v1::Any* PROTOBUF_NONNULL _internal_mutable_provider_response();
+  const ::shared::v1::Struct& _internal_provider_response() const;
+  ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_provider_response();
 
   public:
   // optional uint64 fee_cents = 6 [json_name = "feeCents"];
@@ -598,7 +598,7 @@ class PaymentSnapshot final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr transaction_id_;
     ::google::protobuf::internal::ArenaStringPtr status_;
     ::google::protobuf::internal::ArenaStringPtr payment_method_;
-    ::shared::v1::Any* PROTOBUF_NULLABLE provider_response_;
+    ::shared::v1::Struct* PROTOBUF_NULLABLE provider_response_;
     ::uint64_t fee_cents_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -878,34 +878,34 @@ class OrderItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_product_version();
 
   public:
-  // .shared.v1.Any shipping_address = 10 [json_name = "shippingAddress"];
+  // .shared.v1.Struct shipping_address = 10 [json_name = "shippingAddress"];
   bool has_shipping_address() const;
   void clear_shipping_address() ;
-  const ::shared::v1::Any& shipping_address() const;
-  [[nodiscard]] ::shared::v1::Any* PROTOBUF_NULLABLE release_shipping_address();
-  ::shared::v1::Any* PROTOBUF_NONNULL mutable_shipping_address();
-  void set_allocated_shipping_address(::shared::v1::Any* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_shipping_address(::shared::v1::Any* PROTOBUF_NULLABLE value);
-  ::shared::v1::Any* PROTOBUF_NULLABLE unsafe_arena_release_shipping_address();
+  const ::shared::v1::Struct& shipping_address() const;
+  [[nodiscard]] ::shared::v1::Struct* PROTOBUF_NULLABLE release_shipping_address();
+  ::shared::v1::Struct* PROTOBUF_NONNULL mutable_shipping_address();
+  void set_allocated_shipping_address(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_shipping_address(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  ::shared::v1::Struct* PROTOBUF_NULLABLE unsafe_arena_release_shipping_address();
 
   private:
-  const ::shared::v1::Any& _internal_shipping_address() const;
-  ::shared::v1::Any* PROTOBUF_NONNULL _internal_mutable_shipping_address();
+  const ::shared::v1::Struct& _internal_shipping_address() const;
+  ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_shipping_address();
 
   public:
-  // .shared.v1.Any billing_address = 11 [json_name = "billingAddress"];
+  // .shared.v1.Struct billing_address = 11 [json_name = "billingAddress"];
   bool has_billing_address() const;
   void clear_billing_address() ;
-  const ::shared::v1::Any& billing_address() const;
-  [[nodiscard]] ::shared::v1::Any* PROTOBUF_NULLABLE release_billing_address();
-  ::shared::v1::Any* PROTOBUF_NONNULL mutable_billing_address();
-  void set_allocated_billing_address(::shared::v1::Any* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_billing_address(::shared::v1::Any* PROTOBUF_NULLABLE value);
-  ::shared::v1::Any* PROTOBUF_NULLABLE unsafe_arena_release_billing_address();
+  const ::shared::v1::Struct& billing_address() const;
+  [[nodiscard]] ::shared::v1::Struct* PROTOBUF_NULLABLE release_billing_address();
+  ::shared::v1::Struct* PROTOBUF_NONNULL mutable_billing_address();
+  void set_allocated_billing_address(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_billing_address(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  ::shared::v1::Struct* PROTOBUF_NULLABLE unsafe_arena_release_billing_address();
 
   private:
-  const ::shared::v1::Any& _internal_billing_address() const;
-  ::shared::v1::Any* PROTOBUF_NONNULL _internal_mutable_billing_address();
+  const ::shared::v1::Struct& _internal_billing_address() const;
+  ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_billing_address();
 
   public:
   // .orders.v1.PaymentSnapshot payment = 12 [json_name = "payment"];
@@ -1040,8 +1040,8 @@ class OrderItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr status_;
     ::google::protobuf::internal::ArenaStringPtr product_source_;
     ::google::protobuf::internal::ArenaStringPtr product_version_;
-    ::shared::v1::Any* PROTOBUF_NULLABLE shipping_address_;
-    ::shared::v1::Any* PROTOBUF_NULLABLE billing_address_;
+    ::shared::v1::Struct* PROTOBUF_NULLABLE shipping_address_;
+    ::shared::v1::Struct* PROTOBUF_NULLABLE billing_address_;
     ::orders::v1::PaymentSnapshot* PROTOBUF_NULLABLE payment_;
     ::uint64_t subtotal_cents_;
     ::uint64_t shipping_cents_;
@@ -1609,28 +1609,28 @@ OrderItem::_internal_mutable_line_items() {
   return &_impl_.line_items_;
 }
 
-// .shared.v1.Any shipping_address = 10 [json_name = "shippingAddress"];
+// .shared.v1.Struct shipping_address = 10 [json_name = "shippingAddress"];
 inline bool OrderItem::has_shipping_address() const {
   bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.shipping_address_ != nullptr);
   return value;
 }
-inline const ::shared::v1::Any& OrderItem::_internal_shipping_address() const {
+inline const ::shared::v1::Struct& OrderItem::_internal_shipping_address() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::shared::v1::Any* p = _impl_.shipping_address_;
-  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Any&>(::shared::v1::_Any_default_instance_);
+  const ::shared::v1::Struct* p = _impl_.shipping_address_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Struct&>(::shared::v1::_Struct_default_instance_);
 }
-inline const ::shared::v1::Any& OrderItem::shipping_address() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::shared::v1::Struct& OrderItem::shipping_address() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:orders.v1.OrderItem.shipping_address)
   return _internal_shipping_address();
 }
 inline void OrderItem::unsafe_arena_set_allocated_shipping_address(
-    ::shared::v1::Any* PROTOBUF_NULLABLE value) {
+    ::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.shipping_address_);
   }
-  _impl_.shipping_address_ = reinterpret_cast<::shared::v1::Any*>(value);
+  _impl_.shipping_address_ = reinterpret_cast<::shared::v1::Struct*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000020u;
   } else {
@@ -1638,11 +1638,11 @@ inline void OrderItem::unsafe_arena_set_allocated_shipping_address(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.OrderItem.shipping_address)
 }
-inline ::shared::v1::Any* PROTOBUF_NULLABLE OrderItem::release_shipping_address() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE OrderItem::release_shipping_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000020u;
-  ::shared::v1::Any* released = _impl_.shipping_address_;
+  ::shared::v1::Struct* released = _impl_.shipping_address_;
   _impl_.shipping_address_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
     auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
@@ -1657,31 +1657,31 @@ inline ::shared::v1::Any* PROTOBUF_NULLABLE OrderItem::release_shipping_address(
   }
   return released;
 }
-inline ::shared::v1::Any* PROTOBUF_NULLABLE OrderItem::unsafe_arena_release_shipping_address() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE OrderItem::unsafe_arena_release_shipping_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.OrderItem.shipping_address)
 
   _impl_._has_bits_[0] &= ~0x00000020u;
-  ::shared::v1::Any* temp = _impl_.shipping_address_;
+  ::shared::v1::Struct* temp = _impl_.shipping_address_;
   _impl_.shipping_address_ = nullptr;
   return temp;
 }
-inline ::shared::v1::Any* PROTOBUF_NONNULL OrderItem::_internal_mutable_shipping_address() {
+inline ::shared::v1::Struct* PROTOBUF_NONNULL OrderItem::_internal_mutable_shipping_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.shipping_address_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Any>(GetArena());
-    _impl_.shipping_address_ = reinterpret_cast<::shared::v1::Any*>(p);
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Struct>(GetArena());
+    _impl_.shipping_address_ = reinterpret_cast<::shared::v1::Struct*>(p);
   }
   return _impl_.shipping_address_;
 }
-inline ::shared::v1::Any* PROTOBUF_NONNULL OrderItem::mutable_shipping_address()
+inline ::shared::v1::Struct* PROTOBUF_NONNULL OrderItem::mutable_shipping_address()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000020u;
-  ::shared::v1::Any* _msg = _internal_mutable_shipping_address();
+  ::shared::v1::Struct* _msg = _internal_mutable_shipping_address();
   // @@protoc_insertion_point(field_mutable:orders.v1.OrderItem.shipping_address)
   return _msg;
 }
-inline void OrderItem::set_allocated_shipping_address(::shared::v1::Any* PROTOBUF_NULLABLE value) {
+inline void OrderItem::set_allocated_shipping_address(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
@@ -1698,32 +1698,32 @@ inline void OrderItem::set_allocated_shipping_address(::shared::v1::Any* PROTOBU
     _impl_._has_bits_[0] &= ~0x00000020u;
   }
 
-  _impl_.shipping_address_ = reinterpret_cast<::shared::v1::Any*>(value);
+  _impl_.shipping_address_ = reinterpret_cast<::shared::v1::Struct*>(value);
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderItem.shipping_address)
 }
 
-// .shared.v1.Any billing_address = 11 [json_name = "billingAddress"];
+// .shared.v1.Struct billing_address = 11 [json_name = "billingAddress"];
 inline bool OrderItem::has_billing_address() const {
   bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.billing_address_ != nullptr);
   return value;
 }
-inline const ::shared::v1::Any& OrderItem::_internal_billing_address() const {
+inline const ::shared::v1::Struct& OrderItem::_internal_billing_address() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::shared::v1::Any* p = _impl_.billing_address_;
-  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Any&>(::shared::v1::_Any_default_instance_);
+  const ::shared::v1::Struct* p = _impl_.billing_address_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Struct&>(::shared::v1::_Struct_default_instance_);
 }
-inline const ::shared::v1::Any& OrderItem::billing_address() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::shared::v1::Struct& OrderItem::billing_address() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:orders.v1.OrderItem.billing_address)
   return _internal_billing_address();
 }
 inline void OrderItem::unsafe_arena_set_allocated_billing_address(
-    ::shared::v1::Any* PROTOBUF_NULLABLE value) {
+    ::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.billing_address_);
   }
-  _impl_.billing_address_ = reinterpret_cast<::shared::v1::Any*>(value);
+  _impl_.billing_address_ = reinterpret_cast<::shared::v1::Struct*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000040u;
   } else {
@@ -1731,11 +1731,11 @@ inline void OrderItem::unsafe_arena_set_allocated_billing_address(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.OrderItem.billing_address)
 }
-inline ::shared::v1::Any* PROTOBUF_NULLABLE OrderItem::release_billing_address() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE OrderItem::release_billing_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000040u;
-  ::shared::v1::Any* released = _impl_.billing_address_;
+  ::shared::v1::Struct* released = _impl_.billing_address_;
   _impl_.billing_address_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
     auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
@@ -1750,31 +1750,31 @@ inline ::shared::v1::Any* PROTOBUF_NULLABLE OrderItem::release_billing_address()
   }
   return released;
 }
-inline ::shared::v1::Any* PROTOBUF_NULLABLE OrderItem::unsafe_arena_release_billing_address() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE OrderItem::unsafe_arena_release_billing_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.OrderItem.billing_address)
 
   _impl_._has_bits_[0] &= ~0x00000040u;
-  ::shared::v1::Any* temp = _impl_.billing_address_;
+  ::shared::v1::Struct* temp = _impl_.billing_address_;
   _impl_.billing_address_ = nullptr;
   return temp;
 }
-inline ::shared::v1::Any* PROTOBUF_NONNULL OrderItem::_internal_mutable_billing_address() {
+inline ::shared::v1::Struct* PROTOBUF_NONNULL OrderItem::_internal_mutable_billing_address() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.billing_address_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Any>(GetArena());
-    _impl_.billing_address_ = reinterpret_cast<::shared::v1::Any*>(p);
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Struct>(GetArena());
+    _impl_.billing_address_ = reinterpret_cast<::shared::v1::Struct*>(p);
   }
   return _impl_.billing_address_;
 }
-inline ::shared::v1::Any* PROTOBUF_NONNULL OrderItem::mutable_billing_address()
+inline ::shared::v1::Struct* PROTOBUF_NONNULL OrderItem::mutable_billing_address()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000040u;
-  ::shared::v1::Any* _msg = _internal_mutable_billing_address();
+  ::shared::v1::Struct* _msg = _internal_mutable_billing_address();
   // @@protoc_insertion_point(field_mutable:orders.v1.OrderItem.billing_address)
   return _msg;
 }
-inline void OrderItem::set_allocated_billing_address(::shared::v1::Any* PROTOBUF_NULLABLE value) {
+inline void OrderItem::set_allocated_billing_address(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
@@ -1791,7 +1791,7 @@ inline void OrderItem::set_allocated_billing_address(::shared::v1::Any* PROTOBUF
     _impl_._has_bits_[0] &= ~0x00000040u;
   }
 
-  _impl_.billing_address_ = reinterpret_cast<::shared::v1::Any*>(value);
+  _impl_.billing_address_ = reinterpret_cast<::shared::v1::Struct*>(value);
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderItem.billing_address)
 }
 
@@ -2457,28 +2457,28 @@ inline void PaymentSnapshot::set_allocated_payment_method(::std::string* PROTOBU
   // @@protoc_insertion_point(field_set_allocated:orders.v1.PaymentSnapshot.payment_method)
 }
 
-// .shared.v1.Any provider_response = 5 [json_name = "providerResponse"];
+// .shared.v1.Struct provider_response = 5 [json_name = "providerResponse"];
 inline bool PaymentSnapshot::has_provider_response() const {
   bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.provider_response_ != nullptr);
   return value;
 }
-inline const ::shared::v1::Any& PaymentSnapshot::_internal_provider_response() const {
+inline const ::shared::v1::Struct& PaymentSnapshot::_internal_provider_response() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::shared::v1::Any* p = _impl_.provider_response_;
-  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Any&>(::shared::v1::_Any_default_instance_);
+  const ::shared::v1::Struct* p = _impl_.provider_response_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Struct&>(::shared::v1::_Struct_default_instance_);
 }
-inline const ::shared::v1::Any& PaymentSnapshot::provider_response() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::shared::v1::Struct& PaymentSnapshot::provider_response() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:orders.v1.PaymentSnapshot.provider_response)
   return _internal_provider_response();
 }
 inline void PaymentSnapshot::unsafe_arena_set_allocated_provider_response(
-    ::shared::v1::Any* PROTOBUF_NULLABLE value) {
+    ::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.provider_response_);
   }
-  _impl_.provider_response_ = reinterpret_cast<::shared::v1::Any*>(value);
+  _impl_.provider_response_ = reinterpret_cast<::shared::v1::Struct*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000010u;
   } else {
@@ -2486,11 +2486,11 @@ inline void PaymentSnapshot::unsafe_arena_set_allocated_provider_response(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.PaymentSnapshot.provider_response)
 }
-inline ::shared::v1::Any* PROTOBUF_NULLABLE PaymentSnapshot::release_provider_response() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE PaymentSnapshot::release_provider_response() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000010u;
-  ::shared::v1::Any* released = _impl_.provider_response_;
+  ::shared::v1::Struct* released = _impl_.provider_response_;
   _impl_.provider_response_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
     auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
@@ -2505,31 +2505,31 @@ inline ::shared::v1::Any* PROTOBUF_NULLABLE PaymentSnapshot::release_provider_re
   }
   return released;
 }
-inline ::shared::v1::Any* PROTOBUF_NULLABLE PaymentSnapshot::unsafe_arena_release_provider_response() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE PaymentSnapshot::unsafe_arena_release_provider_response() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.PaymentSnapshot.provider_response)
 
   _impl_._has_bits_[0] &= ~0x00000010u;
-  ::shared::v1::Any* temp = _impl_.provider_response_;
+  ::shared::v1::Struct* temp = _impl_.provider_response_;
   _impl_.provider_response_ = nullptr;
   return temp;
 }
-inline ::shared::v1::Any* PROTOBUF_NONNULL PaymentSnapshot::_internal_mutable_provider_response() {
+inline ::shared::v1::Struct* PROTOBUF_NONNULL PaymentSnapshot::_internal_mutable_provider_response() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.provider_response_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Any>(GetArena());
-    _impl_.provider_response_ = reinterpret_cast<::shared::v1::Any*>(p);
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Struct>(GetArena());
+    _impl_.provider_response_ = reinterpret_cast<::shared::v1::Struct*>(p);
   }
   return _impl_.provider_response_;
 }
-inline ::shared::v1::Any* PROTOBUF_NONNULL PaymentSnapshot::mutable_provider_response()
+inline ::shared::v1::Struct* PROTOBUF_NONNULL PaymentSnapshot::mutable_provider_response()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000010u;
-  ::shared::v1::Any* _msg = _internal_mutable_provider_response();
+  ::shared::v1::Struct* _msg = _internal_mutable_provider_response();
   // @@protoc_insertion_point(field_mutable:orders.v1.PaymentSnapshot.provider_response)
   return _msg;
 }
-inline void PaymentSnapshot::set_allocated_provider_response(::shared::v1::Any* PROTOBUF_NULLABLE value) {
+inline void PaymentSnapshot::set_allocated_provider_response(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
@@ -2546,7 +2546,7 @@ inline void PaymentSnapshot::set_allocated_provider_response(::shared::v1::Any* 
     _impl_._has_bits_[0] &= ~0x00000010u;
   }
 
-  _impl_.provider_response_ = reinterpret_cast<::shared::v1::Any*>(value);
+  _impl_.provider_response_ = reinterpret_cast<::shared::v1::Struct*>(value);
   // @@protoc_insertion_point(field_set_allocated:orders.v1.PaymentSnapshot.provider_response)
 }
 
