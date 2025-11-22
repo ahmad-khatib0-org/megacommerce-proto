@@ -242,17 +242,18 @@ const char descriptor_table_protodef_inventory_2fv1_2freservation_5fget_2eproto[
     "SERVED\020\003\022(\n$INVENTORY_RESERVATION_STATUS"
     "_PENDING\020\004\022)\n%INVENTORY_RESERVATION_STAT"
     "US_RELEASED\020\005\022*\n&INVENTORY_RESERVATION_S"
-    "TATUS_FULFILLED\020\006*\353\001\n\036InventoryReservati"
+    "TATUS_FULFILLED\020\006*\245\002\n\036InventoryReservati"
     "onItemStatus\0221\n-INVENTORY_RESERVATION_IT"
     "EM_STATUS_UNSPECIFIED\020\000\022.\n*INVENTORY_RES"
-    "ERVATION_ITEM_STATUS_RESERVED\020\001\0222\n.INVEN"
-    "TORY_RESERVATION_ITEM_STATUS_NOT_RESERVE"
-    "D\020\002\0222\n.INVENTORY_RESERVATION_ITEM_STATUS"
-    "_OUT_OF_STOCK\020\003B\210\001\n\035org.megacommerce.inv"
-    "entory.v1B\034InventoryReservationGetProtoZ"
-    "Fgithub.com/ahmad-khatib0-org/megacommer"
-    "ce-proto/gen/go/inventory/v1;v1\370\001\001b\006prot"
-    "o3"
+    "ERVATION_ITEM_STATUS_RESERVED\020\001\0228\n4INVEN"
+    "TORY_RESERVATION_ITEM_STATUS_PARTIALLY_R"
+    "ESERVED\020\002\0222\n.INVENTORY_RESERVATION_ITEM_"
+    "STATUS_NOT_RESERVED\020\003\0222\n.INVENTORY_RESER"
+    "VATION_ITEM_STATUS_OUT_OF_STOCK\020\004B\210\001\n\035or"
+    "g.megacommerce.inventory.v1B\034InventoryRe"
+    "servationGetProtoZFgithub.com/ahmad-khat"
+    "ib0-org/megacommerce-proto/gen/go/invent"
+    "ory/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_inventory_2fv1_2freservation_5fget_2eproto_deps[1] = {
@@ -262,7 +263,7 @@ static ::absl::once_flag descriptor_table_inventory_2fv1_2freservation_5fget_2ep
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_inventory_2fv1_2freservation_5fget_2eproto = {
     false,
     false,
-    1602,
+    1660,
     descriptor_table_protodef_inventory_2fv1_2freservation_5fget_2eproto,
     "inventory/v1/reservation_get.proto",
     &descriptor_table_inventory_2fv1_2freservation_5fget_2eproto_once,
@@ -288,7 +289,7 @@ const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL InventoryReservationI
   return file_level_enum_descriptors_inventory_2fv1_2freservation_5fget_2eproto[1];
 }
 PROTOBUF_CONSTINIT const uint32_t InventoryReservationItemStatus_internal_data_[] = {
-    262144u, 0u, };
+    327680u, 0u, };
 // ===================================================================
 
 class InventoryReservationGetRequest::_Internal {

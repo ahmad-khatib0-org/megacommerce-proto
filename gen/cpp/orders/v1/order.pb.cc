@@ -185,16 +185,17 @@ const char descriptor_table_protodef_orders_2fv1_2forder_2eproto[] ABSL_ATTRIBUT
     "B\r\n\013_deleted_at*f\n\rPaymentStatus\022\023\n\017PAYM"
     "ENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020\001\022\024\n"
     "\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILED\020\003*"
-    "\365\001\n\013OrderStatus\022\030\n\024ORDER_STATUS_CREATED\020"
+    "\230\002\n\013OrderStatus\022\030\n\024ORDER_STATUS_CREATED\020"
     "\000\022\032\n\026ORDER_STATUS_CONFIRMED\020\001\022\030\n\024ORDER_S"
     "TATUS_SHIPPED\020\002\022\032\n\026ORDER_STATUS_DELIVERE"
     "D\020\003\022\032\n\026ORDER_STATUS_CANCELLED\020\004\022\031\n\025ORDER"
-    "_STATUS_REFUNDED\020\005\022\037\n\033ORDER_STATUS_PAYME"
-    "NT_FAILED\020\006\022\"\n\036ORDER_STATUS_PAYMENT_SUCC"
-    "EEDED\020\007Bp\n\032org.megacommerce.orders.v1B\nO"
-    "rderProtoZCgithub.com/ahmad-khatib0-org/"
-    "megacommerce-proto/gen/go/orders/v1;v1\370\001"
-    "\001b\006proto3"
+    "_STATUS_REFUNDED\020\005\022!\n\035ORDER_STATUS_REFUN"
+    "D_REQUESTED\020\006\022\"\n\036ORDER_STATUS_PAYMENT_SU"
+    "CCEEDED\020\007\022\037\n\033ORDER_STATUS_PAYMENT_FAILED"
+    "\020\010Bp\n\032org.megacommerce.orders.v1B\nOrderP"
+    "rotoZCgithub.com/ahmad-khatib0-org/megac"
+    "ommerce-proto/gen/go/orders/v1;v1\370\001\001b\006pr"
+    "oto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_orders_2fv1_2forder_2eproto_deps[1] = {
@@ -204,7 +205,7 @@ static ::absl::once_flag descriptor_table_orders_2fv1_2forder_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_2eproto = {
     false,
     false,
-    1489,
+    1524,
     descriptor_table_protodef_orders_2fv1_2forder_2eproto,
     "orders/v1/order.proto",
     &descriptor_table_orders_2fv1_2forder_2eproto_once,
@@ -230,7 +231,7 @@ const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderStatus_descripto
   return file_level_enum_descriptors_orders_2fv1_2forder_2eproto[1];
 }
 PROTOBUF_CONSTINIT const uint32_t OrderStatus_internal_data_[] = {
-    524288u, 0u, };
+    589824u, 0u, };
 // ===================================================================
 
 class Order::_Internal {

@@ -195,13 +195,17 @@ public final class OrderProto {
      */
     ORDER_STATUS_REFUNDED(5),
     /**
-     * <code>ORDER_STATUS_PAYMENT_FAILED = 6;</code>
+     * <code>ORDER_STATUS_REFUND_REQUESTED = 6;</code>
      */
-    ORDER_STATUS_PAYMENT_FAILED(6),
+    ORDER_STATUS_REFUND_REQUESTED(6),
     /**
      * <code>ORDER_STATUS_PAYMENT_SUCCEEDED = 7;</code>
      */
     ORDER_STATUS_PAYMENT_SUCCEEDED(7),
+    /**
+     * <code>ORDER_STATUS_PAYMENT_FAILED = 8;</code>
+     */
+    ORDER_STATUS_PAYMENT_FAILED(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -239,13 +243,17 @@ public final class OrderProto {
      */
     public static final int ORDER_STATUS_REFUNDED_VALUE = 5;
     /**
-     * <code>ORDER_STATUS_PAYMENT_FAILED = 6;</code>
+     * <code>ORDER_STATUS_REFUND_REQUESTED = 6;</code>
      */
-    public static final int ORDER_STATUS_PAYMENT_FAILED_VALUE = 6;
+    public static final int ORDER_STATUS_REFUND_REQUESTED_VALUE = 6;
     /**
      * <code>ORDER_STATUS_PAYMENT_SUCCEEDED = 7;</code>
      */
     public static final int ORDER_STATUS_PAYMENT_SUCCEEDED_VALUE = 7;
+    /**
+     * <code>ORDER_STATUS_PAYMENT_FAILED = 8;</code>
+     */
+    public static final int ORDER_STATUS_PAYMENT_FAILED_VALUE = 8;
 
 
     public final int getNumber() {
@@ -278,8 +286,9 @@ public final class OrderProto {
         case 3: return ORDER_STATUS_DELIVERED;
         case 4: return ORDER_STATUS_CANCELLED;
         case 5: return ORDER_STATUS_REFUNDED;
-        case 6: return ORDER_STATUS_PAYMENT_FAILED;
+        case 6: return ORDER_STATUS_REFUND_REQUESTED;
         case 7: return ORDER_STATUS_PAYMENT_SUCCEEDED;
+        case 8: return ORDER_STATUS_PAYMENT_FAILED;
         default: return null;
       }
     }
@@ -3859,16 +3868,17 @@ public final class OrderProto {
       "B\r\n\013_deleted_at*f\n\rPaymentStatus\022\023\n\017PAYM" +
       "ENT_UNKNOWN\020\000\022\026\n\022PAYMENT_AUTHORIZED\020\001\022\024\n" +
       "\020PAYMENT_CAPTURED\020\002\022\022\n\016PAYMENT_FAILED\020\003*" +
-      "\365\001\n\013OrderStatus\022\030\n\024ORDER_STATUS_CREATED\020" +
+      "\230\002\n\013OrderStatus\022\030\n\024ORDER_STATUS_CREATED\020" +
       "\000\022\032\n\026ORDER_STATUS_CONFIRMED\020\001\022\030\n\024ORDER_S" +
       "TATUS_SHIPPED\020\002\022\032\n\026ORDER_STATUS_DELIVERE" +
       "D\020\003\022\032\n\026ORDER_STATUS_CANCELLED\020\004\022\031\n\025ORDER" +
-      "_STATUS_REFUNDED\020\005\022\037\n\033ORDER_STATUS_PAYME" +
-      "NT_FAILED\020\006\022\"\n\036ORDER_STATUS_PAYMENT_SUCC" +
-      "EEDED\020\007Bp\n\032org.megacommerce.orders.v1B\nO" +
-      "rderProtoZCgithub.com/ahmad-khatib0-org/" +
-      "megacommerce-proto/gen/go/orders/v1;v1\370\001" +
-      "\001b\006proto3"
+      "_STATUS_REFUNDED\020\005\022!\n\035ORDER_STATUS_REFUN" +
+      "D_REQUESTED\020\006\022\"\n\036ORDER_STATUS_PAYMENT_SU" +
+      "CCEEDED\020\007\022\037\n\033ORDER_STATUS_PAYMENT_FAILED" +
+      "\020\010Bp\n\032org.megacommerce.orders.v1B\nOrderP" +
+      "rotoZCgithub.com/ahmad-khatib0-org/megac" +
+      "ommerce-proto/gen/go/orders/v1;v1\370\001\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

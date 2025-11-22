@@ -135,8 +135,9 @@ inline bool InventoryReservationStatus_Parse(
 enum InventoryReservationItemStatus : int {
   INVENTORY_RESERVATION_ITEM_STATUS_UNSPECIFIED = 0,
   INVENTORY_RESERVATION_ITEM_STATUS_RESERVED = 1,
-  INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED = 2,
-  INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK = 3,
+  INVENTORY_RESERVATION_ITEM_STATUS_PARTIALLY_RESERVED = 2,
+  INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED = 3,
+  INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK = 4,
   InventoryReservationItemStatus_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
   InventoryReservationItemStatus_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -147,11 +148,11 @@ extern const uint32_t InventoryReservationItemStatus_internal_data_[];
 inline constexpr InventoryReservationItemStatus InventoryReservationItemStatus_MIN =
     static_cast<InventoryReservationItemStatus>(0);
 inline constexpr InventoryReservationItemStatus InventoryReservationItemStatus_MAX =
-    static_cast<InventoryReservationItemStatus>(3);
+    static_cast<InventoryReservationItemStatus>(4);
 inline bool InventoryReservationItemStatus_IsValid(int value) {
-  return 0 <= value && value <= 3;
+  return 0 <= value && value <= 4;
 }
-inline constexpr int InventoryReservationItemStatus_ARRAYSIZE = 3 + 1;
+inline constexpr int InventoryReservationItemStatus_ARRAYSIZE = 4 + 1;
 const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL InventoryReservationItemStatus_descriptor();
 template <typename T>
 const ::std::string& InventoryReservationItemStatus_Name(T value) {
@@ -162,7 +163,7 @@ const ::std::string& InventoryReservationItemStatus_Name(T value) {
 }
 template <>
 inline const ::std::string& InventoryReservationItemStatus_Name(InventoryReservationItemStatus value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<InventoryReservationItemStatus_descriptor, 0, 3>(
+  return ::google::protobuf::internal::NameOfDenseEnum<InventoryReservationItemStatus_descriptor, 0, 4>(
       static_cast<int>(value));
 }
 inline bool InventoryReservationItemStatus_Parse(

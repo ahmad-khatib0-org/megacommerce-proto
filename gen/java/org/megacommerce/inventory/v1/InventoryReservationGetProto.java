@@ -202,13 +202,17 @@ public final class InventoryReservationGetProto {
      */
     INVENTORY_RESERVATION_ITEM_STATUS_RESERVED(1),
     /**
-     * <code>INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED = 2;</code>
+     * <code>INVENTORY_RESERVATION_ITEM_STATUS_PARTIALLY_RESERVED = 2;</code>
      */
-    INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED(2),
+    INVENTORY_RESERVATION_ITEM_STATUS_PARTIALLY_RESERVED(2),
     /**
-     * <code>INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK = 3;</code>
+     * <code>INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED = 3;</code>
      */
-    INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK(3),
+    INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED(3),
+    /**
+     * <code>INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK = 4;</code>
+     */
+    INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -230,13 +234,17 @@ public final class InventoryReservationGetProto {
      */
     public static final int INVENTORY_RESERVATION_ITEM_STATUS_RESERVED_VALUE = 1;
     /**
-     * <code>INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED = 2;</code>
+     * <code>INVENTORY_RESERVATION_ITEM_STATUS_PARTIALLY_RESERVED = 2;</code>
      */
-    public static final int INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED_VALUE = 2;
+    public static final int INVENTORY_RESERVATION_ITEM_STATUS_PARTIALLY_RESERVED_VALUE = 2;
     /**
-     * <code>INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK = 3;</code>
+     * <code>INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED = 3;</code>
      */
-    public static final int INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK_VALUE = 3;
+    public static final int INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED_VALUE = 3;
+    /**
+     * <code>INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK = 4;</code>
+     */
+    public static final int INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK_VALUE = 4;
 
 
     public final int getNumber() {
@@ -265,8 +273,9 @@ public final class InventoryReservationGetProto {
       switch (value) {
         case 0: return INVENTORY_RESERVATION_ITEM_STATUS_UNSPECIFIED;
         case 1: return INVENTORY_RESERVATION_ITEM_STATUS_RESERVED;
-        case 2: return INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED;
-        case 3: return INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK;
+        case 2: return INVENTORY_RESERVATION_ITEM_STATUS_PARTIALLY_RESERVED;
+        case 3: return INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED;
+        case 4: return INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK;
         default: return null;
       }
     }
@@ -4050,17 +4059,18 @@ public final class InventoryReservationGetProto {
       "SERVED\020\003\022(\n$INVENTORY_RESERVATION_STATUS" +
       "_PENDING\020\004\022)\n%INVENTORY_RESERVATION_STAT" +
       "US_RELEASED\020\005\022*\n&INVENTORY_RESERVATION_S" +
-      "TATUS_FULFILLED\020\006*\353\001\n\036InventoryReservati" +
+      "TATUS_FULFILLED\020\006*\245\002\n\036InventoryReservati" +
       "onItemStatus\0221\n-INVENTORY_RESERVATION_IT" +
       "EM_STATUS_UNSPECIFIED\020\000\022.\n*INVENTORY_RES" +
-      "ERVATION_ITEM_STATUS_RESERVED\020\001\0222\n.INVEN" +
-      "TORY_RESERVATION_ITEM_STATUS_NOT_RESERVE" +
-      "D\020\002\0222\n.INVENTORY_RESERVATION_ITEM_STATUS" +
-      "_OUT_OF_STOCK\020\003B\210\001\n\035org.megacommerce.inv" +
-      "entory.v1B\034InventoryReservationGetProtoZ" +
-      "Fgithub.com/ahmad-khatib0-org/megacommer" +
-      "ce-proto/gen/go/inventory/v1;v1\370\001\001b\006prot" +
-      "o3"
+      "ERVATION_ITEM_STATUS_RESERVED\020\001\0228\n4INVEN" +
+      "TORY_RESERVATION_ITEM_STATUS_PARTIALLY_R" +
+      "ESERVED\020\002\0222\n.INVENTORY_RESERVATION_ITEM_" +
+      "STATUS_NOT_RESERVED\020\003\0222\n.INVENTORY_RESER" +
+      "VATION_ITEM_STATUS_OUT_OF_STOCK\020\004B\210\001\n\035or" +
+      "g.megacommerce.inventory.v1B\034InventoryRe" +
+      "servationGetProtoZFgithub.com/ahmad-khat" +
+      "ib0-org/megacommerce-proto/gen/go/invent" +
+      "ory/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

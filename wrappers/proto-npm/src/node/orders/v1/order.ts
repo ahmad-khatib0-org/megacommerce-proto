@@ -63,8 +63,9 @@ export enum OrderStatus {
   ORDER_STATUS_DELIVERED = 3,
   ORDER_STATUS_CANCELLED = 4,
   ORDER_STATUS_REFUNDED = 5,
-  ORDER_STATUS_PAYMENT_FAILED = 6,
+  ORDER_STATUS_REFUND_REQUESTED = 6,
   ORDER_STATUS_PAYMENT_SUCCEEDED = 7,
+  ORDER_STATUS_PAYMENT_FAILED = 8,
   UNRECOGNIZED = -1,
 }
 
@@ -89,11 +90,14 @@ export function orderStatusFromJSON(object: any): OrderStatus {
     case "ORDER_STATUS_REFUNDED":
       return OrderStatus.ORDER_STATUS_REFUNDED;
     case 6:
-    case "ORDER_STATUS_PAYMENT_FAILED":
-      return OrderStatus.ORDER_STATUS_PAYMENT_FAILED;
+    case "ORDER_STATUS_REFUND_REQUESTED":
+      return OrderStatus.ORDER_STATUS_REFUND_REQUESTED;
     case 7:
     case "ORDER_STATUS_PAYMENT_SUCCEEDED":
       return OrderStatus.ORDER_STATUS_PAYMENT_SUCCEEDED;
+    case 8:
+    case "ORDER_STATUS_PAYMENT_FAILED":
+      return OrderStatus.ORDER_STATUS_PAYMENT_FAILED;
     case -1:
     case "UNRECOGNIZED":
     default:
@@ -115,10 +119,12 @@ export function orderStatusToJSON(object: OrderStatus): string {
       return "ORDER_STATUS_CANCELLED";
     case OrderStatus.ORDER_STATUS_REFUNDED:
       return "ORDER_STATUS_REFUNDED";
-    case OrderStatus.ORDER_STATUS_PAYMENT_FAILED:
-      return "ORDER_STATUS_PAYMENT_FAILED";
+    case OrderStatus.ORDER_STATUS_REFUND_REQUESTED:
+      return "ORDER_STATUS_REFUND_REQUESTED";
     case OrderStatus.ORDER_STATUS_PAYMENT_SUCCEEDED:
       return "ORDER_STATUS_PAYMENT_SUCCEEDED";
+    case OrderStatus.ORDER_STATUS_PAYMENT_FAILED:
+      return "ORDER_STATUS_PAYMENT_FAILED";
     case OrderStatus.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";

@@ -100,8 +100,9 @@ pub enum OrderStatus {
     Delivered = 3,
     Cancelled = 4,
     Refunded = 5,
-    PaymentFailed = 6,
+    RefundRequested = 6,
     PaymentSucceeded = 7,
+    PaymentFailed = 8,
 }
 impl OrderStatus {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -116,8 +117,9 @@ impl OrderStatus {
             Self::Delivered => "ORDER_STATUS_DELIVERED",
             Self::Cancelled => "ORDER_STATUS_CANCELLED",
             Self::Refunded => "ORDER_STATUS_REFUNDED",
-            Self::PaymentFailed => "ORDER_STATUS_PAYMENT_FAILED",
+            Self::RefundRequested => "ORDER_STATUS_REFUND_REQUESTED",
             Self::PaymentSucceeded => "ORDER_STATUS_PAYMENT_SUCCEEDED",
+            Self::PaymentFailed => "ORDER_STATUS_PAYMENT_FAILED",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
@@ -129,8 +131,9 @@ impl OrderStatus {
             "ORDER_STATUS_DELIVERED" => Some(Self::Delivered),
             "ORDER_STATUS_CANCELLED" => Some(Self::Cancelled),
             "ORDER_STATUS_REFUNDED" => Some(Self::Refunded),
-            "ORDER_STATUS_PAYMENT_FAILED" => Some(Self::PaymentFailed),
+            "ORDER_STATUS_REFUND_REQUESTED" => Some(Self::RefundRequested),
             "ORDER_STATUS_PAYMENT_SUCCEEDED" => Some(Self::PaymentSucceeded),
+            "ORDER_STATUS_PAYMENT_FAILED" => Some(Self::PaymentFailed),
             _ => None,
         }
     }

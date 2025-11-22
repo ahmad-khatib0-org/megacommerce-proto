@@ -304,8 +304,9 @@ impl InventoryReservationStatus {
 pub enum InventoryReservationItemStatus {
     Unspecified = 0,
     Reserved = 1,
-    NotReserved = 2,
-    OutOfStock = 3,
+    PartiallyReserved = 2,
+    NotReserved = 3,
+    OutOfStock = 4,
 }
 impl InventoryReservationItemStatus {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -316,6 +317,9 @@ impl InventoryReservationItemStatus {
         match self {
             Self::Unspecified => "INVENTORY_RESERVATION_ITEM_STATUS_UNSPECIFIED",
             Self::Reserved => "INVENTORY_RESERVATION_ITEM_STATUS_RESERVED",
+            Self::PartiallyReserved => {
+                "INVENTORY_RESERVATION_ITEM_STATUS_PARTIALLY_RESERVED"
+            }
             Self::NotReserved => "INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED",
             Self::OutOfStock => "INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK",
         }
@@ -325,6 +329,9 @@ impl InventoryReservationItemStatus {
         match value {
             "INVENTORY_RESERVATION_ITEM_STATUS_UNSPECIFIED" => Some(Self::Unspecified),
             "INVENTORY_RESERVATION_ITEM_STATUS_RESERVED" => Some(Self::Reserved),
+            "INVENTORY_RESERVATION_ITEM_STATUS_PARTIALLY_RESERVED" => {
+                Some(Self::PartiallyReserved)
+            }
             "INVENTORY_RESERVATION_ITEM_STATUS_NOT_RESERVED" => Some(Self::NotReserved),
             "INVENTORY_RESERVATION_ITEM_STATUS_OUT_OF_STOCK" => Some(Self::OutOfStock),
             _ => None,
