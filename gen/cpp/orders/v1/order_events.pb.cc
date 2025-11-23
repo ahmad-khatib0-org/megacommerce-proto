@@ -100,18 +100,20 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fevents_2eproto[] ABSL
     "rId\022\035\n\nevent_type\030\003 \001(\tR\teventType\0226\n\rev"
     "ent_payload\030\004 \001(\0132\021.shared.v1.StructR\014ev"
     "entPayload\022\035\n\ncreated_at\030\005 \001(\004R\tcreatedA"
-    "t*\323\002\n\016OrderEventType\022\027\n\023ORDER_EVENT_UNKN"
+    "t*\205\003\n\016OrderEventType\022\027\n\023ORDER_EVENT_UNKN"
     "OWN\020\000\022\035\n\031ORDER_EVENT_ORDER_CREATED\020\001\022 \n\034"
     "ORDER_EVENT_PAYMENT_CAPTURED\020\002\022\036\n\032ORDER_"
     "EVENT_PAYMENT_FAILED\020\003\022\035\n\031ORDER_EVENT_OR"
     "DER_SHIPPED\020\004\022\037\n\033ORDER_EVENT_ORDER_DELIV"
     "ERED\020\005\022\037\n\033ORDER_EVENT_ORDER_CANCELLED\020\006\022"
-    "\036\n\032ORDER_EVENT_ORDER_REFUNDED\020\007\022\"\n\036ORDER"
-    "_EVENT_INVENTORY_RESERVED\020\010\022\"\n\036ORDER_EVE"
-    "NT_INVENTORY_RELEASED\020\tBv\n\032org.megacomme"
-    "rce.orders.v1B\020OrderEventsProtoZCgithub."
-    "com/ahmad-khatib0-org/megacommerce-proto"
-    "/gen/go/orders/v1;v1\370\001\001b\006proto3"
+    "#\n\037ORDER_EVENT_ORDER_ITEM_REFUNDED\020\007\022+\n\'"
+    "ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED\020"
+    "\010\022\"\n\036ORDER_EVENT_INVENTORY_RESERVED\020\t\022\"\n"
+    "\036ORDER_EVENT_INVENTORY_RELEASED\020\nBv\n\032org"
+    ".megacommerce.orders.v1B\020OrderEventsProt"
+    "oZCgithub.com/ahmad-khatib0-org/megacomm"
+    "erce-proto/gen/go/orders/v1;v1\370\001\001b\006proto"
+    "3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_orders_2fv1_2forder_5fevents_2eproto_deps[1] = {
@@ -121,7 +123,7 @@ static ::absl::once_flag descriptor_table_orders_2fv1_2forder_5fevents_2eproto_o
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_5fevents_2eproto = {
     false,
     false,
-    711,
+    761,
     descriptor_table_protodef_orders_2fv1_2forder_5fevents_2eproto,
     "orders/v1/order_events.proto",
     &descriptor_table_orders_2fv1_2forder_5fevents_2eproto_once,
@@ -141,7 +143,7 @@ const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderEventType_descri
   return file_level_enum_descriptors_orders_2fv1_2forder_5fevents_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t OrderEventType_internal_data_[] = {
-    655360u, 0u, };
+    720896u, 0u, };
 // ===================================================================
 
 class OrderEvent::_Internal {

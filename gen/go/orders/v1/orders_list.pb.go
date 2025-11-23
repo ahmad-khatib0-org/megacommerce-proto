@@ -309,7 +309,7 @@ var File_orders_v1_orders_list_proto protoreflect.FileDescriptor
 
 const file_orders_v1_orders_list_proto_rawDesc = "" +
 	"\n" +
-	"\x1borders/v1/orders_list.proto\x12\torders.v1\x1a\"inventory/v1/reservation_get.proto\x1a\x19orders/v1/order_get.proto\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\"i\n" +
+	"\x1borders/v1/orders_list.proto\x12\torders.v1\x1a\"inventory/v1/reservation_get.proto\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\"i\n" +
 	"\x11OrdersListRequest\x12<\n" +
 	"\n" +
 	"pagination\x18\x01 \x01(\v2\x1c.shared.v1.PaginationRequestR\n" +
@@ -379,7 +379,6 @@ func file_orders_v1_orders_list_proto_init() {
 	if File_orders_v1_orders_list_proto != nil {
 		return
 	}
-	file_orders_v1_order_get_proto_init()
 	file_orders_v1_orders_list_proto_msgTypes[1].OneofWrappers = []any{
 		(*OrdersListResponse_Data)(nil),
 		(*OrdersListResponse_Error)(nil),

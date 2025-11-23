@@ -3891,36 +3891,34 @@ public final class OrdersListProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033orders/v1/orders_list.proto\022\torders.v1" +
-      "\032\"inventory/v1/reservation_get.proto\032\031or" +
-      "ders/v1/order_get.proto\032\025shared/v1/error" +
-      ".proto\032\032shared/v1/pagination.proto\"i\n\021Or" +
-      "dersListRequest\022<\n\npagination\030\001 \001(\0132\034.sh" +
-      "ared.v1.PaginationRequestR\npagination\022\026\n" +
-      "\006status\030\002 \003(\tR\006status\"\206\001\n\022OrdersListResp" +
-      "onse\0227\n\004data\030\001 \001(\0132!.orders.v1.OrdersLis" +
-      "tResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.s" +
-      "hared.v1.AppErrorH\000R\005errorB\n\n\010response\"\211" +
-      "\001\n\026OrdersListResponseData\0220\n\006orders\030\001 \003(" +
-      "\0132\030.orders.v1.OrderListItemR\006orders\022=\n\np" +
-      "agination\030\002 \001(\0132\035.shared.v1.PaginationRe" +
-      "sponseR\npagination\"\257\002\n\rOrderListItem\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022%\n\016shipping_cents\030\002 \001(\003R\rsh" +
-      "ippingCents\022\037\n\013total_cents\030\003 \001(\003R\ntotalC" +
-      "ents\022#\n\rcurrency_code\030\004 \001(\tR\014currencyCod" +
-      "e\022j\n\034inventory_reservation_status\030\005 \001(\0162" +
-      "(.inventory.v1.InventoryReservationStatu" +
-      "sR\032inventoryReservationStatus\022\026\n\006status\030" +
-      "\006 \001(\tR\006status\022\035\n\ncreated_at\030\007 \001(\004R\tcreat" +
-      "edAtBu\n\032org.megacommerce.orders.v1B\017Orde" +
-      "rsListProtoZCgithub.com/ahmad-khatib0-or" +
-      "g/megacommerce-proto/gen/go/orders/v1;v1" +
-      "\370\001\001b\006proto3"
+      "\032\"inventory/v1/reservation_get.proto\032\025sh" +
+      "ared/v1/error.proto\032\032shared/v1/paginatio" +
+      "n.proto\"i\n\021OrdersListRequest\022<\n\npaginati" +
+      "on\030\001 \001(\0132\034.shared.v1.PaginationRequestR\n" +
+      "pagination\022\026\n\006status\030\002 \003(\tR\006status\"\206\001\n\022O" +
+      "rdersListResponse\0227\n\004data\030\001 \001(\0132!.orders" +
+      ".v1.OrdersListResponseDataH\000R\004data\022+\n\005er" +
+      "ror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB" +
+      "\n\n\010response\"\211\001\n\026OrdersListResponseData\0220" +
+      "\n\006orders\030\001 \003(\0132\030.orders.v1.OrderListItem" +
+      "R\006orders\022=\n\npagination\030\002 \001(\0132\035.shared.v1" +
+      ".PaginationResponseR\npagination\"\257\002\n\rOrde" +
+      "rListItem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016shipping_ce" +
+      "nts\030\002 \001(\003R\rshippingCents\022\037\n\013total_cents\030" +
+      "\003 \001(\003R\ntotalCents\022#\n\rcurrency_code\030\004 \001(\t" +
+      "R\014currencyCode\022j\n\034inventory_reservation_" +
+      "status\030\005 \001(\0162(.inventory.v1.InventoryRes" +
+      "ervationStatusR\032inventoryReservationStat" +
+      "us\022\026\n\006status\030\006 \001(\tR\006status\022\035\n\ncreated_at" +
+      "\030\007 \001(\004R\tcreatedAtBu\n\032org.megacommerce.or" +
+      "ders.v1B\017OrdersListProtoZCgithub.com/ahm" +
+      "ad-khatib0-org/megacommerce-proto/gen/go" +
+      "/orders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.inventory.v1.InventoryReservationGetProto.getDescriptor(),
-          org.megacommerce.orders.v1.OrderGetProto.getDescriptor(),
           org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
           org.megacommerce.shared.v1.PaginationProto.getDescriptor(),
         });
@@ -3950,7 +3948,6 @@ public final class OrdersListProto {
         new java.lang.String[] { "Id", "ShippingCents", "TotalCents", "CurrencyCode", "InventoryReservationStatus", "Status", "CreatedAt", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.inventory.v1.InventoryReservationGetProto.getDescriptor();
-    org.megacommerce.orders.v1.OrderGetProto.getDescriptor();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
     org.megacommerce.shared.v1.PaginationProto.getDescriptor();
   }

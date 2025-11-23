@@ -60,17 +60,21 @@ public final class OrderEventsProto {
      */
     ORDER_EVENT_ORDER_CANCELLED(6),
     /**
-     * <code>ORDER_EVENT_ORDER_REFUNDED = 7;</code>
+     * <code>ORDER_EVENT_ORDER_ITEM_REFUNDED = 7;</code>
      */
-    ORDER_EVENT_ORDER_REFUNDED(7),
+    ORDER_EVENT_ORDER_ITEM_REFUNDED(7),
     /**
-     * <code>ORDER_EVENT_INVENTORY_RESERVED = 8;</code>
+     * <code>ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED = 8;</code>
      */
-    ORDER_EVENT_INVENTORY_RESERVED(8),
+    ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED(8),
     /**
-     * <code>ORDER_EVENT_INVENTORY_RELEASED = 9;</code>
+     * <code>ORDER_EVENT_INVENTORY_RESERVED = 9;</code>
      */
-    ORDER_EVENT_INVENTORY_RELEASED(9),
+    ORDER_EVENT_INVENTORY_RESERVED(9),
+    /**
+     * <code>ORDER_EVENT_INVENTORY_RELEASED = 10;</code>
+     */
+    ORDER_EVENT_INVENTORY_RELEASED(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -112,17 +116,21 @@ public final class OrderEventsProto {
      */
     public static final int ORDER_EVENT_ORDER_CANCELLED_VALUE = 6;
     /**
-     * <code>ORDER_EVENT_ORDER_REFUNDED = 7;</code>
+     * <code>ORDER_EVENT_ORDER_ITEM_REFUNDED = 7;</code>
      */
-    public static final int ORDER_EVENT_ORDER_REFUNDED_VALUE = 7;
+    public static final int ORDER_EVENT_ORDER_ITEM_REFUNDED_VALUE = 7;
     /**
-     * <code>ORDER_EVENT_INVENTORY_RESERVED = 8;</code>
+     * <code>ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED = 8;</code>
      */
-    public static final int ORDER_EVENT_INVENTORY_RESERVED_VALUE = 8;
+    public static final int ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED_VALUE = 8;
     /**
-     * <code>ORDER_EVENT_INVENTORY_RELEASED = 9;</code>
+     * <code>ORDER_EVENT_INVENTORY_RESERVED = 9;</code>
      */
-    public static final int ORDER_EVENT_INVENTORY_RELEASED_VALUE = 9;
+    public static final int ORDER_EVENT_INVENTORY_RESERVED_VALUE = 9;
+    /**
+     * <code>ORDER_EVENT_INVENTORY_RELEASED = 10;</code>
+     */
+    public static final int ORDER_EVENT_INVENTORY_RELEASED_VALUE = 10;
 
 
     public final int getNumber() {
@@ -156,9 +164,10 @@ public final class OrderEventsProto {
         case 4: return ORDER_EVENT_ORDER_SHIPPED;
         case 5: return ORDER_EVENT_ORDER_DELIVERED;
         case 6: return ORDER_EVENT_ORDER_CANCELLED;
-        case 7: return ORDER_EVENT_ORDER_REFUNDED;
-        case 8: return ORDER_EVENT_INVENTORY_RESERVED;
-        case 9: return ORDER_EVENT_INVENTORY_RELEASED;
+        case 7: return ORDER_EVENT_ORDER_ITEM_REFUNDED;
+        case 8: return ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED;
+        case 9: return ORDER_EVENT_INVENTORY_RESERVED;
+        case 10: return ORDER_EVENT_INVENTORY_RELEASED;
         default: return null;
       }
     }
@@ -1438,18 +1447,20 @@ public final class OrderEventsProto {
       "rId\022\035\n\nevent_type\030\003 \001(\tR\teventType\0226\n\rev" +
       "ent_payload\030\004 \001(\0132\021.shared.v1.StructR\014ev" +
       "entPayload\022\035\n\ncreated_at\030\005 \001(\004R\tcreatedA" +
-      "t*\323\002\n\016OrderEventType\022\027\n\023ORDER_EVENT_UNKN" +
+      "t*\205\003\n\016OrderEventType\022\027\n\023ORDER_EVENT_UNKN" +
       "OWN\020\000\022\035\n\031ORDER_EVENT_ORDER_CREATED\020\001\022 \n\034" +
       "ORDER_EVENT_PAYMENT_CAPTURED\020\002\022\036\n\032ORDER_" +
       "EVENT_PAYMENT_FAILED\020\003\022\035\n\031ORDER_EVENT_OR" +
       "DER_SHIPPED\020\004\022\037\n\033ORDER_EVENT_ORDER_DELIV" +
       "ERED\020\005\022\037\n\033ORDER_EVENT_ORDER_CANCELLED\020\006\022" +
-      "\036\n\032ORDER_EVENT_ORDER_REFUNDED\020\007\022\"\n\036ORDER" +
-      "_EVENT_INVENTORY_RESERVED\020\010\022\"\n\036ORDER_EVE" +
-      "NT_INVENTORY_RELEASED\020\tBv\n\032org.megacomme" +
-      "rce.orders.v1B\020OrderEventsProtoZCgithub." +
-      "com/ahmad-khatib0-org/megacommerce-proto" +
-      "/gen/go/orders/v1;v1\370\001\001b\006proto3"
+      "#\n\037ORDER_EVENT_ORDER_ITEM_REFUNDED\020\007\022+\n\'" +
+      "ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED\020" +
+      "\010\022\"\n\036ORDER_EVENT_INVENTORY_RESERVED\020\t\022\"\n" +
+      "\036ORDER_EVENT_INVENTORY_RELEASED\020\nBv\n\032org" +
+      ".megacommerce.orders.v1B\020OrderEventsProt" +
+      "oZCgithub.com/ahmad-khatib0-org/megacomm" +
+      "erce-proto/gen/go/orders/v1;v1\370\001\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

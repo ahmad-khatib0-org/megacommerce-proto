@@ -82,9 +82,10 @@ enum OrderEventType : int {
   ORDER_EVENT_ORDER_SHIPPED = 4,
   ORDER_EVENT_ORDER_DELIVERED = 5,
   ORDER_EVENT_ORDER_CANCELLED = 6,
-  ORDER_EVENT_ORDER_REFUNDED = 7,
-  ORDER_EVENT_INVENTORY_RESERVED = 8,
-  ORDER_EVENT_INVENTORY_RELEASED = 9,
+  ORDER_EVENT_ORDER_ITEM_REFUNDED = 7,
+  ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED = 8,
+  ORDER_EVENT_INVENTORY_RESERVED = 9,
+  ORDER_EVENT_INVENTORY_RELEASED = 10,
   OrderEventType_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
   OrderEventType_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -95,11 +96,11 @@ extern const uint32_t OrderEventType_internal_data_[];
 inline constexpr OrderEventType OrderEventType_MIN =
     static_cast<OrderEventType>(0);
 inline constexpr OrderEventType OrderEventType_MAX =
-    static_cast<OrderEventType>(9);
+    static_cast<OrderEventType>(10);
 inline bool OrderEventType_IsValid(int value) {
-  return 0 <= value && value <= 9;
+  return 0 <= value && value <= 10;
 }
-inline constexpr int OrderEventType_ARRAYSIZE = 9 + 1;
+inline constexpr int OrderEventType_ARRAYSIZE = 10 + 1;
 const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderEventType_descriptor();
 template <typename T>
 const ::std::string& OrderEventType_Name(T value) {
@@ -110,7 +111,7 @@ const ::std::string& OrderEventType_Name(T value) {
 }
 template <>
 inline const ::std::string& OrderEventType_Name(OrderEventType value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<OrderEventType_descriptor, 0, 9>(
+  return ::google::protobuf::internal::NameOfDenseEnum<OrderEventType_descriptor, 0, 10>(
       static_cast<int>(value));
 }
 inline bool OrderEventType_Parse(

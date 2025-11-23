@@ -25,43 +25,46 @@ const (
 type OrderEventType int32
 
 const (
-	OrderEventType_ORDER_EVENT_UNKNOWN            OrderEventType = 0
-	OrderEventType_ORDER_EVENT_ORDER_CREATED      OrderEventType = 1
-	OrderEventType_ORDER_EVENT_PAYMENT_CAPTURED   OrderEventType = 2
-	OrderEventType_ORDER_EVENT_PAYMENT_FAILED     OrderEventType = 3
-	OrderEventType_ORDER_EVENT_ORDER_SHIPPED      OrderEventType = 4
-	OrderEventType_ORDER_EVENT_ORDER_DELIVERED    OrderEventType = 5
-	OrderEventType_ORDER_EVENT_ORDER_CANCELLED    OrderEventType = 6
-	OrderEventType_ORDER_EVENT_ORDER_REFUNDED     OrderEventType = 7
-	OrderEventType_ORDER_EVENT_INVENTORY_RESERVED OrderEventType = 8
-	OrderEventType_ORDER_EVENT_INVENTORY_RELEASED OrderEventType = 9
+	OrderEventType_ORDER_EVENT_UNKNOWN                     OrderEventType = 0
+	OrderEventType_ORDER_EVENT_ORDER_CREATED               OrderEventType = 1
+	OrderEventType_ORDER_EVENT_PAYMENT_CAPTURED            OrderEventType = 2
+	OrderEventType_ORDER_EVENT_PAYMENT_FAILED              OrderEventType = 3
+	OrderEventType_ORDER_EVENT_ORDER_SHIPPED               OrderEventType = 4
+	OrderEventType_ORDER_EVENT_ORDER_DELIVERED             OrderEventType = 5
+	OrderEventType_ORDER_EVENT_ORDER_CANCELLED             OrderEventType = 6
+	OrderEventType_ORDER_EVENT_ORDER_ITEM_REFUNDED         OrderEventType = 7
+	OrderEventType_ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED OrderEventType = 8
+	OrderEventType_ORDER_EVENT_INVENTORY_RESERVED          OrderEventType = 9
+	OrderEventType_ORDER_EVENT_INVENTORY_RELEASED          OrderEventType = 10
 )
 
 // Enum value maps for OrderEventType.
 var (
 	OrderEventType_name = map[int32]string{
-		0: "ORDER_EVENT_UNKNOWN",
-		1: "ORDER_EVENT_ORDER_CREATED",
-		2: "ORDER_EVENT_PAYMENT_CAPTURED",
-		3: "ORDER_EVENT_PAYMENT_FAILED",
-		4: "ORDER_EVENT_ORDER_SHIPPED",
-		5: "ORDER_EVENT_ORDER_DELIVERED",
-		6: "ORDER_EVENT_ORDER_CANCELLED",
-		7: "ORDER_EVENT_ORDER_REFUNDED",
-		8: "ORDER_EVENT_INVENTORY_RESERVED",
-		9: "ORDER_EVENT_INVENTORY_RELEASED",
+		0:  "ORDER_EVENT_UNKNOWN",
+		1:  "ORDER_EVENT_ORDER_CREATED",
+		2:  "ORDER_EVENT_PAYMENT_CAPTURED",
+		3:  "ORDER_EVENT_PAYMENT_FAILED",
+		4:  "ORDER_EVENT_ORDER_SHIPPED",
+		5:  "ORDER_EVENT_ORDER_DELIVERED",
+		6:  "ORDER_EVENT_ORDER_CANCELLED",
+		7:  "ORDER_EVENT_ORDER_ITEM_REFUNDED",
+		8:  "ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED",
+		9:  "ORDER_EVENT_INVENTORY_RESERVED",
+		10: "ORDER_EVENT_INVENTORY_RELEASED",
 	}
 	OrderEventType_value = map[string]int32{
-		"ORDER_EVENT_UNKNOWN":            0,
-		"ORDER_EVENT_ORDER_CREATED":      1,
-		"ORDER_EVENT_PAYMENT_CAPTURED":   2,
-		"ORDER_EVENT_PAYMENT_FAILED":     3,
-		"ORDER_EVENT_ORDER_SHIPPED":      4,
-		"ORDER_EVENT_ORDER_DELIVERED":    5,
-		"ORDER_EVENT_ORDER_CANCELLED":    6,
-		"ORDER_EVENT_ORDER_REFUNDED":     7,
-		"ORDER_EVENT_INVENTORY_RESERVED": 8,
-		"ORDER_EVENT_INVENTORY_RELEASED": 9,
+		"ORDER_EVENT_UNKNOWN":                     0,
+		"ORDER_EVENT_ORDER_CREATED":               1,
+		"ORDER_EVENT_PAYMENT_CAPTURED":            2,
+		"ORDER_EVENT_PAYMENT_FAILED":              3,
+		"ORDER_EVENT_ORDER_SHIPPED":               4,
+		"ORDER_EVENT_ORDER_DELIVERED":             5,
+		"ORDER_EVENT_ORDER_CANCELLED":             6,
+		"ORDER_EVENT_ORDER_ITEM_REFUNDED":         7,
+		"ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED": 8,
+		"ORDER_EVENT_INVENTORY_RESERVED":          9,
+		"ORDER_EVENT_INVENTORY_RELEASED":          10,
 	}
 )
 
@@ -181,7 +184,7 @@ const file_orders_v1_order_events_proto_rawDesc = "" +
 	"event_type\x18\x03 \x01(\tR\teventType\x126\n" +
 	"\revent_payload\x18\x04 \x01(\v2\x11.shared.v1.StructR\feventPayload\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\x04R\tcreatedAt*\xd3\x02\n" +
+	"created_at\x18\x05 \x01(\x04R\tcreatedAt*\x85\x03\n" +
 	"\x0eOrderEventType\x12\x17\n" +
 	"\x13ORDER_EVENT_UNKNOWN\x10\x00\x12\x1d\n" +
 	"\x19ORDER_EVENT_ORDER_CREATED\x10\x01\x12 \n" +
@@ -189,10 +192,12 @@ const file_orders_v1_order_events_proto_rawDesc = "" +
 	"\x1aORDER_EVENT_PAYMENT_FAILED\x10\x03\x12\x1d\n" +
 	"\x19ORDER_EVENT_ORDER_SHIPPED\x10\x04\x12\x1f\n" +
 	"\x1bORDER_EVENT_ORDER_DELIVERED\x10\x05\x12\x1f\n" +
-	"\x1bORDER_EVENT_ORDER_CANCELLED\x10\x06\x12\x1e\n" +
-	"\x1aORDER_EVENT_ORDER_REFUNDED\x10\a\x12\"\n" +
-	"\x1eORDER_EVENT_INVENTORY_RESERVED\x10\b\x12\"\n" +
-	"\x1eORDER_EVENT_INVENTORY_RELEASED\x10\tBv\n" +
+	"\x1bORDER_EVENT_ORDER_CANCELLED\x10\x06\x12#\n" +
+	"\x1fORDER_EVENT_ORDER_ITEM_REFUNDED\x10\a\x12+\n" +
+	"'ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED\x10\b\x12\"\n" +
+	"\x1eORDER_EVENT_INVENTORY_RESERVED\x10\t\x12\"\n" +
+	"\x1eORDER_EVENT_INVENTORY_RELEASED\x10\n" +
+	"Bv\n" +
 	"\x1aorg.megacommerce.orders.v1B\x10OrderEventsProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (

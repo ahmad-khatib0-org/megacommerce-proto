@@ -275,9 +275,10 @@ pub enum OrderEventType {
     OrderEventOrderShipped = 4,
     OrderEventOrderDelivered = 5,
     OrderEventOrderCancelled = 6,
-    OrderEventOrderRefunded = 7,
-    OrderEventInventoryReserved = 8,
-    OrderEventInventoryReleased = 9,
+    OrderEventOrderItemRefunded = 7,
+    OrderEventOrderItemRefundRequested = 8,
+    OrderEventInventoryReserved = 9,
+    OrderEventInventoryReleased = 10,
 }
 impl OrderEventType {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -293,7 +294,10 @@ impl OrderEventType {
             Self::OrderEventOrderShipped => "ORDER_EVENT_ORDER_SHIPPED",
             Self::OrderEventOrderDelivered => "ORDER_EVENT_ORDER_DELIVERED",
             Self::OrderEventOrderCancelled => "ORDER_EVENT_ORDER_CANCELLED",
-            Self::OrderEventOrderRefunded => "ORDER_EVENT_ORDER_REFUNDED",
+            Self::OrderEventOrderItemRefunded => "ORDER_EVENT_ORDER_ITEM_REFUNDED",
+            Self::OrderEventOrderItemRefundRequested => {
+                "ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED"
+            }
             Self::OrderEventInventoryReserved => "ORDER_EVENT_INVENTORY_RESERVED",
             Self::OrderEventInventoryReleased => "ORDER_EVENT_INVENTORY_RELEASED",
         }
@@ -308,7 +312,10 @@ impl OrderEventType {
             "ORDER_EVENT_ORDER_SHIPPED" => Some(Self::OrderEventOrderShipped),
             "ORDER_EVENT_ORDER_DELIVERED" => Some(Self::OrderEventOrderDelivered),
             "ORDER_EVENT_ORDER_CANCELLED" => Some(Self::OrderEventOrderCancelled),
-            "ORDER_EVENT_ORDER_REFUNDED" => Some(Self::OrderEventOrderRefunded),
+            "ORDER_EVENT_ORDER_ITEM_REFUNDED" => Some(Self::OrderEventOrderItemRefunded),
+            "ORDER_EVENT_ORDER_ITEM_REFUND_REQUESTED" => {
+                Some(Self::OrderEventOrderItemRefundRequested)
+            }
             "ORDER_EVENT_INVENTORY_RESERVED" => Some(Self::OrderEventInventoryReserved),
             "ORDER_EVENT_INVENTORY_RELEASED" => Some(Self::OrderEventInventoryReleased),
             _ => None,
