@@ -368,13 +368,15 @@ pub struct OrderLineItem {
     pub product_snapshot: ::core::option::Option<super::super::shared::v1::Struct>,
     #[prost(string, tag = "17")]
     pub status: ::prost::alloc::string::String,
+    #[prost(uint64, tag = "18")]
+    pub shipping_cents: u64,
     /// Timestamps
     ///
     /// UNIX timestamp
-    #[prost(uint64, tag = "18")]
+    #[prost(uint64, tag = "19")]
     pub created_at: u64,
     /// optional UNIX timestamp
-    #[prost(uint64, optional, tag = "19")]
+    #[prost(uint64, optional, tag = "20")]
     pub updated_at: ::core::option::Option<u64>,
 }
 /// Order status

@@ -109,6 +109,7 @@ export interface OrderLineItem {
   /** full product snapshot for audit/debug */
   productSnapshot?: Struct | undefined;
   status: string;
+  shippingCents: string;
   /** Timestamps */
   createdAt: string;
   /** optional UNIX timestamp */
@@ -139,6 +140,7 @@ function createBaseOrderLineItem(): OrderLineItem {
     appliedOfferIds: [],
     productSnapshot: undefined,
     status: "",
+    shippingCents: "0",
     createdAt: "0",
     updatedAt: undefined,
   };
@@ -197,11 +199,14 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     if (message.status !== "") {
       writer.uint32(138).string(message.status);
     }
+    if (message.shippingCents !== "0") {
+      writer.uint32(144).uint64(message.shippingCents);
+    }
     if (message.createdAt !== "0") {
-      writer.uint32(144).uint64(message.createdAt);
+      writer.uint32(152).uint64(message.createdAt);
     }
     if (message.updatedAt !== undefined) {
-      writer.uint32(152).uint64(message.updatedAt);
+      writer.uint32(160).uint64(message.updatedAt);
     }
     return writer;
   },
@@ -357,11 +362,19 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
             break;
           }
 
-          message.createdAt = reader.uint64().toString();
+          message.shippingCents = reader.uint64().toString();
           continue;
         }
         case 19: {
           if (tag !== 152) {
+            break;
+          }
+
+          message.createdAt = reader.uint64().toString();
+          continue;
+        }
+        case 20: {
+          if (tag !== 160) {
             break;
           }
 
@@ -403,6 +416,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
         : [],
       productSnapshot: isSet(object.productSnapshot) ? Struct.fromJSON(object.productSnapshot) : undefined,
       status: isSet(object.status) ? globalThis.String(object.status) : "",
+      shippingCents: isSet(object.shippingCents) ? globalThis.String(object.shippingCents) : "0",
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
       updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : undefined,
     };
@@ -467,6 +481,9 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     if (message.status !== "") {
       obj.status = message.status;
     }
+    if (message.shippingCents !== "0") {
+      obj.shippingCents = message.shippingCents;
+    }
     if (message.createdAt !== "0") {
       obj.createdAt = message.createdAt;
     }
@@ -508,6 +525,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
       ? Struct.fromPartial(object.productSnapshot)
       : undefined;
     message.status = object.status ?? "";
+    message.shippingCents = object.shippingCents ?? "0";
     message.createdAt = object.createdAt ?? "0";
     message.updatedAt = object.updatedAt ?? undefined;
     return message;

@@ -508,11 +508,17 @@ java.lang.String defaultValue);
         getStatusBytes();
 
     /**
+     * <code>uint64 shipping_cents = 18 [json_name = "shippingCents"];</code>
+     * @return The shippingCents.
+     */
+    long getShippingCents();
+
+    /**
      * <pre>
      * Timestamps
      * </pre>
      *
-     * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 19 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
@@ -522,7 +528,7 @@ java.lang.String defaultValue);
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 20 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     boolean hasUpdatedAt();
@@ -531,7 +537,7 @@ java.lang.String defaultValue);
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 20 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
@@ -1203,14 +1209,25 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 18;
+    public static final int SHIPPING_CENTS_FIELD_NUMBER = 18;
+    private long shippingCents_ = 0L;
+    /**
+     * <code>uint64 shipping_cents = 18 [json_name = "shippingCents"];</code>
+     * @return The shippingCents.
+     */
+    @java.lang.Override
+    public long getShippingCents() {
+      return shippingCents_;
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 19;
     private long createdAt_ = 0L;
     /**
      * <pre>
      * Timestamps
      * </pre>
      *
-     * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 19 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -1218,14 +1235,14 @@ java.lang.String defaultValue) {
       return createdAt_;
     }
 
-    public static final int UPDATED_AT_FIELD_NUMBER = 19;
+    public static final int UPDATED_AT_FIELD_NUMBER = 20;
     private long updatedAt_ = 0L;
     /**
      * <pre>
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 20 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     @java.lang.Override
@@ -1237,7 +1254,7 @@ java.lang.String defaultValue) {
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 20 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -1313,11 +1330,14 @@ java.lang.String defaultValue) {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 17, status_);
       }
+      if (shippingCents_ != 0L) {
+        output.writeUInt64(18, shippingCents_);
+      }
       if (createdAt_ != 0L) {
-        output.writeUInt64(18, createdAt_);
+        output.writeUInt64(19, createdAt_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeUInt64(19, updatedAt_);
+        output.writeUInt64(20, updatedAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1399,13 +1419,17 @@ java.lang.String defaultValue) {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(17, status_);
       }
+      if (shippingCents_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(18, shippingCents_);
+      }
       if (createdAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(18, createdAt_);
+          .computeUInt64Size(19, createdAt_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(19, updatedAt_);
+          .computeUInt64Size(20, updatedAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1468,6 +1492,8 @@ java.lang.String defaultValue) {
       }
       if (!getStatus()
           .equals(other.getStatus())) return false;
+      if (getShippingCents()
+          != other.getShippingCents()) return false;
       if (getCreatedAt()
           != other.getCreatedAt()) return false;
       if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
@@ -1538,6 +1564,9 @@ java.lang.String defaultValue) {
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + SHIPPING_CENTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShippingCents());
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreatedAt());
@@ -1727,6 +1756,7 @@ java.lang.String defaultValue) {
           productSnapshotBuilder_ = null;
         }
         status_ = "";
+        shippingCents_ = 0L;
         createdAt_ = 0L;
         updatedAt_ = 0L;
         return this;
@@ -1823,9 +1853,12 @@ java.lang.String defaultValue) {
           result.status_ = status_;
         }
         if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.createdAt_ = createdAt_;
+          result.shippingCents_ = shippingCents_;
         }
         if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.createdAt_ = createdAt_;
+        }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
           result.updatedAt_ = updatedAt_;
           to_bitField0_ |= 0x00000010;
         }
@@ -1915,6 +1948,9 @@ java.lang.String defaultValue) {
           status_ = other.status_;
           bitField0_ |= 0x00010000;
           onChanged();
+        }
+        if (other.getShippingCents() != 0L) {
+          setShippingCents(other.getShippingCents());
         }
         if (other.getCreatedAt() != 0L) {
           setCreatedAt(other.getCreatedAt());
@@ -2041,15 +2077,20 @@ java.lang.String defaultValue) {
                 break;
               } // case 138
               case 144: {
-                createdAt_ = input.readUInt64();
+                shippingCents_ = input.readUInt64();
                 bitField0_ |= 0x00020000;
                 break;
               } // case 144
               case 152: {
-                updatedAt_ = input.readUInt64();
+                createdAt_ = input.readUInt64();
                 bitField0_ |= 0x00040000;
                 break;
               } // case 152
+              case 160: {
+                updatedAt_ = input.readUInt64();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 160
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3394,13 +3435,45 @@ java.lang.String defaultValue) {
         return this;
       }
 
+      private long shippingCents_ ;
+      /**
+       * <code>uint64 shipping_cents = 18 [json_name = "shippingCents"];</code>
+       * @return The shippingCents.
+       */
+      @java.lang.Override
+      public long getShippingCents() {
+        return shippingCents_;
+      }
+      /**
+       * <code>uint64 shipping_cents = 18 [json_name = "shippingCents"];</code>
+       * @param value The shippingCents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShippingCents(long value) {
+
+        shippingCents_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 shipping_cents = 18 [json_name = "shippingCents"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShippingCents() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        shippingCents_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private long createdAt_ ;
       /**
        * <pre>
        * Timestamps
        * </pre>
        *
-       * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 19 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -3412,14 +3485,14 @@ java.lang.String defaultValue) {
        * Timestamps
        * </pre>
        *
-       * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 19 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
       public Builder setCreatedAt(long value) {
 
         createdAt_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -3428,11 +3501,11 @@ java.lang.String defaultValue) {
        * Timestamps
        * </pre>
        *
-       * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 19 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         createdAt_ = 0L;
         onChanged();
         return this;
@@ -3444,19 +3517,19 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 20 [json_name = "updatedAt"];</code>
        * @return Whether the updatedAt field is set.
        */
       @java.lang.Override
       public boolean hasUpdatedAt() {
-        return ((bitField0_ & 0x00040000) != 0);
+        return ((bitField0_ & 0x00080000) != 0);
       }
       /**
        * <pre>
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 20 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -3468,14 +3541,14 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 20 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
       public Builder setUpdatedAt(long value) {
 
         updatedAt_ = value;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -3484,11 +3557,11 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 20 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         updatedAt_ = 0L;
         onChanged();
         return this;
@@ -3565,7 +3638,7 @@ java.lang.String defaultValue) {
   static {
     java.lang.String[] descriptorData = {
       "\n orders/v1/order_line_items.proto\022\torde" +
-      "rs.v1\032\026shared/v1/struct.proto\"\310\006\n\rOrderL" +
+      "rs.v1\032\026shared/v1/struct.proto\"\357\006\n\rOrderL" +
       "ineItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001(" +
       "\tR\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tproductI" +
       "d\022\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\020\n\003sku\030" +
@@ -3581,23 +3654,24 @@ java.lang.String defaultValue) {
       " \001(\004R\ntotalCents\022*\n\021applied_offer_ids\030\017 " +
       "\003(\tR\017appliedOfferIds\022<\n\020product_snapshot" +
       "\030\020 \001(\0132\021.shared.v1.StructR\017productSnapsh" +
-      "ot\022\026\n\006status\030\021 \001(\tR\006status\022\035\n\ncreated_at" +
-      "\030\022 \001(\004R\tcreatedAt\022\"\n\nupdated_at\030\023 \001(\004H\003R" +
-      "\tupdatedAt\210\001\001\032=\n\017AttributesEntry\022\020\n\003key\030" +
-      "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\023\n\021" +
-      "_list_price_centsB\023\n\021_sale_price_centsB\021" +
-      "\n\017_discount_centsB\r\n\013_updated_at*\241\002\n\023Ord" +
-      "erLineItemStatus\022\"\n\036ORDER_LINE_ITEM_STAT" +
-      "US_CREATED\020\000\022$\n ORDER_LINE_ITEM_STATUS_C" +
-      "ONFIRMED\020\001\022\"\n\036ORDER_LINE_ITEM_STATUS_SHI" +
-      "PPED\020\002\022$\n ORDER_LINE_ITEM_STATUS_DELIVER" +
-      "ED\020\003\022$\n ORDER_LINE_ITEM_STATUS_CANCELLED" +
-      "\020\004\022#\n\037ORDER_LINE_ITEM_STATUS_REFUNDED\020\005\022" +
-      "+\n\'ORDER_LINE_ITEM_STATUS_REFUND_REQUEST" +
-      "ED\020\006By\n\032org.megacommerce.orders.v1B\023Orde" +
-      "rLineItemsProtoZCgithub.com/ahmad-khatib" +
-      "0-org/megacommerce-proto/gen/go/orders/v" +
-      "1;v1\370\001\001b\006proto3"
+      "ot\022\026\n\006status\030\021 \001(\tR\006status\022%\n\016shipping_c" +
+      "ents\030\022 \001(\004R\rshippingCents\022\035\n\ncreated_at\030" +
+      "\023 \001(\004R\tcreatedAt\022\"\n\nupdated_at\030\024 \001(\004H\003R\t" +
+      "updatedAt\210\001\001\032=\n\017AttributesEntry\022\020\n\003key\030\001" +
+      " \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\023\n\021_" +
+      "list_price_centsB\023\n\021_sale_price_centsB\021\n" +
+      "\017_discount_centsB\r\n\013_updated_at*\241\002\n\023Orde" +
+      "rLineItemStatus\022\"\n\036ORDER_LINE_ITEM_STATU" +
+      "S_CREATED\020\000\022$\n ORDER_LINE_ITEM_STATUS_CO" +
+      "NFIRMED\020\001\022\"\n\036ORDER_LINE_ITEM_STATUS_SHIP" +
+      "PED\020\002\022$\n ORDER_LINE_ITEM_STATUS_DELIVERE" +
+      "D\020\003\022$\n ORDER_LINE_ITEM_STATUS_CANCELLED\020" +
+      "\004\022#\n\037ORDER_LINE_ITEM_STATUS_REFUNDED\020\005\022+" +
+      "\n\'ORDER_LINE_ITEM_STATUS_REFUND_REQUESTE" +
+      "D\020\006By\n\032org.megacommerce.orders.v1B\023Order" +
+      "LineItemsProtoZCgithub.com/ahmad-khatib0" +
+      "-org/megacommerce-proto/gen/go/orders/v1" +
+      ";v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3609,7 +3683,7 @@ java.lang.String defaultValue) {
     internal_static_orders_v1_OrderLineItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_orders_v1_OrderLineItem_descriptor,
-        new java.lang.String[] { "Id", "OrderId", "ProductId", "VariantId", "Sku", "Title", "Attributes", "Quantity", "UnitPriceCents", "ListPriceCents", "SalePriceCents", "DiscountCents", "TaxCents", "TotalCents", "AppliedOfferIds", "ProductSnapshot", "Status", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "OrderId", "ProductId", "VariantId", "Sku", "Title", "Attributes", "Quantity", "UnitPriceCents", "ListPriceCents", "SalePriceCents", "DiscountCents", "TaxCents", "TotalCents", "AppliedOfferIds", "ProductSnapshot", "Status", "ShippingCents", "CreatedAt", "UpdatedAt", });
     internal_static_orders_v1_OrderLineItem_AttributesEntry_descriptor =
       internal_static_orders_v1_OrderLineItem_descriptor.getNestedTypes().get(0);
     internal_static_orders_v1_OrderLineItem_AttributesEntry_fieldAccessorTable = new

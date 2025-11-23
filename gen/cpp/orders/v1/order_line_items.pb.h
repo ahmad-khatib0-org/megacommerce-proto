@@ -327,8 +327,9 @@ class OrderLineItem final : public ::google::protobuf::Message
     kDiscountCentsFieldNumber = 12,
     kTaxCentsFieldNumber = 13,
     kTotalCentsFieldNumber = 14,
-    kCreatedAtFieldNumber = 18,
-    kUpdatedAtFieldNumber = 19,
+    kShippingCentsFieldNumber = 18,
+    kCreatedAtFieldNumber = 19,
+    kUpdatedAtFieldNumber = 20,
     kQuantityFieldNumber = 8,
   };
   // map<string, string> attributes = 7 [json_name = "attributes"];
@@ -551,7 +552,17 @@ class OrderLineItem final : public ::google::protobuf::Message
   void _internal_set_total_cents(::uint64_t value);
 
   public:
-  // uint64 created_at = 18 [json_name = "createdAt"];
+  // uint64 shipping_cents = 18 [json_name = "shippingCents"];
+  void clear_shipping_cents() ;
+  ::uint64_t shipping_cents() const;
+  void set_shipping_cents(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_shipping_cents() const;
+  void _internal_set_shipping_cents(::uint64_t value);
+
+  public:
+  // uint64 created_at = 19 [json_name = "createdAt"];
   void clear_created_at() ;
   ::uint64_t created_at() const;
   void set_created_at(::uint64_t value);
@@ -561,7 +572,7 @@ class OrderLineItem final : public ::google::protobuf::Message
   void _internal_set_created_at(::uint64_t value);
 
   public:
-  // optional uint64 updated_at = 19 [json_name = "updatedAt"];
+  // optional uint64 updated_at = 20 [json_name = "updatedAt"];
   bool has_updated_at() const;
   void clear_updated_at() ;
   ::uint64_t updated_at() const;
@@ -586,7 +597,7 @@ class OrderLineItem final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 19,
+  static const ::google::protobuf::internal::TcParseTable<5, 20,
                                    2, 119,
                                    2>
       _table_;
@@ -627,6 +638,7 @@ class OrderLineItem final : public ::google::protobuf::Message
     ::uint64_t discount_cents_;
     ::uint64_t tax_cents_;
     ::uint64_t total_cents_;
+    ::uint64_t shipping_cents_;
     ::uint64_t created_at_;
     ::uint64_t updated_at_;
     ::int32_t quantity_;
@@ -1079,7 +1091,7 @@ inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL Order
 inline void OrderLineItem::clear_quantity() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_ = 0;
-  _impl_._has_bits_[0] &= ~0x00010000u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
 }
 inline ::int32_t OrderLineItem::quantity() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.quantity)
@@ -1087,7 +1099,7 @@ inline ::int32_t OrderLineItem::quantity() const {
 }
 inline void OrderLineItem::set_quantity(::int32_t value) {
   _internal_set_quantity(value);
-  _impl_._has_bits_[0] |= 0x00010000u;
+  _impl_._has_bits_[0] |= 0x00020000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.quantity)
 }
 inline ::int32_t OrderLineItem::_internal_quantity() const {
@@ -1477,11 +1489,35 @@ inline void OrderLineItem::set_allocated_status(::std::string* PROTOBUF_NULLABLE
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineItem.status)
 }
 
-// uint64 created_at = 18 [json_name = "createdAt"];
+// uint64 shipping_cents = 18 [json_name = "shippingCents"];
+inline void OrderLineItem::clear_shipping_cents() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.shipping_cents_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00004000u;
+}
+inline ::uint64_t OrderLineItem::shipping_cents() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.shipping_cents)
+  return _internal_shipping_cents();
+}
+inline void OrderLineItem::set_shipping_cents(::uint64_t value) {
+  _internal_set_shipping_cents(value);
+  _impl_._has_bits_[0] |= 0x00004000u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.shipping_cents)
+}
+inline ::uint64_t OrderLineItem::_internal_shipping_cents() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.shipping_cents_;
+}
+inline void OrderLineItem::_internal_set_shipping_cents(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.shipping_cents_ = value;
+}
+
+// uint64 created_at = 19 [json_name = "createdAt"];
 inline void OrderLineItem::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00004000u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 inline ::uint64_t OrderLineItem::created_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.created_at)
@@ -1489,7 +1525,7 @@ inline ::uint64_t OrderLineItem::created_at() const {
 }
 inline void OrderLineItem::set_created_at(::uint64_t value) {
   _internal_set_created_at(value);
-  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_._has_bits_[0] |= 0x00008000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.created_at)
 }
 inline ::uint64_t OrderLineItem::_internal_created_at() const {
@@ -1501,15 +1537,15 @@ inline void OrderLineItem::_internal_set_created_at(::uint64_t value) {
   _impl_.created_at_ = value;
 }
 
-// optional uint64 updated_at = 19 [json_name = "updatedAt"];
+// optional uint64 updated_at = 20 [json_name = "updatedAt"];
 inline bool OrderLineItem::has_updated_at() const {
-  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline void OrderLineItem::clear_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00008000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
 }
 inline ::uint64_t OrderLineItem::updated_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.updated_at)
@@ -1517,7 +1553,7 @@ inline ::uint64_t OrderLineItem::updated_at() const {
 }
 inline void OrderLineItem::set_updated_at(::uint64_t value) {
   _internal_set_updated_at(value);
-  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_._has_bits_[0] |= 0x00010000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.updated_at)
 }
 inline ::uint64_t OrderLineItem::_internal_updated_at() const {

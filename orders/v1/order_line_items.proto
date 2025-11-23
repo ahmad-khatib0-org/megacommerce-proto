@@ -36,10 +36,11 @@ message OrderLineItem {
   // full product snapshot for audit/debug
   shared.v1.Struct product_snapshot = 16;
   string status = 17;
+  uint64 shipping_cents = 18;
 
   // Timestamps
-  uint64 created_at = 18; // UNIX timestamp
-  optional uint64 updated_at = 19; // optional UNIX timestamp
+  uint64 created_at = 19; // UNIX timestamp
+  optional uint64 updated_at = 20; // optional UNIX timestamp
 }
 
 // Order status
