@@ -19,17 +19,34 @@ export interface OrderRefundResponse {
 export interface OrderRefundRequest {
   orderId: string;
   /** refund whole order or specific line items */
-  lineItems: RefundLineItemRefund[];
+  lineItems?:
+    | RefundLineItemRefund
+    | undefined;
   /** reason code, external refund id, etc. */
   reason: string;
   refundShipping: boolean;
 }
 
 export interface RefundLineItemRefund {
-  /** link to OrderLineItem.line_id */
-  lineId: string;
+  /** link to OrderLineItem.id */
+  id: string;
   quantity: number;
-  /** amount to refund in minor units (cents). If zero, compute pro-rata. */
+  /**
+   * amount to refund in minor units (cents). If zero, compute pro-rata.
+   *
+   * **Pro-rata refund** = Refund proportional to the original price distribution.
+   *
+   * **Example:**
+   * - Order total: $100 ($60 Item A + $40 Item B)
+   * - Shipping: $10
+   * - You refund Item B ($40)
+   * - Pro-rata calculation: Item B was 40% of product total ($40/$100)
+   * - Refund: $40 (item) + $4 (40% of shipping) = **$44 total refund**
+   *
+   * **Without pro-rata:** You'd only refund $40 (lose shipping cost)
+   *
+   * **Used when:** Partial refunds where shipping/taxes/fees need to be fairly distributed.
+   */
   amountCents?: string | undefined;
 }
 
@@ -114,7 +131,7 @@ export const OrderRefundResponse: MessageFns<OrderRefundResponse> = {
 };
 
 function createBaseOrderRefundRequest(): OrderRefundRequest {
-  return { orderId: "", lineItems: [], reason: "", refundShipping: false };
+  return { orderId: "", lineItems: undefined, reason: "", refundShipping: false };
 }
 
 export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
@@ -122,8 +139,8 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
     if (message.orderId !== "") {
       writer.uint32(10).string(message.orderId);
     }
-    for (const v of message.lineItems) {
-      RefundLineItemRefund.encode(v!, writer.uint32(18).fork()).join();
+    if (message.lineItems !== undefined) {
+      RefundLineItemRefund.encode(message.lineItems, writer.uint32(18).fork()).join();
     }
     if (message.reason !== "") {
       writer.uint32(26).string(message.reason);
@@ -154,7 +171,7 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
             break;
           }
 
-          message.lineItems.push(RefundLineItemRefund.decode(reader, reader.uint32()));
+          message.lineItems = RefundLineItemRefund.decode(reader, reader.uint32());
           continue;
         }
         case 3: {
@@ -185,9 +202,7 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
   fromJSON(object: any): OrderRefundRequest {
     return {
       orderId: isSet(object.orderId) ? globalThis.String(object.orderId) : "",
-      lineItems: globalThis.Array.isArray(object?.lineItems)
-        ? object.lineItems.map((e: any) => RefundLineItemRefund.fromJSON(e))
-        : [],
+      lineItems: isSet(object.lineItems) ? RefundLineItemRefund.fromJSON(object.lineItems) : undefined,
       reason: isSet(object.reason) ? globalThis.String(object.reason) : "",
       refundShipping: isSet(object.refundShipping) ? globalThis.Boolean(object.refundShipping) : false,
     };
@@ -198,8 +213,8 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
     if (message.orderId !== "") {
       obj.orderId = message.orderId;
     }
-    if (message.lineItems?.length) {
-      obj.lineItems = message.lineItems.map((e) => RefundLineItemRefund.toJSON(e));
+    if (message.lineItems !== undefined) {
+      obj.lineItems = RefundLineItemRefund.toJSON(message.lineItems);
     }
     if (message.reason !== "") {
       obj.reason = message.reason;
@@ -216,7 +231,9 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
   fromPartial<I extends Exact<DeepPartial<OrderRefundRequest>, I>>(object: I): OrderRefundRequest {
     const message = createBaseOrderRefundRequest();
     message.orderId = object.orderId ?? "";
-    message.lineItems = object.lineItems?.map((e) => RefundLineItemRefund.fromPartial(e)) || [];
+    message.lineItems = (object.lineItems !== undefined && object.lineItems !== null)
+      ? RefundLineItemRefund.fromPartial(object.lineItems)
+      : undefined;
     message.reason = object.reason ?? "";
     message.refundShipping = object.refundShipping ?? false;
     return message;
@@ -224,13 +241,13 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
 };
 
 function createBaseRefundLineItemRefund(): RefundLineItemRefund {
-  return { lineId: "", quantity: 0, amountCents: undefined };
+  return { id: "", quantity: 0, amountCents: undefined };
 }
 
 export const RefundLineItemRefund: MessageFns<RefundLineItemRefund> = {
   encode(message: RefundLineItemRefund, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.lineId !== "") {
-      writer.uint32(10).string(message.lineId);
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
     }
     if (message.quantity !== 0) {
       writer.uint32(16).uint32(message.quantity);
@@ -253,7 +270,7 @@ export const RefundLineItemRefund: MessageFns<RefundLineItemRefund> = {
             break;
           }
 
-          message.lineId = reader.string();
+          message.id = reader.string();
           continue;
         }
         case 2: {
@@ -283,7 +300,7 @@ export const RefundLineItemRefund: MessageFns<RefundLineItemRefund> = {
 
   fromJSON(object: any): RefundLineItemRefund {
     return {
-      lineId: isSet(object.lineId) ? globalThis.String(object.lineId) : "",
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
       quantity: isSet(object.quantity) ? globalThis.Number(object.quantity) : 0,
       amountCents: isSet(object.amountCents) ? globalThis.String(object.amountCents) : undefined,
     };
@@ -291,8 +308,8 @@ export const RefundLineItemRefund: MessageFns<RefundLineItemRefund> = {
 
   toJSON(message: RefundLineItemRefund): unknown {
     const obj: any = {};
-    if (message.lineId !== "") {
-      obj.lineId = message.lineId;
+    if (message.id !== "") {
+      obj.id = message.id;
     }
     if (message.quantity !== 0) {
       obj.quantity = Math.round(message.quantity);
@@ -308,7 +325,7 @@ export const RefundLineItemRefund: MessageFns<RefundLineItemRefund> = {
   },
   fromPartial<I extends Exact<DeepPartial<RefundLineItemRefund>, I>>(object: I): RefundLineItemRefund {
     const message = createBaseRefundLineItemRefund();
-    message.lineId = object.lineId ?? "";
+    message.id = object.id ?? "";
     message.quantity = object.quantity ?? 0;
     message.amountCents = object.amountCents ?? undefined;
     return message;

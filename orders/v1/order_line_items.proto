@@ -35,8 +35,20 @@ message OrderLineItem {
 
   // full product snapshot for audit/debug
   shared.v1.Struct product_snapshot = 16;
+  string status = 17;
 
   // Timestamps
-  uint64 created_at = 17; // UNIX timestamp
-  optional uint64 updated_at = 18; // optional UNIX timestamp
+  uint64 created_at = 18; // UNIX timestamp
+  optional uint64 updated_at = 19; // optional UNIX timestamp
+}
+
+// Order status
+enum OrderLineItemStatus {
+  ORDER_LINE_ITEM_STATUS_CREATED = 0;
+  ORDER_LINE_ITEM_STATUS_CONFIRMED = 1;
+  ORDER_LINE_ITEM_STATUS_SHIPPED = 2;
+  ORDER_LINE_ITEM_STATUS_DELIVERED = 3;
+  ORDER_LINE_ITEM_STATUS_CANCELLED = 4;
+  ORDER_LINE_ITEM_STATUS_REFUNDED = 5;
+  ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED = 6;
 }

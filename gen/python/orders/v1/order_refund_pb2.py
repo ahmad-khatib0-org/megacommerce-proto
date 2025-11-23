@@ -26,7 +26,7 @@ from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1corders/v1/order_refund.proto\x12\torders.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"w\n\x13OrderRefundResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\x84\x01\n\x12OrderRefundRequest\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12\x33\n\nline_items\x18\x02 \x03(\x0b\x32\x1f.orders.v1.RefundLineItemRefund\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12\x17\n\x0frefund_shipping\x18\x04 \x01(\x08\"e\n\x14RefundLineItemRefund\x12\x0f\n\x07line_id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\r\x12\x19\n\x0c\x61mount_cents\x18\x03 \x01(\x04H\x00\x88\x01\x01\x42\x0f\n\r_amount_centsBv\n\x1aorg.megacommerce.orders.v1B\x10OrderRefundProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1corders/v1/order_refund.proto\x12\torders.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"w\n\x13OrderRefundResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\x84\x01\n\x12OrderRefundRequest\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12\x33\n\nline_items\x18\x02 \x01(\x0b\x32\x1f.orders.v1.RefundLineItemRefund\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12\x17\n\x0frefund_shipping\x18\x04 \x01(\x08\"`\n\x14RefundLineItemRefund\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\r\x12\x19\n\x0c\x61mount_cents\x18\x03 \x01(\x04H\x00\x88\x01\x01\x42\x0f\n\r_amount_centsBv\n\x1aorg.megacommerce.orders.v1B\x10OrderRefundProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,5 +39,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ORDERREFUNDREQUEST']._serialized_start=211
   _globals['_ORDERREFUNDREQUEST']._serialized_end=343
   _globals['_REFUNDLINEITEMREFUND']._serialized_start=345
-  _globals['_REFUNDLINEITEMREFUND']._serialized_end=446
+  _globals['_REFUNDLINEITEMREFUND']._serialized_end=441
 # @@protoc_insertion_point(module_scope)

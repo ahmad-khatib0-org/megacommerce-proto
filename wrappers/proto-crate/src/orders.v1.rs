@@ -366,14 +366,59 @@ pub struct OrderLineItem {
     /// full product snapshot for audit/debug
     #[prost(message, optional, tag = "16")]
     pub product_snapshot: ::core::option::Option<super::super::shared::v1::Struct>,
+    #[prost(string, tag = "17")]
+    pub status: ::prost::alloc::string::String,
     /// Timestamps
     ///
     /// UNIX timestamp
-    #[prost(uint64, tag = "17")]
+    #[prost(uint64, tag = "18")]
     pub created_at: u64,
     /// optional UNIX timestamp
-    #[prost(uint64, optional, tag = "18")]
+    #[prost(uint64, optional, tag = "19")]
     pub updated_at: ::core::option::Option<u64>,
+}
+/// Order status
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum OrderLineItemStatus {
+    Created = 0,
+    Confirmed = 1,
+    Shipped = 2,
+    Delivered = 3,
+    Cancelled = 4,
+    Refunded = 5,
+    RefundRequested = 6,
+}
+impl OrderLineItemStatus {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Created => "ORDER_LINE_ITEM_STATUS_CREATED",
+            Self::Confirmed => "ORDER_LINE_ITEM_STATUS_CONFIRMED",
+            Self::Shipped => "ORDER_LINE_ITEM_STATUS_SHIPPED",
+            Self::Delivered => "ORDER_LINE_ITEM_STATUS_DELIVERED",
+            Self::Cancelled => "ORDER_LINE_ITEM_STATUS_CANCELLED",
+            Self::Refunded => "ORDER_LINE_ITEM_STATUS_REFUNDED",
+            Self::RefundRequested => "ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "ORDER_LINE_ITEM_STATUS_CREATED" => Some(Self::Created),
+            "ORDER_LINE_ITEM_STATUS_CONFIRMED" => Some(Self::Confirmed),
+            "ORDER_LINE_ITEM_STATUS_SHIPPED" => Some(Self::Shipped),
+            "ORDER_LINE_ITEM_STATUS_DELIVERED" => Some(Self::Delivered),
+            "ORDER_LINE_ITEM_STATUS_CANCELLED" => Some(Self::Cancelled),
+            "ORDER_LINE_ITEM_STATUS_REFUNDED" => Some(Self::Refunded),
+            "ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED" => Some(Self::RefundRequested),
+            _ => None,
+        }
+    }
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -560,8 +605,8 @@ pub struct OrderRefundRequest {
     #[prost(string, tag = "1")]
     pub order_id: ::prost::alloc::string::String,
     /// refund whole order or specific line items
-    #[prost(message, repeated, tag = "2")]
-    pub line_items: ::prost::alloc::vec::Vec<RefundLineItemRefund>,
+    #[prost(message, optional, tag = "2")]
+    pub line_items: ::core::option::Option<RefundLineItemRefund>,
     /// reason code, external refund id, etc.
     #[prost(string, tag = "3")]
     pub reason: ::prost::alloc::string::String,
@@ -571,12 +616,25 @@ pub struct OrderRefundRequest {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RefundLineItemRefund {
-    /// link to OrderLineItem.line_id
+    /// link to OrderLineItem.id
     #[prost(string, tag = "1")]
-    pub line_id: ::prost::alloc::string::String,
+    pub id: ::prost::alloc::string::String,
     #[prost(uint32, tag = "2")]
     pub quantity: u32,
     /// amount to refund in minor units (cents). If zero, compute pro-rata.
+    ///
+    /// **Pro-rata refund** = Refund proportional to the original price distribution.
+    ///
+    /// **Example:**
+    /// - Order total: $100 ($60 Item A + $40 Item B)
+    /// - Shipping: $10
+    /// - You refund Item B ($40)
+    /// - Pro-rata calculation: Item B was 40% of product total ($40/$100)
+    /// - Refund: $40 (item) + $4 (40% of shipping) = **$44 total refund**
+    ///
+    /// **Without pro-rata:** You'd only refund $40 (lose shipping cost)
+    ///
+    /// **Used when:** Partial refunds where shipping/taxes/fees need to be fairly distributed.
     #[prost(uint64, optional, tag = "3")]
     pub amount_cents: ::core::option::Option<u64>,
 }

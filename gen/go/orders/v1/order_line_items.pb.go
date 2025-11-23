@@ -22,6 +22,68 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Order status
+type OrderLineItemStatus int32
+
+const (
+	OrderLineItemStatus_ORDER_LINE_ITEM_STATUS_CREATED          OrderLineItemStatus = 0
+	OrderLineItemStatus_ORDER_LINE_ITEM_STATUS_CONFIRMED        OrderLineItemStatus = 1
+	OrderLineItemStatus_ORDER_LINE_ITEM_STATUS_SHIPPED          OrderLineItemStatus = 2
+	OrderLineItemStatus_ORDER_LINE_ITEM_STATUS_DELIVERED        OrderLineItemStatus = 3
+	OrderLineItemStatus_ORDER_LINE_ITEM_STATUS_CANCELLED        OrderLineItemStatus = 4
+	OrderLineItemStatus_ORDER_LINE_ITEM_STATUS_REFUNDED         OrderLineItemStatus = 5
+	OrderLineItemStatus_ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED OrderLineItemStatus = 6
+)
+
+// Enum value maps for OrderLineItemStatus.
+var (
+	OrderLineItemStatus_name = map[int32]string{
+		0: "ORDER_LINE_ITEM_STATUS_CREATED",
+		1: "ORDER_LINE_ITEM_STATUS_CONFIRMED",
+		2: "ORDER_LINE_ITEM_STATUS_SHIPPED",
+		3: "ORDER_LINE_ITEM_STATUS_DELIVERED",
+		4: "ORDER_LINE_ITEM_STATUS_CANCELLED",
+		5: "ORDER_LINE_ITEM_STATUS_REFUNDED",
+		6: "ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED",
+	}
+	OrderLineItemStatus_value = map[string]int32{
+		"ORDER_LINE_ITEM_STATUS_CREATED":          0,
+		"ORDER_LINE_ITEM_STATUS_CONFIRMED":        1,
+		"ORDER_LINE_ITEM_STATUS_SHIPPED":          2,
+		"ORDER_LINE_ITEM_STATUS_DELIVERED":        3,
+		"ORDER_LINE_ITEM_STATUS_CANCELLED":        4,
+		"ORDER_LINE_ITEM_STATUS_REFUNDED":         5,
+		"ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED": 6,
+	}
+)
+
+func (x OrderLineItemStatus) Enum() *OrderLineItemStatus {
+	p := new(OrderLineItemStatus)
+	*p = x
+	return p
+}
+
+func (x OrderLineItemStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (OrderLineItemStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_orders_v1_order_line_items_proto_enumTypes[0].Descriptor()
+}
+
+func (OrderLineItemStatus) Type() protoreflect.EnumType {
+	return &file_orders_v1_order_line_items_proto_enumTypes[0]
+}
+
+func (x OrderLineItemStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use OrderLineItemStatus.Descriptor instead.
+func (OrderLineItemStatus) EnumDescriptor() ([]byte, []int) {
+	return file_orders_v1_order_line_items_proto_rawDescGZIP(), []int{0}
+}
+
 type OrderLineItem struct {
 	state     protoimpl.MessageState `protogen:"open.v1"`
 	Id        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -44,9 +106,10 @@ type OrderLineItem struct {
 	AppliedOfferIds []string `protobuf:"bytes,15,rep,name=applied_offer_ids,json=appliedOfferIds,proto3" json:"applied_offer_ids,omitempty"`
 	// full product snapshot for audit/debug
 	ProductSnapshot *v1.Struct `protobuf:"bytes,16,opt,name=product_snapshot,json=productSnapshot,proto3" json:"product_snapshot,omitempty"`
+	Status          string     `protobuf:"bytes,17,opt,name=status,proto3" json:"status,omitempty"`
 	// Timestamps
-	CreatedAt     uint64  `protobuf:"varint,17,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`       // UNIX timestamp
-	UpdatedAt     *uint64 `protobuf:"varint,18,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"` // optional UNIX timestamp
+	CreatedAt     uint64  `protobuf:"varint,18,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`       // UNIX timestamp
+	UpdatedAt     *uint64 `protobuf:"varint,19,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"` // optional UNIX timestamp
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -193,6 +256,13 @@ func (x *OrderLineItem) GetProductSnapshot() *v1.Struct {
 	return nil
 }
 
+func (x *OrderLineItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
 func (x *OrderLineItem) GetCreatedAt() uint64 {
 	if x != nil {
 		return x.CreatedAt
@@ -211,7 +281,7 @@ var File_orders_v1_order_line_items_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"\n" +
-	" orders/v1/order_line_items.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"\xb0\x06\n" +
+	" orders/v1/order_line_items.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"\xc8\x06\n" +
 	"\rOrderLineItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\border_id\x18\x02 \x01(\tR\aorderId\x12\x1d\n" +
@@ -234,18 +304,27 @@ const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"\vtotal_cents\x18\x0e \x01(\x04R\n" +
 	"totalCents\x12*\n" +
 	"\x11applied_offer_ids\x18\x0f \x03(\tR\x0fappliedOfferIds\x12<\n" +
-	"\x10product_snapshot\x18\x10 \x01(\v2\x11.shared.v1.StructR\x0fproductSnapshot\x12\x1d\n" +
+	"\x10product_snapshot\x18\x10 \x01(\v2\x11.shared.v1.StructR\x0fproductSnapshot\x12\x16\n" +
+	"\x06status\x18\x11 \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x11 \x01(\x04R\tcreatedAt\x12\"\n" +
+	"created_at\x18\x12 \x01(\x04R\tcreatedAt\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x12 \x01(\x04H\x03R\tupdatedAt\x88\x01\x01\x1a=\n" +
+	"updated_at\x18\x13 \x01(\x04H\x03R\tupdatedAt\x88\x01\x01\x1a=\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x13\n" +
 	"\x11_list_price_centsB\x13\n" +
 	"\x11_sale_price_centsB\x11\n" +
 	"\x0f_discount_centsB\r\n" +
-	"\v_updated_atBy\n" +
+	"\v_updated_at*\xa1\x02\n" +
+	"\x13OrderLineItemStatus\x12\"\n" +
+	"\x1eORDER_LINE_ITEM_STATUS_CREATED\x10\x00\x12$\n" +
+	" ORDER_LINE_ITEM_STATUS_CONFIRMED\x10\x01\x12\"\n" +
+	"\x1eORDER_LINE_ITEM_STATUS_SHIPPED\x10\x02\x12$\n" +
+	" ORDER_LINE_ITEM_STATUS_DELIVERED\x10\x03\x12$\n" +
+	" ORDER_LINE_ITEM_STATUS_CANCELLED\x10\x04\x12#\n" +
+	"\x1fORDER_LINE_ITEM_STATUS_REFUNDED\x10\x05\x12+\n" +
+	"'ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED\x10\x06By\n" +
 	"\x1aorg.megacommerce.orders.v1B\x13OrderLineItemsProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -260,15 +339,17 @@ func file_orders_v1_order_line_items_proto_rawDescGZIP() []byte {
 	return file_orders_v1_order_line_items_proto_rawDescData
 }
 
+var file_orders_v1_order_line_items_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_orders_v1_order_line_items_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_orders_v1_order_line_items_proto_goTypes = []any{
-	(*OrderLineItem)(nil), // 0: orders.v1.OrderLineItem
-	nil,                   // 1: orders.v1.OrderLineItem.AttributesEntry
-	(*v1.Struct)(nil),     // 2: shared.v1.Struct
+	(OrderLineItemStatus)(0), // 0: orders.v1.OrderLineItemStatus
+	(*OrderLineItem)(nil),    // 1: orders.v1.OrderLineItem
+	nil,                      // 2: orders.v1.OrderLineItem.AttributesEntry
+	(*v1.Struct)(nil),        // 3: shared.v1.Struct
 }
 var file_orders_v1_order_line_items_proto_depIdxs = []int32{
-	1, // 0: orders.v1.OrderLineItem.attributes:type_name -> orders.v1.OrderLineItem.AttributesEntry
-	2, // 1: orders.v1.OrderLineItem.product_snapshot:type_name -> shared.v1.Struct
+	2, // 0: orders.v1.OrderLineItem.attributes:type_name -> orders.v1.OrderLineItem.AttributesEntry
+	3, // 1: orders.v1.OrderLineItem.product_snapshot:type_name -> shared.v1.Struct
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -287,13 +368,14 @@ func file_orders_v1_order_line_items_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_orders_v1_order_line_items_proto_rawDesc), len(file_orders_v1_order_line_items_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_orders_v1_order_line_items_proto_goTypes,
 		DependencyIndexes: file_orders_v1_order_line_items_proto_depIdxs,
+		EnumInfos:         file_orders_v1_order_line_items_proto_enumTypes,
 		MessageInfos:      file_orders_v1_order_line_items_proto_msgTypes,
 	}.Build()
 	File_orders_v1_order_line_items_proto = out.File

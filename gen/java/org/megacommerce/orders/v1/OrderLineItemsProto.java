@@ -26,6 +26,172 @@ public final class OrderLineItemsProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * <pre>
+   * Order status
+   * </pre>
+   *
+   * Protobuf enum {@code orders.v1.OrderLineItemStatus}
+   */
+  public enum OrderLineItemStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_CREATED = 0;</code>
+     */
+    ORDER_LINE_ITEM_STATUS_CREATED(0),
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_CONFIRMED = 1;</code>
+     */
+    ORDER_LINE_ITEM_STATUS_CONFIRMED(1),
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_SHIPPED = 2;</code>
+     */
+    ORDER_LINE_ITEM_STATUS_SHIPPED(2),
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_DELIVERED = 3;</code>
+     */
+    ORDER_LINE_ITEM_STATUS_DELIVERED(3),
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_CANCELLED = 4;</code>
+     */
+    ORDER_LINE_ITEM_STATUS_CANCELLED(4),
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_REFUNDED = 5;</code>
+     */
+    ORDER_LINE_ITEM_STATUS_REFUNDED(5),
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED = 6;</code>
+     */
+    ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        OrderLineItemStatus.class.getName());
+    }
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_CREATED = 0;</code>
+     */
+    public static final int ORDER_LINE_ITEM_STATUS_CREATED_VALUE = 0;
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_CONFIRMED = 1;</code>
+     */
+    public static final int ORDER_LINE_ITEM_STATUS_CONFIRMED_VALUE = 1;
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_SHIPPED = 2;</code>
+     */
+    public static final int ORDER_LINE_ITEM_STATUS_SHIPPED_VALUE = 2;
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_DELIVERED = 3;</code>
+     */
+    public static final int ORDER_LINE_ITEM_STATUS_DELIVERED_VALUE = 3;
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_CANCELLED = 4;</code>
+     */
+    public static final int ORDER_LINE_ITEM_STATUS_CANCELLED_VALUE = 4;
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_REFUNDED = 5;</code>
+     */
+    public static final int ORDER_LINE_ITEM_STATUS_REFUNDED_VALUE = 5;
+    /**
+     * <code>ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED = 6;</code>
+     */
+    public static final int ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED_VALUE = 6;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OrderLineItemStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OrderLineItemStatus forNumber(int value) {
+      switch (value) {
+        case 0: return ORDER_LINE_ITEM_STATUS_CREATED;
+        case 1: return ORDER_LINE_ITEM_STATUS_CONFIRMED;
+        case 2: return ORDER_LINE_ITEM_STATUS_SHIPPED;
+        case 3: return ORDER_LINE_ITEM_STATUS_DELIVERED;
+        case 4: return ORDER_LINE_ITEM_STATUS_CANCELLED;
+        case 5: return ORDER_LINE_ITEM_STATUS_REFUNDED;
+        case 6: return ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OrderLineItemStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        OrderLineItemStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OrderLineItemStatus>() {
+            public OrderLineItemStatus findValueByNumber(int number) {
+              return OrderLineItemStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.megacommerce.orders.v1.OrderLineItemsProto.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final OrderLineItemStatus[] VALUES = values();
+
+    public static OrderLineItemStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OrderLineItemStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:orders.v1.OrderLineItemStatus)
+  }
+
   public interface OrderLineItemOrBuilder extends
       // @@protoc_insertion_point(interface_extends:orders.v1.OrderLineItem)
       com.google.protobuf.MessageOrBuilder {
@@ -330,11 +496,23 @@ java.lang.String defaultValue);
     org.megacommerce.shared.v1.StructProto.StructOrBuilder getProductSnapshotOrBuilder();
 
     /**
+     * <code>string status = 17 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 17 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
      * <pre>
      * Timestamps
      * </pre>
      *
-     * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
@@ -344,7 +522,7 @@ java.lang.String defaultValue);
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     boolean hasUpdatedAt();
@@ -353,7 +531,7 @@ java.lang.String defaultValue);
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
@@ -388,6 +566,7 @@ java.lang.String defaultValue);
       title_ = "";
       appliedOfferIds_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      status_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -985,14 +1164,53 @@ java.lang.String defaultValue) {
       return productSnapshot_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : productSnapshot_;
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 17;
+    public static final int STATUS_FIELD_NUMBER = 17;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object status_ = "";
+    /**
+     * <code>string status = 17 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 17 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 18;
     private long createdAt_ = 0L;
     /**
      * <pre>
      * Timestamps
      * </pre>
      *
-     * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
+     * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -1000,14 +1218,14 @@ java.lang.String defaultValue) {
       return createdAt_;
     }
 
-    public static final int UPDATED_AT_FIELD_NUMBER = 18;
+    public static final int UPDATED_AT_FIELD_NUMBER = 19;
     private long updatedAt_ = 0L;
     /**
      * <pre>
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     @java.lang.Override
@@ -1019,7 +1237,7 @@ java.lang.String defaultValue) {
      * optional UNIX timestamp
      * </pre>
      *
-     * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -1092,11 +1310,14 @@ java.lang.String defaultValue) {
       if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(16, getProductSnapshot());
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 17, status_);
+      }
       if (createdAt_ != 0L) {
-        output.writeUInt64(17, createdAt_);
+        output.writeUInt64(18, createdAt_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeUInt64(18, updatedAt_);
+        output.writeUInt64(19, updatedAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1175,13 +1396,16 @@ java.lang.String defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, getProductSnapshot());
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(17, status_);
+      }
       if (createdAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(17, createdAt_);
+          .computeUInt64Size(18, createdAt_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(18, updatedAt_);
+          .computeUInt64Size(19, updatedAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1242,6 +1466,8 @@ java.lang.String defaultValue) {
         if (!getProductSnapshot()
             .equals(other.getProductSnapshot())) return false;
       }
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
       if (getCreatedAt()
           != other.getCreatedAt()) return false;
       if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
@@ -1310,6 +1536,8 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + PRODUCT_SNAPSHOT_FIELD_NUMBER;
         hash = (53 * hash) + getProductSnapshot().hashCode();
       }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreatedAt());
@@ -1498,6 +1726,7 @@ java.lang.String defaultValue) {
           productSnapshotBuilder_.dispose();
           productSnapshotBuilder_ = null;
         }
+        status_ = "";
         createdAt_ = 0L;
         updatedAt_ = 0L;
         return this;
@@ -1591,9 +1820,12 @@ java.lang.String defaultValue) {
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.createdAt_ = createdAt_;
+          result.status_ = status_;
         }
         if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.createdAt_ = createdAt_;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
           result.updatedAt_ = updatedAt_;
           to_bitField0_ |= 0x00000010;
         }
@@ -1678,6 +1910,11 @@ java.lang.String defaultValue) {
         }
         if (other.hasProductSnapshot()) {
           mergeProductSnapshot(other.getProductSnapshot());
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          bitField0_ |= 0x00010000;
+          onChanged();
         }
         if (other.getCreatedAt() != 0L) {
           setCreatedAt(other.getCreatedAt());
@@ -1798,16 +2035,21 @@ java.lang.String defaultValue) {
                 bitField0_ |= 0x00008000;
                 break;
               } // case 130
-              case 136: {
-                createdAt_ = input.readUInt64();
+              case 138: {
+                status_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00010000;
                 break;
-              } // case 136
+              } // case 138
               case 144: {
-                updatedAt_ = input.readUInt64();
+                createdAt_ = input.readUInt64();
                 bitField0_ |= 0x00020000;
                 break;
               } // case 144
+              case 152: {
+                updatedAt_ = input.readUInt64();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3080,13 +3322,85 @@ java.lang.String defaultValue) {
         return productSnapshotBuilder_;
       }
 
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 17 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 17 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 17 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        status_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 17 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        status_ = getDefaultInstance().getStatus();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 17 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        status_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+
       private long createdAt_ ;
       /**
        * <pre>
        * Timestamps
        * </pre>
        *
-       * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -3098,14 +3412,14 @@ java.lang.String defaultValue) {
        * Timestamps
        * </pre>
        *
-       * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
       public Builder setCreatedAt(long value) {
 
         createdAt_ = value;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -3114,11 +3428,11 @@ java.lang.String defaultValue) {
        * Timestamps
        * </pre>
        *
-       * <code>uint64 created_at = 17 [json_name = "createdAt"];</code>
+       * <code>uint64 created_at = 18 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         createdAt_ = 0L;
         onChanged();
         return this;
@@ -3130,19 +3444,19 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
        * @return Whether the updatedAt field is set.
        */
       @java.lang.Override
       public boolean hasUpdatedAt() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00040000) != 0);
       }
       /**
        * <pre>
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -3154,14 +3468,14 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
       public Builder setUpdatedAt(long value) {
 
         updatedAt_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -3170,11 +3484,11 @@ java.lang.String defaultValue) {
        * optional UNIX timestamp
        * </pre>
        *
-       * <code>optional uint64 updated_at = 18 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 19 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         updatedAt_ = 0L;
         onChanged();
         return this;
@@ -3251,7 +3565,7 @@ java.lang.String defaultValue) {
   static {
     java.lang.String[] descriptorData = {
       "\n orders/v1/order_line_items.proto\022\torde" +
-      "rs.v1\032\026shared/v1/struct.proto\"\260\006\n\rOrderL" +
+      "rs.v1\032\026shared/v1/struct.proto\"\310\006\n\rOrderL" +
       "ineItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001(" +
       "\tR\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tproductI" +
       "d\022\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\020\n\003sku\030" +
@@ -3267,15 +3581,23 @@ java.lang.String defaultValue) {
       " \001(\004R\ntotalCents\022*\n\021applied_offer_ids\030\017 " +
       "\003(\tR\017appliedOfferIds\022<\n\020product_snapshot" +
       "\030\020 \001(\0132\021.shared.v1.StructR\017productSnapsh" +
-      "ot\022\035\n\ncreated_at\030\021 \001(\004R\tcreatedAt\022\"\n\nupd" +
-      "ated_at\030\022 \001(\004H\003R\tupdatedAt\210\001\001\032=\n\017Attribu" +
-      "tesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(" +
-      "\tR\005value:\0028\001B\023\n\021_list_price_centsB\023\n\021_sa" +
-      "le_price_centsB\021\n\017_discount_centsB\r\n\013_up" +
-      "dated_atBy\n\032org.megacommerce.orders.v1B\023" +
-      "OrderLineItemsProtoZCgithub.com/ahmad-kh" +
-      "atib0-org/megacommerce-proto/gen/go/orde" +
-      "rs/v1;v1\370\001\001b\006proto3"
+      "ot\022\026\n\006status\030\021 \001(\tR\006status\022\035\n\ncreated_at" +
+      "\030\022 \001(\004R\tcreatedAt\022\"\n\nupdated_at\030\023 \001(\004H\003R" +
+      "\tupdatedAt\210\001\001\032=\n\017AttributesEntry\022\020\n\003key\030" +
+      "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\023\n\021" +
+      "_list_price_centsB\023\n\021_sale_price_centsB\021" +
+      "\n\017_discount_centsB\r\n\013_updated_at*\241\002\n\023Ord" +
+      "erLineItemStatus\022\"\n\036ORDER_LINE_ITEM_STAT" +
+      "US_CREATED\020\000\022$\n ORDER_LINE_ITEM_STATUS_C" +
+      "ONFIRMED\020\001\022\"\n\036ORDER_LINE_ITEM_STATUS_SHI" +
+      "PPED\020\002\022$\n ORDER_LINE_ITEM_STATUS_DELIVER" +
+      "ED\020\003\022$\n ORDER_LINE_ITEM_STATUS_CANCELLED" +
+      "\020\004\022#\n\037ORDER_LINE_ITEM_STATUS_REFUNDED\020\005\022" +
+      "+\n\'ORDER_LINE_ITEM_STATUS_REFUND_REQUEST" +
+      "ED\020\006By\n\032org.megacommerce.orders.v1B\023Orde" +
+      "rLineItemsProtoZCgithub.com/ahmad-khatib" +
+      "0-org/megacommerce-proto/gen/go/orders/v" +
+      "1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3287,7 +3609,7 @@ java.lang.String defaultValue) {
     internal_static_orders_v1_OrderLineItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_orders_v1_OrderLineItem_descriptor,
-        new java.lang.String[] { "Id", "OrderId", "ProductId", "VariantId", "Sku", "Title", "Attributes", "Quantity", "UnitPriceCents", "ListPriceCents", "SalePriceCents", "DiscountCents", "TaxCents", "TotalCents", "AppliedOfferIds", "ProductSnapshot", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "OrderId", "ProductId", "VariantId", "Sku", "Title", "Attributes", "Quantity", "UnitPriceCents", "ListPriceCents", "SalePriceCents", "DiscountCents", "TaxCents", "TotalCents", "AppliedOfferIds", "ProductSnapshot", "Status", "CreatedAt", "UpdatedAt", });
     internal_static_orders_v1_OrderLineItem_AttributesEntry_descriptor =
       internal_static_orders_v1_OrderLineItem_descriptor.getNestedTypes().get(0);
     internal_static_orders_v1_OrderLineItem_AttributesEntry_fieldAccessorTable = new

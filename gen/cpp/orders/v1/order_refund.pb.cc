@@ -30,7 +30,7 @@ namespace v1 {
 inline constexpr RefundLineItemRefund::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
-        line_id_(
+        id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         amount_cents_{::uint64_t{0u}},
@@ -59,13 +59,13 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 inline constexpr OrderRefundRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
-        line_items_{},
         order_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         reason_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        line_items_{nullptr},
         refund_shipping_{false} {}
 
 template <typename>
@@ -135,13 +135,13 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderRefundRequest, _impl_.reason_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderRefundRequest, _impl_.refund_shipping_),
         0,
-        ~0u,
-        1,
         2,
+        1,
+        3,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::orders::v1::RefundLineItemRefund, _impl_._has_bits_),
         6, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::orders::v1::RefundLineItemRefund, _impl_.line_id_),
+        PROTOBUF_FIELD_OFFSET(::orders::v1::RefundLineItemRefund, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::RefundLineItemRefund, _impl_.quantity_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::RefundLineItemRefund, _impl_.amount_cents_),
         0,
@@ -169,16 +169,16 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5frefund_2eproto[] ABSL
     "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro"
     "rH\000R\005errorB\n\n\010response\"\260\001\n\022OrderRefundRe"
     "quest\022\031\n\010order_id\030\001 \001(\tR\007orderId\022>\n\nline"
-    "_items\030\002 \003(\0132\037.orders.v1.RefundLineItemR"
+    "_items\030\002 \001(\0132\037.orders.v1.RefundLineItemR"
     "efundR\tlineItems\022\026\n\006reason\030\003 \001(\tR\006reason"
     "\022\'\n\017refund_shipping\030\004 \001(\010R\016refundShippin"
-    "g\"\204\001\n\024RefundLineItemRefund\022\027\n\007line_id\030\001 "
-    "\001(\tR\006lineId\022\032\n\010quantity\030\002 \001(\rR\010quantity\022"
-    "&\n\014amount_cents\030\003 \001(\004H\000R\013amountCents\210\001\001B"
-    "\017\n\r_amount_centsBv\n\032org.megacommerce.ord"
-    "ers.v1B\020OrderRefundProtoZCgithub.com/ahm"
-    "ad-khatib0-org/megacommerce-proto/gen/go"
-    "/orders/v1;v1\370\001\001b\006proto3"
+    "g\"{\n\024RefundLineItemRefund\022\016\n\002id\030\001 \001(\tR\002i"
+    "d\022\032\n\010quantity\030\002 \001(\rR\010quantity\022&\n\014amount_"
+    "cents\030\003 \001(\004H\000R\013amountCents\210\001\001B\017\n\r_amount"
+    "_centsBv\n\032org.megacommerce.orders.v1B\020Or"
+    "derRefundProtoZCgithub.com/ahmad-khatib0"
+    "-org/megacommerce-proto/gen/go/orders/v1"
+    ";v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_orders_2fv1_2forder_5frefund_2eproto_deps[2] = {
@@ -189,7 +189,7 @@ static ::absl::once_flag descriptor_table_orders_2fv1_2forder_5frefund_2eproto_o
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_5frefund_2eproto = {
     false,
     false,
-    664,
+    654,
     descriptor_table_protodef_orders_2fv1_2forder_5frefund_2eproto,
     "orders/v1/order_refund.proto",
     &descriptor_table_orders_2fv1_2forder_5frefund_2eproto_once,
@@ -607,7 +607,6 @@ PROTOBUF_NDEBUG_INLINE OrderRefundRequest::Impl_::Impl_(
     const ::orders::v1::OrderRefundRequest& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        line_items_{visibility, arena, from.line_items_},
         order_id_(arena, from.order_id_),
         reason_(arena, from.reason_) {}
 
@@ -624,6 +623,10 @@ OrderRefundRequest::OrderRefundRequest(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.line_items_ = ((cached_has_bits & 0x00000004u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.line_items_)
+                : nullptr;
   _impl_.refund_shipping_ = from._impl_.refund_shipping_;
 
   // @@protoc_insertion_point(copy_constructor:orders.v1.OrderRefundRequest)
@@ -632,13 +635,17 @@ PROTOBUF_NDEBUG_INLINE OrderRefundRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        line_items_{visibility, arena},
         order_id_(arena),
         reason_(arena) {}
 
 inline void OrderRefundRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.refund_shipping_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, line_items_),
+           0,
+           offsetof(Impl_, refund_shipping_) -
+               offsetof(Impl_, line_items_) +
+               sizeof(Impl_::refund_shipping_));
 }
 OrderRefundRequest::~OrderRefundRequest() {
   // @@protoc_insertion_point(destructor:orders.v1.OrderRefundRequest)
@@ -650,6 +657,7 @@ inline void OrderRefundRequest::SharedDtor(MessageLite& self) {
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.order_id_.Destroy();
   this_._impl_.reason_.Destroy();
+  delete this_._impl_.line_items_;
   this_._impl_.~Impl_();
 }
 
@@ -659,20 +667,8 @@ inline void* PROTOBUF_NONNULL OrderRefundRequest::PlacementNew_(
   return ::new (mem) OrderRefundRequest(arena);
 }
 constexpr auto OrderRefundRequest::InternalNewImpl_() {
-  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
-      PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.line_items_) +
-          decltype(OrderRefundRequest::_impl_.line_items_)::
-              InternalGetArenaOffset(
-                  ::google::protobuf::Message::internal_visibility()),
-  });
-  if (arena_bits.has_value()) {
-    return ::google::protobuf::internal::MessageCreator::CopyInit(
-        sizeof(OrderRefundRequest), alignof(OrderRefundRequest), *arena_bits);
-  } else {
-    return ::google::protobuf::internal::MessageCreator(&OrderRefundRequest::PlacementNew_,
-                                 sizeof(OrderRefundRequest),
-                                 alignof(OrderRefundRequest));
-  }
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(OrderRefundRequest),
+                                            alignof(OrderRefundRequest));
 }
 constexpr auto OrderRefundRequest::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -728,14 +724,14 @@ OrderRefundRequest::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // bool refund_shipping = 4 [json_name = "refundShipping"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(OrderRefundRequest, _impl_.refund_shipping_), 2>(),
-     {32, 2, 0, PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.refund_shipping_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(OrderRefundRequest, _impl_.refund_shipping_), 3>(),
+     {32, 3, 0, PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.refund_shipping_)}},
     // string order_id = 1 [json_name = "orderId"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.order_id_)}},
-    // repeated .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
-    {::_pbi::TcParser::FastMtR1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.line_items_)}},
+    // .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 2, 0, PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.line_items_)}},
     // string reason = 3 [json_name = "reason"];
     {::_pbi::TcParser::FastUS1,
      {26, 1, 0, PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.reason_)}},
@@ -745,14 +741,14 @@ OrderRefundRequest::_table_ = {
     // string order_id = 1 [json_name = "orderId"];
     {PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.order_id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // repeated .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
-    {PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.line_items_), -1, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
+    {PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.line_items_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // string reason = 3 [json_name = "reason"];
     {PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.reason_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // bool refund_shipping = 4 [json_name = "refundShipping"];
-    {PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.refund_shipping_), _Internal::kHasBitsOffset + 2, 0,
+    {PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.refund_shipping_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
   }},
   {{
@@ -772,14 +768,17 @@ PROTOBUF_NOINLINE void OrderRefundRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.line_items_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
+  if ((cached_has_bits & 0x00000007u) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.order_id_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
       _impl_.reason_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      ABSL_DCHECK(_impl_.line_items_ != nullptr);
+      _impl_.line_items_->Clear();
     }
   }
   _impl_.refund_shipping_ = false;
@@ -812,19 +811,16 @@ PROTOBUF_NOINLINE void OrderRefundRequest::Clear() {
     }
   }
 
-  // repeated .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
-  for (unsigned i = 0, n = static_cast<unsigned>(
-                           this_._internal_line_items_size());
-       i < n; i++) {
-    const auto& repfield = this_._internal_line_items().Get(i);
-    target =
-        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-            2, repfield, repfield.GetCachedSize(),
-            target, stream);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
+  if ((cached_has_bits & 0x00000004u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        2, *this_._impl_.line_items_, this_._impl_.line_items_->GetCachedSize(), target,
+        stream);
   }
 
   // string reason = 3 [json_name = "reason"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if ((cached_has_bits & 0x00000002u) != 0) {
     if (!this_._internal_reason().empty()) {
       const ::std::string& _s = this_._internal_reason();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -834,7 +830,7 @@ PROTOBUF_NOINLINE void OrderRefundRequest::Clear() {
   }
 
   // bool refund_shipping = 4 [json_name = "refundShipping"];
-  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  if ((cached_has_bits & 0x00000008u) != 0) {
     if (this_._internal_refund_shipping() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteBoolToArray(
@@ -866,17 +862,8 @@ PROTOBUF_NOINLINE void OrderRefundRequest::Clear() {
   (void)cached_has_bits;
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-   {
-    // repeated .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
-    {
-      total_size += 1UL * this_._internal_line_items_size();
-      for (const auto& msg : this_._internal_line_items()) {
-        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
-      }
-    }
-  }
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     // string order_id = 1 [json_name = "orderId"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_order_id().empty()) {
@@ -891,8 +878,13 @@ PROTOBUF_NOINLINE void OrderRefundRequest::Clear() {
                                         this_._internal_reason());
       }
     }
-    // bool refund_shipping = 4 [json_name = "refundShipping"];
+    // .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
     if ((cached_has_bits & 0x00000004u) != 0) {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.line_items_);
+    }
+    // bool refund_shipping = 4 [json_name = "refundShipping"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (this_._internal_refund_shipping() != 0) {
         total_size += 2;
       }
@@ -905,15 +897,14 @@ PROTOBUF_NOINLINE void OrderRefundRequest::Clear() {
 void OrderRefundRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<OrderRefundRequest*>(&to_msg);
   auto& from = static_cast<const OrderRefundRequest&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:orders.v1.OrderRefundRequest)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_line_items()->MergeFrom(
-      from._internal_line_items());
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!from._internal_order_id().empty()) {
         _this->_internal_set_order_id(from._internal_order_id());
@@ -933,6 +924,14 @@ void OrderRefundRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, cons
       }
     }
     if ((cached_has_bits & 0x00000004u) != 0) {
+      ABSL_DCHECK(from._impl_.line_items_ != nullptr);
+      if (_this->_impl_.line_items_ == nullptr) {
+        _this->_impl_.line_items_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.line_items_);
+      } else {
+        _this->_impl_.line_items_->MergeFrom(*from._impl_.line_items_);
+      }
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (from._internal_refund_shipping() != 0) {
         _this->_impl_.refund_shipping_ = from._impl_.refund_shipping_;
       }
@@ -956,10 +955,14 @@ void OrderRefundRequest::InternalSwap(OrderRefundRequest* PROTOBUF_RESTRICT PROT
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  _impl_.line_items_.InternalSwap(&other->_impl_.line_items_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.order_id_, &other->_impl_.order_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.reason_, &other->_impl_.reason_, arena);
-  swap(_impl_.refund_shipping_, other->_impl_.refund_shipping_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.refund_shipping_)
+      + sizeof(OrderRefundRequest::_impl_.refund_shipping_)
+      - PROTOBUF_FIELD_OFFSET(OrderRefundRequest, _impl_.line_items_)>(
+          reinterpret_cast<char*>(&_impl_.line_items_),
+          reinterpret_cast<char*>(&other->_impl_.line_items_));
 }
 
 ::google::protobuf::Metadata OrderRefundRequest::GetMetadata() const {
@@ -990,7 +993,7 @@ PROTOBUF_NDEBUG_INLINE RefundLineItemRefund::Impl_::Impl_(
     const ::orders::v1::RefundLineItemRefund& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        line_id_(arena, from.line_id_) {}
+        id_(arena, from.id_) {}
 
 RefundLineItemRefund::RefundLineItemRefund(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -1019,7 +1022,7 @@ PROTOBUF_NDEBUG_INLINE RefundLineItemRefund::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        line_id_(arena) {}
+        id_(arena) {}
 
 inline void RefundLineItemRefund::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -1038,7 +1041,7 @@ inline void RefundLineItemRefund::SharedDtor(MessageLite& self) {
   RefundLineItemRefund& this_ = static_cast<RefundLineItemRefund&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.line_id_.Destroy();
+  this_._impl_.id_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -1085,7 +1088,7 @@ RefundLineItemRefund::GetClassData() const {
   return RefundLineItemRefund_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 46, 2>
+const ::_pbi::TcParseTable<2, 3, 0, 41, 2>
 RefundLineItemRefund::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_._has_bits_),
@@ -1105,9 +1108,9 @@ RefundLineItemRefund::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
-    // string line_id = 1 [json_name = "lineId"];
+    // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.line_id_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.id_)}},
     // uint32 quantity = 2 [json_name = "quantity"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RefundLineItemRefund, _impl_.quantity_), 2>(),
      {16, 2, 0, PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.quantity_)}},
@@ -1117,8 +1120,8 @@ RefundLineItemRefund::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // string line_id = 1 [json_name = "lineId"];
-    {PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.line_id_), _Internal::kHasBitsOffset + 0, 0,
+    // string id = 1 [json_name = "id"];
+    {PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // uint32 quantity = 2 [json_name = "quantity"];
     {PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.quantity_), _Internal::kHasBitsOffset + 2, 0,
@@ -1129,9 +1132,9 @@ RefundLineItemRefund::_table_ = {
   }},
   // no aux_entries
   {{
-    "\36\7\0\0\0\0\0\0"
+    "\36\2\0\0\0\0\0\0"
     "orders.v1.RefundLineItemRefund"
-    "line_id"
+    "id"
   }},
 };
 PROTOBUF_NOINLINE void RefundLineItemRefund::Clear() {
@@ -1143,7 +1146,7 @@ PROTOBUF_NOINLINE void RefundLineItemRefund::Clear() {
 
   cached_has_bits = _impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000001u) != 0) {
-    _impl_.line_id_.ClearNonDefaultToEmpty();
+    _impl_.id_.ClearNonDefaultToEmpty();
   }
   if ((cached_has_bits & 0x00000006u) != 0) {
     ::memset(&_impl_.amount_cents_, 0, static_cast<::size_t>(
@@ -1169,12 +1172,12 @@ PROTOBUF_NOINLINE void RefundLineItemRefund::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string line_id = 1 [json_name = "lineId"];
+  // string id = 1 [json_name = "id"];
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (!this_._internal_line_id().empty()) {
-      const ::std::string& _s = this_._internal_line_id();
+    if (!this_._internal_id().empty()) {
+      const ::std::string& _s = this_._internal_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "orders.v1.RefundLineItemRefund.line_id");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "orders.v1.RefundLineItemRefund.id");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
@@ -1222,11 +1225,11 @@ PROTOBUF_NOINLINE void RefundLineItemRefund::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000007u) != 0) {
-    // string line_id = 1 [json_name = "lineId"];
+    // string id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!this_._internal_line_id().empty()) {
+      if (!this_._internal_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_line_id());
+                                        this_._internal_id());
       }
     }
     // optional uint64 amount_cents = 3 [json_name = "amountCents"];
@@ -1257,11 +1260,11 @@ void RefundLineItemRefund::MergeImpl(::google::protobuf::MessageLite& to_msg, co
   cached_has_bits = from._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000007u) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!from._internal_line_id().empty()) {
-        _this->_internal_set_line_id(from._internal_line_id());
+      if (!from._internal_id().empty()) {
+        _this->_internal_set_id(from._internal_id());
       } else {
-        if (_this->_impl_.line_id_.IsDefault()) {
-          _this->_internal_set_line_id("");
+        if (_this->_impl_.id_.IsDefault()) {
+          _this->_internal_set_id("");
         }
       }
     }
@@ -1292,7 +1295,7 @@ void RefundLineItemRefund::InternalSwap(RefundLineItemRefund* PROTOBUF_RESTRICT 
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.line_id_, &other->_impl_.line_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RefundLineItemRefund, _impl_.quantity_)
       + sizeof(RefundLineItemRefund::_impl_.quantity_)

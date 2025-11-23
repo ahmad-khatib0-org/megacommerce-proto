@@ -108,7 +108,7 @@ type OrderRefundRequest struct {
 	state   protoimpl.MessageState `protogen:"open.v1"`
 	OrderId string                 `protobuf:"bytes,1,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	// refund whole order or specific line items
-	LineItems []*RefundLineItemRefund `protobuf:"bytes,2,rep,name=line_items,json=lineItems,proto3" json:"line_items,omitempty"`
+	LineItems *RefundLineItemRefund `protobuf:"bytes,2,opt,name=line_items,json=lineItems,proto3" json:"line_items,omitempty"`
 	// reason code, external refund id, etc.
 	Reason         string `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
 	RefundShipping bool   `protobuf:"varint,4,opt,name=refund_shipping,json=refundShipping,proto3" json:"refund_shipping,omitempty"`
@@ -153,7 +153,7 @@ func (x *OrderRefundRequest) GetOrderId() string {
 	return ""
 }
 
-func (x *OrderRefundRequest) GetLineItems() []*RefundLineItemRefund {
+func (x *OrderRefundRequest) GetLineItems() *RefundLineItemRefund {
 	if x != nil {
 		return x.LineItems
 	}
@@ -176,9 +176,22 @@ func (x *OrderRefundRequest) GetRefundShipping() bool {
 
 type RefundLineItemRefund struct {
 	state    protoimpl.MessageState `protogen:"open.v1"`
-	LineId   string                 `protobuf:"bytes,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"` // link to OrderLineItem.line_id
+	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // link to OrderLineItem.id
 	Quantity uint32                 `protobuf:"varint,2,opt,name=quantity,proto3" json:"quantity,omitempty"`
 	// amount to refund in minor units (cents). If zero, compute pro-rata.
+	//
+	// **Pro-rata refund** = Refund proportional to the original price distribution.
+	//
+	// **Example:**
+	// - Order total: $100 ($60 Item A + $40 Item B)
+	// - Shipping: $10
+	// - You refund Item B ($40)
+	// - Pro-rata calculation: Item B was 40% of product total ($40/$100)
+	// - Refund: $40 (item) + $4 (40% of shipping) = **$44 total refund**
+	//
+	// **Without pro-rata:** You'd only refund $40 (lose shipping cost)
+	//
+	// **Used when:** Partial refunds where shipping/taxes/fees need to be fairly distributed.
 	AmountCents   *uint64 `protobuf:"varint,3,opt,name=amount_cents,json=amountCents,proto3,oneof" json:"amount_cents,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -214,9 +227,9 @@ func (*RefundLineItemRefund) Descriptor() ([]byte, []int) {
 	return file_orders_v1_order_refund_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *RefundLineItemRefund) GetLineId() string {
+func (x *RefundLineItemRefund) GetId() string {
 	if x != nil {
-		return x.LineId
+		return x.Id
 	}
 	return ""
 }
@@ -248,11 +261,11 @@ const file_orders_v1_order_refund_proto_rawDesc = "" +
 	"\x12OrderRefundRequest\x12\x19\n" +
 	"\border_id\x18\x01 \x01(\tR\aorderId\x12>\n" +
 	"\n" +
-	"line_items\x18\x02 \x03(\v2\x1f.orders.v1.RefundLineItemRefundR\tlineItems\x12\x16\n" +
+	"line_items\x18\x02 \x01(\v2\x1f.orders.v1.RefundLineItemRefundR\tlineItems\x12\x16\n" +
 	"\x06reason\x18\x03 \x01(\tR\x06reason\x12'\n" +
-	"\x0frefund_shipping\x18\x04 \x01(\bR\x0erefundShipping\"\x84\x01\n" +
-	"\x14RefundLineItemRefund\x12\x17\n" +
-	"\aline_id\x18\x01 \x01(\tR\x06lineId\x12\x1a\n" +
+	"\x0frefund_shipping\x18\x04 \x01(\bR\x0erefundShipping\"{\n" +
+	"\x14RefundLineItemRefund\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
 	"\bquantity\x18\x02 \x01(\rR\bquantity\x12&\n" +
 	"\famount_cents\x18\x03 \x01(\x04H\x00R\vamountCents\x88\x01\x01B\x0f\n" +
 	"\r_amount_centsBv\n" +

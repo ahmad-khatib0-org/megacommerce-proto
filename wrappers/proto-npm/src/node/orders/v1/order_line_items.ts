@@ -10,6 +10,70 @@ import { Struct } from "../../shared/v1/struct";
 
 export const protobufPackage = "orders.v1";
 
+/** Order status */
+export enum OrderLineItemStatus {
+  ORDER_LINE_ITEM_STATUS_CREATED = 0,
+  ORDER_LINE_ITEM_STATUS_CONFIRMED = 1,
+  ORDER_LINE_ITEM_STATUS_SHIPPED = 2,
+  ORDER_LINE_ITEM_STATUS_DELIVERED = 3,
+  ORDER_LINE_ITEM_STATUS_CANCELLED = 4,
+  ORDER_LINE_ITEM_STATUS_REFUNDED = 5,
+  ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED = 6,
+  UNRECOGNIZED = -1,
+}
+
+export function orderLineItemStatusFromJSON(object: any): OrderLineItemStatus {
+  switch (object) {
+    case 0:
+    case "ORDER_LINE_ITEM_STATUS_CREATED":
+      return OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_CREATED;
+    case 1:
+    case "ORDER_LINE_ITEM_STATUS_CONFIRMED":
+      return OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_CONFIRMED;
+    case 2:
+    case "ORDER_LINE_ITEM_STATUS_SHIPPED":
+      return OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_SHIPPED;
+    case 3:
+    case "ORDER_LINE_ITEM_STATUS_DELIVERED":
+      return OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_DELIVERED;
+    case 4:
+    case "ORDER_LINE_ITEM_STATUS_CANCELLED":
+      return OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_CANCELLED;
+    case 5:
+    case "ORDER_LINE_ITEM_STATUS_REFUNDED":
+      return OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_REFUNDED;
+    case 6:
+    case "ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED":
+      return OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED;
+    case -1:
+    case "UNRECOGNIZED":
+    default:
+      return OrderLineItemStatus.UNRECOGNIZED;
+  }
+}
+
+export function orderLineItemStatusToJSON(object: OrderLineItemStatus): string {
+  switch (object) {
+    case OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_CREATED:
+      return "ORDER_LINE_ITEM_STATUS_CREATED";
+    case OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_CONFIRMED:
+      return "ORDER_LINE_ITEM_STATUS_CONFIRMED";
+    case OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_SHIPPED:
+      return "ORDER_LINE_ITEM_STATUS_SHIPPED";
+    case OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_DELIVERED:
+      return "ORDER_LINE_ITEM_STATUS_DELIVERED";
+    case OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_CANCELLED:
+      return "ORDER_LINE_ITEM_STATUS_CANCELLED";
+    case OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_REFUNDED:
+      return "ORDER_LINE_ITEM_STATUS_REFUNDED";
+    case OrderLineItemStatus.ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED:
+      return "ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED";
+    case OrderLineItemStatus.UNRECOGNIZED:
+    default:
+      return "UNRECOGNIZED";
+  }
+}
+
 export interface OrderLineItem {
   id: string;
   orderId: string;
@@ -43,9 +107,8 @@ export interface OrderLineItem {
   /** array of applied offer/promotion ids */
   appliedOfferIds: string[];
   /** full product snapshot for audit/debug */
-  productSnapshot?:
-    | Struct
-    | undefined;
+  productSnapshot?: Struct | undefined;
+  status: string;
   /** Timestamps */
   createdAt: string;
   /** optional UNIX timestamp */
@@ -75,6 +138,7 @@ function createBaseOrderLineItem(): OrderLineItem {
     totalCents: "0",
     appliedOfferIds: [],
     productSnapshot: undefined,
+    status: "",
     createdAt: "0",
     updatedAt: undefined,
   };
@@ -130,11 +194,14 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     if (message.productSnapshot !== undefined) {
       Struct.encode(message.productSnapshot, writer.uint32(130).fork()).join();
     }
+    if (message.status !== "") {
+      writer.uint32(138).string(message.status);
+    }
     if (message.createdAt !== "0") {
-      writer.uint32(136).uint64(message.createdAt);
+      writer.uint32(144).uint64(message.createdAt);
     }
     if (message.updatedAt !== undefined) {
-      writer.uint32(144).uint64(message.updatedAt);
+      writer.uint32(152).uint64(message.updatedAt);
     }
     return writer;
   },
@@ -278,15 +345,23 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
           continue;
         }
         case 17: {
-          if (tag !== 136) {
+          if (tag !== 138) {
+            break;
+          }
+
+          message.status = reader.string();
+          continue;
+        }
+        case 18: {
+          if (tag !== 144) {
             break;
           }
 
           message.createdAt = reader.uint64().toString();
           continue;
         }
-        case 18: {
-          if (tag !== 144) {
+        case 19: {
+          if (tag !== 152) {
             break;
           }
 
@@ -327,6 +402,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
         ? object.appliedOfferIds.map((e: any) => globalThis.String(e))
         : [],
       productSnapshot: isSet(object.productSnapshot) ? Struct.fromJSON(object.productSnapshot) : undefined,
+      status: isSet(object.status) ? globalThis.String(object.status) : "",
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
       updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : undefined,
     };
@@ -388,6 +464,9 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     if (message.productSnapshot !== undefined) {
       obj.productSnapshot = Struct.toJSON(message.productSnapshot);
     }
+    if (message.status !== "") {
+      obj.status = message.status;
+    }
     if (message.createdAt !== "0") {
       obj.createdAt = message.createdAt;
     }
@@ -428,6 +507,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     message.productSnapshot = (object.productSnapshot !== undefined && object.productSnapshot !== null)
       ? Struct.fromPartial(object.productSnapshot)
       : undefined;
+    message.status = object.status ?? "";
     message.createdAt = object.createdAt ?? "0";
     message.updatedAt = object.updatedAt ?? undefined;
     return message;

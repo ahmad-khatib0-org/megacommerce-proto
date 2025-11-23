@@ -32,6 +32,7 @@
 #include "google/protobuf/map_type_handler.h"  // IWYU pragma: export
 #include "google/protobuf/map_entry.h"
 #include "google/protobuf/map_field.h"
+#include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
 #include "shared/v1/struct.pb.h"
 // @@protoc_insertion_point(includes)
@@ -59,6 +60,8 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_orde
 }  // extern "C"
 namespace orders {
 namespace v1 {
+enum OrderLineItemStatus : int;
+extern const uint32_t OrderLineItemStatus_internal_data_[];
 class OrderLineItem;
 struct OrderLineItemDefaultTypeInternal;
 extern OrderLineItemDefaultTypeInternal _OrderLineItem_default_instance_;
@@ -71,11 +74,55 @@ extern const ::google::protobuf::internal::ClassDataFull OrderLineItem_Attribute
 }  // namespace orders
 namespace google {
 namespace protobuf {
+template <>
+internal::EnumTraitsT<::orders::v1::OrderLineItemStatus_internal_data_>
+    internal::EnumTraitsImpl::value<::orders::v1::OrderLineItemStatus>;
 }  // namespace protobuf
 }  // namespace google
 
 namespace orders {
 namespace v1 {
+enum OrderLineItemStatus : int {
+  ORDER_LINE_ITEM_STATUS_CREATED = 0,
+  ORDER_LINE_ITEM_STATUS_CONFIRMED = 1,
+  ORDER_LINE_ITEM_STATUS_SHIPPED = 2,
+  ORDER_LINE_ITEM_STATUS_DELIVERED = 3,
+  ORDER_LINE_ITEM_STATUS_CANCELLED = 4,
+  ORDER_LINE_ITEM_STATUS_REFUNDED = 5,
+  ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED = 6,
+  OrderLineItemStatus_INT_MIN_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::min(),
+  OrderLineItemStatus_INT_MAX_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::max(),
+};
+
+extern const uint32_t OrderLineItemStatus_internal_data_[];
+inline constexpr OrderLineItemStatus OrderLineItemStatus_MIN =
+    static_cast<OrderLineItemStatus>(0);
+inline constexpr OrderLineItemStatus OrderLineItemStatus_MAX =
+    static_cast<OrderLineItemStatus>(6);
+inline bool OrderLineItemStatus_IsValid(int value) {
+  return 0 <= value && value <= 6;
+}
+inline constexpr int OrderLineItemStatus_ARRAYSIZE = 6 + 1;
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderLineItemStatus_descriptor();
+template <typename T>
+const ::std::string& OrderLineItemStatus_Name(T value) {
+  static_assert(::std::is_same<T, OrderLineItemStatus>::value ||
+                    ::std::is_integral<T>::value,
+                "Incorrect type passed to OrderLineItemStatus_Name().");
+  return OrderLineItemStatus_Name(static_cast<OrderLineItemStatus>(value));
+}
+template <>
+inline const ::std::string& OrderLineItemStatus_Name(OrderLineItemStatus value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<OrderLineItemStatus_descriptor, 0, 6>(
+      static_cast<int>(value));
+}
+inline bool OrderLineItemStatus_Parse(
+    ::absl::string_view name, OrderLineItemStatus* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<OrderLineItemStatus>(OrderLineItemStatus_descriptor(), name,
+                                           value);
+}
 
 // ===================================================================
 
@@ -272,6 +319,7 @@ class OrderLineItem final : public ::google::protobuf::Message
     kVariantIdFieldNumber = 4,
     kSkuFieldNumber = 5,
     kTitleFieldNumber = 6,
+    kStatusFieldNumber = 17,
     kProductSnapshotFieldNumber = 16,
     kUnitPriceCentsFieldNumber = 9,
     kListPriceCentsFieldNumber = 10,
@@ -279,8 +327,8 @@ class OrderLineItem final : public ::google::protobuf::Message
     kDiscountCentsFieldNumber = 12,
     kTaxCentsFieldNumber = 13,
     kTotalCentsFieldNumber = 14,
-    kCreatedAtFieldNumber = 17,
-    kUpdatedAtFieldNumber = 18,
+    kCreatedAtFieldNumber = 18,
+    kUpdatedAtFieldNumber = 19,
     kQuantityFieldNumber = 8,
   };
   // map<string, string> attributes = 7 [json_name = "attributes"];
@@ -410,6 +458,21 @@ class OrderLineItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_title();
 
   public:
+  // string status = 17 [json_name = "status"];
+  void clear_status() ;
+  const ::std::string& status() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_status(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_status();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_status();
+  void set_allocated_status(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_status() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_status(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_status();
+
+  public:
   // .shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];
   bool has_product_snapshot() const;
   void clear_product_snapshot() ;
@@ -488,7 +551,7 @@ class OrderLineItem final : public ::google::protobuf::Message
   void _internal_set_total_cents(::uint64_t value);
 
   public:
-  // uint64 created_at = 17 [json_name = "createdAt"];
+  // uint64 created_at = 18 [json_name = "createdAt"];
   void clear_created_at() ;
   ::uint64_t created_at() const;
   void set_created_at(::uint64_t value);
@@ -498,7 +561,7 @@ class OrderLineItem final : public ::google::protobuf::Message
   void _internal_set_created_at(::uint64_t value);
 
   public:
-  // optional uint64 updated_at = 18 [json_name = "updatedAt"];
+  // optional uint64 updated_at = 19 [json_name = "updatedAt"];
   bool has_updated_at() const;
   void clear_updated_at() ;
   ::uint64_t updated_at() const;
@@ -523,8 +586,8 @@ class OrderLineItem final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 18,
-                                   2, 113,
+  static const ::google::protobuf::internal::TcParseTable<5, 19,
+                                   2, 119,
                                    2>
       _table_;
 
@@ -556,6 +619,7 @@ class OrderLineItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr variant_id_;
     ::google::protobuf::internal::ArenaStringPtr sku_;
     ::google::protobuf::internal::ArenaStringPtr title_;
+    ::google::protobuf::internal::ArenaStringPtr status_;
     ::shared::v1::Struct* PROTOBUF_NULLABLE product_snapshot_;
     ::uint64_t unit_price_cents_;
     ::uint64_t list_price_cents_;
@@ -1015,7 +1079,7 @@ inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL Order
 inline void OrderLineItem::clear_quantity() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_ = 0;
-  _impl_._has_bits_[0] &= ~0x00008000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
 }
 inline ::int32_t OrderLineItem::quantity() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.quantity)
@@ -1023,7 +1087,7 @@ inline ::int32_t OrderLineItem::quantity() const {
 }
 inline void OrderLineItem::set_quantity(::int32_t value) {
   _internal_set_quantity(value);
-  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_._has_bits_[0] |= 0x00010000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.quantity)
 }
 inline ::int32_t OrderLineItem::_internal_quantity() const {
@@ -1039,7 +1103,7 @@ inline void OrderLineItem::_internal_set_quantity(::int32_t value) {
 inline void OrderLineItem::clear_unit_price_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.unit_price_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline ::uint64_t OrderLineItem::unit_price_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.unit_price_cents)
@@ -1047,7 +1111,7 @@ inline ::uint64_t OrderLineItem::unit_price_cents() const {
 }
 inline void OrderLineItem::set_unit_price_cents(::uint64_t value) {
   _internal_set_unit_price_cents(value);
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.unit_price_cents)
 }
 inline ::uint64_t OrderLineItem::_internal_unit_price_cents() const {
@@ -1061,13 +1125,13 @@ inline void OrderLineItem::_internal_set_unit_price_cents(::uint64_t value) {
 
 // optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];
 inline bool OrderLineItem::has_list_price_cents() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline void OrderLineItem::clear_list_price_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.list_price_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline ::uint64_t OrderLineItem::list_price_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.list_price_cents)
@@ -1075,7 +1139,7 @@ inline ::uint64_t OrderLineItem::list_price_cents() const {
 }
 inline void OrderLineItem::set_list_price_cents(::uint64_t value) {
   _internal_set_list_price_cents(value);
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.list_price_cents)
 }
 inline ::uint64_t OrderLineItem::_internal_list_price_cents() const {
@@ -1089,13 +1153,13 @@ inline void OrderLineItem::_internal_set_list_price_cents(::uint64_t value) {
 
 // optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];
 inline bool OrderLineItem::has_sale_price_cents() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline void OrderLineItem::clear_sale_price_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.sale_price_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
 }
 inline ::uint64_t OrderLineItem::sale_price_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.sale_price_cents)
@@ -1103,7 +1167,7 @@ inline ::uint64_t OrderLineItem::sale_price_cents() const {
 }
 inline void OrderLineItem::set_sale_price_cents(::uint64_t value) {
   _internal_set_sale_price_cents(value);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.sale_price_cents)
 }
 inline ::uint64_t OrderLineItem::_internal_sale_price_cents() const {
@@ -1117,13 +1181,13 @@ inline void OrderLineItem::_internal_set_sale_price_cents(::uint64_t value) {
 
 // optional uint64 discount_cents = 12 [json_name = "discountCents"];
 inline bool OrderLineItem::has_discount_cents() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline void OrderLineItem::clear_discount_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.discount_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 inline ::uint64_t OrderLineItem::discount_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.discount_cents)
@@ -1131,7 +1195,7 @@ inline ::uint64_t OrderLineItem::discount_cents() const {
 }
 inline void OrderLineItem::set_discount_cents(::uint64_t value) {
   _internal_set_discount_cents(value);
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.discount_cents)
 }
 inline ::uint64_t OrderLineItem::_internal_discount_cents() const {
@@ -1147,7 +1211,7 @@ inline void OrderLineItem::_internal_set_discount_cents(::uint64_t value) {
 inline void OrderLineItem::clear_tax_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tax_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 inline ::uint64_t OrderLineItem::tax_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.tax_cents)
@@ -1155,7 +1219,7 @@ inline ::uint64_t OrderLineItem::tax_cents() const {
 }
 inline void OrderLineItem::set_tax_cents(::uint64_t value) {
   _internal_set_tax_cents(value);
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00001000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.tax_cents)
 }
 inline ::uint64_t OrderLineItem::_internal_tax_cents() const {
@@ -1171,7 +1235,7 @@ inline void OrderLineItem::_internal_set_tax_cents(::uint64_t value) {
 inline void OrderLineItem::clear_total_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.total_cents_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00002000u;
 }
 inline ::uint64_t OrderLineItem::total_cents() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.total_cents)
@@ -1179,7 +1243,7 @@ inline ::uint64_t OrderLineItem::total_cents() const {
 }
 inline void OrderLineItem::set_total_cents(::uint64_t value) {
   _internal_set_total_cents(value);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00002000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.total_cents)
 }
 inline ::uint64_t OrderLineItem::_internal_total_cents() const {
@@ -1257,7 +1321,7 @@ OrderLineItem::_internal_mutable_applied_offer_ids() {
 
 // .shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];
 inline bool OrderLineItem::has_product_snapshot() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.product_snapshot_ != nullptr);
   return value;
 }
@@ -1278,16 +1342,16 @@ inline void OrderLineItem::unsafe_arena_set_allocated_product_snapshot(
   }
   _impl_.product_snapshot_ = reinterpret_cast<::shared::v1::Struct*>(value);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000040u;
+    _impl_._has_bits_[0] |= 0x00000080u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000040u;
+    _impl_._has_bits_[0] &= ~0x00000080u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.OrderLineItem.product_snapshot)
 }
 inline ::shared::v1::Struct* PROTOBUF_NULLABLE OrderLineItem::release_product_snapshot() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
   ::shared::v1::Struct* released = _impl_.product_snapshot_;
   _impl_.product_snapshot_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -1307,7 +1371,7 @@ inline ::shared::v1::Struct* PROTOBUF_NULLABLE OrderLineItem::unsafe_arena_relea
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:orders.v1.OrderLineItem.product_snapshot)
 
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
   ::shared::v1::Struct* temp = _impl_.product_snapshot_;
   _impl_.product_snapshot_ = nullptr;
   return temp;
@@ -1322,7 +1386,7 @@ inline ::shared::v1::Struct* PROTOBUF_NONNULL OrderLineItem::_internal_mutable_p
 }
 inline ::shared::v1::Struct* PROTOBUF_NONNULL OrderLineItem::mutable_product_snapshot()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   ::shared::v1::Struct* _msg = _internal_mutable_product_snapshot();
   // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineItem.product_snapshot)
   return _msg;
@@ -1339,20 +1403,85 @@ inline void OrderLineItem::set_allocated_product_snapshot(::shared::v1::Struct* 
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00000040u;
+    _impl_._has_bits_[0] |= 0x00000080u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000040u;
+    _impl_._has_bits_[0] &= ~0x00000080u;
   }
 
   _impl_.product_snapshot_ = reinterpret_cast<::shared::v1::Struct*>(value);
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineItem.product_snapshot)
 }
 
-// uint64 created_at = 17 [json_name = "createdAt"];
+// string status = 17 [json_name = "status"];
+inline void OrderLineItem::clear_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.status_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline const ::std::string& OrderLineItem::status() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.status)
+  return _internal_status();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void OrderLineItem::set_status(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.status_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.status)
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineItem::mutable_status()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineItem.status)
+  return _s;
+}
+inline const ::std::string& OrderLineItem::_internal_status() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.status_.Get();
+}
+inline void OrderLineItem::_internal_set_status(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.status_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineItem::_internal_mutable_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  return _impl_.status_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE OrderLineItem::release_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:orders.v1.OrderLineItem.status)
+  if ((_impl_._has_bits_[0] & 0x00000040u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000040u;
+  auto* released = _impl_.status_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.status_.Set("", GetArena());
+  }
+  return released;
+}
+inline void OrderLineItem::set_allocated_status(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000040u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000040u;
+  }
+  _impl_.status_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.status_.IsDefault()) {
+    _impl_.status_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineItem.status)
+}
+
+// uint64 created_at = 18 [json_name = "createdAt"];
 inline void OrderLineItem::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
 inline ::uint64_t OrderLineItem::created_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.created_at)
@@ -1360,7 +1489,7 @@ inline ::uint64_t OrderLineItem::created_at() const {
 }
 inline void OrderLineItem::set_created_at(::uint64_t value) {
   _internal_set_created_at(value);
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00004000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.created_at)
 }
 inline ::uint64_t OrderLineItem::_internal_created_at() const {
@@ -1372,15 +1501,15 @@ inline void OrderLineItem::_internal_set_created_at(::uint64_t value) {
   _impl_.created_at_ = value;
 }
 
-// optional uint64 updated_at = 18 [json_name = "updatedAt"];
+// optional uint64 updated_at = 19 [json_name = "updatedAt"];
 inline bool OrderLineItem::has_updated_at() const {
-  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline void OrderLineItem::clear_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_ = ::uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00004000u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 inline ::uint64_t OrderLineItem::updated_at() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.updated_at)
@@ -1388,7 +1517,7 @@ inline ::uint64_t OrderLineItem::updated_at() const {
 }
 inline void OrderLineItem::set_updated_at(::uint64_t value) {
   _internal_set_updated_at(value);
-  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_._has_bits_[0] |= 0x00008000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.updated_at)
 }
 inline ::uint64_t OrderLineItem::_internal_updated_at() const {
@@ -1408,6 +1537,19 @@ inline void OrderLineItem::_internal_set_updated_at(::uint64_t value) {
 }  // namespace v1
 }  // namespace orders
 
+
+namespace google {
+namespace protobuf {
+
+template <>
+struct is_proto_enum<::orders::v1::OrderLineItemStatus> : std::true_type {};
+template <>
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::orders::v1::OrderLineItemStatus>() {
+  return ::orders::v1::OrderLineItemStatus_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

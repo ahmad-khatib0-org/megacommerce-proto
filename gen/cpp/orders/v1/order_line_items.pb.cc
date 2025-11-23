@@ -68,6 +68,9 @@ inline constexpr OrderLineItem::Impl_::Impl_(
         title_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        status_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         product_snapshot_{nullptr},
         unit_price_cents_{::uint64_t{0u}},
         list_price_cents_{::uint64_t{0u}},
@@ -100,8 +103,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OrderLineItemDefaultTypeInternal _OrderLineItem_default_instance_;
 }  // namespace v1
 }  // namespace orders
-static constexpr const ::_pb::EnumDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
-    file_level_enum_descriptors_orders_2fv1_2forder_5fline_5fitems_2eproto = nullptr;
+static const ::_pb::EnumDescriptor* PROTOBUF_NONNULL
+    file_level_enum_descriptors_orders_2fv1_2forder_5fline_5fitems_2eproto[1];
 static constexpr const ::_pb::ServiceDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
     file_level_service_descriptors_orders_2fv1_2forder_5fline_5fitems_2eproto = nullptr;
 const ::uint32_t
@@ -116,7 +119,7 @@ const ::uint32_t
         1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_._has_bits_),
-        21, // hasbit index offset
+        22, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_.order_id_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_.product_id_),
@@ -133,6 +136,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_.total_cents_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_.applied_offer_ids_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_.product_snapshot_),
+        PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_.status_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_.created_at_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderLineItem, _impl_.updated_at_),
         0,
@@ -142,17 +146,18 @@ const ::uint32_t
         4,
         5,
         ~0u,
-        15,
-        7,
+        16,
         8,
         9,
         10,
         11,
         12,
-        ~0u,
-        6,
         13,
+        ~0u,
+        7,
+        6,
         14,
+        15,
 };
 
 static const ::_pbi::MigrationSchema
@@ -167,7 +172,7 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_orders_2fv1_2forder_5fline_5fitems_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n orders/v1/order_line_items.proto\022\torde"
-    "rs.v1\032\026shared/v1/struct.proto\"\260\006\n\rOrderL"
+    "rs.v1\032\026shared/v1/struct.proto\"\310\006\n\rOrderL"
     "ineItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001("
     "\tR\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tproductI"
     "d\022\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\020\n\003sku\030"
@@ -183,15 +188,23 @@ const char descriptor_table_protodef_orders_2fv1_2forder_5fline_5fitems_2eproto[
     " \001(\004R\ntotalCents\022*\n\021applied_offer_ids\030\017 "
     "\003(\tR\017appliedOfferIds\022<\n\020product_snapshot"
     "\030\020 \001(\0132\021.shared.v1.StructR\017productSnapsh"
-    "ot\022\035\n\ncreated_at\030\021 \001(\004R\tcreatedAt\022\"\n\nupd"
-    "ated_at\030\022 \001(\004H\003R\tupdatedAt\210\001\001\032=\n\017Attribu"
-    "tesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
-    "\tR\005value:\0028\001B\023\n\021_list_price_centsB\023\n\021_sa"
-    "le_price_centsB\021\n\017_discount_centsB\r\n\013_up"
-    "dated_atBy\n\032org.megacommerce.orders.v1B\023"
-    "OrderLineItemsProtoZCgithub.com/ahmad-kh"
-    "atib0-org/megacommerce-proto/gen/go/orde"
-    "rs/v1;v1\370\001\001b\006proto3"
+    "ot\022\026\n\006status\030\021 \001(\tR\006status\022\035\n\ncreated_at"
+    "\030\022 \001(\004R\tcreatedAt\022\"\n\nupdated_at\030\023 \001(\004H\003R"
+    "\tupdatedAt\210\001\001\032=\n\017AttributesEntry\022\020\n\003key\030"
+    "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\023\n\021"
+    "_list_price_centsB\023\n\021_sale_price_centsB\021"
+    "\n\017_discount_centsB\r\n\013_updated_at*\241\002\n\023Ord"
+    "erLineItemStatus\022\"\n\036ORDER_LINE_ITEM_STAT"
+    "US_CREATED\020\000\022$\n ORDER_LINE_ITEM_STATUS_C"
+    "ONFIRMED\020\001\022\"\n\036ORDER_LINE_ITEM_STATUS_SHI"
+    "PPED\020\002\022$\n ORDER_LINE_ITEM_STATUS_DELIVER"
+    "ED\020\003\022$\n ORDER_LINE_ITEM_STATUS_CANCELLED"
+    "\020\004\022#\n\037ORDER_LINE_ITEM_STATUS_REFUNDED\020\005\022"
+    "+\n\'ORDER_LINE_ITEM_STATUS_REFUND_REQUEST"
+    "ED\020\006By\n\032org.megacommerce.orders.v1B\023Orde"
+    "rLineItemsProtoZCgithub.com/ahmad-khatib"
+    "0-org/megacommerce-proto/gen/go/orders/v"
+    "1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto_deps[1] = {
@@ -201,7 +214,7 @@ static ::absl::once_flag descriptor_table_orders_2fv1_2forder_5fline_5fitems_2ep
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto = {
     false,
     false,
-    1019,
+    1335,
     descriptor_table_protodef_orders_2fv1_2forder_5fline_5fitems_2eproto,
     "orders/v1/order_line_items.proto",
     &descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto_once,
@@ -216,6 +229,12 @@ PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2f
 };
 namespace orders {
 namespace v1 {
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL OrderLineItemStatus_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto);
+  return file_level_enum_descriptors_orders_2fv1_2forder_5fline_5fitems_2eproto[0];
+}
+PROTOBUF_CONSTINIT const uint32_t OrderLineItemStatus_internal_data_[] = {
+    458752u, 0u, };
 // ===================================================================
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -327,7 +346,7 @@ class OrderLineItem::_Internal {
 void OrderLineItem::clear_product_snapshot() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.product_snapshot_ != nullptr) _impl_.product_snapshot_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 OrderLineItem::OrderLineItem(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -351,7 +370,8 @@ PROTOBUF_NDEBUG_INLINE OrderLineItem::Impl_::Impl_(
         product_id_(arena, from.product_id_),
         variant_id_(arena, from.variant_id_),
         sku_(arena, from.sku_),
-        title_(arena, from.title_) {}
+        title_(arena, from.title_),
+        status_(arena, from.status_) {}
 
 OrderLineItem::OrderLineItem(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -367,7 +387,7 @@ OrderLineItem::OrderLineItem(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.product_snapshot_ = ((cached_has_bits & 0x00000040u) != 0)
+  _impl_.product_snapshot_ = ((cached_has_bits & 0x00000080u) != 0)
                 ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.product_snapshot_)
                 : nullptr;
   ::memcpy(reinterpret_cast<char *>(&_impl_) +
@@ -391,7 +411,8 @@ PROTOBUF_NDEBUG_INLINE OrderLineItem::Impl_::Impl_(
         product_id_(arena),
         variant_id_(arena),
         sku_(arena),
-        title_(arena) {}
+        title_(arena),
+        status_(arena) {}
 
 inline void OrderLineItem::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -416,6 +437,7 @@ inline void OrderLineItem::SharedDtor(MessageLite& self) {
   this_._impl_.variant_id_.Destroy();
   this_._impl_.sku_.Destroy();
   this_._impl_.title_.Destroy();
+  this_._impl_.status_.Destroy();
   delete this_._impl_.product_snapshot_;
   this_._impl_.~Impl_();
 }
@@ -483,16 +505,16 @@ OrderLineItem::GetClassData() const {
   return OrderLineItem_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<5, 18, 2, 113, 2>
+const ::_pbi::TcParseTable<5, 19, 2, 119, 2>
 OrderLineItem::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_._has_bits_),
     0, // no _extensions_
-    18, 248,  // max_field_number, fast_idx_mask
+    19, 248,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294705152,  // skipmap
+    4294443008,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    18,  // num_field_entries
+    19,  // num_field_entries
     2,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     OrderLineItem_class_data_.base(),
@@ -523,39 +545,41 @@ OrderLineItem::_table_ = {
      {50, 5, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.title_)}},
     {::_pbi::TcParser::MiniParse, {}},
     // int32 quantity = 8 [json_name = "quantity"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(OrderLineItem, _impl_.quantity_), 15>(),
-     {64, 15, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.quantity_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(OrderLineItem, _impl_.quantity_), 16>(),
+     {64, 16, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.quantity_)}},
     // uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.unit_price_cents_), 7>(),
-     {72, 7, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.unit_price_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.unit_price_cents_), 8>(),
+     {72, 8, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.unit_price_cents_)}},
     // optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.list_price_cents_), 8>(),
-     {80, 8, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.list_price_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.list_price_cents_), 9>(),
+     {80, 9, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.list_price_cents_)}},
     // optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.sale_price_cents_), 9>(),
-     {88, 9, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.sale_price_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.sale_price_cents_), 10>(),
+     {88, 10, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.sale_price_cents_)}},
     // optional uint64 discount_cents = 12 [json_name = "discountCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.discount_cents_), 10>(),
-     {96, 10, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.discount_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.discount_cents_), 11>(),
+     {96, 11, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.discount_cents_)}},
     // uint64 tax_cents = 13 [json_name = "taxCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.tax_cents_), 11>(),
-     {104, 11, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.tax_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.tax_cents_), 12>(),
+     {104, 12, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.tax_cents_)}},
     // uint64 total_cents = 14 [json_name = "totalCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.total_cents_), 12>(),
-     {112, 12, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.total_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(OrderLineItem, _impl_.total_cents_), 13>(),
+     {112, 13, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.total_cents_)}},
     // repeated string applied_offer_ids = 15 [json_name = "appliedOfferIds"];
     {::_pbi::TcParser::FastUR1,
      {122, 63, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.applied_offer_ids_)}},
     // .shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];
     {::_pbi::TcParser::FastMtS2,
-     {386, 6, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.product_snapshot_)}},
-    // uint64 created_at = 17 [json_name = "createdAt"];
+     {386, 7, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.product_snapshot_)}},
+    // string status = 17 [json_name = "status"];
+    {::_pbi::TcParser::FastUS2,
+     {394, 6, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.status_)}},
+    // uint64 created_at = 18 [json_name = "createdAt"];
     {::_pbi::TcParser::FastV64S2,
-     {392, 13, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.created_at_)}},
-    // optional uint64 updated_at = 18 [json_name = "updatedAt"];
+     {400, 14, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.created_at_)}},
+    // optional uint64 updated_at = 19 [json_name = "updatedAt"];
     {::_pbi::TcParser::FastV64S2,
-     {400, 14, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.updated_at_)}},
-    {::_pbi::TcParser::MiniParse, {}},
+     {408, 15, 0, PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.updated_at_)}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -593,37 +617,40 @@ OrderLineItem::_table_ = {
     {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.attributes_), -1, 1,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
     // int32 quantity = 8 [json_name = "quantity"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.quantity_), _Internal::kHasBitsOffset + 15, 0,
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.quantity_), _Internal::kHasBitsOffset + 16, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.unit_price_cents_), _Internal::kHasBitsOffset + 7, 0,
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.unit_price_cents_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.list_price_cents_), _Internal::kHasBitsOffset + 8, 0,
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.list_price_cents_), _Internal::kHasBitsOffset + 9, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.sale_price_cents_), _Internal::kHasBitsOffset + 9, 0,
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.sale_price_cents_), _Internal::kHasBitsOffset + 10, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // optional uint64 discount_cents = 12 [json_name = "discountCents"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.discount_cents_), _Internal::kHasBitsOffset + 10, 0,
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.discount_cents_), _Internal::kHasBitsOffset + 11, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // uint64 tax_cents = 13 [json_name = "taxCents"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.tax_cents_), _Internal::kHasBitsOffset + 11, 0,
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.tax_cents_), _Internal::kHasBitsOffset + 12, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // uint64 total_cents = 14 [json_name = "totalCents"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.total_cents_), _Internal::kHasBitsOffset + 12, 0,
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.total_cents_), _Internal::kHasBitsOffset + 13, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // repeated string applied_offer_ids = 15 [json_name = "appliedOfferIds"];
     {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.applied_offer_ids_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
     // .shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.product_snapshot_), _Internal::kHasBitsOffset + 6, 0,
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.product_snapshot_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // uint64 created_at = 17 [json_name = "createdAt"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.created_at_), _Internal::kHasBitsOffset + 13, 0,
+    // string status = 17 [json_name = "status"];
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.status_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // uint64 created_at = 18 [json_name = "createdAt"];
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.created_at_), _Internal::kHasBitsOffset + 14, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
-    // optional uint64 updated_at = 18 [json_name = "updatedAt"];
-    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.updated_at_), _Internal::kHasBitsOffset + 14, 0,
+    // optional uint64 updated_at = 19 [json_name = "updatedAt"];
+    {PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.updated_at_), _Internal::kHasBitsOffset + 15, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
   {{
@@ -633,7 +660,7 @@ OrderLineItem::_table_ = {
                                        0)},
   }},
   {{
-    "\27\2\10\12\12\3\5\12\0\0\0\0\0\0\0\21\0\0\0\0\0\0\0\0"
+    "\27\2\10\12\12\3\5\12\0\0\0\0\0\0\0\21\0\6\0\0\0\0\0\0"
     "orders.v1.OrderLineItem"
     "id"
     "order_id"
@@ -643,6 +670,7 @@ OrderLineItem::_table_ = {
     "title"
     "attributes"
     "applied_offer_ids"
+    "status"
   }},
 };
 PROTOBUF_NOINLINE void OrderLineItem::Clear() {
@@ -655,7 +683,7 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
   _impl_.attributes_.Clear();
   _impl_.applied_offer_ids_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000007fu) != 0) {
+  if ((cached_has_bits & 0x000000ffu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.id_.ClearNonDefaultToEmpty();
     }
@@ -675,16 +703,19 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
       _impl_.title_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000040u) != 0) {
+      _impl_.status_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000080u) != 0) {
       ABSL_DCHECK(_impl_.product_snapshot_ != nullptr);
       _impl_.product_snapshot_->Clear();
     }
   }
-  _impl_.unit_price_cents_ = ::uint64_t{0u};
   if ((cached_has_bits & 0x0000ff00u) != 0) {
-    ::memset(&_impl_.list_price_cents_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.quantity_) -
-        reinterpret_cast<char*>(&_impl_.list_price_cents_)) + sizeof(_impl_.quantity_));
+    ::memset(&_impl_.unit_price_cents_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.updated_at_) -
+        reinterpret_cast<char*>(&_impl_.unit_price_cents_)) + sizeof(_impl_.updated_at_));
   }
+  _impl_.quantity_ = 0;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -798,7 +829,7 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
   }
 
   // int32 quantity = 8 [json_name = "quantity"];
-  if ((this_._impl_._has_bits_[0] & 0x00008000u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00010000u) != 0) {
     if (this_._internal_quantity() != 0) {
       target =
           ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<8>(
@@ -807,7 +838,7 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
   }
 
   // uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000100u) != 0) {
     if (this_._internal_unit_price_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -817,28 +848,28 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
 
   cached_has_bits = this_._impl_._has_bits_[0];
   // optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];
-  if ((cached_has_bits & 0x00000100u) != 0) {
+  if ((cached_has_bits & 0x00000200u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
         10, this_._internal_list_price_cents(), target);
   }
 
   // optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];
-  if ((cached_has_bits & 0x00000200u) != 0) {
+  if ((cached_has_bits & 0x00000400u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
         11, this_._internal_sale_price_cents(), target);
   }
 
   // optional uint64 discount_cents = 12 [json_name = "discountCents"];
-  if ((cached_has_bits & 0x00000400u) != 0) {
+  if ((cached_has_bits & 0x00000800u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
         12, this_._internal_discount_cents(), target);
   }
 
   // uint64 tax_cents = 13 [json_name = "taxCents"];
-  if ((cached_has_bits & 0x00000800u) != 0) {
+  if ((cached_has_bits & 0x00001000u) != 0) {
     if (this_._internal_tax_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -847,7 +878,7 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
   }
 
   // uint64 total_cents = 14 [json_name = "totalCents"];
-  if ((cached_has_bits & 0x00001000u) != 0) {
+  if ((cached_has_bits & 0x00002000u) != 0) {
     if (this_._internal_total_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -864,26 +895,36 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
   }
 
   // .shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];
-  if ((cached_has_bits & 0x00000040u) != 0) {
+  if ((cached_has_bits & 0x00000080u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         16, *this_._impl_.product_snapshot_, this_._impl_.product_snapshot_->GetCachedSize(), target,
         stream);
   }
 
-  // uint64 created_at = 17 [json_name = "createdAt"];
-  if ((cached_has_bits & 0x00002000u) != 0) {
-    if (this_._internal_created_at() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-          17, this_._internal_created_at(), target);
+  // string status = 17 [json_name = "status"];
+  if ((cached_has_bits & 0x00000040u) != 0) {
+    if (!this_._internal_status().empty()) {
+      const ::std::string& _s = this_._internal_status();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "orders.v1.OrderLineItem.status");
+      target = stream->WriteStringMaybeAliased(17, _s, target);
     }
   }
 
-  // optional uint64 updated_at = 18 [json_name = "updatedAt"];
+  // uint64 created_at = 18 [json_name = "createdAt"];
   if ((cached_has_bits & 0x00004000u) != 0) {
+    if (this_._internal_created_at() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          18, this_._internal_created_at(), target);
+    }
+  }
+
+  // optional uint64 updated_at = 19 [json_name = "updatedAt"];
+  if ((cached_has_bits & 0x00008000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-        18, this_._internal_updated_at(), target);
+        19, this_._internal_updated_at(), target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -975,63 +1016,72 @@ PROTOBUF_NOINLINE void OrderLineItem::Clear() {
                                         this_._internal_title());
       }
     }
-    // .shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];
+    // string status = 17 [json_name = "status"];
     if ((cached_has_bits & 0x00000040u) != 0) {
+      if (!this_._internal_status().empty()) {
+        total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_status());
+      }
+    }
+    // .shared.v1.Struct product_snapshot = 16 [json_name = "productSnapshot"];
+    if ((cached_has_bits & 0x00000080u) != 0) {
       total_size += 2 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.product_snapshot_);
     }
+  }
+  if ((cached_has_bits & 0x0000ff00u) != 0) {
     // uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];
-    if ((cached_has_bits & 0x00000080u) != 0) {
+    if ((cached_has_bits & 0x00000100u) != 0) {
       if (this_._internal_unit_price_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_unit_price_cents());
       }
     }
-  }
-  if ((cached_has_bits & 0x0000ff00u) != 0) {
     // optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];
-    if ((cached_has_bits & 0x00000100u) != 0) {
+    if ((cached_has_bits & 0x00000200u) != 0) {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
           this_._internal_list_price_cents());
     }
     // optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];
-    if ((cached_has_bits & 0x00000200u) != 0) {
+    if ((cached_has_bits & 0x00000400u) != 0) {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
           this_._internal_sale_price_cents());
     }
     // optional uint64 discount_cents = 12 [json_name = "discountCents"];
-    if ((cached_has_bits & 0x00000400u) != 0) {
+    if ((cached_has_bits & 0x00000800u) != 0) {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
           this_._internal_discount_cents());
     }
     // uint64 tax_cents = 13 [json_name = "taxCents"];
-    if ((cached_has_bits & 0x00000800u) != 0) {
+    if ((cached_has_bits & 0x00001000u) != 0) {
       if (this_._internal_tax_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_tax_cents());
       }
     }
     // uint64 total_cents = 14 [json_name = "totalCents"];
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    if ((cached_has_bits & 0x00002000u) != 0) {
       if (this_._internal_total_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_total_cents());
       }
     }
-    // uint64 created_at = 17 [json_name = "createdAt"];
-    if ((cached_has_bits & 0x00002000u) != 0) {
+    // uint64 created_at = 18 [json_name = "createdAt"];
+    if ((cached_has_bits & 0x00004000u) != 0) {
       if (this_._internal_created_at() != 0) {
         total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
                                         this_._internal_created_at());
       }
     }
-    // optional uint64 updated_at = 18 [json_name = "updatedAt"];
-    if ((cached_has_bits & 0x00004000u) != 0) {
+    // optional uint64 updated_at = 19 [json_name = "updatedAt"];
+    if ((cached_has_bits & 0x00008000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
                                       this_._internal_updated_at());
     }
+  }
+   {
     // int32 quantity = 8 [json_name = "quantity"];
-    if ((cached_has_bits & 0x00008000u) != 0) {
+    if ((cached_has_bits & 0x00010000u) != 0) {
       if (this_._internal_quantity() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
             this_._internal_quantity());
@@ -1110,6 +1160,15 @@ void OrderLineItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::g
       }
     }
     if ((cached_has_bits & 0x00000040u) != 0) {
+      if (!from._internal_status().empty()) {
+        _this->_internal_set_status(from._internal_status());
+      } else {
+        if (_this->_impl_.status_.IsDefault()) {
+          _this->_internal_set_status("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000080u) != 0) {
       ABSL_DCHECK(from._impl_.product_snapshot_ != nullptr);
       if (_this->_impl_.product_snapshot_ == nullptr) {
         _this->_impl_.product_snapshot_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.product_snapshot_);
@@ -1117,44 +1176,44 @@ void OrderLineItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::g
         _this->_impl_.product_snapshot_->MergeFrom(*from._impl_.product_snapshot_);
       }
     }
-    if ((cached_has_bits & 0x00000080u) != 0) {
+  }
+  if ((cached_has_bits & 0x0000ff00u) != 0) {
+    if ((cached_has_bits & 0x00000100u) != 0) {
       if (from._internal_unit_price_cents() != 0) {
         _this->_impl_.unit_price_cents_ = from._impl_.unit_price_cents_;
       }
     }
-  }
-  if ((cached_has_bits & 0x0000ff00u) != 0) {
-    if ((cached_has_bits & 0x00000100u) != 0) {
+    if ((cached_has_bits & 0x00000200u) != 0) {
       _this->_impl_.list_price_cents_ = from._impl_.list_price_cents_;
     }
-    if ((cached_has_bits & 0x00000200u) != 0) {
+    if ((cached_has_bits & 0x00000400u) != 0) {
       _this->_impl_.sale_price_cents_ = from._impl_.sale_price_cents_;
     }
-    if ((cached_has_bits & 0x00000400u) != 0) {
+    if ((cached_has_bits & 0x00000800u) != 0) {
       _this->_impl_.discount_cents_ = from._impl_.discount_cents_;
     }
-    if ((cached_has_bits & 0x00000800u) != 0) {
+    if ((cached_has_bits & 0x00001000u) != 0) {
       if (from._internal_tax_cents() != 0) {
         _this->_impl_.tax_cents_ = from._impl_.tax_cents_;
       }
     }
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    if ((cached_has_bits & 0x00002000u) != 0) {
       if (from._internal_total_cents() != 0) {
         _this->_impl_.total_cents_ = from._impl_.total_cents_;
       }
     }
-    if ((cached_has_bits & 0x00002000u) != 0) {
+    if ((cached_has_bits & 0x00004000u) != 0) {
       if (from._internal_created_at() != 0) {
         _this->_impl_.created_at_ = from._impl_.created_at_;
       }
     }
-    if ((cached_has_bits & 0x00004000u) != 0) {
+    if ((cached_has_bits & 0x00008000u) != 0) {
       _this->_impl_.updated_at_ = from._impl_.updated_at_;
     }
-    if ((cached_has_bits & 0x00008000u) != 0) {
-      if (from._internal_quantity() != 0) {
-        _this->_impl_.quantity_ = from._impl_.quantity_;
-      }
+  }
+  if ((cached_has_bits & 0x00010000u) != 0) {
+    if (from._internal_quantity() != 0) {
+      _this->_impl_.quantity_ = from._impl_.quantity_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -1183,6 +1242,7 @@ void OrderLineItem::InternalSwap(OrderLineItem* PROTOBUF_RESTRICT PROTOBUF_NONNU
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.variant_id_, &other->_impl_.variant_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sku_, &other->_impl_.sku_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.status_, &other->_impl_.status_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(OrderLineItem, _impl_.quantity_)
       + sizeof(OrderLineItem::_impl_.quantity_)
