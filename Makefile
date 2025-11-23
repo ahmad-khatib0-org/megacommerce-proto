@@ -34,6 +34,7 @@ generate:
 		python -m grpc_tools.protoc \
 			--proto_path=. \
 			--python_out=gen/python \
+			--pyi_out=gen/python \
 			--grpc_python_out=gen/python \
 			$$file ; \
 	done
