@@ -449,7 +449,7 @@ class OrderRefundRequest final : public ::google::protobuf::Message
   enum : int {
     kOrderIdFieldNumber = 1,
     kReasonFieldNumber = 3,
-    kLineItemsFieldNumber = 2,
+    kItemFieldNumber = 2,
     kRefundShippingFieldNumber = 4,
   };
   // string order_id = 1 [json_name = "orderId"];
@@ -482,19 +482,19 @@ class OrderRefundRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_reason();
 
   public:
-  // .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
-  bool has_line_items() const;
-  void clear_line_items() ;
-  const ::orders::v1::RefundLineItemRefund& line_items() const;
-  [[nodiscard]] ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE release_line_items();
-  ::orders::v1::RefundLineItemRefund* PROTOBUF_NONNULL mutable_line_items();
-  void set_allocated_line_items(::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_line_items(::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE value);
-  ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE unsafe_arena_release_line_items();
+  // .orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];
+  bool has_item() const;
+  void clear_item() ;
+  const ::orders::v1::RefundLineItemRefund& item() const;
+  [[nodiscard]] ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE release_item();
+  ::orders::v1::RefundLineItemRefund* PROTOBUF_NONNULL mutable_item();
+  void set_allocated_item(::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_item(::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE value);
+  ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE unsafe_arena_release_item();
 
   private:
-  const ::orders::v1::RefundLineItemRefund& _internal_line_items() const;
-  ::orders::v1::RefundLineItemRefund* PROTOBUF_NONNULL _internal_mutable_line_items();
+  const ::orders::v1::RefundLineItemRefund& _internal_item() const;
+  ::orders::v1::RefundLineItemRefund* PROTOBUF_NONNULL _internal_mutable_item();
 
   public:
   // bool refund_shipping = 4 [json_name = "refundShipping"];
@@ -535,7 +535,7 @@ class OrderRefundRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr order_id_;
     ::google::protobuf::internal::ArenaStringPtr reason_;
-    ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE line_items_;
+    ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE item_;
     bool refund_shipping_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1015,46 +1015,46 @@ inline void OrderRefundRequest::set_allocated_order_id(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderRefundRequest.order_id)
 }
 
-// .orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];
-inline bool OrderRefundRequest::has_line_items() const {
+// .orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];
+inline bool OrderRefundRequest::has_item() const {
   bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.line_items_ != nullptr);
+  PROTOBUF_ASSUME(!value || _impl_.item_ != nullptr);
   return value;
 }
-inline void OrderRefundRequest::clear_line_items() {
+inline void OrderRefundRequest::clear_item() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.line_items_ != nullptr) _impl_.line_items_->Clear();
+  if (_impl_.item_ != nullptr) _impl_.item_->Clear();
   _impl_._has_bits_[0] &= ~0x00000004u;
 }
-inline const ::orders::v1::RefundLineItemRefund& OrderRefundRequest::_internal_line_items() const {
+inline const ::orders::v1::RefundLineItemRefund& OrderRefundRequest::_internal_item() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::orders::v1::RefundLineItemRefund* p = _impl_.line_items_;
+  const ::orders::v1::RefundLineItemRefund* p = _impl_.item_;
   return p != nullptr ? *p : reinterpret_cast<const ::orders::v1::RefundLineItemRefund&>(::orders::v1::_RefundLineItemRefund_default_instance_);
 }
-inline const ::orders::v1::RefundLineItemRefund& OrderRefundRequest::line_items() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:orders.v1.OrderRefundRequest.line_items)
-  return _internal_line_items();
+inline const ::orders::v1::RefundLineItemRefund& OrderRefundRequest::item() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderRefundRequest.item)
+  return _internal_item();
 }
-inline void OrderRefundRequest::unsafe_arena_set_allocated_line_items(
+inline void OrderRefundRequest::unsafe_arena_set_allocated_item(
     ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.line_items_);
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.item_);
   }
-  _impl_.line_items_ = reinterpret_cast<::orders::v1::RefundLineItemRefund*>(value);
+  _impl_.item_ = reinterpret_cast<::orders::v1::RefundLineItemRefund*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000004u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000004u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.OrderRefundRequest.line_items)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:orders.v1.OrderRefundRequest.item)
 }
-inline ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE OrderRefundRequest::release_line_items() {
+inline ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE OrderRefundRequest::release_item() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000004u;
-  ::orders::v1::RefundLineItemRefund* released = _impl_.line_items_;
-  _impl_.line_items_ = nullptr;
+  ::orders::v1::RefundLineItemRefund* released = _impl_.item_;
+  _impl_.item_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
     auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
     released = ::google::protobuf::internal::DuplicateIfNonNull(released);
@@ -1068,35 +1068,35 @@ inline ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE OrderRefundRequest:
   }
   return released;
 }
-inline ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE OrderRefundRequest::unsafe_arena_release_line_items() {
+inline ::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE OrderRefundRequest::unsafe_arena_release_item() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:orders.v1.OrderRefundRequest.line_items)
+  // @@protoc_insertion_point(field_release:orders.v1.OrderRefundRequest.item)
 
   _impl_._has_bits_[0] &= ~0x00000004u;
-  ::orders::v1::RefundLineItemRefund* temp = _impl_.line_items_;
-  _impl_.line_items_ = nullptr;
+  ::orders::v1::RefundLineItemRefund* temp = _impl_.item_;
+  _impl_.item_ = nullptr;
   return temp;
 }
-inline ::orders::v1::RefundLineItemRefund* PROTOBUF_NONNULL OrderRefundRequest::_internal_mutable_line_items() {
+inline ::orders::v1::RefundLineItemRefund* PROTOBUF_NONNULL OrderRefundRequest::_internal_mutable_item() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.line_items_ == nullptr) {
+  if (_impl_.item_ == nullptr) {
     auto* p = ::google::protobuf::Message::DefaultConstruct<::orders::v1::RefundLineItemRefund>(GetArena());
-    _impl_.line_items_ = reinterpret_cast<::orders::v1::RefundLineItemRefund*>(p);
+    _impl_.item_ = reinterpret_cast<::orders::v1::RefundLineItemRefund*>(p);
   }
-  return _impl_.line_items_;
+  return _impl_.item_;
 }
-inline ::orders::v1::RefundLineItemRefund* PROTOBUF_NONNULL OrderRefundRequest::mutable_line_items()
+inline ::orders::v1::RefundLineItemRefund* PROTOBUF_NONNULL OrderRefundRequest::mutable_item()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000004u;
-  ::orders::v1::RefundLineItemRefund* _msg = _internal_mutable_line_items();
-  // @@protoc_insertion_point(field_mutable:orders.v1.OrderRefundRequest.line_items)
+  ::orders::v1::RefundLineItemRefund* _msg = _internal_mutable_item();
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderRefundRequest.item)
   return _msg;
 }
-inline void OrderRefundRequest::set_allocated_line_items(::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE value) {
+inline void OrderRefundRequest::set_allocated_item(::orders::v1::RefundLineItemRefund* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.line_items_);
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.item_);
   }
 
   if (value != nullptr) {
@@ -1109,8 +1109,8 @@ inline void OrderRefundRequest::set_allocated_line_items(::orders::v1::RefundLin
     _impl_._has_bits_[0] &= ~0x00000004u;
   }
 
-  _impl_.line_items_ = reinterpret_cast<::orders::v1::RefundLineItemRefund*>(value);
-  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderRefundRequest.line_items)
+  _impl_.item_ = reinterpret_cast<::orders::v1::RefundLineItemRefund*>(value);
+  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderRefundRequest.item)
 }
 
 // string reason = 3 [json_name = "reason"];

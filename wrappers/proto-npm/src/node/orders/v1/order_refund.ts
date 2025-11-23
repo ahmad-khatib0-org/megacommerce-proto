@@ -18,8 +18,8 @@ export interface OrderRefundResponse {
 
 export interface OrderRefundRequest {
   orderId: string;
-  /** refund whole order or specific line items */
-  lineItems?:
+  /** the item to be refunded */
+  item?:
     | RefundLineItemRefund
     | undefined;
   /** reason code, external refund id, etc. */
@@ -131,7 +131,7 @@ export const OrderRefundResponse: MessageFns<OrderRefundResponse> = {
 };
 
 function createBaseOrderRefundRequest(): OrderRefundRequest {
-  return { orderId: "", lineItems: undefined, reason: "", refundShipping: false };
+  return { orderId: "", item: undefined, reason: "", refundShipping: false };
 }
 
 export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
@@ -139,8 +139,8 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
     if (message.orderId !== "") {
       writer.uint32(10).string(message.orderId);
     }
-    if (message.lineItems !== undefined) {
-      RefundLineItemRefund.encode(message.lineItems, writer.uint32(18).fork()).join();
+    if (message.item !== undefined) {
+      RefundLineItemRefund.encode(message.item, writer.uint32(18).fork()).join();
     }
     if (message.reason !== "") {
       writer.uint32(26).string(message.reason);
@@ -171,7 +171,7 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
             break;
           }
 
-          message.lineItems = RefundLineItemRefund.decode(reader, reader.uint32());
+          message.item = RefundLineItemRefund.decode(reader, reader.uint32());
           continue;
         }
         case 3: {
@@ -202,7 +202,7 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
   fromJSON(object: any): OrderRefundRequest {
     return {
       orderId: isSet(object.orderId) ? globalThis.String(object.orderId) : "",
-      lineItems: isSet(object.lineItems) ? RefundLineItemRefund.fromJSON(object.lineItems) : undefined,
+      item: isSet(object.item) ? RefundLineItemRefund.fromJSON(object.item) : undefined,
       reason: isSet(object.reason) ? globalThis.String(object.reason) : "",
       refundShipping: isSet(object.refundShipping) ? globalThis.Boolean(object.refundShipping) : false,
     };
@@ -213,8 +213,8 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
     if (message.orderId !== "") {
       obj.orderId = message.orderId;
     }
-    if (message.lineItems !== undefined) {
-      obj.lineItems = RefundLineItemRefund.toJSON(message.lineItems);
+    if (message.item !== undefined) {
+      obj.item = RefundLineItemRefund.toJSON(message.item);
     }
     if (message.reason !== "") {
       obj.reason = message.reason;
@@ -231,8 +231,8 @@ export const OrderRefundRequest: MessageFns<OrderRefundRequest> = {
   fromPartial<I extends Exact<DeepPartial<OrderRefundRequest>, I>>(object: I): OrderRefundRequest {
     const message = createBaseOrderRefundRequest();
     message.orderId = object.orderId ?? "";
-    message.lineItems = (object.lineItems !== undefined && object.lineItems !== null)
-      ? RefundLineItemRefund.fromPartial(object.lineItems)
+    message.item = (object.item !== undefined && object.item !== null)
+      ? RefundLineItemRefund.fromPartial(object.item)
       : undefined;
     message.reason = object.reason ?? "";
     message.refundShipping = object.refundShipping ?? false;

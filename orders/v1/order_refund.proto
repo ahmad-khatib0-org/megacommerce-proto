@@ -19,8 +19,8 @@ message OrderRefundResponse {
 
 message OrderRefundRequest {
   string order_id = 1;
-  // refund whole order or specific line items
-  RefundLineItemRefund line_items = 2;
+  // the item to be refunded
+  RefundLineItemRefund item = 2;
   // reason code, external refund id, etc.
   string reason = 3;
   bool refund_shipping = 4;
@@ -30,7 +30,7 @@ message RefundLineItemRefund {
   string id = 1; // link to OrderLineItem.id
   uint32 quantity = 2;
   // amount to refund in minor units (cents). If zero, compute pro-rata.
-  // 
+  //
   // **Pro-rata refund** = Refund proportional to the original price distribution.
   //
   // **Example:**

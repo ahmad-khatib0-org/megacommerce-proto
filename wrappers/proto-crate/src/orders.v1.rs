@@ -604,9 +604,9 @@ pub mod order_refund_response {
 pub struct OrderRefundRequest {
     #[prost(string, tag = "1")]
     pub order_id: ::prost::alloc::string::String,
-    /// refund whole order or specific line items
+    /// the item to be refunded
     #[prost(message, optional, tag = "2")]
-    pub line_items: ::core::option::Option<RefundLineItemRefund>,
+    pub item: ::core::option::Option<RefundLineItemRefund>,
     /// reason code, external refund id, etc.
     #[prost(string, tag = "3")]
     pub reason: ::prost::alloc::string::String,

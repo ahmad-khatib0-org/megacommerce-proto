@@ -107,8 +107,8 @@ func (*OrderRefundResponse_Error) isOrderRefundResponse_Response() {}
 type OrderRefundRequest struct {
 	state   protoimpl.MessageState `protogen:"open.v1"`
 	OrderId string                 `protobuf:"bytes,1,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
-	// refund whole order or specific line items
-	LineItems *RefundLineItemRefund `protobuf:"bytes,2,opt,name=line_items,json=lineItems,proto3" json:"line_items,omitempty"`
+	// the item to be refunded
+	Item *RefundLineItemRefund `protobuf:"bytes,2,opt,name=item,proto3" json:"item,omitempty"`
 	// reason code, external refund id, etc.
 	Reason         string `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
 	RefundShipping bool   `protobuf:"varint,4,opt,name=refund_shipping,json=refundShipping,proto3" json:"refund_shipping,omitempty"`
@@ -153,9 +153,9 @@ func (x *OrderRefundRequest) GetOrderId() string {
 	return ""
 }
 
-func (x *OrderRefundRequest) GetLineItems() *RefundLineItemRefund {
+func (x *OrderRefundRequest) GetItem() *RefundLineItemRefund {
 	if x != nil {
-		return x.LineItems
+		return x.Item
 	}
 	return nil
 }
@@ -257,11 +257,10 @@ const file_orders_v1_order_refund_proto_rawDesc = "" +
 	"\x04data\x18\x01 \x01(\v2\x1e.shared.v1.SuccessResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
-	"\bresponse\"\xb0\x01\n" +
+	"\bresponse\"\xa5\x01\n" +
 	"\x12OrderRefundRequest\x12\x19\n" +
-	"\border_id\x18\x01 \x01(\tR\aorderId\x12>\n" +
-	"\n" +
-	"line_items\x18\x02 \x01(\v2\x1f.orders.v1.RefundLineItemRefundR\tlineItems\x12\x16\n" +
+	"\border_id\x18\x01 \x01(\tR\aorderId\x123\n" +
+	"\x04item\x18\x02 \x01(\v2\x1f.orders.v1.RefundLineItemRefundR\x04item\x12\x16\n" +
 	"\x06reason\x18\x03 \x01(\tR\x06reason\x12'\n" +
 	"\x0frefund_shipping\x18\x04 \x01(\bR\x0erefundShipping\"{\n" +
 	"\x14RefundLineItemRefund\x12\x0e\n" +
@@ -294,7 +293,7 @@ var file_orders_v1_order_refund_proto_goTypes = []any{
 var file_orders_v1_order_refund_proto_depIdxs = []int32{
 	3, // 0: orders.v1.OrderRefundResponse.data:type_name -> shared.v1.SuccessResponseData
 	4, // 1: orders.v1.OrderRefundResponse.error:type_name -> shared.v1.AppError
-	2, // 2: orders.v1.OrderRefundRequest.line_items:type_name -> orders.v1.RefundLineItemRefund
+	2, // 2: orders.v1.OrderRefundRequest.item:type_name -> orders.v1.RefundLineItemRefund
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name

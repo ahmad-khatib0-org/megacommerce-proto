@@ -929,30 +929,30 @@ public final class OrderRefundProto {
 
     /**
      * <pre>
-     * refund whole order or specific line items
+     * the item to be refunded
      * </pre>
      *
-     * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
-     * @return Whether the lineItems field is set.
+     * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
+     * @return Whether the item field is set.
      */
-    boolean hasLineItems();
+    boolean hasItem();
     /**
      * <pre>
-     * refund whole order or specific line items
+     * the item to be refunded
      * </pre>
      *
-     * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
-     * @return The lineItems.
+     * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
+     * @return The item.
      */
-    org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund getLineItems();
+    org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund getItem();
     /**
      * <pre>
-     * refund whole order or specific line items
+     * the item to be refunded
      * </pre>
      *
-     * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
+     * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
      */
-    org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder getLineItemsOrBuilder();
+    org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder getItemOrBuilder();
 
     /**
      * <pre>
@@ -1059,42 +1059,42 @@ public final class OrderRefundProto {
       }
     }
 
-    public static final int LINE_ITEMS_FIELD_NUMBER = 2;
-    private org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund lineItems_;
+    public static final int ITEM_FIELD_NUMBER = 2;
+    private org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund item_;
     /**
      * <pre>
-     * refund whole order or specific line items
+     * the item to be refunded
      * </pre>
      *
-     * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
-     * @return Whether the lineItems field is set.
+     * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
+     * @return Whether the item field is set.
      */
     @java.lang.Override
-    public boolean hasLineItems() {
+    public boolean hasItem() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
-     * refund whole order or specific line items
+     * the item to be refunded
      * </pre>
      *
-     * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
-     * @return The lineItems.
+     * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
+     * @return The item.
      */
     @java.lang.Override
-    public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund getLineItems() {
-      return lineItems_ == null ? org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance() : lineItems_;
+    public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund getItem() {
+      return item_ == null ? org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance() : item_;
     }
     /**
      * <pre>
-     * refund whole order or specific line items
+     * the item to be refunded
      * </pre>
      *
-     * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
+     * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder getLineItemsOrBuilder() {
-      return lineItems_ == null ? org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance() : lineItems_;
+    public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder getItemOrBuilder() {
+      return item_ == null ? org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance() : item_;
     }
 
     public static final int REASON_FIELD_NUMBER = 3;
@@ -1173,7 +1173,7 @@ public final class OrderRefundProto {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, orderId_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(2, getLineItems());
+        output.writeMessage(2, getItem());
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reason_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, reason_);
@@ -1195,7 +1195,7 @@ public final class OrderRefundProto {
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getLineItems());
+          .computeMessageSize(2, getItem());
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reason_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, reason_);
@@ -1221,10 +1221,10 @@ public final class OrderRefundProto {
 
       if (!getOrderId()
           .equals(other.getOrderId())) return false;
-      if (hasLineItems() != other.hasLineItems()) return false;
-      if (hasLineItems()) {
-        if (!getLineItems()
-            .equals(other.getLineItems())) return false;
+      if (hasItem() != other.hasItem()) return false;
+      if (hasItem()) {
+        if (!getItem()
+            .equals(other.getItem())) return false;
       }
       if (!getReason()
           .equals(other.getReason())) return false;
@@ -1243,9 +1243,9 @@ public final class OrderRefundProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOrderId().hashCode();
-      if (hasLineItems()) {
-        hash = (37 * hash) + LINE_ITEMS_FIELD_NUMBER;
-        hash = (53 * hash) + getLineItems().hashCode();
+      if (hasItem()) {
+        hash = (37 * hash) + ITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getItem().hashCode();
       }
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + getReason().hashCode();
@@ -1382,7 +1382,7 @@ public final class OrderRefundProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage
                 .alwaysUseFieldBuilders) {
-          internalGetLineItemsFieldBuilder();
+          internalGetItemFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1390,10 +1390,10 @@ public final class OrderRefundProto {
         super.clear();
         bitField0_ = 0;
         orderId_ = "";
-        lineItems_ = null;
-        if (lineItemsBuilder_ != null) {
-          lineItemsBuilder_.dispose();
-          lineItemsBuilder_ = null;
+        item_ = null;
+        if (itemBuilder_ != null) {
+          itemBuilder_.dispose();
+          itemBuilder_ = null;
         }
         reason_ = "";
         refundShipping_ = false;
@@ -1435,9 +1435,9 @@ public final class OrderRefundProto {
         }
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.lineItems_ = lineItemsBuilder_ == null
-              ? lineItems_
-              : lineItemsBuilder_.build();
+          result.item_ = itemBuilder_ == null
+              ? item_
+              : itemBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
@@ -1466,8 +1466,8 @@ public final class OrderRefundProto {
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (other.hasLineItems()) {
-          mergeLineItems(other.getLineItems());
+        if (other.hasItem()) {
+          mergeItem(other.getItem());
         }
         if (!other.getReason().isEmpty()) {
           reason_ = other.reason_;
@@ -1510,7 +1510,7 @@ public final class OrderRefundProto {
               } // case 10
               case 18: {
                 input.readMessage(
-                    internalGetLineItemsFieldBuilder().getBuilder(),
+                    internalGetItemFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000002;
                 break;
@@ -1614,50 +1614,50 @@ public final class OrderRefundProto {
         return this;
       }
 
-      private org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund lineItems_;
+      private org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund item_;
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund, org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.Builder, org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder> lineItemsBuilder_;
+          org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund, org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.Builder, org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder> itemBuilder_;
       /**
        * <pre>
-       * refund whole order or specific line items
+       * the item to be refunded
        * </pre>
        *
-       * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
-       * @return Whether the lineItems field is set.
+       * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
+       * @return Whether the item field is set.
        */
-      public boolean hasLineItems() {
+      public boolean hasItem() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <pre>
-       * refund whole order or specific line items
+       * the item to be refunded
        * </pre>
        *
-       * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
-       * @return The lineItems.
+       * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
+       * @return The item.
        */
-      public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund getLineItems() {
-        if (lineItemsBuilder_ == null) {
-          return lineItems_ == null ? org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance() : lineItems_;
+      public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund getItem() {
+        if (itemBuilder_ == null) {
+          return item_ == null ? org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance() : item_;
         } else {
-          return lineItemsBuilder_.getMessage();
+          return itemBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * refund whole order or specific line items
+       * the item to be refunded
        * </pre>
        *
-       * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
+       * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
        */
-      public Builder setLineItems(org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund value) {
-        if (lineItemsBuilder_ == null) {
+      public Builder setItem(org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund value) {
+        if (itemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          lineItems_ = value;
+          item_ = value;
         } else {
-          lineItemsBuilder_.setMessage(value);
+          itemBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
         onChanged();
@@ -1665,17 +1665,17 @@ public final class OrderRefundProto {
       }
       /**
        * <pre>
-       * refund whole order or specific line items
+       * the item to be refunded
        * </pre>
        *
-       * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
+       * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
        */
-      public Builder setLineItems(
+      public Builder setItem(
           org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.Builder builderForValue) {
-        if (lineItemsBuilder_ == null) {
-          lineItems_ = builderForValue.build();
+        if (itemBuilder_ == null) {
+          item_ = builderForValue.build();
         } else {
-          lineItemsBuilder_.setMessage(builderForValue.build());
+          itemBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
         onChanged();
@@ -1683,24 +1683,24 @@ public final class OrderRefundProto {
       }
       /**
        * <pre>
-       * refund whole order or specific line items
+       * the item to be refunded
        * </pre>
        *
-       * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
+       * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
        */
-      public Builder mergeLineItems(org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund value) {
-        if (lineItemsBuilder_ == null) {
+      public Builder mergeItem(org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund value) {
+        if (itemBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-            lineItems_ != null &&
-            lineItems_ != org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance()) {
-            getLineItemsBuilder().mergeFrom(value);
+            item_ != null &&
+            item_ != org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance()) {
+            getItemBuilder().mergeFrom(value);
           } else {
-            lineItems_ = value;
+            item_ = value;
           }
         } else {
-          lineItemsBuilder_.mergeFrom(value);
+          itemBuilder_.mergeFrom(value);
         }
-        if (lineItems_ != null) {
+        if (item_ != null) {
           bitField0_ |= 0x00000002;
           onChanged();
         }
@@ -1708,67 +1708,67 @@ public final class OrderRefundProto {
       }
       /**
        * <pre>
-       * refund whole order or specific line items
+       * the item to be refunded
        * </pre>
        *
-       * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
+       * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
        */
-      public Builder clearLineItems() {
+      public Builder clearItem() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        lineItems_ = null;
-        if (lineItemsBuilder_ != null) {
-          lineItemsBuilder_.dispose();
-          lineItemsBuilder_ = null;
+        item_ = null;
+        if (itemBuilder_ != null) {
+          itemBuilder_.dispose();
+          itemBuilder_ = null;
         }
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * refund whole order or specific line items
+       * the item to be refunded
        * </pre>
        *
-       * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
+       * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
        */
-      public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.Builder getLineItemsBuilder() {
+      public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.Builder getItemBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
-        return internalGetLineItemsFieldBuilder().getBuilder();
+        return internalGetItemFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * refund whole order or specific line items
+       * the item to be refunded
        * </pre>
        *
-       * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
+       * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
        */
-      public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder getLineItemsOrBuilder() {
-        if (lineItemsBuilder_ != null) {
-          return lineItemsBuilder_.getMessageOrBuilder();
+      public org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder getItemOrBuilder() {
+        if (itemBuilder_ != null) {
+          return itemBuilder_.getMessageOrBuilder();
         } else {
-          return lineItems_ == null ?
-              org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance() : lineItems_;
+          return item_ == null ?
+              org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.getDefaultInstance() : item_;
         }
       }
       /**
        * <pre>
-       * refund whole order or specific line items
+       * the item to be refunded
        * </pre>
        *
-       * <code>.orders.v1.RefundLineItemRefund line_items = 2 [json_name = "lineItems"];</code>
+       * <code>.orders.v1.RefundLineItemRefund item = 2 [json_name = "item"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund, org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.Builder, org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder> 
-          internalGetLineItemsFieldBuilder() {
-        if (lineItemsBuilder_ == null) {
-          lineItemsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          internalGetItemFieldBuilder() {
+        if (itemBuilder_ == null) {
+          itemBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund, org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefund.Builder, org.megacommerce.orders.v1.OrderRefundProto.RefundLineItemRefundOrBuilder>(
-                  getLineItems(),
+                  getItem(),
                   getParentForChildren(),
                   isClean());
-          lineItems_ = null;
+          item_ = null;
         }
-        return lineItemsBuilder_;
+        return itemBuilder_;
       }
 
       private java.lang.Object reason_ = "";
@@ -2832,18 +2832,18 @@ public final class OrderRefundProto {
       "s.proto\"\204\001\n\023OrderRefundResponse\0224\n\004data\030" +
       "\001 \001(\0132\036.shared.v1.SuccessResponseDataH\000R" +
       "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro" +
-      "rH\000R\005errorB\n\n\010response\"\260\001\n\022OrderRefundRe" +
-      "quest\022\031\n\010order_id\030\001 \001(\tR\007orderId\022>\n\nline" +
-      "_items\030\002 \001(\0132\037.orders.v1.RefundLineItemR" +
-      "efundR\tlineItems\022\026\n\006reason\030\003 \001(\tR\006reason" +
-      "\022\'\n\017refund_shipping\030\004 \001(\010R\016refundShippin" +
-      "g\"{\n\024RefundLineItemRefund\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022\032\n\010quantity\030\002 \001(\rR\010quantity\022&\n\014amount_" +
-      "cents\030\003 \001(\004H\000R\013amountCents\210\001\001B\017\n\r_amount" +
-      "_centsBv\n\032org.megacommerce.orders.v1B\020Or" +
-      "derRefundProtoZCgithub.com/ahmad-khatib0" +
-      "-org/megacommerce-proto/gen/go/orders/v1" +
-      ";v1\370\001\001b\006proto3"
+      "rH\000R\005errorB\n\n\010response\"\245\001\n\022OrderRefundRe" +
+      "quest\022\031\n\010order_id\030\001 \001(\tR\007orderId\0223\n\004item" +
+      "\030\002 \001(\0132\037.orders.v1.RefundLineItemRefundR" +
+      "\004item\022\026\n\006reason\030\003 \001(\tR\006reason\022\'\n\017refund_" +
+      "shipping\030\004 \001(\010R\016refundShipping\"{\n\024Refund" +
+      "LineItemRefund\022\016\n\002id\030\001 \001(\tR\002id\022\032\n\010quanti" +
+      "ty\030\002 \001(\rR\010quantity\022&\n\014amount_cents\030\003 \001(\004" +
+      "H\000R\013amountCents\210\001\001B\017\n\r_amount_centsBv\n\032o" +
+      "rg.megacommerce.orders.v1B\020OrderRefundPr" +
+      "otoZCgithub.com/ahmad-khatib0-org/megaco" +
+      "mmerce-proto/gen/go/orders/v1;v1\370\001\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2862,7 +2862,7 @@ public final class OrderRefundProto {
     internal_static_orders_v1_OrderRefundRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_orders_v1_OrderRefundRequest_descriptor,
-        new java.lang.String[] { "OrderId", "LineItems", "Reason", "RefundShipping", });
+        new java.lang.String[] { "OrderId", "Item", "Reason", "RefundShipping", });
     internal_static_orders_v1_RefundLineItemRefund_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_orders_v1_RefundLineItemRefund_fieldAccessorTable = new
