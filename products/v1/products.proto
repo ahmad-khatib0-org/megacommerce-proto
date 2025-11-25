@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package products.v1;
 
+import "products/v1/best_selling_products.proto";
 import "products/v1/product_create.proto";
 import "products/v1/product_data.proto";
 import "products/v1/product_list.proto";
@@ -17,4 +18,5 @@ service ProductsService {
   rpc ProductData(products.v1.ProductDataRequest) returns (products.v1.ProductDataResponse);
   rpc ProductList(products.v1.ProductListRequest) returns (products.v1.ProductListResponse);
   rpc ProductSnapshot(products.v1.ProductSnapshotRequest) returns (products.v1.ProductSnapshotResponse);
+  rpc BestSellingProducts(products.v1.BestSellingProductsRequest) returns (products.v1.BestSellingProductsResponse);
 }

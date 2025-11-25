@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package products.v1;
+
+import "shared/v1/error.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "BestSellingProductsProto";
+option java_package = "org.megacommerce.products.v1";
+
+message BestSellingProductsRequest {}
+
+message BestSellingProductsResponse {
+  oneof response {
+    BestSellingProductsResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message BestSellingProductsResponseData {
+  repeated BestSellingProductListItem products = 1;
+}
+
+message BestSellingProductListItem {
+  string id = 1;
+  string title = 2;
+  string image = 3;
+  int64 price_cents = 4;
+  optional int64 sale_price_cents = 5;
+  uint32 rating = 6; // E,g 43 => 4.3 rating
+  uint32 sold_count = 7;
+}

@@ -19,10 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ProductsService_ProductCreate_FullMethodName   = "/products.v1.ProductsService/ProductCreate"
-	ProductsService_ProductData_FullMethodName     = "/products.v1.ProductsService/ProductData"
-	ProductsService_ProductList_FullMethodName     = "/products.v1.ProductsService/ProductList"
-	ProductsService_ProductSnapshot_FullMethodName = "/products.v1.ProductsService/ProductSnapshot"
+	ProductsService_ProductCreate_FullMethodName       = "/products.v1.ProductsService/ProductCreate"
+	ProductsService_ProductData_FullMethodName         = "/products.v1.ProductsService/ProductData"
+	ProductsService_ProductList_FullMethodName         = "/products.v1.ProductsService/ProductList"
+	ProductsService_ProductSnapshot_FullMethodName     = "/products.v1.ProductsService/ProductSnapshot"
+	ProductsService_BestSellingProducts_FullMethodName = "/products.v1.ProductsService/BestSellingProducts"
 )
 
 // ProductsServiceClient is the client API for ProductsService service.
@@ -33,6 +34,7 @@ type ProductsServiceClient interface {
 	ProductData(ctx context.Context, in *ProductDataRequest, opts ...grpc.CallOption) (*ProductDataResponse, error)
 	ProductList(ctx context.Context, in *ProductListRequest, opts ...grpc.CallOption) (*ProductListResponse, error)
 	ProductSnapshot(ctx context.Context, in *ProductSnapshotRequest, opts ...grpc.CallOption) (*ProductSnapshotResponse, error)
+	BestSellingProducts(ctx context.Context, in *BestSellingProductsRequest, opts ...grpc.CallOption) (*BestSellingProductsResponse, error)
 }
 
 type productsServiceClient struct {
@@ -83,6 +85,16 @@ func (c *productsServiceClient) ProductSnapshot(ctx context.Context, in *Product
 	return out, nil
 }
 
+func (c *productsServiceClient) BestSellingProducts(ctx context.Context, in *BestSellingProductsRequest, opts ...grpc.CallOption) (*BestSellingProductsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(BestSellingProductsResponse)
+	err := c.cc.Invoke(ctx, ProductsService_BestSellingProducts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProductsServiceServer is the server API for ProductsService service.
 // All implementations must embed UnimplementedProductsServiceServer
 // for forward compatibility.
@@ -91,6 +103,7 @@ type ProductsServiceServer interface {
 	ProductData(context.Context, *ProductDataRequest) (*ProductDataResponse, error)
 	ProductList(context.Context, *ProductListRequest) (*ProductListResponse, error)
 	ProductSnapshot(context.Context, *ProductSnapshotRequest) (*ProductSnapshotResponse, error)
+	BestSellingProducts(context.Context, *BestSellingProductsRequest) (*BestSellingProductsResponse, error)
 	mustEmbedUnimplementedProductsServiceServer()
 }
 
@@ -112,6 +125,9 @@ func (UnimplementedProductsServiceServer) ProductList(context.Context, *ProductL
 }
 func (UnimplementedProductsServiceServer) ProductSnapshot(context.Context, *ProductSnapshotRequest) (*ProductSnapshotResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProductSnapshot not implemented")
+}
+func (UnimplementedProductsServiceServer) BestSellingProducts(context.Context, *BestSellingProductsRequest) (*BestSellingProductsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BestSellingProducts not implemented")
 }
 func (UnimplementedProductsServiceServer) mustEmbedUnimplementedProductsServiceServer() {}
 func (UnimplementedProductsServiceServer) testEmbeddedByValue()                         {}
@@ -206,6 +222,24 @@ func _ProductsService_ProductSnapshot_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProductsService_BestSellingProducts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BestSellingProductsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductsServiceServer).BestSellingProducts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProductsService_BestSellingProducts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductsServiceServer).BestSellingProducts(ctx, req.(*BestSellingProductsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ProductsService_ServiceDesc is the grpc.ServiceDesc for ProductsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -228,6 +262,10 @@ var ProductsService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ProductSnapshot",
 			Handler:    _ProductsService_ProductSnapshot_Handler,
+		},
+		{
+			MethodName: "BestSellingProducts",
+			Handler:    _ProductsService_BestSellingProducts_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

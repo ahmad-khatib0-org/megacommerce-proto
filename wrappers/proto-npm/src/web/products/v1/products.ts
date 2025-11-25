@@ -7,6 +7,7 @@
 /* eslint-disable */
 import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
+import { BestSellingProductsRequest, BestSellingProductsResponse } from "./best_selling_products.js";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create.js";
 import { ProductDataRequest, ProductDataResponse } from "./product_data.js";
 import { ProductListRequest, ProductListResponse } from "./product_list.js";
@@ -22,6 +23,10 @@ export interface ProductsService {
     request: DeepPartial<ProductSnapshotRequest>,
     metadata?: grpc.Metadata,
   ): Promise<ProductSnapshotResponse>;
+  BestSellingProducts(
+    request: DeepPartial<BestSellingProductsRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<BestSellingProductsResponse>;
 }
 
 export class ProductsServiceClientImpl implements ProductsService {
@@ -33,6 +38,7 @@ export class ProductsServiceClientImpl implements ProductsService {
     this.ProductData = this.ProductData.bind(this);
     this.ProductList = this.ProductList.bind(this);
     this.ProductSnapshot = this.ProductSnapshot.bind(this);
+    this.BestSellingProducts = this.BestSellingProducts.bind(this);
   }
 
   ProductCreate(request: DeepPartial<ProductCreateRequest>, metadata?: grpc.Metadata): Promise<ProductCreateResponse> {
@@ -52,6 +58,17 @@ export class ProductsServiceClientImpl implements ProductsService {
     metadata?: grpc.Metadata,
   ): Promise<ProductSnapshotResponse> {
     return this.rpc.unary(ProductsServiceProductSnapshotDesc, ProductSnapshotRequest.fromPartial(request), metadata);
+  }
+
+  BestSellingProducts(
+    request: DeepPartial<BestSellingProductsRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<BestSellingProductsResponse> {
+    return this.rpc.unary(
+      ProductsServiceBestSellingProductsDesc,
+      BestSellingProductsRequest.fromPartial(request),
+      metadata,
+    );
   }
 }
 
@@ -139,6 +156,29 @@ export const ProductsServiceProductSnapshotDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = ProductSnapshotResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const ProductsServiceBestSellingProductsDesc: UnaryMethodDefinitionish = {
+  methodName: "BestSellingProducts",
+  service: ProductsServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return BestSellingProductsRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = BestSellingProductsResponse.decode(data);
       return {
         ...value,
         toObject() {

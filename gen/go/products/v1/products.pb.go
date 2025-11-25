@@ -24,35 +24,40 @@ var File_products_v1_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_products_proto_rawDesc = "" +
 	"\n" +
-	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\x1eproducts/v1/product_list.proto\x1a\"products/v1/product_snapshot.proto2\xeb\x02\n" +
+	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a'products/v1/best_selling_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\x1eproducts/v1/product_list.proto\x1a\"products/v1/product_snapshot.proto2\xd5\x03\n" +
 	"\x0fProductsService\x12V\n" +
 	"\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n" +
 	"\vProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12P\n" +
 	"\vProductList\x12\x1f.products.v1.ProductListRequest\x1a .products.v1.ProductListResponse\x12\\\n" +
-	"\x0fProductSnapshot\x12#.products.v1.ProductSnapshotRequest\x1a$.products.v1.ProductSnapshotResponseBw\n" +
+	"\x0fProductSnapshot\x12#.products.v1.ProductSnapshotRequest\x1a$.products.v1.ProductSnapshotResponse\x12h\n" +
+	"\x13BestSellingProducts\x12'.products.v1.BestSellingProductsRequest\x1a(.products.v1.BestSellingProductsResponseBw\n" +
 	"\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_products_v1_products_proto_goTypes = []any{
-	(*ProductCreateRequest)(nil),    // 0: products.v1.ProductCreateRequest
-	(*ProductDataRequest)(nil),      // 1: products.v1.ProductDataRequest
-	(*ProductListRequest)(nil),      // 2: products.v1.ProductListRequest
-	(*ProductSnapshotRequest)(nil),  // 3: products.v1.ProductSnapshotRequest
-	(*ProductCreateResponse)(nil),   // 4: products.v1.ProductCreateResponse
-	(*ProductDataResponse)(nil),     // 5: products.v1.ProductDataResponse
-	(*ProductListResponse)(nil),     // 6: products.v1.ProductListResponse
-	(*ProductSnapshotResponse)(nil), // 7: products.v1.ProductSnapshotResponse
+	(*ProductCreateRequest)(nil),        // 0: products.v1.ProductCreateRequest
+	(*ProductDataRequest)(nil),          // 1: products.v1.ProductDataRequest
+	(*ProductListRequest)(nil),          // 2: products.v1.ProductListRequest
+	(*ProductSnapshotRequest)(nil),      // 3: products.v1.ProductSnapshotRequest
+	(*BestSellingProductsRequest)(nil),  // 4: products.v1.BestSellingProductsRequest
+	(*ProductCreateResponse)(nil),       // 5: products.v1.ProductCreateResponse
+	(*ProductDataResponse)(nil),         // 6: products.v1.ProductDataResponse
+	(*ProductListResponse)(nil),         // 7: products.v1.ProductListResponse
+	(*ProductSnapshotResponse)(nil),     // 8: products.v1.ProductSnapshotResponse
+	(*BestSellingProductsResponse)(nil), // 9: products.v1.BestSellingProductsResponse
 }
 var file_products_v1_products_proto_depIdxs = []int32{
 	0, // 0: products.v1.ProductsService.ProductCreate:input_type -> products.v1.ProductCreateRequest
 	1, // 1: products.v1.ProductsService.ProductData:input_type -> products.v1.ProductDataRequest
 	2, // 2: products.v1.ProductsService.ProductList:input_type -> products.v1.ProductListRequest
 	3, // 3: products.v1.ProductsService.ProductSnapshot:input_type -> products.v1.ProductSnapshotRequest
-	4, // 4: products.v1.ProductsService.ProductCreate:output_type -> products.v1.ProductCreateResponse
-	5, // 5: products.v1.ProductsService.ProductData:output_type -> products.v1.ProductDataResponse
-	6, // 6: products.v1.ProductsService.ProductList:output_type -> products.v1.ProductListResponse
-	7, // 7: products.v1.ProductsService.ProductSnapshot:output_type -> products.v1.ProductSnapshotResponse
-	4, // [4:8] is the sub-list for method output_type
-	0, // [0:4] is the sub-list for method input_type
+	4, // 4: products.v1.ProductsService.BestSellingProducts:input_type -> products.v1.BestSellingProductsRequest
+	5, // 5: products.v1.ProductsService.ProductCreate:output_type -> products.v1.ProductCreateResponse
+	6, // 6: products.v1.ProductsService.ProductData:output_type -> products.v1.ProductDataResponse
+	7, // 7: products.v1.ProductsService.ProductList:output_type -> products.v1.ProductListResponse
+	8, // 8: products.v1.ProductsService.ProductSnapshot:output_type -> products.v1.ProductSnapshotResponse
+	9, // 9: products.v1.ProductsService.BestSellingProducts:output_type -> products.v1.BestSellingProductsResponse
+	5, // [5:10] is the sub-list for method output_type
+	0, // [0:5] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -63,6 +68,7 @@ func file_products_v1_products_proto_init() {
 	if File_products_v1_products_proto != nil {
 		return
 	}
+	file_products_v1_best_selling_products_proto_init()
 	file_products_v1_product_create_proto_init()
 	file_products_v1_product_data_proto_init()
 	file_products_v1_product_list_proto_init()

@@ -17,6 +17,7 @@ import {
   type ServiceError,
   type UntypedServiceImplementation,
 } from "@grpc/grpc-js";
+import { BestSellingProductsRequest, BestSellingProductsResponse } from "./best_selling_products";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create";
 import { ProductDataRequest, ProductDataResponse } from "./product_data";
 import { ProductListRequest, ProductListResponse } from "./product_list";
@@ -65,6 +66,17 @@ export const ProductsServiceService = {
       Buffer.from(ProductSnapshotResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): ProductSnapshotResponse => ProductSnapshotResponse.decode(value),
   },
+  bestSellingProducts: {
+    path: "/products.v1.ProductsService/BestSellingProducts",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: BestSellingProductsRequest): Buffer =>
+      Buffer.from(BestSellingProductsRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): BestSellingProductsRequest => BestSellingProductsRequest.decode(value),
+    responseSerialize: (value: BestSellingProductsResponse): Buffer =>
+      Buffer.from(BestSellingProductsResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): BestSellingProductsResponse => BestSellingProductsResponse.decode(value),
+  },
 } as const;
 
 export interface ProductsServiceServer extends UntypedServiceImplementation {
@@ -72,6 +84,7 @@ export interface ProductsServiceServer extends UntypedServiceImplementation {
   productData: handleUnaryCall<ProductDataRequest, ProductDataResponse>;
   productList: handleUnaryCall<ProductListRequest, ProductListResponse>;
   productSnapshot: handleUnaryCall<ProductSnapshotRequest, ProductSnapshotResponse>;
+  bestSellingProducts: handleUnaryCall<BestSellingProductsRequest, BestSellingProductsResponse>;
 }
 
 export interface ProductsServiceClient extends Client {
@@ -134,6 +147,21 @@ export interface ProductsServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: ProductSnapshotResponse) => void,
+  ): ClientUnaryCall;
+  bestSellingProducts(
+    request: BestSellingProductsRequest,
+    callback: (error: ServiceError | null, response: BestSellingProductsResponse) => void,
+  ): ClientUnaryCall;
+  bestSellingProducts(
+    request: BestSellingProductsRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: BestSellingProductsResponse) => void,
+  ): ClientUnaryCall;
+  bestSellingProducts(
+    request: BestSellingProductsRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: BestSellingProductsResponse) => void,
   ): ClientUnaryCall;
 }
 

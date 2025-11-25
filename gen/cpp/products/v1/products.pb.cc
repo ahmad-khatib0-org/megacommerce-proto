@@ -39,25 +39,30 @@ static constexpr ::_pb::Message* PROTOBUF_NONNULL const* PROTOBUF_NULLABLE
 const char descriptor_table_protodef_products_2fv1_2fproducts_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\032products/v1/products.proto\022\013products.v"
-    "1\032 products/v1/product_create.proto\032\036pro"
-    "ducts/v1/product_data.proto\032\036products/v1"
-    "/product_list.proto\032\"products/v1/product"
-    "_snapshot.proto2\353\002\n\017ProductsService\022V\n\rP"
-    "roductCreate\022!.products.v1.ProductCreate"
-    "Request\032\".products.v1.ProductCreateRespo"
-    "nse\022P\n\013ProductData\022\037.products.v1.Product"
-    "DataRequest\032 .products.v1.ProductDataRes"
-    "ponse\022P\n\013ProductList\022\037.products.v1.Produ"
-    "ctListRequest\032 .products.v1.ProductListR"
-    "esponse\022\\\n\017ProductSnapshot\022#.products.v1"
-    ".ProductSnapshotRequest\032$.products.v1.Pr"
-    "oductSnapshotResponseBw\n\034org.megacommerc"
-    "e.products.v1B\rProductsProtoZEgithub.com"
-    "/ahmad-khatib0-org/megacommerce-proto/ge"
-    "n/go/products/v1;v1\370\001\001b\006proto3"
+    "1\032\'products/v1/best_selling_products.pro"
+    "to\032 products/v1/product_create.proto\032\036pr"
+    "oducts/v1/product_data.proto\032\036products/v"
+    "1/product_list.proto\032\"products/v1/produc"
+    "t_snapshot.proto2\325\003\n\017ProductsService\022V\n\r"
+    "ProductCreate\022!.products.v1.ProductCreat"
+    "eRequest\032\".products.v1.ProductCreateResp"
+    "onse\022P\n\013ProductData\022\037.products.v1.Produc"
+    "tDataRequest\032 .products.v1.ProductDataRe"
+    "sponse\022P\n\013ProductList\022\037.products.v1.Prod"
+    "uctListRequest\032 .products.v1.ProductList"
+    "Response\022\\\n\017ProductSnapshot\022#.products.v"
+    "1.ProductSnapshotRequest\032$.products.v1.P"
+    "roductSnapshotResponse\022h\n\023BestSellingPro"
+    "ducts\022\'.products.v1.BestSellingProductsR"
+    "equest\032(.products.v1.BestSellingProducts"
+    "ResponseBw\n\034org.megacommerce.products.v1"
+    "B\rProductsProtoZEgithub.com/ahmad-khatib"
+    "0-org/megacommerce-proto/gen/go/products"
+    "/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_products_2fv1_2fproducts_2eproto_deps[4] = {
+    descriptor_table_products_2fv1_2fproducts_2eproto_deps[5] = {
+        &::descriptor_table_products_2fv1_2fbest_5fselling_5fproducts_2eproto,
         &::descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
         &::descriptor_table_products_2fv1_2fproduct_5fdata_2eproto,
         &::descriptor_table_products_2fv1_2fproduct_5flist_2eproto,
@@ -67,12 +72,12 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproducts_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproducts_2eproto = {
     false,
     false,
-    670,
+    817,
     descriptor_table_protodef_products_2fv1_2fproducts_2eproto,
     "products/v1/products.proto",
     &descriptor_table_products_2fv1_2fproducts_2eproto_once,
     descriptor_table_products_2fv1_2fproducts_2eproto_deps,
-    4,
+    5,
     0,
     schemas,
     file_default_instances,
