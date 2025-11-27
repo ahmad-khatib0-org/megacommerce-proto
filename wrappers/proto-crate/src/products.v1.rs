@@ -1289,7 +1289,7 @@ pub mod products_service_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NewlyAddedProductsRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::BigDiscountProductsResponse>,
+            tonic::Response<super::NewlyAddedProductsResponse>,
             tonic::Status,
         > {
             self.inner
@@ -1372,7 +1372,7 @@ pub mod products_service_server {
             &self,
             request: tonic::Request<super::NewlyAddedProductsRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::BigDiscountProductsResponse>,
+            tonic::Response<super::NewlyAddedProductsResponse>,
             tonic::Status,
         >;
     }
@@ -1739,7 +1739,7 @@ pub mod products_service_server {
                         T: ProductsService,
                     > tonic::server::UnaryService<super::NewlyAddedProductsRequest>
                     for NewlyAddedProductsSvc<T> {
-                        type Response = super::BigDiscountProductsResponse;
+                        type Response = super::NewlyAddedProductsResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
