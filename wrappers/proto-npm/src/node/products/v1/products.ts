@@ -19,7 +19,7 @@ import {
 } from "@grpc/grpc-js";
 import { BestSellingProductsRequest, BestSellingProductsResponse } from "./best_selling_products";
 import { BigDiscountProductsRequest, BigDiscountProductsResponse } from "./big_discount_products";
-import { NewlyAddedProductsRequest } from "./newly_added_products";
+import { NewlyAddedProductsRequest, NewlyAddedProductsResponse } from "./newly_added_products";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create";
 import { ProductDataRequest, ProductDataResponse } from "./product_data";
 import { ProductListRequest, ProductListResponse } from "./product_list";
@@ -97,9 +97,9 @@ export const ProductsServiceService = {
     requestSerialize: (value: NewlyAddedProductsRequest): Buffer =>
       Buffer.from(NewlyAddedProductsRequest.encode(value).finish()),
     requestDeserialize: (value: Buffer): NewlyAddedProductsRequest => NewlyAddedProductsRequest.decode(value),
-    responseSerialize: (value: BigDiscountProductsResponse): Buffer =>
-      Buffer.from(BigDiscountProductsResponse.encode(value).finish()),
-    responseDeserialize: (value: Buffer): BigDiscountProductsResponse => BigDiscountProductsResponse.decode(value),
+    responseSerialize: (value: NewlyAddedProductsResponse): Buffer =>
+      Buffer.from(NewlyAddedProductsResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): NewlyAddedProductsResponse => NewlyAddedProductsResponse.decode(value),
   },
 } as const;
 
@@ -110,7 +110,7 @@ export interface ProductsServiceServer extends UntypedServiceImplementation {
   productSnapshot: handleUnaryCall<ProductSnapshotRequest, ProductSnapshotResponse>;
   bestSellingProducts: handleUnaryCall<BestSellingProductsRequest, BestSellingProductsResponse>;
   bigDiscountProducts: handleUnaryCall<BigDiscountProductsRequest, BigDiscountProductsResponse>;
-  newlyAddedProducts: handleUnaryCall<NewlyAddedProductsRequest, BigDiscountProductsResponse>;
+  newlyAddedProducts: handleUnaryCall<NewlyAddedProductsRequest, NewlyAddedProductsResponse>;
 }
 
 export interface ProductsServiceClient extends Client {
@@ -206,18 +206,18 @@ export interface ProductsServiceClient extends Client {
   ): ClientUnaryCall;
   newlyAddedProducts(
     request: NewlyAddedProductsRequest,
-    callback: (error: ServiceError | null, response: BigDiscountProductsResponse) => void,
+    callback: (error: ServiceError | null, response: NewlyAddedProductsResponse) => void,
   ): ClientUnaryCall;
   newlyAddedProducts(
     request: NewlyAddedProductsRequest,
     metadata: Metadata,
-    callback: (error: ServiceError | null, response: BigDiscountProductsResponse) => void,
+    callback: (error: ServiceError | null, response: NewlyAddedProductsResponse) => void,
   ): ClientUnaryCall;
   newlyAddedProducts(
     request: NewlyAddedProductsRequest,
     metadata: Metadata,
     options: Partial<CallOptions>,
-    callback: (error: ServiceError | null, response: BigDiscountProductsResponse) => void,
+    callback: (error: ServiceError | null, response: NewlyAddedProductsResponse) => void,
   ): ClientUnaryCall;
 }
 

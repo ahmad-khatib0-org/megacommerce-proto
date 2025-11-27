@@ -45,7 +45,7 @@ const char descriptor_table_protodef_products_2fv1_2fproducts_2eproto[] ABSL_ATT
     "oto\032 products/v1/product_create.proto\032\036p"
     "roducts/v1/product_data.proto\032\036products/"
     "v1/product_list.proto\032\"products/v1/produ"
-    "ct_snapshot.proto2\247\005\n\017ProductsService\022V\n"
+    "ct_snapshot.proto2\246\005\n\017ProductsService\022V\n"
     "\rProductCreate\022!.products.v1.ProductCrea"
     "teRequest\032\".products.v1.ProductCreateRes"
     "ponse\022P\n\013ProductData\022\037.products.v1.Produ"
@@ -59,13 +59,13 @@ const char descriptor_table_protodef_products_2fv1_2fproducts_2eproto[] ABSL_ATT
     "Request\032(.products.v1.BestSellingProduct"
     "sResponse\022h\n\023BigDiscountProducts\022\'.produ"
     "cts.v1.BigDiscountProductsRequest\032(.prod"
-    "ucts.v1.BigDiscountProductsResponse\022f\n\022N"
+    "ucts.v1.BigDiscountProductsResponse\022e\n\022N"
     "ewlyAddedProducts\022&.products.v1.NewlyAdd"
-    "edProductsRequest\032(.products.v1.BigDisco"
-    "untProductsResponseBw\n\034org.megacommerce."
-    "products.v1B\rProductsProtoZEgithub.com/a"
-    "hmad-khatib0-org/megacommerce-proto/gen/"
-    "go/products/v1;v1\370\001\001b\006proto3"
+    "edProductsRequest\032\'.products.v1.NewlyAdd"
+    "edProductsResponseBw\n\034org.megacommerce.p"
+    "roducts.v1B\rProductsProtoZEgithub.com/ah"
+    "mad-khatib0-org/megacommerce-proto/gen/g"
+    "o/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproducts_2eproto_deps[7] = {
@@ -81,7 +81,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproducts_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproducts_2eproto = {
     false,
     false,
-    1108,
+    1107,
     descriptor_table_protodef_products_2fv1_2fproducts_2eproto,
     "products/v1/products.proto",
     &descriptor_table_products_2fv1_2fproducts_2eproto_once,

@@ -73,7 +73,7 @@ class ProductsServiceStub(object):
         self.NewlyAddedProducts = channel.unary_unary(
                 '/products.v1.ProductsService/NewlyAddedProducts',
                 request_serializer=products_dot_v1_dot_newly__added__products__pb2.NewlyAddedProductsRequest.SerializeToString,
-                response_deserializer=products_dot_v1_dot_big__discount__products__pb2.BigDiscountProductsResponse.FromString,
+                response_deserializer=products_dot_v1_dot_newly__added__products__pb2.NewlyAddedProductsResponse.FromString,
                 _registered_method=True)
 
 
@@ -158,7 +158,7 @@ def add_ProductsServiceServicer_to_server(servicer, server):
             'NewlyAddedProducts': grpc.unary_unary_rpc_method_handler(
                     servicer.NewlyAddedProducts,
                     request_deserializer=products_dot_v1_dot_newly__added__products__pb2.NewlyAddedProductsRequest.FromString,
-                    response_serializer=products_dot_v1_dot_big__discount__products__pb2.BigDiscountProductsResponse.SerializeToString,
+                    response_serializer=products_dot_v1_dot_newly__added__products__pb2.NewlyAddedProductsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -349,7 +349,7 @@ class ProductsService(object):
             target,
             '/products.v1.ProductsService/NewlyAddedProducts',
             products_dot_v1_dot_newly__added__products__pb2.NewlyAddedProductsRequest.SerializeToString,
-            products_dot_v1_dot_big__discount__products__pb2.BigDiscountProductsResponse.FromString,
+            products_dot_v1_dot_newly__added__products__pb2.NewlyAddedProductsResponse.FromString,
             options,
             channel_credentials,
             insecure,

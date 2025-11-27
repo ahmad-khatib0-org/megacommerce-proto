@@ -38,7 +38,7 @@ type ProductsServiceClient interface {
 	ProductSnapshot(ctx context.Context, in *ProductSnapshotRequest, opts ...grpc.CallOption) (*ProductSnapshotResponse, error)
 	BestSellingProducts(ctx context.Context, in *BestSellingProductsRequest, opts ...grpc.CallOption) (*BestSellingProductsResponse, error)
 	BigDiscountProducts(ctx context.Context, in *BigDiscountProductsRequest, opts ...grpc.CallOption) (*BigDiscountProductsResponse, error)
-	NewlyAddedProducts(ctx context.Context, in *NewlyAddedProductsRequest, opts ...grpc.CallOption) (*BigDiscountProductsResponse, error)
+	NewlyAddedProducts(ctx context.Context, in *NewlyAddedProductsRequest, opts ...grpc.CallOption) (*NewlyAddedProductsResponse, error)
 }
 
 type productsServiceClient struct {
@@ -109,9 +109,9 @@ func (c *productsServiceClient) BigDiscountProducts(ctx context.Context, in *Big
 	return out, nil
 }
 
-func (c *productsServiceClient) NewlyAddedProducts(ctx context.Context, in *NewlyAddedProductsRequest, opts ...grpc.CallOption) (*BigDiscountProductsResponse, error) {
+func (c *productsServiceClient) NewlyAddedProducts(ctx context.Context, in *NewlyAddedProductsRequest, opts ...grpc.CallOption) (*NewlyAddedProductsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(BigDiscountProductsResponse)
+	out := new(NewlyAddedProductsResponse)
 	err := c.cc.Invoke(ctx, ProductsService_NewlyAddedProducts_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -129,7 +129,7 @@ type ProductsServiceServer interface {
 	ProductSnapshot(context.Context, *ProductSnapshotRequest) (*ProductSnapshotResponse, error)
 	BestSellingProducts(context.Context, *BestSellingProductsRequest) (*BestSellingProductsResponse, error)
 	BigDiscountProducts(context.Context, *BigDiscountProductsRequest) (*BigDiscountProductsResponse, error)
-	NewlyAddedProducts(context.Context, *NewlyAddedProductsRequest) (*BigDiscountProductsResponse, error)
+	NewlyAddedProducts(context.Context, *NewlyAddedProductsRequest) (*NewlyAddedProductsResponse, error)
 	mustEmbedUnimplementedProductsServiceServer()
 }
 
@@ -158,7 +158,7 @@ func (UnimplementedProductsServiceServer) BestSellingProducts(context.Context, *
 func (UnimplementedProductsServiceServer) BigDiscountProducts(context.Context, *BigDiscountProductsRequest) (*BigDiscountProductsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BigDiscountProducts not implemented")
 }
-func (UnimplementedProductsServiceServer) NewlyAddedProducts(context.Context, *NewlyAddedProductsRequest) (*BigDiscountProductsResponse, error) {
+func (UnimplementedProductsServiceServer) NewlyAddedProducts(context.Context, *NewlyAddedProductsRequest) (*NewlyAddedProductsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NewlyAddedProducts not implemented")
 }
 func (UnimplementedProductsServiceServer) mustEmbedUnimplementedProductsServiceServer() {}

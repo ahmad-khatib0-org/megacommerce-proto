@@ -9,7 +9,7 @@ import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
 import { BestSellingProductsRequest, BestSellingProductsResponse } from "./best_selling_products.js";
 import { BigDiscountProductsRequest, BigDiscountProductsResponse } from "./big_discount_products.js";
-import { NewlyAddedProductsRequest } from "./newly_added_products.js";
+import { NewlyAddedProductsRequest, NewlyAddedProductsResponse } from "./newly_added_products.js";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create.js";
 import { ProductDataRequest, ProductDataResponse } from "./product_data.js";
 import { ProductListRequest, ProductListResponse } from "./product_list.js";
@@ -36,7 +36,7 @@ export interface ProductsService {
   NewlyAddedProducts(
     request: DeepPartial<NewlyAddedProductsRequest>,
     metadata?: grpc.Metadata,
-  ): Promise<BigDiscountProductsResponse>;
+  ): Promise<NewlyAddedProductsResponse>;
 }
 
 export class ProductsServiceClientImpl implements ProductsService {
@@ -97,7 +97,7 @@ export class ProductsServiceClientImpl implements ProductsService {
   NewlyAddedProducts(
     request: DeepPartial<NewlyAddedProductsRequest>,
     metadata?: grpc.Metadata,
-  ): Promise<BigDiscountProductsResponse> {
+  ): Promise<NewlyAddedProductsResponse> {
     return this.rpc.unary(
       ProductsServiceNewlyAddedProductsDesc,
       NewlyAddedProductsRequest.fromPartial(request),
@@ -258,7 +258,7 @@ export const ProductsServiceNewlyAddedProductsDesc: UnaryMethodDefinitionish = {
   } as any,
   responseType: {
     deserializeBinary(data: Uint8Array) {
-      const value = BigDiscountProductsResponse.decode(data);
+      const value = NewlyAddedProductsResponse.decode(data);
       return {
         ...value,
         toObject() {

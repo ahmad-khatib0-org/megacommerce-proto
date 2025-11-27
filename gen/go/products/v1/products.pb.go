@@ -24,15 +24,15 @@ var File_products_v1_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_products_proto_rawDesc = "" +
 	"\n" +
-	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a'products/v1/best_selling_products.proto\x1a'products/v1/big_discount_products.proto\x1a&products/v1/newly_added_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\x1eproducts/v1/product_list.proto\x1a\"products/v1/product_snapshot.proto2\xa7\x05\n" +
+	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a'products/v1/best_selling_products.proto\x1a'products/v1/big_discount_products.proto\x1a&products/v1/newly_added_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\x1eproducts/v1/product_list.proto\x1a\"products/v1/product_snapshot.proto2\xa6\x05\n" +
 	"\x0fProductsService\x12V\n" +
 	"\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n" +
 	"\vProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12P\n" +
 	"\vProductList\x12\x1f.products.v1.ProductListRequest\x1a .products.v1.ProductListResponse\x12\\\n" +
 	"\x0fProductSnapshot\x12#.products.v1.ProductSnapshotRequest\x1a$.products.v1.ProductSnapshotResponse\x12h\n" +
 	"\x13BestSellingProducts\x12'.products.v1.BestSellingProductsRequest\x1a(.products.v1.BestSellingProductsResponse\x12h\n" +
-	"\x13BigDiscountProducts\x12'.products.v1.BigDiscountProductsRequest\x1a(.products.v1.BigDiscountProductsResponse\x12f\n" +
-	"\x12NewlyAddedProducts\x12&.products.v1.NewlyAddedProductsRequest\x1a(.products.v1.BigDiscountProductsResponseBw\n" +
+	"\x13BigDiscountProducts\x12'.products.v1.BigDiscountProductsRequest\x1a(.products.v1.BigDiscountProductsResponse\x12e\n" +
+	"\x12NewlyAddedProducts\x12&.products.v1.NewlyAddedProductsRequest\x1a'.products.v1.NewlyAddedProductsResponseBw\n" +
 	"\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_products_v1_products_proto_goTypes = []any{
@@ -49,6 +49,7 @@ var file_products_v1_products_proto_goTypes = []any{
 	(*ProductSnapshotResponse)(nil),     // 10: products.v1.ProductSnapshotResponse
 	(*BestSellingProductsResponse)(nil), // 11: products.v1.BestSellingProductsResponse
 	(*BigDiscountProductsResponse)(nil), // 12: products.v1.BigDiscountProductsResponse
+	(*NewlyAddedProductsResponse)(nil),  // 13: products.v1.NewlyAddedProductsResponse
 }
 var file_products_v1_products_proto_depIdxs = []int32{
 	0,  // 0: products.v1.ProductsService.ProductCreate:input_type -> products.v1.ProductCreateRequest
@@ -64,7 +65,7 @@ var file_products_v1_products_proto_depIdxs = []int32{
 	10, // 10: products.v1.ProductsService.ProductSnapshot:output_type -> products.v1.ProductSnapshotResponse
 	11, // 11: products.v1.ProductsService.BestSellingProducts:output_type -> products.v1.BestSellingProductsResponse
 	12, // 12: products.v1.ProductsService.BigDiscountProducts:output_type -> products.v1.BigDiscountProductsResponse
-	12, // 13: products.v1.ProductsService.NewlyAddedProducts:output_type -> products.v1.BigDiscountProductsResponse
+	13, // 13: products.v1.ProductsService.NewlyAddedProducts:output_type -> products.v1.NewlyAddedProductsResponse
 	7,  // [7:14] is the sub-list for method output_type
 	0,  // [0:7] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
