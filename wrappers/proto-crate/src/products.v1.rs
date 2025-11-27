@@ -125,8 +125,12 @@ pub struct NewlyAddedProductListItem {
     pub image: ::prost::alloc::string::String,
     #[prost(uint32, tag = "4")]
     pub price_cents: u32,
+    #[prost(uint32, optional, tag = "5")]
+    pub sale_price_cents: ::core::option::Option<u32>,
+    #[prost(uint32, optional, tag = "6")]
+    pub discount_percentage: ::core::option::Option<u32>,
     /// E.g. a string like: Added 1 hour ago
-    #[prost(string, tag = "5")]
+    #[prost(string, tag = "7")]
     pub created_at: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

@@ -2053,11 +2053,33 @@ public final class NewlyAddedProductsProto {
     int getPriceCents();
 
     /**
+     * <code>optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];</code>
+     * @return Whether the salePriceCents field is set.
+     */
+    boolean hasSalePriceCents();
+    /**
+     * <code>optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];</code>
+     * @return The salePriceCents.
+     */
+    int getSalePriceCents();
+
+    /**
+     * <code>optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
+     * @return Whether the discountPercentage field is set.
+     */
+    boolean hasDiscountPercentage();
+    /**
+     * <code>optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
+     * @return The discountPercentage.
+     */
+    int getDiscountPercentage();
+
+    /**
      * <pre>
      * E.g. a string like: Added 1 hour ago
      * </pre>
      *
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     java.lang.String getCreatedAt();
@@ -2066,7 +2088,7 @@ public final class NewlyAddedProductsProto {
      * E.g. a string like: Added 1 hour ago
      * </pre>
      *
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return The bytes for createdAt.
      */
     com.google.protobuf.ByteString
@@ -2113,6 +2135,7 @@ public final class NewlyAddedProductsProto {
               org.megacommerce.products.v1.NewlyAddedProductsProto.NewlyAddedProductListItem.class, org.megacommerce.products.v1.NewlyAddedProductsProto.NewlyAddedProductListItem.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
@@ -2241,7 +2264,45 @@ public final class NewlyAddedProductsProto {
       return priceCents_;
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 5;
+    public static final int SALE_PRICE_CENTS_FIELD_NUMBER = 5;
+    private int salePriceCents_ = 0;
+    /**
+     * <code>optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];</code>
+     * @return Whether the salePriceCents field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalePriceCents() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];</code>
+     * @return The salePriceCents.
+     */
+    @java.lang.Override
+    public int getSalePriceCents() {
+      return salePriceCents_;
+    }
+
+    public static final int DISCOUNT_PERCENTAGE_FIELD_NUMBER = 6;
+    private int discountPercentage_ = 0;
+    /**
+     * <code>optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
+     * @return Whether the discountPercentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiscountPercentage() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
+     * @return The discountPercentage.
+     */
+    @java.lang.Override
+    public int getDiscountPercentage() {
+      return discountPercentage_;
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 7;
     @SuppressWarnings("serial")
     private volatile java.lang.Object createdAt_ = "";
     /**
@@ -2249,7 +2310,7 @@ public final class NewlyAddedProductsProto {
      * E.g. a string like: Added 1 hour ago
      * </pre>
      *
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -2270,7 +2331,7 @@ public final class NewlyAddedProductsProto {
      * E.g. a string like: Added 1 hour ago
      * </pre>
      *
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return The bytes for createdAt.
      */
     @java.lang.Override
@@ -2314,8 +2375,14 @@ public final class NewlyAddedProductsProto {
       if (priceCents_ != 0) {
         output.writeUInt32(4, priceCents_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeUInt32(5, salePriceCents_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeUInt32(6, discountPercentage_);
+      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 5, createdAt_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, createdAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2339,8 +2406,16 @@ public final class NewlyAddedProductsProto {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, priceCents_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, salePriceCents_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, discountPercentage_);
+      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, createdAt_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, createdAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2365,6 +2440,16 @@ public final class NewlyAddedProductsProto {
           .equals(other.getImage())) return false;
       if (getPriceCents()
           != other.getPriceCents()) return false;
+      if (hasSalePriceCents() != other.hasSalePriceCents()) return false;
+      if (hasSalePriceCents()) {
+        if (getSalePriceCents()
+            != other.getSalePriceCents()) return false;
+      }
+      if (hasDiscountPercentage() != other.hasDiscountPercentage()) return false;
+      if (hasDiscountPercentage()) {
+        if (getDiscountPercentage()
+            != other.getDiscountPercentage()) return false;
+      }
       if (!getCreatedAt()
           .equals(other.getCreatedAt())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -2386,6 +2471,14 @@ public final class NewlyAddedProductsProto {
       hash = (53 * hash) + getImage().hashCode();
       hash = (37 * hash) + PRICE_CENTS_FIELD_NUMBER;
       hash = (53 * hash) + getPriceCents();
+      if (hasSalePriceCents()) {
+        hash = (37 * hash) + SALE_PRICE_CENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getSalePriceCents();
+      }
+      if (hasDiscountPercentage()) {
+        hash = (37 * hash) + DISCOUNT_PERCENTAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getDiscountPercentage();
+      }
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedAt().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -2523,6 +2616,8 @@ public final class NewlyAddedProductsProto {
         title_ = "";
         image_ = "";
         priceCents_ = 0;
+        salePriceCents_ = 0;
+        discountPercentage_ = 0;
         createdAt_ = "";
         return this;
       }
@@ -2569,9 +2664,19 @@ public final class NewlyAddedProductsProto {
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.priceCents_ = priceCents_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.salePriceCents_ = salePriceCents_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.discountPercentage_ = discountPercentage_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.createdAt_ = createdAt_;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2604,9 +2709,15 @@ public final class NewlyAddedProductsProto {
         if (other.getPriceCents() != 0) {
           setPriceCents(other.getPriceCents());
         }
+        if (other.hasSalePriceCents()) {
+          setSalePriceCents(other.getSalePriceCents());
+        }
+        if (other.hasDiscountPercentage()) {
+          setDiscountPercentage(other.getDiscountPercentage());
+        }
         if (!other.getCreatedAt().isEmpty()) {
           createdAt_ = other.createdAt_;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2655,11 +2766,21 @@ public final class NewlyAddedProductsProto {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
-              case 42: {
-                createdAt_ = input.readStringRequireUtf8();
+              case 40: {
+                salePriceCents_ = input.readUInt32();
                 bitField0_ |= 0x00000010;
                 break;
-              } // case 42
+              } // case 40
+              case 48: {
+                discountPercentage_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 58: {
+                createdAt_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2925,13 +3046,93 @@ public final class NewlyAddedProductsProto {
         return this;
       }
 
+      private int salePriceCents_ ;
+      /**
+       * <code>optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];</code>
+       * @return Whether the salePriceCents field is set.
+       */
+      @java.lang.Override
+      public boolean hasSalePriceCents() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <code>optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];</code>
+       * @return The salePriceCents.
+       */
+      @java.lang.Override
+      public int getSalePriceCents() {
+        return salePriceCents_;
+      }
+      /**
+       * <code>optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];</code>
+       * @param value The salePriceCents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalePriceCents(int value) {
+
+        salePriceCents_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSalePriceCents() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        salePriceCents_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int discountPercentage_ ;
+      /**
+       * <code>optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
+       * @return Whether the discountPercentage field is set.
+       */
+      @java.lang.Override
+      public boolean hasDiscountPercentage() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <code>optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
+       * @return The discountPercentage.
+       */
+      @java.lang.Override
+      public int getDiscountPercentage() {
+        return discountPercentage_;
+      }
+      /**
+       * <code>optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
+       * @param value The discountPercentage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDiscountPercentage(int value) {
+
+        discountPercentage_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDiscountPercentage() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        discountPercentage_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object createdAt_ = "";
       /**
        * <pre>
        * E.g. a string like: Added 1 hour ago
        * </pre>
        *
-       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       public java.lang.String getCreatedAt() {
@@ -2951,7 +3152,7 @@ public final class NewlyAddedProductsProto {
        * E.g. a string like: Added 1 hour ago
        * </pre>
        *
-       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
        * @return The bytes for createdAt.
        */
       public com.google.protobuf.ByteString
@@ -2972,7 +3173,7 @@ public final class NewlyAddedProductsProto {
        * E.g. a string like: Added 1 hour ago
        * </pre>
        *
-       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
@@ -2980,7 +3181,7 @@ public final class NewlyAddedProductsProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         createdAt_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2989,12 +3190,12 @@ public final class NewlyAddedProductsProto {
        * E.g. a string like: Added 1 hour ago
        * </pre>
        *
-       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
         createdAt_ = getDefaultInstance().getCreatedAt();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -3003,7 +3204,7 @@ public final class NewlyAddedProductsProto {
        * E.g. a string like: Added 1 hour ago
        * </pre>
        *
-       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
        * @param value The bytes for createdAt to set.
        * @return This builder for chaining.
        */
@@ -3012,7 +3213,7 @@ public final class NewlyAddedProductsProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         createdAt_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3106,14 +3307,18 @@ public final class NewlyAddedProductsProto {
       "\000R\005errorB\n\n\010response\"d\n\036NewlyAddedProduc" +
       "tsResponseData\022B\n\010products\030\001 \003(\0132&.produ" +
       "cts.v1.NewlyAddedProductListItemR\010produc" +
-      "ts\"\227\001\n\031NewlyAddedProductListItem\022\016\n\002id\030\001" +
+      "ts\"\251\002\n\031NewlyAddedProductListItem\022\016\n\002id\030\001" +
       " \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005title\022\024\n\005image\030" +
       "\003 \001(\tR\005image\022\037\n\013price_cents\030\004 \001(\rR\nprice" +
-      "Cents\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAtB\201\001\n" +
-      "\034org.megacommerce.products.v1B\027NewlyAdde" +
-      "dProductsProtoZEgithub.com/ahmad-khatib0" +
-      "-org/megacommerce-proto/gen/go/products/" +
-      "v1;v1\370\001\001b\006proto3"
+      "Cents\022-\n\020sale_price_cents\030\005 \001(\rH\000R\016saleP" +
+      "riceCents\210\001\001\0224\n\023discount_percentage\030\006 \001(" +
+      "\rH\001R\022discountPercentage\210\001\001\022\035\n\ncreated_at" +
+      "\030\007 \001(\tR\tcreatedAtB\023\n\021_sale_price_centsB\026" +
+      "\n\024_discount_percentageB\201\001\n\034org.megacomme" +
+      "rce.products.v1B\027NewlyAddedProductsProto" +
+      "ZEgithub.com/ahmad-khatib0-org/megacomme" +
+      "rce-proto/gen/go/products/v1;v1\370\001\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3143,7 +3348,7 @@ public final class NewlyAddedProductsProto {
     internal_static_products_v1_NewlyAddedProductListItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_NewlyAddedProductListItem_descriptor,
-        new java.lang.String[] { "Id", "Title", "Image", "PriceCents", "CreatedAt", });
+        new java.lang.String[] { "Id", "Title", "Image", "PriceCents", "SalePriceCents", "DiscountPercentage", "CreatedAt", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
   }

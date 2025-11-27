@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&products/v1/newly_added_products.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\"\x1b\n\x19NewlyAddedProductsRequest\"\x8b\x01\n\x1aNewlyAddedProductsResponse\x12;\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32+.products.v1.NewlyAddedProductsResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"Z\n\x1eNewlyAddedProductsResponseData\x12\x38\n\x08products\x18\x01 \x03(\x0b\x32&.products.v1.NewlyAddedProductListItem\"n\n\x19NewlyAddedProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x13\n\x0bprice_cents\x18\x04 \x01(\r\x12\x12\n\ncreated_at\x18\x05 \x01(\tB\x81\x01\n\x1corg.megacommerce.products.v1B\x17NewlyAddedProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&products/v1/newly_added_products.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\"\x1b\n\x19NewlyAddedProductsRequest\"\x8b\x01\n\x1aNewlyAddedProductsResponse\x12;\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32+.products.v1.NewlyAddedProductsResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"Z\n\x1eNewlyAddedProductsResponseData\x12\x38\n\x08products\x18\x01 \x03(\x0b\x32&.products.v1.NewlyAddedProductListItem\"\xdc\x01\n\x19NewlyAddedProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x13\n\x0bprice_cents\x18\x04 \x01(\r\x12\x1d\n\x10sale_price_cents\x18\x05 \x01(\rH\x00\x88\x01\x01\x12 \n\x13\x64iscount_percentage\x18\x06 \x01(\rH\x01\x88\x01\x01\x12\x12\n\ncreated_at\x18\x07 \x01(\tB\x13\n\x11_sale_price_centsB\x16\n\x14_discount_percentageB\x81\x01\n\x1corg.megacommerce.products.v1B\x17NewlyAddedProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,6 +39,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_NEWLYADDEDPRODUCTSRESPONSE']._serialized_end=247
   _globals['_NEWLYADDEDPRODUCTSRESPONSEDATA']._serialized_start=249
   _globals['_NEWLYADDEDPRODUCTSRESPONSEDATA']._serialized_end=339
-  _globals['_NEWLYADDEDPRODUCTLISTITEM']._serialized_start=341
-  _globals['_NEWLYADDEDPRODUCTLISTITEM']._serialized_end=451
+  _globals['_NEWLYADDEDPRODUCTLISTITEM']._serialized_start=342
+  _globals['_NEWLYADDEDPRODUCTLISTITEM']._serialized_end=562
 # @@protoc_insertion_point(module_scope)

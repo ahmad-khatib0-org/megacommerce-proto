@@ -185,14 +185,16 @@ func (x *NewlyAddedProductsResponseData) GetProducts() []*NewlyAddedProductListI
 }
 
 type NewlyAddedProductListItem struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
-	Image         string                 `protobuf:"bytes,3,opt,name=image,proto3" json:"image,omitempty"`
-	PriceCents    uint32                 `protobuf:"varint,4,opt,name=price_cents,json=priceCents,proto3" json:"price_cents,omitempty"`
-	CreatedAt     string                 `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // E.g. a string like: Added 1 hour ago
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title              string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Image              string                 `protobuf:"bytes,3,opt,name=image,proto3" json:"image,omitempty"`
+	PriceCents         uint32                 `protobuf:"varint,4,opt,name=price_cents,json=priceCents,proto3" json:"price_cents,omitempty"`
+	SalePriceCents     *uint32                `protobuf:"varint,5,opt,name=sale_price_cents,json=salePriceCents,proto3,oneof" json:"sale_price_cents,omitempty"`
+	DiscountPercentage *uint32                `protobuf:"varint,6,opt,name=discount_percentage,json=discountPercentage,proto3,oneof" json:"discount_percentage,omitempty"`
+	CreatedAt          string                 `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // E.g. a string like: Added 1 hour ago
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *NewlyAddedProductListItem) Reset() {
@@ -253,6 +255,20 @@ func (x *NewlyAddedProductListItem) GetPriceCents() uint32 {
 	return 0
 }
 
+func (x *NewlyAddedProductListItem) GetSalePriceCents() uint32 {
+	if x != nil && x.SalePriceCents != nil {
+		return *x.SalePriceCents
+	}
+	return 0
+}
+
+func (x *NewlyAddedProductListItem) GetDiscountPercentage() uint32 {
+	if x != nil && x.DiscountPercentage != nil {
+		return *x.DiscountPercentage
+	}
+	return 0
+}
+
 func (x *NewlyAddedProductListItem) GetCreatedAt() string {
 	if x != nil {
 		return x.CreatedAt
@@ -272,15 +288,19 @@ const file_products_v1_newly_added_products_proto_rawDesc = "" +
 	"\n" +
 	"\bresponse\"d\n" +
 	"\x1eNewlyAddedProductsResponseData\x12B\n" +
-	"\bproducts\x18\x01 \x03(\v2&.products.v1.NewlyAddedProductListItemR\bproducts\"\x97\x01\n" +
+	"\bproducts\x18\x01 \x03(\v2&.products.v1.NewlyAddedProductListItemR\bproducts\"\xa9\x02\n" +
 	"\x19NewlyAddedProductListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
 	"\x05image\x18\x03 \x01(\tR\x05image\x12\x1f\n" +
 	"\vprice_cents\x18\x04 \x01(\rR\n" +
-	"priceCents\x12\x1d\n" +
+	"priceCents\x12-\n" +
+	"\x10sale_price_cents\x18\x05 \x01(\rH\x00R\x0esalePriceCents\x88\x01\x01\x124\n" +
+	"\x13discount_percentage\x18\x06 \x01(\rH\x01R\x12discountPercentage\x88\x01\x01\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\tR\tcreatedAtB\x81\x01\n" +
+	"created_at\x18\a \x01(\tR\tcreatedAtB\x13\n" +
+	"\x11_sale_price_centsB\x16\n" +
+	"\x14_discount_percentageB\x81\x01\n" +
 	"\x1corg.megacommerce.products.v1B\x17NewlyAddedProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -323,6 +343,7 @@ func file_products_v1_newly_added_products_proto_init() {
 		(*NewlyAddedProductsResponse_Data)(nil),
 		(*NewlyAddedProductsResponse_Error)(nil),
 	}
+	file_products_v1_newly_added_products_proto_msgTypes[3].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

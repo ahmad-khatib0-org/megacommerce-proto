@@ -27,6 +27,10 @@ export interface NewlyAddedProductListItem {
   title: string;
   image: string;
   priceCents: number;
+  salePriceCents?: number | undefined;
+  discountPercentage?:
+    | number
+    | undefined;
   /** E.g. a string like: Added 1 hour ago */
   createdAt: string;
 }
@@ -219,7 +223,15 @@ export const NewlyAddedProductsResponseData: MessageFns<NewlyAddedProductsRespon
 };
 
 function createBaseNewlyAddedProductListItem(): NewlyAddedProductListItem {
-  return { id: "", title: "", image: "", priceCents: 0, createdAt: "" };
+  return {
+    id: "",
+    title: "",
+    image: "",
+    priceCents: 0,
+    salePriceCents: undefined,
+    discountPercentage: undefined,
+    createdAt: "",
+  };
 }
 
 export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = {
@@ -236,8 +248,14 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
     if (message.priceCents !== 0) {
       writer.uint32(32).uint32(message.priceCents);
     }
+    if (message.salePriceCents !== undefined) {
+      writer.uint32(40).uint32(message.salePriceCents);
+    }
+    if (message.discountPercentage !== undefined) {
+      writer.uint32(48).uint32(message.discountPercentage);
+    }
     if (message.createdAt !== "") {
-      writer.uint32(42).string(message.createdAt);
+      writer.uint32(58).string(message.createdAt);
     }
     return writer;
   },
@@ -282,7 +300,23 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
           continue;
         }
         case 5: {
-          if (tag !== 42) {
+          if (tag !== 40) {
+            break;
+          }
+
+          message.salePriceCents = reader.uint32();
+          continue;
+        }
+        case 6: {
+          if (tag !== 48) {
+            break;
+          }
+
+          message.discountPercentage = reader.uint32();
+          continue;
+        }
+        case 7: {
+          if (tag !== 58) {
             break;
           }
 
@@ -304,6 +338,8 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
       title: isSet(object.title) ? globalThis.String(object.title) : "",
       image: isSet(object.image) ? globalThis.String(object.image) : "",
       priceCents: isSet(object.priceCents) ? globalThis.Number(object.priceCents) : 0,
+      salePriceCents: isSet(object.salePriceCents) ? globalThis.Number(object.salePriceCents) : undefined,
+      discountPercentage: isSet(object.discountPercentage) ? globalThis.Number(object.discountPercentage) : undefined,
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "",
     };
   },
@@ -322,6 +358,12 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
     if (message.priceCents !== 0) {
       obj.priceCents = Math.round(message.priceCents);
     }
+    if (message.salePriceCents !== undefined) {
+      obj.salePriceCents = Math.round(message.salePriceCents);
+    }
+    if (message.discountPercentage !== undefined) {
+      obj.discountPercentage = Math.round(message.discountPercentage);
+    }
     if (message.createdAt !== "") {
       obj.createdAt = message.createdAt;
     }
@@ -337,6 +379,8 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
     message.title = object.title ?? "";
     message.image = object.image ?? "";
     message.priceCents = object.priceCents ?? 0;
+    message.salePriceCents = object.salePriceCents ?? undefined;
+    message.discountPercentage = object.discountPercentage ?? undefined;
     message.createdAt = object.createdAt ?? "";
     return message;
   },

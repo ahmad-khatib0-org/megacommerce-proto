@@ -60,7 +60,9 @@ inline constexpr NewlyAddedProductListItem::Impl_::Impl_(
         created_at_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        price_cents_{0u} {}
+        price_cents_{0u},
+        sale_price_cents_{0u},
+        discount_percentage_{0u} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR NewlyAddedProductListItem::NewlyAddedProductListItem(::_pbi::ConstantInitialized)
@@ -151,16 +153,20 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::products::v1::NewlyAddedProductsResponseData, _impl_.products_),
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::NewlyAddedProductListItem, _impl_._has_bits_),
-        8, // hasbit index offset
+        10, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::NewlyAddedProductListItem, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::products::v1::NewlyAddedProductListItem, _impl_.title_),
         PROTOBUF_FIELD_OFFSET(::products::v1::NewlyAddedProductListItem, _impl_.image_),
         PROTOBUF_FIELD_OFFSET(::products::v1::NewlyAddedProductListItem, _impl_.price_cents_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::NewlyAddedProductListItem, _impl_.sale_price_cents_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::NewlyAddedProductListItem, _impl_.discount_percentage_),
         PROTOBUF_FIELD_OFFSET(::products::v1::NewlyAddedProductListItem, _impl_.created_at_),
         0,
         1,
         2,
         4,
+        5,
+        6,
         3,
 };
 
@@ -188,14 +194,18 @@ const char descriptor_table_protodef_products_2fv1_2fnewly_5fadded_5fproducts_2e
     "\000R\005errorB\n\n\010response\"d\n\036NewlyAddedProduc"
     "tsResponseData\022B\n\010products\030\001 \003(\0132&.produ"
     "cts.v1.NewlyAddedProductListItemR\010produc"
-    "ts\"\227\001\n\031NewlyAddedProductListItem\022\016\n\002id\030\001"
+    "ts\"\251\002\n\031NewlyAddedProductListItem\022\016\n\002id\030\001"
     " \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005title\022\024\n\005image\030"
     "\003 \001(\tR\005image\022\037\n\013price_cents\030\004 \001(\rR\nprice"
-    "Cents\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAtB\201\001\n"
-    "\034org.megacommerce.products.v1B\027NewlyAdde"
-    "dProductsProtoZEgithub.com/ahmad-khatib0"
-    "-org/megacommerce-proto/gen/go/products/"
-    "v1;v1\370\001\001b\006proto3"
+    "Cents\022-\n\020sale_price_cents\030\005 \001(\rH\000R\016saleP"
+    "riceCents\210\001\001\0224\n\023discount_percentage\030\006 \001("
+    "\rH\001R\022discountPercentage\210\001\001\022\035\n\ncreated_at"
+    "\030\007 \001(\tR\tcreatedAtB\023\n\021_sale_price_centsB\026"
+    "\n\024_discount_percentageB\201\001\n\034org.megacomme"
+    "rce.products.v1B\027NewlyAddedProductsProto"
+    "ZEgithub.com/ahmad-khatib0-org/megacomme"
+    "rce-proto/gen/go/products/v1;v1\370\001\001b\006prot"
+    "o3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fnewly_5fadded_5fproducts_2eproto_deps[1] = {
@@ -205,7 +215,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fnewly_5fadded_5fproduc
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fnewly_5fadded_5fproducts_2eproto = {
     false,
     false,
-    656,
+    802,
     descriptor_table_protodef_products_2fv1_2fnewly_5fadded_5fproducts_2eproto,
     "products/v1/newly_added_products.proto",
     &descriptor_table_products_2fv1_2fnewly_5fadded_5fproducts_2eproto_once,
@@ -991,7 +1001,13 @@ NewlyAddedProductListItem::NewlyAddedProductListItem(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  _impl_.price_cents_ = from._impl_.price_cents_;
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, price_cents_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, price_cents_),
+           offsetof(Impl_, discount_percentage_) -
+               offsetof(Impl_, price_cents_) +
+               sizeof(Impl_::discount_percentage_));
 
   // @@protoc_insertion_point(copy_constructor:products.v1.NewlyAddedProductListItem)
 }
@@ -1006,7 +1022,12 @@ PROTOBUF_NDEBUG_INLINE NewlyAddedProductListItem::Impl_::Impl_(
 
 inline void NewlyAddedProductListItem::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.price_cents_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, price_cents_),
+           0,
+           offsetof(Impl_, discount_percentage_) -
+               offsetof(Impl_, price_cents_) +
+               sizeof(Impl_::discount_percentage_));
 }
 NewlyAddedProductListItem::~NewlyAddedProductListItem() {
   // @@protoc_insertion_point(destructor:products.v1.NewlyAddedProductListItem)
@@ -1066,16 +1087,16 @@ NewlyAddedProductListItem::GetClassData() const {
   return NewlyAddedProductListItem_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 0, 68, 2>
+const ::_pbi::TcParseTable<3, 7, 0, 68, 2>
 NewlyAddedProductListItem::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_._has_bits_),
     0, // no _extensions_
-    5, 56,  // max_field_number, fast_idx_mask
+    7, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967264,  // skipmap
+    4294967168,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    5,  // num_field_entries
+    7,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     NewlyAddedProductListItem_class_data_.base(),
@@ -1098,11 +1119,15 @@ NewlyAddedProductListItem::_table_ = {
     // uint32 price_cents = 4 [json_name = "priceCents"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(NewlyAddedProductListItem, _impl_.price_cents_), 4>(),
      {32, 4, 0, PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.price_cents_)}},
-    // string created_at = 5 [json_name = "createdAt"];
+    // optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(NewlyAddedProductListItem, _impl_.sale_price_cents_), 5>(),
+     {40, 5, 0, PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.sale_price_cents_)}},
+    // optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(NewlyAddedProductListItem, _impl_.discount_percentage_), 6>(),
+     {48, 6, 0, PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.discount_percentage_)}},
+    // string created_at = 7 [json_name = "createdAt"];
     {::_pbi::TcParser::FastUS1,
-     {42, 3, 0, PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.created_at_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
+     {58, 3, 0, PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.created_at_)}},
   }}, {{
     65535, 65535
   }}, {{
@@ -1118,13 +1143,19 @@ NewlyAddedProductListItem::_table_ = {
     // uint32 price_cents = 4 [json_name = "priceCents"];
     {PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.price_cents_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
-    // string created_at = 5 [json_name = "createdAt"];
+    // optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];
+    {PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.sale_price_cents_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];
+    {PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.discount_percentage_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // string created_at = 7 [json_name = "createdAt"];
     {PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.created_at_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\45\2\5\5\0\12\0\0"
+    "\45\2\5\5\0\0\0\12"
     "products.v1.NewlyAddedProductListItem"
     "id"
     "title"
@@ -1154,7 +1185,11 @@ PROTOBUF_NOINLINE void NewlyAddedProductListItem::Clear() {
       _impl_.created_at_.ClearNonDefaultToEmpty();
     }
   }
-  _impl_.price_cents_ = 0u;
+  if ((cached_has_bits & 0x00000070u) != 0) {
+    ::memset(&_impl_.price_cents_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.discount_percentage_) -
+        reinterpret_cast<char*>(&_impl_.price_cents_)) + sizeof(_impl_.discount_percentage_));
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -1213,13 +1248,28 @@ PROTOBUF_NOINLINE void NewlyAddedProductListItem::Clear() {
     }
   }
 
-  // string created_at = 5 [json_name = "createdAt"];
-  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];
+  if ((cached_has_bits & 0x00000020u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        5, this_._internal_sale_price_cents(), target);
+  }
+
+  // optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];
+  if ((cached_has_bits & 0x00000040u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        6, this_._internal_discount_percentage(), target);
+  }
+
+  // string created_at = 7 [json_name = "createdAt"];
+  if ((cached_has_bits & 0x00000008u) != 0) {
     if (!this_._internal_created_at().empty()) {
       const ::std::string& _s = this_._internal_created_at();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.NewlyAddedProductListItem.created_at");
-      target = stream->WriteStringMaybeAliased(5, _s, target);
+      target = stream->WriteStringMaybeAliased(7, _s, target);
     }
   }
 
@@ -1248,7 +1298,7 @@ PROTOBUF_NOINLINE void NewlyAddedProductListItem::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000001fu) != 0) {
+  if ((cached_has_bits & 0x0000007fu) != 0) {
     // string id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
@@ -1270,7 +1320,7 @@ PROTOBUF_NOINLINE void NewlyAddedProductListItem::Clear() {
                                         this_._internal_image());
       }
     }
-    // string created_at = 5 [json_name = "createdAt"];
+    // string created_at = 7 [json_name = "createdAt"];
     if ((cached_has_bits & 0x00000008u) != 0) {
       if (!this_._internal_created_at().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1283,6 +1333,16 @@ PROTOBUF_NOINLINE void NewlyAddedProductListItem::Clear() {
         total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
             this_._internal_price_cents());
       }
+    }
+    // optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this_._internal_sale_price_cents());
+    }
+    // optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this_._internal_discount_percentage());
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -1298,7 +1358,7 @@ void NewlyAddedProductListItem::MergeImpl(::google::protobuf::MessageLite& to_ms
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000001fu) != 0) {
+  if ((cached_has_bits & 0x0000007fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!from._internal_id().empty()) {
         _this->_internal_set_id(from._internal_id());
@@ -1340,6 +1400,12 @@ void NewlyAddedProductListItem::MergeImpl(::google::protobuf::MessageLite& to_ms
         _this->_impl_.price_cents_ = from._impl_.price_cents_;
       }
     }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      _this->_impl_.sale_price_cents_ = from._impl_.sale_price_cents_;
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      _this->_impl_.discount_percentage_ = from._impl_.discount_percentage_;
+    }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
@@ -1363,7 +1429,12 @@ void NewlyAddedProductListItem::InternalSwap(NewlyAddedProductListItem* PROTOBUF
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.image_, &other->_impl_.image_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.created_at_, &other->_impl_.created_at_, arena);
-  swap(_impl_.price_cents_, other->_impl_.price_cents_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.discount_percentage_)
+      + sizeof(NewlyAddedProductListItem::_impl_.discount_percentage_)
+      - PROTOBUF_FIELD_OFFSET(NewlyAddedProductListItem, _impl_.price_cents_)>(
+          reinterpret_cast<char*>(&_impl_.price_cents_),
+          reinterpret_cast<char*>(&other->_impl_.price_cents_));
 }
 
 ::google::protobuf::Metadata NewlyAddedProductListItem::GetMetadata() const {

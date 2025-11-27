@@ -379,8 +379,10 @@ class NewlyAddedProductListItem final : public ::google::protobuf::Message
     kIdFieldNumber = 1,
     kTitleFieldNumber = 2,
     kImageFieldNumber = 3,
-    kCreatedAtFieldNumber = 5,
+    kCreatedAtFieldNumber = 7,
     kPriceCentsFieldNumber = 4,
+    kSalePriceCentsFieldNumber = 5,
+    kDiscountPercentageFieldNumber = 6,
   };
   // string id = 1 [json_name = "id"];
   void clear_id() ;
@@ -427,7 +429,7 @@ class NewlyAddedProductListItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_image();
 
   public:
-  // string created_at = 5 [json_name = "createdAt"];
+  // string created_at = 7 [json_name = "createdAt"];
   void clear_created_at() ;
   const ::std::string& created_at() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -452,11 +454,33 @@ class NewlyAddedProductListItem final : public ::google::protobuf::Message
   void _internal_set_price_cents(::uint32_t value);
 
   public:
+  // optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];
+  bool has_sale_price_cents() const;
+  void clear_sale_price_cents() ;
+  ::uint32_t sale_price_cents() const;
+  void set_sale_price_cents(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_sale_price_cents() const;
+  void _internal_set_sale_price_cents(::uint32_t value);
+
+  public:
+  // optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];
+  bool has_discount_percentage() const;
+  void clear_discount_percentage() ;
+  ::uint32_t discount_percentage() const;
+  void set_discount_percentage(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_discount_percentage() const;
+  void _internal_set_discount_percentage(::uint32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:products.v1.NewlyAddedProductListItem)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 5,
+  static const ::google::protobuf::internal::TcParseTable<3, 7,
                                    0, 68,
                                    2>
       _table_;
@@ -483,6 +507,8 @@ class NewlyAddedProductListItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr image_;
     ::google::protobuf::internal::ArenaStringPtr created_at_;
     ::uint32_t price_cents_;
+    ::uint32_t sale_price_cents_;
+    ::uint32_t discount_percentage_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1381,7 +1407,63 @@ inline void NewlyAddedProductListItem::_internal_set_price_cents(::uint32_t valu
   _impl_.price_cents_ = value;
 }
 
-// string created_at = 5 [json_name = "createdAt"];
+// optional uint32 sale_price_cents = 5 [json_name = "salePriceCents"];
+inline bool NewlyAddedProductListItem::has_sale_price_cents() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline void NewlyAddedProductListItem::clear_sale_price_cents() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.sale_price_cents_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline ::uint32_t NewlyAddedProductListItem::sale_price_cents() const {
+  // @@protoc_insertion_point(field_get:products.v1.NewlyAddedProductListItem.sale_price_cents)
+  return _internal_sale_price_cents();
+}
+inline void NewlyAddedProductListItem::set_sale_price_cents(::uint32_t value) {
+  _internal_set_sale_price_cents(value);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  // @@protoc_insertion_point(field_set:products.v1.NewlyAddedProductListItem.sale_price_cents)
+}
+inline ::uint32_t NewlyAddedProductListItem::_internal_sale_price_cents() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.sale_price_cents_;
+}
+inline void NewlyAddedProductListItem::_internal_set_sale_price_cents(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.sale_price_cents_ = value;
+}
+
+// optional uint32 discount_percentage = 6 [json_name = "discountPercentage"];
+inline bool NewlyAddedProductListItem::has_discount_percentage() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline void NewlyAddedProductListItem::clear_discount_percentage() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.discount_percentage_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline ::uint32_t NewlyAddedProductListItem::discount_percentage() const {
+  // @@protoc_insertion_point(field_get:products.v1.NewlyAddedProductListItem.discount_percentage)
+  return _internal_discount_percentage();
+}
+inline void NewlyAddedProductListItem::set_discount_percentage(::uint32_t value) {
+  _internal_set_discount_percentage(value);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  // @@protoc_insertion_point(field_set:products.v1.NewlyAddedProductListItem.discount_percentage)
+}
+inline ::uint32_t NewlyAddedProductListItem::_internal_discount_percentage() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.discount_percentage_;
+}
+inline void NewlyAddedProductListItem::_internal_set_discount_percentage(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.discount_percentage_ = value;
+}
+
+// string created_at = 7 [json_name = "createdAt"];
 inline void NewlyAddedProductListItem::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_.ClearToEmpty();

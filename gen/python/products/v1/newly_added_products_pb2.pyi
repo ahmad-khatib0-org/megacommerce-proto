@@ -25,15 +25,19 @@ class NewlyAddedProductsResponseData(_message.Message):
     def __init__(self, products: _Optional[_Iterable[_Union[NewlyAddedProductListItem, _Mapping]]] = ...) -> None: ...
 
 class NewlyAddedProductListItem(_message.Message):
-    __slots__ = ("id", "title", "image", "price_cents", "created_at")
+    __slots__ = ("id", "title", "image", "price_cents", "sale_price_cents", "discount_percentage", "created_at")
     ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
     PRICE_CENTS_FIELD_NUMBER: _ClassVar[int]
+    SALE_PRICE_CENTS_FIELD_NUMBER: _ClassVar[int]
+    DISCOUNT_PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     id: str
     title: str
     image: str
     price_cents: int
+    sale_price_cents: int
+    discount_percentage: int
     created_at: str
-    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., price_cents: _Optional[int] = ..., created_at: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., price_cents: _Optional[int] = ..., sale_price_cents: _Optional[int] = ..., discount_percentage: _Optional[int] = ..., created_at: _Optional[str] = ...) -> None: ...
