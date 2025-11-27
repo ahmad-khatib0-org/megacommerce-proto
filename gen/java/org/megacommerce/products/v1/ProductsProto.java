@@ -37,30 +37,35 @@ public final class ProductsProto {
     java.lang.String[] descriptorData = {
       "\n\032products/v1/products.proto\022\013products.v" +
       "1\032\'products/v1/best_selling_products.pro" +
-      "to\032 products/v1/product_create.proto\032\036pr" +
-      "oducts/v1/product_data.proto\032\036products/v" +
-      "1/product_list.proto\032\"products/v1/produc" +
-      "t_snapshot.proto2\325\003\n\017ProductsService\022V\n\r" +
-      "ProductCreate\022!.products.v1.ProductCreat" +
-      "eRequest\032\".products.v1.ProductCreateResp" +
-      "onse\022P\n\013ProductData\022\037.products.v1.Produc" +
-      "tDataRequest\032 .products.v1.ProductDataRe" +
-      "sponse\022P\n\013ProductList\022\037.products.v1.Prod" +
-      "uctListRequest\032 .products.v1.ProductList" +
-      "Response\022\\\n\017ProductSnapshot\022#.products.v" +
-      "1.ProductSnapshotRequest\032$.products.v1.P" +
-      "roductSnapshotResponse\022h\n\023BestSellingPro" +
-      "ducts\022\'.products.v1.BestSellingProductsR" +
-      "equest\032(.products.v1.BestSellingProducts" +
-      "ResponseBw\n\034org.megacommerce.products.v1" +
-      "B\rProductsProtoZEgithub.com/ahmad-khatib" +
-      "0-org/megacommerce-proto/gen/go/products" +
-      "/v1;v1\370\001\001b\006proto3"
+      "to\032\'products/v1/big_discount_products.pr" +
+      "oto\032 products/v1/product_create.proto\032\036p" +
+      "roducts/v1/product_data.proto\032\036products/" +
+      "v1/product_list.proto\032\"products/v1/produ" +
+      "ct_snapshot.proto2\277\004\n\017ProductsService\022V\n" +
+      "\rProductCreate\022!.products.v1.ProductCrea" +
+      "teRequest\032\".products.v1.ProductCreateRes" +
+      "ponse\022P\n\013ProductData\022\037.products.v1.Produ" +
+      "ctDataRequest\032 .products.v1.ProductDataR" +
+      "esponse\022P\n\013ProductList\022\037.products.v1.Pro" +
+      "ductListRequest\032 .products.v1.ProductLis" +
+      "tResponse\022\\\n\017ProductSnapshot\022#.products." +
+      "v1.ProductSnapshotRequest\032$.products.v1." +
+      "ProductSnapshotResponse\022h\n\023BestSellingPr" +
+      "oducts\022\'.products.v1.BestSellingProducts" +
+      "Request\032(.products.v1.BestSellingProduct" +
+      "sResponse\022h\n\023BigDiscountProducts\022\'.produ" +
+      "cts.v1.BigDiscountProductsRequest\032(.prod" +
+      "ucts.v1.BigDiscountProductsResponseBw\n\034o" +
+      "rg.megacommerce.products.v1B\rProductsPro" +
+      "toZEgithub.com/ahmad-khatib0-org/megacom" +
+      "merce-proto/gen/go/products/v1;v1\370\001\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.products.v1.BestSellingProductsProto.getDescriptor(),
+          org.megacommerce.products.v1.BigDiscountProductsProto.getDescriptor(),
           org.megacommerce.products.v1.ProductCreateProto.getDescriptor(),
           org.megacommerce.products.v1.ProductDataProto.getDescriptor(),
           org.megacommerce.products.v1.ProductListProto.getDescriptor(),
@@ -68,6 +73,7 @@ public final class ProductsProto {
         });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.products.v1.BestSellingProductsProto.getDescriptor();
+    org.megacommerce.products.v1.BigDiscountProductsProto.getDescriptor();
     org.megacommerce.products.v1.ProductCreateProto.getDescriptor();
     org.megacommerce.products.v1.ProductDataProto.getDescriptor();
     org.megacommerce.products.v1.ProductListProto.getDescriptor();

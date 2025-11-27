@@ -8,6 +8,7 @@
 import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
 import { BestSellingProductsRequest, BestSellingProductsResponse } from "./best_selling_products.js";
+import { BigDiscountProductsRequest, BigDiscountProductsResponse } from "./big_discount_products.js";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create.js";
 import { ProductDataRequest, ProductDataResponse } from "./product_data.js";
 import { ProductListRequest, ProductListResponse } from "./product_list.js";
@@ -27,6 +28,10 @@ export interface ProductsService {
     request: DeepPartial<BestSellingProductsRequest>,
     metadata?: grpc.Metadata,
   ): Promise<BestSellingProductsResponse>;
+  BigDiscountProducts(
+    request: DeepPartial<BigDiscountProductsRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<BigDiscountProductsResponse>;
 }
 
 export class ProductsServiceClientImpl implements ProductsService {
@@ -39,6 +44,7 @@ export class ProductsServiceClientImpl implements ProductsService {
     this.ProductList = this.ProductList.bind(this);
     this.ProductSnapshot = this.ProductSnapshot.bind(this);
     this.BestSellingProducts = this.BestSellingProducts.bind(this);
+    this.BigDiscountProducts = this.BigDiscountProducts.bind(this);
   }
 
   ProductCreate(request: DeepPartial<ProductCreateRequest>, metadata?: grpc.Metadata): Promise<ProductCreateResponse> {
@@ -67,6 +73,17 @@ export class ProductsServiceClientImpl implements ProductsService {
     return this.rpc.unary(
       ProductsServiceBestSellingProductsDesc,
       BestSellingProductsRequest.fromPartial(request),
+      metadata,
+    );
+  }
+
+  BigDiscountProducts(
+    request: DeepPartial<BigDiscountProductsRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<BigDiscountProductsResponse> {
+    return this.rpc.unary(
+      ProductsServiceBigDiscountProductsDesc,
+      BigDiscountProductsRequest.fromPartial(request),
       metadata,
     );
   }
@@ -179,6 +196,29 @@ export const ProductsServiceBestSellingProductsDesc: UnaryMethodDefinitionish = 
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = BestSellingProductsResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const ProductsServiceBigDiscountProductsDesc: UnaryMethodDefinitionish = {
+  methodName: "BigDiscountProducts",
+  service: ProductsServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return BigDiscountProductsRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = BigDiscountProductsResponse.decode(data);
       return {
         ...value,
         toObject() {

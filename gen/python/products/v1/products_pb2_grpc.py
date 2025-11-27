@@ -4,6 +4,7 @@ import grpc
 import warnings
 
 from products.v1 import best_selling_products_pb2 as products_dot_v1_dot_best__selling__products__pb2
+from products.v1 import big_discount_products_pb2 as products_dot_v1_dot_big__discount__products__pb2
 from products.v1 import product_create_pb2 as products_dot_v1_dot_product__create__pb2
 from products.v1 import product_data_pb2 as products_dot_v1_dot_product__data__pb2
 from products.v1 import product_list_pb2 as products_dot_v1_dot_product__list__pb2
@@ -63,6 +64,11 @@ class ProductsServiceStub(object):
                 request_serializer=products_dot_v1_dot_best__selling__products__pb2.BestSellingProductsRequest.SerializeToString,
                 response_deserializer=products_dot_v1_dot_best__selling__products__pb2.BestSellingProductsResponse.FromString,
                 _registered_method=True)
+        self.BigDiscountProducts = channel.unary_unary(
+                '/products.v1.ProductsService/BigDiscountProducts',
+                request_serializer=products_dot_v1_dot_big__discount__products__pb2.BigDiscountProductsRequest.SerializeToString,
+                response_deserializer=products_dot_v1_dot_big__discount__products__pb2.BigDiscountProductsResponse.FromString,
+                _registered_method=True)
 
 
 class ProductsServiceServicer(object):
@@ -98,6 +104,12 @@ class ProductsServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BigDiscountProducts(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ProductsServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -125,6 +137,11 @@ def add_ProductsServiceServicer_to_server(servicer, server):
                     servicer.BestSellingProducts,
                     request_deserializer=products_dot_v1_dot_best__selling__products__pb2.BestSellingProductsRequest.FromString,
                     response_serializer=products_dot_v1_dot_best__selling__products__pb2.BestSellingProductsResponse.SerializeToString,
+            ),
+            'BigDiscountProducts': grpc.unary_unary_rpc_method_handler(
+                    servicer.BigDiscountProducts,
+                    request_deserializer=products_dot_v1_dot_big__discount__products__pb2.BigDiscountProductsRequest.FromString,
+                    response_serializer=products_dot_v1_dot_big__discount__products__pb2.BigDiscountProductsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -262,6 +279,33 @@ class ProductsService(object):
             '/products.v1.ProductsService/BestSellingProducts',
             products_dot_v1_dot_best__selling__products__pb2.BestSellingProductsRequest.SerializeToString,
             products_dot_v1_dot_best__selling__products__pb2.BestSellingProductsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BigDiscountProducts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/products.v1.ProductsService/BigDiscountProducts',
+            products_dot_v1_dot_big__discount__products__pb2.BigDiscountProductsRequest.SerializeToString,
+            products_dot_v1_dot_big__discount__products__pb2.BigDiscountProductsResponse.FromString,
             options,
             channel_credentials,
             insecure,

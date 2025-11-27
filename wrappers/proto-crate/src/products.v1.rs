@@ -45,6 +45,50 @@ pub struct BestSellingProductListItem {
     pub sold_count: u32,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct BigDiscountProductsRequest {}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BigDiscountProductsResponse {
+    #[prost(oneof = "big_discount_products_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<big_discount_products_response::Response>,
+}
+/// Nested message and enum types in `BigDiscountProductsResponse`.
+pub mod big_discount_products_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::BigDiscountProductsResponseData),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BigDiscountProductsResponseData {
+    #[prost(message, repeated, tag = "1")]
+    pub products: ::prost::alloc::vec::Vec<BigDiscountProductListItem>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BigDiscountProductListItem {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub image: ::prost::alloc::string::String,
+    #[prost(uint32, tag = "4")]
+    pub price_cents: u32,
+    #[prost(uint32, tag = "5")]
+    pub discount_price_cents: u32,
+    #[prost(uint32, tag = "6")]
+    pub discount_percentage: u32,
+    #[prost(uint32, tag = "7")]
+    pub sold_count: u32,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductCreateTag {
     #[prost(uint32, optional, tag = "1")]
@@ -1170,6 +1214,32 @@ pub mod products_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        pub async fn big_discount_products(
+            &mut self,
+            request: impl tonic::IntoRequest<super::BigDiscountProductsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::BigDiscountProductsResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/products.v1.ProductsService/BigDiscountProducts",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("products.v1.ProductsService", "BigDiscountProducts"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -1218,6 +1288,13 @@ pub mod products_service_server {
             request: tonic::Request<super::BestSellingProductsRequest>,
         ) -> std::result::Result<
             tonic::Response<super::BestSellingProductsResponse>,
+            tonic::Status,
+        >;
+        async fn big_discount_products(
+            &self,
+            request: tonic::Request<super::BigDiscountProductsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::BigDiscountProductsResponse>,
             tonic::Status,
         >;
     }
@@ -1513,6 +1590,55 @@ pub mod products_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = BestSellingProductsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/products.v1.ProductsService/BigDiscountProducts" => {
+                    #[allow(non_camel_case_types)]
+                    struct BigDiscountProductsSvc<T: ProductsService>(pub Arc<T>);
+                    impl<
+                        T: ProductsService,
+                    > tonic::server::UnaryService<super::BigDiscountProductsRequest>
+                    for BigDiscountProductsSvc<T> {
+                        type Response = super::BigDiscountProductsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::BigDiscountProductsRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ProductsService>::big_discount_products(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = BigDiscountProductsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

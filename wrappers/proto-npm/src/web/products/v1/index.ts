@@ -1,4 +1,5 @@
 import * as BestSellingProducts from './best_selling_products';
+import * as BigDiscountProducts from './big_discount_products';
 import * as Product from './product';
 import * as ProductCategories from './product_categories';
 import * as ProductCreate from './product_create';
@@ -10,6 +11,7 @@ import * as Products from './products';
 
 export {
   BestSellingProducts,
+  BigDiscountProducts,
   Product,
   ProductCategories,
   ProductCreate,

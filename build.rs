@@ -58,6 +58,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "search/v1/tasks.proto",
         "products/v1/products.proto",
         "products/v1/best_selling_products.proto",
+        "products/v1/big_discount_products.proto",
         "products/v1/product.proto",
         "products/v1/product_categories.proto",
         "products/v1/product_create.proto",
