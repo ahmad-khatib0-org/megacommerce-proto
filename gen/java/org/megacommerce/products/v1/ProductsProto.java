@@ -38,10 +38,11 @@ public final class ProductsProto {
       "\n\032products/v1/products.proto\022\013products.v" +
       "1\032\'products/v1/best_selling_products.pro" +
       "to\032\'products/v1/big_discount_products.pr" +
+      "oto\032&products/v1/newly_added_products.pr" +
       "oto\032 products/v1/product_create.proto\032\036p" +
       "roducts/v1/product_data.proto\032\036products/" +
       "v1/product_list.proto\032\"products/v1/produ" +
-      "ct_snapshot.proto2\277\004\n\017ProductsService\022V\n" +
+      "ct_snapshot.proto2\247\005\n\017ProductsService\022V\n" +
       "\rProductCreate\022!.products.v1.ProductCrea" +
       "teRequest\032\".products.v1.ProductCreateRes" +
       "ponse\022P\n\013ProductData\022\037.products.v1.Produ" +
@@ -55,17 +56,20 @@ public final class ProductsProto {
       "Request\032(.products.v1.BestSellingProduct" +
       "sResponse\022h\n\023BigDiscountProducts\022\'.produ" +
       "cts.v1.BigDiscountProductsRequest\032(.prod" +
-      "ucts.v1.BigDiscountProductsResponseBw\n\034o" +
-      "rg.megacommerce.products.v1B\rProductsPro" +
-      "toZEgithub.com/ahmad-khatib0-org/megacom" +
-      "merce-proto/gen/go/products/v1;v1\370\001\001b\006pr" +
-      "oto3"
+      "ucts.v1.BigDiscountProductsResponse\022f\n\022N" +
+      "ewlyAddedProducts\022&.products.v1.NewlyAdd" +
+      "edProductsRequest\032(.products.v1.BigDisco" +
+      "untProductsResponseBw\n\034org.megacommerce." +
+      "products.v1B\rProductsProtoZEgithub.com/a" +
+      "hmad-khatib0-org/megacommerce-proto/gen/" +
+      "go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.products.v1.BestSellingProductsProto.getDescriptor(),
           org.megacommerce.products.v1.BigDiscountProductsProto.getDescriptor(),
+          org.megacommerce.products.v1.NewlyAddedProductsProto.getDescriptor(),
           org.megacommerce.products.v1.ProductCreateProto.getDescriptor(),
           org.megacommerce.products.v1.ProductDataProto.getDescriptor(),
           org.megacommerce.products.v1.ProductListProto.getDescriptor(),
@@ -74,6 +78,7 @@ public final class ProductsProto {
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.products.v1.BestSellingProductsProto.getDescriptor();
     org.megacommerce.products.v1.BigDiscountProductsProto.getDescriptor();
+    org.megacommerce.products.v1.NewlyAddedProductsProto.getDescriptor();
     org.megacommerce.products.v1.ProductCreateProto.getDescriptor();
     org.megacommerce.products.v1.ProductDataProto.getDescriptor();
     org.megacommerce.products.v1.ProductListProto.getDescriptor();

@@ -9,6 +9,7 @@ import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
 import { BestSellingProductsRequest, BestSellingProductsResponse } from "./best_selling_products.js";
 import { BigDiscountProductsRequest, BigDiscountProductsResponse } from "./big_discount_products.js";
+import { NewlyAddedProductsRequest } from "./newly_added_products.js";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create.js";
 import { ProductDataRequest, ProductDataResponse } from "./product_data.js";
 import { ProductListRequest, ProductListResponse } from "./product_list.js";
@@ -32,6 +33,10 @@ export interface ProductsService {
     request: DeepPartial<BigDiscountProductsRequest>,
     metadata?: grpc.Metadata,
   ): Promise<BigDiscountProductsResponse>;
+  NewlyAddedProducts(
+    request: DeepPartial<NewlyAddedProductsRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<BigDiscountProductsResponse>;
 }
 
 export class ProductsServiceClientImpl implements ProductsService {
@@ -45,6 +50,7 @@ export class ProductsServiceClientImpl implements ProductsService {
     this.ProductSnapshot = this.ProductSnapshot.bind(this);
     this.BestSellingProducts = this.BestSellingProducts.bind(this);
     this.BigDiscountProducts = this.BigDiscountProducts.bind(this);
+    this.NewlyAddedProducts = this.NewlyAddedProducts.bind(this);
   }
 
   ProductCreate(request: DeepPartial<ProductCreateRequest>, metadata?: grpc.Metadata): Promise<ProductCreateResponse> {
@@ -84,6 +90,17 @@ export class ProductsServiceClientImpl implements ProductsService {
     return this.rpc.unary(
       ProductsServiceBigDiscountProductsDesc,
       BigDiscountProductsRequest.fromPartial(request),
+      metadata,
+    );
+  }
+
+  NewlyAddedProducts(
+    request: DeepPartial<NewlyAddedProductsRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<BigDiscountProductsResponse> {
+    return this.rpc.unary(
+      ProductsServiceNewlyAddedProductsDesc,
+      NewlyAddedProductsRequest.fromPartial(request),
       metadata,
     );
   }
@@ -214,6 +231,29 @@ export const ProductsServiceBigDiscountProductsDesc: UnaryMethodDefinitionish = 
   requestType: {
     serializeBinary() {
       return BigDiscountProductsRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = BigDiscountProductsResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const ProductsServiceNewlyAddedProductsDesc: UnaryMethodDefinitionish = {
+  methodName: "NewlyAddedProducts",
+  service: ProductsServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return NewlyAddedProductsRequest.encode(this).finish();
     },
   } as any,
   responseType: {

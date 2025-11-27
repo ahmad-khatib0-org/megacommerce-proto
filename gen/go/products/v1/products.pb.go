@@ -24,14 +24,15 @@ var File_products_v1_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_products_proto_rawDesc = "" +
 	"\n" +
-	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a'products/v1/best_selling_products.proto\x1a'products/v1/big_discount_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\x1eproducts/v1/product_list.proto\x1a\"products/v1/product_snapshot.proto2\xbf\x04\n" +
+	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a'products/v1/best_selling_products.proto\x1a'products/v1/big_discount_products.proto\x1a&products/v1/newly_added_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\x1eproducts/v1/product_list.proto\x1a\"products/v1/product_snapshot.proto2\xa7\x05\n" +
 	"\x0fProductsService\x12V\n" +
 	"\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n" +
 	"\vProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12P\n" +
 	"\vProductList\x12\x1f.products.v1.ProductListRequest\x1a .products.v1.ProductListResponse\x12\\\n" +
 	"\x0fProductSnapshot\x12#.products.v1.ProductSnapshotRequest\x1a$.products.v1.ProductSnapshotResponse\x12h\n" +
 	"\x13BestSellingProducts\x12'.products.v1.BestSellingProductsRequest\x1a(.products.v1.BestSellingProductsResponse\x12h\n" +
-	"\x13BigDiscountProducts\x12'.products.v1.BigDiscountProductsRequest\x1a(.products.v1.BigDiscountProductsResponseBw\n" +
+	"\x13BigDiscountProducts\x12'.products.v1.BigDiscountProductsRequest\x1a(.products.v1.BigDiscountProductsResponse\x12f\n" +
+	"\x12NewlyAddedProducts\x12&.products.v1.NewlyAddedProductsRequest\x1a(.products.v1.BigDiscountProductsResponseBw\n" +
 	"\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_products_v1_products_proto_goTypes = []any{
@@ -41,12 +42,13 @@ var file_products_v1_products_proto_goTypes = []any{
 	(*ProductSnapshotRequest)(nil),      // 3: products.v1.ProductSnapshotRequest
 	(*BestSellingProductsRequest)(nil),  // 4: products.v1.BestSellingProductsRequest
 	(*BigDiscountProductsRequest)(nil),  // 5: products.v1.BigDiscountProductsRequest
-	(*ProductCreateResponse)(nil),       // 6: products.v1.ProductCreateResponse
-	(*ProductDataResponse)(nil),         // 7: products.v1.ProductDataResponse
-	(*ProductListResponse)(nil),         // 8: products.v1.ProductListResponse
-	(*ProductSnapshotResponse)(nil),     // 9: products.v1.ProductSnapshotResponse
-	(*BestSellingProductsResponse)(nil), // 10: products.v1.BestSellingProductsResponse
-	(*BigDiscountProductsResponse)(nil), // 11: products.v1.BigDiscountProductsResponse
+	(*NewlyAddedProductsRequest)(nil),   // 6: products.v1.NewlyAddedProductsRequest
+	(*ProductCreateResponse)(nil),       // 7: products.v1.ProductCreateResponse
+	(*ProductDataResponse)(nil),         // 8: products.v1.ProductDataResponse
+	(*ProductListResponse)(nil),         // 9: products.v1.ProductListResponse
+	(*ProductSnapshotResponse)(nil),     // 10: products.v1.ProductSnapshotResponse
+	(*BestSellingProductsResponse)(nil), // 11: products.v1.BestSellingProductsResponse
+	(*BigDiscountProductsResponse)(nil), // 12: products.v1.BigDiscountProductsResponse
 }
 var file_products_v1_products_proto_depIdxs = []int32{
 	0,  // 0: products.v1.ProductsService.ProductCreate:input_type -> products.v1.ProductCreateRequest
@@ -55,14 +57,16 @@ var file_products_v1_products_proto_depIdxs = []int32{
 	3,  // 3: products.v1.ProductsService.ProductSnapshot:input_type -> products.v1.ProductSnapshotRequest
 	4,  // 4: products.v1.ProductsService.BestSellingProducts:input_type -> products.v1.BestSellingProductsRequest
 	5,  // 5: products.v1.ProductsService.BigDiscountProducts:input_type -> products.v1.BigDiscountProductsRequest
-	6,  // 6: products.v1.ProductsService.ProductCreate:output_type -> products.v1.ProductCreateResponse
-	7,  // 7: products.v1.ProductsService.ProductData:output_type -> products.v1.ProductDataResponse
-	8,  // 8: products.v1.ProductsService.ProductList:output_type -> products.v1.ProductListResponse
-	9,  // 9: products.v1.ProductsService.ProductSnapshot:output_type -> products.v1.ProductSnapshotResponse
-	10, // 10: products.v1.ProductsService.BestSellingProducts:output_type -> products.v1.BestSellingProductsResponse
-	11, // 11: products.v1.ProductsService.BigDiscountProducts:output_type -> products.v1.BigDiscountProductsResponse
-	6,  // [6:12] is the sub-list for method output_type
-	0,  // [0:6] is the sub-list for method input_type
+	6,  // 6: products.v1.ProductsService.NewlyAddedProducts:input_type -> products.v1.NewlyAddedProductsRequest
+	7,  // 7: products.v1.ProductsService.ProductCreate:output_type -> products.v1.ProductCreateResponse
+	8,  // 8: products.v1.ProductsService.ProductData:output_type -> products.v1.ProductDataResponse
+	9,  // 9: products.v1.ProductsService.ProductList:output_type -> products.v1.ProductListResponse
+	10, // 10: products.v1.ProductsService.ProductSnapshot:output_type -> products.v1.ProductSnapshotResponse
+	11, // 11: products.v1.ProductsService.BestSellingProducts:output_type -> products.v1.BestSellingProductsResponse
+	12, // 12: products.v1.ProductsService.BigDiscountProducts:output_type -> products.v1.BigDiscountProductsResponse
+	12, // 13: products.v1.ProductsService.NewlyAddedProducts:output_type -> products.v1.BigDiscountProductsResponse
+	7,  // [7:14] is the sub-list for method output_type
+	0,  // [0:7] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
@@ -75,6 +79,7 @@ func file_products_v1_products_proto_init() {
 	}
 	file_products_v1_best_selling_products_proto_init()
 	file_products_v1_big_discount_products_proto_init()
+	file_products_v1_newly_added_products_proto_init()
 	file_products_v1_product_create_proto_init()
 	file_products_v1_product_data_proto_init()
 	file_products_v1_product_list_proto_init()

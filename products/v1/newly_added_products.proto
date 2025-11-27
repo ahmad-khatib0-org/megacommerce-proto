@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package products.v1;
+
+import "shared/v1/error.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "NewlyAddedProductsProto";
+option java_package = "org.megacommerce.products.v1";
+
+message NewlyAddedProductsRequest {}
+
+message NewlyAddedProductsResponse {
+  oneof response {
+    NewlyAddedProductsResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message NewlyAddedProductsResponseData {
+  repeated NewlyAddedProductListItem products = 1;
+}
+
+message NewlyAddedProductListItem {
+  string id = 1;
+  string title = 2;
+  string image = 3;
+  uint32 price_cents = 4;
+  string created_at = 5; // E.g. a string like: Added 1 hour ago
+}
