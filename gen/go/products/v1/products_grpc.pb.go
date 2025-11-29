@@ -26,6 +26,7 @@ const (
 	ProductsService_BestSellingProducts_FullMethodName = "/products.v1.ProductsService/BestSellingProducts"
 	ProductsService_BigDiscountProducts_FullMethodName = "/products.v1.ProductsService/BigDiscountProducts"
 	ProductsService_NewlyAddedProducts_FullMethodName  = "/products.v1.ProductsService/NewlyAddedProducts"
+	ProductsService_HeroProducts_FullMethodName        = "/products.v1.ProductsService/HeroProducts"
 )
 
 // ProductsServiceClient is the client API for ProductsService service.
@@ -39,6 +40,7 @@ type ProductsServiceClient interface {
 	BestSellingProducts(ctx context.Context, in *BestSellingProductsRequest, opts ...grpc.CallOption) (*BestSellingProductsResponse, error)
 	BigDiscountProducts(ctx context.Context, in *BigDiscountProductsRequest, opts ...grpc.CallOption) (*BigDiscountProductsResponse, error)
 	NewlyAddedProducts(ctx context.Context, in *NewlyAddedProductsRequest, opts ...grpc.CallOption) (*NewlyAddedProductsResponse, error)
+	HeroProducts(ctx context.Context, in *HeroProductsRequest, opts ...grpc.CallOption) (*HeroProductsResponse, error)
 }
 
 type productsServiceClient struct {
@@ -119,6 +121,16 @@ func (c *productsServiceClient) NewlyAddedProducts(ctx context.Context, in *Newl
 	return out, nil
 }
 
+func (c *productsServiceClient) HeroProducts(ctx context.Context, in *HeroProductsRequest, opts ...grpc.CallOption) (*HeroProductsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(HeroProductsResponse)
+	err := c.cc.Invoke(ctx, ProductsService_HeroProducts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProductsServiceServer is the server API for ProductsService service.
 // All implementations must embed UnimplementedProductsServiceServer
 // for forward compatibility.
@@ -130,6 +142,7 @@ type ProductsServiceServer interface {
 	BestSellingProducts(context.Context, *BestSellingProductsRequest) (*BestSellingProductsResponse, error)
 	BigDiscountProducts(context.Context, *BigDiscountProductsRequest) (*BigDiscountProductsResponse, error)
 	NewlyAddedProducts(context.Context, *NewlyAddedProductsRequest) (*NewlyAddedProductsResponse, error)
+	HeroProducts(context.Context, *HeroProductsRequest) (*HeroProductsResponse, error)
 	mustEmbedUnimplementedProductsServiceServer()
 }
 
@@ -160,6 +173,9 @@ func (UnimplementedProductsServiceServer) BigDiscountProducts(context.Context, *
 }
 func (UnimplementedProductsServiceServer) NewlyAddedProducts(context.Context, *NewlyAddedProductsRequest) (*NewlyAddedProductsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NewlyAddedProducts not implemented")
+}
+func (UnimplementedProductsServiceServer) HeroProducts(context.Context, *HeroProductsRequest) (*HeroProductsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method HeroProducts not implemented")
 }
 func (UnimplementedProductsServiceServer) mustEmbedUnimplementedProductsServiceServer() {}
 func (UnimplementedProductsServiceServer) testEmbeddedByValue()                         {}
@@ -308,6 +324,24 @@ func _ProductsService_NewlyAddedProducts_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProductsService_HeroProducts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HeroProductsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductsServiceServer).HeroProducts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProductsService_HeroProducts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductsServiceServer).HeroProducts(ctx, req.(*HeroProductsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ProductsService_ServiceDesc is the grpc.ServiceDesc for ProductsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -342,6 +376,10 @@ var ProductsService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "NewlyAddedProducts",
 			Handler:    _ProductsService_NewlyAddedProducts_Handler,
+		},
+		{
+			MethodName: "HeroProducts",
+			Handler:    _ProductsService_HeroProducts_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

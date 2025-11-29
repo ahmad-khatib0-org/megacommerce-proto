@@ -38,37 +38,41 @@ public final class ProductsProto {
       "\n\032products/v1/products.proto\022\013products.v" +
       "1\032\'products/v1/best_selling_products.pro" +
       "to\032\'products/v1/big_discount_products.pr" +
-      "oto\032&products/v1/newly_added_products.pr" +
-      "oto\032 products/v1/product_create.proto\032\036p" +
-      "roducts/v1/product_data.proto\032\036products/" +
-      "v1/product_list.proto\032\"products/v1/produ" +
-      "ct_snapshot.proto2\246\005\n\017ProductsService\022V\n" +
-      "\rProductCreate\022!.products.v1.ProductCrea" +
-      "teRequest\032\".products.v1.ProductCreateRes" +
-      "ponse\022P\n\013ProductData\022\037.products.v1.Produ" +
-      "ctDataRequest\032 .products.v1.ProductDataR" +
-      "esponse\022P\n\013ProductList\022\037.products.v1.Pro" +
-      "ductListRequest\032 .products.v1.ProductLis" +
-      "tResponse\022\\\n\017ProductSnapshot\022#.products." +
-      "v1.ProductSnapshotRequest\032$.products.v1." +
-      "ProductSnapshotResponse\022h\n\023BestSellingPr" +
-      "oducts\022\'.products.v1.BestSellingProducts" +
-      "Request\032(.products.v1.BestSellingProduct" +
-      "sResponse\022h\n\023BigDiscountProducts\022\'.produ" +
-      "cts.v1.BigDiscountProductsRequest\032(.prod" +
-      "ucts.v1.BigDiscountProductsResponse\022e\n\022N" +
-      "ewlyAddedProducts\022&.products.v1.NewlyAdd" +
-      "edProductsRequest\032\'.products.v1.NewlyAdd" +
-      "edProductsResponseBw\n\034org.megacommerce.p" +
-      "roducts.v1B\rProductsProtoZEgithub.com/ah" +
-      "mad-khatib0-org/megacommerce-proto/gen/g" +
-      "o/products/v1;v1\370\001\001b\006proto3"
+      "oto\032\037products/v1/hero_products.proto\032&pr" +
+      "oducts/v1/newly_added_products.proto\032 pr" +
+      "oducts/v1/product_create.proto\032\036products" +
+      "/v1/product_data.proto\032\036products/v1/prod" +
+      "uct_list.proto\032\"products/v1/product_snap" +
+      "shot.proto2\373\005\n\017ProductsService\022V\n\rProduc" +
+      "tCreate\022!.products.v1.ProductCreateReque" +
+      "st\032\".products.v1.ProductCreateResponse\022P" +
+      "\n\013ProductData\022\037.products.v1.ProductDataR" +
+      "equest\032 .products.v1.ProductDataResponse" +
+      "\022P\n\013ProductList\022\037.products.v1.ProductLis" +
+      "tRequest\032 .products.v1.ProductListRespon" +
+      "se\022\\\n\017ProductSnapshot\022#.products.v1.Prod" +
+      "uctSnapshotRequest\032$.products.v1.Product" +
+      "SnapshotResponse\022h\n\023BestSellingProducts\022" +
+      "\'.products.v1.BestSellingProductsRequest" +
+      "\032(.products.v1.BestSellingProductsRespon" +
+      "se\022h\n\023BigDiscountProducts\022\'.products.v1." +
+      "BigDiscountProductsRequest\032(.products.v1" +
+      ".BigDiscountProductsResponse\022e\n\022NewlyAdd" +
+      "edProducts\022&.products.v1.NewlyAddedProdu" +
+      "ctsRequest\032\'.products.v1.NewlyAddedProdu" +
+      "ctsResponse\022S\n\014HeroProducts\022 .products.v" +
+      "1.HeroProductsRequest\032!.products.v1.Hero" +
+      "ProductsResponseBw\n\034org.megacommerce.pro" +
+      "ducts.v1B\rProductsProtoZEgithub.com/ahma" +
+      "d-khatib0-org/megacommerce-proto/gen/go/" +
+      "products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.products.v1.BestSellingProductsProto.getDescriptor(),
           org.megacommerce.products.v1.BigDiscountProductsProto.getDescriptor(),
+          org.megacommerce.products.v1.HeroProductsProto.getDescriptor(),
           org.megacommerce.products.v1.NewlyAddedProductsProto.getDescriptor(),
           org.megacommerce.products.v1.ProductCreateProto.getDescriptor(),
           org.megacommerce.products.v1.ProductDataProto.getDescriptor(),
@@ -78,6 +82,7 @@ public final class ProductsProto {
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.products.v1.BestSellingProductsProto.getDescriptor();
     org.megacommerce.products.v1.BigDiscountProductsProto.getDescriptor();
+    org.megacommerce.products.v1.HeroProductsProto.getDescriptor();
     org.megacommerce.products.v1.NewlyAddedProductsProto.getDescriptor();
     org.megacommerce.products.v1.ProductCreateProto.getDescriptor();
     org.megacommerce.products.v1.ProductDataProto.getDescriptor();

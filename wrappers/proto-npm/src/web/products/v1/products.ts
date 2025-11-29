@@ -9,6 +9,7 @@ import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
 import { BestSellingProductsRequest, BestSellingProductsResponse } from "./best_selling_products.js";
 import { BigDiscountProductsRequest, BigDiscountProductsResponse } from "./big_discount_products.js";
+import { HeroProductsRequest, HeroProductsResponse } from "./hero_products.js";
 import { NewlyAddedProductsRequest, NewlyAddedProductsResponse } from "./newly_added_products.js";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create.js";
 import { ProductDataRequest, ProductDataResponse } from "./product_data.js";
@@ -37,6 +38,7 @@ export interface ProductsService {
     request: DeepPartial<NewlyAddedProductsRequest>,
     metadata?: grpc.Metadata,
   ): Promise<NewlyAddedProductsResponse>;
+  HeroProducts(request: DeepPartial<HeroProductsRequest>, metadata?: grpc.Metadata): Promise<HeroProductsResponse>;
 }
 
 export class ProductsServiceClientImpl implements ProductsService {
@@ -51,6 +53,7 @@ export class ProductsServiceClientImpl implements ProductsService {
     this.BestSellingProducts = this.BestSellingProducts.bind(this);
     this.BigDiscountProducts = this.BigDiscountProducts.bind(this);
     this.NewlyAddedProducts = this.NewlyAddedProducts.bind(this);
+    this.HeroProducts = this.HeroProducts.bind(this);
   }
 
   ProductCreate(request: DeepPartial<ProductCreateRequest>, metadata?: grpc.Metadata): Promise<ProductCreateResponse> {
@@ -103,6 +106,10 @@ export class ProductsServiceClientImpl implements ProductsService {
       NewlyAddedProductsRequest.fromPartial(request),
       metadata,
     );
+  }
+
+  HeroProducts(request: DeepPartial<HeroProductsRequest>, metadata?: grpc.Metadata): Promise<HeroProductsResponse> {
+    return this.rpc.unary(ProductsServiceHeroProductsDesc, HeroProductsRequest.fromPartial(request), metadata);
   }
 }
 
@@ -259,6 +266,29 @@ export const ProductsServiceNewlyAddedProductsDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = NewlyAddedProductsResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const ProductsServiceHeroProductsDesc: UnaryMethodDefinitionish = {
+  methodName: "HeroProducts",
+  service: ProductsServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return HeroProductsRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = HeroProductsResponse.decode(data);
       return {
         ...value,
         toObject() {
