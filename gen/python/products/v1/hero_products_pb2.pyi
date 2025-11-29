@@ -72,17 +72,7 @@ class WelcomeDealsSlider(_message.Message):
     def __init__(self, title: _Optional[str] = ..., subtitle: _Optional[str] = ..., button_text: _Optional[str] = ..., products: _Optional[_Iterable[_Union[HeroProductListItem, _Mapping]]] = ...) -> None: ...
 
 class HeroProductListItem(_message.Message):
-    __slots__ = ("id", "title", "image", "price_cents", "discount_price_cents", "discount_percentage")
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
-    TITLE_FIELD_NUMBER: _ClassVar[int]
-    IMAGE_FIELD_NUMBER: _ClassVar[int]
-    PRICE_CENTS_FIELD_NUMBER: _ClassVar[int]
-    DISCOUNT_PRICE_CENTS_FIELD_NUMBER: _ClassVar[int]
-    DISCOUNT_PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
     id: str
-    title: str
-    image: str
-    price_cents: int
-    discount_price_cents: int
-    discount_percentage: int
-    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., price_cents: _Optional[int] = ..., discount_price_cents: _Optional[int] = ..., discount_percentage: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ...) -> None: ...

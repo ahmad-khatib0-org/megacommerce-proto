@@ -163,18 +163,9 @@ pub struct WelcomeDealsSlider {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct HeroProductListItem {
+    /// product id
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub title: ::prost::alloc::string::String,
-    #[prost(string, tag = "3")]
-    pub image: ::prost::alloc::string::String,
-    #[prost(uint32, tag = "4")]
-    pub price_cents: u32,
-    #[prost(uint32, tag = "5")]
-    pub discount_price_cents: u32,
-    #[prost(uint32, tag = "6")]
-    pub discount_percentage: u32,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]

@@ -449,15 +449,10 @@ func (x *WelcomeDealsSlider) GetProducts() []*HeroProductListItem {
 }
 
 type HeroProductListItem struct {
-	state              protoimpl.MessageState `protogen:"open.v1"`
-	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Title              string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
-	Image              string                 `protobuf:"bytes,3,opt,name=image,proto3" json:"image,omitempty"`
-	PriceCents         uint32                 `protobuf:"varint,4,opt,name=price_cents,json=priceCents,proto3" json:"price_cents,omitempty"`
-	DiscountPriceCents uint32                 `protobuf:"varint,5,opt,name=discount_price_cents,json=discountPriceCents,proto3" json:"discount_price_cents,omitempty"`
-	DiscountPercentage uint32                 `protobuf:"varint,6,opt,name=discount_percentage,json=discountPercentage,proto3" json:"discount_percentage,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // product id
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *HeroProductListItem) Reset() {
@@ -497,41 +492,6 @@ func (x *HeroProductListItem) GetId() string {
 	return ""
 }
 
-func (x *HeroProductListItem) GetTitle() string {
-	if x != nil {
-		return x.Title
-	}
-	return ""
-}
-
-func (x *HeroProductListItem) GetImage() string {
-	if x != nil {
-		return x.Image
-	}
-	return ""
-}
-
-func (x *HeroProductListItem) GetPriceCents() uint32 {
-	if x != nil {
-		return x.PriceCents
-	}
-	return 0
-}
-
-func (x *HeroProductListItem) GetDiscountPriceCents() uint32 {
-	if x != nil {
-		return x.DiscountPriceCents
-	}
-	return 0
-}
-
-func (x *HeroProductListItem) GetDiscountPercentage() uint32 {
-	if x != nil {
-		return x.DiscountPercentage
-	}
-	return 0
-}
-
 var File_products_v1_hero_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_hero_products_proto_rawDesc = "" +
@@ -568,15 +528,9 @@ const file_products_v1_hero_products_proto_rawDesc = "" +
 	"\bsubtitle\x18\x02 \x01(\tR\bsubtitle\x12\x1f\n" +
 	"\vbutton_text\x18\x03 \x01(\tR\n" +
 	"buttonText\x12<\n" +
-	"\bproducts\x18\x04 \x03(\v2 .products.v1.HeroProductListItemR\bproducts\"\xd5\x01\n" +
+	"\bproducts\x18\x04 \x03(\v2 .products.v1.HeroProductListItemR\bproducts\"%\n" +
 	"\x13HeroProductListItem\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
-	"\x05image\x18\x03 \x01(\tR\x05image\x12\x1f\n" +
-	"\vprice_cents\x18\x04 \x01(\rR\n" +
-	"priceCents\x120\n" +
-	"\x14discount_price_cents\x18\x05 \x01(\rR\x12discountPriceCents\x12/\n" +
-	"\x13discount_percentage\x18\x06 \x01(\rR\x12discountPercentageB{\n" +
+	"\x02id\x18\x01 \x01(\tR\x02idB{\n" +
 	"\x1corg.megacommerce.products.v1B\x11HeroProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (

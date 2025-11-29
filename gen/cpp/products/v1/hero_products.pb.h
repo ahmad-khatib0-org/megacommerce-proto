@@ -394,11 +394,6 @@ class HeroProductListItem final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kIdFieldNumber = 1,
-    kTitleFieldNumber = 2,
-    kImageFieldNumber = 3,
-    kPriceCentsFieldNumber = 4,
-    kDiscountPriceCentsFieldNumber = 5,
-    kDiscountPercentageFieldNumber = 6,
   };
   // string id = 1 [json_name = "id"];
   void clear_id() ;
@@ -415,72 +410,12 @@ class HeroProductListItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string title = 2 [json_name = "title"];
-  void clear_title() ;
-  const ::std::string& title() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_title(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_title();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_title();
-  void set_allocated_title(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_title() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_title(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_title();
-
-  public:
-  // string image = 3 [json_name = "image"];
-  void clear_image() ;
-  const ::std::string& image() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_image(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_image();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_image();
-  void set_allocated_image(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_image() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_image(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_image();
-
-  public:
-  // uint32 price_cents = 4 [json_name = "priceCents"];
-  void clear_price_cents() ;
-  ::uint32_t price_cents() const;
-  void set_price_cents(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_price_cents() const;
-  void _internal_set_price_cents(::uint32_t value);
-
-  public:
-  // uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-  void clear_discount_price_cents() ;
-  ::uint32_t discount_price_cents() const;
-  void set_discount_price_cents(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_discount_price_cents() const;
-  void _internal_set_discount_price_cents(::uint32_t value);
-
-  public:
-  // uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-  void clear_discount_percentage() ;
-  ::uint32_t discount_percentage() const;
-  void set_discount_percentage(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_discount_percentage() const;
-  void _internal_set_discount_percentage(::uint32_t value);
-
-  public:
   // @@protoc_insertion_point(class_scope:products.v1.HeroProductListItem)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 6,
-                                   0, 52,
+  static const ::google::protobuf::internal::TcParseTable<0, 1,
+                                   0, 42,
                                    2>
       _table_;
 
@@ -502,11 +437,6 @@ class HeroProductListItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr id_;
-    ::google::protobuf::internal::ArenaStringPtr title_;
-    ::google::protobuf::internal::ArenaStringPtr image_;
-    ::uint32_t price_cents_;
-    ::uint32_t discount_price_cents_;
-    ::uint32_t discount_percentage_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -3272,208 +3202,6 @@ inline void HeroProductListItem::set_allocated_id(::std::string* PROTOBUF_NULLAB
     _impl_.id_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:products.v1.HeroProductListItem.id)
-}
-
-// string title = 2 [json_name = "title"];
-inline void HeroProductListItem::clear_title() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.title_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline const ::std::string& HeroProductListItem::title() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:products.v1.HeroProductListItem.title)
-  return _internal_title();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void HeroProductListItem::set_title(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.title_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:products.v1.HeroProductListItem.title)
-}
-inline ::std::string* PROTOBUF_NONNULL HeroProductListItem::mutable_title()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_title();
-  // @@protoc_insertion_point(field_mutable:products.v1.HeroProductListItem.title)
-  return _s;
-}
-inline const ::std::string& HeroProductListItem::_internal_title() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.title_.Get();
-}
-inline void HeroProductListItem::_internal_set_title(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.title_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL HeroProductListItem::_internal_mutable_title() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.title_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE HeroProductListItem::release_title() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:products.v1.HeroProductListItem.title)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* released = _impl_.title_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.title_.Set("", GetArena());
-  }
-  return released;
-}
-inline void HeroProductListItem::set_allocated_title(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
-  }
-  _impl_.title_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.title_.IsDefault()) {
-    _impl_.title_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.HeroProductListItem.title)
-}
-
-// string image = 3 [json_name = "image"];
-inline void HeroProductListItem::clear_image() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.image_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
-}
-inline const ::std::string& HeroProductListItem::image() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:products.v1.HeroProductListItem.image)
-  return _internal_image();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void HeroProductListItem::set_image(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.image_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:products.v1.HeroProductListItem.image)
-}
-inline ::std::string* PROTOBUF_NONNULL HeroProductListItem::mutable_image()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_image();
-  // @@protoc_insertion_point(field_mutable:products.v1.HeroProductListItem.image)
-  return _s;
-}
-inline const ::std::string& HeroProductListItem::_internal_image() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.image_.Get();
-}
-inline void HeroProductListItem::_internal_set_image(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.image_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL HeroProductListItem::_internal_mutable_image() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  return _impl_.image_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE HeroProductListItem::release_image() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:products.v1.HeroProductListItem.image)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000004u;
-  auto* released = _impl_.image_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.image_.Set("", GetArena());
-  }
-  return released;
-}
-inline void HeroProductListItem::set_allocated_image(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
-  }
-  _impl_.image_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.image_.IsDefault()) {
-    _impl_.image_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.HeroProductListItem.image)
-}
-
-// uint32 price_cents = 4 [json_name = "priceCents"];
-inline void HeroProductListItem::clear_price_cents() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.price_cents_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000008u;
-}
-inline ::uint32_t HeroProductListItem::price_cents() const {
-  // @@protoc_insertion_point(field_get:products.v1.HeroProductListItem.price_cents)
-  return _internal_price_cents();
-}
-inline void HeroProductListItem::set_price_cents(::uint32_t value) {
-  _internal_set_price_cents(value);
-  _impl_._has_bits_[0] |= 0x00000008u;
-  // @@protoc_insertion_point(field_set:products.v1.HeroProductListItem.price_cents)
-}
-inline ::uint32_t HeroProductListItem::_internal_price_cents() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.price_cents_;
-}
-inline void HeroProductListItem::_internal_set_price_cents(::uint32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.price_cents_ = value;
-}
-
-// uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-inline void HeroProductListItem::clear_discount_price_cents() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.discount_price_cents_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000010u;
-}
-inline ::uint32_t HeroProductListItem::discount_price_cents() const {
-  // @@protoc_insertion_point(field_get:products.v1.HeroProductListItem.discount_price_cents)
-  return _internal_discount_price_cents();
-}
-inline void HeroProductListItem::set_discount_price_cents(::uint32_t value) {
-  _internal_set_discount_price_cents(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
-  // @@protoc_insertion_point(field_set:products.v1.HeroProductListItem.discount_price_cents)
-}
-inline ::uint32_t HeroProductListItem::_internal_discount_price_cents() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.discount_price_cents_;
-}
-inline void HeroProductListItem::_internal_set_discount_price_cents(::uint32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.discount_price_cents_ = value;
-}
-
-// uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-inline void HeroProductListItem::clear_discount_percentage() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.discount_percentage_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000020u;
-}
-inline ::uint32_t HeroProductListItem::discount_percentage() const {
-  // @@protoc_insertion_point(field_get:products.v1.HeroProductListItem.discount_percentage)
-  return _internal_discount_percentage();
-}
-inline void HeroProductListItem::set_discount_percentage(::uint32_t value) {
-  _internal_set_discount_percentage(value);
-  _impl_._has_bits_[0] |= 0x00000020u;
-  // @@protoc_insertion_point(field_set:products.v1.HeroProductListItem.discount_percentage)
-}
-inline ::uint32_t HeroProductListItem::_internal_discount_percentage() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.discount_percentage_;
-}
-inline void HeroProductListItem::_internal_set_discount_percentage(::uint32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.discount_percentage_ = value;
 }
 
 #ifdef __GNUC__

@@ -51,10 +51,5 @@ message WelcomeDealsSlider {
 }
 
 message HeroProductListItem {
-  string id = 1;
-  string title = 2;
-  string image = 3;
-  uint32 price_cents = 4;
-  uint32 discount_price_cents = 5;
-  uint32 discount_percentage = 6;
+  string id = 1; // product id
 }

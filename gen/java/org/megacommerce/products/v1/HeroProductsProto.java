@@ -6070,58 +6070,24 @@ public final class HeroProductsProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * product id
+     * </pre>
+     *
      * <code>string id = 1 [json_name = "id"];</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * product id
+     * </pre>
+     *
      * <code>string id = 1 [json_name = "id"];</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
-
-    /**
-     * <code>string title = 2 [json_name = "title"];</code>
-     * @return The title.
-     */
-    java.lang.String getTitle();
-    /**
-     * <code>string title = 2 [json_name = "title"];</code>
-     * @return The bytes for title.
-     */
-    com.google.protobuf.ByteString
-        getTitleBytes();
-
-    /**
-     * <code>string image = 3 [json_name = "image"];</code>
-     * @return The image.
-     */
-    java.lang.String getImage();
-    /**
-     * <code>string image = 3 [json_name = "image"];</code>
-     * @return The bytes for image.
-     */
-    com.google.protobuf.ByteString
-        getImageBytes();
-
-    /**
-     * <code>uint32 price_cents = 4 [json_name = "priceCents"];</code>
-     * @return The priceCents.
-     */
-    int getPriceCents();
-
-    /**
-     * <code>uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];</code>
-     * @return The discountPriceCents.
-     */
-    int getDiscountPriceCents();
-
-    /**
-     * <code>uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
-     * @return The discountPercentage.
-     */
-    int getDiscountPercentage();
   }
   /**
    * Protobuf type {@code products.v1.HeroProductListItem}
@@ -6146,8 +6112,6 @@ public final class HeroProductsProto {
     }
     private HeroProductListItem() {
       id_ = "";
-      title_ = "";
-      image_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -6167,6 +6131,10 @@ public final class HeroProductsProto {
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
     /**
+     * <pre>
+     * product id
+     * </pre>
+     *
      * <code>string id = 1 [json_name = "id"];</code>
      * @return The id.
      */
@@ -6184,6 +6152,10 @@ public final class HeroProductsProto {
       }
     }
     /**
+     * <pre>
+     * product id
+     * </pre>
+     *
      * <code>string id = 1 [json_name = "id"];</code>
      * @return The bytes for id.
      */
@@ -6200,117 +6172,6 @@ public final class HeroProductsProto {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int TITLE_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object title_ = "";
-    /**
-     * <code>string title = 2 [json_name = "title"];</code>
-     * @return The title.
-     */
-    @java.lang.Override
-    public java.lang.String getTitle() {
-      java.lang.Object ref = title_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        title_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string title = 2 [json_name = "title"];</code>
-     * @return The bytes for title.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTitleBytes() {
-      java.lang.Object ref = title_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        title_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IMAGE_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object image_ = "";
-    /**
-     * <code>string image = 3 [json_name = "image"];</code>
-     * @return The image.
-     */
-    @java.lang.Override
-    public java.lang.String getImage() {
-      java.lang.Object ref = image_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        image_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string image = 3 [json_name = "image"];</code>
-     * @return The bytes for image.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getImageBytes() {
-      java.lang.Object ref = image_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        image_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PRICE_CENTS_FIELD_NUMBER = 4;
-    private int priceCents_ = 0;
-    /**
-     * <code>uint32 price_cents = 4 [json_name = "priceCents"];</code>
-     * @return The priceCents.
-     */
-    @java.lang.Override
-    public int getPriceCents() {
-      return priceCents_;
-    }
-
-    public static final int DISCOUNT_PRICE_CENTS_FIELD_NUMBER = 5;
-    private int discountPriceCents_ = 0;
-    /**
-     * <code>uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];</code>
-     * @return The discountPriceCents.
-     */
-    @java.lang.Override
-    public int getDiscountPriceCents() {
-      return discountPriceCents_;
-    }
-
-    public static final int DISCOUNT_PERCENTAGE_FIELD_NUMBER = 6;
-    private int discountPercentage_ = 0;
-    /**
-     * <code>uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
-     * @return The discountPercentage.
-     */
-    @java.lang.Override
-    public int getDiscountPercentage() {
-      return discountPercentage_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6330,21 +6191,6 @@ public final class HeroProductsProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, title_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, image_);
-      }
-      if (priceCents_ != 0) {
-        output.writeUInt32(4, priceCents_);
-      }
-      if (discountPriceCents_ != 0) {
-        output.writeUInt32(5, discountPriceCents_);
-      }
-      if (discountPercentage_ != 0) {
-        output.writeUInt32(6, discountPercentage_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6356,24 +6202,6 @@ public final class HeroProductsProto {
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, title_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, image_);
-      }
-      if (priceCents_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, priceCents_);
-      }
-      if (discountPriceCents_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, discountPriceCents_);
-      }
-      if (discountPercentage_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, discountPercentage_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6392,16 +6220,6 @@ public final class HeroProductsProto {
 
       if (!getId()
           .equals(other.getId())) return false;
-      if (!getTitle()
-          .equals(other.getTitle())) return false;
-      if (!getImage()
-          .equals(other.getImage())) return false;
-      if (getPriceCents()
-          != other.getPriceCents()) return false;
-      if (getDiscountPriceCents()
-          != other.getDiscountPriceCents()) return false;
-      if (getDiscountPercentage()
-          != other.getDiscountPercentage()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6415,16 +6233,6 @@ public final class HeroProductsProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + TITLE_FIELD_NUMBER;
-      hash = (53 * hash) + getTitle().hashCode();
-      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getImage().hashCode();
-      hash = (37 * hash) + PRICE_CENTS_FIELD_NUMBER;
-      hash = (53 * hash) + getPriceCents();
-      hash = (37 * hash) + DISCOUNT_PRICE_CENTS_FIELD_NUMBER;
-      hash = (53 * hash) + getDiscountPriceCents();
-      hash = (37 * hash) + DISCOUNT_PERCENTAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getDiscountPercentage();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6557,11 +6365,6 @@ public final class HeroProductsProto {
         super.clear();
         bitField0_ = 0;
         id_ = "";
-        title_ = "";
-        image_ = "";
-        priceCents_ = 0;
-        discountPriceCents_ = 0;
-        discountPercentage_ = 0;
         return this;
       }
 
@@ -6598,21 +6401,6 @@ public final class HeroProductsProto {
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.title_ = title_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.image_ = image_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.priceCents_ = priceCents_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.discountPriceCents_ = discountPriceCents_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.discountPercentage_ = discountPercentage_;
-        }
       }
 
       @java.lang.Override
@@ -6631,25 +6419,6 @@ public final class HeroProductsProto {
           id_ = other.id_;
           bitField0_ |= 0x00000001;
           onChanged();
-        }
-        if (!other.getTitle().isEmpty()) {
-          title_ = other.title_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        if (!other.getImage().isEmpty()) {
-          image_ = other.image_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        if (other.getPriceCents() != 0) {
-          setPriceCents(other.getPriceCents());
-        }
-        if (other.getDiscountPriceCents() != 0) {
-          setDiscountPriceCents(other.getDiscountPriceCents());
-        }
-        if (other.getDiscountPercentage() != 0) {
-          setDiscountPercentage(other.getDiscountPercentage());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -6682,31 +6451,6 @@ public final class HeroProductsProto {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-              case 18: {
-                title_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                image_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 32: {
-                priceCents_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                discountPriceCents_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                discountPercentage_ = input.readUInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6726,6 +6470,10 @@ public final class HeroProductsProto {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * product id
+       * </pre>
+       *
        * <code>string id = 1 [json_name = "id"];</code>
        * @return The id.
        */
@@ -6742,6 +6490,10 @@ public final class HeroProductsProto {
         }
       }
       /**
+       * <pre>
+       * product id
+       * </pre>
+       *
        * <code>string id = 1 [json_name = "id"];</code>
        * @return The bytes for id.
        */
@@ -6759,6 +6511,10 @@ public final class HeroProductsProto {
         }
       }
       /**
+       * <pre>
+       * product id
+       * </pre>
+       *
        * <code>string id = 1 [json_name = "id"];</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -6772,6 +6528,10 @@ public final class HeroProductsProto {
         return this;
       }
       /**
+       * <pre>
+       * product id
+       * </pre>
+       *
        * <code>string id = 1 [json_name = "id"];</code>
        * @return This builder for chaining.
        */
@@ -6782,6 +6542,10 @@ public final class HeroProductsProto {
         return this;
       }
       /**
+       * <pre>
+       * product id
+       * </pre>
+       *
        * <code>string id = 1 [json_name = "id"];</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -6792,246 +6556,6 @@ public final class HeroProductsProto {
         checkByteStringIsUtf8(value);
         id_ = value;
         bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object title_ = "";
-      /**
-       * <code>string title = 2 [json_name = "title"];</code>
-       * @return The title.
-       */
-      public java.lang.String getTitle() {
-        java.lang.Object ref = title_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          title_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string title = 2 [json_name = "title"];</code>
-       * @return The bytes for title.
-       */
-      public com.google.protobuf.ByteString
-          getTitleBytes() {
-        java.lang.Object ref = title_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          title_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string title = 2 [json_name = "title"];</code>
-       * @param value The title to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTitle(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        title_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string title = 2 [json_name = "title"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTitle() {
-        title_ = getDefaultInstance().getTitle();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string title = 2 [json_name = "title"];</code>
-       * @param value The bytes for title to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTitleBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        title_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object image_ = "";
-      /**
-       * <code>string image = 3 [json_name = "image"];</code>
-       * @return The image.
-       */
-      public java.lang.String getImage() {
-        java.lang.Object ref = image_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          image_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string image = 3 [json_name = "image"];</code>
-       * @return The bytes for image.
-       */
-      public com.google.protobuf.ByteString
-          getImageBytes() {
-        java.lang.Object ref = image_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          image_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string image = 3 [json_name = "image"];</code>
-       * @param value The image to set.
-       * @return This builder for chaining.
-       */
-      public Builder setImage(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        image_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string image = 3 [json_name = "image"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearImage() {
-        image_ = getDefaultInstance().getImage();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string image = 3 [json_name = "image"];</code>
-       * @param value The bytes for image to set.
-       * @return This builder for chaining.
-       */
-      public Builder setImageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        image_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      private int priceCents_ ;
-      /**
-       * <code>uint32 price_cents = 4 [json_name = "priceCents"];</code>
-       * @return The priceCents.
-       */
-      @java.lang.Override
-      public int getPriceCents() {
-        return priceCents_;
-      }
-      /**
-       * <code>uint32 price_cents = 4 [json_name = "priceCents"];</code>
-       * @param value The priceCents to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPriceCents(int value) {
-
-        priceCents_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 price_cents = 4 [json_name = "priceCents"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPriceCents() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        priceCents_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int discountPriceCents_ ;
-      /**
-       * <code>uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];</code>
-       * @return The discountPriceCents.
-       */
-      @java.lang.Override
-      public int getDiscountPriceCents() {
-        return discountPriceCents_;
-      }
-      /**
-       * <code>uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];</code>
-       * @param value The discountPriceCents to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDiscountPriceCents(int value) {
-
-        discountPriceCents_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDiscountPriceCents() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        discountPriceCents_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int discountPercentage_ ;
-      /**
-       * <code>uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
-       * @return The discountPercentage.
-       */
-      @java.lang.Override
-      public int getDiscountPercentage() {
-        return discountPercentage_;
-      }
-      /**
-       * <code>uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
-       * @param value The discountPercentage to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDiscountPercentage(int value) {
-
-        discountPercentage_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 discount_percentage = 6 [json_name = "discountPercentage"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDiscountPercentage() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        discountPercentage_ = 0;
         onChanged();
         return this;
       }
@@ -7163,16 +6687,12 @@ public final class HeroProductsProto {
       "DealsSlider\022\024\n\005title\030\001 \001(\tR\005title\022\032\n\010sub" +
       "title\030\002 \001(\tR\010subtitle\022\037\n\013button_text\030\003 \001" +
       "(\tR\nbuttonText\022<\n\010products\030\004 \003(\0132 .produ" +
-      "cts.v1.HeroProductListItemR\010products\"\325\001\n" +
-      "\023HeroProductListItem\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005" +
-      "title\030\002 \001(\tR\005title\022\024\n\005image\030\003 \001(\tR\005image" +
-      "\022\037\n\013price_cents\030\004 \001(\rR\npriceCents\0220\n\024dis" +
-      "count_price_cents\030\005 \001(\rR\022discountPriceCe" +
-      "nts\022/\n\023discount_percentage\030\006 \001(\rR\022discou" +
-      "ntPercentageB{\n\034org.megacommerce.product" +
-      "s.v1B\021HeroProductsProtoZEgithub.com/ahma" +
-      "d-khatib0-org/megacommerce-proto/gen/go/" +
-      "products/v1;v1\370\001\001b\006proto3"
+      "cts.v1.HeroProductListItemR\010products\"%\n\023" +
+      "HeroProductListItem\022\016\n\002id\030\001 \001(\tR\002idB{\n\034o" +
+      "rg.megacommerce.products.v1B\021HeroProduct" +
+      "sProtoZEgithub.com/ahmad-khatib0-org/meg" +
+      "acommerce-proto/gen/go/products/v1;v1\370\001\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7227,7 +6747,7 @@ public final class HeroProductsProto {
     internal_static_products_v1_HeroProductListItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_HeroProductListItem_descriptor,
-        new java.lang.String[] { "Id", "Title", "Image", "PriceCents", "DiscountPriceCents", "DiscountPercentage", });
+        new java.lang.String[] { "Id", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
     org.megacommerce.shared.v1.StructProto.getDescriptor();

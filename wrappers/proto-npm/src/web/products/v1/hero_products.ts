@@ -51,12 +51,8 @@ export interface WelcomeDealsSlider {
 }
 
 export interface HeroProductListItem {
+  /** product id */
   id: string;
-  title: string;
-  image: string;
-  priceCents: number;
-  discountPriceCents: number;
-  discountPercentage: number;
 }
 
 function createBaseHeroProduct(): HeroProduct {
@@ -677,28 +673,13 @@ export const WelcomeDealsSlider: MessageFns<WelcomeDealsSlider> = {
 };
 
 function createBaseHeroProductListItem(): HeroProductListItem {
-  return { id: "", title: "", image: "", priceCents: 0, discountPriceCents: 0, discountPercentage: 0 };
+  return { id: "" };
 }
 
 export const HeroProductListItem: MessageFns<HeroProductListItem> = {
   encode(message: HeroProductListItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
-    }
-    if (message.title !== "") {
-      writer.uint32(18).string(message.title);
-    }
-    if (message.image !== "") {
-      writer.uint32(26).string(message.image);
-    }
-    if (message.priceCents !== 0) {
-      writer.uint32(32).uint32(message.priceCents);
-    }
-    if (message.discountPriceCents !== 0) {
-      writer.uint32(40).uint32(message.discountPriceCents);
-    }
-    if (message.discountPercentage !== 0) {
-      writer.uint32(48).uint32(message.discountPercentage);
     }
     return writer;
   },
@@ -718,46 +699,6 @@ export const HeroProductListItem: MessageFns<HeroProductListItem> = {
           message.id = reader.string();
           continue;
         }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.title = reader.string();
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.image = reader.string();
-          continue;
-        }
-        case 4: {
-          if (tag !== 32) {
-            break;
-          }
-
-          message.priceCents = reader.uint32();
-          continue;
-        }
-        case 5: {
-          if (tag !== 40) {
-            break;
-          }
-
-          message.discountPriceCents = reader.uint32();
-          continue;
-        }
-        case 6: {
-          if (tag !== 48) {
-            break;
-          }
-
-          message.discountPercentage = reader.uint32();
-          continue;
-        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -768,35 +709,13 @@ export const HeroProductListItem: MessageFns<HeroProductListItem> = {
   },
 
   fromJSON(object: any): HeroProductListItem {
-    return {
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      title: isSet(object.title) ? globalThis.String(object.title) : "",
-      image: isSet(object.image) ? globalThis.String(object.image) : "",
-      priceCents: isSet(object.priceCents) ? globalThis.Number(object.priceCents) : 0,
-      discountPriceCents: isSet(object.discountPriceCents) ? globalThis.Number(object.discountPriceCents) : 0,
-      discountPercentage: isSet(object.discountPercentage) ? globalThis.Number(object.discountPercentage) : 0,
-    };
+    return { id: isSet(object.id) ? globalThis.String(object.id) : "" };
   },
 
   toJSON(message: HeroProductListItem): unknown {
     const obj: any = {};
     if (message.id !== "") {
       obj.id = message.id;
-    }
-    if (message.title !== "") {
-      obj.title = message.title;
-    }
-    if (message.image !== "") {
-      obj.image = message.image;
-    }
-    if (message.priceCents !== 0) {
-      obj.priceCents = Math.round(message.priceCents);
-    }
-    if (message.discountPriceCents !== 0) {
-      obj.discountPriceCents = Math.round(message.discountPriceCents);
-    }
-    if (message.discountPercentage !== 0) {
-      obj.discountPercentage = Math.round(message.discountPercentage);
     }
     return obj;
   },
@@ -807,11 +726,6 @@ export const HeroProductListItem: MessageFns<HeroProductListItem> = {
   fromPartial<I extends Exact<DeepPartial<HeroProductListItem>, I>>(object: I): HeroProductListItem {
     const message = createBaseHeroProductListItem();
     message.id = object.id ?? "";
-    message.title = object.title ?? "";
-    message.image = object.image ?? "";
-    message.priceCents = object.priceCents ?? 0;
-    message.discountPriceCents = object.discountPriceCents ?? 0;
-    message.discountPercentage = object.discountPercentage ?? 0;
     return message;
   },
 };

@@ -50,16 +50,7 @@ inline constexpr HeroProductListItem::Impl_::Impl_(
       : _cached_size_{0},
         id_(
             &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        title_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        image_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        price_cents_{0u},
-        discount_price_cents_{0u},
-        discount_percentage_{0u} {}
+            ::_pbi::ConstantInitialized()) {}
 
 template <typename>
 PROTOBUF_CONSTEXPR HeroProductListItem::HeroProductListItem(::_pbi::ConstantInitialized)
@@ -320,19 +311,9 @@ const ::uint32_t
         ~0u,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_._has_bits_),
-        9, // hasbit index offset
+        4, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_.id_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_.title_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_.image_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_.price_cents_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_.discount_price_cents_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_.discount_percentage_),
         0,
-        1,
-        2,
-        3,
-        4,
-        5,
 };
 
 static const ::_pbi::MigrationSchema
@@ -385,16 +366,12 @@ const char descriptor_table_protodef_products_2fv1_2fhero_5fproducts_2eproto[] A
     "DealsSlider\022\024\n\005title\030\001 \001(\tR\005title\022\032\n\010sub"
     "title\030\002 \001(\tR\010subtitle\022\037\n\013button_text\030\003 \001"
     "(\tR\nbuttonText\022<\n\010products\030\004 \003(\0132 .produ"
-    "cts.v1.HeroProductListItemR\010products\"\325\001\n"
-    "\023HeroProductListItem\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005"
-    "title\030\002 \001(\tR\005title\022\024\n\005image\030\003 \001(\tR\005image"
-    "\022\037\n\013price_cents\030\004 \001(\rR\npriceCents\0220\n\024dis"
-    "count_price_cents\030\005 \001(\rR\022discountPriceCe"
-    "nts\022/\n\023discount_percentage\030\006 \001(\rR\022discou"
-    "ntPercentageB{\n\034org.megacommerce.product"
-    "s.v1B\021HeroProductsProtoZEgithub.com/ahma"
-    "d-khatib0-org/megacommerce-proto/gen/go/"
-    "products/v1;v1\370\001\001b\006proto3"
+    "cts.v1.HeroProductListItemR\010products\"%\n\023"
+    "HeroProductListItem\022\016\n\002id\030\001 \001(\tR\002idB{\n\034o"
+    "rg.megacommerce.products.v1B\021HeroProduct"
+    "sProtoZEgithub.com/ahmad-khatib0-org/meg"
+    "acommerce-proto/gen/go/products/v1;v1\370\001\001"
+    "b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fhero_5fproducts_2eproto_deps[2] = {
@@ -405,7 +382,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fhero_5fproducts_2eprot
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fhero_5fproducts_2eproto = {
     false,
     false,
-    1465,
+    1288,
     descriptor_table_protodef_products_2fv1_2fhero_5fproducts_2eproto,
     "products/v1/hero_products.proto",
     &descriptor_table_products_2fv1_2fhero_5fproducts_2eproto_once,
@@ -2708,9 +2685,7 @@ PROTOBUF_NDEBUG_INLINE HeroProductListItem::Impl_::Impl_(
     const ::products::v1::HeroProductListItem& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        id_(arena, from.id_),
-        title_(arena, from.title_),
-        image_(arena, from.image_) {}
+        id_(arena, from.id_) {}
 
 HeroProductListItem::HeroProductListItem(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -2725,13 +2700,6 @@ HeroProductListItem::HeroProductListItem(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  ::memcpy(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, price_cents_),
-           reinterpret_cast<const char *>(&from._impl_) +
-               offsetof(Impl_, price_cents_),
-           offsetof(Impl_, discount_percentage_) -
-               offsetof(Impl_, price_cents_) +
-               sizeof(Impl_::discount_percentage_));
 
   // @@protoc_insertion_point(copy_constructor:products.v1.HeroProductListItem)
 }
@@ -2739,18 +2707,10 @@ PROTOBUF_NDEBUG_INLINE HeroProductListItem::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        id_(arena),
-        title_(arena),
-        image_(arena) {}
+        id_(arena) {}
 
 inline void HeroProductListItem::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, price_cents_),
-           0,
-           offsetof(Impl_, discount_percentage_) -
-               offsetof(Impl_, price_cents_) +
-               sizeof(Impl_::discount_percentage_));
 }
 HeroProductListItem::~HeroProductListItem() {
   // @@protoc_insertion_point(destructor:products.v1.HeroProductListItem)
@@ -2761,8 +2721,6 @@ inline void HeroProductListItem::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.id_.Destroy();
-  this_._impl_.title_.Destroy();
-  this_._impl_.image_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -2809,16 +2767,16 @@ HeroProductListItem::GetClassData() const {
   return HeroProductListItem_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 6, 0, 52, 2>
+const ::_pbi::TcParseTable<0, 1, 0, 42, 2>
 HeroProductListItem::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_._has_bits_),
     0, // no _extensions_
-    6, 56,  // max_field_number, fast_idx_mask
+    1, 0,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967232,  // skipmap
+    4294967294,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    6,  // num_field_entries
+    1,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     HeroProductListItem_class_data_.base(),
@@ -2828,55 +2786,21 @@ HeroProductListItem::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::HeroProductListItem>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
     // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.id_)}},
-    // string title = 2 [json_name = "title"];
-    {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.title_)}},
-    // string image = 3 [json_name = "image"];
-    {::_pbi::TcParser::FastUS1,
-     {26, 2, 0, PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.image_)}},
-    // uint32 price_cents = 4 [json_name = "priceCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(HeroProductListItem, _impl_.price_cents_), 3>(),
-     {32, 3, 0, PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.price_cents_)}},
-    // uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(HeroProductListItem, _impl_.discount_price_cents_), 4>(),
-     {40, 4, 0, PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.discount_price_cents_)}},
-    // uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(HeroProductListItem, _impl_.discount_percentage_), 5>(),
-     {48, 5, 0, PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.discount_percentage_)}},
-    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
     // string id = 1 [json_name = "id"];
     {PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string title = 2 [json_name = "title"];
-    {PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.title_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string image = 3 [json_name = "image"];
-    {PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.image_), _Internal::kHasBitsOffset + 2, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // uint32 price_cents = 4 [json_name = "priceCents"];
-    {PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.price_cents_), _Internal::kHasBitsOffset + 3, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
-    // uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-    {PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.discount_price_cents_), _Internal::kHasBitsOffset + 4, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
-    // uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-    {PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.discount_percentage_), _Internal::kHasBitsOffset + 5, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
   }},
   // no aux_entries
   {{
-    "\37\2\5\5\0\0\0\0"
+    "\37\2\0\0\0\0\0\0"
     "products.v1.HeroProductListItem"
     "id"
-    "title"
-    "image"
   }},
 };
 PROTOBUF_NOINLINE void HeroProductListItem::Clear() {
@@ -2887,21 +2811,8 @@ PROTOBUF_NOINLINE void HeroProductListItem::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      _impl_.id_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      _impl_.title_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000004u) != 0) {
-      _impl_.image_.ClearNonDefaultToEmpty();
-    }
-  }
-  if ((cached_has_bits & 0x00000038u) != 0) {
-    ::memset(&_impl_.price_cents_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.discount_percentage_) -
-        reinterpret_cast<char*>(&_impl_.price_cents_)) + sizeof(_impl_.discount_percentage_));
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    _impl_.id_.ClearNonDefaultToEmpty();
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -2932,53 +2843,6 @@ PROTOBUF_NOINLINE void HeroProductListItem::Clear() {
     }
   }
 
-  // string title = 2 [json_name = "title"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
-    if (!this_._internal_title().empty()) {
-      const ::std::string& _s = this_._internal_title();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.HeroProductListItem.title");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
-    }
-  }
-
-  // string image = 3 [json_name = "image"];
-  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
-    if (!this_._internal_image().empty()) {
-      const ::std::string& _s = this_._internal_image();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.HeroProductListItem.image");
-      target = stream->WriteStringMaybeAliased(3, _s, target);
-    }
-  }
-
-  // uint32 price_cents = 4 [json_name = "priceCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
-    if (this_._internal_price_cents() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-          4, this_._internal_price_cents(), target);
-    }
-  }
-
-  // uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
-    if (this_._internal_discount_price_cents() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-          5, this_._internal_discount_price_cents(), target);
-    }
-  }
-
-  // uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
-    if (this_._internal_discount_percentage() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-          6, this_._internal_discount_percentage(), target);
-    }
-  }
-
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3002,49 +2866,13 @@ PROTOBUF_NOINLINE void HeroProductListItem::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void)cached_has_bits;
 
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000003fu) != 0) {
+   {
     // string id = 1 [json_name = "id"];
+    cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_id());
-      }
-    }
-    // string title = 2 [json_name = "title"];
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      if (!this_._internal_title().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_title());
-      }
-    }
-    // string image = 3 [json_name = "image"];
-    if ((cached_has_bits & 0x00000004u) != 0) {
-      if (!this_._internal_image().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_image());
-      }
-    }
-    // uint32 price_cents = 4 [json_name = "priceCents"];
-    if ((cached_has_bits & 0x00000008u) != 0) {
-      if (this_._internal_price_cents() != 0) {
-        total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-            this_._internal_price_cents());
-      }
-    }
-    // uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-    if ((cached_has_bits & 0x00000010u) != 0) {
-      if (this_._internal_discount_price_cents() != 0) {
-        total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-            this_._internal_discount_price_cents());
-      }
-    }
-    // uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-    if ((cached_has_bits & 0x00000020u) != 0) {
-      if (this_._internal_discount_percentage() != 0) {
-        total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-            this_._internal_discount_percentage());
       }
     }
   }
@@ -3061,47 +2889,12 @@ void HeroProductListItem::MergeImpl(::google::protobuf::MessageLite& to_msg, con
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000003fu) != 0) {
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!from._internal_id().empty()) {
-        _this->_internal_set_id(from._internal_id());
-      } else {
-        if (_this->_impl_.id_.IsDefault()) {
-          _this->_internal_set_id("");
-        }
-      }
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      if (!from._internal_title().empty()) {
-        _this->_internal_set_title(from._internal_title());
-      } else {
-        if (_this->_impl_.title_.IsDefault()) {
-          _this->_internal_set_title("");
-        }
-      }
-    }
-    if ((cached_has_bits & 0x00000004u) != 0) {
-      if (!from._internal_image().empty()) {
-        _this->_internal_set_image(from._internal_image());
-      } else {
-        if (_this->_impl_.image_.IsDefault()) {
-          _this->_internal_set_image("");
-        }
-      }
-    }
-    if ((cached_has_bits & 0x00000008u) != 0) {
-      if (from._internal_price_cents() != 0) {
-        _this->_impl_.price_cents_ = from._impl_.price_cents_;
-      }
-    }
-    if ((cached_has_bits & 0x00000010u) != 0) {
-      if (from._internal_discount_price_cents() != 0) {
-        _this->_impl_.discount_price_cents_ = from._impl_.discount_price_cents_;
-      }
-    }
-    if ((cached_has_bits & 0x00000020u) != 0) {
-      if (from._internal_discount_percentage() != 0) {
-        _this->_impl_.discount_percentage_ = from._impl_.discount_percentage_;
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    if (!from._internal_id().empty()) {
+      _this->_internal_set_id(from._internal_id());
+    } else {
+      if (_this->_impl_.id_.IsDefault()) {
+        _this->_internal_set_id("");
       }
     }
   }
@@ -3124,14 +2917,6 @@ void HeroProductListItem::InternalSwap(HeroProductListItem* PROTOBUF_RESTRICT PR
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.image_, &other->_impl_.image_, arena);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.discount_percentage_)
-      + sizeof(HeroProductListItem::_impl_.discount_percentage_)
-      - PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.price_cents_)>(
-          reinterpret_cast<char*>(&_impl_.price_cents_),
-          reinterpret_cast<char*>(&other->_impl_.price_cents_));
 }
 
 ::google::protobuf::Metadata HeroProductListItem::GetMetadata() const {
