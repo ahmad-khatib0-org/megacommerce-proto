@@ -17,6 +17,11 @@ message HeroProduct {
   optional uint64 updated_at = 4;
 }
 
+message HeroProductData {
+  CategorySlider category_slider = 1;
+  WelcomeDealsSlider welcome_deals_slider = 2;
+}
+
 message HeroProductsRequest {}
 
 message HeroProductsResponse {

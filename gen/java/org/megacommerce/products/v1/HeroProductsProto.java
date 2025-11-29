@@ -917,6 +917,776 @@ public final class HeroProductsProto {
 
   }
 
+  public interface HeroProductDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.HeroProductData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+     * @return Whether the categorySlider field is set.
+     */
+    boolean hasCategorySlider();
+    /**
+     * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+     * @return The categorySlider.
+     */
+    org.megacommerce.products.v1.HeroProductsProto.CategorySlider getCategorySlider();
+    /**
+     * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+     */
+    org.megacommerce.products.v1.HeroProductsProto.CategorySliderOrBuilder getCategorySliderOrBuilder();
+
+    /**
+     * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+     * @return Whether the welcomeDealsSlider field is set.
+     */
+    boolean hasWelcomeDealsSlider();
+    /**
+     * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+     * @return The welcomeDealsSlider.
+     */
+    org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider getWelcomeDealsSlider();
+    /**
+     * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+     */
+    org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSliderOrBuilder getWelcomeDealsSliderOrBuilder();
+  }
+  /**
+   * Protobuf type {@code products.v1.HeroProductData}
+   */
+  public static final class HeroProductData extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.HeroProductData)
+      HeroProductDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        HeroProductData.class.getName());
+    }
+    // Use HeroProductData.newBuilder() to construct.
+    private HeroProductData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private HeroProductData() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.HeroProductsProto.internal_static_products_v1_HeroProductData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.HeroProductsProto.internal_static_products_v1_HeroProductData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.HeroProductsProto.HeroProductData.class, org.megacommerce.products.v1.HeroProductsProto.HeroProductData.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int CATEGORY_SLIDER_FIELD_NUMBER = 1;
+    private org.megacommerce.products.v1.HeroProductsProto.CategorySlider categorySlider_;
+    /**
+     * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+     * @return Whether the categorySlider field is set.
+     */
+    @java.lang.Override
+    public boolean hasCategorySlider() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+     * @return The categorySlider.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.HeroProductsProto.CategorySlider getCategorySlider() {
+      return categorySlider_ == null ? org.megacommerce.products.v1.HeroProductsProto.CategorySlider.getDefaultInstance() : categorySlider_;
+    }
+    /**
+     * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.HeroProductsProto.CategorySliderOrBuilder getCategorySliderOrBuilder() {
+      return categorySlider_ == null ? org.megacommerce.products.v1.HeroProductsProto.CategorySlider.getDefaultInstance() : categorySlider_;
+    }
+
+    public static final int WELCOME_DEALS_SLIDER_FIELD_NUMBER = 2;
+    private org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider welcomeDealsSlider_;
+    /**
+     * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+     * @return Whether the welcomeDealsSlider field is set.
+     */
+    @java.lang.Override
+    public boolean hasWelcomeDealsSlider() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+     * @return The welcomeDealsSlider.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider getWelcomeDealsSlider() {
+      return welcomeDealsSlider_ == null ? org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.getDefaultInstance() : welcomeDealsSlider_;
+    }
+    /**
+     * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSliderOrBuilder getWelcomeDealsSliderOrBuilder() {
+      return welcomeDealsSlider_ == null ? org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.getDefaultInstance() : welcomeDealsSlider_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getCategorySlider());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getWelcomeDealsSlider());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getCategorySlider());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getWelcomeDealsSlider());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.HeroProductsProto.HeroProductData)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.HeroProductsProto.HeroProductData other = (org.megacommerce.products.v1.HeroProductsProto.HeroProductData) obj;
+
+      if (hasCategorySlider() != other.hasCategorySlider()) return false;
+      if (hasCategorySlider()) {
+        if (!getCategorySlider()
+            .equals(other.getCategorySlider())) return false;
+      }
+      if (hasWelcomeDealsSlider() != other.hasWelcomeDealsSlider()) return false;
+      if (hasWelcomeDealsSlider()) {
+        if (!getWelcomeDealsSlider()
+            .equals(other.getWelcomeDealsSlider())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCategorySlider()) {
+        hash = (37 * hash) + CATEGORY_SLIDER_FIELD_NUMBER;
+        hash = (53 * hash) + getCategorySlider().hashCode();
+      }
+      if (hasWelcomeDealsSlider()) {
+        hash = (37 * hash) + WELCOME_DEALS_SLIDER_FIELD_NUMBER;
+        hash = (53 * hash) + getWelcomeDealsSlider().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.HeroProductsProto.HeroProductData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.HeroProductData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.HeroProductData)
+        org.megacommerce.products.v1.HeroProductsProto.HeroProductDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.HeroProductsProto.internal_static_products_v1_HeroProductData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.HeroProductsProto.internal_static_products_v1_HeroProductData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.HeroProductsProto.HeroProductData.class, org.megacommerce.products.v1.HeroProductsProto.HeroProductData.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.HeroProductsProto.HeroProductData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          internalGetCategorySliderFieldBuilder();
+          internalGetWelcomeDealsSliderFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        categorySlider_ = null;
+        if (categorySliderBuilder_ != null) {
+          categorySliderBuilder_.dispose();
+          categorySliderBuilder_ = null;
+        }
+        welcomeDealsSlider_ = null;
+        if (welcomeDealsSliderBuilder_ != null) {
+          welcomeDealsSliderBuilder_.dispose();
+          welcomeDealsSliderBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.HeroProductsProto.internal_static_products_v1_HeroProductData_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.HeroProductsProto.HeroProductData getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.HeroProductsProto.HeroProductData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.HeroProductsProto.HeroProductData build() {
+        org.megacommerce.products.v1.HeroProductsProto.HeroProductData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.HeroProductsProto.HeroProductData buildPartial() {
+        org.megacommerce.products.v1.HeroProductsProto.HeroProductData result = new org.megacommerce.products.v1.HeroProductsProto.HeroProductData(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.HeroProductsProto.HeroProductData result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.categorySlider_ = categorySliderBuilder_ == null
+              ? categorySlider_
+              : categorySliderBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.welcomeDealsSlider_ = welcomeDealsSliderBuilder_ == null
+              ? welcomeDealsSlider_
+              : welcomeDealsSliderBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.HeroProductsProto.HeroProductData) {
+          return mergeFrom((org.megacommerce.products.v1.HeroProductsProto.HeroProductData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.HeroProductsProto.HeroProductData other) {
+        if (other == org.megacommerce.products.v1.HeroProductsProto.HeroProductData.getDefaultInstance()) return this;
+        if (other.hasCategorySlider()) {
+          mergeCategorySlider(other.getCategorySlider());
+        }
+        if (other.hasWelcomeDealsSlider()) {
+          mergeWelcomeDealsSlider(other.getWelcomeDealsSlider());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    internalGetCategorySliderFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    internalGetWelcomeDealsSliderFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private org.megacommerce.products.v1.HeroProductsProto.CategorySlider categorySlider_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.HeroProductsProto.CategorySlider, org.megacommerce.products.v1.HeroProductsProto.CategorySlider.Builder, org.megacommerce.products.v1.HeroProductsProto.CategorySliderOrBuilder> categorySliderBuilder_;
+      /**
+       * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+       * @return Whether the categorySlider field is set.
+       */
+      public boolean hasCategorySlider() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+       * @return The categorySlider.
+       */
+      public org.megacommerce.products.v1.HeroProductsProto.CategorySlider getCategorySlider() {
+        if (categorySliderBuilder_ == null) {
+          return categorySlider_ == null ? org.megacommerce.products.v1.HeroProductsProto.CategorySlider.getDefaultInstance() : categorySlider_;
+        } else {
+          return categorySliderBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+       */
+      public Builder setCategorySlider(org.megacommerce.products.v1.HeroProductsProto.CategorySlider value) {
+        if (categorySliderBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          categorySlider_ = value;
+        } else {
+          categorySliderBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+       */
+      public Builder setCategorySlider(
+          org.megacommerce.products.v1.HeroProductsProto.CategorySlider.Builder builderForValue) {
+        if (categorySliderBuilder_ == null) {
+          categorySlider_ = builderForValue.build();
+        } else {
+          categorySliderBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+       */
+      public Builder mergeCategorySlider(org.megacommerce.products.v1.HeroProductsProto.CategorySlider value) {
+        if (categorySliderBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            categorySlider_ != null &&
+            categorySlider_ != org.megacommerce.products.v1.HeroProductsProto.CategorySlider.getDefaultInstance()) {
+            getCategorySliderBuilder().mergeFrom(value);
+          } else {
+            categorySlider_ = value;
+          }
+        } else {
+          categorySliderBuilder_.mergeFrom(value);
+        }
+        if (categorySlider_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+       */
+      public Builder clearCategorySlider() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        categorySlider_ = null;
+        if (categorySliderBuilder_ != null) {
+          categorySliderBuilder_.dispose();
+          categorySliderBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+       */
+      public org.megacommerce.products.v1.HeroProductsProto.CategorySlider.Builder getCategorySliderBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetCategorySliderFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+       */
+      public org.megacommerce.products.v1.HeroProductsProto.CategorySliderOrBuilder getCategorySliderOrBuilder() {
+        if (categorySliderBuilder_ != null) {
+          return categorySliderBuilder_.getMessageOrBuilder();
+        } else {
+          return categorySlider_ == null ?
+              org.megacommerce.products.v1.HeroProductsProto.CategorySlider.getDefaultInstance() : categorySlider_;
+        }
+      }
+      /**
+       * <code>.products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.HeroProductsProto.CategorySlider, org.megacommerce.products.v1.HeroProductsProto.CategorySlider.Builder, org.megacommerce.products.v1.HeroProductsProto.CategorySliderOrBuilder> 
+          internalGetCategorySliderFieldBuilder() {
+        if (categorySliderBuilder_ == null) {
+          categorySliderBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.HeroProductsProto.CategorySlider, org.megacommerce.products.v1.HeroProductsProto.CategorySlider.Builder, org.megacommerce.products.v1.HeroProductsProto.CategorySliderOrBuilder>(
+                  getCategorySlider(),
+                  getParentForChildren(),
+                  isClean());
+          categorySlider_ = null;
+        }
+        return categorySliderBuilder_;
+      }
+
+      private org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider welcomeDealsSlider_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider, org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.Builder, org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSliderOrBuilder> welcomeDealsSliderBuilder_;
+      /**
+       * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+       * @return Whether the welcomeDealsSlider field is set.
+       */
+      public boolean hasWelcomeDealsSlider() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+       * @return The welcomeDealsSlider.
+       */
+      public org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider getWelcomeDealsSlider() {
+        if (welcomeDealsSliderBuilder_ == null) {
+          return welcomeDealsSlider_ == null ? org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.getDefaultInstance() : welcomeDealsSlider_;
+        } else {
+          return welcomeDealsSliderBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+       */
+      public Builder setWelcomeDealsSlider(org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider value) {
+        if (welcomeDealsSliderBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          welcomeDealsSlider_ = value;
+        } else {
+          welcomeDealsSliderBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+       */
+      public Builder setWelcomeDealsSlider(
+          org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.Builder builderForValue) {
+        if (welcomeDealsSliderBuilder_ == null) {
+          welcomeDealsSlider_ = builderForValue.build();
+        } else {
+          welcomeDealsSliderBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+       */
+      public Builder mergeWelcomeDealsSlider(org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider value) {
+        if (welcomeDealsSliderBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0) &&
+            welcomeDealsSlider_ != null &&
+            welcomeDealsSlider_ != org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.getDefaultInstance()) {
+            getWelcomeDealsSliderBuilder().mergeFrom(value);
+          } else {
+            welcomeDealsSlider_ = value;
+          }
+        } else {
+          welcomeDealsSliderBuilder_.mergeFrom(value);
+        }
+        if (welcomeDealsSlider_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+       */
+      public Builder clearWelcomeDealsSlider() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        welcomeDealsSlider_ = null;
+        if (welcomeDealsSliderBuilder_ != null) {
+          welcomeDealsSliderBuilder_.dispose();
+          welcomeDealsSliderBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+       */
+      public org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.Builder getWelcomeDealsSliderBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetWelcomeDealsSliderFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+       */
+      public org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSliderOrBuilder getWelcomeDealsSliderOrBuilder() {
+        if (welcomeDealsSliderBuilder_ != null) {
+          return welcomeDealsSliderBuilder_.getMessageOrBuilder();
+        } else {
+          return welcomeDealsSlider_ == null ?
+              org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.getDefaultInstance() : welcomeDealsSlider_;
+        }
+      }
+      /**
+       * <code>.products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider, org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.Builder, org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSliderOrBuilder> 
+          internalGetWelcomeDealsSliderFieldBuilder() {
+        if (welcomeDealsSliderBuilder_ == null) {
+          welcomeDealsSliderBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider, org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSlider.Builder, org.megacommerce.products.v1.HeroProductsProto.WelcomeDealsSliderOrBuilder>(
+                  getWelcomeDealsSlider(),
+                  getParentForChildren(),
+                  isClean());
+          welcomeDealsSlider_ = null;
+        }
+        return welcomeDealsSliderBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.HeroProductData)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.HeroProductData)
+    private static final org.megacommerce.products.v1.HeroProductsProto.HeroProductData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.HeroProductsProto.HeroProductData();
+    }
+
+    public static org.megacommerce.products.v1.HeroProductsProto.HeroProductData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HeroProductData>
+        PARSER = new com.google.protobuf.AbstractParser<HeroProductData>() {
+      @java.lang.Override
+      public HeroProductData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<HeroProductData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HeroProductData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.HeroProductsProto.HeroProductData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface HeroProductsRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:products.v1.HeroProductsRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -6323,6 +7093,11 @@ public final class HeroProductsProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_products_v1_HeroProduct_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_HeroProductData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_HeroProductData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_products_v1_HeroProductsRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -6367,33 +7142,37 @@ public final class HeroProductsProto {
       "\tR\002id\0226\n\rproducts_data\030\002 \001(\0132\021.shared.v1" +
       ".StructR\014productsData\022\035\n\ncreated_at\030\003 \001(" +
       "\004R\tcreatedAt\022\"\n\nupdated_at\030\004 \001(\004H\000R\tupda" +
-      "tedAt\210\001\001B\r\n\013_updated_at\"\025\n\023HeroProductsR" +
-      "equest\"\214\001\n\024HeroProductsResponse\022;\n\004data\030" +
-      "\001 \001(\0132%.products.v1.HeroProductsResponse" +
-      "DataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1." +
-      "AppErrorH\000R\005errorB\n\n\010response\"\263\001\n\030HeroPr" +
-      "oductsResponseData\022D\n\017category_slider\030\001 " +
-      "\001(\0132\033.products.v1.CategorySliderR\016catego" +
-      "rySlider\022Q\n\024welcome_deals_slider\030\002 \001(\0132\037" +
-      ".products.v1.WelcomeDealsSliderR\022welcome" +
-      "DealsSlider\"\241\001\n\016CategorySlider\022\024\n\005title\030" +
-      "\001 \001(\tR\005title\022\032\n\010subtitle\030\002 \001(\tR\010subtitle" +
-      "\022\037\n\013button_text\030\003 \001(\tR\nbuttonText\022<\n\010pro" +
-      "ducts\030\004 \003(\0132 .products.v1.HeroProductLis" +
-      "tItemR\010products\"\245\001\n\022WelcomeDealsSlider\022\024" +
-      "\n\005title\030\001 \001(\tR\005title\022\032\n\010subtitle\030\002 \001(\tR\010" +
-      "subtitle\022\037\n\013button_text\030\003 \001(\tR\nbuttonTex" +
-      "t\022<\n\010products\030\004 \003(\0132 .products.v1.HeroPr" +
-      "oductListItemR\010products\"\325\001\n\023HeroProductL" +
-      "istItem\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005" +
-      "title\022\024\n\005image\030\003 \001(\tR\005image\022\037\n\013price_cen" +
-      "ts\030\004 \001(\rR\npriceCents\0220\n\024discount_price_c" +
-      "ents\030\005 \001(\rR\022discountPriceCents\022/\n\023discou" +
-      "nt_percentage\030\006 \001(\rR\022discountPercentageB" +
-      "{\n\034org.megacommerce.products.v1B\021HeroPro" +
-      "ductsProtoZEgithub.com/ahmad-khatib0-org" +
-      "/megacommerce-proto/gen/go/products/v1;v" +
-      "1\370\001\001b\006proto3"
+      "tedAt\210\001\001B\r\n\013_updated_at\"\252\001\n\017HeroProductD" +
+      "ata\022D\n\017category_slider\030\001 \001(\0132\033.products." +
+      "v1.CategorySliderR\016categorySlider\022Q\n\024wel" +
+      "come_deals_slider\030\002 \001(\0132\037.products.v1.We" +
+      "lcomeDealsSliderR\022welcomeDealsSlider\"\025\n\023" +
+      "HeroProductsRequest\"\214\001\n\024HeroProductsResp" +
+      "onse\022;\n\004data\030\001 \001(\0132%.products.v1.HeroPro" +
+      "ductsResponseDataH\000R\004data\022+\n\005error\030\002 \001(\013" +
+      "2\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respon" +
+      "se\"\263\001\n\030HeroProductsResponseData\022D\n\017categ" +
+      "ory_slider\030\001 \001(\0132\033.products.v1.CategoryS" +
+      "liderR\016categorySlider\022Q\n\024welcome_deals_s" +
+      "lider\030\002 \001(\0132\037.products.v1.WelcomeDealsSl" +
+      "iderR\022welcomeDealsSlider\"\241\001\n\016CategorySli" +
+      "der\022\024\n\005title\030\001 \001(\tR\005title\022\032\n\010subtitle\030\002 " +
+      "\001(\tR\010subtitle\022\037\n\013button_text\030\003 \001(\tR\nbutt" +
+      "onText\022<\n\010products\030\004 \003(\0132 .products.v1.H" +
+      "eroProductListItemR\010products\"\245\001\n\022Welcome" +
+      "DealsSlider\022\024\n\005title\030\001 \001(\tR\005title\022\032\n\010sub" +
+      "title\030\002 \001(\tR\010subtitle\022\037\n\013button_text\030\003 \001" +
+      "(\tR\nbuttonText\022<\n\010products\030\004 \003(\0132 .produ" +
+      "cts.v1.HeroProductListItemR\010products\"\325\001\n" +
+      "\023HeroProductListItem\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005" +
+      "title\030\002 \001(\tR\005title\022\024\n\005image\030\003 \001(\tR\005image" +
+      "\022\037\n\013price_cents\030\004 \001(\rR\npriceCents\0220\n\024dis" +
+      "count_price_cents\030\005 \001(\rR\022discountPriceCe" +
+      "nts\022/\n\023discount_percentage\030\006 \001(\rR\022discou" +
+      "ntPercentageB{\n\034org.megacommerce.product" +
+      "s.v1B\021HeroProductsProtoZEgithub.com/ahma" +
+      "d-khatib0-org/megacommerce-proto/gen/go/" +
+      "products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6407,38 +7186,44 @@ public final class HeroProductsProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_HeroProduct_descriptor,
         new java.lang.String[] { "Id", "ProductsData", "CreatedAt", "UpdatedAt", });
-    internal_static_products_v1_HeroProductsRequest_descriptor =
+    internal_static_products_v1_HeroProductData_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_products_v1_HeroProductData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_HeroProductData_descriptor,
+        new java.lang.String[] { "CategorySlider", "WelcomeDealsSlider", });
+    internal_static_products_v1_HeroProductsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_products_v1_HeroProductsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_HeroProductsRequest_descriptor,
         new java.lang.String[] { });
     internal_static_products_v1_HeroProductsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_products_v1_HeroProductsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_HeroProductsResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     internal_static_products_v1_HeroProductsResponseData_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_products_v1_HeroProductsResponseData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_HeroProductsResponseData_descriptor,
         new java.lang.String[] { "CategorySlider", "WelcomeDealsSlider", });
     internal_static_products_v1_CategorySlider_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_products_v1_CategorySlider_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_CategorySlider_descriptor,
         new java.lang.String[] { "Title", "Subtitle", "ButtonText", "Products", });
     internal_static_products_v1_WelcomeDealsSlider_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_products_v1_WelcomeDealsSlider_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_WelcomeDealsSlider_descriptor,
         new java.lang.String[] { "Title", "Subtitle", "ButtonText", "Products", });
     internal_static_products_v1_HeroProductListItem_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_products_v1_HeroProductListItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_HeroProductListItem_descriptor,

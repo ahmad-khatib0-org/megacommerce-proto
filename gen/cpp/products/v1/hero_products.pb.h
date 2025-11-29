@@ -65,6 +65,10 @@ class HeroProduct;
 struct HeroProductDefaultTypeInternal;
 extern HeroProductDefaultTypeInternal _HeroProduct_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull HeroProduct_class_data_;
+class HeroProductData;
+struct HeroProductDataDefaultTypeInternal;
+extern HeroProductDataDefaultTypeInternal _HeroProductData_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull HeroProductData_class_data_;
 class HeroProductListItem;
 struct HeroProductListItemDefaultTypeInternal;
 extern HeroProductListItemDefaultTypeInternal _HeroProductListItem_default_instance_;
@@ -154,7 +158,7 @@ class HeroProductsRequest final : public ::google::protobuf::internal::ZeroField
     return *reinterpret_cast<const HeroProductsRequest*>(
         &_HeroProductsRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 1;
+  static constexpr int kIndexInFileMessages = 2;
   friend void swap(HeroProductsRequest& a, HeroProductsRequest& b) { a.Swap(&b); }
   inline void Swap(HeroProductsRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -301,7 +305,7 @@ class HeroProductListItem final : public ::google::protobuf::Message
     return *reinterpret_cast<const HeroProductListItem*>(
         &_HeroProductListItem_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 6;
+  static constexpr int kIndexInFileMessages = 7;
   friend void swap(HeroProductListItem& a, HeroProductListItem& b) { a.Swap(&b); }
   inline void Swap(HeroProductListItem* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -567,7 +571,7 @@ class WelcomeDealsSlider final : public ::google::protobuf::Message
     return *reinterpret_cast<const WelcomeDealsSlider*>(
         &_WelcomeDealsSlider_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 5;
+  static constexpr int kIndexInFileMessages = 6;
   friend void swap(WelcomeDealsSlider& a, WelcomeDealsSlider& b) { a.Swap(&b); }
   inline void Swap(WelcomeDealsSlider* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1054,7 +1058,7 @@ class CategorySlider final : public ::google::protobuf::Message
     return *reinterpret_cast<const CategorySlider*>(
         &_CategorySlider_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 4;
+  static constexpr int kIndexInFileMessages = 5;
   friend void swap(CategorySlider& a, CategorySlider& b) { a.Swap(&b); }
   inline void Swap(CategorySlider* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1303,7 +1307,7 @@ class HeroProductsResponseData final : public ::google::protobuf::Message
     return *reinterpret_cast<const HeroProductsResponseData*>(
         &_HeroProductsResponseData_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 3;
+  static constexpr int kIndexInFileMessages = 4;
   friend void swap(HeroProductsResponseData& a, HeroProductsResponseData& b) { a.Swap(&b); }
   inline void Swap(HeroProductsResponseData* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1461,6 +1465,219 @@ class HeroProductsResponseData final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull HeroProductsResponseData_class_data_;
 // -------------------------------------------------------------------
 
+class HeroProductData final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.HeroProductData) */ {
+ public:
+  inline HeroProductData() : HeroProductData(nullptr) {}
+  ~HeroProductData() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(HeroProductData* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(HeroProductData));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR HeroProductData(::google::protobuf::internal::ConstantInitialized);
+
+  inline HeroProductData(const HeroProductData& from) : HeroProductData(nullptr, from) {}
+  inline HeroProductData(HeroProductData&& from) noexcept
+      : HeroProductData(nullptr, ::std::move(from)) {}
+  inline HeroProductData& operator=(const HeroProductData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeroProductData& operator=(HeroProductData&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeroProductData& default_instance() {
+    return *reinterpret_cast<const HeroProductData*>(
+        &_HeroProductData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 1;
+  friend void swap(HeroProductData& a, HeroProductData& b) { a.Swap(&b); }
+  inline void Swap(HeroProductData* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeroProductData* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeroProductData* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<HeroProductData>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const HeroProductData& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const HeroProductData& from) { HeroProductData::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(HeroProductData* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.HeroProductData"; }
+
+ protected:
+  explicit HeroProductData(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  HeroProductData(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const HeroProductData& from);
+  HeroProductData(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, HeroProductData&& from) noexcept
+      : HeroProductData(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kCategorySliderFieldNumber = 1,
+    kWelcomeDealsSliderFieldNumber = 2,
+  };
+  // .products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];
+  bool has_category_slider() const;
+  void clear_category_slider() ;
+  const ::products::v1::CategorySlider& category_slider() const;
+  [[nodiscard]] ::products::v1::CategorySlider* PROTOBUF_NULLABLE release_category_slider();
+  ::products::v1::CategorySlider* PROTOBUF_NONNULL mutable_category_slider();
+  void set_allocated_category_slider(::products::v1::CategorySlider* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_category_slider(::products::v1::CategorySlider* PROTOBUF_NULLABLE value);
+  ::products::v1::CategorySlider* PROTOBUF_NULLABLE unsafe_arena_release_category_slider();
+
+  private:
+  const ::products::v1::CategorySlider& _internal_category_slider() const;
+  ::products::v1::CategorySlider* PROTOBUF_NONNULL _internal_mutable_category_slider();
+
+  public:
+  // .products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];
+  bool has_welcome_deals_slider() const;
+  void clear_welcome_deals_slider() ;
+  const ::products::v1::WelcomeDealsSlider& welcome_deals_slider() const;
+  [[nodiscard]] ::products::v1::WelcomeDealsSlider* PROTOBUF_NULLABLE release_welcome_deals_slider();
+  ::products::v1::WelcomeDealsSlider* PROTOBUF_NONNULL mutable_welcome_deals_slider();
+  void set_allocated_welcome_deals_slider(::products::v1::WelcomeDealsSlider* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_welcome_deals_slider(::products::v1::WelcomeDealsSlider* PROTOBUF_NULLABLE value);
+  ::products::v1::WelcomeDealsSlider* PROTOBUF_NULLABLE unsafe_arena_release_welcome_deals_slider();
+
+  private:
+  const ::products::v1::WelcomeDealsSlider& _internal_welcome_deals_slider() const;
+  ::products::v1::WelcomeDealsSlider* PROTOBUF_NONNULL _internal_mutable_welcome_deals_slider();
+
+  public:
+  // @@protoc_insertion_point(class_scope:products.v1.HeroProductData)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   2, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const HeroProductData& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::products::v1::CategorySlider* PROTOBUF_NULLABLE category_slider_;
+    ::products::v1::WelcomeDealsSlider* PROTOBUF_NULLABLE welcome_deals_slider_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fhero_5fproducts_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull HeroProductData_class_data_;
+// -------------------------------------------------------------------
+
 class HeroProductsResponse final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:products.v1.HeroProductsResponse) */ {
  public:
@@ -1521,7 +1738,7 @@ class HeroProductsResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 2;
+  static constexpr int kIndexInFileMessages = 3;
   friend void swap(HeroProductsResponse& a, HeroProductsResponse& b) { a.Swap(&b); }
   inline void Swap(HeroProductsResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1920,6 +2137,206 @@ inline ::uint64_t HeroProduct::_internal_updated_at() const {
 inline void HeroProduct::_internal_set_updated_at(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// HeroProductData
+
+// .products.v1.CategorySlider category_slider = 1 [json_name = "categorySlider"];
+inline bool HeroProductData::has_category_slider() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.category_slider_ != nullptr);
+  return value;
+}
+inline void HeroProductData::clear_category_slider() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.category_slider_ != nullptr) _impl_.category_slider_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::products::v1::CategorySlider& HeroProductData::_internal_category_slider() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::products::v1::CategorySlider* p = _impl_.category_slider_;
+  return p != nullptr ? *p : reinterpret_cast<const ::products::v1::CategorySlider&>(::products::v1::_CategorySlider_default_instance_);
+}
+inline const ::products::v1::CategorySlider& HeroProductData::category_slider() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.HeroProductData.category_slider)
+  return _internal_category_slider();
+}
+inline void HeroProductData::unsafe_arena_set_allocated_category_slider(
+    ::products::v1::CategorySlider* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.category_slider_);
+  }
+  _impl_.category_slider_ = reinterpret_cast<::products::v1::CategorySlider*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.HeroProductData.category_slider)
+}
+inline ::products::v1::CategorySlider* PROTOBUF_NULLABLE HeroProductData::release_category_slider() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::products::v1::CategorySlider* released = _impl_.category_slider_;
+  _impl_.category_slider_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::products::v1::CategorySlider* PROTOBUF_NULLABLE HeroProductData::unsafe_arena_release_category_slider() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.HeroProductData.category_slider)
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::products::v1::CategorySlider* temp = _impl_.category_slider_;
+  _impl_.category_slider_ = nullptr;
+  return temp;
+}
+inline ::products::v1::CategorySlider* PROTOBUF_NONNULL HeroProductData::_internal_mutable_category_slider() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.category_slider_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::products::v1::CategorySlider>(GetArena());
+    _impl_.category_slider_ = reinterpret_cast<::products::v1::CategorySlider*>(p);
+  }
+  return _impl_.category_slider_;
+}
+inline ::products::v1::CategorySlider* PROTOBUF_NONNULL HeroProductData::mutable_category_slider()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  ::products::v1::CategorySlider* _msg = _internal_mutable_category_slider();
+  // @@protoc_insertion_point(field_mutable:products.v1.HeroProductData.category_slider)
+  return _msg;
+}
+inline void HeroProductData::set_allocated_category_slider(::products::v1::CategorySlider* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.category_slider_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+
+  _impl_.category_slider_ = reinterpret_cast<::products::v1::CategorySlider*>(value);
+  // @@protoc_insertion_point(field_set_allocated:products.v1.HeroProductData.category_slider)
+}
+
+// .products.v1.WelcomeDealsSlider welcome_deals_slider = 2 [json_name = "welcomeDealsSlider"];
+inline bool HeroProductData::has_welcome_deals_slider() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.welcome_deals_slider_ != nullptr);
+  return value;
+}
+inline void HeroProductData::clear_welcome_deals_slider() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.welcome_deals_slider_ != nullptr) _impl_.welcome_deals_slider_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::products::v1::WelcomeDealsSlider& HeroProductData::_internal_welcome_deals_slider() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::products::v1::WelcomeDealsSlider* p = _impl_.welcome_deals_slider_;
+  return p != nullptr ? *p : reinterpret_cast<const ::products::v1::WelcomeDealsSlider&>(::products::v1::_WelcomeDealsSlider_default_instance_);
+}
+inline const ::products::v1::WelcomeDealsSlider& HeroProductData::welcome_deals_slider() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.HeroProductData.welcome_deals_slider)
+  return _internal_welcome_deals_slider();
+}
+inline void HeroProductData::unsafe_arena_set_allocated_welcome_deals_slider(
+    ::products::v1::WelcomeDealsSlider* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.welcome_deals_slider_);
+  }
+  _impl_.welcome_deals_slider_ = reinterpret_cast<::products::v1::WelcomeDealsSlider*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.HeroProductData.welcome_deals_slider)
+}
+inline ::products::v1::WelcomeDealsSlider* PROTOBUF_NULLABLE HeroProductData::release_welcome_deals_slider() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::products::v1::WelcomeDealsSlider* released = _impl_.welcome_deals_slider_;
+  _impl_.welcome_deals_slider_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::products::v1::WelcomeDealsSlider* PROTOBUF_NULLABLE HeroProductData::unsafe_arena_release_welcome_deals_slider() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.HeroProductData.welcome_deals_slider)
+
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::products::v1::WelcomeDealsSlider* temp = _impl_.welcome_deals_slider_;
+  _impl_.welcome_deals_slider_ = nullptr;
+  return temp;
+}
+inline ::products::v1::WelcomeDealsSlider* PROTOBUF_NONNULL HeroProductData::_internal_mutable_welcome_deals_slider() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.welcome_deals_slider_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::products::v1::WelcomeDealsSlider>(GetArena());
+    _impl_.welcome_deals_slider_ = reinterpret_cast<::products::v1::WelcomeDealsSlider*>(p);
+  }
+  return _impl_.welcome_deals_slider_;
+}
+inline ::products::v1::WelcomeDealsSlider* PROTOBUF_NONNULL HeroProductData::mutable_welcome_deals_slider()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  ::products::v1::WelcomeDealsSlider* _msg = _internal_mutable_welcome_deals_slider();
+  // @@protoc_insertion_point(field_mutable:products.v1.HeroProductData.welcome_deals_slider)
+  return _msg;
+}
+inline void HeroProductData::set_allocated_welcome_deals_slider(::products::v1::WelcomeDealsSlider* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.welcome_deals_slider_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+
+  _impl_.welcome_deals_slider_ = reinterpret_cast<::products::v1::WelcomeDealsSlider*>(value);
+  // @@protoc_insertion_point(field_set_allocated:products.v1.HeroProductData.welcome_deals_slider)
 }
 
 // -------------------------------------------------------------------

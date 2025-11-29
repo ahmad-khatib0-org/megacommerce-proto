@@ -90,6 +90,58 @@ func (x *HeroProduct) GetUpdatedAt() uint64 {
 	return 0
 }
 
+type HeroProductData struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	CategorySlider     *CategorySlider        `protobuf:"bytes,1,opt,name=category_slider,json=categorySlider,proto3" json:"category_slider,omitempty"`
+	WelcomeDealsSlider *WelcomeDealsSlider    `protobuf:"bytes,2,opt,name=welcome_deals_slider,json=welcomeDealsSlider,proto3" json:"welcome_deals_slider,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *HeroProductData) Reset() {
+	*x = HeroProductData{}
+	mi := &file_products_v1_hero_products_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HeroProductData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HeroProductData) ProtoMessage() {}
+
+func (x *HeroProductData) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_hero_products_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HeroProductData.ProtoReflect.Descriptor instead.
+func (*HeroProductData) Descriptor() ([]byte, []int) {
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *HeroProductData) GetCategorySlider() *CategorySlider {
+	if x != nil {
+		return x.CategorySlider
+	}
+	return nil
+}
+
+func (x *HeroProductData) GetWelcomeDealsSlider() *WelcomeDealsSlider {
+	if x != nil {
+		return x.WelcomeDealsSlider
+	}
+	return nil
+}
+
 type HeroProductsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -98,7 +150,7 @@ type HeroProductsRequest struct {
 
 func (x *HeroProductsRequest) Reset() {
 	*x = HeroProductsRequest{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[1]
+	mi := &file_products_v1_hero_products_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -110,7 +162,7 @@ func (x *HeroProductsRequest) String() string {
 func (*HeroProductsRequest) ProtoMessage() {}
 
 func (x *HeroProductsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[1]
+	mi := &file_products_v1_hero_products_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +175,7 @@ func (x *HeroProductsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeroProductsRequest.ProtoReflect.Descriptor instead.
 func (*HeroProductsRequest) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{1}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{2}
 }
 
 type HeroProductsResponse struct {
@@ -139,7 +191,7 @@ type HeroProductsResponse struct {
 
 func (x *HeroProductsResponse) Reset() {
 	*x = HeroProductsResponse{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[2]
+	mi := &file_products_v1_hero_products_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -151,7 +203,7 @@ func (x *HeroProductsResponse) String() string {
 func (*HeroProductsResponse) ProtoMessage() {}
 
 func (x *HeroProductsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[2]
+	mi := &file_products_v1_hero_products_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -164,7 +216,7 @@ func (x *HeroProductsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeroProductsResponse.ProtoReflect.Descriptor instead.
 func (*HeroProductsResponse) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{2}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *HeroProductsResponse) GetResponse() isHeroProductsResponse_Response {
@@ -218,7 +270,7 @@ type HeroProductsResponseData struct {
 
 func (x *HeroProductsResponseData) Reset() {
 	*x = HeroProductsResponseData{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[3]
+	mi := &file_products_v1_hero_products_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -230,7 +282,7 @@ func (x *HeroProductsResponseData) String() string {
 func (*HeroProductsResponseData) ProtoMessage() {}
 
 func (x *HeroProductsResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[3]
+	mi := &file_products_v1_hero_products_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -243,7 +295,7 @@ func (x *HeroProductsResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeroProductsResponseData.ProtoReflect.Descriptor instead.
 func (*HeroProductsResponseData) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{3}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *HeroProductsResponseData) GetCategorySlider() *CategorySlider {
@@ -272,7 +324,7 @@ type CategorySlider struct {
 
 func (x *CategorySlider) Reset() {
 	*x = CategorySlider{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[4]
+	mi := &file_products_v1_hero_products_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -284,7 +336,7 @@ func (x *CategorySlider) String() string {
 func (*CategorySlider) ProtoMessage() {}
 
 func (x *CategorySlider) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[4]
+	mi := &file_products_v1_hero_products_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -297,7 +349,7 @@ func (x *CategorySlider) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CategorySlider.ProtoReflect.Descriptor instead.
 func (*CategorySlider) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{4}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CategorySlider) GetTitle() string {
@@ -340,7 +392,7 @@ type WelcomeDealsSlider struct {
 
 func (x *WelcomeDealsSlider) Reset() {
 	*x = WelcomeDealsSlider{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[5]
+	mi := &file_products_v1_hero_products_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -352,7 +404,7 @@ func (x *WelcomeDealsSlider) String() string {
 func (*WelcomeDealsSlider) ProtoMessage() {}
 
 func (x *WelcomeDealsSlider) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[5]
+	mi := &file_products_v1_hero_products_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -365,7 +417,7 @@ func (x *WelcomeDealsSlider) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WelcomeDealsSlider.ProtoReflect.Descriptor instead.
 func (*WelcomeDealsSlider) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{5}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *WelcomeDealsSlider) GetTitle() string {
@@ -410,7 +462,7 @@ type HeroProductListItem struct {
 
 func (x *HeroProductListItem) Reset() {
 	*x = HeroProductListItem{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[6]
+	mi := &file_products_v1_hero_products_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -422,7 +474,7 @@ func (x *HeroProductListItem) String() string {
 func (*HeroProductListItem) ProtoMessage() {}
 
 func (x *HeroProductListItem) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[6]
+	mi := &file_products_v1_hero_products_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +487,7 @@ func (x *HeroProductListItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeroProductListItem.ProtoReflect.Descriptor instead.
 func (*HeroProductListItem) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{6}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *HeroProductListItem) GetId() string {
@@ -492,7 +544,10 @@ const file_products_v1_hero_products_proto_rawDesc = "" +
 	"created_at\x18\x03 \x01(\x04R\tcreatedAt\x12\"\n" +
 	"\n" +
 	"updated_at\x18\x04 \x01(\x04H\x00R\tupdatedAt\x88\x01\x01B\r\n" +
-	"\v_updated_at\"\x15\n" +
+	"\v_updated_at\"\xaa\x01\n" +
+	"\x0fHeroProductData\x12D\n" +
+	"\x0fcategory_slider\x18\x01 \x01(\v2\x1b.products.v1.CategorySliderR\x0ecategorySlider\x12Q\n" +
+	"\x14welcome_deals_slider\x18\x02 \x01(\v2\x1f.products.v1.WelcomeDealsSliderR\x12welcomeDealsSlider\"\x15\n" +
 	"\x13HeroProductsRequest\"\x8c\x01\n" +
 	"\x14HeroProductsResponse\x12;\n" +
 	"\x04data\x18\x01 \x01(\v2%.products.v1.HeroProductsResponseDataH\x00R\x04data\x12+\n" +
@@ -536,31 +591,34 @@ func file_products_v1_hero_products_proto_rawDescGZIP() []byte {
 	return file_products_v1_hero_products_proto_rawDescData
 }
 
-var file_products_v1_hero_products_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_products_v1_hero_products_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_products_v1_hero_products_proto_goTypes = []any{
 	(*HeroProduct)(nil),              // 0: products.v1.HeroProduct
-	(*HeroProductsRequest)(nil),      // 1: products.v1.HeroProductsRequest
-	(*HeroProductsResponse)(nil),     // 2: products.v1.HeroProductsResponse
-	(*HeroProductsResponseData)(nil), // 3: products.v1.HeroProductsResponseData
-	(*CategorySlider)(nil),           // 4: products.v1.CategorySlider
-	(*WelcomeDealsSlider)(nil),       // 5: products.v1.WelcomeDealsSlider
-	(*HeroProductListItem)(nil),      // 6: products.v1.HeroProductListItem
-	(*v1.Struct)(nil),                // 7: shared.v1.Struct
-	(*v1.AppError)(nil),              // 8: shared.v1.AppError
+	(*HeroProductData)(nil),          // 1: products.v1.HeroProductData
+	(*HeroProductsRequest)(nil),      // 2: products.v1.HeroProductsRequest
+	(*HeroProductsResponse)(nil),     // 3: products.v1.HeroProductsResponse
+	(*HeroProductsResponseData)(nil), // 4: products.v1.HeroProductsResponseData
+	(*CategorySlider)(nil),           // 5: products.v1.CategorySlider
+	(*WelcomeDealsSlider)(nil),       // 6: products.v1.WelcomeDealsSlider
+	(*HeroProductListItem)(nil),      // 7: products.v1.HeroProductListItem
+	(*v1.Struct)(nil),                // 8: shared.v1.Struct
+	(*v1.AppError)(nil),              // 9: shared.v1.AppError
 }
 var file_products_v1_hero_products_proto_depIdxs = []int32{
-	7, // 0: products.v1.HeroProduct.products_data:type_name -> shared.v1.Struct
-	3, // 1: products.v1.HeroProductsResponse.data:type_name -> products.v1.HeroProductsResponseData
-	8, // 2: products.v1.HeroProductsResponse.error:type_name -> shared.v1.AppError
-	4, // 3: products.v1.HeroProductsResponseData.category_slider:type_name -> products.v1.CategorySlider
-	5, // 4: products.v1.HeroProductsResponseData.welcome_deals_slider:type_name -> products.v1.WelcomeDealsSlider
-	6, // 5: products.v1.CategorySlider.products:type_name -> products.v1.HeroProductListItem
-	6, // 6: products.v1.WelcomeDealsSlider.products:type_name -> products.v1.HeroProductListItem
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	8, // 0: products.v1.HeroProduct.products_data:type_name -> shared.v1.Struct
+	5, // 1: products.v1.HeroProductData.category_slider:type_name -> products.v1.CategorySlider
+	6, // 2: products.v1.HeroProductData.welcome_deals_slider:type_name -> products.v1.WelcomeDealsSlider
+	4, // 3: products.v1.HeroProductsResponse.data:type_name -> products.v1.HeroProductsResponseData
+	9, // 4: products.v1.HeroProductsResponse.error:type_name -> shared.v1.AppError
+	5, // 5: products.v1.HeroProductsResponseData.category_slider:type_name -> products.v1.CategorySlider
+	6, // 6: products.v1.HeroProductsResponseData.welcome_deals_slider:type_name -> products.v1.WelcomeDealsSlider
+	7, // 7: products.v1.CategorySlider.products:type_name -> products.v1.HeroProductListItem
+	7, // 8: products.v1.WelcomeDealsSlider.products:type_name -> products.v1.HeroProductListItem
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_hero_products_proto_init() }
@@ -569,7 +627,7 @@ func file_products_v1_hero_products_proto_init() {
 		return
 	}
 	file_products_v1_hero_products_proto_msgTypes[0].OneofWrappers = []any{}
-	file_products_v1_hero_products_proto_msgTypes[2].OneofWrappers = []any{
+	file_products_v1_hero_products_proto_msgTypes[3].OneofWrappers = []any{
 		(*HeroProductsResponse_Data)(nil),
 		(*HeroProductsResponse_Error)(nil),
 	}
@@ -579,7 +637,7 @@ func file_products_v1_hero_products_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_hero_products_proto_rawDesc), len(file_products_v1_hero_products_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

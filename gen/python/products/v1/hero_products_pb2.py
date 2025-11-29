@@ -26,7 +26,7 @@ from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import struct_pb2 as shared_dot_v1_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fproducts/v1/hero_products.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\x1a\x16shared/v1/struct.proto\"\x7f\n\x0bHeroProduct\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\rproducts_data\x18\x02 \x01(\x0b\x32\x11.shared.v1.Struct\x12\x12\n\ncreated_at\x18\x03 \x01(\x04\x12\x17\n\nupdated_at\x18\x04 \x01(\x04H\x00\x88\x01\x01\x42\r\n\x0b_updated_at\"\x15\n\x13HeroProductsRequest\"\x7f\n\x14HeroProductsResponse\x12\x35\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32%.products.v1.HeroProductsResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\x8f\x01\n\x18HeroProductsResponseData\x12\x34\n\x0f\x63\x61tegory_slider\x18\x01 \x01(\x0b\x32\x1b.products.v1.CategorySlider\x12=\n\x14welcome_deals_slider\x18\x02 \x01(\x0b\x32\x1f.products.v1.WelcomeDealsSlider\"z\n\x0e\x43\x61tegorySlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12\x32\n\x08products\x18\x04 \x03(\x0b\x32 .products.v1.HeroProductListItem\"~\n\x12WelcomeDealsSlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12\x32\n\x08products\x18\x04 \x03(\x0b\x32 .products.v1.HeroProductListItem\"\x8f\x01\n\x13HeroProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x13\n\x0bprice_cents\x18\x04 \x01(\r\x12\x1c\n\x14\x64iscount_price_cents\x18\x05 \x01(\r\x12\x1b\n\x13\x64iscount_percentage\x18\x06 \x01(\rB{\n\x1corg.megacommerce.products.v1B\x11HeroProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fproducts/v1/hero_products.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\x1a\x16shared/v1/struct.proto\"\x7f\n\x0bHeroProduct\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\rproducts_data\x18\x02 \x01(\x0b\x32\x11.shared.v1.Struct\x12\x12\n\ncreated_at\x18\x03 \x01(\x04\x12\x17\n\nupdated_at\x18\x04 \x01(\x04H\x00\x88\x01\x01\x42\r\n\x0b_updated_at\"\x86\x01\n\x0fHeroProductData\x12\x34\n\x0f\x63\x61tegory_slider\x18\x01 \x01(\x0b\x32\x1b.products.v1.CategorySlider\x12=\n\x14welcome_deals_slider\x18\x02 \x01(\x0b\x32\x1f.products.v1.WelcomeDealsSlider\"\x15\n\x13HeroProductsRequest\"\x7f\n\x14HeroProductsResponse\x12\x35\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32%.products.v1.HeroProductsResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\x8f\x01\n\x18HeroProductsResponseData\x12\x34\n\x0f\x63\x61tegory_slider\x18\x01 \x01(\x0b\x32\x1b.products.v1.CategorySlider\x12=\n\x14welcome_deals_slider\x18\x02 \x01(\x0b\x32\x1f.products.v1.WelcomeDealsSlider\"z\n\x0e\x43\x61tegorySlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12\x32\n\x08products\x18\x04 \x03(\x0b\x32 .products.v1.HeroProductListItem\"~\n\x12WelcomeDealsSlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12\x32\n\x08products\x18\x04 \x03(\x0b\x32 .products.v1.HeroProductListItem\"\x8f\x01\n\x13HeroProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x13\n\x0bprice_cents\x18\x04 \x01(\r\x12\x1c\n\x14\x64iscount_price_cents\x18\x05 \x01(\r\x12\x1b\n\x13\x64iscount_percentage\x18\x06 \x01(\rB{\n\x1corg.megacommerce.products.v1B\x11HeroProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,16 +36,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\021HeroProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
   _globals['_HEROPRODUCT']._serialized_start=95
   _globals['_HEROPRODUCT']._serialized_end=222
-  _globals['_HEROPRODUCTSREQUEST']._serialized_start=224
-  _globals['_HEROPRODUCTSREQUEST']._serialized_end=245
-  _globals['_HEROPRODUCTSRESPONSE']._serialized_start=247
-  _globals['_HEROPRODUCTSRESPONSE']._serialized_end=374
-  _globals['_HEROPRODUCTSRESPONSEDATA']._serialized_start=377
-  _globals['_HEROPRODUCTSRESPONSEDATA']._serialized_end=520
-  _globals['_CATEGORYSLIDER']._serialized_start=522
-  _globals['_CATEGORYSLIDER']._serialized_end=644
-  _globals['_WELCOMEDEALSSLIDER']._serialized_start=646
-  _globals['_WELCOMEDEALSSLIDER']._serialized_end=772
-  _globals['_HEROPRODUCTLISTITEM']._serialized_start=775
-  _globals['_HEROPRODUCTLISTITEM']._serialized_end=918
+  _globals['_HEROPRODUCTDATA']._serialized_start=225
+  _globals['_HEROPRODUCTDATA']._serialized_end=359
+  _globals['_HEROPRODUCTSREQUEST']._serialized_start=361
+  _globals['_HEROPRODUCTSREQUEST']._serialized_end=382
+  _globals['_HEROPRODUCTSRESPONSE']._serialized_start=384
+  _globals['_HEROPRODUCTSRESPONSE']._serialized_end=511
+  _globals['_HEROPRODUCTSRESPONSEDATA']._serialized_start=514
+  _globals['_HEROPRODUCTSRESPONSEDATA']._serialized_end=657
+  _globals['_CATEGORYSLIDER']._serialized_start=659
+  _globals['_CATEGORYSLIDER']._serialized_end=781
+  _globals['_WELCOMEDEALSSLIDER']._serialized_start=783
+  _globals['_WELCOMEDEALSSLIDER']._serialized_end=909
+  _globals['_HEROPRODUCTLISTITEM']._serialized_start=912
+  _globals['_HEROPRODUCTLISTITEM']._serialized_end=1055
 # @@protoc_insertion_point(module_scope)

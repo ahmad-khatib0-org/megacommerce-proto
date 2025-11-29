@@ -18,6 +18,11 @@ export interface HeroProduct {
   updatedAt?: string | undefined;
 }
 
+export interface HeroProductData {
+  categorySlider?: CategorySlider | undefined;
+  welcomeDealsSlider?: WelcomeDealsSlider | undefined;
+}
+
 export interface HeroProductsRequest {
 }
 
@@ -160,6 +165,88 @@ export const HeroProduct: MessageFns<HeroProduct> = {
       : undefined;
     message.createdAt = object.createdAt ?? "0";
     message.updatedAt = object.updatedAt ?? undefined;
+    return message;
+  },
+};
+
+function createBaseHeroProductData(): HeroProductData {
+  return { categorySlider: undefined, welcomeDealsSlider: undefined };
+}
+
+export const HeroProductData: MessageFns<HeroProductData> = {
+  encode(message: HeroProductData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.categorySlider !== undefined) {
+      CategorySlider.encode(message.categorySlider, writer.uint32(10).fork()).join();
+    }
+    if (message.welcomeDealsSlider !== undefined) {
+      WelcomeDealsSlider.encode(message.welcomeDealsSlider, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): HeroProductData {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseHeroProductData();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.categorySlider = CategorySlider.decode(reader, reader.uint32());
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.welcomeDealsSlider = WelcomeDealsSlider.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): HeroProductData {
+    return {
+      categorySlider: isSet(object.categorySlider) ? CategorySlider.fromJSON(object.categorySlider) : undefined,
+      welcomeDealsSlider: isSet(object.welcomeDealsSlider)
+        ? WelcomeDealsSlider.fromJSON(object.welcomeDealsSlider)
+        : undefined,
+    };
+  },
+
+  toJSON(message: HeroProductData): unknown {
+    const obj: any = {};
+    if (message.categorySlider !== undefined) {
+      obj.categorySlider = CategorySlider.toJSON(message.categorySlider);
+    }
+    if (message.welcomeDealsSlider !== undefined) {
+      obj.welcomeDealsSlider = WelcomeDealsSlider.toJSON(message.welcomeDealsSlider);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<HeroProductData>, I>>(base?: I): HeroProductData {
+    return HeroProductData.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<HeroProductData>, I>>(object: I): HeroProductData {
+    const message = createBaseHeroProductData();
+    message.categorySlider = (object.categorySlider !== undefined && object.categorySlider !== null)
+      ? CategorySlider.fromPartial(object.categorySlider)
+      : undefined;
+    message.welcomeDealsSlider = (object.welcomeDealsSlider !== undefined && object.welcomeDealsSlider !== null)
+      ? WelcomeDealsSlider.fromPartial(object.welcomeDealsSlider)
+      : undefined;
     return message;
   },
 };

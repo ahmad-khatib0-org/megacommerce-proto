@@ -101,6 +101,14 @@ pub struct HeroProduct {
     pub updated_at: ::core::option::Option<u64>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct HeroProductData {
+    #[prost(message, optional, tag = "1")]
+    pub category_slider: ::core::option::Option<CategorySlider>,
+    #[prost(message, optional, tag = "2")]
+    pub welcome_deals_slider: ::core::option::Option<WelcomeDealsSlider>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
 pub struct HeroProductsRequest {}
 #[derive(serde::Serialize, serde::Deserialize)]

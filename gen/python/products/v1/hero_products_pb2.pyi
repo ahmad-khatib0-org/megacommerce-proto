@@ -19,6 +19,14 @@ class HeroProduct(_message.Message):
     updated_at: int
     def __init__(self, id: _Optional[str] = ..., products_data: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., created_at: _Optional[int] = ..., updated_at: _Optional[int] = ...) -> None: ...
 
+class HeroProductData(_message.Message):
+    __slots__ = ("category_slider", "welcome_deals_slider")
+    CATEGORY_SLIDER_FIELD_NUMBER: _ClassVar[int]
+    WELCOME_DEALS_SLIDER_FIELD_NUMBER: _ClassVar[int]
+    category_slider: CategorySlider
+    welcome_deals_slider: WelcomeDealsSlider
+    def __init__(self, category_slider: _Optional[_Union[CategorySlider, _Mapping]] = ..., welcome_deals_slider: _Optional[_Union[WelcomeDealsSlider, _Mapping]] = ...) -> None: ...
+
 class HeroProductsRequest(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
