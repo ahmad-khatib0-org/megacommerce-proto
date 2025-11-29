@@ -27,6 +27,38 @@ class HeroProductData(_message.Message):
     welcome_deals_slider: WelcomeDealsSlider
     def __init__(self, category_slider: _Optional[_Union[CategorySlider, _Mapping]] = ..., welcome_deals_slider: _Optional[_Union[WelcomeDealsSlider, _Mapping]] = ...) -> None: ...
 
+class CategorySlider(_message.Message):
+    __slots__ = ("title", "subtitle", "button_text", "products")
+    TITLE_FIELD_NUMBER: _ClassVar[int]
+    SUBTITLE_FIELD_NUMBER: _ClassVar[int]
+    BUTTON_TEXT_FIELD_NUMBER: _ClassVar[int]
+    PRODUCTS_FIELD_NUMBER: _ClassVar[int]
+    title: str
+    subtitle: str
+    button_text: str
+    products: _containers.RepeatedCompositeFieldContainer[HeroProductItem]
+    def __init__(self, title: _Optional[str] = ..., subtitle: _Optional[str] = ..., button_text: _Optional[str] = ..., products: _Optional[_Iterable[_Union[HeroProductItem, _Mapping]]] = ...) -> None: ...
+
+class WelcomeDealsSlider(_message.Message):
+    __slots__ = ("title", "subtitle", "button_text", "products")
+    TITLE_FIELD_NUMBER: _ClassVar[int]
+    SUBTITLE_FIELD_NUMBER: _ClassVar[int]
+    BUTTON_TEXT_FIELD_NUMBER: _ClassVar[int]
+    PRODUCTS_FIELD_NUMBER: _ClassVar[int]
+    title: str
+    subtitle: str
+    button_text: str
+    products: _containers.RepeatedCompositeFieldContainer[HeroProductItem]
+    def __init__(self, title: _Optional[str] = ..., subtitle: _Optional[str] = ..., button_text: _Optional[str] = ..., products: _Optional[_Iterable[_Union[HeroProductItem, _Mapping]]] = ...) -> None: ...
+
+class HeroProductItem(_message.Message):
+    __slots__ = ("id", "variant_id")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    variant_id: str
+    def __init__(self, id: _Optional[str] = ..., variant_id: _Optional[str] = ...) -> None: ...
+
 class HeroProductsRequest(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
@@ -43,11 +75,11 @@ class HeroProductsResponseData(_message.Message):
     __slots__ = ("category_slider", "welcome_deals_slider")
     CATEGORY_SLIDER_FIELD_NUMBER: _ClassVar[int]
     WELCOME_DEALS_SLIDER_FIELD_NUMBER: _ClassVar[int]
-    category_slider: CategorySlider
-    welcome_deals_slider: WelcomeDealsSlider
-    def __init__(self, category_slider: _Optional[_Union[CategorySlider, _Mapping]] = ..., welcome_deals_slider: _Optional[_Union[WelcomeDealsSlider, _Mapping]] = ...) -> None: ...
+    category_slider: HeroProductsResponseCategorySlider
+    welcome_deals_slider: HeroProductsResponseWelcomeDealsSlider
+    def __init__(self, category_slider: _Optional[_Union[HeroProductsResponseCategorySlider, _Mapping]] = ..., welcome_deals_slider: _Optional[_Union[HeroProductsResponseWelcomeDealsSlider, _Mapping]] = ...) -> None: ...
 
-class CategorySlider(_message.Message):
+class HeroProductsResponseCategorySlider(_message.Message):
     __slots__ = ("title", "subtitle", "button_text", "products")
     TITLE_FIELD_NUMBER: _ClassVar[int]
     SUBTITLE_FIELD_NUMBER: _ClassVar[int]
@@ -59,7 +91,7 @@ class CategorySlider(_message.Message):
     products: _containers.RepeatedCompositeFieldContainer[HeroProductListItem]
     def __init__(self, title: _Optional[str] = ..., subtitle: _Optional[str] = ..., button_text: _Optional[str] = ..., products: _Optional[_Iterable[_Union[HeroProductListItem, _Mapping]]] = ...) -> None: ...
 
-class WelcomeDealsSlider(_message.Message):
+class HeroProductsResponseWelcomeDealsSlider(_message.Message):
     __slots__ = ("title", "subtitle", "button_text", "products")
     TITLE_FIELD_NUMBER: _ClassVar[int]
     SUBTITLE_FIELD_NUMBER: _ClassVar[int]
@@ -72,9 +104,19 @@ class WelcomeDealsSlider(_message.Message):
     def __init__(self, title: _Optional[str] = ..., subtitle: _Optional[str] = ..., button_text: _Optional[str] = ..., products: _Optional[_Iterable[_Union[HeroProductListItem, _Mapping]]] = ...) -> None: ...
 
 class HeroProductListItem(_message.Message):
-    __slots__ = ("id", "variant_id")
+    __slots__ = ("id", "variant_id", "title", "image", "price_cents", "discount_price_cents", "discount_percentage")
     ID_FIELD_NUMBER: _ClassVar[int]
     VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    TITLE_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
+    PRICE_CENTS_FIELD_NUMBER: _ClassVar[int]
+    DISCOUNT_PRICE_CENTS_FIELD_NUMBER: _ClassVar[int]
+    DISCOUNT_PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
     id: str
     variant_id: str
-    def __init__(self, id: _Optional[str] = ..., variant_id: _Optional[str] = ...) -> None: ...
+    title: str
+    image: str
+    price_cents: int
+    discount_price_cents: int
+    discount_percentage: int
+    def __init__(self, id: _Optional[str] = ..., variant_id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., price_cents: _Optional[int] = ..., discount_price_cents: _Optional[int] = ..., discount_percentage: _Optional[int] = ...) -> None: ...

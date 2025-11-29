@@ -22,6 +22,25 @@ message HeroProductData {
   WelcomeDealsSlider welcome_deals_slider = 2;
 }
 
+message CategorySlider {
+  string title = 1;
+  string subtitle = 2;
+  string button_text = 3;
+  repeated HeroProductItem products = 4;
+}
+
+message WelcomeDealsSlider {
+  string title = 1;
+  string subtitle = 2;
+  string button_text = 3;
+  repeated HeroProductItem products = 4;
+}
+
+message HeroProductItem {
+  string id = 1; // product id
+  string variant_id = 2;
+}
+
 message HeroProductsRequest {}
 
 message HeroProductsResponse {
@@ -32,18 +51,18 @@ message HeroProductsResponse {
 }
 
 message HeroProductsResponseData {
-  CategorySlider category_slider = 1;
-  WelcomeDealsSlider welcome_deals_slider = 2;
+  HeroProductsResponseCategorySlider category_slider = 1;
+  HeroProductsResponseWelcomeDealsSlider welcome_deals_slider = 2;
 }
 
-message CategorySlider {
+message HeroProductsResponseCategorySlider {
   string title = 1;
   string subtitle = 2;
   string button_text = 3;
   repeated HeroProductListItem products = 4;
 }
 
-message WelcomeDealsSlider {
+message HeroProductsResponseWelcomeDealsSlider {
   string title = 1;
   string subtitle = 2;
   string button_text = 3;
@@ -53,4 +72,9 @@ message WelcomeDealsSlider {
 message HeroProductListItem {
   string id = 1; // product id
   string variant_id = 2;
+  string title = 3;
+  string image = 4;
+  uint32 price_cents = 5;
+  optional uint32 discount_price_cents = 6;
+  optional uint32 discount_percentage = 7;
 }

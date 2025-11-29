@@ -109,6 +109,39 @@ pub struct HeroProductData {
     pub welcome_deals_slider: ::core::option::Option<WelcomeDealsSlider>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CategorySlider {
+    #[prost(string, tag = "1")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub subtitle: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub button_text: ::prost::alloc::string::String,
+    #[prost(message, repeated, tag = "4")]
+    pub products: ::prost::alloc::vec::Vec<HeroProductItem>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct WelcomeDealsSlider {
+    #[prost(string, tag = "1")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub subtitle: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub button_text: ::prost::alloc::string::String,
+    #[prost(message, repeated, tag = "4")]
+    pub products: ::prost::alloc::vec::Vec<HeroProductItem>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct HeroProductItem {
+    /// product id
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub variant_id: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
 pub struct HeroProductsRequest {}
 #[derive(serde::Serialize, serde::Deserialize)]
@@ -132,13 +165,15 @@ pub mod hero_products_response {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct HeroProductsResponseData {
     #[prost(message, optional, tag = "1")]
-    pub category_slider: ::core::option::Option<CategorySlider>,
+    pub category_slider: ::core::option::Option<HeroProductsResponseCategorySlider>,
     #[prost(message, optional, tag = "2")]
-    pub welcome_deals_slider: ::core::option::Option<WelcomeDealsSlider>,
+    pub welcome_deals_slider: ::core::option::Option<
+        HeroProductsResponseWelcomeDealsSlider,
+    >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct CategorySlider {
+pub struct HeroProductsResponseCategorySlider {
     #[prost(string, tag = "1")]
     pub title: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
@@ -150,7 +185,7 @@ pub struct CategorySlider {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct WelcomeDealsSlider {
+pub struct HeroProductsResponseWelcomeDealsSlider {
     #[prost(string, tag = "1")]
     pub title: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
@@ -168,6 +203,16 @@ pub struct HeroProductListItem {
     pub id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub variant_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub image: ::prost::alloc::string::String,
+    #[prost(uint32, tag = "5")]
+    pub price_cents: u32,
+    #[prost(uint32, optional, tag = "6")]
+    pub discount_price_cents: ::core::option::Option<u32>,
+    #[prost(uint32, optional, tag = "7")]
+    pub discount_percentage: ::core::option::Option<u32>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]

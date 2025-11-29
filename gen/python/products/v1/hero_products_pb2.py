@@ -26,7 +26,7 @@ from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import struct_pb2 as shared_dot_v1_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fproducts/v1/hero_products.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\x1a\x16shared/v1/struct.proto\"\x7f\n\x0bHeroProduct\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\rproducts_data\x18\x02 \x01(\x0b\x32\x11.shared.v1.Struct\x12\x12\n\ncreated_at\x18\x03 \x01(\x04\x12\x17\n\nupdated_at\x18\x04 \x01(\x04H\x00\x88\x01\x01\x42\r\n\x0b_updated_at\"\x86\x01\n\x0fHeroProductData\x12\x34\n\x0f\x63\x61tegory_slider\x18\x01 \x01(\x0b\x32\x1b.products.v1.CategorySlider\x12=\n\x14welcome_deals_slider\x18\x02 \x01(\x0b\x32\x1f.products.v1.WelcomeDealsSlider\"\x15\n\x13HeroProductsRequest\"\x7f\n\x14HeroProductsResponse\x12\x35\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32%.products.v1.HeroProductsResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\x8f\x01\n\x18HeroProductsResponseData\x12\x34\n\x0f\x63\x61tegory_slider\x18\x01 \x01(\x0b\x32\x1b.products.v1.CategorySlider\x12=\n\x14welcome_deals_slider\x18\x02 \x01(\x0b\x32\x1f.products.v1.WelcomeDealsSlider\"z\n\x0e\x43\x61tegorySlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12\x32\n\x08products\x18\x04 \x03(\x0b\x32 .products.v1.HeroProductListItem\"~\n\x12WelcomeDealsSlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12\x32\n\x08products\x18\x04 \x03(\x0b\x32 .products.v1.HeroProductListItem\"5\n\x13HeroProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\tB{\n\x1corg.megacommerce.products.v1B\x11HeroProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fproducts/v1/hero_products.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\x1a\x16shared/v1/struct.proto\"\x7f\n\x0bHeroProduct\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\rproducts_data\x18\x02 \x01(\x0b\x32\x11.shared.v1.Struct\x12\x12\n\ncreated_at\x18\x03 \x01(\x04\x12\x17\n\nupdated_at\x18\x04 \x01(\x04H\x00\x88\x01\x01\x42\r\n\x0b_updated_at\"\x86\x01\n\x0fHeroProductData\x12\x34\n\x0f\x63\x61tegory_slider\x18\x01 \x01(\x0b\x32\x1b.products.v1.CategorySlider\x12=\n\x14welcome_deals_slider\x18\x02 \x01(\x0b\x32\x1f.products.v1.WelcomeDealsSlider\"v\n\x0e\x43\x61tegorySlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12.\n\x08products\x18\x04 \x03(\x0b\x32\x1c.products.v1.HeroProductItem\"z\n\x12WelcomeDealsSlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12.\n\x08products\x18\x04 \x03(\x0b\x32\x1c.products.v1.HeroProductItem\"1\n\x0fHeroProductItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"\x15\n\x13HeroProductsRequest\"\x7f\n\x14HeroProductsResponse\x12\x35\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32%.products.v1.HeroProductsResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\xb7\x01\n\x18HeroProductsResponseData\x12H\n\x0f\x63\x61tegory_slider\x18\x01 \x01(\x0b\x32/.products.v1.HeroProductsResponseCategorySlider\x12Q\n\x14welcome_deals_slider\x18\x02 \x01(\x0b\x32\x33.products.v1.HeroProductsResponseWelcomeDealsSlider\"\x8e\x01\n\"HeroProductsResponseCategorySlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12\x32\n\x08products\x18\x04 \x03(\x0b\x32 .products.v1.HeroProductListItem\"\x92\x01\n&HeroProductsResponseWelcomeDealsSlider\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x13\n\x0b\x62utton_text\x18\x03 \x01(\t\x12\x32\n\x08products\x18\x04 \x03(\x0b\x32 .products.v1.HeroProductListItem\"\xde\x01\n\x13HeroProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\r\n\x05image\x18\x04 \x01(\t\x12\x13\n\x0bprice_cents\x18\x05 \x01(\r\x12!\n\x14\x64iscount_price_cents\x18\x06 \x01(\rH\x00\x88\x01\x01\x12 \n\x13\x64iscount_percentage\x18\x07 \x01(\rH\x01\x88\x01\x01\x42\x17\n\x15_discount_price_centsB\x16\n\x14_discount_percentageB{\n\x1corg.megacommerce.products.v1B\x11HeroProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,16 +38,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_HEROPRODUCT']._serialized_end=222
   _globals['_HEROPRODUCTDATA']._serialized_start=225
   _globals['_HEROPRODUCTDATA']._serialized_end=359
-  _globals['_HEROPRODUCTSREQUEST']._serialized_start=361
-  _globals['_HEROPRODUCTSREQUEST']._serialized_end=382
-  _globals['_HEROPRODUCTSRESPONSE']._serialized_start=384
-  _globals['_HEROPRODUCTSRESPONSE']._serialized_end=511
-  _globals['_HEROPRODUCTSRESPONSEDATA']._serialized_start=514
-  _globals['_HEROPRODUCTSRESPONSEDATA']._serialized_end=657
-  _globals['_CATEGORYSLIDER']._serialized_start=659
-  _globals['_CATEGORYSLIDER']._serialized_end=781
-  _globals['_WELCOMEDEALSSLIDER']._serialized_start=783
-  _globals['_WELCOMEDEALSSLIDER']._serialized_end=909
-  _globals['_HEROPRODUCTLISTITEM']._serialized_start=911
-  _globals['_HEROPRODUCTLISTITEM']._serialized_end=964
+  _globals['_CATEGORYSLIDER']._serialized_start=361
+  _globals['_CATEGORYSLIDER']._serialized_end=479
+  _globals['_WELCOMEDEALSSLIDER']._serialized_start=481
+  _globals['_WELCOMEDEALSSLIDER']._serialized_end=603
+  _globals['_HEROPRODUCTITEM']._serialized_start=605
+  _globals['_HEROPRODUCTITEM']._serialized_end=654
+  _globals['_HEROPRODUCTSREQUEST']._serialized_start=656
+  _globals['_HEROPRODUCTSREQUEST']._serialized_end=677
+  _globals['_HEROPRODUCTSRESPONSE']._serialized_start=679
+  _globals['_HEROPRODUCTSRESPONSE']._serialized_end=806
+  _globals['_HEROPRODUCTSRESPONSEDATA']._serialized_start=809
+  _globals['_HEROPRODUCTSRESPONSEDATA']._serialized_end=992
+  _globals['_HEROPRODUCTSRESPONSECATEGORYSLIDER']._serialized_start=995
+  _globals['_HEROPRODUCTSRESPONSECATEGORYSLIDER']._serialized_end=1137
+  _globals['_HEROPRODUCTSRESPONSEWELCOMEDEALSSLIDER']._serialized_start=1140
+  _globals['_HEROPRODUCTSRESPONSEWELCOMEDEALSSLIDER']._serialized_end=1286
+  _globals['_HEROPRODUCTLISTITEM']._serialized_start=1289
+  _globals['_HEROPRODUCTLISTITEM']._serialized_end=1511
 # @@protoc_insertion_point(module_scope)

@@ -142,6 +142,194 @@ func (x *HeroProductData) GetWelcomeDealsSlider() *WelcomeDealsSlider {
 	return nil
 }
 
+type CategorySlider struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Subtitle      string                 `protobuf:"bytes,2,opt,name=subtitle,proto3" json:"subtitle,omitempty"`
+	ButtonText    string                 `protobuf:"bytes,3,opt,name=button_text,json=buttonText,proto3" json:"button_text,omitempty"`
+	Products      []*HeroProductItem     `protobuf:"bytes,4,rep,name=products,proto3" json:"products,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CategorySlider) Reset() {
+	*x = CategorySlider{}
+	mi := &file_products_v1_hero_products_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CategorySlider) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CategorySlider) ProtoMessage() {}
+
+func (x *CategorySlider) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_hero_products_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CategorySlider.ProtoReflect.Descriptor instead.
+func (*CategorySlider) Descriptor() ([]byte, []int) {
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CategorySlider) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CategorySlider) GetSubtitle() string {
+	if x != nil {
+		return x.Subtitle
+	}
+	return ""
+}
+
+func (x *CategorySlider) GetButtonText() string {
+	if x != nil {
+		return x.ButtonText
+	}
+	return ""
+}
+
+func (x *CategorySlider) GetProducts() []*HeroProductItem {
+	if x != nil {
+		return x.Products
+	}
+	return nil
+}
+
+type WelcomeDealsSlider struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Subtitle      string                 `protobuf:"bytes,2,opt,name=subtitle,proto3" json:"subtitle,omitempty"`
+	ButtonText    string                 `protobuf:"bytes,3,opt,name=button_text,json=buttonText,proto3" json:"button_text,omitempty"`
+	Products      []*HeroProductItem     `protobuf:"bytes,4,rep,name=products,proto3" json:"products,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *WelcomeDealsSlider) Reset() {
+	*x = WelcomeDealsSlider{}
+	mi := &file_products_v1_hero_products_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WelcomeDealsSlider) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WelcomeDealsSlider) ProtoMessage() {}
+
+func (x *WelcomeDealsSlider) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_hero_products_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WelcomeDealsSlider.ProtoReflect.Descriptor instead.
+func (*WelcomeDealsSlider) Descriptor() ([]byte, []int) {
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *WelcomeDealsSlider) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *WelcomeDealsSlider) GetSubtitle() string {
+	if x != nil {
+		return x.Subtitle
+	}
+	return ""
+}
+
+func (x *WelcomeDealsSlider) GetButtonText() string {
+	if x != nil {
+		return x.ButtonText
+	}
+	return ""
+}
+
+func (x *WelcomeDealsSlider) GetProducts() []*HeroProductItem {
+	if x != nil {
+		return x.Products
+	}
+	return nil
+}
+
+type HeroProductItem struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // product id
+	VariantId     string                 `protobuf:"bytes,2,opt,name=variant_id,json=variantId,proto3" json:"variant_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *HeroProductItem) Reset() {
+	*x = HeroProductItem{}
+	mi := &file_products_v1_hero_products_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HeroProductItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HeroProductItem) ProtoMessage() {}
+
+func (x *HeroProductItem) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_hero_products_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HeroProductItem.ProtoReflect.Descriptor instead.
+func (*HeroProductItem) Descriptor() ([]byte, []int) {
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *HeroProductItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *HeroProductItem) GetVariantId() string {
+	if x != nil {
+		return x.VariantId
+	}
+	return ""
+}
+
 type HeroProductsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -150,7 +338,7 @@ type HeroProductsRequest struct {
 
 func (x *HeroProductsRequest) Reset() {
 	*x = HeroProductsRequest{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[2]
+	mi := &file_products_v1_hero_products_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -162,7 +350,7 @@ func (x *HeroProductsRequest) String() string {
 func (*HeroProductsRequest) ProtoMessage() {}
 
 func (x *HeroProductsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[2]
+	mi := &file_products_v1_hero_products_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -175,7 +363,7 @@ func (x *HeroProductsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeroProductsRequest.ProtoReflect.Descriptor instead.
 func (*HeroProductsRequest) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{2}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{5}
 }
 
 type HeroProductsResponse struct {
@@ -191,7 +379,7 @@ type HeroProductsResponse struct {
 
 func (x *HeroProductsResponse) Reset() {
 	*x = HeroProductsResponse{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[3]
+	mi := &file_products_v1_hero_products_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -203,7 +391,7 @@ func (x *HeroProductsResponse) String() string {
 func (*HeroProductsResponse) ProtoMessage() {}
 
 func (x *HeroProductsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[3]
+	mi := &file_products_v1_hero_products_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -216,7 +404,7 @@ func (x *HeroProductsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeroProductsResponse.ProtoReflect.Descriptor instead.
 func (*HeroProductsResponse) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{3}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *HeroProductsResponse) GetResponse() isHeroProductsResponse_Response {
@@ -261,16 +449,16 @@ func (*HeroProductsResponse_Data) isHeroProductsResponse_Response() {}
 func (*HeroProductsResponse_Error) isHeroProductsResponse_Response() {}
 
 type HeroProductsResponseData struct {
-	state              protoimpl.MessageState `protogen:"open.v1"`
-	CategorySlider     *CategorySlider        `protobuf:"bytes,1,opt,name=category_slider,json=categorySlider,proto3" json:"category_slider,omitempty"`
-	WelcomeDealsSlider *WelcomeDealsSlider    `protobuf:"bytes,2,opt,name=welcome_deals_slider,json=welcomeDealsSlider,proto3" json:"welcome_deals_slider,omitempty"`
+	state              protoimpl.MessageState                  `protogen:"open.v1"`
+	CategorySlider     *HeroProductsResponseCategorySlider     `protobuf:"bytes,1,opt,name=category_slider,json=categorySlider,proto3" json:"category_slider,omitempty"`
+	WelcomeDealsSlider *HeroProductsResponseWelcomeDealsSlider `protobuf:"bytes,2,opt,name=welcome_deals_slider,json=welcomeDealsSlider,proto3" json:"welcome_deals_slider,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
 
 func (x *HeroProductsResponseData) Reset() {
 	*x = HeroProductsResponseData{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[4]
+	mi := &file_products_v1_hero_products_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -282,7 +470,7 @@ func (x *HeroProductsResponseData) String() string {
 func (*HeroProductsResponseData) ProtoMessage() {}
 
 func (x *HeroProductsResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[4]
+	mi := &file_products_v1_hero_products_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -295,24 +483,24 @@ func (x *HeroProductsResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeroProductsResponseData.ProtoReflect.Descriptor instead.
 func (*HeroProductsResponseData) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{4}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *HeroProductsResponseData) GetCategorySlider() *CategorySlider {
+func (x *HeroProductsResponseData) GetCategorySlider() *HeroProductsResponseCategorySlider {
 	if x != nil {
 		return x.CategorySlider
 	}
 	return nil
 }
 
-func (x *HeroProductsResponseData) GetWelcomeDealsSlider() *WelcomeDealsSlider {
+func (x *HeroProductsResponseData) GetWelcomeDealsSlider() *HeroProductsResponseWelcomeDealsSlider {
 	if x != nil {
 		return x.WelcomeDealsSlider
 	}
 	return nil
 }
 
-type CategorySlider struct {
+type HeroProductsResponseCategorySlider struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Subtitle      string                 `protobuf:"bytes,2,opt,name=subtitle,proto3" json:"subtitle,omitempty"`
@@ -322,21 +510,21 @@ type CategorySlider struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CategorySlider) Reset() {
-	*x = CategorySlider{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[5]
+func (x *HeroProductsResponseCategorySlider) Reset() {
+	*x = HeroProductsResponseCategorySlider{}
+	mi := &file_products_v1_hero_products_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CategorySlider) String() string {
+func (x *HeroProductsResponseCategorySlider) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CategorySlider) ProtoMessage() {}
+func (*HeroProductsResponseCategorySlider) ProtoMessage() {}
 
-func (x *CategorySlider) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[5]
+func (x *HeroProductsResponseCategorySlider) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_hero_products_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -347,40 +535,40 @@ func (x *CategorySlider) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CategorySlider.ProtoReflect.Descriptor instead.
-func (*CategorySlider) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{5}
+// Deprecated: Use HeroProductsResponseCategorySlider.ProtoReflect.Descriptor instead.
+func (*HeroProductsResponseCategorySlider) Descriptor() ([]byte, []int) {
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *CategorySlider) GetTitle() string {
+func (x *HeroProductsResponseCategorySlider) GetTitle() string {
 	if x != nil {
 		return x.Title
 	}
 	return ""
 }
 
-func (x *CategorySlider) GetSubtitle() string {
+func (x *HeroProductsResponseCategorySlider) GetSubtitle() string {
 	if x != nil {
 		return x.Subtitle
 	}
 	return ""
 }
 
-func (x *CategorySlider) GetButtonText() string {
+func (x *HeroProductsResponseCategorySlider) GetButtonText() string {
 	if x != nil {
 		return x.ButtonText
 	}
 	return ""
 }
 
-func (x *CategorySlider) GetProducts() []*HeroProductListItem {
+func (x *HeroProductsResponseCategorySlider) GetProducts() []*HeroProductListItem {
 	if x != nil {
 		return x.Products
 	}
 	return nil
 }
 
-type WelcomeDealsSlider struct {
+type HeroProductsResponseWelcomeDealsSlider struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Subtitle      string                 `protobuf:"bytes,2,opt,name=subtitle,proto3" json:"subtitle,omitempty"`
@@ -390,21 +578,21 @@ type WelcomeDealsSlider struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WelcomeDealsSlider) Reset() {
-	*x = WelcomeDealsSlider{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[6]
+func (x *HeroProductsResponseWelcomeDealsSlider) Reset() {
+	*x = HeroProductsResponseWelcomeDealsSlider{}
+	mi := &file_products_v1_hero_products_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WelcomeDealsSlider) String() string {
+func (x *HeroProductsResponseWelcomeDealsSlider) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WelcomeDealsSlider) ProtoMessage() {}
+func (*HeroProductsResponseWelcomeDealsSlider) ProtoMessage() {}
 
-func (x *WelcomeDealsSlider) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[6]
+func (x *HeroProductsResponseWelcomeDealsSlider) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_hero_products_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -415,33 +603,33 @@ func (x *WelcomeDealsSlider) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WelcomeDealsSlider.ProtoReflect.Descriptor instead.
-func (*WelcomeDealsSlider) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{6}
+// Deprecated: Use HeroProductsResponseWelcomeDealsSlider.ProtoReflect.Descriptor instead.
+func (*HeroProductsResponseWelcomeDealsSlider) Descriptor() ([]byte, []int) {
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *WelcomeDealsSlider) GetTitle() string {
+func (x *HeroProductsResponseWelcomeDealsSlider) GetTitle() string {
 	if x != nil {
 		return x.Title
 	}
 	return ""
 }
 
-func (x *WelcomeDealsSlider) GetSubtitle() string {
+func (x *HeroProductsResponseWelcomeDealsSlider) GetSubtitle() string {
 	if x != nil {
 		return x.Subtitle
 	}
 	return ""
 }
 
-func (x *WelcomeDealsSlider) GetButtonText() string {
+func (x *HeroProductsResponseWelcomeDealsSlider) GetButtonText() string {
 	if x != nil {
 		return x.ButtonText
 	}
 	return ""
 }
 
-func (x *WelcomeDealsSlider) GetProducts() []*HeroProductListItem {
+func (x *HeroProductsResponseWelcomeDealsSlider) GetProducts() []*HeroProductListItem {
 	if x != nil {
 		return x.Products
 	}
@@ -449,16 +637,21 @@ func (x *WelcomeDealsSlider) GetProducts() []*HeroProductListItem {
 }
 
 type HeroProductListItem struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // product id
-	VariantId     string                 `protobuf:"bytes,2,opt,name=variant_id,json=variantId,proto3" json:"variant_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // product id
+	VariantId          string                 `protobuf:"bytes,2,opt,name=variant_id,json=variantId,proto3" json:"variant_id,omitempty"`
+	Title              string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Image              string                 `protobuf:"bytes,4,opt,name=image,proto3" json:"image,omitempty"`
+	PriceCents         uint32                 `protobuf:"varint,5,opt,name=price_cents,json=priceCents,proto3" json:"price_cents,omitempty"`
+	DiscountPriceCents *uint32                `protobuf:"varint,6,opt,name=discount_price_cents,json=discountPriceCents,proto3,oneof" json:"discount_price_cents,omitempty"`
+	DiscountPercentage *uint32                `protobuf:"varint,7,opt,name=discount_percentage,json=discountPercentage,proto3,oneof" json:"discount_percentage,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *HeroProductListItem) Reset() {
 	*x = HeroProductListItem{}
-	mi := &file_products_v1_hero_products_proto_msgTypes[7]
+	mi := &file_products_v1_hero_products_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -470,7 +663,7 @@ func (x *HeroProductListItem) String() string {
 func (*HeroProductListItem) ProtoMessage() {}
 
 func (x *HeroProductListItem) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_hero_products_proto_msgTypes[7]
+	mi := &file_products_v1_hero_products_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -483,7 +676,7 @@ func (x *HeroProductListItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeroProductListItem.ProtoReflect.Descriptor instead.
 func (*HeroProductListItem) Descriptor() ([]byte, []int) {
-	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{7}
+	return file_products_v1_hero_products_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *HeroProductListItem) GetId() string {
@@ -498,6 +691,41 @@ func (x *HeroProductListItem) GetVariantId() string {
 		return x.VariantId
 	}
 	return ""
+}
+
+func (x *HeroProductListItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *HeroProductListItem) GetImage() string {
+	if x != nil {
+		return x.Image
+	}
+	return ""
+}
+
+func (x *HeroProductListItem) GetPriceCents() uint32 {
+	if x != nil {
+		return x.PriceCents
+	}
+	return 0
+}
+
+func (x *HeroProductListItem) GetDiscountPriceCents() uint32 {
+	if x != nil && x.DiscountPriceCents != nil {
+		return *x.DiscountPriceCents
+	}
+	return 0
+}
+
+func (x *HeroProductListItem) GetDiscountPercentage() uint32 {
+	if x != nil && x.DiscountPercentage != nil {
+		return *x.DiscountPercentage
+	}
+	return 0
 }
 
 var File_products_v1_hero_products_proto protoreflect.FileDescriptor
@@ -515,32 +743,56 @@ const file_products_v1_hero_products_proto_rawDesc = "" +
 	"\v_updated_at\"\xaa\x01\n" +
 	"\x0fHeroProductData\x12D\n" +
 	"\x0fcategory_slider\x18\x01 \x01(\v2\x1b.products.v1.CategorySliderR\x0ecategorySlider\x12Q\n" +
-	"\x14welcome_deals_slider\x18\x02 \x01(\v2\x1f.products.v1.WelcomeDealsSliderR\x12welcomeDealsSlider\"\x15\n" +
+	"\x14welcome_deals_slider\x18\x02 \x01(\v2\x1f.products.v1.WelcomeDealsSliderR\x12welcomeDealsSlider\"\x9d\x01\n" +
+	"\x0eCategorySlider\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1a\n" +
+	"\bsubtitle\x18\x02 \x01(\tR\bsubtitle\x12\x1f\n" +
+	"\vbutton_text\x18\x03 \x01(\tR\n" +
+	"buttonText\x128\n" +
+	"\bproducts\x18\x04 \x03(\v2\x1c.products.v1.HeroProductItemR\bproducts\"\xa1\x01\n" +
+	"\x12WelcomeDealsSlider\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1a\n" +
+	"\bsubtitle\x18\x02 \x01(\tR\bsubtitle\x12\x1f\n" +
+	"\vbutton_text\x18\x03 \x01(\tR\n" +
+	"buttonText\x128\n" +
+	"\bproducts\x18\x04 \x03(\v2\x1c.products.v1.HeroProductItemR\bproducts\"@\n" +
+	"\x0fHeroProductItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"variant_id\x18\x02 \x01(\tR\tvariantId\"\x15\n" +
 	"\x13HeroProductsRequest\"\x8c\x01\n" +
 	"\x14HeroProductsResponse\x12;\n" +
 	"\x04data\x18\x01 \x01(\v2%.products.v1.HeroProductsResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
-	"\bresponse\"\xb3\x01\n" +
-	"\x18HeroProductsResponseData\x12D\n" +
-	"\x0fcategory_slider\x18\x01 \x01(\v2\x1b.products.v1.CategorySliderR\x0ecategorySlider\x12Q\n" +
-	"\x14welcome_deals_slider\x18\x02 \x01(\v2\x1f.products.v1.WelcomeDealsSliderR\x12welcomeDealsSlider\"\xa1\x01\n" +
-	"\x0eCategorySlider\x12\x14\n" +
+	"\bresponse\"\xdb\x01\n" +
+	"\x18HeroProductsResponseData\x12X\n" +
+	"\x0fcategory_slider\x18\x01 \x01(\v2/.products.v1.HeroProductsResponseCategorySliderR\x0ecategorySlider\x12e\n" +
+	"\x14welcome_deals_slider\x18\x02 \x01(\v23.products.v1.HeroProductsResponseWelcomeDealsSliderR\x12welcomeDealsSlider\"\xb5\x01\n" +
+	"\"HeroProductsResponseCategorySlider\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1a\n" +
 	"\bsubtitle\x18\x02 \x01(\tR\bsubtitle\x12\x1f\n" +
 	"\vbutton_text\x18\x03 \x01(\tR\n" +
 	"buttonText\x12<\n" +
-	"\bproducts\x18\x04 \x03(\v2 .products.v1.HeroProductListItemR\bproducts\"\xa5\x01\n" +
-	"\x12WelcomeDealsSlider\x12\x14\n" +
+	"\bproducts\x18\x04 \x03(\v2 .products.v1.HeroProductListItemR\bproducts\"\xb9\x01\n" +
+	"&HeroProductsResponseWelcomeDealsSlider\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1a\n" +
 	"\bsubtitle\x18\x02 \x01(\tR\bsubtitle\x12\x1f\n" +
 	"\vbutton_text\x18\x03 \x01(\tR\n" +
 	"buttonText\x12<\n" +
-	"\bproducts\x18\x04 \x03(\v2 .products.v1.HeroProductListItemR\bproducts\"D\n" +
+	"\bproducts\x18\x04 \x03(\v2 .products.v1.HeroProductListItemR\bproducts\"\xaf\x02\n" +
 	"\x13HeroProductListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
-	"variant_id\x18\x02 \x01(\tR\tvariantIdB{\n" +
+	"variant_id\x18\x02 \x01(\tR\tvariantId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x14\n" +
+	"\x05image\x18\x04 \x01(\tR\x05image\x12\x1f\n" +
+	"\vprice_cents\x18\x05 \x01(\rR\n" +
+	"priceCents\x125\n" +
+	"\x14discount_price_cents\x18\x06 \x01(\rH\x00R\x12discountPriceCents\x88\x01\x01\x124\n" +
+	"\x13discount_percentage\x18\a \x01(\rH\x01R\x12discountPercentage\x88\x01\x01B\x17\n" +
+	"\x15_discount_price_centsB\x16\n" +
+	"\x14_discount_percentageB{\n" +
 	"\x1corg.megacommerce.products.v1B\x11HeroProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -555,34 +807,39 @@ func file_products_v1_hero_products_proto_rawDescGZIP() []byte {
 	return file_products_v1_hero_products_proto_rawDescData
 }
 
-var file_products_v1_hero_products_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_products_v1_hero_products_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_products_v1_hero_products_proto_goTypes = []any{
-	(*HeroProduct)(nil),              // 0: products.v1.HeroProduct
-	(*HeroProductData)(nil),          // 1: products.v1.HeroProductData
-	(*HeroProductsRequest)(nil),      // 2: products.v1.HeroProductsRequest
-	(*HeroProductsResponse)(nil),     // 3: products.v1.HeroProductsResponse
-	(*HeroProductsResponseData)(nil), // 4: products.v1.HeroProductsResponseData
-	(*CategorySlider)(nil),           // 5: products.v1.CategorySlider
-	(*WelcomeDealsSlider)(nil),       // 6: products.v1.WelcomeDealsSlider
-	(*HeroProductListItem)(nil),      // 7: products.v1.HeroProductListItem
-	(*v1.Struct)(nil),                // 8: shared.v1.Struct
-	(*v1.AppError)(nil),              // 9: shared.v1.AppError
+	(*HeroProduct)(nil),                            // 0: products.v1.HeroProduct
+	(*HeroProductData)(nil),                        // 1: products.v1.HeroProductData
+	(*CategorySlider)(nil),                         // 2: products.v1.CategorySlider
+	(*WelcomeDealsSlider)(nil),                     // 3: products.v1.WelcomeDealsSlider
+	(*HeroProductItem)(nil),                        // 4: products.v1.HeroProductItem
+	(*HeroProductsRequest)(nil),                    // 5: products.v1.HeroProductsRequest
+	(*HeroProductsResponse)(nil),                   // 6: products.v1.HeroProductsResponse
+	(*HeroProductsResponseData)(nil),               // 7: products.v1.HeroProductsResponseData
+	(*HeroProductsResponseCategorySlider)(nil),     // 8: products.v1.HeroProductsResponseCategorySlider
+	(*HeroProductsResponseWelcomeDealsSlider)(nil), // 9: products.v1.HeroProductsResponseWelcomeDealsSlider
+	(*HeroProductListItem)(nil),                    // 10: products.v1.HeroProductListItem
+	(*v1.Struct)(nil),                              // 11: shared.v1.Struct
+	(*v1.AppError)(nil),                            // 12: shared.v1.AppError
 }
 var file_products_v1_hero_products_proto_depIdxs = []int32{
-	8, // 0: products.v1.HeroProduct.products_data:type_name -> shared.v1.Struct
-	5, // 1: products.v1.HeroProductData.category_slider:type_name -> products.v1.CategorySlider
-	6, // 2: products.v1.HeroProductData.welcome_deals_slider:type_name -> products.v1.WelcomeDealsSlider
-	4, // 3: products.v1.HeroProductsResponse.data:type_name -> products.v1.HeroProductsResponseData
-	9, // 4: products.v1.HeroProductsResponse.error:type_name -> shared.v1.AppError
-	5, // 5: products.v1.HeroProductsResponseData.category_slider:type_name -> products.v1.CategorySlider
-	6, // 6: products.v1.HeroProductsResponseData.welcome_deals_slider:type_name -> products.v1.WelcomeDealsSlider
-	7, // 7: products.v1.CategorySlider.products:type_name -> products.v1.HeroProductListItem
-	7, // 8: products.v1.WelcomeDealsSlider.products:type_name -> products.v1.HeroProductListItem
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	11, // 0: products.v1.HeroProduct.products_data:type_name -> shared.v1.Struct
+	2,  // 1: products.v1.HeroProductData.category_slider:type_name -> products.v1.CategorySlider
+	3,  // 2: products.v1.HeroProductData.welcome_deals_slider:type_name -> products.v1.WelcomeDealsSlider
+	4,  // 3: products.v1.CategorySlider.products:type_name -> products.v1.HeroProductItem
+	4,  // 4: products.v1.WelcomeDealsSlider.products:type_name -> products.v1.HeroProductItem
+	7,  // 5: products.v1.HeroProductsResponse.data:type_name -> products.v1.HeroProductsResponseData
+	12, // 6: products.v1.HeroProductsResponse.error:type_name -> shared.v1.AppError
+	8,  // 7: products.v1.HeroProductsResponseData.category_slider:type_name -> products.v1.HeroProductsResponseCategorySlider
+	9,  // 8: products.v1.HeroProductsResponseData.welcome_deals_slider:type_name -> products.v1.HeroProductsResponseWelcomeDealsSlider
+	10, // 9: products.v1.HeroProductsResponseCategorySlider.products:type_name -> products.v1.HeroProductListItem
+	10, // 10: products.v1.HeroProductsResponseWelcomeDealsSlider.products:type_name -> products.v1.HeroProductListItem
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_hero_products_proto_init() }
@@ -591,17 +848,18 @@ func file_products_v1_hero_products_proto_init() {
 		return
 	}
 	file_products_v1_hero_products_proto_msgTypes[0].OneofWrappers = []any{}
-	file_products_v1_hero_products_proto_msgTypes[3].OneofWrappers = []any{
+	file_products_v1_hero_products_proto_msgTypes[6].OneofWrappers = []any{
 		(*HeroProductsResponse_Data)(nil),
 		(*HeroProductsResponse_Error)(nil),
 	}
+	file_products_v1_hero_products_proto_msgTypes[10].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_hero_products_proto_rawDesc), len(file_products_v1_hero_products_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
