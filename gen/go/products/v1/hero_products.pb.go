@@ -451,6 +451,7 @@ func (x *WelcomeDealsSlider) GetProducts() []*HeroProductListItem {
 type HeroProductListItem struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // product id
+	VariantId     string                 `protobuf:"bytes,2,opt,name=variant_id,json=variantId,proto3" json:"variant_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -492,6 +493,13 @@ func (x *HeroProductListItem) GetId() string {
 	return ""
 }
 
+func (x *HeroProductListItem) GetVariantId() string {
+	if x != nil {
+		return x.VariantId
+	}
+	return ""
+}
+
 var File_products_v1_hero_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_hero_products_proto_rawDesc = "" +
@@ -528,9 +536,11 @@ const file_products_v1_hero_products_proto_rawDesc = "" +
 	"\bsubtitle\x18\x02 \x01(\tR\bsubtitle\x12\x1f\n" +
 	"\vbutton_text\x18\x03 \x01(\tR\n" +
 	"buttonText\x12<\n" +
-	"\bproducts\x18\x04 \x03(\v2 .products.v1.HeroProductListItemR\bproducts\"%\n" +
+	"\bproducts\x18\x04 \x03(\v2 .products.v1.HeroProductListItemR\bproducts\"D\n" +
 	"\x13HeroProductListItem\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02idB{\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"variant_id\x18\x02 \x01(\tR\tvariantIdB{\n" +
 	"\x1corg.megacommerce.products.v1B\x11HeroProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (

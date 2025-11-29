@@ -394,6 +394,7 @@ class HeroProductListItem final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kIdFieldNumber = 1,
+    kVariantIdFieldNumber = 2,
   };
   // string id = 1 [json_name = "id"];
   void clear_id() ;
@@ -410,12 +411,27 @@ class HeroProductListItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
+  // string variant_id = 2 [json_name = "variantId"];
+  void clear_variant_id() ;
+  const ::std::string& variant_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_variant_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_variant_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_variant_id();
+  void set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_variant_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_variant_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_variant_id();
+
+  public:
   // @@protoc_insertion_point(class_scope:products.v1.HeroProductListItem)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 1,
-                                   0, 42,
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 52,
                                    2>
       _table_;
 
@@ -437,6 +453,7 @@ class HeroProductListItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr id_;
+    ::google::protobuf::internal::ArenaStringPtr variant_id_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -3202,6 +3219,71 @@ inline void HeroProductListItem::set_allocated_id(::std::string* PROTOBUF_NULLAB
     _impl_.id_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:products.v1.HeroProductListItem.id)
+}
+
+// string variant_id = 2 [json_name = "variantId"];
+inline void HeroProductListItem::clear_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.variant_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::std::string& HeroProductListItem::variant_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.HeroProductListItem.variant_id)
+  return _internal_variant_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void HeroProductListItem::set_variant_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.variant_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.HeroProductListItem.variant_id)
+}
+inline ::std::string* PROTOBUF_NONNULL HeroProductListItem::mutable_variant_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_variant_id();
+  // @@protoc_insertion_point(field_mutable:products.v1.HeroProductListItem.variant_id)
+  return _s;
+}
+inline const ::std::string& HeroProductListItem::_internal_variant_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.variant_id_.Get();
+}
+inline void HeroProductListItem::_internal_set_variant_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.variant_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL HeroProductListItem::_internal_mutable_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.variant_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE HeroProductListItem::release_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.HeroProductListItem.variant_id)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.variant_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.variant_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void HeroProductListItem::set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.variant_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.variant_id_.IsDefault()) {
+    _impl_.variant_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.HeroProductListItem.variant_id)
 }
 
 #ifdef __GNUC__

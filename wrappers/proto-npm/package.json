@@ -1,6 +1,6 @@
 {
   "name": "@megacommerce/proto",
-  "version": "0.4.42",
+  "version": "0.4.43",
   "description": "TypeScript Protobuf bindings for MegaCommerce",
   "license": "MIT",
   "types": "dist/index.d.ts",

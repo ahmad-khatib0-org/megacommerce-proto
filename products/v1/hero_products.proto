@@ -52,4 +52,5 @@ message WelcomeDealsSlider {
 
 message HeroProductListItem {
   string id = 1; // product id
+  string variant_id = 2;
 }

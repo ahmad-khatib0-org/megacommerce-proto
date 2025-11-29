@@ -53,6 +53,7 @@ export interface WelcomeDealsSlider {
 export interface HeroProductListItem {
   /** product id */
   id: string;
+  variantId: string;
 }
 
 function createBaseHeroProduct(): HeroProduct {
@@ -673,13 +674,16 @@ export const WelcomeDealsSlider: MessageFns<WelcomeDealsSlider> = {
 };
 
 function createBaseHeroProductListItem(): HeroProductListItem {
-  return { id: "" };
+  return { id: "", variantId: "" };
 }
 
 export const HeroProductListItem: MessageFns<HeroProductListItem> = {
   encode(message: HeroProductListItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
+    }
+    if (message.variantId !== "") {
+      writer.uint32(18).string(message.variantId);
     }
     return writer;
   },
@@ -699,6 +703,14 @@ export const HeroProductListItem: MessageFns<HeroProductListItem> = {
           message.id = reader.string();
           continue;
         }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.variantId = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -709,13 +721,19 @@ export const HeroProductListItem: MessageFns<HeroProductListItem> = {
   },
 
   fromJSON(object: any): HeroProductListItem {
-    return { id: isSet(object.id) ? globalThis.String(object.id) : "" };
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
+      variantId: isSet(object.variantId) ? globalThis.String(object.variantId) : "",
+    };
   },
 
   toJSON(message: HeroProductListItem): unknown {
     const obj: any = {};
     if (message.id !== "") {
       obj.id = message.id;
+    }
+    if (message.variantId !== "") {
+      obj.variantId = message.variantId;
     }
     return obj;
   },
@@ -726,6 +744,7 @@ export const HeroProductListItem: MessageFns<HeroProductListItem> = {
   fromPartial<I extends Exact<DeepPartial<HeroProductListItem>, I>>(object: I): HeroProductListItem {
     const message = createBaseHeroProductListItem();
     message.id = object.id ?? "";
+    message.variantId = object.variantId ?? "";
     return message;
   },
 };

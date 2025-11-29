@@ -50,6 +50,9 @@ inline constexpr HeroProductListItem::Impl_::Impl_(
       : _cached_size_{0},
         id_(
             &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        variant_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()) {}
 
 template <typename>
@@ -311,9 +314,11 @@ const ::uint32_t
         ~0u,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_._has_bits_),
-        4, // hasbit index offset
+        5, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_.id_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::HeroProductListItem, _impl_.variant_id_),
         0,
+        1,
 };
 
 static const ::_pbi::MigrationSchema
@@ -366,12 +371,12 @@ const char descriptor_table_protodef_products_2fv1_2fhero_5fproducts_2eproto[] A
     "DealsSlider\022\024\n\005title\030\001 \001(\tR\005title\022\032\n\010sub"
     "title\030\002 \001(\tR\010subtitle\022\037\n\013button_text\030\003 \001"
     "(\tR\nbuttonText\022<\n\010products\030\004 \003(\0132 .produ"
-    "cts.v1.HeroProductListItemR\010products\"%\n\023"
-    "HeroProductListItem\022\016\n\002id\030\001 \001(\tR\002idB{\n\034o"
-    "rg.megacommerce.products.v1B\021HeroProduct"
-    "sProtoZEgithub.com/ahmad-khatib0-org/meg"
-    "acommerce-proto/gen/go/products/v1;v1\370\001\001"
-    "b\006proto3"
+    "cts.v1.HeroProductListItemR\010products\"D\n\023"
+    "HeroProductListItem\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nv"
+    "ariant_id\030\002 \001(\tR\tvariantIdB{\n\034org.megaco"
+    "mmerce.products.v1B\021HeroProductsProtoZEg"
+    "ithub.com/ahmad-khatib0-org/megacommerce"
+    "-proto/gen/go/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fhero_5fproducts_2eproto_deps[2] = {
@@ -382,7 +387,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fhero_5fproducts_2eprot
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fhero_5fproducts_2eproto = {
     false,
     false,
-    1288,
+    1319,
     descriptor_table_protodef_products_2fv1_2fhero_5fproducts_2eproto,
     "products/v1/hero_products.proto",
     &descriptor_table_products_2fv1_2fhero_5fproducts_2eproto_once,
@@ -2685,7 +2690,8 @@ PROTOBUF_NDEBUG_INLINE HeroProductListItem::Impl_::Impl_(
     const ::products::v1::HeroProductListItem& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        id_(arena, from.id_) {}
+        id_(arena, from.id_),
+        variant_id_(arena, from.variant_id_) {}
 
 HeroProductListItem::HeroProductListItem(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -2707,7 +2713,8 @@ PROTOBUF_NDEBUG_INLINE HeroProductListItem::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        id_(arena) {}
+        id_(arena),
+        variant_id_(arena) {}
 
 inline void HeroProductListItem::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -2721,6 +2728,7 @@ inline void HeroProductListItem::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.id_.Destroy();
+  this_._impl_.variant_id_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -2767,16 +2775,16 @@ HeroProductListItem::GetClassData() const {
   return HeroProductListItem_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 42, 2>
+const ::_pbi::TcParseTable<1, 2, 0, 52, 2>
 HeroProductListItem::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_._has_bits_),
     0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
+    2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
+    4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
+    2,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     HeroProductListItem_class_data_.base(),
@@ -2786,6 +2794,9 @@ HeroProductListItem::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::HeroProductListItem>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
+    // string variant_id = 2 [json_name = "variantId"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.variant_id_)}},
     // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.id_)}},
@@ -2795,12 +2806,16 @@ HeroProductListItem::_table_ = {
     // string id = 1 [json_name = "id"];
     {PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string variant_id = 2 [json_name = "variantId"];
+    {PROTOBUF_FIELD_OFFSET(HeroProductListItem, _impl_.variant_id_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\37\2\0\0\0\0\0\0"
+    "\37\2\12\0\0\0\0\0"
     "products.v1.HeroProductListItem"
     "id"
+    "variant_id"
   }},
 };
 PROTOBUF_NOINLINE void HeroProductListItem::Clear() {
@@ -2811,8 +2826,13 @@ PROTOBUF_NOINLINE void HeroProductListItem::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000001u) != 0) {
-    _impl_.id_.ClearNonDefaultToEmpty();
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.id_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.variant_id_.ClearNonDefaultToEmpty();
+    }
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -2843,6 +2863,16 @@ PROTOBUF_NOINLINE void HeroProductListItem::Clear() {
     }
   }
 
+  // string variant_id = 2 [json_name = "variantId"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_variant_id().empty()) {
+      const ::std::string& _s = this_._internal_variant_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.HeroProductListItem.variant_id");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2866,13 +2896,21 @@ PROTOBUF_NOINLINE void HeroProductListItem::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void)cached_has_bits;
 
-   {
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
     // string id = 1 [json_name = "id"];
-    cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_id());
+      }
+    }
+    // string variant_id = 2 [json_name = "variantId"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_variant_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_variant_id());
       }
     }
   }
@@ -2889,12 +2927,23 @@ void HeroProductListItem::MergeImpl(::google::protobuf::MessageLite& to_msg, con
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000001u) != 0) {
-    if (!from._internal_id().empty()) {
-      _this->_internal_set_id(from._internal_id());
-    } else {
-      if (_this->_impl_.id_.IsDefault()) {
-        _this->_internal_set_id("");
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_id().empty()) {
+        _this->_internal_set_id(from._internal_id());
+      } else {
+        if (_this->_impl_.id_.IsDefault()) {
+          _this->_internal_set_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_variant_id().empty()) {
+        _this->_internal_set_variant_id(from._internal_variant_id());
+      } else {
+        if (_this->_impl_.variant_id_.IsDefault()) {
+          _this->_internal_set_variant_id("");
+        }
       }
     }
   }
@@ -2917,6 +2966,7 @@ void HeroProductListItem::InternalSwap(HeroProductListItem* PROTOBUF_RESTRICT PR
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.variant_id_, &other->_impl_.variant_id_, arena);
 }
 
 ::google::protobuf::Metadata HeroProductListItem::GetMetadata() const {
