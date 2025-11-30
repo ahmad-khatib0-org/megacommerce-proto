@@ -1046,7 +1046,7 @@ pub struct ProductItemMetadata {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductsToLikeRequest {
     #[prost(message, optional, tag = "2")]
-    pub pagination: ::core::option::Option<super::super::shared::v1::PaginationResponse>,
+    pub pagination: ::core::option::Option<super::super::shared::v1::PaginationRequest>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1070,6 +1070,8 @@ pub mod products_to_like_response {
 pub struct ProductsToLikeResponseData {
     #[prost(message, repeated, tag = "1")]
     pub products: ::prost::alloc::vec::Vec<ProductToLikeListItem>,
+    #[prost(message, optional, tag = "2")]
+    pub pagination: ::core::option::Option<super::super::shared::v1::PaginationResponse>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

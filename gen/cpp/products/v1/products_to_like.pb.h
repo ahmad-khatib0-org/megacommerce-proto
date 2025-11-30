@@ -895,202 +895,6 @@ class ProductItemMetadata final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull ProductItemMetadata_class_data_;
 // -------------------------------------------------------------------
 
-class ProductsToLikeRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:products.v1.ProductsToLikeRequest) */ {
- public:
-  inline ProductsToLikeRequest() : ProductsToLikeRequest(nullptr) {}
-  ~ProductsToLikeRequest() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ProductsToLikeRequest* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductsToLikeRequest));
-  }
-#endif
-
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ProductsToLikeRequest(::google::protobuf::internal::ConstantInitialized);
-
-  inline ProductsToLikeRequest(const ProductsToLikeRequest& from) : ProductsToLikeRequest(nullptr, from) {}
-  inline ProductsToLikeRequest(ProductsToLikeRequest&& from) noexcept
-      : ProductsToLikeRequest(nullptr, ::std::move(from)) {}
-  inline ProductsToLikeRequest& operator=(const ProductsToLikeRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ProductsToLikeRequest& operator=(ProductsToLikeRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ProductsToLikeRequest& default_instance() {
-    return *reinterpret_cast<const ProductsToLikeRequest*>(
-        &_ProductsToLikeRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 3;
-  friend void swap(ProductsToLikeRequest& a, ProductsToLikeRequest& b) { a.Swap(&b); }
-  inline void Swap(ProductsToLikeRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ProductsToLikeRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  ProductsToLikeRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<ProductsToLikeRequest>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const ProductsToLikeRequest& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ProductsToLikeRequest& from) { ProductsToLikeRequest::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(ProductsToLikeRequest* PROTOBUF_NONNULL other);
- private:
-  template <typename T>
-  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "products.v1.ProductsToLikeRequest"; }
-
- protected:
-  explicit ProductsToLikeRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ProductsToLikeRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductsToLikeRequest& from);
-  ProductsToLikeRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductsToLikeRequest&& from) noexcept
-      : ProductsToLikeRequest(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_();
-
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kPaginationFieldNumber = 2,
-  };
-  // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
-  bool has_pagination() const;
-  void clear_pagination() ;
-  const ::shared::v1::PaginationResponse& pagination() const;
-  [[nodiscard]] ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE release_pagination();
-  ::shared::v1::PaginationResponse* PROTOBUF_NONNULL mutable_pagination();
-  void set_allocated_pagination(::shared::v1::PaginationResponse* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_pagination(::shared::v1::PaginationResponse* PROTOBUF_NULLABLE value);
-  ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE unsafe_arena_release_pagination();
-
-  private:
-  const ::shared::v1::PaginationResponse& _internal_pagination() const;
-  ::shared::v1::PaginationResponse* PROTOBUF_NONNULL _internal_mutable_pagination();
-
-  public:
-  // @@protoc_insertion_point(class_scope:products.v1.ProductsToLikeRequest)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 1,
-                                   1, 0,
-                                   2>
-      _table_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ProductsToLikeRequest& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE pagination_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_products_2fv1_2fproducts_5fto_5flike_2eproto;
-};
-
-extern const ::google::protobuf::internal::ClassDataFull ProductsToLikeRequest_class_data_;
-// -------------------------------------------------------------------
-
 class ProductToLikeListItem final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:products.v1.ProductToLikeListItem) */ {
  public:
@@ -1527,6 +1331,7 @@ class ProductsToLikeResponseData final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kProductsFieldNumber = 1,
+    kPaginationFieldNumber = 2,
   };
   // repeated .products.v1.ProductToLikeListItem products = 1 [json_name = "products"];
   int products_size() const;
@@ -1545,7 +1350,219 @@ class ProductsToLikeResponseData final : public ::google::protobuf::Message
   const ::products::v1::ProductToLikeListItem& products(int index) const;
   ::products::v1::ProductToLikeListItem* PROTOBUF_NONNULL add_products();
   const ::google::protobuf::RepeatedPtrField<::products::v1::ProductToLikeListItem>& products() const;
+  // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+  bool has_pagination() const;
+  void clear_pagination() ;
+  const ::shared::v1::PaginationResponse& pagination() const;
+  [[nodiscard]] ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE release_pagination();
+  ::shared::v1::PaginationResponse* PROTOBUF_NONNULL mutable_pagination();
+  void set_allocated_pagination(::shared::v1::PaginationResponse* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_pagination(::shared::v1::PaginationResponse* PROTOBUF_NULLABLE value);
+  ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE unsafe_arena_release_pagination();
+
+  private:
+  const ::shared::v1::PaginationResponse& _internal_pagination() const;
+  ::shared::v1::PaginationResponse* PROTOBUF_NONNULL _internal_mutable_pagination();
+
+  public:
   // @@protoc_insertion_point(class_scope:products.v1.ProductsToLikeResponseData)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   2, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ProductsToLikeResponseData& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField< ::products::v1::ProductToLikeListItem > products_;
+    ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE pagination_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fproducts_5fto_5flike_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ProductsToLikeResponseData_class_data_;
+// -------------------------------------------------------------------
+
+class ProductsToLikeRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.ProductsToLikeRequest) */ {
+ public:
+  inline ProductsToLikeRequest() : ProductsToLikeRequest(nullptr) {}
+  ~ProductsToLikeRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ProductsToLikeRequest* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductsToLikeRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ProductsToLikeRequest(::google::protobuf::internal::ConstantInitialized);
+
+  inline ProductsToLikeRequest(const ProductsToLikeRequest& from) : ProductsToLikeRequest(nullptr, from) {}
+  inline ProductsToLikeRequest(ProductsToLikeRequest&& from) noexcept
+      : ProductsToLikeRequest(nullptr, ::std::move(from)) {}
+  inline ProductsToLikeRequest& operator=(const ProductsToLikeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProductsToLikeRequest& operator=(ProductsToLikeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProductsToLikeRequest& default_instance() {
+    return *reinterpret_cast<const ProductsToLikeRequest*>(
+        &_ProductsToLikeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 3;
+  friend void swap(ProductsToLikeRequest& a, ProductsToLikeRequest& b) { a.Swap(&b); }
+  inline void Swap(ProductsToLikeRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProductsToLikeRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ProductsToLikeRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ProductsToLikeRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ProductsToLikeRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ProductsToLikeRequest& from) { ProductsToLikeRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ProductsToLikeRequest* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.ProductsToLikeRequest"; }
+
+ protected:
+  explicit ProductsToLikeRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ProductsToLikeRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductsToLikeRequest& from);
+  ProductsToLikeRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductsToLikeRequest&& from) noexcept
+      : ProductsToLikeRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kPaginationFieldNumber = 2,
+  };
+  // .shared.v1.PaginationRequest pagination = 2 [json_name = "pagination"];
+  bool has_pagination() const;
+  void clear_pagination() ;
+  const ::shared::v1::PaginationRequest& pagination() const;
+  [[nodiscard]] ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE release_pagination();
+  ::shared::v1::PaginationRequest* PROTOBUF_NONNULL mutable_pagination();
+  void set_allocated_pagination(::shared::v1::PaginationRequest* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_pagination(::shared::v1::PaginationRequest* PROTOBUF_NULLABLE value);
+  ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE unsafe_arena_release_pagination();
+
+  private:
+  const ::shared::v1::PaginationRequest& _internal_pagination() const;
+  ::shared::v1::PaginationRequest* PROTOBUF_NONNULL _internal_mutable_pagination();
+
+  public:
+  // @@protoc_insertion_point(class_scope:products.v1.ProductsToLikeRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
@@ -1568,16 +1585,17 @@ class ProductsToLikeResponseData final : public ::google::protobuf::Message
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ProductsToLikeResponseData& from_msg);
-    ::google::protobuf::RepeatedPtrField< ::products::v1::ProductToLikeListItem > products_;
+        const ProductsToLikeRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
+    ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE pagination_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_products_2fv1_2fproducts_5fto_5flike_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull ProductsToLikeResponseData_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull ProductsToLikeRequest_class_data_;
 // -------------------------------------------------------------------
 
 class ProductsToLikeResponse final : public ::google::protobuf::Message
@@ -2348,28 +2366,28 @@ inline void ProductItemMetadata::set_allocated_label(::std::string* PROTOBUF_NUL
 
 // ProductsToLikeRequest
 
-// .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+// .shared.v1.PaginationRequest pagination = 2 [json_name = "pagination"];
 inline bool ProductsToLikeRequest::has_pagination() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.pagination_ != nullptr);
   return value;
 }
-inline const ::shared::v1::PaginationResponse& ProductsToLikeRequest::_internal_pagination() const {
+inline const ::shared::v1::PaginationRequest& ProductsToLikeRequest::_internal_pagination() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::shared::v1::PaginationResponse* p = _impl_.pagination_;
-  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::PaginationResponse&>(::shared::v1::_PaginationResponse_default_instance_);
+  const ::shared::v1::PaginationRequest* p = _impl_.pagination_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::PaginationRequest&>(::shared::v1::_PaginationRequest_default_instance_);
 }
-inline const ::shared::v1::PaginationResponse& ProductsToLikeRequest::pagination() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::shared::v1::PaginationRequest& ProductsToLikeRequest::pagination() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:products.v1.ProductsToLikeRequest.pagination)
   return _internal_pagination();
 }
 inline void ProductsToLikeRequest::unsafe_arena_set_allocated_pagination(
-    ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE value) {
+    ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.pagination_);
   }
-  _impl_.pagination_ = reinterpret_cast<::shared::v1::PaginationResponse*>(value);
+  _impl_.pagination_ = reinterpret_cast<::shared::v1::PaginationRequest*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
@@ -2377,11 +2395,11 @@ inline void ProductsToLikeRequest::unsafe_arena_set_allocated_pagination(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductsToLikeRequest.pagination)
 }
-inline ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE ProductsToLikeRequest::release_pagination() {
+inline ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE ProductsToLikeRequest::release_pagination() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::shared::v1::PaginationResponse* released = _impl_.pagination_;
+  ::shared::v1::PaginationRequest* released = _impl_.pagination_;
   _impl_.pagination_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
     auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
@@ -2396,31 +2414,31 @@ inline ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE ProductsToLikeRequest
   }
   return released;
 }
-inline ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE ProductsToLikeRequest::unsafe_arena_release_pagination() {
+inline ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE ProductsToLikeRequest::unsafe_arena_release_pagination() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:products.v1.ProductsToLikeRequest.pagination)
 
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::shared::v1::PaginationResponse* temp = _impl_.pagination_;
+  ::shared::v1::PaginationRequest* temp = _impl_.pagination_;
   _impl_.pagination_ = nullptr;
   return temp;
 }
-inline ::shared::v1::PaginationResponse* PROTOBUF_NONNULL ProductsToLikeRequest::_internal_mutable_pagination() {
+inline ::shared::v1::PaginationRequest* PROTOBUF_NONNULL ProductsToLikeRequest::_internal_mutable_pagination() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.pagination_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::PaginationResponse>(GetArena());
-    _impl_.pagination_ = reinterpret_cast<::shared::v1::PaginationResponse*>(p);
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::PaginationRequest>(GetArena());
+    _impl_.pagination_ = reinterpret_cast<::shared::v1::PaginationRequest*>(p);
   }
   return _impl_.pagination_;
 }
-inline ::shared::v1::PaginationResponse* PROTOBUF_NONNULL ProductsToLikeRequest::mutable_pagination()
+inline ::shared::v1::PaginationRequest* PROTOBUF_NONNULL ProductsToLikeRequest::mutable_pagination()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000001u;
-  ::shared::v1::PaginationResponse* _msg = _internal_mutable_pagination();
+  ::shared::v1::PaginationRequest* _msg = _internal_mutable_pagination();
   // @@protoc_insertion_point(field_mutable:products.v1.ProductsToLikeRequest.pagination)
   return _msg;
 }
-inline void ProductsToLikeRequest::set_allocated_pagination(::shared::v1::PaginationResponse* PROTOBUF_NULLABLE value) {
+inline void ProductsToLikeRequest::set_allocated_pagination(::shared::v1::PaginationRequest* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
@@ -2437,7 +2455,7 @@ inline void ProductsToLikeRequest::set_allocated_pagination(::shared::v1::Pagina
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
 
-  _impl_.pagination_ = reinterpret_cast<::shared::v1::PaginationResponse*>(value);
+  _impl_.pagination_ = reinterpret_cast<::shared::v1::PaginationRequest*>(value);
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductsToLikeRequest.pagination)
 }
 
@@ -2657,6 +2675,99 @@ inline ::google::protobuf::RepeatedPtrField<::products::v1::ProductToLikeListIte
 ProductsToLikeResponseData::_internal_mutable_products() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.products_;
+}
+
+// .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+inline bool ProductsToLikeResponseData::has_pagination() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.pagination_ != nullptr);
+  return value;
+}
+inline const ::shared::v1::PaginationResponse& ProductsToLikeResponseData::_internal_pagination() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::shared::v1::PaginationResponse* p = _impl_.pagination_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::PaginationResponse&>(::shared::v1::_PaginationResponse_default_instance_);
+}
+inline const ::shared::v1::PaginationResponse& ProductsToLikeResponseData::pagination() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductsToLikeResponseData.pagination)
+  return _internal_pagination();
+}
+inline void ProductsToLikeResponseData::unsafe_arena_set_allocated_pagination(
+    ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.pagination_);
+  }
+  _impl_.pagination_ = reinterpret_cast<::shared::v1::PaginationResponse*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductsToLikeResponseData.pagination)
+}
+inline ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE ProductsToLikeResponseData::release_pagination() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::shared::v1::PaginationResponse* released = _impl_.pagination_;
+  _impl_.pagination_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::shared::v1::PaginationResponse* PROTOBUF_NULLABLE ProductsToLikeResponseData::unsafe_arena_release_pagination() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductsToLikeResponseData.pagination)
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::shared::v1::PaginationResponse* temp = _impl_.pagination_;
+  _impl_.pagination_ = nullptr;
+  return temp;
+}
+inline ::shared::v1::PaginationResponse* PROTOBUF_NONNULL ProductsToLikeResponseData::_internal_mutable_pagination() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.pagination_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::PaginationResponse>(GetArena());
+    _impl_.pagination_ = reinterpret_cast<::shared::v1::PaginationResponse*>(p);
+  }
+  return _impl_.pagination_;
+}
+inline ::shared::v1::PaginationResponse* PROTOBUF_NONNULL ProductsToLikeResponseData::mutable_pagination()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  ::shared::v1::PaginationResponse* _msg = _internal_mutable_pagination();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductsToLikeResponseData.pagination)
+  return _msg;
+}
+inline void ProductsToLikeResponseData::set_allocated_pagination(::shared::v1::PaginationResponse* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.pagination_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+
+  _impl_.pagination_ = reinterpret_cast<::shared::v1::PaginationResponse*>(value);
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductsToLikeResponseData.pagination)
 }
 
 // -------------------------------------------------------------------

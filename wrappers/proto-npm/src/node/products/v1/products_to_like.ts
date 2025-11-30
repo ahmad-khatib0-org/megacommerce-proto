@@ -7,7 +7,7 @@
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { AppError } from "../../shared/v1/error";
-import { PaginationResponse } from "../../shared/v1/pagination";
+import { PaginationRequest, PaginationResponse } from "../../shared/v1/pagination";
 
 export const protobufPackage = "products.v1";
 
@@ -117,7 +117,7 @@ export interface ProductItemMetadata {
 }
 
 export interface ProductsToLikeRequest {
-  pagination?: PaginationResponse | undefined;
+  pagination?: PaginationRequest | undefined;
 }
 
 export interface ProductsToLikeResponse {
@@ -127,6 +127,7 @@ export interface ProductsToLikeResponse {
 
 export interface ProductsToLikeResponseData {
   products: ProductToLikeListItem[];
+  pagination?: PaginationResponse | undefined;
 }
 
 export interface ProductToLikeListItem {
@@ -470,7 +471,7 @@ function createBaseProductsToLikeRequest(): ProductsToLikeRequest {
 export const ProductsToLikeRequest: MessageFns<ProductsToLikeRequest> = {
   encode(message: ProductsToLikeRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.pagination !== undefined) {
-      PaginationResponse.encode(message.pagination, writer.uint32(18).fork()).join();
+      PaginationRequest.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
@@ -487,7 +488,7 @@ export const ProductsToLikeRequest: MessageFns<ProductsToLikeRequest> = {
             break;
           }
 
-          message.pagination = PaginationResponse.decode(reader, reader.uint32());
+          message.pagination = PaginationRequest.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -500,13 +501,13 @@ export const ProductsToLikeRequest: MessageFns<ProductsToLikeRequest> = {
   },
 
   fromJSON(object: any): ProductsToLikeRequest {
-    return { pagination: isSet(object.pagination) ? PaginationResponse.fromJSON(object.pagination) : undefined };
+    return { pagination: isSet(object.pagination) ? PaginationRequest.fromJSON(object.pagination) : undefined };
   },
 
   toJSON(message: ProductsToLikeRequest): unknown {
     const obj: any = {};
     if (message.pagination !== undefined) {
-      obj.pagination = PaginationResponse.toJSON(message.pagination);
+      obj.pagination = PaginationRequest.toJSON(message.pagination);
     }
     return obj;
   },
@@ -517,7 +518,7 @@ export const ProductsToLikeRequest: MessageFns<ProductsToLikeRequest> = {
   fromPartial<I extends Exact<DeepPartial<ProductsToLikeRequest>, I>>(object: I): ProductsToLikeRequest {
     const message = createBaseProductsToLikeRequest();
     message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? PaginationResponse.fromPartial(object.pagination)
+      ? PaginationRequest.fromPartial(object.pagination)
       : undefined;
     return message;
   },
@@ -604,13 +605,16 @@ export const ProductsToLikeResponse: MessageFns<ProductsToLikeResponse> = {
 };
 
 function createBaseProductsToLikeResponseData(): ProductsToLikeResponseData {
-  return { products: [] };
+  return { products: [], pagination: undefined };
 }
 
 export const ProductsToLikeResponseData: MessageFns<ProductsToLikeResponseData> = {
   encode(message: ProductsToLikeResponseData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     for (const v of message.products) {
       ProductToLikeListItem.encode(v!, writer.uint32(10).fork()).join();
+    }
+    if (message.pagination !== undefined) {
+      PaginationResponse.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
@@ -630,6 +634,14 @@ export const ProductsToLikeResponseData: MessageFns<ProductsToLikeResponseData> 
           message.products.push(ProductToLikeListItem.decode(reader, reader.uint32()));
           continue;
         }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.pagination = PaginationResponse.decode(reader, reader.uint32());
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -644,6 +656,7 @@ export const ProductsToLikeResponseData: MessageFns<ProductsToLikeResponseData> 
       products: globalThis.Array.isArray(object?.products)
         ? object.products.map((e: any) => ProductToLikeListItem.fromJSON(e))
         : [],
+      pagination: isSet(object.pagination) ? PaginationResponse.fromJSON(object.pagination) : undefined,
     };
   },
 
@@ -651,6 +664,9 @@ export const ProductsToLikeResponseData: MessageFns<ProductsToLikeResponseData> 
     const obj: any = {};
     if (message.products?.length) {
       obj.products = message.products.map((e) => ProductToLikeListItem.toJSON(e));
+    }
+    if (message.pagination !== undefined) {
+      obj.pagination = PaginationResponse.toJSON(message.pagination);
     }
     return obj;
   },
@@ -661,6 +677,9 @@ export const ProductsToLikeResponseData: MessageFns<ProductsToLikeResponseData> 
   fromPartial<I extends Exact<DeepPartial<ProductsToLikeResponseData>, I>>(object: I): ProductsToLikeResponseData {
     const message = createBaseProductsToLikeResponseData();
     message.products = object.products?.map((e) => ProductToLikeListItem.fromPartial(e)) || [];
+    message.pagination = (object.pagination !== undefined && object.pagination !== null)
+      ? PaginationResponse.fromPartial(object.pagination)
+      : undefined;
     return message;
   },
 };

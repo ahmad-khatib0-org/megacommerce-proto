@@ -121,31 +121,6 @@ struct ProductItemMetadataDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductItemMetadataDefaultTypeInternal _ProductItemMetadata_default_instance_;
 
-inline constexpr ProductsToLikeRequest::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        pagination_{nullptr} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR ProductsToLikeRequest::ProductsToLikeRequest(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ProductsToLikeRequest_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct ProductsToLikeRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductsToLikeRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductsToLikeRequestDefaultTypeInternal() {}
-  union {
-    ProductsToLikeRequest _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductsToLikeRequestDefaultTypeInternal _ProductsToLikeRequest_default_instance_;
-
 inline constexpr ProductToLikeListItem::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -185,8 +160,9 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 
 inline constexpr ProductsToLikeResponseData::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : products_{},
-        _cached_size_{0} {}
+      : _cached_size_{0},
+        products_{},
+        pagination_{nullptr} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR ProductsToLikeResponseData::ProductsToLikeResponseData(::_pbi::ConstantInitialized)
@@ -207,6 +183,31 @@ struct ProductsToLikeResponseDataDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductsToLikeResponseDataDefaultTypeInternal _ProductsToLikeResponseData_default_instance_;
+
+inline constexpr ProductsToLikeRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        pagination_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductsToLikeRequest::ProductsToLikeRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductsToLikeRequest_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductsToLikeRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductsToLikeRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductsToLikeRequestDefaultTypeInternal() {}
+  union {
+    ProductsToLikeRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductsToLikeRequestDefaultTypeInternal _ProductsToLikeRequest_default_instance_;
 
 inline constexpr ProductsToLikeResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -285,8 +286,13 @@ const ::uint32_t
         ::_pbi::kInvalidFieldOffsetTag,
         ::_pbi::kInvalidFieldOffsetTag,
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductsToLikeResponse, _impl_.response_),
-        0x000, // bitmap
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductsToLikeResponseData, _impl_._has_bits_),
+        5, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductsToLikeResponseData, _impl_.products_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductsToLikeResponseData, _impl_.pagination_),
+        ~0u,
+        0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductToLikeListItem, _impl_._has_bits_),
         10, // hasbit index offset
@@ -314,7 +320,7 @@ static const ::_pbi::MigrationSchema
         {33, sizeof(::products::v1::ProductsToLikeRequest)},
         {38, sizeof(::products::v1::ProductsToLikeResponse)},
         {43, sizeof(::products::v1::ProductsToLikeResponseData)},
-        {45, sizeof(::products::v1::ProductToLikeListItem)},
+        {50, sizeof(::products::v1::ProductToLikeListItem)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductPrice_default_instance_._instance,
@@ -344,34 +350,35 @@ const char descriptor_table_protodef_products_2fv1_2fproducts_5fto_5flike_2eprot
     "stimated_days\030\005 \001(\005R\020maxEstimatedDays\"e\n"
     "\023ProductItemMetadata\0228\n\004type\030\001 \001(\0162$.pro"
     "ducts.v1.ProductItemMetadataTypeR\004type\022\024"
-    "\n\005label\030\002 \001(\tR\005label\"V\n\025ProductsToLikeRe"
-    "quest\022=\n\npagination\030\002 \001(\0132\035.shared.v1.Pa"
-    "ginationResponseR\npagination\"\220\001\n\026Product"
-    "sToLikeResponse\022=\n\004data\030\001 \001(\0132\'.products"
-    ".v1.ProductsToLikeResponseDataH\000R\004data\022+"
-    "\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005er"
-    "rorB\n\n\010response\"\\\n\032ProductsToLikeRespons"
+    "\n\005label\030\002 \001(\tR\005label\"U\n\025ProductsToLikeRe"
+    "quest\022<\n\npagination\030\002 \001(\0132\034.shared.v1.Pa"
+    "ginationRequestR\npagination\"\220\001\n\026Products"
+    "ToLikeResponse\022=\n\004data\030\001 \001(\0132\'.products."
+    "v1.ProductsToLikeResponseDataH\000R\004data\022+\n"
+    "\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005err"
+    "orB\n\n\010response\"\233\001\n\032ProductsToLikeRespons"
     "eData\022>\n\010products\030\001 \003(\0132\".products.v1.Pr"
-    "oductToLikeListItemR\010products\"\204\002\n\025Produc"
-    "tToLikeListItem\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005title"
-    "\030\002 \001(\tR\005title\022\024\n\005image\030\003 \001(\tR\005image\022/\n\005p"
-    "rice\030\004 \001(\0132\031.products.v1.ProductPriceR\005p"
-    "rice\022\033\n\006rating\030\005 \001(\002H\000R\006rating\210\001\001\022\027\n\004sol"
-    "d\030\006 \001(\005H\001R\004sold\210\001\001\0224\n\004meta\030\007 \003(\0132 .produ"
-    "cts.v1.ProductItemMetadataR\004metaB\t\n\007_rat"
-    "ingB\007\n\005_sold*\213\001\n\025ProductShippingMethod\022\'"
-    "\n#PRODUCT_SHIPPING_METHOD_UNSPECIFIED\020\000\022"
-    "$\n PRODUCT_SHIPPING_METHOD_STANDARD\020\001\022#\n"
-    "\037PRODUCT_SHIPPING_METHOD_EXPRESS\020\002*\277\001\n\027P"
-    "roductItemMetadataType\022*\n&PRODUCT_ITEM_M"
-    "ETADATA_TYPE_UNSPECIFIED\020\000\022%\n!PRODUCT_IT"
-    "EM_METADATA_TYPE_COUPON\020\001\022*\n&PRODUCT_ITE"
-    "M_METADATA_TYPE_NEW_SHOPPER\020\002\022%\n!PRODUCT"
-    "_ITEM_METADATA_TYPE_BUNDLE\020\003B}\n\034org.mega"
-    "commerce.products.v1B\023ProductsToLikeProt"
-    "oZEgithub.com/ahmad-khatib0-org/megacomm"
-    "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro"
-    "to3"
+    "oductToLikeListItemR\010products\022=\n\npaginat"
+    "ion\030\002 \001(\0132\035.shared.v1.PaginationResponse"
+    "R\npagination\"\204\002\n\025ProductToLikeListItem\022\016"
+    "\n\002id\030\001 \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005title\022\024\n\005"
+    "image\030\003 \001(\tR\005image\022/\n\005price\030\004 \001(\0132\031.prod"
+    "ucts.v1.ProductPriceR\005price\022\033\n\006rating\030\005 "
+    "\001(\002H\000R\006rating\210\001\001\022\027\n\004sold\030\006 \001(\005H\001R\004sold\210\001"
+    "\001\0224\n\004meta\030\007 \003(\0132 .products.v1.ProductIte"
+    "mMetadataR\004metaB\t\n\007_ratingB\007\n\005_sold*\213\001\n\025"
+    "ProductShippingMethod\022\'\n#PRODUCT_SHIPPIN"
+    "G_METHOD_UNSPECIFIED\020\000\022$\n PRODUCT_SHIPPI"
+    "NG_METHOD_STANDARD\020\001\022#\n\037PRODUCT_SHIPPING"
+    "_METHOD_EXPRESS\020\002*\277\001\n\027ProductItemMetadat"
+    "aType\022*\n&PRODUCT_ITEM_METADATA_TYPE_UNSP"
+    "ECIFIED\020\000\022%\n!PRODUCT_ITEM_METADATA_TYPE_"
+    "COUPON\020\001\022*\n&PRODUCT_ITEM_METADATA_TYPE_N"
+    "EW_SHOPPER\020\002\022%\n!PRODUCT_ITEM_METADATA_TY"
+    "PE_BUNDLE\020\003B}\n\034org.megacommerce.products"
+    ".v1B\023ProductsToLikeProtoZEgithub.com/ahm"
+    "ad-khatib0-org/megacommerce-proto/gen/go"
+    "/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproducts_5fto_5flike_2eproto_deps[3] = {
@@ -383,7 +390,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproducts_5fto_5flike_2
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproducts_5fto_5flike_2eproto = {
     false,
     false,
-    1763,
+    1826,
     descriptor_table_protodef_products_2fv1_2fproducts_5fto_5flike_2eproto,
     "products/v1/products_to_like.proto",
     &descriptor_table_products_2fv1_2fproducts_5fto_5flike_2eproto_once,
@@ -1637,18 +1644,18 @@ ProductsToLikeRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::ProductsToLikeRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+    // .shared.v1.PaginationRequest pagination = 2 [json_name = "pagination"];
     {::_pbi::TcParser::FastMtS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(ProductsToLikeRequest, _impl_.pagination_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+    // .shared.v1.PaginationRequest pagination = 2 [json_name = "pagination"];
     {PROTOBUF_FIELD_OFFSET(ProductsToLikeRequest, _impl_.pagination_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::shared::v1::PaginationResponse>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::PaginationRequest>()},
   }},
   {{
   }},
@@ -1685,7 +1692,7 @@ PROTOBUF_NOINLINE void ProductsToLikeRequest::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+  // .shared.v1.PaginationRequest pagination = 2 [json_name = "pagination"];
   if ((cached_has_bits & 0x00000001u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         2, *this_._impl_.pagination_, this_._impl_.pagination_->GetCachedSize(), target,
@@ -1716,7 +1723,7 @@ PROTOBUF_NOINLINE void ProductsToLikeRequest::Clear() {
   (void)cached_has_bits;
 
    {
-    // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+    // .shared.v1.PaginationRequest pagination = 2 [json_name = "pagination"];
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
       total_size += 1 +
@@ -2138,8 +2145,17 @@ void ProductsToLikeResponse::InternalSwap(ProductsToLikeResponse* PROTOBUF_RESTR
 
 class ProductsToLikeResponseData::_Internal {
  public:
+  using HasBits =
+      decltype(::std::declval<ProductsToLikeResponseData>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductsToLikeResponseData, _impl_._has_bits_);
 };
 
+void ProductsToLikeResponseData::clear_pagination() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.pagination_ != nullptr) _impl_.pagination_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
 ProductsToLikeResponseData::ProductsToLikeResponseData(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, ProductsToLikeResponseData_class_data_.base()) {
@@ -2153,8 +2169,9 @@ PROTOBUF_NDEBUG_INLINE ProductsToLikeResponseData::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
     const ::products::v1::ProductsToLikeResponseData& from_msg)
-      : products_{visibility, arena, from.products_},
-        _cached_size_{0} {}
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        products_{visibility, arena, from.products_} {}
 
 ProductsToLikeResponseData::ProductsToLikeResponseData(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -2169,17 +2186,22 @@ ProductsToLikeResponseData::ProductsToLikeResponseData(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.pagination_ = ((cached_has_bits & 0x00000001u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.pagination_)
+                : nullptr;
 
   // @@protoc_insertion_point(copy_constructor:products.v1.ProductsToLikeResponseData)
 }
 PROTOBUF_NDEBUG_INLINE ProductsToLikeResponseData::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : products_{visibility, arena},
-        _cached_size_{0} {}
+      : _cached_size_{0},
+        products_{visibility, arena} {}
 
 inline void ProductsToLikeResponseData::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.pagination_ = {};
 }
 ProductsToLikeResponseData::~ProductsToLikeResponseData() {
   // @@protoc_insertion_point(destructor:products.v1.ProductsToLikeResponseData)
@@ -2189,6 +2211,7 @@ inline void ProductsToLikeResponseData::SharedDtor(MessageLite& self) {
   ProductsToLikeResponseData& this_ = static_cast<ProductsToLikeResponseData&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
+  delete this_._impl_.pagination_;
   this_._impl_.~Impl_();
 }
 
@@ -2247,17 +2270,17 @@ ProductsToLikeResponseData::GetClassData() const {
   return ProductsToLikeResponseData_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2>
+const ::_pbi::TcParseTable<1, 2, 2, 0, 2>
 ProductsToLikeResponseData::_table_ = {
   {
-    0,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(ProductsToLikeResponseData, _impl_._has_bits_),
     0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
+    2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
+    4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
+    2,  // num_field_entries
+    2,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     ProductsToLikeResponseData_class_data_.base(),
     nullptr,  // post_loop_handler
@@ -2266,6 +2289,9 @@ ProductsToLikeResponseData::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::ProductsToLikeResponseData>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
+    // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 0, 1, PROTOBUF_FIELD_OFFSET(ProductsToLikeResponseData, _impl_.pagination_)}},
     // repeated .products.v1.ProductToLikeListItem products = 1 [json_name = "products"];
     {::_pbi::TcParser::FastMtR1,
      {10, 63, 0, PROTOBUF_FIELD_OFFSET(ProductsToLikeResponseData, _impl_.products_)}},
@@ -2273,11 +2299,15 @@ ProductsToLikeResponseData::_table_ = {
     65535, 65535
   }}, {{
     // repeated .products.v1.ProductToLikeListItem products = 1 [json_name = "products"];
-    {PROTOBUF_FIELD_OFFSET(ProductsToLikeResponseData, _impl_.products_), 0, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductsToLikeResponseData, _impl_.products_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+    {PROTOBUF_FIELD_OFFSET(ProductsToLikeResponseData, _impl_.pagination_), _Internal::kHasBitsOffset + 0, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
       {::_pbi::TcParser::GetTable<::products::v1::ProductToLikeListItem>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::PaginationResponse>()},
   }},
   {{
   }},
@@ -2290,6 +2320,12 @@ PROTOBUF_NOINLINE void ProductsToLikeResponseData::Clear() {
   (void) cached_has_bits;
 
   _impl_.products_.Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    ABSL_DCHECK(_impl_.pagination_ != nullptr);
+    _impl_.pagination_->Clear();
+  }
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -2317,6 +2353,14 @@ PROTOBUF_NOINLINE void ProductsToLikeResponseData::Clear() {
         ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
             1, repfield, repfield.GetCachedSize(),
             target, stream);
+  }
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        2, *this_._impl_.pagination_, this_._impl_.pagination_->GetCachedSize(), target,
+        stream);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -2352,6 +2396,14 @@ PROTOBUF_NOINLINE void ProductsToLikeResponseData::Clear() {
       }
     }
   }
+   {
+    // .shared.v1.PaginationResponse pagination = 2 [json_name = "pagination"];
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.pagination_);
+    }
+  }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
                                              &this_._impl_._cached_size_);
 }
@@ -2359,6 +2411,7 @@ PROTOBUF_NOINLINE void ProductsToLikeResponseData::Clear() {
 void ProductsToLikeResponseData::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<ProductsToLikeResponseData*>(&to_msg);
   auto& from = static_cast<const ProductsToLikeResponseData&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductsToLikeResponseData)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
@@ -2366,6 +2419,16 @@ void ProductsToLikeResponseData::MergeImpl(::google::protobuf::MessageLite& to_m
 
   _this->_internal_mutable_products()->MergeFrom(
       from._internal_products());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    ABSL_DCHECK(from._impl_.pagination_ != nullptr);
+    if (_this->_impl_.pagination_ == nullptr) {
+      _this->_impl_.pagination_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.pagination_);
+    } else {
+      _this->_impl_.pagination_->MergeFrom(*from._impl_.pagination_);
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2380,7 +2443,9 @@ void ProductsToLikeResponseData::CopyFrom(const ProductsToLikeResponseData& from
 void ProductsToLikeResponseData::InternalSwap(ProductsToLikeResponseData* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.products_.InternalSwap(&other->_impl_.products_);
+  swap(_impl_.pagination_, other->_impl_.pagination_);
 }
 
 ::google::protobuf::Metadata ProductsToLikeResponseData::GetMetadata() const {

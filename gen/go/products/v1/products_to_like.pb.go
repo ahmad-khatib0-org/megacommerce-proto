@@ -329,7 +329,7 @@ func (x *ProductItemMetadata) GetLabel() string {
 
 type ProductsToLikeRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Pagination    *v1.PaginationResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
+	Pagination    *v1.PaginationRequest  `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -364,7 +364,7 @@ func (*ProductsToLikeRequest) Descriptor() ([]byte, []int) {
 	return file_products_v1_products_to_like_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ProductsToLikeRequest) GetPagination() *v1.PaginationResponse {
+func (x *ProductsToLikeRequest) GetPagination() *v1.PaginationRequest {
 	if x != nil {
 		return x.Pagination
 	}
@@ -456,6 +456,7 @@ func (*ProductsToLikeResponse_Error) isProductsToLikeResponse_Response() {}
 type ProductsToLikeResponseData struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
 	Products      []*ProductToLikeListItem `protobuf:"bytes,1,rep,name=products,proto3" json:"products,omitempty"`
+	Pagination    *v1.PaginationResponse   `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -493,6 +494,13 @@ func (*ProductsToLikeResponseData) Descriptor() ([]byte, []int) {
 func (x *ProductsToLikeResponseData) GetProducts() []*ProductToLikeListItem {
 	if x != nil {
 		return x.Products
+	}
+	return nil
+}
+
+func (x *ProductsToLikeResponseData) GetPagination() *v1.PaginationResponse {
+	if x != nil {
+		return x.Pagination
 	}
 	return nil
 }
@@ -612,18 +620,21 @@ const file_products_v1_products_to_like_proto_rawDesc = "" +
 	"\x12max_estimated_days\x18\x05 \x01(\x05R\x10maxEstimatedDays\"e\n" +
 	"\x13ProductItemMetadata\x128\n" +
 	"\x04type\x18\x01 \x01(\x0e2$.products.v1.ProductItemMetadataTypeR\x04type\x12\x14\n" +
-	"\x05label\x18\x02 \x01(\tR\x05label\"V\n" +
-	"\x15ProductsToLikeRequest\x12=\n" +
+	"\x05label\x18\x02 \x01(\tR\x05label\"U\n" +
+	"\x15ProductsToLikeRequest\x12<\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2\x1d.shared.v1.PaginationResponseR\n" +
+	"pagination\x18\x02 \x01(\v2\x1c.shared.v1.PaginationRequestR\n" +
 	"pagination\"\x90\x01\n" +
 	"\x16ProductsToLikeResponse\x12=\n" +
 	"\x04data\x18\x01 \x01(\v2'.products.v1.ProductsToLikeResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
-	"\bresponse\"\\\n" +
+	"\bresponse\"\x9b\x01\n" +
 	"\x1aProductsToLikeResponseData\x12>\n" +
-	"\bproducts\x18\x01 \x03(\v2\".products.v1.ProductToLikeListItemR\bproducts\"\x84\x02\n" +
+	"\bproducts\x18\x01 \x03(\v2\".products.v1.ProductToLikeListItemR\bproducts\x12=\n" +
+	"\n" +
+	"pagination\x18\x02 \x01(\v2\x1d.shared.v1.PaginationResponseR\n" +
+	"pagination\"\x84\x02\n" +
 	"\x15ProductToLikeListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
@@ -669,23 +680,25 @@ var file_products_v1_products_to_like_proto_goTypes = []any{
 	(*ProductsToLikeResponse)(nil),     // 6: products.v1.ProductsToLikeResponse
 	(*ProductsToLikeResponseData)(nil), // 7: products.v1.ProductsToLikeResponseData
 	(*ProductToLikeListItem)(nil),      // 8: products.v1.ProductToLikeListItem
-	(*v1.PaginationResponse)(nil),      // 9: shared.v1.PaginationResponse
+	(*v1.PaginationRequest)(nil),       // 9: shared.v1.PaginationRequest
 	(*v1.AppError)(nil),                // 10: shared.v1.AppError
+	(*v1.PaginationResponse)(nil),      // 11: shared.v1.PaginationResponse
 }
 var file_products_v1_products_to_like_proto_depIdxs = []int32{
 	0,  // 0: products.v1.ProductShippingInfo.method:type_name -> products.v1.ProductShippingMethod
 	1,  // 1: products.v1.ProductItemMetadata.type:type_name -> products.v1.ProductItemMetadataType
-	9,  // 2: products.v1.ProductsToLikeRequest.pagination:type_name -> shared.v1.PaginationResponse
+	9,  // 2: products.v1.ProductsToLikeRequest.pagination:type_name -> shared.v1.PaginationRequest
 	7,  // 3: products.v1.ProductsToLikeResponse.data:type_name -> products.v1.ProductsToLikeResponseData
 	10, // 4: products.v1.ProductsToLikeResponse.error:type_name -> shared.v1.AppError
 	8,  // 5: products.v1.ProductsToLikeResponseData.products:type_name -> products.v1.ProductToLikeListItem
-	2,  // 6: products.v1.ProductToLikeListItem.price:type_name -> products.v1.ProductPrice
-	4,  // 7: products.v1.ProductToLikeListItem.meta:type_name -> products.v1.ProductItemMetadata
-	8,  // [8:8] is the sub-list for method output_type
-	8,  // [8:8] is the sub-list for method input_type
-	8,  // [8:8] is the sub-list for extension type_name
-	8,  // [8:8] is the sub-list for extension extendee
-	0,  // [0:8] is the sub-list for field type_name
+	11, // 6: products.v1.ProductsToLikeResponseData.pagination:type_name -> shared.v1.PaginationResponse
+	2,  // 7: products.v1.ProductToLikeListItem.price:type_name -> products.v1.ProductPrice
+	4,  // 8: products.v1.ProductToLikeListItem.meta:type_name -> products.v1.ProductItemMetadata
+	9,  // [9:9] is the sub-list for method output_type
+	9,  // [9:9] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_products_to_like_proto_init() }

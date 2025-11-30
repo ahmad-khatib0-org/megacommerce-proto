@@ -68,8 +68,8 @@ class ProductItemMetadata(_message.Message):
 class ProductsToLikeRequest(_message.Message):
     __slots__ = ("pagination",)
     PAGINATION_FIELD_NUMBER: _ClassVar[int]
-    pagination: _pagination_pb2.PaginationResponse
-    def __init__(self, pagination: _Optional[_Union[_pagination_pb2.PaginationResponse, _Mapping]] = ...) -> None: ...
+    pagination: _pagination_pb2.PaginationRequest
+    def __init__(self, pagination: _Optional[_Union[_pagination_pb2.PaginationRequest, _Mapping]] = ...) -> None: ...
 
 class ProductsToLikeResponse(_message.Message):
     __slots__ = ("data", "error")
@@ -80,10 +80,12 @@ class ProductsToLikeResponse(_message.Message):
     def __init__(self, data: _Optional[_Union[ProductsToLikeResponseData, _Mapping]] = ..., error: _Optional[_Union[_error_pb2.AppError, _Mapping]] = ...) -> None: ...
 
 class ProductsToLikeResponseData(_message.Message):
-    __slots__ = ("products",)
+    __slots__ = ("products", "pagination")
     PRODUCTS_FIELD_NUMBER: _ClassVar[int]
+    PAGINATION_FIELD_NUMBER: _ClassVar[int]
     products: _containers.RepeatedCompositeFieldContainer[ProductToLikeListItem]
-    def __init__(self, products: _Optional[_Iterable[_Union[ProductToLikeListItem, _Mapping]]] = ...) -> None: ...
+    pagination: _pagination_pb2.PaginationResponse
+    def __init__(self, products: _Optional[_Iterable[_Union[ProductToLikeListItem, _Mapping]]] = ..., pagination: _Optional[_Union[_pagination_pb2.PaginationResponse, _Mapping]] = ...) -> None: ...
 
 class ProductToLikeListItem(_message.Message):
     __slots__ = ("id", "title", "image", "price", "rating", "sold", "meta")
