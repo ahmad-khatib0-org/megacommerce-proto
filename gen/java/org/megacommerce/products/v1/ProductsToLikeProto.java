@@ -292,10 +292,10 @@ public final class ProductsToLikeProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float amount = 1 [json_name = "amount"];</code>
+     * <code>double amount = 1 [json_name = "amount"];</code>
      * @return The amount.
      */
-    float getAmount();
+    double getAmount();
 
     /**
      * <code>string formatted = 2 [json_name = "formatted"];</code>
@@ -310,15 +310,15 @@ public final class ProductsToLikeProto {
         getFormattedBytes();
 
     /**
-     * <code>optional float discount_price = 3 [json_name = "discountPrice"];</code>
+     * <code>optional double discount_price = 3 [json_name = "discountPrice"];</code>
      * @return Whether the discountPrice field is set.
      */
     boolean hasDiscountPrice();
     /**
-     * <code>optional float discount_price = 3 [json_name = "discountPrice"];</code>
+     * <code>optional double discount_price = 3 [json_name = "discountPrice"];</code>
      * @return The discountPrice.
      */
-    float getDiscountPrice();
+    double getDiscountPrice();
 
     /**
      * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
@@ -396,13 +396,13 @@ public final class ProductsToLikeProto {
 
     private int bitField0_;
     public static final int AMOUNT_FIELD_NUMBER = 1;
-    private float amount_ = 0F;
+    private double amount_ = 0D;
     /**
-     * <code>float amount = 1 [json_name = "amount"];</code>
+     * <code>double amount = 1 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public float getAmount() {
+    public double getAmount() {
       return amount_;
     }
 
@@ -446,9 +446,9 @@ public final class ProductsToLikeProto {
     }
 
     public static final int DISCOUNT_PRICE_FIELD_NUMBER = 3;
-    private float discountPrice_ = 0F;
+    private double discountPrice_ = 0D;
     /**
-     * <code>optional float discount_price = 3 [json_name = "discountPrice"];</code>
+     * <code>optional double discount_price = 3 [json_name = "discountPrice"];</code>
      * @return Whether the discountPrice field is set.
      */
     @java.lang.Override
@@ -456,11 +456,11 @@ public final class ProductsToLikeProto {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional float discount_price = 3 [json_name = "discountPrice"];</code>
+     * <code>optional double discount_price = 3 [json_name = "discountPrice"];</code>
      * @return The discountPrice.
      */
     @java.lang.Override
-    public float getDiscountPrice() {
+    public double getDiscountPrice() {
       return discountPrice_;
     }
 
@@ -572,14 +572,14 @@ public final class ProductsToLikeProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(amount_) != 0) {
-        output.writeFloat(1, amount_);
+      if (java.lang.Double.doubleToRawLongBits(amount_) != 0) {
+        output.writeDouble(1, amount_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(formatted_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, formatted_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeFloat(3, discountPrice_);
+        output.writeDouble(3, discountPrice_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, saveAmount_);
@@ -596,16 +596,16 @@ public final class ProductsToLikeProto {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(amount_) != 0) {
+      if (java.lang.Double.doubleToRawLongBits(amount_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, amount_);
+          .computeDoubleSize(1, amount_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(formatted_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, formatted_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, discountPrice_);
+          .computeDoubleSize(3, discountPrice_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(4, saveAmount_);
@@ -628,15 +628,15 @@ public final class ProductsToLikeProto {
       }
       org.megacommerce.products.v1.ProductsToLikeProto.ProductPrice other = (org.megacommerce.products.v1.ProductsToLikeProto.ProductPrice) obj;
 
-      if (java.lang.Float.floatToIntBits(getAmount())
-          != java.lang.Float.floatToIntBits(
+      if (java.lang.Double.doubleToLongBits(getAmount())
+          != java.lang.Double.doubleToLongBits(
               other.getAmount())) return false;
       if (!getFormatted()
           .equals(other.getFormatted())) return false;
       if (hasDiscountPrice() != other.hasDiscountPrice()) return false;
       if (hasDiscountPrice()) {
-        if (java.lang.Float.floatToIntBits(getDiscountPrice())
-            != java.lang.Float.floatToIntBits(
+        if (java.lang.Double.doubleToLongBits(getDiscountPrice())
+            != java.lang.Double.doubleToLongBits(
                 other.getDiscountPrice())) return false;
       }
       if (hasSaveAmount() != other.hasSaveAmount()) return false;
@@ -661,14 +661,14 @@ public final class ProductsToLikeProto {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getAmount());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getAmount()));
       hash = (37 * hash) + FORMATTED_FIELD_NUMBER;
       hash = (53 * hash) + getFormatted().hashCode();
       if (hasDiscountPrice()) {
         hash = (37 * hash) + DISCOUNT_PRICE_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getDiscountPrice());
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getDiscountPrice()));
       }
       if (hasSaveAmount()) {
         hash = (37 * hash) + SAVE_AMOUNT_FIELD_NUMBER;
@@ -809,9 +809,9 @@ public final class ProductsToLikeProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        amount_ = 0F;
+        amount_ = 0D;
         formatted_ = "";
-        discountPrice_ = 0F;
+        discountPrice_ = 0D;
         saveAmount_ = "";
         savePercentage_ = "";
         return this;
@@ -881,7 +881,7 @@ public final class ProductsToLikeProto {
 
       public Builder mergeFrom(org.megacommerce.products.v1.ProductsToLikeProto.ProductPrice other) {
         if (other == org.megacommerce.products.v1.ProductsToLikeProto.ProductPrice.getDefaultInstance()) return this;
-        if (java.lang.Float.floatToRawIntBits(other.getAmount()) != 0) {
+        if (java.lang.Double.doubleToRawLongBits(other.getAmount()) != 0) {
           setAmount(other.getAmount());
         }
         if (!other.getFormatted().isEmpty()) {
@@ -928,21 +928,21 @@ public final class ProductsToLikeProto {
               case 0:
                 done = true;
                 break;
-              case 13: {
-                amount_ = input.readFloat();
+              case 9: {
+                amount_ = input.readDouble();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 13
+              } // case 9
               case 18: {
                 formatted_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
-              case 29: {
-                discountPrice_ = input.readFloat();
+              case 25: {
+                discountPrice_ = input.readDouble();
                 bitField0_ |= 0x00000004;
                 break;
-              } // case 29
+              } // case 25
               case 34: {
                 saveAmount_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
@@ -970,21 +970,21 @@ public final class ProductsToLikeProto {
       }
       private int bitField0_;
 
-      private float amount_ ;
+      private double amount_ ;
       /**
-       * <code>float amount = 1 [json_name = "amount"];</code>
+       * <code>double amount = 1 [json_name = "amount"];</code>
        * @return The amount.
        */
       @java.lang.Override
-      public float getAmount() {
+      public double getAmount() {
         return amount_;
       }
       /**
-       * <code>float amount = 1 [json_name = "amount"];</code>
+       * <code>double amount = 1 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(float value) {
+      public Builder setAmount(double value) {
 
         amount_ = value;
         bitField0_ |= 0x00000001;
@@ -992,12 +992,12 @@ public final class ProductsToLikeProto {
         return this;
       }
       /**
-       * <code>float amount = 1 [json_name = "amount"];</code>
+       * <code>double amount = 1 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        amount_ = 0F;
+        amount_ = 0D;
         onChanged();
         return this;
       }
@@ -1074,9 +1074,9 @@ public final class ProductsToLikeProto {
         return this;
       }
 
-      private float discountPrice_ ;
+      private double discountPrice_ ;
       /**
-       * <code>optional float discount_price = 3 [json_name = "discountPrice"];</code>
+       * <code>optional double discount_price = 3 [json_name = "discountPrice"];</code>
        * @return Whether the discountPrice field is set.
        */
       @java.lang.Override
@@ -1084,19 +1084,19 @@ public final class ProductsToLikeProto {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>optional float discount_price = 3 [json_name = "discountPrice"];</code>
+       * <code>optional double discount_price = 3 [json_name = "discountPrice"];</code>
        * @return The discountPrice.
        */
       @java.lang.Override
-      public float getDiscountPrice() {
+      public double getDiscountPrice() {
         return discountPrice_;
       }
       /**
-       * <code>optional float discount_price = 3 [json_name = "discountPrice"];</code>
+       * <code>optional double discount_price = 3 [json_name = "discountPrice"];</code>
        * @param value The discountPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setDiscountPrice(float value) {
+      public Builder setDiscountPrice(double value) {
 
         discountPrice_ = value;
         bitField0_ |= 0x00000004;
@@ -1104,12 +1104,12 @@ public final class ProductsToLikeProto {
         return this;
       }
       /**
-       * <code>optional float discount_price = 3 [json_name = "discountPrice"];</code>
+       * <code>optional double discount_price = 3 [json_name = "discountPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDiscountPrice() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        discountPrice_ = 0F;
+        discountPrice_ = 0D;
         onChanged();
         return this;
       }
@@ -5226,15 +5226,15 @@ public final class ProductsToLikeProto {
     org.megacommerce.products.v1.ProductsToLikeProto.ProductPriceOrBuilder getPriceOrBuilder();
 
     /**
-     * <code>optional float rating = 5 [json_name = "rating"];</code>
+     * <code>optional double rating = 5 [json_name = "rating"];</code>
      * @return Whether the rating field is set.
      */
     boolean hasRating();
     /**
-     * <code>optional float rating = 5 [json_name = "rating"];</code>
+     * <code>optional double rating = 5 [json_name = "rating"];</code>
      * @return The rating.
      */
-    float getRating();
+    double getRating();
 
     /**
      * <code>optional int32 sold = 6 [json_name = "sold"];</code>
@@ -5457,9 +5457,9 @@ public final class ProductsToLikeProto {
     }
 
     public static final int RATING_FIELD_NUMBER = 5;
-    private float rating_ = 0F;
+    private double rating_ = 0D;
     /**
-     * <code>optional float rating = 5 [json_name = "rating"];</code>
+     * <code>optional double rating = 5 [json_name = "rating"];</code>
      * @return Whether the rating field is set.
      */
     @java.lang.Override
@@ -5467,11 +5467,11 @@ public final class ProductsToLikeProto {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional float rating = 5 [json_name = "rating"];</code>
+     * <code>optional double rating = 5 [json_name = "rating"];</code>
      * @return The rating.
      */
     @java.lang.Override
-    public float getRating() {
+    public double getRating() {
       return rating_;
     }
 
@@ -5562,7 +5562,7 @@ public final class ProductsToLikeProto {
         output.writeMessage(4, getPrice());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeFloat(5, rating_);
+        output.writeDouble(5, rating_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeInt32(6, sold_);
@@ -5594,7 +5594,7 @@ public final class ProductsToLikeProto {
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, rating_);
+          .computeDoubleSize(5, rating_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -5632,8 +5632,8 @@ public final class ProductsToLikeProto {
       }
       if (hasRating() != other.hasRating()) return false;
       if (hasRating()) {
-        if (java.lang.Float.floatToIntBits(getRating())
-            != java.lang.Float.floatToIntBits(
+        if (java.lang.Double.doubleToLongBits(getRating())
+            != java.lang.Double.doubleToLongBits(
                 other.getRating())) return false;
       }
       if (hasSold() != other.hasSold()) return false;
@@ -5666,8 +5666,8 @@ public final class ProductsToLikeProto {
       }
       if (hasRating()) {
         hash = (37 * hash) + RATING_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getRating());
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getRating()));
       }
       if (hasSold()) {
         hash = (37 * hash) + SOLD_FIELD_NUMBER;
@@ -5823,7 +5823,7 @@ public final class ProductsToLikeProto {
           priceBuilder_.dispose();
           priceBuilder_ = null;
         }
-        rating_ = 0F;
+        rating_ = 0D;
         sold_ = 0;
         if (metaBuilder_ == null) {
           meta_ = java.util.Collections.emptyList();
@@ -6015,11 +6015,11 @@ public final class ProductsToLikeProto {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
-              case 45: {
-                rating_ = input.readFloat();
+              case 41: {
+                rating_ = input.readDouble();
                 bitField0_ |= 0x00000010;
                 break;
-              } // case 45
+              } // case 41
               case 48: {
                 sold_ = input.readInt32();
                 bitField0_ |= 0x00000020;
@@ -6392,9 +6392,9 @@ public final class ProductsToLikeProto {
         return priceBuilder_;
       }
 
-      private float rating_ ;
+      private double rating_ ;
       /**
-       * <code>optional float rating = 5 [json_name = "rating"];</code>
+       * <code>optional double rating = 5 [json_name = "rating"];</code>
        * @return Whether the rating field is set.
        */
       @java.lang.Override
@@ -6402,19 +6402,19 @@ public final class ProductsToLikeProto {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional float rating = 5 [json_name = "rating"];</code>
+       * <code>optional double rating = 5 [json_name = "rating"];</code>
        * @return The rating.
        */
       @java.lang.Override
-      public float getRating() {
+      public double getRating() {
         return rating_;
       }
       /**
-       * <code>optional float rating = 5 [json_name = "rating"];</code>
+       * <code>optional double rating = 5 [json_name = "rating"];</code>
        * @param value The rating to set.
        * @return This builder for chaining.
        */
-      public Builder setRating(float value) {
+      public Builder setRating(double value) {
 
         rating_ = value;
         bitField0_ |= 0x00000010;
@@ -6422,12 +6422,12 @@ public final class ProductsToLikeProto {
         return this;
       }
       /**
-       * <code>optional float rating = 5 [json_name = "rating"];</code>
+       * <code>optional double rating = 5 [json_name = "rating"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRating() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        rating_ = 0F;
+        rating_ = 0D;
         onChanged();
         return this;
       }
@@ -6810,9 +6810,9 @@ public final class ProductsToLikeProto {
       "\n\"products/v1/products_to_like.proto\022\013pr" +
       "oducts.v1\032\025shared/v1/error.proto\032\032shared" +
       "/v1/pagination.proto\032\025shared/v1/types.pr" +
-      "oto\"\373\001\n\014ProductPrice\022\026\n\006amount\030\001 \001(\002R\006am" +
+      "oto\"\373\001\n\014ProductPrice\022\026\n\006amount\030\001 \001(\001R\006am" +
       "ount\022\034\n\tformatted\030\002 \001(\tR\tformatted\022*\n\016di" +
-      "scount_price\030\003 \001(\002H\000R\rdiscountPrice\210\001\001\022$" +
+      "scount_price\030\003 \001(\001H\000R\rdiscountPrice\210\001\001\022$" +
       "\n\013save_amount\030\004 \001(\tH\001R\nsaveAmount\210\001\001\022,\n\017" +
       "save_percentage\030\005 \001(\tH\002R\016savePercentage\210" +
       "\001\001B\021\n\017_discount_priceB\016\n\014_save_amountB\022\n" +
@@ -6838,7 +6838,7 @@ public final class ProductsToLikeProto {
       "\n\002id\030\001 \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005title\022\024\n\005" +
       "image\030\003 \001(\tR\005image\022/\n\005price\030\004 \001(\0132\031.prod" +
       "ucts.v1.ProductPriceR\005price\022\033\n\006rating\030\005 " +
-      "\001(\002H\000R\006rating\210\001\001\022\027\n\004sold\030\006 \001(\005H\001R\004sold\210\001" +
+      "\001(\001H\000R\006rating\210\001\001\022\027\n\004sold\030\006 \001(\005H\001R\004sold\210\001" +
       "\001\0224\n\004meta\030\007 \003(\0132 .products.v1.ProductIte" +
       "mMetadataR\004metaB\t\n\007_ratingB\007\n\005_sold*\213\001\n\025" +
       "ProductShippingMethod\022\'\n#PRODUCT_SHIPPIN" +

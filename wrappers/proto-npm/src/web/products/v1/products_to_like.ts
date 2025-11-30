@@ -147,13 +147,13 @@ function createBaseProductPrice(): ProductPrice {
 export const ProductPrice: MessageFns<ProductPrice> = {
   encode(message: ProductPrice, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.amount !== 0) {
-      writer.uint32(13).float(message.amount);
+      writer.uint32(9).double(message.amount);
     }
     if (message.formatted !== "") {
       writer.uint32(18).string(message.formatted);
     }
     if (message.discountPrice !== undefined) {
-      writer.uint32(29).float(message.discountPrice);
+      writer.uint32(25).double(message.discountPrice);
     }
     if (message.saveAmount !== undefined) {
       writer.uint32(34).string(message.saveAmount);
@@ -172,11 +172,11 @@ export const ProductPrice: MessageFns<ProductPrice> = {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1: {
-          if (tag !== 13) {
+          if (tag !== 9) {
             break;
           }
 
-          message.amount = reader.float();
+          message.amount = reader.double();
           continue;
         }
         case 2: {
@@ -188,11 +188,11 @@ export const ProductPrice: MessageFns<ProductPrice> = {
           continue;
         }
         case 3: {
-          if (tag !== 29) {
+          if (tag !== 25) {
             break;
           }
 
-          message.discountPrice = reader.float();
+          message.discountPrice = reader.double();
           continue;
         }
         case 4: {
@@ -703,7 +703,7 @@ export const ProductToLikeListItem: MessageFns<ProductToLikeListItem> = {
       ProductPrice.encode(message.price, writer.uint32(34).fork()).join();
     }
     if (message.rating !== undefined) {
-      writer.uint32(45).float(message.rating);
+      writer.uint32(41).double(message.rating);
     }
     if (message.sold !== undefined) {
       writer.uint32(48).int32(message.sold);
@@ -754,11 +754,11 @@ export const ProductToLikeListItem: MessageFns<ProductToLikeListItem> = {
           continue;
         }
         case 5: {
-          if (tag !== 45) {
+          if (tag !== 41) {
             break;
           }
 
-          message.rating = reader.float();
+          message.rating = reader.double();
           continue;
         }
         case 6: {

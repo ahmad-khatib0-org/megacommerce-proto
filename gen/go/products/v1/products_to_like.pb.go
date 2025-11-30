@@ -125,9 +125,9 @@ func (ProductItemMetadataType) EnumDescriptor() ([]byte, []int) {
 
 type ProductPrice struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Amount         float32                `protobuf:"fixed32,1,opt,name=amount,proto3" json:"amount,omitempty"`
+	Amount         float64                `protobuf:"fixed64,1,opt,name=amount,proto3" json:"amount,omitempty"`
 	Formatted      string                 `protobuf:"bytes,2,opt,name=formatted,proto3" json:"formatted,omitempty"`
-	DiscountPrice  *float32               `protobuf:"fixed32,3,opt,name=discount_price,json=discountPrice,proto3,oneof" json:"discount_price,omitempty"`
+	DiscountPrice  *float64               `protobuf:"fixed64,3,opt,name=discount_price,json=discountPrice,proto3,oneof" json:"discount_price,omitempty"`
 	SaveAmount     *string                `protobuf:"bytes,4,opt,name=save_amount,json=saveAmount,proto3,oneof" json:"save_amount,omitempty"`
 	SavePercentage *string                `protobuf:"bytes,5,opt,name=save_percentage,json=savePercentage,proto3,oneof" json:"save_percentage,omitempty"`
 	unknownFields  protoimpl.UnknownFields
@@ -164,7 +164,7 @@ func (*ProductPrice) Descriptor() ([]byte, []int) {
 	return file_products_v1_products_to_like_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ProductPrice) GetAmount() float32 {
+func (x *ProductPrice) GetAmount() float64 {
 	if x != nil {
 		return x.Amount
 	}
@@ -178,7 +178,7 @@ func (x *ProductPrice) GetFormatted() string {
 	return ""
 }
 
-func (x *ProductPrice) GetDiscountPrice() float32 {
+func (x *ProductPrice) GetDiscountPrice() float64 {
 	if x != nil && x.DiscountPrice != nil {
 		return *x.DiscountPrice
 	}
@@ -511,7 +511,7 @@ type ProductToLikeListItem struct {
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	Image         string                 `protobuf:"bytes,3,opt,name=image,proto3" json:"image,omitempty"`
 	Price         *ProductPrice          `protobuf:"bytes,4,opt,name=price,proto3" json:"price,omitempty"`
-	Rating        *float32               `protobuf:"fixed32,5,opt,name=rating,proto3,oneof" json:"rating,omitempty"`
+	Rating        *float64               `protobuf:"fixed64,5,opt,name=rating,proto3,oneof" json:"rating,omitempty"`
 	Sold          *int32                 `protobuf:"varint,6,opt,name=sold,proto3,oneof" json:"sold,omitempty"`
 	Meta          []*ProductItemMetadata `protobuf:"bytes,7,rep,name=meta,proto3" json:"meta,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -576,7 +576,7 @@ func (x *ProductToLikeListItem) GetPrice() *ProductPrice {
 	return nil
 }
 
-func (x *ProductToLikeListItem) GetRating() float32 {
+func (x *ProductToLikeListItem) GetRating() float64 {
 	if x != nil && x.Rating != nil {
 		return *x.Rating
 	}
@@ -603,9 +603,9 @@ const file_products_v1_products_to_like_proto_rawDesc = "" +
 	"\n" +
 	"\"products/v1/products_to_like.proto\x12\vproducts.v1\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\x1a\x15shared/v1/types.proto\"\xfb\x01\n" +
 	"\fProductPrice\x12\x16\n" +
-	"\x06amount\x18\x01 \x01(\x02R\x06amount\x12\x1c\n" +
+	"\x06amount\x18\x01 \x01(\x01R\x06amount\x12\x1c\n" +
 	"\tformatted\x18\x02 \x01(\tR\tformatted\x12*\n" +
-	"\x0ediscount_price\x18\x03 \x01(\x02H\x00R\rdiscountPrice\x88\x01\x01\x12$\n" +
+	"\x0ediscount_price\x18\x03 \x01(\x01H\x00R\rdiscountPrice\x88\x01\x01\x12$\n" +
 	"\vsave_amount\x18\x04 \x01(\tH\x01R\n" +
 	"saveAmount\x88\x01\x01\x12,\n" +
 	"\x0fsave_percentage\x18\x05 \x01(\tH\x02R\x0esavePercentage\x88\x01\x01B\x11\n" +
@@ -640,7 +640,7 @@ const file_products_v1_products_to_like_proto_rawDesc = "" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
 	"\x05image\x18\x03 \x01(\tR\x05image\x12/\n" +
 	"\x05price\x18\x04 \x01(\v2\x19.products.v1.ProductPriceR\x05price\x12\x1b\n" +
-	"\x06rating\x18\x05 \x01(\x02H\x00R\x06rating\x88\x01\x01\x12\x17\n" +
+	"\x06rating\x18\x05 \x01(\x01H\x00R\x06rating\x88\x01\x01\x12\x17\n" +
 	"\x04sold\x18\x06 \x01(\x05H\x01R\x04sold\x88\x01\x01\x124\n" +
 	"\x04meta\x18\a \x03(\v2 .products.v1.ProductItemMetadataR\x04metaB\t\n" +
 	"\a_ratingB\a\n" +

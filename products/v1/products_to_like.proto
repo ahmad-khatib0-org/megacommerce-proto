@@ -12,9 +12,9 @@ option java_outer_classname = "ProductsToLikeProto";
 option java_package = "org.megacommerce.products.v1";
 
 message ProductPrice {
-  float amount = 1;
+  double amount = 1;
   string formatted = 2;
-  optional float discount_price = 3;
+  optional double discount_price = 3;
   optional string save_amount = 4;
   optional string save_percentage = 5;
 }
@@ -66,7 +66,7 @@ message ProductToLikeListItem {
   string title = 2;
   string image = 3;
   ProductPrice price = 4;
-  optional float rating = 5;
+  optional double rating = 5;
   optional int32 sold = 6;
   repeated ProductItemMetadata meta = 7;
 }

@@ -1009,12 +1009,12 @@ pub mod product_snapshot_response {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductPrice {
-    #[prost(float, tag = "1")]
-    pub amount: f32,
+    #[prost(double, tag = "1")]
+    pub amount: f64,
     #[prost(string, tag = "2")]
     pub formatted: ::prost::alloc::string::String,
-    #[prost(float, optional, tag = "3")]
-    pub discount_price: ::core::option::Option<f32>,
+    #[prost(double, optional, tag = "3")]
+    pub discount_price: ::core::option::Option<f64>,
     #[prost(string, optional, tag = "4")]
     pub save_amount: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "5")]
@@ -1084,8 +1084,8 @@ pub struct ProductToLikeListItem {
     pub image: ::prost::alloc::string::String,
     #[prost(message, optional, tag = "4")]
     pub price: ::core::option::Option<ProductPrice>,
-    #[prost(float, optional, tag = "5")]
-    pub rating: ::core::option::Option<f32>,
+    #[prost(double, optional, tag = "5")]
+    pub rating: ::core::option::Option<f64>,
     #[prost(int32, optional, tag = "6")]
     pub sold: ::core::option::Option<i32>,
     #[prost(message, repeated, tag = "7")]

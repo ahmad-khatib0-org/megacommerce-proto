@@ -626,25 +626,25 @@ class ProductPrice final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_save_percentage();
 
   public:
-  // float amount = 1 [json_name = "amount"];
+  // double amount = 1 [json_name = "amount"];
   void clear_amount() ;
-  float amount() const;
-  void set_amount(float value);
+  double amount() const;
+  void set_amount(double value);
 
   private:
-  float _internal_amount() const;
-  void _internal_set_amount(float value);
+  double _internal_amount() const;
+  void _internal_set_amount(double value);
 
   public:
-  // optional float discount_price = 3 [json_name = "discountPrice"];
+  // optional double discount_price = 3 [json_name = "discountPrice"];
   bool has_discount_price() const;
   void clear_discount_price() ;
-  float discount_price() const;
-  void set_discount_price(float value);
+  double discount_price() const;
+  void set_discount_price(double value);
 
   private:
-  float _internal_discount_price() const;
-  void _internal_set_discount_price(float value);
+  double _internal_discount_price() const;
+  void _internal_set_discount_price(double value);
 
   public:
   // @@protoc_insertion_point(class_scope:products.v1.ProductPrice)
@@ -676,8 +676,8 @@ class ProductPrice final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr formatted_;
     ::google::protobuf::internal::ArenaStringPtr save_amount_;
     ::google::protobuf::internal::ArenaStringPtr save_percentage_;
-    float amount_;
-    float discount_price_;
+    double amount_;
+    double discount_price_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1123,15 +1123,15 @@ class ProductToLikeListItem final : public ::google::protobuf::Message
   ::products::v1::ProductPrice* PROTOBUF_NONNULL _internal_mutable_price();
 
   public:
-  // optional float rating = 5 [json_name = "rating"];
+  // optional double rating = 5 [json_name = "rating"];
   bool has_rating() const;
   void clear_rating() ;
-  float rating() const;
-  void set_rating(float value);
+  double rating() const;
+  void set_rating(double value);
 
   private:
-  float _internal_rating() const;
-  void _internal_set_rating(float value);
+  double _internal_rating() const;
+  void _internal_set_rating(double value);
 
   public:
   // optional int32 sold = 6 [json_name = "sold"];
@@ -1176,7 +1176,7 @@ class ProductToLikeListItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr title_;
     ::google::protobuf::internal::ArenaStringPtr image_;
     ::products::v1::ProductPrice* PROTOBUF_NULLABLE price_;
-    float rating_;
+    double rating_;
     ::int32_t sold_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1849,26 +1849,26 @@ extern const ::google::protobuf::internal::ClassDataFull ProductsToLikeResponse_
 
 // ProductPrice
 
-// float amount = 1 [json_name = "amount"];
+// double amount = 1 [json_name = "amount"];
 inline void ProductPrice::clear_amount() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amount_ = 0;
   _impl_._has_bits_[0] &= ~0x00000008u;
 }
-inline float ProductPrice::amount() const {
+inline double ProductPrice::amount() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductPrice.amount)
   return _internal_amount();
 }
-inline void ProductPrice::set_amount(float value) {
+inline void ProductPrice::set_amount(double value) {
   _internal_set_amount(value);
   _impl_._has_bits_[0] |= 0x00000008u;
   // @@protoc_insertion_point(field_set:products.v1.ProductPrice.amount)
 }
-inline float ProductPrice::_internal_amount() const {
+inline double ProductPrice::_internal_amount() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.amount_;
 }
-inline void ProductPrice::_internal_set_amount(float value) {
+inline void ProductPrice::_internal_set_amount(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amount_ = value;
 }
@@ -1938,7 +1938,7 @@ inline void ProductPrice::set_allocated_formatted(::std::string* PROTOBUF_NULLAB
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductPrice.formatted)
 }
 
-// optional float discount_price = 3 [json_name = "discountPrice"];
+// optional double discount_price = 3 [json_name = "discountPrice"];
 inline bool ProductPrice::has_discount_price() const {
   bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
@@ -1948,20 +1948,20 @@ inline void ProductPrice::clear_discount_price() {
   _impl_.discount_price_ = 0;
   _impl_._has_bits_[0] &= ~0x00000010u;
 }
-inline float ProductPrice::discount_price() const {
+inline double ProductPrice::discount_price() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductPrice.discount_price)
   return _internal_discount_price();
 }
-inline void ProductPrice::set_discount_price(float value) {
+inline void ProductPrice::set_discount_price(double value) {
   _internal_set_discount_price(value);
   _impl_._has_bits_[0] |= 0x00000010u;
   // @@protoc_insertion_point(field_set:products.v1.ProductPrice.discount_price)
 }
-inline float ProductPrice::_internal_discount_price() const {
+inline double ProductPrice::_internal_discount_price() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.discount_price_;
 }
-inline void ProductPrice::_internal_set_discount_price(float value) {
+inline void ProductPrice::_internal_set_discount_price(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.discount_price_ = value;
 }
@@ -3067,7 +3067,7 @@ inline void ProductToLikeListItem::set_allocated_price(::products::v1::ProductPr
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductToLikeListItem.price)
 }
 
-// optional float rating = 5 [json_name = "rating"];
+// optional double rating = 5 [json_name = "rating"];
 inline bool ProductToLikeListItem::has_rating() const {
   bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
@@ -3077,20 +3077,20 @@ inline void ProductToLikeListItem::clear_rating() {
   _impl_.rating_ = 0;
   _impl_._has_bits_[0] &= ~0x00000010u;
 }
-inline float ProductToLikeListItem::rating() const {
+inline double ProductToLikeListItem::rating() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductToLikeListItem.rating)
   return _internal_rating();
 }
-inline void ProductToLikeListItem::set_rating(float value) {
+inline void ProductToLikeListItem::set_rating(double value) {
   _internal_set_rating(value);
   _impl_._has_bits_[0] |= 0x00000010u;
   // @@protoc_insertion_point(field_set:products.v1.ProductToLikeListItem.rating)
 }
-inline float ProductToLikeListItem::_internal_rating() const {
+inline double ProductToLikeListItem::_internal_rating() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.rating_;
 }
-inline void ProductToLikeListItem::_internal_set_rating(float value) {
+inline void ProductToLikeListItem::_internal_set_rating(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rating_ = value;
 }

@@ -336,9 +336,9 @@ const char descriptor_table_protodef_products_2fv1_2fproducts_5fto_5flike_2eprot
     "\n\"products/v1/products_to_like.proto\022\013pr"
     "oducts.v1\032\025shared/v1/error.proto\032\032shared"
     "/v1/pagination.proto\032\025shared/v1/types.pr"
-    "oto\"\373\001\n\014ProductPrice\022\026\n\006amount\030\001 \001(\002R\006am"
+    "oto\"\373\001\n\014ProductPrice\022\026\n\006amount\030\001 \001(\001R\006am"
     "ount\022\034\n\tformatted\030\002 \001(\tR\tformatted\022*\n\016di"
-    "scount_price\030\003 \001(\002H\000R\rdiscountPrice\210\001\001\022$"
+    "scount_price\030\003 \001(\001H\000R\rdiscountPrice\210\001\001\022$"
     "\n\013save_amount\030\004 \001(\tH\001R\nsaveAmount\210\001\001\022,\n\017"
     "save_percentage\030\005 \001(\tH\002R\016savePercentage\210"
     "\001\001B\021\n\017_discount_priceB\016\n\014_save_amountB\022\n"
@@ -364,7 +364,7 @@ const char descriptor_table_protodef_products_2fv1_2fproducts_5fto_5flike_2eprot
     "\n\002id\030\001 \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005title\022\024\n\005"
     "image\030\003 \001(\tR\005image\022/\n\005price\030\004 \001(\0132\031.prod"
     "ucts.v1.ProductPriceR\005price\022\033\n\006rating\030\005 "
-    "\001(\002H\000R\006rating\210\001\001\022\027\n\004sold\030\006 \001(\005H\001R\004sold\210\001"
+    "\001(\001H\000R\006rating\210\001\001\022\027\n\004sold\030\006 \001(\005H\001R\004sold\210\001"
     "\001\0224\n\004meta\030\007 \003(\0132 .products.v1.ProductIte"
     "mMetadataR\004metaB\t\n\007_ratingB\007\n\005_sold*\213\001\n\025"
     "ProductShippingMethod\022\'\n#PRODUCT_SHIPPIN"
@@ -563,15 +563,15 @@ ProductPrice::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
-    // float amount = 1 [json_name = "amount"];
-    {::_pbi::TcParser::FastF32S1,
-     {13, 3, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.amount_)}},
+    // double amount = 1 [json_name = "amount"];
+    {::_pbi::TcParser::FastF64S1,
+     {9, 3, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.amount_)}},
     // string formatted = 2 [json_name = "formatted"];
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.formatted_)}},
-    // optional float discount_price = 3 [json_name = "discountPrice"];
-    {::_pbi::TcParser::FastF32S1,
-     {29, 4, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.discount_price_)}},
+    // optional double discount_price = 3 [json_name = "discountPrice"];
+    {::_pbi::TcParser::FastF64S1,
+     {25, 4, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.discount_price_)}},
     // optional string save_amount = 4 [json_name = "saveAmount"];
     {::_pbi::TcParser::FastUS1,
      {34, 1, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_amount_)}},
@@ -583,15 +583,15 @@ ProductPrice::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // float amount = 1 [json_name = "amount"];
+    // double amount = 1 [json_name = "amount"];
     {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.amount_), _Internal::kHasBitsOffset + 3, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
     // string formatted = 2 [json_name = "formatted"];
     {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.formatted_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional float discount_price = 3 [json_name = "discountPrice"];
+    // optional double discount_price = 3 [json_name = "discountPrice"];
     {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.discount_price_), _Internal::kHasBitsOffset + 4, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
     // optional string save_amount = 4 [json_name = "saveAmount"];
     {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_amount_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
@@ -651,11 +651,11 @@ PROTOBUF_NOINLINE void ProductPrice::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // float amount = 1 [json_name = "amount"];
+  // double amount = 1 [json_name = "amount"];
   if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
-    if (::absl::bit_cast<::uint32_t>(this_._internal_amount()) != 0) {
+    if (::absl::bit_cast<::uint64_t>(this_._internal_amount()) != 0) {
       target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
           1, this_._internal_amount(), target);
     }
   }
@@ -671,10 +671,10 @@ PROTOBUF_NOINLINE void ProductPrice::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // optional float discount_price = 3 [json_name = "discountPrice"];
+  // optional double discount_price = 3 [json_name = "discountPrice"];
   if ((cached_has_bits & 0x00000010u) != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
         3, this_._internal_discount_price(), target);
   }
 
@@ -719,7 +719,7 @@ PROTOBUF_NOINLINE void ProductPrice::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += static_cast<bool>(0x00000010u & cached_has_bits) * 5;
+  total_size += static_cast<bool>(0x00000010u & cached_has_bits) * 9;
   if ((cached_has_bits & 0x0000000fu) != 0) {
     // string formatted = 2 [json_name = "formatted"];
     if ((cached_has_bits & 0x00000001u) != 0) {
@@ -738,10 +738,10 @@ PROTOBUF_NOINLINE void ProductPrice::Clear() {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_save_percentage());
     }
-    // float amount = 1 [json_name = "amount"];
+    // double amount = 1 [json_name = "amount"];
     if ((cached_has_bits & 0x00000008u) != 0) {
-      if (::absl::bit_cast<::uint32_t>(this_._internal_amount()) != 0) {
-        total_size += 5;
+      if (::absl::bit_cast<::uint64_t>(this_._internal_amount()) != 0) {
+        total_size += 9;
       }
     }
   }
@@ -775,7 +775,7 @@ void ProductPrice::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::go
       _this->_internal_set_save_percentage(from._internal_save_percentage());
     }
     if ((cached_has_bits & 0x00000008u) != 0) {
-      if (::absl::bit_cast<::uint32_t>(from._internal_amount()) != 0) {
+      if (::absl::bit_cast<::uint64_t>(from._internal_amount()) != 0) {
         _this->_impl_.amount_ = from._impl_.amount_;
       }
     }
@@ -2628,9 +2628,9 @@ ProductToLikeListItem::_table_ = {
     // .products.v1.ProductPrice price = 4 [json_name = "price"];
     {::_pbi::TcParser::FastMtS1,
      {34, 3, 0, PROTOBUF_FIELD_OFFSET(ProductToLikeListItem, _impl_.price_)}},
-    // optional float rating = 5 [json_name = "rating"];
-    {::_pbi::TcParser::FastF32S1,
-     {45, 4, 0, PROTOBUF_FIELD_OFFSET(ProductToLikeListItem, _impl_.rating_)}},
+    // optional double rating = 5 [json_name = "rating"];
+    {::_pbi::TcParser::FastF64S1,
+     {41, 4, 0, PROTOBUF_FIELD_OFFSET(ProductToLikeListItem, _impl_.rating_)}},
     // optional int32 sold = 6 [json_name = "sold"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ProductToLikeListItem, _impl_.sold_), 5>(),
      {48, 5, 0, PROTOBUF_FIELD_OFFSET(ProductToLikeListItem, _impl_.sold_)}},
@@ -2652,9 +2652,9 @@ ProductToLikeListItem::_table_ = {
     // .products.v1.ProductPrice price = 4 [json_name = "price"];
     {PROTOBUF_FIELD_OFFSET(ProductToLikeListItem, _impl_.price_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional float rating = 5 [json_name = "rating"];
+    // optional double rating = 5 [json_name = "rating"];
     {PROTOBUF_FIELD_OFFSET(ProductToLikeListItem, _impl_.rating_), _Internal::kHasBitsOffset + 4, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
     // optional int32 sold = 6 [json_name = "sold"];
     {PROTOBUF_FIELD_OFFSET(ProductToLikeListItem, _impl_.sold_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
@@ -2760,10 +2760,10 @@ PROTOBUF_NOINLINE void ProductToLikeListItem::Clear() {
         stream);
   }
 
-  // optional float rating = 5 [json_name = "rating"];
+  // optional double rating = 5 [json_name = "rating"];
   if ((cached_has_bits & 0x00000010u) != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
         5, this_._internal_rating(), target);
   }
 
@@ -2819,7 +2819,7 @@ PROTOBUF_NOINLINE void ProductToLikeListItem::Clear() {
     }
   }
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += static_cast<bool>(0x00000010u & cached_has_bits) * 5;
+  total_size += static_cast<bool>(0x00000010u & cached_has_bits) * 9;
   if ((cached_has_bits & 0x0000002fu) != 0) {
     // string id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000001u) != 0) {
