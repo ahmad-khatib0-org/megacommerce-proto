@@ -8,8 +8,8 @@ import "products/v1/hero_products.proto";
 import "products/v1/newly_added_products.proto";
 import "products/v1/product_create.proto";
 import "products/v1/product_data.proto";
-import "products/v1/product_list.proto";
 import "products/v1/product_snapshot.proto";
+import "products/v1/products_to_like.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
@@ -19,7 +19,7 @@ option java_package = "org.megacommerce.products.v1";
 service ProductsService {
   rpc ProductCreate(products.v1.ProductCreateRequest) returns (products.v1.ProductCreateResponse);
   rpc ProductData(products.v1.ProductDataRequest) returns (products.v1.ProductDataResponse);
-  rpc ProductList(products.v1.ProductListRequest) returns (products.v1.ProductListResponse);
+  rpc ProductsToLike(products.v1.ProductsToLikeRequest) returns (products.v1.ProductsToLikeResponse);
   rpc ProductSnapshot(products.v1.ProductSnapshotRequest) returns (products.v1.ProductSnapshotResponse);
   rpc BestSellingProducts(products.v1.BestSellingProductsRequest) returns (products.v1.BestSellingProductsResponse);
   rpc BigDiscountProducts(products.v1.BigDiscountProductsRequest) returns (products.v1.BigDiscountProductsResponse);

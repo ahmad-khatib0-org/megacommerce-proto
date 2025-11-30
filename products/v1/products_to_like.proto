@@ -3,11 +3,12 @@ syntax = "proto3";
 package products.v1;
 
 import "shared/v1/error.proto";
+import "shared/v1/pagination.proto";
 import "shared/v1/types.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
-option java_outer_classname = "ProductListProto";
+option java_outer_classname = "ProductsToLikeProto";
 option java_package = "org.megacommerce.products.v1";
 
 message ProductPrice {
@@ -44,7 +45,22 @@ message ProductItemMetadata {
   string label = 2;
 }
 
-message ProductItem {
+message ProductsToLikeRequest {
+  shared.v1.PaginationResponse pagination = 2;
+}
+
+message ProductsToLikeResponse {
+  oneof response {
+    ProductsToLikeResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message ProductsToLikeResponseData {
+  repeated ProductToLikeListItem products = 1;
+}
+
+message ProductToLikeListItem {
   string id = 1;
   string title = 2;
   string image = 3;
@@ -52,32 +68,4 @@ message ProductItem {
   optional float rating = 5;
   optional int32 sold = 6;
   repeated ProductItemMetadata meta = 7;
-}
-
-message ProductListItem {
-  string id = 1;
-  string user_id = 2;
-  string title = 6;
-  string description = 7;
-  string slug = 8;
-  string price = 9;
-  string currency_code = 10;
-  bool ar_enabled = 13;
-}
-
-message ProductListRequest {
-  uint32 page = 1;
-  string last_id = 2;
-  optional shared.v1.OrderDirection order_price = 3;
-}
-
-message ProductListResponse {
-  oneof response {
-    ProductListResponseData data = 1;
-    shared.v1.AppError error = 2;
-  }
-}
-
-message ProductListResponseData {
-  repeated ProductListItem data = 1;
 }

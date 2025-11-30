@@ -1,4 +1,5 @@
 from shared.v1 import error_pb2 as _error_pb2
+from shared.v1 import pagination_pb2 as _pagination_pb2
 from shared.v1 import types_pb2 as _types_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -64,7 +65,27 @@ class ProductItemMetadata(_message.Message):
     label: str
     def __init__(self, type: _Optional[_Union[ProductItemMetadataType, str]] = ..., label: _Optional[str] = ...) -> None: ...
 
-class ProductItem(_message.Message):
+class ProductsToLikeRequest(_message.Message):
+    __slots__ = ("pagination",)
+    PAGINATION_FIELD_NUMBER: _ClassVar[int]
+    pagination: _pagination_pb2.PaginationResponse
+    def __init__(self, pagination: _Optional[_Union[_pagination_pb2.PaginationResponse, _Mapping]] = ...) -> None: ...
+
+class ProductsToLikeResponse(_message.Message):
+    __slots__ = ("data", "error")
+    DATA_FIELD_NUMBER: _ClassVar[int]
+    ERROR_FIELD_NUMBER: _ClassVar[int]
+    data: ProductsToLikeResponseData
+    error: _error_pb2.AppError
+    def __init__(self, data: _Optional[_Union[ProductsToLikeResponseData, _Mapping]] = ..., error: _Optional[_Union[_error_pb2.AppError, _Mapping]] = ...) -> None: ...
+
+class ProductsToLikeResponseData(_message.Message):
+    __slots__ = ("products",)
+    PRODUCTS_FIELD_NUMBER: _ClassVar[int]
+    products: _containers.RepeatedCompositeFieldContainer[ProductToLikeListItem]
+    def __init__(self, products: _Optional[_Iterable[_Union[ProductToLikeListItem, _Mapping]]] = ...) -> None: ...
+
+class ProductToLikeListItem(_message.Message):
     __slots__ = ("id", "title", "image", "price", "rating", "sold", "meta")
     ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
@@ -81,47 +102,3 @@ class ProductItem(_message.Message):
     sold: int
     meta: _containers.RepeatedCompositeFieldContainer[ProductItemMetadata]
     def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., price: _Optional[_Union[ProductPrice, _Mapping]] = ..., rating: _Optional[float] = ..., sold: _Optional[int] = ..., meta: _Optional[_Iterable[_Union[ProductItemMetadata, _Mapping]]] = ...) -> None: ...
-
-class ProductListItem(_message.Message):
-    __slots__ = ("id", "user_id", "title", "description", "slug", "price", "currency_code", "ar_enabled")
-    ID_FIELD_NUMBER: _ClassVar[int]
-    USER_ID_FIELD_NUMBER: _ClassVar[int]
-    TITLE_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    SLUG_FIELD_NUMBER: _ClassVar[int]
-    PRICE_FIELD_NUMBER: _ClassVar[int]
-    CURRENCY_CODE_FIELD_NUMBER: _ClassVar[int]
-    AR_ENABLED_FIELD_NUMBER: _ClassVar[int]
-    id: str
-    user_id: str
-    title: str
-    description: str
-    slug: str
-    price: str
-    currency_code: str
-    ar_enabled: bool
-    def __init__(self, id: _Optional[str] = ..., user_id: _Optional[str] = ..., title: _Optional[str] = ..., description: _Optional[str] = ..., slug: _Optional[str] = ..., price: _Optional[str] = ..., currency_code: _Optional[str] = ..., ar_enabled: bool = ...) -> None: ...
-
-class ProductListRequest(_message.Message):
-    __slots__ = ("page", "last_id", "order_price")
-    PAGE_FIELD_NUMBER: _ClassVar[int]
-    LAST_ID_FIELD_NUMBER: _ClassVar[int]
-    ORDER_PRICE_FIELD_NUMBER: _ClassVar[int]
-    page: int
-    last_id: str
-    order_price: _types_pb2.OrderDirection
-    def __init__(self, page: _Optional[int] = ..., last_id: _Optional[str] = ..., order_price: _Optional[_Union[_types_pb2.OrderDirection, _Mapping]] = ...) -> None: ...
-
-class ProductListResponse(_message.Message):
-    __slots__ = ("data", "error")
-    DATA_FIELD_NUMBER: _ClassVar[int]
-    ERROR_FIELD_NUMBER: _ClassVar[int]
-    data: ProductListResponseData
-    error: _error_pb2.AppError
-    def __init__(self, data: _Optional[_Union[ProductListResponseData, _Mapping]] = ..., error: _Optional[_Union[_error_pb2.AppError, _Mapping]] = ...) -> None: ...
-
-class ProductListResponseData(_message.Message):
-    __slots__ = ("data",)
-    DATA_FIELD_NUMBER: _ClassVar[int]
-    data: _containers.RepeatedCompositeFieldContainer[ProductListItem]
-    def __init__(self, data: _Optional[_Iterable[_Union[ProductListItem, _Mapping]]] = ...) -> None: ...

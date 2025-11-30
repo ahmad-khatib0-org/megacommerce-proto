@@ -968,6 +968,44 @@ pub mod product_data_response {
         Error(super::super::super::shared::v1::AppError),
     }
 }
+/// minimal product data used mostly for creating orders
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductSnapshot {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(uint32, tag = "3")]
+    pub version: u32,
+    #[prost(uint32, tag = "4")]
+    pub schema_version: u32,
+    #[prost(message, optional, tag = "5")]
+    pub offer: ::core::option::Option<ProductOffer>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductSnapshotRequest {
+    #[prost(string, tag = "1")]
+    pub product_id: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductSnapshotResponse {
+    #[prost(oneof = "product_snapshot_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<product_snapshot_response::Response>,
+}
+/// Nested message and enum types in `ProductSnapshotResponse`.
+pub mod product_snapshot_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::ProductSnapshot),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductPrice {
@@ -1006,7 +1044,36 @@ pub struct ProductItemMetadata {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductItem {
+pub struct ProductsToLikeRequest {
+    #[prost(message, optional, tag = "2")]
+    pub pagination: ::core::option::Option<super::super::shared::v1::PaginationResponse>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductsToLikeResponse {
+    #[prost(oneof = "products_to_like_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<products_to_like_response::Response>,
+}
+/// Nested message and enum types in `ProductsToLikeResponse`.
+pub mod products_to_like_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::ProductsToLikeResponseData),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductsToLikeResponseData {
+    #[prost(message, repeated, tag = "1")]
+    pub products: ::prost::alloc::vec::Vec<ProductToLikeListItem>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductToLikeListItem {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
@@ -1021,59 +1088,6 @@ pub struct ProductItem {
     pub sold: ::core::option::Option<i32>,
     #[prost(message, repeated, tag = "7")]
     pub meta: ::prost::alloc::vec::Vec<ProductItemMetadata>,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductListItem {
-    #[prost(string, tag = "1")]
-    pub id: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub user_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "6")]
-    pub title: ::prost::alloc::string::String,
-    #[prost(string, tag = "7")]
-    pub description: ::prost::alloc::string::String,
-    #[prost(string, tag = "8")]
-    pub slug: ::prost::alloc::string::String,
-    #[prost(string, tag = "9")]
-    pub price: ::prost::alloc::string::String,
-    #[prost(string, tag = "10")]
-    pub currency_code: ::prost::alloc::string::String,
-    #[prost(bool, tag = "13")]
-    pub ar_enabled: bool,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductListRequest {
-    #[prost(uint32, tag = "1")]
-    pub page: u32,
-    #[prost(string, tag = "2")]
-    pub last_id: ::prost::alloc::string::String,
-    #[prost(message, optional, tag = "3")]
-    pub order_price: ::core::option::Option<super::super::shared::v1::OrderDirection>,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductListResponse {
-    #[prost(oneof = "product_list_response::Response", tags = "1, 2")]
-    pub response: ::core::option::Option<product_list_response::Response>,
-}
-/// Nested message and enum types in `ProductListResponse`.
-pub mod product_list_response {
-    #[derive(serde::Serialize, serde::Deserialize)]
-    #[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Response {
-        #[prost(message, tag = "1")]
-        Data(super::ProductListResponseData),
-        #[prost(message, tag = "2")]
-        Error(super::super::super::shared::v1::AppError),
-    }
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductListResponseData {
-    #[prost(message, repeated, tag = "1")]
-    pub data: ::prost::alloc::vec::Vec<ProductListItem>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -1136,44 +1150,6 @@ impl ProductItemMetadataType {
             "PRODUCT_ITEM_METADATA_TYPE_BUNDLE" => Some(Self::Bundle),
             _ => None,
         }
-    }
-}
-/// minimal product data used mostly for creating orders
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductSnapshot {
-    #[prost(string, tag = "1")]
-    pub id: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub title: ::prost::alloc::string::String,
-    #[prost(uint32, tag = "3")]
-    pub version: u32,
-    #[prost(uint32, tag = "4")]
-    pub schema_version: u32,
-    #[prost(message, optional, tag = "5")]
-    pub offer: ::core::option::Option<ProductOffer>,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductSnapshotRequest {
-    #[prost(string, tag = "1")]
-    pub product_id: ::prost::alloc::string::String,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductSnapshotResponse {
-    #[prost(oneof = "product_snapshot_response::Response", tags = "1, 2")]
-    pub response: ::core::option::Option<product_snapshot_response::Response>,
-}
-/// Nested message and enum types in `ProductSnapshotResponse`.
-pub mod product_snapshot_response {
-    #[derive(serde::Serialize, serde::Deserialize)]
-    #[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Response {
-        #[prost(message, tag = "1")]
-        Data(super::ProductSnapshot),
-        #[prost(message, tag = "2")]
-        Error(super::super::super::shared::v1::AppError),
     }
 }
 /// Generated client implementations.
@@ -1315,11 +1291,11 @@ pub mod products_service_client {
                 .insert(GrpcMethod::new("products.v1.ProductsService", "ProductData"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn product_list(
+        pub async fn products_to_like(
             &mut self,
-            request: impl tonic::IntoRequest<super::ProductListRequest>,
+            request: impl tonic::IntoRequest<super::ProductsToLikeRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::ProductListResponse>,
+            tonic::Response<super::ProductsToLikeResponse>,
             tonic::Status,
         > {
             self.inner
@@ -1332,11 +1308,13 @@ pub mod products_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/products.v1.ProductsService/ProductList",
+                "/products.v1.ProductsService/ProductsToLike",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("products.v1.ProductsService", "ProductList"));
+                .insert(
+                    GrpcMethod::new("products.v1.ProductsService", "ProductsToLike"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn product_snapshot(
@@ -1496,11 +1474,11 @@ pub mod products_service_server {
             tonic::Response<super::ProductDataResponse>,
             tonic::Status,
         >;
-        async fn product_list(
+        async fn products_to_like(
             &self,
-            request: tonic::Request<super::ProductListRequest>,
+            request: tonic::Request<super::ProductsToLikeRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::ProductListResponse>,
+            tonic::Response<super::ProductsToLikeResponse>,
             tonic::Status,
         >;
         async fn product_snapshot(
@@ -1706,25 +1684,26 @@ pub mod products_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/products.v1.ProductsService/ProductList" => {
+                "/products.v1.ProductsService/ProductsToLike" => {
                     #[allow(non_camel_case_types)]
-                    struct ProductListSvc<T: ProductsService>(pub Arc<T>);
+                    struct ProductsToLikeSvc<T: ProductsService>(pub Arc<T>);
                     impl<
                         T: ProductsService,
-                    > tonic::server::UnaryService<super::ProductListRequest>
-                    for ProductListSvc<T> {
-                        type Response = super::ProductListResponse;
+                    > tonic::server::UnaryService<super::ProductsToLikeRequest>
+                    for ProductsToLikeSvc<T> {
+                        type Response = super::ProductsToLikeResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ProductListRequest>,
+                            request: tonic::Request<super::ProductsToLikeRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ProductsService>::product_list(&inner, request).await
+                                <T as ProductsService>::products_to_like(&inner, request)
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -1735,7 +1714,7 @@ pub mod products_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ProductListSvc(inner);
+                        let method = ProductsToLikeSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

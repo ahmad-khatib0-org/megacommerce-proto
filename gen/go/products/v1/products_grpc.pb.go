@@ -21,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	ProductsService_ProductCreate_FullMethodName       = "/products.v1.ProductsService/ProductCreate"
 	ProductsService_ProductData_FullMethodName         = "/products.v1.ProductsService/ProductData"
-	ProductsService_ProductList_FullMethodName         = "/products.v1.ProductsService/ProductList"
+	ProductsService_ProductsToLike_FullMethodName      = "/products.v1.ProductsService/ProductsToLike"
 	ProductsService_ProductSnapshot_FullMethodName     = "/products.v1.ProductsService/ProductSnapshot"
 	ProductsService_BestSellingProducts_FullMethodName = "/products.v1.ProductsService/BestSellingProducts"
 	ProductsService_BigDiscountProducts_FullMethodName = "/products.v1.ProductsService/BigDiscountProducts"
@@ -35,7 +35,7 @@ const (
 type ProductsServiceClient interface {
 	ProductCreate(ctx context.Context, in *ProductCreateRequest, opts ...grpc.CallOption) (*ProductCreateResponse, error)
 	ProductData(ctx context.Context, in *ProductDataRequest, opts ...grpc.CallOption) (*ProductDataResponse, error)
-	ProductList(ctx context.Context, in *ProductListRequest, opts ...grpc.CallOption) (*ProductListResponse, error)
+	ProductsToLike(ctx context.Context, in *ProductsToLikeRequest, opts ...grpc.CallOption) (*ProductsToLikeResponse, error)
 	ProductSnapshot(ctx context.Context, in *ProductSnapshotRequest, opts ...grpc.CallOption) (*ProductSnapshotResponse, error)
 	BestSellingProducts(ctx context.Context, in *BestSellingProductsRequest, opts ...grpc.CallOption) (*BestSellingProductsResponse, error)
 	BigDiscountProducts(ctx context.Context, in *BigDiscountProductsRequest, opts ...grpc.CallOption) (*BigDiscountProductsResponse, error)
@@ -71,10 +71,10 @@ func (c *productsServiceClient) ProductData(ctx context.Context, in *ProductData
 	return out, nil
 }
 
-func (c *productsServiceClient) ProductList(ctx context.Context, in *ProductListRequest, opts ...grpc.CallOption) (*ProductListResponse, error) {
+func (c *productsServiceClient) ProductsToLike(ctx context.Context, in *ProductsToLikeRequest, opts ...grpc.CallOption) (*ProductsToLikeResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ProductListResponse)
-	err := c.cc.Invoke(ctx, ProductsService_ProductList_FullMethodName, in, out, cOpts...)
+	out := new(ProductsToLikeResponse)
+	err := c.cc.Invoke(ctx, ProductsService_ProductsToLike_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -137,7 +137,7 @@ func (c *productsServiceClient) HeroProducts(ctx context.Context, in *HeroProduc
 type ProductsServiceServer interface {
 	ProductCreate(context.Context, *ProductCreateRequest) (*ProductCreateResponse, error)
 	ProductData(context.Context, *ProductDataRequest) (*ProductDataResponse, error)
-	ProductList(context.Context, *ProductListRequest) (*ProductListResponse, error)
+	ProductsToLike(context.Context, *ProductsToLikeRequest) (*ProductsToLikeResponse, error)
 	ProductSnapshot(context.Context, *ProductSnapshotRequest) (*ProductSnapshotResponse, error)
 	BestSellingProducts(context.Context, *BestSellingProductsRequest) (*BestSellingProductsResponse, error)
 	BigDiscountProducts(context.Context, *BigDiscountProductsRequest) (*BigDiscountProductsResponse, error)
@@ -159,8 +159,8 @@ func (UnimplementedProductsServiceServer) ProductCreate(context.Context, *Produc
 func (UnimplementedProductsServiceServer) ProductData(context.Context, *ProductDataRequest) (*ProductDataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProductData not implemented")
 }
-func (UnimplementedProductsServiceServer) ProductList(context.Context, *ProductListRequest) (*ProductListResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ProductList not implemented")
+func (UnimplementedProductsServiceServer) ProductsToLike(context.Context, *ProductsToLikeRequest) (*ProductsToLikeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductsToLike not implemented")
 }
 func (UnimplementedProductsServiceServer) ProductSnapshot(context.Context, *ProductSnapshotRequest) (*ProductSnapshotResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProductSnapshot not implemented")
@@ -234,20 +234,20 @@ func _ProductsService_ProductData_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProductsService_ProductList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ProductListRequest)
+func _ProductsService_ProductsToLike_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProductsToLikeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProductsServiceServer).ProductList(ctx, in)
+		return srv.(ProductsServiceServer).ProductsToLike(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ProductsService_ProductList_FullMethodName,
+		FullMethod: ProductsService_ProductsToLike_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProductsServiceServer).ProductList(ctx, req.(*ProductListRequest))
+		return srv.(ProductsServiceServer).ProductsToLike(ctx, req.(*ProductsToLikeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -358,8 +358,8 @@ var ProductsService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ProductsService_ProductData_Handler,
 		},
 		{
-			MethodName: "ProductList",
-			Handler:    _ProductsService_ProductList_Handler,
+			MethodName: "ProductsToLike",
+			Handler:    _ProductsService_ProductsToLike_Handler,
 		},
 		{
 			MethodName: "ProductSnapshot",

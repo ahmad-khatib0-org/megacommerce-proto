@@ -24,11 +24,11 @@ var File_products_v1_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_products_proto_rawDesc = "" +
 	"\n" +
-	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a'products/v1/best_selling_products.proto\x1a'products/v1/big_discount_products.proto\x1a\x1fproducts/v1/hero_products.proto\x1a&products/v1/newly_added_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\x1eproducts/v1/product_list.proto\x1a\"products/v1/product_snapshot.proto2\xfb\x05\n" +
+	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a'products/v1/best_selling_products.proto\x1a'products/v1/big_discount_products.proto\x1a\x1fproducts/v1/hero_products.proto\x1a&products/v1/newly_added_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\"products/v1/product_snapshot.proto\x1a\"products/v1/products_to_like.proto2\x84\x06\n" +
 	"\x0fProductsService\x12V\n" +
 	"\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n" +
-	"\vProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12P\n" +
-	"\vProductList\x12\x1f.products.v1.ProductListRequest\x1a .products.v1.ProductListResponse\x12\\\n" +
+	"\vProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12Y\n" +
+	"\x0eProductsToLike\x12\".products.v1.ProductsToLikeRequest\x1a#.products.v1.ProductsToLikeResponse\x12\\\n" +
 	"\x0fProductSnapshot\x12#.products.v1.ProductSnapshotRequest\x1a$.products.v1.ProductSnapshotResponse\x12h\n" +
 	"\x13BestSellingProducts\x12'.products.v1.BestSellingProductsRequest\x1a(.products.v1.BestSellingProductsResponse\x12h\n" +
 	"\x13BigDiscountProducts\x12'.products.v1.BigDiscountProductsRequest\x1a(.products.v1.BigDiscountProductsResponse\x12e\n" +
@@ -39,7 +39,7 @@ const file_products_v1_products_proto_rawDesc = "" +
 var file_products_v1_products_proto_goTypes = []any{
 	(*ProductCreateRequest)(nil),        // 0: products.v1.ProductCreateRequest
 	(*ProductDataRequest)(nil),          // 1: products.v1.ProductDataRequest
-	(*ProductListRequest)(nil),          // 2: products.v1.ProductListRequest
+	(*ProductsToLikeRequest)(nil),       // 2: products.v1.ProductsToLikeRequest
 	(*ProductSnapshotRequest)(nil),      // 3: products.v1.ProductSnapshotRequest
 	(*BestSellingProductsRequest)(nil),  // 4: products.v1.BestSellingProductsRequest
 	(*BigDiscountProductsRequest)(nil),  // 5: products.v1.BigDiscountProductsRequest
@@ -47,7 +47,7 @@ var file_products_v1_products_proto_goTypes = []any{
 	(*HeroProductsRequest)(nil),         // 7: products.v1.HeroProductsRequest
 	(*ProductCreateResponse)(nil),       // 8: products.v1.ProductCreateResponse
 	(*ProductDataResponse)(nil),         // 9: products.v1.ProductDataResponse
-	(*ProductListResponse)(nil),         // 10: products.v1.ProductListResponse
+	(*ProductsToLikeResponse)(nil),      // 10: products.v1.ProductsToLikeResponse
 	(*ProductSnapshotResponse)(nil),     // 11: products.v1.ProductSnapshotResponse
 	(*BestSellingProductsResponse)(nil), // 12: products.v1.BestSellingProductsResponse
 	(*BigDiscountProductsResponse)(nil), // 13: products.v1.BigDiscountProductsResponse
@@ -57,7 +57,7 @@ var file_products_v1_products_proto_goTypes = []any{
 var file_products_v1_products_proto_depIdxs = []int32{
 	0,  // 0: products.v1.ProductsService.ProductCreate:input_type -> products.v1.ProductCreateRequest
 	1,  // 1: products.v1.ProductsService.ProductData:input_type -> products.v1.ProductDataRequest
-	2,  // 2: products.v1.ProductsService.ProductList:input_type -> products.v1.ProductListRequest
+	2,  // 2: products.v1.ProductsService.ProductsToLike:input_type -> products.v1.ProductsToLikeRequest
 	3,  // 3: products.v1.ProductsService.ProductSnapshot:input_type -> products.v1.ProductSnapshotRequest
 	4,  // 4: products.v1.ProductsService.BestSellingProducts:input_type -> products.v1.BestSellingProductsRequest
 	5,  // 5: products.v1.ProductsService.BigDiscountProducts:input_type -> products.v1.BigDiscountProductsRequest
@@ -65,7 +65,7 @@ var file_products_v1_products_proto_depIdxs = []int32{
 	7,  // 7: products.v1.ProductsService.HeroProducts:input_type -> products.v1.HeroProductsRequest
 	8,  // 8: products.v1.ProductsService.ProductCreate:output_type -> products.v1.ProductCreateResponse
 	9,  // 9: products.v1.ProductsService.ProductData:output_type -> products.v1.ProductDataResponse
-	10, // 10: products.v1.ProductsService.ProductList:output_type -> products.v1.ProductListResponse
+	10, // 10: products.v1.ProductsService.ProductsToLike:output_type -> products.v1.ProductsToLikeResponse
 	11, // 11: products.v1.ProductsService.ProductSnapshot:output_type -> products.v1.ProductSnapshotResponse
 	12, // 12: products.v1.ProductsService.BestSellingProducts:output_type -> products.v1.BestSellingProductsResponse
 	13, // 13: products.v1.ProductsService.BigDiscountProducts:output_type -> products.v1.BigDiscountProductsResponse
@@ -89,8 +89,8 @@ func file_products_v1_products_proto_init() {
 	file_products_v1_newly_added_products_proto_init()
 	file_products_v1_product_create_proto_init()
 	file_products_v1_product_data_proto_init()
-	file_products_v1_product_list_proto_init()
 	file_products_v1_product_snapshot_proto_init()
+	file_products_v1_products_to_like_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

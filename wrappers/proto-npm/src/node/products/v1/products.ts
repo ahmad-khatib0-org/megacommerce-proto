@@ -23,8 +23,8 @@ import { HeroProductsRequest, HeroProductsResponse } from "./hero_products";
 import { NewlyAddedProductsRequest, NewlyAddedProductsResponse } from "./newly_added_products";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create";
 import { ProductDataRequest, ProductDataResponse } from "./product_data";
-import { ProductListRequest, ProductListResponse } from "./product_list";
 import { ProductSnapshotRequest, ProductSnapshotResponse } from "./product_snapshot";
+import { ProductsToLikeRequest, ProductsToLikeResponse } from "./products_to_like";
 
 export const protobufPackage = "products.v1";
 
@@ -49,14 +49,16 @@ export const ProductsServiceService = {
     responseSerialize: (value: ProductDataResponse): Buffer => Buffer.from(ProductDataResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): ProductDataResponse => ProductDataResponse.decode(value),
   },
-  productList: {
-    path: "/products.v1.ProductsService/ProductList",
+  productsToLike: {
+    path: "/products.v1.ProductsService/ProductsToLike",
     requestStream: false,
     responseStream: false,
-    requestSerialize: (value: ProductListRequest): Buffer => Buffer.from(ProductListRequest.encode(value).finish()),
-    requestDeserialize: (value: Buffer): ProductListRequest => ProductListRequest.decode(value),
-    responseSerialize: (value: ProductListResponse): Buffer => Buffer.from(ProductListResponse.encode(value).finish()),
-    responseDeserialize: (value: Buffer): ProductListResponse => ProductListResponse.decode(value),
+    requestSerialize: (value: ProductsToLikeRequest): Buffer =>
+      Buffer.from(ProductsToLikeRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): ProductsToLikeRequest => ProductsToLikeRequest.decode(value),
+    responseSerialize: (value: ProductsToLikeResponse): Buffer =>
+      Buffer.from(ProductsToLikeResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): ProductsToLikeResponse => ProductsToLikeResponse.decode(value),
   },
   productSnapshot: {
     path: "/products.v1.ProductsService/ProductSnapshot",
@@ -117,7 +119,7 @@ export const ProductsServiceService = {
 export interface ProductsServiceServer extends UntypedServiceImplementation {
   productCreate: handleUnaryCall<ProductCreateRequest, ProductCreateResponse>;
   productData: handleUnaryCall<ProductDataRequest, ProductDataResponse>;
-  productList: handleUnaryCall<ProductListRequest, ProductListResponse>;
+  productsToLike: handleUnaryCall<ProductsToLikeRequest, ProductsToLikeResponse>;
   productSnapshot: handleUnaryCall<ProductSnapshotRequest, ProductSnapshotResponse>;
   bestSellingProducts: handleUnaryCall<BestSellingProductsRequest, BestSellingProductsResponse>;
   bigDiscountProducts: handleUnaryCall<BigDiscountProductsRequest, BigDiscountProductsResponse>;
@@ -156,20 +158,20 @@ export interface ProductsServiceClient extends Client {
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: ProductDataResponse) => void,
   ): ClientUnaryCall;
-  productList(
-    request: ProductListRequest,
-    callback: (error: ServiceError | null, response: ProductListResponse) => void,
+  productsToLike(
+    request: ProductsToLikeRequest,
+    callback: (error: ServiceError | null, response: ProductsToLikeResponse) => void,
   ): ClientUnaryCall;
-  productList(
-    request: ProductListRequest,
+  productsToLike(
+    request: ProductsToLikeRequest,
     metadata: Metadata,
-    callback: (error: ServiceError | null, response: ProductListResponse) => void,
+    callback: (error: ServiceError | null, response: ProductsToLikeResponse) => void,
   ): ClientUnaryCall;
-  productList(
-    request: ProductListRequest,
+  productsToLike(
+    request: ProductsToLikeRequest,
     metadata: Metadata,
     options: Partial<CallOptions>,
-    callback: (error: ServiceError | null, response: ProductListResponse) => void,
+    callback: (error: ServiceError | null, response: ProductsToLikeResponse) => void,
   ): ClientUnaryCall;
   productSnapshot(
     request: ProductSnapshotRequest,

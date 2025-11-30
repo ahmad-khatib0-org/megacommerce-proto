@@ -41,31 +41,31 @@ public final class ProductsProto {
       "oto\032\037products/v1/hero_products.proto\032&pr" +
       "oducts/v1/newly_added_products.proto\032 pr" +
       "oducts/v1/product_create.proto\032\036products" +
-      "/v1/product_data.proto\032\036products/v1/prod" +
-      "uct_list.proto\032\"products/v1/product_snap" +
-      "shot.proto2\373\005\n\017ProductsService\022V\n\rProduc" +
-      "tCreate\022!.products.v1.ProductCreateReque" +
-      "st\032\".products.v1.ProductCreateResponse\022P" +
-      "\n\013ProductData\022\037.products.v1.ProductDataR" +
-      "equest\032 .products.v1.ProductDataResponse" +
-      "\022P\n\013ProductList\022\037.products.v1.ProductLis" +
-      "tRequest\032 .products.v1.ProductListRespon" +
-      "se\022\\\n\017ProductSnapshot\022#.products.v1.Prod" +
-      "uctSnapshotRequest\032$.products.v1.Product" +
-      "SnapshotResponse\022h\n\023BestSellingProducts\022" +
-      "\'.products.v1.BestSellingProductsRequest" +
-      "\032(.products.v1.BestSellingProductsRespon" +
-      "se\022h\n\023BigDiscountProducts\022\'.products.v1." +
-      "BigDiscountProductsRequest\032(.products.v1" +
-      ".BigDiscountProductsResponse\022e\n\022NewlyAdd" +
-      "edProducts\022&.products.v1.NewlyAddedProdu" +
-      "ctsRequest\032\'.products.v1.NewlyAddedProdu" +
-      "ctsResponse\022S\n\014HeroProducts\022 .products.v" +
-      "1.HeroProductsRequest\032!.products.v1.Hero" +
-      "ProductsResponseBw\n\034org.megacommerce.pro" +
-      "ducts.v1B\rProductsProtoZEgithub.com/ahma" +
-      "d-khatib0-org/megacommerce-proto/gen/go/" +
-      "products/v1;v1\370\001\001b\006proto3"
+      "/v1/product_data.proto\032\"products/v1/prod" +
+      "uct_snapshot.proto\032\"products/v1/products" +
+      "_to_like.proto2\204\006\n\017ProductsService\022V\n\rPr" +
+      "oductCreate\022!.products.v1.ProductCreateR" +
+      "equest\032\".products.v1.ProductCreateRespon" +
+      "se\022P\n\013ProductData\022\037.products.v1.ProductD" +
+      "ataRequest\032 .products.v1.ProductDataResp" +
+      "onse\022Y\n\016ProductsToLike\022\".products.v1.Pro" +
+      "ductsToLikeRequest\032#.products.v1.Product" +
+      "sToLikeResponse\022\\\n\017ProductSnapshot\022#.pro" +
+      "ducts.v1.ProductSnapshotRequest\032$.produc" +
+      "ts.v1.ProductSnapshotResponse\022h\n\023BestSel" +
+      "lingProducts\022\'.products.v1.BestSellingPr" +
+      "oductsRequest\032(.products.v1.BestSellingP" +
+      "roductsResponse\022h\n\023BigDiscountProducts\022\'" +
+      ".products.v1.BigDiscountProductsRequest\032" +
+      "(.products.v1.BigDiscountProductsRespons" +
+      "e\022e\n\022NewlyAddedProducts\022&.products.v1.Ne" +
+      "wlyAddedProductsRequest\032\'.products.v1.Ne" +
+      "wlyAddedProductsResponse\022S\n\014HeroProducts" +
+      "\022 .products.v1.HeroProductsRequest\032!.pro" +
+      "ducts.v1.HeroProductsResponseBw\n\034org.meg" +
+      "acommerce.products.v1B\rProductsProtoZEgi" +
+      "thub.com/ahmad-khatib0-org/megacommerce-" +
+      "proto/gen/go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -76,8 +76,8 @@ public final class ProductsProto {
           org.megacommerce.products.v1.NewlyAddedProductsProto.getDescriptor(),
           org.megacommerce.products.v1.ProductCreateProto.getDescriptor(),
           org.megacommerce.products.v1.ProductDataProto.getDescriptor(),
-          org.megacommerce.products.v1.ProductListProto.getDescriptor(),
           org.megacommerce.products.v1.ProductSnapshotProto.getDescriptor(),
+          org.megacommerce.products.v1.ProductsToLikeProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.products.v1.BestSellingProductsProto.getDescriptor();
@@ -86,8 +86,8 @@ public final class ProductsProto {
     org.megacommerce.products.v1.NewlyAddedProductsProto.getDescriptor();
     org.megacommerce.products.v1.ProductCreateProto.getDescriptor();
     org.megacommerce.products.v1.ProductDataProto.getDescriptor();
-    org.megacommerce.products.v1.ProductListProto.getDescriptor();
     org.megacommerce.products.v1.ProductSnapshotProto.getDescriptor();
+    org.megacommerce.products.v1.ProductsToLikeProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

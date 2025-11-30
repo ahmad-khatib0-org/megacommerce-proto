@@ -2,12 +2,12 @@
 // versions:
 //   protoc-gen-ts_proto  v2.7.7
 //   protoc               unknown
-// source: products/v1/product_list.proto
+// source: products/v1/products_to_like.proto
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { AppError } from "../../shared/v1/error.js";
-import { OrderDirection } from "../../shared/v1/types.js";
+import { AppError } from "../../shared/v1/error";
+import { PaginationResponse } from "../../shared/v1/pagination";
 
 export const protobufPackage = "products.v1";
 
@@ -116,7 +116,20 @@ export interface ProductItemMetadata {
   label: string;
 }
 
-export interface ProductItem {
+export interface ProductsToLikeRequest {
+  pagination?: PaginationResponse | undefined;
+}
+
+export interface ProductsToLikeResponse {
+  data?: ProductsToLikeResponseData | undefined;
+  error?: AppError | undefined;
+}
+
+export interface ProductsToLikeResponseData {
+  products: ProductToLikeListItem[];
+}
+
+export interface ProductToLikeListItem {
   id: string;
   title: string;
   image: string;
@@ -124,32 +137,6 @@ export interface ProductItem {
   rating?: number | undefined;
   sold?: number | undefined;
   meta: ProductItemMetadata[];
-}
-
-export interface ProductListItem {
-  id: string;
-  userId: string;
-  title: string;
-  description: string;
-  slug: string;
-  price: string;
-  currencyCode: string;
-  arEnabled: boolean;
-}
-
-export interface ProductListRequest {
-  page: number;
-  lastId: string;
-  orderPrice?: OrderDirection | undefined;
-}
-
-export interface ProductListResponse {
-  data?: ProductListResponseData | undefined;
-  error?: AppError | undefined;
-}
-
-export interface ProductListResponseData {
-  data: ProductListItem[];
 }
 
 function createBaseProductPrice(): ProductPrice {
@@ -476,12 +463,214 @@ export const ProductItemMetadata: MessageFns<ProductItemMetadata> = {
   },
 };
 
-function createBaseProductItem(): ProductItem {
+function createBaseProductsToLikeRequest(): ProductsToLikeRequest {
+  return { pagination: undefined };
+}
+
+export const ProductsToLikeRequest: MessageFns<ProductsToLikeRequest> = {
+  encode(message: ProductsToLikeRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.pagination !== undefined) {
+      PaginationResponse.encode(message.pagination, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductsToLikeRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductsToLikeRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.pagination = PaginationResponse.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductsToLikeRequest {
+    return { pagination: isSet(object.pagination) ? PaginationResponse.fromJSON(object.pagination) : undefined };
+  },
+
+  toJSON(message: ProductsToLikeRequest): unknown {
+    const obj: any = {};
+    if (message.pagination !== undefined) {
+      obj.pagination = PaginationResponse.toJSON(message.pagination);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductsToLikeRequest>, I>>(base?: I): ProductsToLikeRequest {
+    return ProductsToLikeRequest.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductsToLikeRequest>, I>>(object: I): ProductsToLikeRequest {
+    const message = createBaseProductsToLikeRequest();
+    message.pagination = (object.pagination !== undefined && object.pagination !== null)
+      ? PaginationResponse.fromPartial(object.pagination)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductsToLikeResponse(): ProductsToLikeResponse {
+  return { data: undefined, error: undefined };
+}
+
+export const ProductsToLikeResponse: MessageFns<ProductsToLikeResponse> = {
+  encode(message: ProductsToLikeResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.data !== undefined) {
+      ProductsToLikeResponseData.encode(message.data, writer.uint32(10).fork()).join();
+    }
+    if (message.error !== undefined) {
+      AppError.encode(message.error, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductsToLikeResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductsToLikeResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.data = ProductsToLikeResponseData.decode(reader, reader.uint32());
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.error = AppError.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductsToLikeResponse {
+    return {
+      data: isSet(object.data) ? ProductsToLikeResponseData.fromJSON(object.data) : undefined,
+      error: isSet(object.error) ? AppError.fromJSON(object.error) : undefined,
+    };
+  },
+
+  toJSON(message: ProductsToLikeResponse): unknown {
+    const obj: any = {};
+    if (message.data !== undefined) {
+      obj.data = ProductsToLikeResponseData.toJSON(message.data);
+    }
+    if (message.error !== undefined) {
+      obj.error = AppError.toJSON(message.error);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductsToLikeResponse>, I>>(base?: I): ProductsToLikeResponse {
+    return ProductsToLikeResponse.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductsToLikeResponse>, I>>(object: I): ProductsToLikeResponse {
+    const message = createBaseProductsToLikeResponse();
+    message.data = (object.data !== undefined && object.data !== null)
+      ? ProductsToLikeResponseData.fromPartial(object.data)
+      : undefined;
+    message.error = (object.error !== undefined && object.error !== null)
+      ? AppError.fromPartial(object.error)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductsToLikeResponseData(): ProductsToLikeResponseData {
+  return { products: [] };
+}
+
+export const ProductsToLikeResponseData: MessageFns<ProductsToLikeResponseData> = {
+  encode(message: ProductsToLikeResponseData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.products) {
+      ProductToLikeListItem.encode(v!, writer.uint32(10).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductsToLikeResponseData {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductsToLikeResponseData();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.products.push(ProductToLikeListItem.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductsToLikeResponseData {
+    return {
+      products: globalThis.Array.isArray(object?.products)
+        ? object.products.map((e: any) => ProductToLikeListItem.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ProductsToLikeResponseData): unknown {
+    const obj: any = {};
+    if (message.products?.length) {
+      obj.products = message.products.map((e) => ProductToLikeListItem.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductsToLikeResponseData>, I>>(base?: I): ProductsToLikeResponseData {
+    return ProductsToLikeResponseData.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductsToLikeResponseData>, I>>(object: I): ProductsToLikeResponseData {
+    const message = createBaseProductsToLikeResponseData();
+    message.products = object.products?.map((e) => ProductToLikeListItem.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseProductToLikeListItem(): ProductToLikeListItem {
   return { id: "", title: "", image: "", price: undefined, rating: undefined, sold: undefined, meta: [] };
 }
 
-export const ProductItem: MessageFns<ProductItem> = {
-  encode(message: ProductItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const ProductToLikeListItem: MessageFns<ProductToLikeListItem> = {
+  encode(message: ProductToLikeListItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
@@ -506,10 +695,10 @@ export const ProductItem: MessageFns<ProductItem> = {
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductItem {
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductToLikeListItem {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductItem();
+    const message = createBaseProductToLikeListItem();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -578,7 +767,7 @@ export const ProductItem: MessageFns<ProductItem> = {
     return message;
   },
 
-  fromJSON(object: any): ProductItem {
+  fromJSON(object: any): ProductToLikeListItem {
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       title: isSet(object.title) ? globalThis.String(object.title) : "",
@@ -590,7 +779,7 @@ export const ProductItem: MessageFns<ProductItem> = {
     };
   },
 
-  toJSON(message: ProductItem): unknown {
+  toJSON(message: ProductToLikeListItem): unknown {
     const obj: any = {};
     if (message.id !== "") {
       obj.id = message.id;
@@ -616,11 +805,11 @@ export const ProductItem: MessageFns<ProductItem> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ProductItem>, I>>(base?: I): ProductItem {
-    return ProductItem.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<ProductToLikeListItem>, I>>(base?: I): ProductToLikeListItem {
+    return ProductToLikeListItem.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ProductItem>, I>>(object: I): ProductItem {
-    const message = createBaseProductItem();
+  fromPartial<I extends Exact<DeepPartial<ProductToLikeListItem>, I>>(object: I): ProductToLikeListItem {
+    const message = createBaseProductToLikeListItem();
     message.id = object.id ?? "";
     message.title = object.title ?? "";
     message.image = object.image ?? "";
@@ -630,412 +819,6 @@ export const ProductItem: MessageFns<ProductItem> = {
     message.rating = object.rating ?? undefined;
     message.sold = object.sold ?? undefined;
     message.meta = object.meta?.map((e) => ProductItemMetadata.fromPartial(e)) || [];
-    return message;
-  },
-};
-
-function createBaseProductListItem(): ProductListItem {
-  return { id: "", userId: "", title: "", description: "", slug: "", price: "", currencyCode: "", arEnabled: false };
-}
-
-export const ProductListItem: MessageFns<ProductListItem> = {
-  encode(message: ProductListItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.id !== "") {
-      writer.uint32(10).string(message.id);
-    }
-    if (message.userId !== "") {
-      writer.uint32(18).string(message.userId);
-    }
-    if (message.title !== "") {
-      writer.uint32(50).string(message.title);
-    }
-    if (message.description !== "") {
-      writer.uint32(58).string(message.description);
-    }
-    if (message.slug !== "") {
-      writer.uint32(66).string(message.slug);
-    }
-    if (message.price !== "") {
-      writer.uint32(74).string(message.price);
-    }
-    if (message.currencyCode !== "") {
-      writer.uint32(82).string(message.currencyCode);
-    }
-    if (message.arEnabled !== false) {
-      writer.uint32(104).bool(message.arEnabled);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductListItem {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductListItem();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.id = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.userId = reader.string();
-          continue;
-        }
-        case 6: {
-          if (tag !== 50) {
-            break;
-          }
-
-          message.title = reader.string();
-          continue;
-        }
-        case 7: {
-          if (tag !== 58) {
-            break;
-          }
-
-          message.description = reader.string();
-          continue;
-        }
-        case 8: {
-          if (tag !== 66) {
-            break;
-          }
-
-          message.slug = reader.string();
-          continue;
-        }
-        case 9: {
-          if (tag !== 74) {
-            break;
-          }
-
-          message.price = reader.string();
-          continue;
-        }
-        case 10: {
-          if (tag !== 82) {
-            break;
-          }
-
-          message.currencyCode = reader.string();
-          continue;
-        }
-        case 13: {
-          if (tag !== 104) {
-            break;
-          }
-
-          message.arEnabled = reader.bool();
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): ProductListItem {
-    return {
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      userId: isSet(object.userId) ? globalThis.String(object.userId) : "",
-      title: isSet(object.title) ? globalThis.String(object.title) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
-      slug: isSet(object.slug) ? globalThis.String(object.slug) : "",
-      price: isSet(object.price) ? globalThis.String(object.price) : "",
-      currencyCode: isSet(object.currencyCode) ? globalThis.String(object.currencyCode) : "",
-      arEnabled: isSet(object.arEnabled) ? globalThis.Boolean(object.arEnabled) : false,
-    };
-  },
-
-  toJSON(message: ProductListItem): unknown {
-    const obj: any = {};
-    if (message.id !== "") {
-      obj.id = message.id;
-    }
-    if (message.userId !== "") {
-      obj.userId = message.userId;
-    }
-    if (message.title !== "") {
-      obj.title = message.title;
-    }
-    if (message.description !== "") {
-      obj.description = message.description;
-    }
-    if (message.slug !== "") {
-      obj.slug = message.slug;
-    }
-    if (message.price !== "") {
-      obj.price = message.price;
-    }
-    if (message.currencyCode !== "") {
-      obj.currencyCode = message.currencyCode;
-    }
-    if (message.arEnabled !== false) {
-      obj.arEnabled = message.arEnabled;
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<ProductListItem>, I>>(base?: I): ProductListItem {
-    return ProductListItem.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<ProductListItem>, I>>(object: I): ProductListItem {
-    const message = createBaseProductListItem();
-    message.id = object.id ?? "";
-    message.userId = object.userId ?? "";
-    message.title = object.title ?? "";
-    message.description = object.description ?? "";
-    message.slug = object.slug ?? "";
-    message.price = object.price ?? "";
-    message.currencyCode = object.currencyCode ?? "";
-    message.arEnabled = object.arEnabled ?? false;
-    return message;
-  },
-};
-
-function createBaseProductListRequest(): ProductListRequest {
-  return { page: 0, lastId: "", orderPrice: undefined };
-}
-
-export const ProductListRequest: MessageFns<ProductListRequest> = {
-  encode(message: ProductListRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.page !== 0) {
-      writer.uint32(8).uint32(message.page);
-    }
-    if (message.lastId !== "") {
-      writer.uint32(18).string(message.lastId);
-    }
-    if (message.orderPrice !== undefined) {
-      OrderDirection.encode(message.orderPrice, writer.uint32(26).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductListRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductListRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 8) {
-            break;
-          }
-
-          message.page = reader.uint32();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.lastId = reader.string();
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.orderPrice = OrderDirection.decode(reader, reader.uint32());
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): ProductListRequest {
-    return {
-      page: isSet(object.page) ? globalThis.Number(object.page) : 0,
-      lastId: isSet(object.lastId) ? globalThis.String(object.lastId) : "",
-      orderPrice: isSet(object.orderPrice) ? OrderDirection.fromJSON(object.orderPrice) : undefined,
-    };
-  },
-
-  toJSON(message: ProductListRequest): unknown {
-    const obj: any = {};
-    if (message.page !== 0) {
-      obj.page = Math.round(message.page);
-    }
-    if (message.lastId !== "") {
-      obj.lastId = message.lastId;
-    }
-    if (message.orderPrice !== undefined) {
-      obj.orderPrice = OrderDirection.toJSON(message.orderPrice);
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<ProductListRequest>, I>>(base?: I): ProductListRequest {
-    return ProductListRequest.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<ProductListRequest>, I>>(object: I): ProductListRequest {
-    const message = createBaseProductListRequest();
-    message.page = object.page ?? 0;
-    message.lastId = object.lastId ?? "";
-    message.orderPrice = (object.orderPrice !== undefined && object.orderPrice !== null)
-      ? OrderDirection.fromPartial(object.orderPrice)
-      : undefined;
-    return message;
-  },
-};
-
-function createBaseProductListResponse(): ProductListResponse {
-  return { data: undefined, error: undefined };
-}
-
-export const ProductListResponse: MessageFns<ProductListResponse> = {
-  encode(message: ProductListResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.data !== undefined) {
-      ProductListResponseData.encode(message.data, writer.uint32(10).fork()).join();
-    }
-    if (message.error !== undefined) {
-      AppError.encode(message.error, writer.uint32(18).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductListResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductListResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.data = ProductListResponseData.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.error = AppError.decode(reader, reader.uint32());
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): ProductListResponse {
-    return {
-      data: isSet(object.data) ? ProductListResponseData.fromJSON(object.data) : undefined,
-      error: isSet(object.error) ? AppError.fromJSON(object.error) : undefined,
-    };
-  },
-
-  toJSON(message: ProductListResponse): unknown {
-    const obj: any = {};
-    if (message.data !== undefined) {
-      obj.data = ProductListResponseData.toJSON(message.data);
-    }
-    if (message.error !== undefined) {
-      obj.error = AppError.toJSON(message.error);
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<ProductListResponse>, I>>(base?: I): ProductListResponse {
-    return ProductListResponse.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<ProductListResponse>, I>>(object: I): ProductListResponse {
-    const message = createBaseProductListResponse();
-    message.data = (object.data !== undefined && object.data !== null)
-      ? ProductListResponseData.fromPartial(object.data)
-      : undefined;
-    message.error = (object.error !== undefined && object.error !== null)
-      ? AppError.fromPartial(object.error)
-      : undefined;
-    return message;
-  },
-};
-
-function createBaseProductListResponseData(): ProductListResponseData {
-  return { data: [] };
-}
-
-export const ProductListResponseData: MessageFns<ProductListResponseData> = {
-  encode(message: ProductListResponseData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    for (const v of message.data) {
-      ProductListItem.encode(v!, writer.uint32(10).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductListResponseData {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductListResponseData();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.data.push(ProductListItem.decode(reader, reader.uint32()));
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): ProductListResponseData {
-    return {
-      data: globalThis.Array.isArray(object?.data) ? object.data.map((e: any) => ProductListItem.fromJSON(e)) : [],
-    };
-  },
-
-  toJSON(message: ProductListResponseData): unknown {
-    const obj: any = {};
-    if (message.data?.length) {
-      obj.data = message.data.map((e) => ProductListItem.toJSON(e));
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<ProductListResponseData>, I>>(base?: I): ProductListResponseData {
-    return ProductListResponseData.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<ProductListResponseData>, I>>(object: I): ProductListResponseData {
-    const message = createBaseProductListResponseData();
-    message.data = object.data?.map((e) => ProductListItem.fromPartial(e)) || [];
     return message;
   },
 };

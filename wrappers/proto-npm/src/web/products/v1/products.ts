@@ -13,15 +13,18 @@ import { HeroProductsRequest, HeroProductsResponse } from "./hero_products.js";
 import { NewlyAddedProductsRequest, NewlyAddedProductsResponse } from "./newly_added_products.js";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create.js";
 import { ProductDataRequest, ProductDataResponse } from "./product_data.js";
-import { ProductListRequest, ProductListResponse } from "./product_list.js";
 import { ProductSnapshotRequest, ProductSnapshotResponse } from "./product_snapshot.js";
+import { ProductsToLikeRequest, ProductsToLikeResponse } from "./products_to_like.js";
 
 export const protobufPackage = "products.v1";
 
 export interface ProductsService {
   ProductCreate(request: DeepPartial<ProductCreateRequest>, metadata?: grpc.Metadata): Promise<ProductCreateResponse>;
   ProductData(request: DeepPartial<ProductDataRequest>, metadata?: grpc.Metadata): Promise<ProductDataResponse>;
-  ProductList(request: DeepPartial<ProductListRequest>, metadata?: grpc.Metadata): Promise<ProductListResponse>;
+  ProductsToLike(
+    request: DeepPartial<ProductsToLikeRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<ProductsToLikeResponse>;
   ProductSnapshot(
     request: DeepPartial<ProductSnapshotRequest>,
     metadata?: grpc.Metadata,
@@ -48,7 +51,7 @@ export class ProductsServiceClientImpl implements ProductsService {
     this.rpc = rpc;
     this.ProductCreate = this.ProductCreate.bind(this);
     this.ProductData = this.ProductData.bind(this);
-    this.ProductList = this.ProductList.bind(this);
+    this.ProductsToLike = this.ProductsToLike.bind(this);
     this.ProductSnapshot = this.ProductSnapshot.bind(this);
     this.BestSellingProducts = this.BestSellingProducts.bind(this);
     this.BigDiscountProducts = this.BigDiscountProducts.bind(this);
@@ -64,8 +67,11 @@ export class ProductsServiceClientImpl implements ProductsService {
     return this.rpc.unary(ProductsServiceProductDataDesc, ProductDataRequest.fromPartial(request), metadata);
   }
 
-  ProductList(request: DeepPartial<ProductListRequest>, metadata?: grpc.Metadata): Promise<ProductListResponse> {
-    return this.rpc.unary(ProductsServiceProductListDesc, ProductListRequest.fromPartial(request), metadata);
+  ProductsToLike(
+    request: DeepPartial<ProductsToLikeRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<ProductsToLikeResponse> {
+    return this.rpc.unary(ProductsServiceProductsToLikeDesc, ProductsToLikeRequest.fromPartial(request), metadata);
   }
 
   ProductSnapshot(
@@ -161,19 +167,19 @@ export const ProductsServiceProductDataDesc: UnaryMethodDefinitionish = {
   } as any,
 };
 
-export const ProductsServiceProductListDesc: UnaryMethodDefinitionish = {
-  methodName: "ProductList",
+export const ProductsServiceProductsToLikeDesc: UnaryMethodDefinitionish = {
+  methodName: "ProductsToLike",
   service: ProductsServiceDesc,
   requestStream: false,
   responseStream: false,
   requestType: {
     serializeBinary() {
-      return ProductListRequest.encode(this).finish();
+      return ProductsToLikeRequest.encode(this).finish();
     },
   } as any,
   responseType: {
     deserializeBinary(data: Uint8Array) {
-      const value = ProductListResponse.decode(data);
+      const value = ProductsToLikeResponse.decode(data);
       return {
         ...value,
         toObject() {

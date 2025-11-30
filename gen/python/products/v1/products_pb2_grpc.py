@@ -9,8 +9,8 @@ from products.v1 import hero_products_pb2 as products_dot_v1_dot_hero__products_
 from products.v1 import newly_added_products_pb2 as products_dot_v1_dot_newly__added__products__pb2
 from products.v1 import product_create_pb2 as products_dot_v1_dot_product__create__pb2
 from products.v1 import product_data_pb2 as products_dot_v1_dot_product__data__pb2
-from products.v1 import product_list_pb2 as products_dot_v1_dot_product__list__pb2
 from products.v1 import product_snapshot_pb2 as products_dot_v1_dot_product__snapshot__pb2
+from products.v1 import products_to_like_pb2 as products_dot_v1_dot_products__to__like__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -51,10 +51,10 @@ class ProductsServiceStub(object):
                 request_serializer=products_dot_v1_dot_product__data__pb2.ProductDataRequest.SerializeToString,
                 response_deserializer=products_dot_v1_dot_product__data__pb2.ProductDataResponse.FromString,
                 _registered_method=True)
-        self.ProductList = channel.unary_unary(
-                '/products.v1.ProductsService/ProductList',
-                request_serializer=products_dot_v1_dot_product__list__pb2.ProductListRequest.SerializeToString,
-                response_deserializer=products_dot_v1_dot_product__list__pb2.ProductListResponse.FromString,
+        self.ProductsToLike = channel.unary_unary(
+                '/products.v1.ProductsService/ProductsToLike',
+                request_serializer=products_dot_v1_dot_products__to__like__pb2.ProductsToLikeRequest.SerializeToString,
+                response_deserializer=products_dot_v1_dot_products__to__like__pb2.ProductsToLikeResponse.FromString,
                 _registered_method=True)
         self.ProductSnapshot = channel.unary_unary(
                 '/products.v1.ProductsService/ProductSnapshot',
@@ -98,7 +98,7 @@ class ProductsServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ProductList(self, request, context):
+    def ProductsToLike(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -147,10 +147,10 @@ def add_ProductsServiceServicer_to_server(servicer, server):
                     request_deserializer=products_dot_v1_dot_product__data__pb2.ProductDataRequest.FromString,
                     response_serializer=products_dot_v1_dot_product__data__pb2.ProductDataResponse.SerializeToString,
             ),
-            'ProductList': grpc.unary_unary_rpc_method_handler(
-                    servicer.ProductList,
-                    request_deserializer=products_dot_v1_dot_product__list__pb2.ProductListRequest.FromString,
-                    response_serializer=products_dot_v1_dot_product__list__pb2.ProductListResponse.SerializeToString,
+            'ProductsToLike': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProductsToLike,
+                    request_deserializer=products_dot_v1_dot_products__to__like__pb2.ProductsToLikeRequest.FromString,
+                    response_serializer=products_dot_v1_dot_products__to__like__pb2.ProductsToLikeResponse.SerializeToString,
             ),
             'ProductSnapshot': grpc.unary_unary_rpc_method_handler(
                     servicer.ProductSnapshot,
@@ -243,7 +243,7 @@ class ProductsService(object):
             _registered_method=True)
 
     @staticmethod
-    def ProductList(request,
+    def ProductsToLike(request,
             target,
             options=(),
             channel_credentials=None,
@@ -256,9 +256,9 @@ class ProductsService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/products.v1.ProductsService/ProductList',
-            products_dot_v1_dot_product__list__pb2.ProductListRequest.SerializeToString,
-            products_dot_v1_dot_product__list__pb2.ProductListResponse.FromString,
+            '/products.v1.ProductsService/ProductsToLike',
+            products_dot_v1_dot_products__to__like__pb2.ProductsToLikeRequest.SerializeToString,
+            products_dot_v1_dot_products__to__like__pb2.ProductsToLikeResponse.FromString,
             options,
             channel_credentials,
             insecure,
