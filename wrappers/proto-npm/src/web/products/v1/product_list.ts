@@ -12,19 +12,23 @@ import { OrderDirection } from "../../shared/v1/types.js";
 export const protobufPackage = "products.v1";
 
 export enum ProductShippingMethod {
-  STANDARD = 0,
-  EXPRESS = 1,
+  PRODUCT_SHIPPING_METHOD_UNSPECIFIED = 0,
+  PRODUCT_SHIPPING_METHOD_STANDARD = 1,
+  PRODUCT_SHIPPING_METHOD_EXPRESS = 2,
   UNRECOGNIZED = -1,
 }
 
 export function productShippingMethodFromJSON(object: any): ProductShippingMethod {
   switch (object) {
     case 0:
-    case "STANDARD":
-      return ProductShippingMethod.STANDARD;
+    case "PRODUCT_SHIPPING_METHOD_UNSPECIFIED":
+      return ProductShippingMethod.PRODUCT_SHIPPING_METHOD_UNSPECIFIED;
     case 1:
-    case "EXPRESS":
-      return ProductShippingMethod.EXPRESS;
+    case "PRODUCT_SHIPPING_METHOD_STANDARD":
+      return ProductShippingMethod.PRODUCT_SHIPPING_METHOD_STANDARD;
+    case 2:
+    case "PRODUCT_SHIPPING_METHOD_EXPRESS":
+      return ProductShippingMethod.PRODUCT_SHIPPING_METHOD_EXPRESS;
     case -1:
     case "UNRECOGNIZED":
     default:
@@ -34,10 +38,12 @@ export function productShippingMethodFromJSON(object: any): ProductShippingMetho
 
 export function productShippingMethodToJSON(object: ProductShippingMethod): string {
   switch (object) {
-    case ProductShippingMethod.STANDARD:
-      return "STANDARD";
-    case ProductShippingMethod.EXPRESS:
-      return "EXPRESS";
+    case ProductShippingMethod.PRODUCT_SHIPPING_METHOD_UNSPECIFIED:
+      return "PRODUCT_SHIPPING_METHOD_UNSPECIFIED";
+    case ProductShippingMethod.PRODUCT_SHIPPING_METHOD_STANDARD:
+      return "PRODUCT_SHIPPING_METHOD_STANDARD";
+    case ProductShippingMethod.PRODUCT_SHIPPING_METHOD_EXPRESS:
+      return "PRODUCT_SHIPPING_METHOD_EXPRESS";
     case ProductShippingMethod.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";
@@ -45,23 +51,27 @@ export function productShippingMethodToJSON(object: ProductShippingMethod): stri
 }
 
 export enum ProductItemMetadataType {
-  CUPON = 0,
-  NEW_SHOPPER = 1,
-  BUNDLE = 2,
+  PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED = 0,
+  PRODUCT_ITEM_METADATA_TYPE_COUPON = 1,
+  PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER = 2,
+  PRODUCT_ITEM_METADATA_TYPE_BUNDLE = 3,
   UNRECOGNIZED = -1,
 }
 
 export function productItemMetadataTypeFromJSON(object: any): ProductItemMetadataType {
   switch (object) {
     case 0:
-    case "CUPON":
-      return ProductItemMetadataType.CUPON;
+    case "PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED":
+      return ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED;
     case 1:
-    case "NEW_SHOPPER":
-      return ProductItemMetadataType.NEW_SHOPPER;
+    case "PRODUCT_ITEM_METADATA_TYPE_COUPON":
+      return ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_COUPON;
     case 2:
-    case "BUNDLE":
-      return ProductItemMetadataType.BUNDLE;
+    case "PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER":
+      return ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER;
+    case 3:
+    case "PRODUCT_ITEM_METADATA_TYPE_BUNDLE":
+      return ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_BUNDLE;
     case -1:
     case "UNRECOGNIZED":
     default:
@@ -71,12 +81,14 @@ export function productItemMetadataTypeFromJSON(object: any): ProductItemMetadat
 
 export function productItemMetadataTypeToJSON(object: ProductItemMetadataType): string {
   switch (object) {
-    case ProductItemMetadataType.CUPON:
-      return "CUPON";
-    case ProductItemMetadataType.NEW_SHOPPER:
-      return "NEW_SHOPPER";
-    case ProductItemMetadataType.BUNDLE:
-      return "BUNDLE";
+    case ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED:
+      return "PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED";
+    case ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_COUPON:
+      return "PRODUCT_ITEM_METADATA_TYPE_COUPON";
+    case ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER:
+      return "PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER";
+    case ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_BUNDLE:
+      return "PRODUCT_ITEM_METADATA_TYPE_BUNDLE";
     case ProductItemMetadataType.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";

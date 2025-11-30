@@ -19,8 +19,9 @@ message ProductPrice {
 }
 
 enum ProductShippingMethod {
-  STANDARD = 0;
-  EXPRESS = 1;
+  PRODUCT_SHIPPING_METHOD_UNSPECIFIED = 0;
+  PRODUCT_SHIPPING_METHOD_STANDARD = 1;
+  PRODUCT_SHIPPING_METHOD_EXPRESS = 2;
 }
 
 message ProductShippingInfo {
@@ -32,9 +33,10 @@ message ProductShippingInfo {
 }
 
 enum ProductItemMetadataType {
-  CUPON = 0;
-  NEW_SHOPPER = 1;
-  BUNDLE = 2;
+  PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED = 0;
+  PRODUCT_ITEM_METADATA_TYPE_COUPON = 1;
+  PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER = 2;
+  PRODUCT_ITEM_METADATA_TYPE_BUNDLE = 3;
 }
 
 message ProductItemMetadata {

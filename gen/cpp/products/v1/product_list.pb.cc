@@ -439,14 +439,19 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5flist_2eproto[] AB
     "tResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.s"
     "hared.v1.AppErrorH\000R\005errorB\n\n\010response\"K"
     "\n\027ProductListResponseData\0220\n\004data\030\001 \003(\0132"
-    "\034.products.v1.ProductListItemR\004data*2\n\025P"
-    "roductShippingMethod\022\014\n\010STANDARD\020\000\022\013\n\007EX"
-    "PRESS\020\001*A\n\027ProductItemMetadataType\022\t\n\005CU"
-    "PON\020\000\022\017\n\013NEW_SHOPPER\020\001\022\n\n\006BUNDLE\020\002Bz\n\034or"
-    "g.megacommerce.products.v1B\020ProductListP"
-    "rotoZEgithub.com/ahmad-khatib0-org/megac"
-    "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006"
-    "proto3"
+    "\034.products.v1.ProductListItemR\004data*\213\001\n\025"
+    "ProductShippingMethod\022\'\n#PRODUCT_SHIPPIN"
+    "G_METHOD_UNSPECIFIED\020\000\022$\n PRODUCT_SHIPPI"
+    "NG_METHOD_STANDARD\020\001\022#\n\037PRODUCT_SHIPPING"
+    "_METHOD_EXPRESS\020\002*\277\001\n\027ProductItemMetadat"
+    "aType\022*\n&PRODUCT_ITEM_METADATA_TYPE_UNSP"
+    "ECIFIED\020\000\022%\n!PRODUCT_ITEM_METADATA_TYPE_"
+    "COUPON\020\001\022*\n&PRODUCT_ITEM_METADATA_TYPE_N"
+    "EW_SHOPPER\020\002\022%\n!PRODUCT_ITEM_METADATA_TY"
+    "PE_BUNDLE\020\003Bz\n\034org.megacommerce.products"
+    ".v1B\020ProductListProtoZEgithub.com/ahmad-"
+    "khatib0-org/megacommerce-proto/gen/go/pr"
+    "oducts/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_5flist_2eproto_deps[2] = {
@@ -457,7 +462,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5flist_2eproto
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5flist_2eproto = {
     false,
     false,
-    1766,
+    1983,
     descriptor_table_protodef_products_2fv1_2fproduct_5flist_2eproto,
     "products/v1/product_list.proto",
     &descriptor_table_products_2fv1_2fproduct_5flist_2eproto_once,
@@ -477,13 +482,13 @@ const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ProductShippingMethod
   return file_level_enum_descriptors_products_2fv1_2fproduct_5flist_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t ProductShippingMethod_internal_data_[] = {
-    131072u, 0u, };
+    196608u, 0u, };
 const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ProductItemMetadataType_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&descriptor_table_products_2fv1_2fproduct_5flist_2eproto);
   return file_level_enum_descriptors_products_2fv1_2fproduct_5flist_2eproto[1];
 }
 PROTOBUF_CONSTINIT const uint32_t ProductItemMetadataType_internal_data_[] = {
-    196608u, 0u, };
+    262144u, 0u, };
 // ===================================================================
 
 class ProductPrice::_Internal {

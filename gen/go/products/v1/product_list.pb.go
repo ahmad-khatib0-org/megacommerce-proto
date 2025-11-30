@@ -25,19 +25,22 @@ const (
 type ProductShippingMethod int32
 
 const (
-	ProductShippingMethod_STANDARD ProductShippingMethod = 0
-	ProductShippingMethod_EXPRESS  ProductShippingMethod = 1
+	ProductShippingMethod_PRODUCT_SHIPPING_METHOD_UNSPECIFIED ProductShippingMethod = 0
+	ProductShippingMethod_PRODUCT_SHIPPING_METHOD_STANDARD    ProductShippingMethod = 1
+	ProductShippingMethod_PRODUCT_SHIPPING_METHOD_EXPRESS     ProductShippingMethod = 2
 )
 
 // Enum value maps for ProductShippingMethod.
 var (
 	ProductShippingMethod_name = map[int32]string{
-		0: "STANDARD",
-		1: "EXPRESS",
+		0: "PRODUCT_SHIPPING_METHOD_UNSPECIFIED",
+		1: "PRODUCT_SHIPPING_METHOD_STANDARD",
+		2: "PRODUCT_SHIPPING_METHOD_EXPRESS",
 	}
 	ProductShippingMethod_value = map[string]int32{
-		"STANDARD": 0,
-		"EXPRESS":  1,
+		"PRODUCT_SHIPPING_METHOD_UNSPECIFIED": 0,
+		"PRODUCT_SHIPPING_METHOD_STANDARD":    1,
+		"PRODUCT_SHIPPING_METHOD_EXPRESS":     2,
 	}
 )
 
@@ -71,22 +74,25 @@ func (ProductShippingMethod) EnumDescriptor() ([]byte, []int) {
 type ProductItemMetadataType int32
 
 const (
-	ProductItemMetadataType_CUPON       ProductItemMetadataType = 0
-	ProductItemMetadataType_NEW_SHOPPER ProductItemMetadataType = 1
-	ProductItemMetadataType_BUNDLE      ProductItemMetadataType = 2
+	ProductItemMetadataType_PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED ProductItemMetadataType = 0
+	ProductItemMetadataType_PRODUCT_ITEM_METADATA_TYPE_COUPON      ProductItemMetadataType = 1
+	ProductItemMetadataType_PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER ProductItemMetadataType = 2
+	ProductItemMetadataType_PRODUCT_ITEM_METADATA_TYPE_BUNDLE      ProductItemMetadataType = 3
 )
 
 // Enum value maps for ProductItemMetadataType.
 var (
 	ProductItemMetadataType_name = map[int32]string{
-		0: "CUPON",
-		1: "NEW_SHOPPER",
-		2: "BUNDLE",
+		0: "PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED",
+		1: "PRODUCT_ITEM_METADATA_TYPE_COUPON",
+		2: "PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER",
+		3: "PRODUCT_ITEM_METADATA_TYPE_BUNDLE",
 	}
 	ProductItemMetadataType_value = map[string]int32{
-		"CUPON":       0,
-		"NEW_SHOPPER": 1,
-		"BUNDLE":      2,
+		"PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED": 0,
+		"PRODUCT_ITEM_METADATA_TYPE_COUPON":      1,
+		"PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER": 2,
+		"PRODUCT_ITEM_METADATA_TYPE_BUNDLE":      3,
 	}
 )
 
@@ -245,7 +251,7 @@ func (x *ProductShippingInfo) GetMethod() ProductShippingMethod {
 	if x != nil {
 		return x.Method
 	}
-	return ProductShippingMethod_STANDARD
+	return ProductShippingMethod_PRODUCT_SHIPPING_METHOD_UNSPECIFIED
 }
 
 func (x *ProductShippingInfo) GetOrigin() string {
@@ -311,7 +317,7 @@ func (x *ProductItemMetadata) GetType() ProductItemMetadataType {
 	if x != nil {
 		return x.Type
 	}
-	return ProductItemMetadataType_CUPON
+	return ProductItemMetadataType_PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED
 }
 
 func (x *ProductItemMetadata) GetLabel() string {
@@ -756,15 +762,16 @@ const file_products_v1_product_list_proto_rawDesc = "" +
 	"\n" +
 	"\bresponse\"K\n" +
 	"\x17ProductListResponseData\x120\n" +
-	"\x04data\x18\x01 \x03(\v2\x1c.products.v1.ProductListItemR\x04data*2\n" +
-	"\x15ProductShippingMethod\x12\f\n" +
-	"\bSTANDARD\x10\x00\x12\v\n" +
-	"\aEXPRESS\x10\x01*A\n" +
-	"\x17ProductItemMetadataType\x12\t\n" +
-	"\x05CUPON\x10\x00\x12\x0f\n" +
-	"\vNEW_SHOPPER\x10\x01\x12\n" +
-	"\n" +
-	"\x06BUNDLE\x10\x02Bz\n" +
+	"\x04data\x18\x01 \x03(\v2\x1c.products.v1.ProductListItemR\x04data*\x8b\x01\n" +
+	"\x15ProductShippingMethod\x12'\n" +
+	"#PRODUCT_SHIPPING_METHOD_UNSPECIFIED\x10\x00\x12$\n" +
+	" PRODUCT_SHIPPING_METHOD_STANDARD\x10\x01\x12#\n" +
+	"\x1fPRODUCT_SHIPPING_METHOD_EXPRESS\x10\x02*\xbf\x01\n" +
+	"\x17ProductItemMetadataType\x12*\n" +
+	"&PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED\x10\x00\x12%\n" +
+	"!PRODUCT_ITEM_METADATA_TYPE_COUPON\x10\x01\x12*\n" +
+	"&PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER\x10\x02\x12%\n" +
+	"!PRODUCT_ITEM_METADATA_TYPE_BUNDLE\x10\x03Bz\n" +
 	"\x1corg.megacommerce.products.v1B\x10ProductListProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (

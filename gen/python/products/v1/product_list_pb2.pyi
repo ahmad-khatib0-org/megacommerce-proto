@@ -10,19 +10,23 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class ProductShippingMethod(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
-    STANDARD: _ClassVar[ProductShippingMethod]
-    EXPRESS: _ClassVar[ProductShippingMethod]
+    PRODUCT_SHIPPING_METHOD_UNSPECIFIED: _ClassVar[ProductShippingMethod]
+    PRODUCT_SHIPPING_METHOD_STANDARD: _ClassVar[ProductShippingMethod]
+    PRODUCT_SHIPPING_METHOD_EXPRESS: _ClassVar[ProductShippingMethod]
 
 class ProductItemMetadataType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
-    CUPON: _ClassVar[ProductItemMetadataType]
-    NEW_SHOPPER: _ClassVar[ProductItemMetadataType]
-    BUNDLE: _ClassVar[ProductItemMetadataType]
-STANDARD: ProductShippingMethod
-EXPRESS: ProductShippingMethod
-CUPON: ProductItemMetadataType
-NEW_SHOPPER: ProductItemMetadataType
-BUNDLE: ProductItemMetadataType
+    PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED: _ClassVar[ProductItemMetadataType]
+    PRODUCT_ITEM_METADATA_TYPE_COUPON: _ClassVar[ProductItemMetadataType]
+    PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER: _ClassVar[ProductItemMetadataType]
+    PRODUCT_ITEM_METADATA_TYPE_BUNDLE: _ClassVar[ProductItemMetadataType]
+PRODUCT_SHIPPING_METHOD_UNSPECIFIED: ProductShippingMethod
+PRODUCT_SHIPPING_METHOD_STANDARD: ProductShippingMethod
+PRODUCT_SHIPPING_METHOD_EXPRESS: ProductShippingMethod
+PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED: ProductItemMetadataType
+PRODUCT_ITEM_METADATA_TYPE_COUPON: ProductItemMetadataType
+PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER: ProductItemMetadataType
+PRODUCT_ITEM_METADATA_TYPE_BUNDLE: ProductItemMetadataType
 
 class ProductPrice(_message.Message):
     __slots__ = ("amount", "formatted", "discount_price", "save_amount", "save_percentage")

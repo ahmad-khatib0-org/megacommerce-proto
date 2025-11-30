@@ -109,8 +109,9 @@ internal::EnumTraitsT<::products::v1::ProductShippingMethod_internal_data_>
 namespace products {
 namespace v1 {
 enum ProductShippingMethod : int {
-  STANDARD = 0,
-  EXPRESS = 1,
+  PRODUCT_SHIPPING_METHOD_UNSPECIFIED = 0,
+  PRODUCT_SHIPPING_METHOD_STANDARD = 1,
+  PRODUCT_SHIPPING_METHOD_EXPRESS = 2,
   ProductShippingMethod_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
   ProductShippingMethod_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -121,11 +122,11 @@ extern const uint32_t ProductShippingMethod_internal_data_[];
 inline constexpr ProductShippingMethod ProductShippingMethod_MIN =
     static_cast<ProductShippingMethod>(0);
 inline constexpr ProductShippingMethod ProductShippingMethod_MAX =
-    static_cast<ProductShippingMethod>(1);
+    static_cast<ProductShippingMethod>(2);
 inline bool ProductShippingMethod_IsValid(int value) {
-  return 0 <= value && value <= 1;
+  return 0 <= value && value <= 2;
 }
-inline constexpr int ProductShippingMethod_ARRAYSIZE = 1 + 1;
+inline constexpr int ProductShippingMethod_ARRAYSIZE = 2 + 1;
 const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ProductShippingMethod_descriptor();
 template <typename T>
 const ::std::string& ProductShippingMethod_Name(T value) {
@@ -136,7 +137,7 @@ const ::std::string& ProductShippingMethod_Name(T value) {
 }
 template <>
 inline const ::std::string& ProductShippingMethod_Name(ProductShippingMethod value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<ProductShippingMethod_descriptor, 0, 1>(
+  return ::google::protobuf::internal::NameOfDenseEnum<ProductShippingMethod_descriptor, 0, 2>(
       static_cast<int>(value));
 }
 inline bool ProductShippingMethod_Parse(
@@ -145,9 +146,10 @@ inline bool ProductShippingMethod_Parse(
                                            value);
 }
 enum ProductItemMetadataType : int {
-  CUPON = 0,
-  NEW_SHOPPER = 1,
-  BUNDLE = 2,
+  PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED = 0,
+  PRODUCT_ITEM_METADATA_TYPE_COUPON = 1,
+  PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER = 2,
+  PRODUCT_ITEM_METADATA_TYPE_BUNDLE = 3,
   ProductItemMetadataType_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
   ProductItemMetadataType_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -158,11 +160,11 @@ extern const uint32_t ProductItemMetadataType_internal_data_[];
 inline constexpr ProductItemMetadataType ProductItemMetadataType_MIN =
     static_cast<ProductItemMetadataType>(0);
 inline constexpr ProductItemMetadataType ProductItemMetadataType_MAX =
-    static_cast<ProductItemMetadataType>(2);
+    static_cast<ProductItemMetadataType>(3);
 inline bool ProductItemMetadataType_IsValid(int value) {
-  return 0 <= value && value <= 2;
+  return 0 <= value && value <= 3;
 }
-inline constexpr int ProductItemMetadataType_ARRAYSIZE = 2 + 1;
+inline constexpr int ProductItemMetadataType_ARRAYSIZE = 3 + 1;
 const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ProductItemMetadataType_descriptor();
 template <typename T>
 const ::std::string& ProductItemMetadataType_Name(T value) {
@@ -173,7 +175,7 @@ const ::std::string& ProductItemMetadataType_Name(T value) {
 }
 template <>
 inline const ::std::string& ProductItemMetadataType_Name(ProductItemMetadataType value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<ProductItemMetadataType_descriptor, 0, 2>(
+  return ::google::protobuf::internal::NameOfDenseEnum<ProductItemMetadataType_descriptor, 0, 3>(
       static_cast<int>(value));
 }
 inline bool ProductItemMetadataType_Parse(

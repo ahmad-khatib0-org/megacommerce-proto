@@ -1079,8 +1079,9 @@ pub struct ProductListResponseData {
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum ProductShippingMethod {
-    Standard = 0,
-    Express = 1,
+    Unspecified = 0,
+    Standard = 1,
+    Express = 2,
 }
 impl ProductShippingMethod {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -1089,15 +1090,17 @@ impl ProductShippingMethod {
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Self::Standard => "STANDARD",
-            Self::Express => "EXPRESS",
+            Self::Unspecified => "PRODUCT_SHIPPING_METHOD_UNSPECIFIED",
+            Self::Standard => "PRODUCT_SHIPPING_METHOD_STANDARD",
+            Self::Express => "PRODUCT_SHIPPING_METHOD_EXPRESS",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
     pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
         match value {
-            "STANDARD" => Some(Self::Standard),
-            "EXPRESS" => Some(Self::Express),
+            "PRODUCT_SHIPPING_METHOD_UNSPECIFIED" => Some(Self::Unspecified),
+            "PRODUCT_SHIPPING_METHOD_STANDARD" => Some(Self::Standard),
+            "PRODUCT_SHIPPING_METHOD_EXPRESS" => Some(Self::Express),
             _ => None,
         }
     }
@@ -1106,9 +1109,10 @@ impl ProductShippingMethod {
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum ProductItemMetadataType {
-    Cupon = 0,
-    NewShopper = 1,
-    Bundle = 2,
+    Unspecified = 0,
+    Coupon = 1,
+    NewShopper = 2,
+    Bundle = 3,
 }
 impl ProductItemMetadataType {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -1117,17 +1121,19 @@ impl ProductItemMetadataType {
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Self::Cupon => "CUPON",
-            Self::NewShopper => "NEW_SHOPPER",
-            Self::Bundle => "BUNDLE",
+            Self::Unspecified => "PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED",
+            Self::Coupon => "PRODUCT_ITEM_METADATA_TYPE_COUPON",
+            Self::NewShopper => "PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER",
+            Self::Bundle => "PRODUCT_ITEM_METADATA_TYPE_BUNDLE",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
     pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
         match value {
-            "CUPON" => Some(Self::Cupon),
-            "NEW_SHOPPER" => Some(Self::NewShopper),
-            "BUNDLE" => Some(Self::Bundle),
+            "PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
+            "PRODUCT_ITEM_METADATA_TYPE_COUPON" => Some(Self::Coupon),
+            "PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER" => Some(Self::NewShopper),
+            "PRODUCT_ITEM_METADATA_TYPE_BUNDLE" => Some(Self::Bundle),
             _ => None,
         }
     }

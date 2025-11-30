@@ -32,13 +32,17 @@ public final class ProductListProto {
   public enum ProductShippingMethod
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>STANDARD = 0;</code>
+     * <code>PRODUCT_SHIPPING_METHOD_UNSPECIFIED = 0;</code>
      */
-    STANDARD(0),
+    PRODUCT_SHIPPING_METHOD_UNSPECIFIED(0),
     /**
-     * <code>EXPRESS = 1;</code>
+     * <code>PRODUCT_SHIPPING_METHOD_STANDARD = 1;</code>
      */
-    EXPRESS(1),
+    PRODUCT_SHIPPING_METHOD_STANDARD(1),
+    /**
+     * <code>PRODUCT_SHIPPING_METHOD_EXPRESS = 2;</code>
+     */
+    PRODUCT_SHIPPING_METHOD_EXPRESS(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -52,13 +56,17 @@ public final class ProductListProto {
         ProductShippingMethod.class.getName());
     }
     /**
-     * <code>STANDARD = 0;</code>
+     * <code>PRODUCT_SHIPPING_METHOD_UNSPECIFIED = 0;</code>
      */
-    public static final int STANDARD_VALUE = 0;
+    public static final int PRODUCT_SHIPPING_METHOD_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>EXPRESS = 1;</code>
+     * <code>PRODUCT_SHIPPING_METHOD_STANDARD = 1;</code>
      */
-    public static final int EXPRESS_VALUE = 1;
+    public static final int PRODUCT_SHIPPING_METHOD_STANDARD_VALUE = 1;
+    /**
+     * <code>PRODUCT_SHIPPING_METHOD_EXPRESS = 2;</code>
+     */
+    public static final int PRODUCT_SHIPPING_METHOD_EXPRESS_VALUE = 2;
 
 
     public final int getNumber() {
@@ -85,8 +93,9 @@ public final class ProductListProto {
      */
     public static ProductShippingMethod forNumber(int value) {
       switch (value) {
-        case 0: return STANDARD;
-        case 1: return EXPRESS;
+        case 0: return PRODUCT_SHIPPING_METHOD_UNSPECIFIED;
+        case 1: return PRODUCT_SHIPPING_METHOD_STANDARD;
+        case 2: return PRODUCT_SHIPPING_METHOD_EXPRESS;
         default: return null;
       }
     }
@@ -149,17 +158,21 @@ public final class ProductListProto {
   public enum ProductItemMetadataType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>CUPON = 0;</code>
+     * <code>PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED = 0;</code>
      */
-    CUPON(0),
+    PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED(0),
     /**
-     * <code>NEW_SHOPPER = 1;</code>
+     * <code>PRODUCT_ITEM_METADATA_TYPE_COUPON = 1;</code>
      */
-    NEW_SHOPPER(1),
+    PRODUCT_ITEM_METADATA_TYPE_COUPON(1),
     /**
-     * <code>BUNDLE = 2;</code>
+     * <code>PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER = 2;</code>
      */
-    BUNDLE(2),
+    PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER(2),
+    /**
+     * <code>PRODUCT_ITEM_METADATA_TYPE_BUNDLE = 3;</code>
+     */
+    PRODUCT_ITEM_METADATA_TYPE_BUNDLE(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -173,17 +186,21 @@ public final class ProductListProto {
         ProductItemMetadataType.class.getName());
     }
     /**
-     * <code>CUPON = 0;</code>
+     * <code>PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED = 0;</code>
      */
-    public static final int CUPON_VALUE = 0;
+    public static final int PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>NEW_SHOPPER = 1;</code>
+     * <code>PRODUCT_ITEM_METADATA_TYPE_COUPON = 1;</code>
      */
-    public static final int NEW_SHOPPER_VALUE = 1;
+    public static final int PRODUCT_ITEM_METADATA_TYPE_COUPON_VALUE = 1;
     /**
-     * <code>BUNDLE = 2;</code>
+     * <code>PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER = 2;</code>
      */
-    public static final int BUNDLE_VALUE = 2;
+    public static final int PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER_VALUE = 2;
+    /**
+     * <code>PRODUCT_ITEM_METADATA_TYPE_BUNDLE = 3;</code>
+     */
+    public static final int PRODUCT_ITEM_METADATA_TYPE_BUNDLE_VALUE = 3;
 
 
     public final int getNumber() {
@@ -210,9 +227,10 @@ public final class ProductListProto {
      */
     public static ProductItemMetadataType forNumber(int value) {
       switch (value) {
-        case 0: return CUPON;
-        case 1: return NEW_SHOPPER;
-        case 2: return BUNDLE;
+        case 0: return PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED;
+        case 1: return PRODUCT_ITEM_METADATA_TYPE_COUPON;
+        case 2: return PRODUCT_ITEM_METADATA_TYPE_NEW_SHOPPER;
+        case 3: return PRODUCT_ITEM_METADATA_TYPE_BUNDLE;
         default: return null;
       }
     }
@@ -1496,7 +1514,7 @@ public final class ProductListProto {
       if (free_ != false) {
         output.writeBool(1, free_);
       }
-      if (method_ != org.megacommerce.products.v1.ProductListProto.ProductShippingMethod.STANDARD.getNumber()) {
+      if (method_ != org.megacommerce.products.v1.ProductListProto.ProductShippingMethod.PRODUCT_SHIPPING_METHOD_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, method_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(origin_)) {
@@ -1521,7 +1539,7 @@ public final class ProductListProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, free_);
       }
-      if (method_ != org.megacommerce.products.v1.ProductListProto.ProductShippingMethod.STANDARD.getNumber()) {
+      if (method_ != org.megacommerce.products.v1.ProductListProto.ProductShippingMethod.PRODUCT_SHIPPING_METHOD_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, method_);
       }
@@ -2272,7 +2290,7 @@ public final class ProductListProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != org.megacommerce.products.v1.ProductListProto.ProductItemMetadataType.CUPON.getNumber()) {
+      if (type_ != org.megacommerce.products.v1.ProductListProto.ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, type_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(label_)) {
@@ -2287,7 +2305,7 @@ public final class ProductListProto {
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != org.megacommerce.products.v1.ProductListProto.ProductItemMetadataType.CUPON.getNumber()) {
+      if (type_ != org.megacommerce.products.v1.ProductListProto.ProductItemMetadataType.PRODUCT_ITEM_METADATA_TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
@@ -8313,14 +8331,19 @@ public final class ProductListProto {
       "tResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.s" +
       "hared.v1.AppErrorH\000R\005errorB\n\n\010response\"K" +
       "\n\027ProductListResponseData\0220\n\004data\030\001 \003(\0132" +
-      "\034.products.v1.ProductListItemR\004data*2\n\025P" +
-      "roductShippingMethod\022\014\n\010STANDARD\020\000\022\013\n\007EX" +
-      "PRESS\020\001*A\n\027ProductItemMetadataType\022\t\n\005CU" +
-      "PON\020\000\022\017\n\013NEW_SHOPPER\020\001\022\n\n\006BUNDLE\020\002Bz\n\034or" +
-      "g.megacommerce.products.v1B\020ProductListP" +
-      "rotoZEgithub.com/ahmad-khatib0-org/megac" +
-      "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006" +
-      "proto3"
+      "\034.products.v1.ProductListItemR\004data*\213\001\n\025" +
+      "ProductShippingMethod\022\'\n#PRODUCT_SHIPPIN" +
+      "G_METHOD_UNSPECIFIED\020\000\022$\n PRODUCT_SHIPPI" +
+      "NG_METHOD_STANDARD\020\001\022#\n\037PRODUCT_SHIPPING" +
+      "_METHOD_EXPRESS\020\002*\277\001\n\027ProductItemMetadat" +
+      "aType\022*\n&PRODUCT_ITEM_METADATA_TYPE_UNSP" +
+      "ECIFIED\020\000\022%\n!PRODUCT_ITEM_METADATA_TYPE_" +
+      "COUPON\020\001\022*\n&PRODUCT_ITEM_METADATA_TYPE_N" +
+      "EW_SHOPPER\020\002\022%\n!PRODUCT_ITEM_METADATA_TY" +
+      "PE_BUNDLE\020\003Bz\n\034org.megacommerce.products" +
+      ".v1B\020ProductListProtoZEgithub.com/ahmad-" +
+      "khatib0-org/megacommerce-proto/gen/go/pr" +
+      "oducts/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
