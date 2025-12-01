@@ -1,6 +1,5 @@
 from shared.v1 import error_pb2 as _error_pb2
 from shared.v1 import pagination_pb2 as _pagination_pb2
-from shared.v1 import types_pb2 as _types_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

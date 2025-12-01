@@ -9,6 +9,7 @@ from products.v1 import hero_products_pb2 as products_dot_v1_dot_hero__products_
 from products.v1 import newly_added_products_pb2 as products_dot_v1_dot_newly__added__products__pb2
 from products.v1 import product_create_pb2 as products_dot_v1_dot_product__create__pb2
 from products.v1 import product_data_pb2 as products_dot_v1_dot_product__data__pb2
+from products.v1 import product_details_pb2 as products_dot_v1_dot_product__details__pb2
 from products.v1 import product_snapshot_pb2 as products_dot_v1_dot_product__snapshot__pb2
 from products.v1 import products_to_like_pb2 as products_dot_v1_dot_products__to__like__pb2
 
@@ -81,6 +82,11 @@ class ProductsServiceStub(object):
                 request_serializer=products_dot_v1_dot_hero__products__pb2.HeroProductsRequest.SerializeToString,
                 response_deserializer=products_dot_v1_dot_hero__products__pb2.HeroProductsResponse.FromString,
                 _registered_method=True)
+        self.ProductDetails = channel.unary_unary(
+                '/products.v1.ProductsService/ProductDetails',
+                request_serializer=products_dot_v1_dot_product__details__pb2.ProductDetailsRequest.SerializeToString,
+                response_deserializer=products_dot_v1_dot_product__details__pb2.ProductDetailsResponse.FromString,
+                _registered_method=True)
 
 
 class ProductsServiceServicer(object):
@@ -134,6 +140,12 @@ class ProductsServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ProductDetails(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ProductsServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -176,6 +188,11 @@ def add_ProductsServiceServicer_to_server(servicer, server):
                     servicer.HeroProducts,
                     request_deserializer=products_dot_v1_dot_hero__products__pb2.HeroProductsRequest.FromString,
                     response_serializer=products_dot_v1_dot_hero__products__pb2.HeroProductsResponse.SerializeToString,
+            ),
+            'ProductDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProductDetails,
+                    request_deserializer=products_dot_v1_dot_product__details__pb2.ProductDetailsRequest.FromString,
+                    response_serializer=products_dot_v1_dot_product__details__pb2.ProductDetailsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -394,6 +411,33 @@ class ProductsService(object):
             '/products.v1.ProductsService/HeroProducts',
             products_dot_v1_dot_hero__products__pb2.HeroProductsRequest.SerializeToString,
             products_dot_v1_dot_hero__products__pb2.HeroProductsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ProductDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/products.v1.ProductsService/ProductDetails',
+            products_dot_v1_dot_product__details__pb2.ProductDetailsRequest.SerializeToString,
+            products_dot_v1_dot_product__details__pb2.ProductDetailsResponse.FromString,
             options,
             channel_credentials,
             insecure,

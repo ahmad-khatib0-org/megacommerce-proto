@@ -335,67 +335,66 @@ const char descriptor_table_protodef_products_2fv1_2fproducts_5fto_5flike_2eprot
     protodesc_cold) = {
     "\n\"products/v1/products_to_like.proto\022\013pr"
     "oducts.v1\032\025shared/v1/error.proto\032\032shared"
-    "/v1/pagination.proto\032\025shared/v1/types.pr"
-    "oto\"\373\001\n\014ProductPrice\022\026\n\006amount\030\001 \001(\001R\006am"
-    "ount\022\034\n\tformatted\030\002 \001(\tR\tformatted\022*\n\016di"
-    "scount_price\030\003 \001(\001H\000R\rdiscountPrice\210\001\001\022$"
-    "\n\013save_amount\030\004 \001(\tH\001R\nsaveAmount\210\001\001\022,\n\017"
-    "save_percentage\030\005 \001(\tH\002R\016savePercentage\210"
-    "\001\001B\021\n\017_discount_priceB\016\n\014_save_amountB\022\n"
-    "\020_save_percentage\"\331\001\n\023ProductShippingInf"
-    "o\022\022\n\004free\030\001 \001(\010R\004free\022:\n\006method\030\002 \001(\0162\"."
-    "products.v1.ProductShippingMethodR\006metho"
-    "d\022\026\n\006origin\030\003 \001(\tR\006origin\022,\n\022min_estimat"
-    "ed_days\030\004 \001(\005R\020minEstimatedDays\022,\n\022max_e"
-    "stimated_days\030\005 \001(\005R\020maxEstimatedDays\"e\n"
-    "\023ProductItemMetadata\0228\n\004type\030\001 \001(\0162$.pro"
-    "ducts.v1.ProductItemMetadataTypeR\004type\022\024"
-    "\n\005label\030\002 \001(\tR\005label\"U\n\025ProductsToLikeRe"
-    "quest\022<\n\npagination\030\002 \001(\0132\034.shared.v1.Pa"
-    "ginationRequestR\npagination\"\220\001\n\026Products"
-    "ToLikeResponse\022=\n\004data\030\001 \001(\0132\'.products."
-    "v1.ProductsToLikeResponseDataH\000R\004data\022+\n"
-    "\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005err"
-    "orB\n\n\010response\"\233\001\n\032ProductsToLikeRespons"
-    "eData\022>\n\010products\030\001 \003(\0132\".products.v1.Pr"
-    "oductToLikeListItemR\010products\022=\n\npaginat"
-    "ion\030\002 \001(\0132\035.shared.v1.PaginationResponse"
-    "R\npagination\"\204\002\n\025ProductToLikeListItem\022\016"
-    "\n\002id\030\001 \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005title\022\024\n\005"
-    "image\030\003 \001(\tR\005image\022/\n\005price\030\004 \001(\0132\031.prod"
-    "ucts.v1.ProductPriceR\005price\022\033\n\006rating\030\005 "
-    "\001(\001H\000R\006rating\210\001\001\022\027\n\004sold\030\006 \001(\005H\001R\004sold\210\001"
-    "\001\0224\n\004meta\030\007 \003(\0132 .products.v1.ProductIte"
-    "mMetadataR\004metaB\t\n\007_ratingB\007\n\005_sold*\213\001\n\025"
-    "ProductShippingMethod\022\'\n#PRODUCT_SHIPPIN"
-    "G_METHOD_UNSPECIFIED\020\000\022$\n PRODUCT_SHIPPI"
-    "NG_METHOD_STANDARD\020\001\022#\n\037PRODUCT_SHIPPING"
-    "_METHOD_EXPRESS\020\002*\277\001\n\027ProductItemMetadat"
-    "aType\022*\n&PRODUCT_ITEM_METADATA_TYPE_UNSP"
-    "ECIFIED\020\000\022%\n!PRODUCT_ITEM_METADATA_TYPE_"
-    "COUPON\020\001\022*\n&PRODUCT_ITEM_METADATA_TYPE_N"
-    "EW_SHOPPER\020\002\022%\n!PRODUCT_ITEM_METADATA_TY"
-    "PE_BUNDLE\020\003B}\n\034org.megacommerce.products"
-    ".v1B\023ProductsToLikeProtoZEgithub.com/ahm"
-    "ad-khatib0-org/megacommerce-proto/gen/go"
-    "/products/v1;v1\370\001\001b\006proto3"
+    "/v1/pagination.proto\"\373\001\n\014ProductPrice\022\026\n"
+    "\006amount\030\001 \001(\001R\006amount\022\034\n\tformatted\030\002 \001(\t"
+    "R\tformatted\022*\n\016discount_price\030\003 \001(\001H\000R\rd"
+    "iscountPrice\210\001\001\022$\n\013save_amount\030\004 \001(\tH\001R\n"
+    "saveAmount\210\001\001\022,\n\017save_percentage\030\005 \001(\tH\002"
+    "R\016savePercentage\210\001\001B\021\n\017_discount_priceB\016"
+    "\n\014_save_amountB\022\n\020_save_percentage\"\331\001\n\023P"
+    "roductShippingInfo\022\022\n\004free\030\001 \001(\010R\004free\022:"
+    "\n\006method\030\002 \001(\0162\".products.v1.ProductShip"
+    "pingMethodR\006method\022\026\n\006origin\030\003 \001(\tR\006orig"
+    "in\022,\n\022min_estimated_days\030\004 \001(\005R\020minEstim"
+    "atedDays\022,\n\022max_estimated_days\030\005 \001(\005R\020ma"
+    "xEstimatedDays\"e\n\023ProductItemMetadata\0228\n"
+    "\004type\030\001 \001(\0162$.products.v1.ProductItemMet"
+    "adataTypeR\004type\022\024\n\005label\030\002 \001(\tR\005label\"U\n"
+    "\025ProductsToLikeRequest\022<\n\npagination\030\002 \001"
+    "(\0132\034.shared.v1.PaginationRequestR\npagina"
+    "tion\"\220\001\n\026ProductsToLikeResponse\022=\n\004data\030"
+    "\001 \001(\0132\'.products.v1.ProductsToLikeRespon"
+    "seDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v"
+    "1.AppErrorH\000R\005errorB\n\n\010response\"\233\001\n\032Prod"
+    "uctsToLikeResponseData\022>\n\010products\030\001 \003(\013"
+    "2\".products.v1.ProductToLikeListItemR\010pr"
+    "oducts\022=\n\npagination\030\002 \001(\0132\035.shared.v1.P"
+    "aginationResponseR\npagination\"\204\002\n\025Produc"
+    "tToLikeListItem\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005title"
+    "\030\002 \001(\tR\005title\022\024\n\005image\030\003 \001(\tR\005image\022/\n\005p"
+    "rice\030\004 \001(\0132\031.products.v1.ProductPriceR\005p"
+    "rice\022\033\n\006rating\030\005 \001(\001H\000R\006rating\210\001\001\022\027\n\004sol"
+    "d\030\006 \001(\005H\001R\004sold\210\001\001\0224\n\004meta\030\007 \003(\0132 .produ"
+    "cts.v1.ProductItemMetadataR\004metaB\t\n\007_rat"
+    "ingB\007\n\005_sold*\213\001\n\025ProductShippingMethod\022\'"
+    "\n#PRODUCT_SHIPPING_METHOD_UNSPECIFIED\020\000\022"
+    "$\n PRODUCT_SHIPPING_METHOD_STANDARD\020\001\022#\n"
+    "\037PRODUCT_SHIPPING_METHOD_EXPRESS\020\002*\277\001\n\027P"
+    "roductItemMetadataType\022*\n&PRODUCT_ITEM_M"
+    "ETADATA_TYPE_UNSPECIFIED\020\000\022%\n!PRODUCT_IT"
+    "EM_METADATA_TYPE_COUPON\020\001\022*\n&PRODUCT_ITE"
+    "M_METADATA_TYPE_NEW_SHOPPER\020\002\022%\n!PRODUCT"
+    "_ITEM_METADATA_TYPE_BUNDLE\020\003B}\n\034org.mega"
+    "commerce.products.v1B\023ProductsToLikeProt"
+    "oZEgithub.com/ahmad-khatib0-org/megacomm"
+    "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro"
+    "to3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_products_2fv1_2fproducts_5fto_5flike_2eproto_deps[3] = {
+    descriptor_table_products_2fv1_2fproducts_5fto_5flike_2eproto_deps[2] = {
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
         &::descriptor_table_shared_2fv1_2fpagination_2eproto,
-        &::descriptor_table_shared_2fv1_2ftypes_2eproto,
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproducts_5fto_5flike_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproducts_5fto_5flike_2eproto = {
     false,
     false,
-    1826,
+    1803,
     descriptor_table_protodef_products_2fv1_2fproducts_5fto_5flike_2eproto,
     "products/v1/products_to_like.proto",
     &descriptor_table_products_2fv1_2fproducts_5fto_5flike_2eproto_once,
     descriptor_table_products_2fv1_2fproducts_5fto_5flike_2eproto_deps,
-    3,
+    2,
     7,
     schemas,
     file_default_instances,

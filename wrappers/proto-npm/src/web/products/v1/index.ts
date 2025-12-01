@@ -6,6 +6,7 @@ import * as Product from './product';
 import * as ProductCategories from './product_categories';
 import * as ProductCreate from './product_create';
 import * as ProductData from './product_data';
+import * as ProductDetails from './product_details';
 import * as ProductEvents from './product_events';
 import * as ProductSnapshot from './product_snapshot';
 import * as Products from './products';
@@ -20,6 +21,7 @@ export {
   ProductCategories,
   ProductCreate,
   ProductData,
+  ProductDetails,
   ProductEvents,
   ProductSnapshot,
   Products,

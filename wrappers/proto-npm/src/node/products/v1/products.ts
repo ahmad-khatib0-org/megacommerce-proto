@@ -23,6 +23,7 @@ import { HeroProductsRequest, HeroProductsResponse } from "./hero_products";
 import { NewlyAddedProductsRequest, NewlyAddedProductsResponse } from "./newly_added_products";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create";
 import { ProductDataRequest, ProductDataResponse } from "./product_data";
+import { ProductDetailsRequest, ProductDetailsResponse } from "./product_details";
 import { ProductSnapshotRequest, ProductSnapshotResponse } from "./product_snapshot";
 import { ProductsToLikeRequest, ProductsToLikeResponse } from "./products_to_like";
 
@@ -114,6 +115,17 @@ export const ProductsServiceService = {
       Buffer.from(HeroProductsResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): HeroProductsResponse => HeroProductsResponse.decode(value),
   },
+  productDetails: {
+    path: "/products.v1.ProductsService/ProductDetails",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: ProductDetailsRequest): Buffer =>
+      Buffer.from(ProductDetailsRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): ProductDetailsRequest => ProductDetailsRequest.decode(value),
+    responseSerialize: (value: ProductDetailsResponse): Buffer =>
+      Buffer.from(ProductDetailsResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): ProductDetailsResponse => ProductDetailsResponse.decode(value),
+  },
 } as const;
 
 export interface ProductsServiceServer extends UntypedServiceImplementation {
@@ -125,6 +137,7 @@ export interface ProductsServiceServer extends UntypedServiceImplementation {
   bigDiscountProducts: handleUnaryCall<BigDiscountProductsRequest, BigDiscountProductsResponse>;
   newlyAddedProducts: handleUnaryCall<NewlyAddedProductsRequest, NewlyAddedProductsResponse>;
   heroProducts: handleUnaryCall<HeroProductsRequest, HeroProductsResponse>;
+  productDetails: handleUnaryCall<ProductDetailsRequest, ProductDetailsResponse>;
 }
 
 export interface ProductsServiceClient extends Client {
@@ -247,6 +260,21 @@ export interface ProductsServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: HeroProductsResponse) => void,
+  ): ClientUnaryCall;
+  productDetails(
+    request: ProductDetailsRequest,
+    callback: (error: ServiceError | null, response: ProductDetailsResponse) => void,
+  ): ClientUnaryCall;
+  productDetails(
+    request: ProductDetailsRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: ProductDetailsResponse) => void,
+  ): ClientUnaryCall;
+  productDetails(
+    request: ProductDetailsRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: ProductDetailsResponse) => void,
   ): ClientUnaryCall;
 }
 

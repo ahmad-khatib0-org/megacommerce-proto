@@ -32,7 +32,6 @@
 #include "google/protobuf/unknown_field_set.h"
 #include "shared/v1/error.pb.h"
 #include "shared/v1/pagination.pb.h"
-#include "shared/v1/types.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

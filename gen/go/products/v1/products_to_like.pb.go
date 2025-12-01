@@ -601,7 +601,7 @@ var File_products_v1_products_to_like_proto protoreflect.FileDescriptor
 
 const file_products_v1_products_to_like_proto_rawDesc = "" +
 	"\n" +
-	"\"products/v1/products_to_like.proto\x12\vproducts.v1\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\x1a\x15shared/v1/types.proto\"\xfb\x01\n" +
+	"\"products/v1/products_to_like.proto\x12\vproducts.v1\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\"\xfb\x01\n" +
 	"\fProductPrice\x12\x16\n" +
 	"\x06amount\x18\x01 \x01(\x01R\x06amount\x12\x1c\n" +
 	"\tformatted\x18\x02 \x01(\tR\tformatted\x12*\n" +

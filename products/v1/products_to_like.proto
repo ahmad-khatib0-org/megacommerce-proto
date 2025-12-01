@@ -4,7 +4,6 @@ package products.v1;
 
 import "shared/v1/error.proto";
 import "shared/v1/pagination.proto";
-import "shared/v1/types.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
