@@ -514,6 +514,7 @@ type ProductToLikeListItem struct {
 	Rating        *float64               `protobuf:"fixed64,5,opt,name=rating,proto3,oneof" json:"rating,omitempty"`
 	Sold          *int32                 `protobuf:"varint,6,opt,name=sold,proto3,oneof" json:"sold,omitempty"`
 	Meta          []*ProductItemMetadata `protobuf:"bytes,7,rep,name=meta,proto3" json:"meta,omitempty"`
+	VariantId     string                 `protobuf:"bytes,8,opt,name=variant_id,json=variantId,proto3" json:"variant_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -597,6 +598,13 @@ func (x *ProductToLikeListItem) GetMeta() []*ProductItemMetadata {
 	return nil
 }
 
+func (x *ProductToLikeListItem) GetVariantId() string {
+	if x != nil {
+		return x.VariantId
+	}
+	return ""
+}
+
 var File_products_v1_products_to_like_proto protoreflect.FileDescriptor
 
 const file_products_v1_products_to_like_proto_rawDesc = "" +
@@ -634,7 +642,7 @@ const file_products_v1_products_to_like_proto_rawDesc = "" +
 	"\bproducts\x18\x01 \x03(\v2\".products.v1.ProductToLikeListItemR\bproducts\x12=\n" +
 	"\n" +
 	"pagination\x18\x02 \x01(\v2\x1d.shared.v1.PaginationResponseR\n" +
-	"pagination\"\x84\x02\n" +
+	"pagination\"\xa3\x02\n" +
 	"\x15ProductToLikeListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
@@ -642,7 +650,9 @@ const file_products_v1_products_to_like_proto_rawDesc = "" +
 	"\x05price\x18\x04 \x01(\v2\x19.products.v1.ProductPriceR\x05price\x12\x1b\n" +
 	"\x06rating\x18\x05 \x01(\x01H\x00R\x06rating\x88\x01\x01\x12\x17\n" +
 	"\x04sold\x18\x06 \x01(\x05H\x01R\x04sold\x88\x01\x01\x124\n" +
-	"\x04meta\x18\a \x03(\v2 .products.v1.ProductItemMetadataR\x04metaB\t\n" +
+	"\x04meta\x18\a \x03(\v2 .products.v1.ProductItemMetadataR\x04meta\x12\x1d\n" +
+	"\n" +
+	"variant_id\x18\b \x01(\tR\tvariantIdB\t\n" +
 	"\a_ratingB\a\n" +
 	"\x05_sold*\x8b\x01\n" +
 	"\x15ProductShippingMethod\x12'\n" +

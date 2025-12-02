@@ -30,4 +30,5 @@ message BestSellingProductListItem {
   optional int64 sale_price_cents = 5;
   uint32 rating = 6; // E,g 43 => 4.3 rating
   uint32 sold_count = 7;
+  string variant_id = 8;
 }

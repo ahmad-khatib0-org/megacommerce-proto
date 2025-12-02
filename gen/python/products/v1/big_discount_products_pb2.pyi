@@ -25,7 +25,7 @@ class BigDiscountProductsResponseData(_message.Message):
     def __init__(self, products: _Optional[_Iterable[_Union[BigDiscountProductListItem, _Mapping]]] = ...) -> None: ...
 
 class BigDiscountProductListItem(_message.Message):
-    __slots__ = ("id", "title", "image", "price_cents", "discount_price_cents", "discount_percentage", "sold_count")
+    __slots__ = ("id", "title", "image", "price_cents", "discount_price_cents", "discount_percentage", "sold_count", "variant_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
@@ -33,6 +33,7 @@ class BigDiscountProductListItem(_message.Message):
     DISCOUNT_PRICE_CENTS_FIELD_NUMBER: _ClassVar[int]
     DISCOUNT_PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
     SOLD_COUNT_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     title: str
     image: str
@@ -40,4 +41,5 @@ class BigDiscountProductListItem(_message.Message):
     discount_price_cents: int
     discount_percentage: int
     sold_count: int
-    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., price_cents: _Optional[int] = ..., discount_price_cents: _Optional[int] = ..., discount_percentage: _Optional[int] = ..., sold_count: _Optional[int] = ...) -> None: ...
+    variant_id: str
+    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., price_cents: _Optional[int] = ..., discount_price_cents: _Optional[int] = ..., discount_percentage: _Optional[int] = ..., sold_count: _Optional[int] = ..., variant_id: _Optional[str] = ...) -> None: ...

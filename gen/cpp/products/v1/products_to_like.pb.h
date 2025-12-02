@@ -1041,6 +1041,7 @@ class ProductToLikeListItem final : public ::google::protobuf::Message
     kIdFieldNumber = 1,
     kTitleFieldNumber = 2,
     kImageFieldNumber = 3,
+    kVariantIdFieldNumber = 8,
     kPriceFieldNumber = 4,
     kRatingFieldNumber = 5,
     kSoldFieldNumber = 6,
@@ -1107,6 +1108,21 @@ class ProductToLikeListItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_image();
 
   public:
+  // string variant_id = 8 [json_name = "variantId"];
+  void clear_variant_id() ;
+  const ::std::string& variant_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_variant_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_variant_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_variant_id();
+  void set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_variant_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_variant_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_variant_id();
+
+  public:
   // .products.v1.ProductPrice price = 4 [json_name = "price"];
   bool has_price() const;
   void clear_price() ;
@@ -1148,8 +1164,8 @@ class ProductToLikeListItem final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 7,
-                                   2, 54,
+  static const ::google::protobuf::internal::TcParseTable<3, 8,
+                                   2, 72,
                                    2>
       _table_;
 
@@ -1174,6 +1190,7 @@ class ProductToLikeListItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr id_;
     ::google::protobuf::internal::ArenaStringPtr title_;
     ::google::protobuf::internal::ArenaStringPtr image_;
+    ::google::protobuf::internal::ArenaStringPtr variant_id_;
     ::products::v1::ProductPrice* PROTOBUF_NULLABLE price_;
     double rating_;
     ::int32_t sold_;
@@ -2970,14 +2987,14 @@ inline void ProductToLikeListItem::set_allocated_image(::std::string* PROTOBUF_N
 
 // .products.v1.ProductPrice price = 4 [json_name = "price"];
 inline bool ProductToLikeListItem::has_price() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.price_ != nullptr);
   return value;
 }
 inline void ProductToLikeListItem::clear_price() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.price_ != nullptr) _impl_.price_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline const ::products::v1::ProductPrice& ProductToLikeListItem::_internal_price() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
@@ -2996,16 +3013,16 @@ inline void ProductToLikeListItem::unsafe_arena_set_allocated_price(
   }
   _impl_.price_ = reinterpret_cast<::products::v1::ProductPrice*>(value);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000008u;
+    _impl_._has_bits_[0] |= 0x00000010u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000008u;
+    _impl_._has_bits_[0] &= ~0x00000010u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductToLikeListItem.price)
 }
 inline ::products::v1::ProductPrice* PROTOBUF_NULLABLE ProductToLikeListItem::release_price() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
   ::products::v1::ProductPrice* released = _impl_.price_;
   _impl_.price_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -3025,7 +3042,7 @@ inline ::products::v1::ProductPrice* PROTOBUF_NULLABLE ProductToLikeListItem::un
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:products.v1.ProductToLikeListItem.price)
 
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
   ::products::v1::ProductPrice* temp = _impl_.price_;
   _impl_.price_ = nullptr;
   return temp;
@@ -3040,7 +3057,7 @@ inline ::products::v1::ProductPrice* PROTOBUF_NONNULL ProductToLikeListItem::_in
 }
 inline ::products::v1::ProductPrice* PROTOBUF_NONNULL ProductToLikeListItem::mutable_price()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   ::products::v1::ProductPrice* _msg = _internal_mutable_price();
   // @@protoc_insertion_point(field_mutable:products.v1.ProductToLikeListItem.price)
   return _msg;
@@ -3057,9 +3074,9 @@ inline void ProductToLikeListItem::set_allocated_price(::products::v1::ProductPr
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00000008u;
+    _impl_._has_bits_[0] |= 0x00000010u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000008u;
+    _impl_._has_bits_[0] &= ~0x00000010u;
   }
 
   _impl_.price_ = reinterpret_cast<::products::v1::ProductPrice*>(value);
@@ -3068,13 +3085,13 @@ inline void ProductToLikeListItem::set_allocated_price(::products::v1::ProductPr
 
 // optional double rating = 5 [json_name = "rating"];
 inline bool ProductToLikeListItem::has_rating() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline void ProductToLikeListItem::clear_rating() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rating_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline double ProductToLikeListItem::rating() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductToLikeListItem.rating)
@@ -3082,7 +3099,7 @@ inline double ProductToLikeListItem::rating() const {
 }
 inline void ProductToLikeListItem::set_rating(double value) {
   _internal_set_rating(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   // @@protoc_insertion_point(field_set:products.v1.ProductToLikeListItem.rating)
 }
 inline double ProductToLikeListItem::_internal_rating() const {
@@ -3096,13 +3113,13 @@ inline void ProductToLikeListItem::_internal_set_rating(double value) {
 
 // optional int32 sold = 6 [json_name = "sold"];
 inline bool ProductToLikeListItem::has_sold() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline void ProductToLikeListItem::clear_sold() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.sold_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline ::int32_t ProductToLikeListItem::sold() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductToLikeListItem.sold)
@@ -3110,7 +3127,7 @@ inline ::int32_t ProductToLikeListItem::sold() const {
 }
 inline void ProductToLikeListItem::set_sold(::int32_t value) {
   _internal_set_sold(value);
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   // @@protoc_insertion_point(field_set:products.v1.ProductToLikeListItem.sold)
 }
 inline ::int32_t ProductToLikeListItem::_internal_sold() const {
@@ -3170,6 +3187,71 @@ inline ::google::protobuf::RepeatedPtrField<::products::v1::ProductItemMetadata>
 ProductToLikeListItem::_internal_mutable_meta() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.meta_;
+}
+
+// string variant_id = 8 [json_name = "variantId"];
+inline void ProductToLikeListItem::clear_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.variant_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline const ::std::string& ProductToLikeListItem::variant_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductToLikeListItem.variant_id)
+  return _internal_variant_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ProductToLikeListItem::set_variant_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.variant_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.ProductToLikeListItem.variant_id)
+}
+inline ::std::string* PROTOBUF_NONNULL ProductToLikeListItem::mutable_variant_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_variant_id();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductToLikeListItem.variant_id)
+  return _s;
+}
+inline const ::std::string& ProductToLikeListItem::_internal_variant_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.variant_id_.Get();
+}
+inline void ProductToLikeListItem::_internal_set_variant_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.variant_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ProductToLikeListItem::_internal_mutable_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  return _impl_.variant_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ProductToLikeListItem::release_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductToLikeListItem.variant_id)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  auto* released = _impl_.variant_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.variant_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ProductToLikeListItem::set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.variant_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.variant_id_.IsDefault()) {
+    _impl_.variant_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductToLikeListItem.variant_id)
 }
 
 #ifdef __GNUC__

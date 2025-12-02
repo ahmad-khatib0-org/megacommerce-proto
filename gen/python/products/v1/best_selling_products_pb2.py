@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'products/v1/best_selling_products.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\"\x1c\n\x1a\x42\x65stSellingProductsRequest\"\x8d\x01\n\x1b\x42\x65stSellingProductsResponse\x12<\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32,.products.v1.BestSellingProductsResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\\\n\x1f\x42\x65stSellingProductsResponseData\x12\x39\n\x08products\x18\x01 \x03(\x0b\x32\'.products.v1.BestSellingProductListItem\"\xb3\x01\n\x1a\x42\x65stSellingProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x13\n\x0bprice_cents\x18\x04 \x01(\x03\x12\x1d\n\x10sale_price_cents\x18\x05 \x01(\x03H\x00\x88\x01\x01\x12\x0e\n\x06rating\x18\x06 \x01(\r\x12\x12\n\nsold_count\x18\x07 \x01(\rB\x13\n\x11_sale_price_centsB\x82\x01\n\x1corg.megacommerce.products.v1B\x18\x42\x65stSellingProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'products/v1/best_selling_products.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\"\x1c\n\x1a\x42\x65stSellingProductsRequest\"\x8d\x01\n\x1b\x42\x65stSellingProductsResponse\x12<\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32,.products.v1.BestSellingProductsResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"\\\n\x1f\x42\x65stSellingProductsResponseData\x12\x39\n\x08products\x18\x01 \x03(\x0b\x32\'.products.v1.BestSellingProductListItem\"\xc7\x01\n\x1a\x42\x65stSellingProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x13\n\x0bprice_cents\x18\x04 \x01(\x03\x12\x1d\n\x10sale_price_cents\x18\x05 \x01(\x03H\x00\x88\x01\x01\x12\x0e\n\x06rating\x18\x06 \x01(\r\x12\x12\n\nsold_count\x18\x07 \x01(\r\x12\x12\n\nvariant_id\x18\x08 \x01(\tB\x13\n\x11_sale_price_centsB\x82\x01\n\x1corg.megacommerce.products.v1B\x18\x42\x65stSellingProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,5 +40,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_BESTSELLINGPRODUCTSRESPONSEDATA']._serialized_start=253
   _globals['_BESTSELLINGPRODUCTSRESPONSEDATA']._serialized_end=345
   _globals['_BESTSELLINGPRODUCTLISTITEM']._serialized_start=348
-  _globals['_BESTSELLINGPRODUCTLISTITEM']._serialized_end=527
+  _globals['_BESTSELLINGPRODUCTLISTITEM']._serialized_end=547
 # @@protoc_insertion_point(module_scope)

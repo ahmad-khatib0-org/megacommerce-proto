@@ -87,7 +87,7 @@ class ProductsToLikeResponseData(_message.Message):
     def __init__(self, products: _Optional[_Iterable[_Union[ProductToLikeListItem, _Mapping]]] = ..., pagination: _Optional[_Union[_pagination_pb2.PaginationResponse, _Mapping]] = ...) -> None: ...
 
 class ProductToLikeListItem(_message.Message):
-    __slots__ = ("id", "title", "image", "price", "rating", "sold", "meta")
+    __slots__ = ("id", "title", "image", "price", "rating", "sold", "meta", "variant_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
@@ -95,6 +95,7 @@ class ProductToLikeListItem(_message.Message):
     RATING_FIELD_NUMBER: _ClassVar[int]
     SOLD_FIELD_NUMBER: _ClassVar[int]
     META_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     title: str
     image: str
@@ -102,4 +103,5 @@ class ProductToLikeListItem(_message.Message):
     rating: float
     sold: int
     meta: _containers.RepeatedCompositeFieldContainer[ProductItemMetadata]
-    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., price: _Optional[_Union[ProductPrice, _Mapping]] = ..., rating: _Optional[float] = ..., sold: _Optional[int] = ..., meta: _Optional[_Iterable[_Union[ProductItemMetadata, _Mapping]]] = ...) -> None: ...
+    variant_id: str
+    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., price: _Optional[_Union[ProductPrice, _Mapping]] = ..., rating: _Optional[float] = ..., sold: _Optional[int] = ..., meta: _Optional[_Iterable[_Union[ProductItemMetadata, _Mapping]]] = ..., variant_id: _Optional[str] = ...) -> None: ...

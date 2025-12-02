@@ -33,6 +33,7 @@ export interface NewlyAddedProductListItem {
     | undefined;
   /** E.g. a string like: Added 1 hour ago */
   createdAt: string;
+  variantId: string;
 }
 
 function createBaseNewlyAddedProductsRequest(): NewlyAddedProductsRequest {
@@ -231,6 +232,7 @@ function createBaseNewlyAddedProductListItem(): NewlyAddedProductListItem {
     salePriceCents: undefined,
     discountPercentage: undefined,
     createdAt: "",
+    variantId: "",
   };
 }
 
@@ -256,6 +258,9 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
     }
     if (message.createdAt !== "") {
       writer.uint32(58).string(message.createdAt);
+    }
+    if (message.variantId !== "") {
+      writer.uint32(66).string(message.variantId);
     }
     return writer;
   },
@@ -323,6 +328,14 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
           message.createdAt = reader.string();
           continue;
         }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.variantId = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -341,6 +354,7 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
       salePriceCents: isSet(object.salePriceCents) ? globalThis.Number(object.salePriceCents) : undefined,
       discountPercentage: isSet(object.discountPercentage) ? globalThis.Number(object.discountPercentage) : undefined,
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "",
+      variantId: isSet(object.variantId) ? globalThis.String(object.variantId) : "",
     };
   },
 
@@ -367,6 +381,9 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
     if (message.createdAt !== "") {
       obj.createdAt = message.createdAt;
     }
+    if (message.variantId !== "") {
+      obj.variantId = message.variantId;
+    }
     return obj;
   },
 
@@ -382,6 +399,7 @@ export const NewlyAddedProductListItem: MessageFns<NewlyAddedProductListItem> = 
     message.salePriceCents = object.salePriceCents ?? undefined;
     message.discountPercentage = object.discountPercentage ?? undefined;
     message.createdAt = object.createdAt ?? "";
+    message.variantId = object.variantId ?? "";
     return message;
   },
 };

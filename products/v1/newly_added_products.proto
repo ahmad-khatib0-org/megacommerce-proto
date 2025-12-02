@@ -30,4 +30,5 @@ message NewlyAddedProductListItem {
   optional uint32 sale_price_cents = 5;
   optional uint32 discount_percentage = 6;
   string created_at = 7; // E.g. a string like: Added 1 hour ago
+  string variant_id = 8;
 }

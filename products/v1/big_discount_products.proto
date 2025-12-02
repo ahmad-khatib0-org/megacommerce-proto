@@ -30,4 +30,5 @@ message BigDiscountProductListItem {
   uint32 discount_price_cents = 5;
   uint32 discount_percentage = 6;
   uint32 sold_count = 7;
+  string variant_id = 8;
 }

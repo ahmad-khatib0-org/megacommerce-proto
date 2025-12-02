@@ -193,6 +193,7 @@ type NewlyAddedProductListItem struct {
 	SalePriceCents     *uint32                `protobuf:"varint,5,opt,name=sale_price_cents,json=salePriceCents,proto3,oneof" json:"sale_price_cents,omitempty"`
 	DiscountPercentage *uint32                `protobuf:"varint,6,opt,name=discount_percentage,json=discountPercentage,proto3,oneof" json:"discount_percentage,omitempty"`
 	CreatedAt          string                 `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // E.g. a string like: Added 1 hour ago
+	VariantId          string                 `protobuf:"bytes,8,opt,name=variant_id,json=variantId,proto3" json:"variant_id,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -276,6 +277,13 @@ func (x *NewlyAddedProductListItem) GetCreatedAt() string {
 	return ""
 }
 
+func (x *NewlyAddedProductListItem) GetVariantId() string {
+	if x != nil {
+		return x.VariantId
+	}
+	return ""
+}
+
 var File_products_v1_newly_added_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_newly_added_products_proto_rawDesc = "" +
@@ -288,7 +296,7 @@ const file_products_v1_newly_added_products_proto_rawDesc = "" +
 	"\n" +
 	"\bresponse\"d\n" +
 	"\x1eNewlyAddedProductsResponseData\x12B\n" +
-	"\bproducts\x18\x01 \x03(\v2&.products.v1.NewlyAddedProductListItemR\bproducts\"\xa9\x02\n" +
+	"\bproducts\x18\x01 \x03(\v2&.products.v1.NewlyAddedProductListItemR\bproducts\"\xc8\x02\n" +
 	"\x19NewlyAddedProductListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
@@ -298,7 +306,9 @@ const file_products_v1_newly_added_products_proto_rawDesc = "" +
 	"\x10sale_price_cents\x18\x05 \x01(\rH\x00R\x0esalePriceCents\x88\x01\x01\x124\n" +
 	"\x13discount_percentage\x18\x06 \x01(\rH\x01R\x12discountPercentage\x88\x01\x01\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\a \x01(\tR\tcreatedAtB\x13\n" +
+	"created_at\x18\a \x01(\tR\tcreatedAt\x12\x1d\n" +
+	"\n" +
+	"variant_id\x18\b \x01(\tR\tvariantIdB\x13\n" +
 	"\x11_sale_price_centsB\x16\n" +
 	"\x14_discount_percentageB\x81\x01\n" +
 	"\x1corg.megacommerce.products.v1B\x17NewlyAddedProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"

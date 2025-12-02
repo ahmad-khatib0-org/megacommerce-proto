@@ -68,4 +68,5 @@ message ProductToLikeListItem {
   optional double rating = 5;
   optional int32 sold = 6;
   repeated ProductItemMetadata meta = 7;
+  string variant_id = 8;
 }

@@ -33,6 +33,7 @@ export interface BestSellingProductListItem {
   /** E,g 43 => 4.3 rating */
   rating: number;
   soldCount: number;
+  variantId: string;
 }
 
 function createBaseBestSellingProductsRequest(): BestSellingProductsRequest {
@@ -223,7 +224,16 @@ export const BestSellingProductsResponseData: MessageFns<BestSellingProductsResp
 };
 
 function createBaseBestSellingProductListItem(): BestSellingProductListItem {
-  return { id: "", title: "", image: "", priceCents: "0", salePriceCents: undefined, rating: 0, soldCount: 0 };
+  return {
+    id: "",
+    title: "",
+    image: "",
+    priceCents: "0",
+    salePriceCents: undefined,
+    rating: 0,
+    soldCount: 0,
+    variantId: "",
+  };
 }
 
 export const BestSellingProductListItem: MessageFns<BestSellingProductListItem> = {
@@ -248,6 +258,9 @@ export const BestSellingProductListItem: MessageFns<BestSellingProductListItem> 
     }
     if (message.soldCount !== 0) {
       writer.uint32(56).uint32(message.soldCount);
+    }
+    if (message.variantId !== "") {
+      writer.uint32(66).string(message.variantId);
     }
     return writer;
   },
@@ -315,6 +328,14 @@ export const BestSellingProductListItem: MessageFns<BestSellingProductListItem> 
           message.soldCount = reader.uint32();
           continue;
         }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.variantId = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -333,6 +354,7 @@ export const BestSellingProductListItem: MessageFns<BestSellingProductListItem> 
       salePriceCents: isSet(object.salePriceCents) ? globalThis.String(object.salePriceCents) : undefined,
       rating: isSet(object.rating) ? globalThis.Number(object.rating) : 0,
       soldCount: isSet(object.soldCount) ? globalThis.Number(object.soldCount) : 0,
+      variantId: isSet(object.variantId) ? globalThis.String(object.variantId) : "",
     };
   },
 
@@ -359,6 +381,9 @@ export const BestSellingProductListItem: MessageFns<BestSellingProductListItem> 
     if (message.soldCount !== 0) {
       obj.soldCount = Math.round(message.soldCount);
     }
+    if (message.variantId !== "") {
+      obj.variantId = message.variantId;
+    }
     return obj;
   },
 
@@ -374,6 +399,7 @@ export const BestSellingProductListItem: MessageFns<BestSellingProductListItem> 
     message.salePriceCents = object.salePriceCents ?? undefined;
     message.rating = object.rating ?? 0;
     message.soldCount = object.soldCount ?? 0;
+    message.variantId = object.variantId ?? "";
     return message;
   },
 };

@@ -43,6 +43,8 @@ pub struct BestSellingProductListItem {
     pub rating: u32,
     #[prost(uint32, tag = "7")]
     pub sold_count: u32,
+    #[prost(string, tag = "8")]
+    pub variant_id: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
@@ -87,6 +89,8 @@ pub struct BigDiscountProductListItem {
     pub discount_percentage: u32,
     #[prost(uint32, tag = "7")]
     pub sold_count: u32,
+    #[prost(string, tag = "8")]
+    pub variant_id: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -258,6 +262,8 @@ pub struct NewlyAddedProductListItem {
     /// E.g. a string like: Added 1 hour ago
     #[prost(string, tag = "7")]
     pub created_at: ::prost::alloc::string::String,
+    #[prost(string, tag = "8")]
+    pub variant_id: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1159,6 +1165,8 @@ pub struct ProductToLikeListItem {
     pub sold: ::core::option::Option<i32>,
     #[prost(message, repeated, tag = "7")]
     pub meta: ::prost::alloc::vec::Vec<ProductItemMetadata>,
+    #[prost(string, tag = "8")]
+    pub variant_id: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]

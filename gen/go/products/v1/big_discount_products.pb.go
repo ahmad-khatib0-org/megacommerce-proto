@@ -193,6 +193,7 @@ type BigDiscountProductListItem struct {
 	DiscountPriceCents uint32                 `protobuf:"varint,5,opt,name=discount_price_cents,json=discountPriceCents,proto3" json:"discount_price_cents,omitempty"`
 	DiscountPercentage uint32                 `protobuf:"varint,6,opt,name=discount_percentage,json=discountPercentage,proto3" json:"discount_percentage,omitempty"`
 	SoldCount          uint32                 `protobuf:"varint,7,opt,name=sold_count,json=soldCount,proto3" json:"sold_count,omitempty"`
+	VariantId          string                 `protobuf:"bytes,8,opt,name=variant_id,json=variantId,proto3" json:"variant_id,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -276,6 +277,13 @@ func (x *BigDiscountProductListItem) GetSoldCount() uint32 {
 	return 0
 }
 
+func (x *BigDiscountProductListItem) GetVariantId() string {
+	if x != nil {
+		return x.VariantId
+	}
+	return ""
+}
+
 var File_products_v1_big_discount_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_big_discount_products_proto_rawDesc = "" +
@@ -288,7 +296,7 @@ const file_products_v1_big_discount_products_proto_rawDesc = "" +
 	"\n" +
 	"\bresponse\"f\n" +
 	"\x1fBigDiscountProductsResponseData\x12C\n" +
-	"\bproducts\x18\x01 \x03(\v2'.products.v1.BigDiscountProductListItemR\bproducts\"\xfb\x01\n" +
+	"\bproducts\x18\x01 \x03(\v2'.products.v1.BigDiscountProductListItemR\bproducts\"\x9a\x02\n" +
 	"\x1aBigDiscountProductListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
@@ -298,7 +306,9 @@ const file_products_v1_big_discount_products_proto_rawDesc = "" +
 	"\x14discount_price_cents\x18\x05 \x01(\rR\x12discountPriceCents\x12/\n" +
 	"\x13discount_percentage\x18\x06 \x01(\rR\x12discountPercentage\x12\x1d\n" +
 	"\n" +
-	"sold_count\x18\a \x01(\rR\tsoldCountB\x82\x01\n" +
+	"sold_count\x18\a \x01(\rR\tsoldCount\x12\x1d\n" +
+	"\n" +
+	"variant_id\x18\b \x01(\tR\tvariantIdB\x82\x01\n" +
 	"\x1corg.megacommerce.products.v1B\x18BigDiscountProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (

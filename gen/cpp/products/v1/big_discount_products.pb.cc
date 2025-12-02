@@ -57,6 +57,9 @@ inline constexpr BigDiscountProductListItem::Impl_::Impl_(
         image_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        variant_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         price_cents_{0u},
         discount_price_cents_{0u},
         discount_percentage_{0u},
@@ -151,7 +154,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::products::v1::BigDiscountProductsResponseData, _impl_.products_),
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::BigDiscountProductListItem, _impl_._has_bits_),
-        10, // hasbit index offset
+        11, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::BigDiscountProductListItem, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::products::v1::BigDiscountProductListItem, _impl_.title_),
         PROTOBUF_FIELD_OFFSET(::products::v1::BigDiscountProductListItem, _impl_.image_),
@@ -159,13 +162,15 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::products::v1::BigDiscountProductListItem, _impl_.discount_price_cents_),
         PROTOBUF_FIELD_OFFSET(::products::v1::BigDiscountProductListItem, _impl_.discount_percentage_),
         PROTOBUF_FIELD_OFFSET(::products::v1::BigDiscountProductListItem, _impl_.sold_count_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::BigDiscountProductListItem, _impl_.variant_id_),
         0,
         1,
         2,
-        3,
         4,
         5,
         6,
+        7,
+        3,
 };
 
 static const ::_pbi::MigrationSchema
@@ -192,17 +197,17 @@ const char descriptor_table_protodef_products_2fv1_2fbig_5fdiscount_5fproducts_2
     "rorH\000R\005errorB\n\n\010response\"f\n\037BigDiscountP"
     "roductsResponseData\022C\n\010products\030\001 \003(\0132\'."
     "products.v1.BigDiscountProductListItemR\010"
-    "products\"\373\001\n\032BigDiscountProductListItem\022"
+    "products\"\232\002\n\032BigDiscountProductListItem\022"
     "\016\n\002id\030\001 \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005title\022\024\n"
     "\005image\030\003 \001(\tR\005image\022\037\n\013price_cents\030\004 \001(\r"
     "R\npriceCents\0220\n\024discount_price_cents\030\005 \001"
     "(\rR\022discountPriceCents\022/\n\023discount_perce"
     "ntage\030\006 \001(\rR\022discountPercentage\022\035\n\nsold_"
-    "count\030\007 \001(\rR\tsoldCountB\202\001\n\034org.megacomme"
-    "rce.products.v1B\030BigDiscountProductsProt"
-    "oZEgithub.com/ahmad-khatib0-org/megacomm"
-    "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro"
-    "to3"
+    "count\030\007 \001(\rR\tsoldCount\022\035\n\nvariant_id\030\010 \001"
+    "(\tR\tvariantIdB\202\001\n\034org.megacommerce.produ"
+    "cts.v1B\030BigDiscountProductsProtoZEgithub"
+    ".com/ahmad-khatib0-org/megacommerce-prot"
+    "o/gen/go/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fbig_5fdiscount_5fproducts_2eproto_deps[1] = {
@@ -212,7 +217,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fbig_5fdiscount_5fprodu
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fbig_5fdiscount_5fproducts_2eproto = {
     false,
     false,
-    763,
+    794,
     descriptor_table_protodef_products_2fv1_2fbig_5fdiscount_5fproducts_2eproto,
     "products/v1/big_discount_products.proto",
     &descriptor_table_products_2fv1_2fbig_5fdiscount_5fproducts_2eproto_once,
@@ -982,7 +987,8 @@ PROTOBUF_NDEBUG_INLINE BigDiscountProductListItem::Impl_::Impl_(
         _cached_size_{0},
         id_(arena, from.id_),
         title_(arena, from.title_),
-        image_(arena, from.image_) {}
+        image_(arena, from.image_),
+        variant_id_(arena, from.variant_id_) {}
 
 BigDiscountProductListItem::BigDiscountProductListItem(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -1013,7 +1019,8 @@ PROTOBUF_NDEBUG_INLINE BigDiscountProductListItem::Impl_::Impl_(
       : _cached_size_{0},
         id_(arena),
         title_(arena),
-        image_(arena) {}
+        image_(arena),
+        variant_id_(arena) {}
 
 inline void BigDiscountProductListItem::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -1035,6 +1042,7 @@ inline void BigDiscountProductListItem::SharedDtor(MessageLite& self) {
   this_._impl_.id_.Destroy();
   this_._impl_.title_.Destroy();
   this_._impl_.image_.Destroy();
+  this_._impl_.variant_id_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -1081,16 +1089,16 @@ BigDiscountProductListItem::GetClassData() const {
   return BigDiscountProductListItem_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 7, 0, 59, 2>
+const ::_pbi::TcParseTable<3, 8, 0, 77, 2>
 BigDiscountProductListItem::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_._has_bits_),
     0, // no _extensions_
-    7, 56,  // max_field_number, fast_idx_mask
+    8, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967168,  // skipmap
+    4294967040,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    7,  // num_field_entries
+    8,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     BigDiscountProductListItem_class_data_.base(),
@@ -1100,7 +1108,9 @@ BigDiscountProductListItem::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::BigDiscountProductListItem>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
+    // string variant_id = 8 [json_name = "variantId"];
+    {::_pbi::TcParser::FastUS1,
+     {66, 3, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.variant_id_)}},
     // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.id_)}},
@@ -1111,17 +1121,17 @@ BigDiscountProductListItem::_table_ = {
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.image_)}},
     // uint32 price_cents = 4 [json_name = "priceCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BigDiscountProductListItem, _impl_.price_cents_), 3>(),
-     {32, 3, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.price_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BigDiscountProductListItem, _impl_.price_cents_), 4>(),
+     {32, 4, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.price_cents_)}},
     // uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BigDiscountProductListItem, _impl_.discount_price_cents_), 4>(),
-     {40, 4, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.discount_price_cents_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BigDiscountProductListItem, _impl_.discount_price_cents_), 5>(),
+     {40, 5, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.discount_price_cents_)}},
     // uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BigDiscountProductListItem, _impl_.discount_percentage_), 5>(),
-     {48, 5, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.discount_percentage_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BigDiscountProductListItem, _impl_.discount_percentage_), 6>(),
+     {48, 6, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.discount_percentage_)}},
     // uint32 sold_count = 7 [json_name = "soldCount"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BigDiscountProductListItem, _impl_.sold_count_), 6>(),
-     {56, 6, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.sold_count_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BigDiscountProductListItem, _impl_.sold_count_), 7>(),
+     {56, 7, 0, PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.sold_count_)}},
   }}, {{
     65535, 65535
   }}, {{
@@ -1135,25 +1145,29 @@ BigDiscountProductListItem::_table_ = {
     {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.image_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // uint32 price_cents = 4 [json_name = "priceCents"];
-    {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.price_cents_), _Internal::kHasBitsOffset + 3, 0,
+    {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.price_cents_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
     // uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-    {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.discount_price_cents_), _Internal::kHasBitsOffset + 4, 0,
+    {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.discount_price_cents_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
     // uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-    {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.discount_percentage_), _Internal::kHasBitsOffset + 5, 0,
+    {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.discount_percentage_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
     // uint32 sold_count = 7 [json_name = "soldCount"];
-    {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.sold_count_), _Internal::kHasBitsOffset + 6, 0,
+    {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.sold_count_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // string variant_id = 8 [json_name = "variantId"];
+    {PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.variant_id_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\46\2\5\5\0\0\0\0"
+    "\46\2\5\5\0\0\0\0\12\0\0\0\0\0\0\0"
     "products.v1.BigDiscountProductListItem"
     "id"
     "title"
     "image"
+    "variant_id"
   }},
 };
 PROTOBUF_NOINLINE void BigDiscountProductListItem::Clear() {
@@ -1164,7 +1178,7 @@ PROTOBUF_NOINLINE void BigDiscountProductListItem::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.id_.ClearNonDefaultToEmpty();
     }
@@ -1174,8 +1188,11 @@ PROTOBUF_NOINLINE void BigDiscountProductListItem::Clear() {
     if ((cached_has_bits & 0x00000004u) != 0) {
       _impl_.image_.ClearNonDefaultToEmpty();
     }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      _impl_.variant_id_.ClearNonDefaultToEmpty();
+    }
   }
-  if ((cached_has_bits & 0x00000078u) != 0) {
+  if ((cached_has_bits & 0x000000f0u) != 0) {
     ::memset(&_impl_.price_cents_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.sold_count_) -
         reinterpret_cast<char*>(&_impl_.price_cents_)) + sizeof(_impl_.sold_count_));
@@ -1230,7 +1247,7 @@ PROTOBUF_NOINLINE void BigDiscountProductListItem::Clear() {
   }
 
   // uint32 price_cents = 4 [json_name = "priceCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
     if (this_._internal_price_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
@@ -1239,7 +1256,7 @@ PROTOBUF_NOINLINE void BigDiscountProductListItem::Clear() {
   }
 
   // uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
     if (this_._internal_discount_price_cents() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
@@ -1248,7 +1265,7 @@ PROTOBUF_NOINLINE void BigDiscountProductListItem::Clear() {
   }
 
   // uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
     if (this_._internal_discount_percentage() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
@@ -1257,11 +1274,21 @@ PROTOBUF_NOINLINE void BigDiscountProductListItem::Clear() {
   }
 
   // uint32 sold_count = 7 [json_name = "soldCount"];
-  if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
     if (this_._internal_sold_count() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
           7, this_._internal_sold_count(), target);
+    }
+  }
+
+  // string variant_id = 8 [json_name = "variantId"];
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    if (!this_._internal_variant_id().empty()) {
+      const ::std::string& _s = this_._internal_variant_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.BigDiscountProductListItem.variant_id");
+      target = stream->WriteStringMaybeAliased(8, _s, target);
     }
   }
 
@@ -1290,7 +1317,7 @@ PROTOBUF_NOINLINE void BigDiscountProductListItem::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000007fu) != 0) {
+  if ((cached_has_bits & 0x000000ffu) != 0) {
     // string id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
@@ -1312,29 +1339,36 @@ PROTOBUF_NOINLINE void BigDiscountProductListItem::Clear() {
                                         this_._internal_image());
       }
     }
-    // uint32 price_cents = 4 [json_name = "priceCents"];
+    // string variant_id = 8 [json_name = "variantId"];
     if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!this_._internal_variant_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_variant_id());
+      }
+    }
+    // uint32 price_cents = 4 [json_name = "priceCents"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
       if (this_._internal_price_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
             this_._internal_price_cents());
       }
     }
     // uint32 discount_price_cents = 5 [json_name = "discountPriceCents"];
-    if ((cached_has_bits & 0x00000010u) != 0) {
+    if ((cached_has_bits & 0x00000020u) != 0) {
       if (this_._internal_discount_price_cents() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
             this_._internal_discount_price_cents());
       }
     }
     // uint32 discount_percentage = 6 [json_name = "discountPercentage"];
-    if ((cached_has_bits & 0x00000020u) != 0) {
+    if ((cached_has_bits & 0x00000040u) != 0) {
       if (this_._internal_discount_percentage() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
             this_._internal_discount_percentage());
       }
     }
     // uint32 sold_count = 7 [json_name = "soldCount"];
-    if ((cached_has_bits & 0x00000040u) != 0) {
+    if ((cached_has_bits & 0x00000080u) != 0) {
       if (this_._internal_sold_count() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
             this_._internal_sold_count());
@@ -1354,7 +1388,7 @@ void BigDiscountProductListItem::MergeImpl(::google::protobuf::MessageLite& to_m
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000007fu) != 0) {
+  if ((cached_has_bits & 0x000000ffu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!from._internal_id().empty()) {
         _this->_internal_set_id(from._internal_id());
@@ -1383,21 +1417,30 @@ void BigDiscountProductListItem::MergeImpl(::google::protobuf::MessageLite& to_m
       }
     }
     if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!from._internal_variant_id().empty()) {
+        _this->_internal_set_variant_id(from._internal_variant_id());
+      } else {
+        if (_this->_impl_.variant_id_.IsDefault()) {
+          _this->_internal_set_variant_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
       if (from._internal_price_cents() != 0) {
         _this->_impl_.price_cents_ = from._impl_.price_cents_;
       }
     }
-    if ((cached_has_bits & 0x00000010u) != 0) {
+    if ((cached_has_bits & 0x00000020u) != 0) {
       if (from._internal_discount_price_cents() != 0) {
         _this->_impl_.discount_price_cents_ = from._impl_.discount_price_cents_;
       }
     }
-    if ((cached_has_bits & 0x00000020u) != 0) {
+    if ((cached_has_bits & 0x00000040u) != 0) {
       if (from._internal_discount_percentage() != 0) {
         _this->_impl_.discount_percentage_ = from._impl_.discount_percentage_;
       }
     }
-    if ((cached_has_bits & 0x00000040u) != 0) {
+    if ((cached_has_bits & 0x00000080u) != 0) {
       if (from._internal_sold_count() != 0) {
         _this->_impl_.sold_count_ = from._impl_.sold_count_;
       }
@@ -1424,6 +1467,7 @@ void BigDiscountProductListItem::InternalSwap(BigDiscountProductListItem* PROTOB
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.image_, &other->_impl_.image_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.variant_id_, &other->_impl_.variant_id_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BigDiscountProductListItem, _impl_.sold_count_)
       + sizeof(BigDiscountProductListItem::_impl_.sold_count_)

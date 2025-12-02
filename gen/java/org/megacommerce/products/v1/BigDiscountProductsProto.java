@@ -2069,6 +2069,18 @@ public final class BigDiscountProductsProto {
      * @return The soldCount.
      */
     int getSoldCount();
+
+    /**
+     * <code>string variant_id = 8 [json_name = "variantId"];</code>
+     * @return The variantId.
+     */
+    java.lang.String getVariantId();
+    /**
+     * <code>string variant_id = 8 [json_name = "variantId"];</code>
+     * @return The bytes for variantId.
+     */
+    com.google.protobuf.ByteString
+        getVariantIdBytes();
   }
   /**
    * Protobuf type {@code products.v1.BigDiscountProductListItem}
@@ -2095,6 +2107,7 @@ public final class BigDiscountProductsProto {
       id_ = "";
       title_ = "";
       image_ = "";
+      variantId_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2271,6 +2284,45 @@ public final class BigDiscountProductsProto {
       return soldCount_;
     }
 
+    public static final int VARIANT_ID_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object variantId_ = "";
+    /**
+     * <code>string variant_id = 8 [json_name = "variantId"];</code>
+     * @return The variantId.
+     */
+    @java.lang.Override
+    public java.lang.String getVariantId() {
+      java.lang.Object ref = variantId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        variantId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string variant_id = 8 [json_name = "variantId"];</code>
+     * @return The bytes for variantId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVariantIdBytes() {
+      java.lang.Object ref = variantId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        variantId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2306,6 +2358,9 @@ public final class BigDiscountProductsProto {
       if (soldCount_ != 0) {
         output.writeUInt32(7, soldCount_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(variantId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, variantId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2340,6 +2395,9 @@ public final class BigDiscountProductsProto {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, soldCount_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(variantId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, variantId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2369,6 +2427,8 @@ public final class BigDiscountProductsProto {
           != other.getDiscountPercentage()) return false;
       if (getSoldCount()
           != other.getSoldCount()) return false;
+      if (!getVariantId()
+          .equals(other.getVariantId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2394,6 +2454,8 @@ public final class BigDiscountProductsProto {
       hash = (53 * hash) + getDiscountPercentage();
       hash = (37 * hash) + SOLD_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getSoldCount();
+      hash = (37 * hash) + VARIANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVariantId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2532,6 +2594,7 @@ public final class BigDiscountProductsProto {
         discountPriceCents_ = 0;
         discountPercentage_ = 0;
         soldCount_ = 0;
+        variantId_ = "";
         return this;
       }
 
@@ -2586,6 +2649,9 @@ public final class BigDiscountProductsProto {
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.soldCount_ = soldCount_;
         }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.variantId_ = variantId_;
+        }
       }
 
       @java.lang.Override
@@ -2626,6 +2692,11 @@ public final class BigDiscountProductsProto {
         }
         if (other.getSoldCount() != 0) {
           setSoldCount(other.getSoldCount());
+        }
+        if (!other.getVariantId().isEmpty()) {
+          variantId_ = other.variantId_;
+          bitField0_ |= 0x00000080;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2688,6 +2759,11 @@ public final class BigDiscountProductsProto {
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
+              case 66: {
+                variantId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3049,6 +3125,78 @@ public final class BigDiscountProductsProto {
         return this;
       }
 
+      private java.lang.Object variantId_ = "";
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @return The variantId.
+       */
+      public java.lang.String getVariantId() {
+        java.lang.Object ref = variantId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          variantId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @return The bytes for variantId.
+       */
+      public com.google.protobuf.ByteString
+          getVariantIdBytes() {
+        java.lang.Object ref = variantId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          variantId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @param value The variantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVariantId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        variantId_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVariantId() {
+        variantId_ = getDefaultInstance().getVariantId();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @param value The bytes for variantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVariantIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        variantId_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:products.v1.BigDiscountProductListItem)
     }
 
@@ -3138,17 +3286,17 @@ public final class BigDiscountProductsProto {
       "rorH\000R\005errorB\n\n\010response\"f\n\037BigDiscountP" +
       "roductsResponseData\022C\n\010products\030\001 \003(\0132\'." +
       "products.v1.BigDiscountProductListItemR\010" +
-      "products\"\373\001\n\032BigDiscountProductListItem\022" +
+      "products\"\232\002\n\032BigDiscountProductListItem\022" +
       "\016\n\002id\030\001 \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005title\022\024\n" +
       "\005image\030\003 \001(\tR\005image\022\037\n\013price_cents\030\004 \001(\r" +
       "R\npriceCents\0220\n\024discount_price_cents\030\005 \001" +
       "(\rR\022discountPriceCents\022/\n\023discount_perce" +
       "ntage\030\006 \001(\rR\022discountPercentage\022\035\n\nsold_" +
-      "count\030\007 \001(\rR\tsoldCountB\202\001\n\034org.megacomme" +
-      "rce.products.v1B\030BigDiscountProductsProt" +
-      "oZEgithub.com/ahmad-khatib0-org/megacomm" +
-      "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro" +
-      "to3"
+      "count\030\007 \001(\rR\tsoldCount\022\035\n\nvariant_id\030\010 \001" +
+      "(\tR\tvariantIdB\202\001\n\034org.megacommerce.produ" +
+      "cts.v1B\030BigDiscountProductsProtoZEgithub" +
+      ".com/ahmad-khatib0-org/megacommerce-prot" +
+      "o/gen/go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3178,7 +3326,7 @@ public final class BigDiscountProductsProto {
     internal_static_products_v1_BigDiscountProductListItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_BigDiscountProductListItem_descriptor,
-        new java.lang.String[] { "Id", "Title", "Image", "PriceCents", "DiscountPriceCents", "DiscountPercentage", "SoldCount", });
+        new java.lang.String[] { "Id", "Title", "Image", "PriceCents", "DiscountPriceCents", "DiscountPercentage", "SoldCount", "VariantId", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
   }

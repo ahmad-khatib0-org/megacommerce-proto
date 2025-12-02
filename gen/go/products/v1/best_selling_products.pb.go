@@ -193,6 +193,7 @@ type BestSellingProductListItem struct {
 	SalePriceCents *int64                 `protobuf:"varint,5,opt,name=sale_price_cents,json=salePriceCents,proto3,oneof" json:"sale_price_cents,omitempty"`
 	Rating         uint32                 `protobuf:"varint,6,opt,name=rating,proto3" json:"rating,omitempty"` // E,g 43 => 4.3 rating
 	SoldCount      uint32                 `protobuf:"varint,7,opt,name=sold_count,json=soldCount,proto3" json:"sold_count,omitempty"`
+	VariantId      string                 `protobuf:"bytes,8,opt,name=variant_id,json=variantId,proto3" json:"variant_id,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -276,6 +277,13 @@ func (x *BestSellingProductListItem) GetSoldCount() uint32 {
 	return 0
 }
 
+func (x *BestSellingProductListItem) GetVariantId() string {
+	if x != nil {
+		return x.VariantId
+	}
+	return ""
+}
+
 var File_products_v1_best_selling_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_best_selling_products_proto_rawDesc = "" +
@@ -288,7 +296,7 @@ const file_products_v1_best_selling_products_proto_rawDesc = "" +
 	"\n" +
 	"\bresponse\"f\n" +
 	"\x1fBestSellingProductsResponseData\x12C\n" +
-	"\bproducts\x18\x01 \x03(\v2'.products.v1.BestSellingProductListItemR\bproducts\"\xf4\x01\n" +
+	"\bproducts\x18\x01 \x03(\v2'.products.v1.BestSellingProductListItemR\bproducts\"\x93\x02\n" +
 	"\x1aBestSellingProductListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
@@ -298,7 +306,9 @@ const file_products_v1_best_selling_products_proto_rawDesc = "" +
 	"\x10sale_price_cents\x18\x05 \x01(\x03H\x00R\x0esalePriceCents\x88\x01\x01\x12\x16\n" +
 	"\x06rating\x18\x06 \x01(\rR\x06rating\x12\x1d\n" +
 	"\n" +
-	"sold_count\x18\a \x01(\rR\tsoldCountB\x13\n" +
+	"sold_count\x18\a \x01(\rR\tsoldCount\x12\x1d\n" +
+	"\n" +
+	"variant_id\x18\b \x01(\tR\tvariantIdB\x13\n" +
 	"\x11_sale_price_centsB\x82\x01\n" +
 	"\x1corg.megacommerce.products.v1B\x18BestSellingProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 

@@ -379,6 +379,7 @@ class BestSellingProductListItem final : public ::google::protobuf::Message
     kIdFieldNumber = 1,
     kTitleFieldNumber = 2,
     kImageFieldNumber = 3,
+    kVariantIdFieldNumber = 8,
     kPriceCentsFieldNumber = 4,
     kSalePriceCentsFieldNumber = 5,
     kRatingFieldNumber = 6,
@@ -429,6 +430,21 @@ class BestSellingProductListItem final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_image();
 
   public:
+  // string variant_id = 8 [json_name = "variantId"];
+  void clear_variant_id() ;
+  const ::std::string& variant_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_variant_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_variant_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_variant_id();
+  void set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_variant_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_variant_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_variant_id();
+
+  public:
   // int64 price_cents = 4 [json_name = "priceCents"];
   void clear_price_cents() ;
   ::int64_t price_cents() const;
@@ -474,8 +490,8 @@ class BestSellingProductListItem final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 7,
-                                   0, 59,
+  static const ::google::protobuf::internal::TcParseTable<3, 8,
+                                   0, 77,
                                    2>
       _table_;
 
@@ -499,6 +515,7 @@ class BestSellingProductListItem final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr id_;
     ::google::protobuf::internal::ArenaStringPtr title_;
     ::google::protobuf::internal::ArenaStringPtr image_;
+    ::google::protobuf::internal::ArenaStringPtr variant_id_;
     ::int64_t price_cents_;
     ::int64_t sale_price_cents_;
     ::uint32_t rating_;
@@ -1381,7 +1398,7 @@ inline void BestSellingProductListItem::set_allocated_image(::std::string* PROTO
 inline void BestSellingProductListItem::clear_price_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.price_cents_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline ::int64_t BestSellingProductListItem::price_cents() const {
   // @@protoc_insertion_point(field_get:products.v1.BestSellingProductListItem.price_cents)
@@ -1389,7 +1406,7 @@ inline ::int64_t BestSellingProductListItem::price_cents() const {
 }
 inline void BestSellingProductListItem::set_price_cents(::int64_t value) {
   _internal_set_price_cents(value);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   // @@protoc_insertion_point(field_set:products.v1.BestSellingProductListItem.price_cents)
 }
 inline ::int64_t BestSellingProductListItem::_internal_price_cents() const {
@@ -1403,13 +1420,13 @@ inline void BestSellingProductListItem::_internal_set_price_cents(::int64_t valu
 
 // optional int64 sale_price_cents = 5 [json_name = "salePriceCents"];
 inline bool BestSellingProductListItem::has_sale_price_cents() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline void BestSellingProductListItem::clear_sale_price_cents() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.sale_price_cents_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline ::int64_t BestSellingProductListItem::sale_price_cents() const {
   // @@protoc_insertion_point(field_get:products.v1.BestSellingProductListItem.sale_price_cents)
@@ -1417,7 +1434,7 @@ inline ::int64_t BestSellingProductListItem::sale_price_cents() const {
 }
 inline void BestSellingProductListItem::set_sale_price_cents(::int64_t value) {
   _internal_set_sale_price_cents(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   // @@protoc_insertion_point(field_set:products.v1.BestSellingProductListItem.sale_price_cents)
 }
 inline ::int64_t BestSellingProductListItem::_internal_sale_price_cents() const {
@@ -1433,7 +1450,7 @@ inline void BestSellingProductListItem::_internal_set_sale_price_cents(::int64_t
 inline void BestSellingProductListItem::clear_rating() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rating_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline ::uint32_t BestSellingProductListItem::rating() const {
   // @@protoc_insertion_point(field_get:products.v1.BestSellingProductListItem.rating)
@@ -1441,7 +1458,7 @@ inline ::uint32_t BestSellingProductListItem::rating() const {
 }
 inline void BestSellingProductListItem::set_rating(::uint32_t value) {
   _internal_set_rating(value);
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   // @@protoc_insertion_point(field_set:products.v1.BestSellingProductListItem.rating)
 }
 inline ::uint32_t BestSellingProductListItem::_internal_rating() const {
@@ -1457,7 +1474,7 @@ inline void BestSellingProductListItem::_internal_set_rating(::uint32_t value) {
 inline void BestSellingProductListItem::clear_sold_count() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.sold_count_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 inline ::uint32_t BestSellingProductListItem::sold_count() const {
   // @@protoc_insertion_point(field_get:products.v1.BestSellingProductListItem.sold_count)
@@ -1465,7 +1482,7 @@ inline ::uint32_t BestSellingProductListItem::sold_count() const {
 }
 inline void BestSellingProductListItem::set_sold_count(::uint32_t value) {
   _internal_set_sold_count(value);
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   // @@protoc_insertion_point(field_set:products.v1.BestSellingProductListItem.sold_count)
 }
 inline ::uint32_t BestSellingProductListItem::_internal_sold_count() const {
@@ -1475,6 +1492,71 @@ inline ::uint32_t BestSellingProductListItem::_internal_sold_count() const {
 inline void BestSellingProductListItem::_internal_set_sold_count(::uint32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.sold_count_ = value;
+}
+
+// string variant_id = 8 [json_name = "variantId"];
+inline void BestSellingProductListItem::clear_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.variant_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline const ::std::string& BestSellingProductListItem::variant_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.BestSellingProductListItem.variant_id)
+  return _internal_variant_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void BestSellingProductListItem::set_variant_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.variant_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.BestSellingProductListItem.variant_id)
+}
+inline ::std::string* PROTOBUF_NONNULL BestSellingProductListItem::mutable_variant_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_variant_id();
+  // @@protoc_insertion_point(field_mutable:products.v1.BestSellingProductListItem.variant_id)
+  return _s;
+}
+inline const ::std::string& BestSellingProductListItem::_internal_variant_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.variant_id_.Get();
+}
+inline void BestSellingProductListItem::_internal_set_variant_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.variant_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL BestSellingProductListItem::_internal_mutable_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  return _impl_.variant_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE BestSellingProductListItem::release_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.BestSellingProductListItem.variant_id)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  auto* released = _impl_.variant_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.variant_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void BestSellingProductListItem::set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.variant_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.variant_id_.IsDefault()) {
+    _impl_.variant_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.BestSellingProductListItem.variant_id)
 }
 
 #ifdef __GNUC__

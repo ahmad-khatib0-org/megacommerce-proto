@@ -138,6 +138,7 @@ export interface ProductToLikeListItem {
   rating?: number | undefined;
   sold?: number | undefined;
   meta: ProductItemMetadata[];
+  variantId: string;
 }
 
 function createBaseProductPrice(): ProductPrice {
@@ -685,7 +686,16 @@ export const ProductsToLikeResponseData: MessageFns<ProductsToLikeResponseData> 
 };
 
 function createBaseProductToLikeListItem(): ProductToLikeListItem {
-  return { id: "", title: "", image: "", price: undefined, rating: undefined, sold: undefined, meta: [] };
+  return {
+    id: "",
+    title: "",
+    image: "",
+    price: undefined,
+    rating: undefined,
+    sold: undefined,
+    meta: [],
+    variantId: "",
+  };
 }
 
 export const ProductToLikeListItem: MessageFns<ProductToLikeListItem> = {
@@ -710,6 +720,9 @@ export const ProductToLikeListItem: MessageFns<ProductToLikeListItem> = {
     }
     for (const v of message.meta) {
       ProductItemMetadata.encode(v!, writer.uint32(58).fork()).join();
+    }
+    if (message.variantId !== "") {
+      writer.uint32(66).string(message.variantId);
     }
     return writer;
   },
@@ -777,6 +790,14 @@ export const ProductToLikeListItem: MessageFns<ProductToLikeListItem> = {
           message.meta.push(ProductItemMetadata.decode(reader, reader.uint32()));
           continue;
         }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.variantId = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -795,6 +816,7 @@ export const ProductToLikeListItem: MessageFns<ProductToLikeListItem> = {
       rating: isSet(object.rating) ? globalThis.Number(object.rating) : undefined,
       sold: isSet(object.sold) ? globalThis.Number(object.sold) : undefined,
       meta: globalThis.Array.isArray(object?.meta) ? object.meta.map((e: any) => ProductItemMetadata.fromJSON(e)) : [],
+      variantId: isSet(object.variantId) ? globalThis.String(object.variantId) : "",
     };
   },
 
@@ -821,6 +843,9 @@ export const ProductToLikeListItem: MessageFns<ProductToLikeListItem> = {
     if (message.meta?.length) {
       obj.meta = message.meta.map((e) => ProductItemMetadata.toJSON(e));
     }
+    if (message.variantId !== "") {
+      obj.variantId = message.variantId;
+    }
     return obj;
   },
 
@@ -838,6 +863,7 @@ export const ProductToLikeListItem: MessageFns<ProductToLikeListItem> = {
     message.rating = object.rating ?? undefined;
     message.sold = object.sold ?? undefined;
     message.meta = object.meta?.map((e) => ProductItemMetadata.fromPartial(e)) || [];
+    message.variantId = object.variantId ?? "";
     return message;
   },
 };

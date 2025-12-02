@@ -30,6 +30,7 @@ export interface BigDiscountProductListItem {
   discountPriceCents: number;
   discountPercentage: number;
   soldCount: number;
+  variantId: string;
 }
 
 function createBaseBigDiscountProductsRequest(): BigDiscountProductsRequest {
@@ -220,7 +221,16 @@ export const BigDiscountProductsResponseData: MessageFns<BigDiscountProductsResp
 };
 
 function createBaseBigDiscountProductListItem(): BigDiscountProductListItem {
-  return { id: "", title: "", image: "", priceCents: 0, discountPriceCents: 0, discountPercentage: 0, soldCount: 0 };
+  return {
+    id: "",
+    title: "",
+    image: "",
+    priceCents: 0,
+    discountPriceCents: 0,
+    discountPercentage: 0,
+    soldCount: 0,
+    variantId: "",
+  };
 }
 
 export const BigDiscountProductListItem: MessageFns<BigDiscountProductListItem> = {
@@ -245,6 +255,9 @@ export const BigDiscountProductListItem: MessageFns<BigDiscountProductListItem> 
     }
     if (message.soldCount !== 0) {
       writer.uint32(56).uint32(message.soldCount);
+    }
+    if (message.variantId !== "") {
+      writer.uint32(66).string(message.variantId);
     }
     return writer;
   },
@@ -312,6 +325,14 @@ export const BigDiscountProductListItem: MessageFns<BigDiscountProductListItem> 
           message.soldCount = reader.uint32();
           continue;
         }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.variantId = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -330,6 +351,7 @@ export const BigDiscountProductListItem: MessageFns<BigDiscountProductListItem> 
       discountPriceCents: isSet(object.discountPriceCents) ? globalThis.Number(object.discountPriceCents) : 0,
       discountPercentage: isSet(object.discountPercentage) ? globalThis.Number(object.discountPercentage) : 0,
       soldCount: isSet(object.soldCount) ? globalThis.Number(object.soldCount) : 0,
+      variantId: isSet(object.variantId) ? globalThis.String(object.variantId) : "",
     };
   },
 
@@ -356,6 +378,9 @@ export const BigDiscountProductListItem: MessageFns<BigDiscountProductListItem> 
     if (message.soldCount !== 0) {
       obj.soldCount = Math.round(message.soldCount);
     }
+    if (message.variantId !== "") {
+      obj.variantId = message.variantId;
+    }
     return obj;
   },
 
@@ -371,6 +396,7 @@ export const BigDiscountProductListItem: MessageFns<BigDiscountProductListItem> 
     message.discountPriceCents = object.discountPriceCents ?? 0;
     message.discountPercentage = object.discountPercentage ?? 0;
     message.soldCount = object.soldCount ?? 0;
+    message.variantId = object.variantId ?? "";
     return message;
   },
 };

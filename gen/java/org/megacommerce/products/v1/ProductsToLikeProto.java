@@ -5270,6 +5270,18 @@ public final class ProductsToLikeProto {
      */
     org.megacommerce.products.v1.ProductsToLikeProto.ProductItemMetadataOrBuilder getMetaOrBuilder(
         int index);
+
+    /**
+     * <code>string variant_id = 8 [json_name = "variantId"];</code>
+     * @return The variantId.
+     */
+    java.lang.String getVariantId();
+    /**
+     * <code>string variant_id = 8 [json_name = "variantId"];</code>
+     * @return The bytes for variantId.
+     */
+    com.google.protobuf.ByteString
+        getVariantIdBytes();
   }
   /**
    * Protobuf type {@code products.v1.ProductToLikeListItem}
@@ -5297,6 +5309,7 @@ public final class ProductsToLikeProto {
       title_ = "";
       image_ = "";
       meta_ = java.util.Collections.emptyList();
+      variantId_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -5535,6 +5548,45 @@ public final class ProductsToLikeProto {
       return meta_.get(index);
     }
 
+    public static final int VARIANT_ID_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object variantId_ = "";
+    /**
+     * <code>string variant_id = 8 [json_name = "variantId"];</code>
+     * @return The variantId.
+     */
+    @java.lang.Override
+    public java.lang.String getVariantId() {
+      java.lang.Object ref = variantId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        variantId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string variant_id = 8 [json_name = "variantId"];</code>
+     * @return The bytes for variantId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVariantIdBytes() {
+      java.lang.Object ref = variantId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        variantId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5570,6 +5622,9 @@ public final class ProductsToLikeProto {
       for (int i = 0; i < meta_.size(); i++) {
         output.writeMessage(7, meta_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(variantId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, variantId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5603,6 +5658,9 @@ public final class ProductsToLikeProto {
       for (int i = 0; i < meta_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, meta_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(variantId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, variantId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5643,6 +5701,8 @@ public final class ProductsToLikeProto {
       }
       if (!getMetaList()
           .equals(other.getMetaList())) return false;
+      if (!getVariantId()
+          .equals(other.getVariantId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5677,6 +5737,8 @@ public final class ProductsToLikeProto {
         hash = (37 * hash) + META_FIELD_NUMBER;
         hash = (53 * hash) + getMetaList().hashCode();
       }
+      hash = (37 * hash) + VARIANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVariantId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5832,6 +5894,7 @@ public final class ProductsToLikeProto {
           metaBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000040);
+        variantId_ = "";
         return this;
       }
 
@@ -5902,6 +5965,9 @@ public final class ProductsToLikeProto {
           result.sold_ = sold_;
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.variantId_ = variantId_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -5966,6 +6032,11 @@ public final class ProductsToLikeProto {
               metaBuilder_.addAllMessages(other.meta_);
             }
           }
+        }
+        if (!other.getVariantId().isEmpty()) {
+          variantId_ = other.variantId_;
+          bitField0_ |= 0x00000080;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -6038,6 +6109,11 @@ public final class ProductsToLikeProto {
                 }
                 break;
               } // case 58
+              case 66: {
+                variantId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6712,6 +6788,78 @@ public final class ProductsToLikeProto {
         return metaBuilder_;
       }
 
+      private java.lang.Object variantId_ = "";
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @return The variantId.
+       */
+      public java.lang.String getVariantId() {
+        java.lang.Object ref = variantId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          variantId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @return The bytes for variantId.
+       */
+      public com.google.protobuf.ByteString
+          getVariantIdBytes() {
+        java.lang.Object ref = variantId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          variantId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @param value The variantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVariantId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        variantId_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVariantId() {
+        variantId_ = getDefaultInstance().getVariantId();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string variant_id = 8 [json_name = "variantId"];</code>
+       * @param value The bytes for variantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVariantIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        variantId_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:products.v1.ProductToLikeListItem)
     }
 
@@ -6833,26 +6981,26 @@ public final class ProductsToLikeProto {
       "uctsToLikeResponseData\022>\n\010products\030\001 \003(\013" +
       "2\".products.v1.ProductToLikeListItemR\010pr" +
       "oducts\022=\n\npagination\030\002 \001(\0132\035.shared.v1.P" +
-      "aginationResponseR\npagination\"\204\002\n\025Produc" +
+      "aginationResponseR\npagination\"\243\002\n\025Produc" +
       "tToLikeListItem\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005title" +
       "\030\002 \001(\tR\005title\022\024\n\005image\030\003 \001(\tR\005image\022/\n\005p" +
       "rice\030\004 \001(\0132\031.products.v1.ProductPriceR\005p" +
       "rice\022\033\n\006rating\030\005 \001(\001H\000R\006rating\210\001\001\022\027\n\004sol" +
       "d\030\006 \001(\005H\001R\004sold\210\001\001\0224\n\004meta\030\007 \003(\0132 .produ" +
-      "cts.v1.ProductItemMetadataR\004metaB\t\n\007_rat" +
-      "ingB\007\n\005_sold*\213\001\n\025ProductShippingMethod\022\'" +
-      "\n#PRODUCT_SHIPPING_METHOD_UNSPECIFIED\020\000\022" +
-      "$\n PRODUCT_SHIPPING_METHOD_STANDARD\020\001\022#\n" +
-      "\037PRODUCT_SHIPPING_METHOD_EXPRESS\020\002*\277\001\n\027P" +
-      "roductItemMetadataType\022*\n&PRODUCT_ITEM_M" +
-      "ETADATA_TYPE_UNSPECIFIED\020\000\022%\n!PRODUCT_IT" +
-      "EM_METADATA_TYPE_COUPON\020\001\022*\n&PRODUCT_ITE" +
-      "M_METADATA_TYPE_NEW_SHOPPER\020\002\022%\n!PRODUCT" +
-      "_ITEM_METADATA_TYPE_BUNDLE\020\003B}\n\034org.mega" +
-      "commerce.products.v1B\023ProductsToLikeProt" +
-      "oZEgithub.com/ahmad-khatib0-org/megacomm" +
-      "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro" +
-      "to3"
+      "cts.v1.ProductItemMetadataR\004meta\022\035\n\nvari" +
+      "ant_id\030\010 \001(\tR\tvariantIdB\t\n\007_ratingB\007\n\005_s" +
+      "old*\213\001\n\025ProductShippingMethod\022\'\n#PRODUCT" +
+      "_SHIPPING_METHOD_UNSPECIFIED\020\000\022$\n PRODUC" +
+      "T_SHIPPING_METHOD_STANDARD\020\001\022#\n\037PRODUCT_" +
+      "SHIPPING_METHOD_EXPRESS\020\002*\277\001\n\027ProductIte" +
+      "mMetadataType\022*\n&PRODUCT_ITEM_METADATA_T" +
+      "YPE_UNSPECIFIED\020\000\022%\n!PRODUCT_ITEM_METADA" +
+      "TA_TYPE_COUPON\020\001\022*\n&PRODUCT_ITEM_METADAT" +
+      "A_TYPE_NEW_SHOPPER\020\002\022%\n!PRODUCT_ITEM_MET" +
+      "ADATA_TYPE_BUNDLE\020\003B}\n\034org.megacommerce." +
+      "products.v1B\023ProductsToLikeProtoZEgithub" +
+      ".com/ahmad-khatib0-org/megacommerce-prot" +
+      "o/gen/go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6901,7 +7049,7 @@ public final class ProductsToLikeProto {
     internal_static_products_v1_ProductToLikeListItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductToLikeListItem_descriptor,
-        new java.lang.String[] { "Id", "Title", "Image", "Price", "Rating", "Sold", "Meta", });
+        new java.lang.String[] { "Id", "Title", "Image", "Price", "Rating", "Sold", "Meta", "VariantId", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
     org.megacommerce.shared.v1.PaginationProto.getDescriptor();
