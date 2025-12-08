@@ -16,6 +16,7 @@ import { ProductCreateRequest, ProductCreateResponse } from "./product_create.js
 import { ProductDataRequest, ProductDataResponse } from "./product_data.js";
 import { ProductDetailsRequest, ProductDetailsResponse } from "./product_details.js";
 import { ProductSnapshotRequest, ProductSnapshotResponse } from "./product_snapshot.js";
+import { ProductsCategoryRequest, ProductsCategoryResponse } from "./products_category.js";
 import { ProductsToLikeRequest, ProductsToLikeResponse } from "./products_to_like.js";
 
 export const protobufPackage = "products.v1";
@@ -52,6 +53,10 @@ export interface ProductsService {
     request: DeepPartial<CategoryNavbarRequest>,
     metadata?: grpc.Metadata,
   ): Promise<CategoryNavbarResponse>;
+  ProductsCategory(
+    request: DeepPartial<ProductsCategoryRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<ProductsCategoryResponse>;
 }
 
 export class ProductsServiceClientImpl implements ProductsService {
@@ -69,6 +74,7 @@ export class ProductsServiceClientImpl implements ProductsService {
     this.HeroProducts = this.HeroProducts.bind(this);
     this.ProductDetails = this.ProductDetails.bind(this);
     this.CategoryNavbar = this.CategoryNavbar.bind(this);
+    this.ProductsCategory = this.ProductsCategory.bind(this);
   }
 
   ProductCreate(request: DeepPartial<ProductCreateRequest>, metadata?: grpc.Metadata): Promise<ProductCreateResponse> {
@@ -142,6 +148,13 @@ export class ProductsServiceClientImpl implements ProductsService {
     metadata?: grpc.Metadata,
   ): Promise<CategoryNavbarResponse> {
     return this.rpc.unary(ProductsServiceCategoryNavbarDesc, CategoryNavbarRequest.fromPartial(request), metadata);
+  }
+
+  ProductsCategory(
+    request: DeepPartial<ProductsCategoryRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<ProductsCategoryResponse> {
+    return this.rpc.unary(ProductsServiceProductsCategoryDesc, ProductsCategoryRequest.fromPartial(request), metadata);
   }
 }
 
@@ -367,6 +380,29 @@ export const ProductsServiceCategoryNavbarDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = CategoryNavbarResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const ProductsServiceProductsCategoryDesc: UnaryMethodDefinitionish = {
+  methodName: "ProductsCategory",
+  service: ProductsServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return ProductsCategoryRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = ProductsCategoryResponse.decode(data);
       return {
         ...value,
         toObject() {

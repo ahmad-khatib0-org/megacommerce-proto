@@ -12,6 +12,7 @@ from products.v1 import product_create_pb2 as products_dot_v1_dot_product__creat
 from products.v1 import product_data_pb2 as products_dot_v1_dot_product__data__pb2
 from products.v1 import product_details_pb2 as products_dot_v1_dot_product__details__pb2
 from products.v1 import product_snapshot_pb2 as products_dot_v1_dot_product__snapshot__pb2
+from products.v1 import products_category_pb2 as products_dot_v1_dot_products__category__pb2
 from products.v1 import products_to_like_pb2 as products_dot_v1_dot_products__to__like__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
@@ -93,6 +94,11 @@ class ProductsServiceStub(object):
                 request_serializer=products_dot_v1_dot_category__navbar__pb2.CategoryNavbarRequest.SerializeToString,
                 response_deserializer=products_dot_v1_dot_category__navbar__pb2.CategoryNavbarResponse.FromString,
                 _registered_method=True)
+        self.ProductsCategory = channel.unary_unary(
+                '/products.v1.ProductsService/ProductsCategory',
+                request_serializer=products_dot_v1_dot_products__category__pb2.ProductsCategoryRequest.SerializeToString,
+                response_deserializer=products_dot_v1_dot_products__category__pb2.ProductsCategoryResponse.FromString,
+                _registered_method=True)
 
 
 class ProductsServiceServicer(object):
@@ -158,6 +164,12 @@ class ProductsServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ProductsCategory(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ProductsServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -210,6 +222,11 @@ def add_ProductsServiceServicer_to_server(servicer, server):
                     servicer.CategoryNavbar,
                     request_deserializer=products_dot_v1_dot_category__navbar__pb2.CategoryNavbarRequest.FromString,
                     response_serializer=products_dot_v1_dot_category__navbar__pb2.CategoryNavbarResponse.SerializeToString,
+            ),
+            'ProductsCategory': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProductsCategory,
+                    request_deserializer=products_dot_v1_dot_products__category__pb2.ProductsCategoryRequest.FromString,
+                    response_serializer=products_dot_v1_dot_products__category__pb2.ProductsCategoryResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -482,6 +499,33 @@ class ProductsService(object):
             '/products.v1.ProductsService/CategoryNavbar',
             products_dot_v1_dot_category__navbar__pb2.CategoryNavbarRequest.SerializeToString,
             products_dot_v1_dot_category__navbar__pb2.CategoryNavbarResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ProductsCategory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/products.v1.ProductsService/ProductsCategory',
+            products_dot_v1_dot_products__category__pb2.ProductsCategoryRequest.SerializeToString,
+            products_dot_v1_dot_products__category__pb2.ProductsCategoryResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package products.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/pagination.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "ProductsCategoryProto";
+option java_package = "org.megacommerce.products.v1";
+
+message ProductsCategoryRequest {
+  string category_id = 1;
+  repeated string subcategory_ids = 2;  // Empty means all subcategories
+  shared.v1.PaginationRequest pagination = 3;
+}
+
+message ProductsCategoryResponse {
+  oneof response {
+    ProductsCategoryResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message ProductsCategoryResponseData {
+  repeated ProductsCategoryItem products = 1;
+  shared.v1.PaginationResponse pagination = 2;
+}
+
+message ProductsCategoryItem {
+  string id = 1;
+  string title = 2;
+  string image = 3;
+  string variant_id = 4;
+  uint32 price_cents = 5;
+  optional uint32 discount_price_cents = 6;
+  optional uint32 discount_percentage = 7;
+  string sold_by = 8;
+  optional double rating = 9;
+  optional uint32 sold_count = 10;
+  uint64 created_at = 11;
+}

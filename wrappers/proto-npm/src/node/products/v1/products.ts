@@ -26,6 +26,7 @@ import { ProductCreateRequest, ProductCreateResponse } from "./product_create";
 import { ProductDataRequest, ProductDataResponse } from "./product_data";
 import { ProductDetailsRequest, ProductDetailsResponse } from "./product_details";
 import { ProductSnapshotRequest, ProductSnapshotResponse } from "./product_snapshot";
+import { ProductsCategoryRequest, ProductsCategoryResponse } from "./products_category";
 import { ProductsToLikeRequest, ProductsToLikeResponse } from "./products_to_like";
 
 export const protobufPackage = "products.v1";
@@ -138,6 +139,17 @@ export const ProductsServiceService = {
       Buffer.from(CategoryNavbarResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): CategoryNavbarResponse => CategoryNavbarResponse.decode(value),
   },
+  productsCategory: {
+    path: "/products.v1.ProductsService/ProductsCategory",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: ProductsCategoryRequest): Buffer =>
+      Buffer.from(ProductsCategoryRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): ProductsCategoryRequest => ProductsCategoryRequest.decode(value),
+    responseSerialize: (value: ProductsCategoryResponse): Buffer =>
+      Buffer.from(ProductsCategoryResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): ProductsCategoryResponse => ProductsCategoryResponse.decode(value),
+  },
 } as const;
 
 export interface ProductsServiceServer extends UntypedServiceImplementation {
@@ -151,6 +163,7 @@ export interface ProductsServiceServer extends UntypedServiceImplementation {
   heroProducts: handleUnaryCall<HeroProductsRequest, HeroProductsResponse>;
   productDetails: handleUnaryCall<ProductDetailsRequest, ProductDetailsResponse>;
   categoryNavbar: handleUnaryCall<CategoryNavbarRequest, CategoryNavbarResponse>;
+  productsCategory: handleUnaryCall<ProductsCategoryRequest, ProductsCategoryResponse>;
 }
 
 export interface ProductsServiceClient extends Client {
@@ -303,6 +316,21 @@ export interface ProductsServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: CategoryNavbarResponse) => void,
+  ): ClientUnaryCall;
+  productsCategory(
+    request: ProductsCategoryRequest,
+    callback: (error: ServiceError | null, response: ProductsCategoryResponse) => void,
+  ): ClientUnaryCall;
+  productsCategory(
+    request: ProductsCategoryRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: ProductsCategoryResponse) => void,
+  ): ClientUnaryCall;
+  productsCategory(
+    request: ProductsCategoryRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: ProductsCategoryResponse) => void,
   ): ClientUnaryCall;
 }
 

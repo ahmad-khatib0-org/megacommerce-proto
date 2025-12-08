@@ -7,6 +7,7 @@ from products.v1 import product_create_pb2 as _product_create_pb2
 from products.v1 import product_data_pb2 as _product_data_pb2
 from products.v1 import product_details_pb2 as _product_details_pb2
 from products.v1 import product_snapshot_pb2 as _product_snapshot_pb2
+from products.v1 import products_category_pb2 as _products_category_pb2
 from products.v1 import products_to_like_pb2 as _products_to_like_pb2
 from google.protobuf import descriptor as _descriptor
 from typing import ClassVar as _ClassVar
