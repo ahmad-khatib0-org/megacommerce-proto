@@ -28,6 +28,7 @@ const (
 	ProductsService_NewlyAddedProducts_FullMethodName  = "/products.v1.ProductsService/NewlyAddedProducts"
 	ProductsService_HeroProducts_FullMethodName        = "/products.v1.ProductsService/HeroProducts"
 	ProductsService_ProductDetails_FullMethodName      = "/products.v1.ProductsService/ProductDetails"
+	ProductsService_CategoryNavbar_FullMethodName      = "/products.v1.ProductsService/CategoryNavbar"
 )
 
 // ProductsServiceClient is the client API for ProductsService service.
@@ -43,6 +44,7 @@ type ProductsServiceClient interface {
 	NewlyAddedProducts(ctx context.Context, in *NewlyAddedProductsRequest, opts ...grpc.CallOption) (*NewlyAddedProductsResponse, error)
 	HeroProducts(ctx context.Context, in *HeroProductsRequest, opts ...grpc.CallOption) (*HeroProductsResponse, error)
 	ProductDetails(ctx context.Context, in *ProductDetailsRequest, opts ...grpc.CallOption) (*ProductDetailsResponse, error)
+	CategoryNavbar(ctx context.Context, in *CategoryNavbarRequest, opts ...grpc.CallOption) (*CategoryNavbarResponse, error)
 }
 
 type productsServiceClient struct {
@@ -143,6 +145,16 @@ func (c *productsServiceClient) ProductDetails(ctx context.Context, in *ProductD
 	return out, nil
 }
 
+func (c *productsServiceClient) CategoryNavbar(ctx context.Context, in *CategoryNavbarRequest, opts ...grpc.CallOption) (*CategoryNavbarResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CategoryNavbarResponse)
+	err := c.cc.Invoke(ctx, ProductsService_CategoryNavbar_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProductsServiceServer is the server API for ProductsService service.
 // All implementations must embed UnimplementedProductsServiceServer
 // for forward compatibility.
@@ -156,6 +168,7 @@ type ProductsServiceServer interface {
 	NewlyAddedProducts(context.Context, *NewlyAddedProductsRequest) (*NewlyAddedProductsResponse, error)
 	HeroProducts(context.Context, *HeroProductsRequest) (*HeroProductsResponse, error)
 	ProductDetails(context.Context, *ProductDetailsRequest) (*ProductDetailsResponse, error)
+	CategoryNavbar(context.Context, *CategoryNavbarRequest) (*CategoryNavbarResponse, error)
 	mustEmbedUnimplementedProductsServiceServer()
 }
 
@@ -192,6 +205,9 @@ func (UnimplementedProductsServiceServer) HeroProducts(context.Context, *HeroPro
 }
 func (UnimplementedProductsServiceServer) ProductDetails(context.Context, *ProductDetailsRequest) (*ProductDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProductDetails not implemented")
+}
+func (UnimplementedProductsServiceServer) CategoryNavbar(context.Context, *CategoryNavbarRequest) (*CategoryNavbarResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CategoryNavbar not implemented")
 }
 func (UnimplementedProductsServiceServer) mustEmbedUnimplementedProductsServiceServer() {}
 func (UnimplementedProductsServiceServer) testEmbeddedByValue()                         {}
@@ -376,6 +392,24 @@ func _ProductsService_ProductDetails_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProductsService_CategoryNavbar_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CategoryNavbarRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductsServiceServer).CategoryNavbar(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProductsService_CategoryNavbar_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductsServiceServer).CategoryNavbar(ctx, req.(*CategoryNavbarRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ProductsService_ServiceDesc is the grpc.ServiceDesc for ProductsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -418,6 +452,10 @@ var ProductsService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ProductDetails",
 			Handler:    _ProductsService_ProductDetails_Handler,
+		},
+		{
+			MethodName: "CategoryNavbar",
+			Handler:    _ProductsService_CategoryNavbar_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

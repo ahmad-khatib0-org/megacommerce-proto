@@ -4,6 +4,7 @@ package products.v1;
 
 import "products/v1/best_selling_products.proto";
 import "products/v1/big_discount_products.proto";
+import "products/v1/category_navbar.proto";
 import "products/v1/hero_products.proto";
 import "products/v1/newly_added_products.proto";
 import "products/v1/product_create.proto";
@@ -27,4 +28,5 @@ service ProductsService {
   rpc NewlyAddedProducts(products.v1.NewlyAddedProductsRequest) returns (products.v1.NewlyAddedProductsResponse);
   rpc HeroProducts(products.v1.HeroProductsRequest) returns (products.v1.HeroProductsResponse);
   rpc ProductDetails(products.v1.ProductDetailsRequest) returns (products.v1.ProductDetailsResponse);
+  rpc CategoryNavbar(products.v1.CategoryNavbarRequest) returns (products.v1.CategoryNavbarResponse);
 }

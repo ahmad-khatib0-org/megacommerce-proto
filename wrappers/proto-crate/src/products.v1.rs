@@ -94,6 +94,67 @@ pub struct BigDiscountProductListItem {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CategoryNavbarRequest {
+    #[prost(string, tag = "1")]
+    pub category_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub subcategory_id: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CategoryNavbarResponse {
+    #[prost(oneof = "category_navbar_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<category_navbar_response::Response>,
+}
+/// Nested message and enum types in `CategoryNavbarResponse`.
+pub mod category_navbar_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::CategoryNavbarResponseData),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CategoryNavbarResponseData {
+    #[prost(string, tag = "1")]
+    pub category_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub category_name: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub subcategory_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub subcategory_name: ::prost::alloc::string::String,
+    #[prost(message, repeated, tag = "5")]
+    pub recommended_products: ::prost::alloc::vec::Vec<CategoryNavbarProductItem>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CategoryNavbarProductItem {
+    /// product id
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub variant_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub image: ::prost::alloc::string::String,
+    #[prost(uint32, tag = "5")]
+    pub price_cents: u32,
+    #[prost(uint32, optional, tag = "6")]
+    pub discount_price_cents: ::core::option::Option<u32>,
+    #[prost(uint32, optional, tag = "7")]
+    pub discount_percentage: ::core::option::Option<u32>,
+    /// seller/supplier name
+    #[prost(string, tag = "8")]
+    pub sold_by: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct HeroProduct {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
@@ -1550,6 +1611,32 @@ pub mod products_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        pub async fn category_navbar(
+            &mut self,
+            request: impl tonic::IntoRequest<super::CategoryNavbarRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::CategoryNavbarResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/products.v1.ProductsService/CategoryNavbar",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("products.v1.ProductsService", "CategoryNavbar"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -1626,6 +1713,13 @@ pub mod products_service_server {
             request: tonic::Request<super::ProductDetailsRequest>,
         ) -> std::result::Result<
             tonic::Response<super::ProductDetailsResponse>,
+            tonic::Status,
+        >;
+        async fn category_navbar(
+            &self,
+            request: tonic::Request<super::CategoryNavbarRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::CategoryNavbarResponse>,
             tonic::Status,
         >;
     }
@@ -2111,6 +2205,52 @@ pub mod products_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ProductDetailsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/products.v1.ProductsService/CategoryNavbar" => {
+                    #[allow(non_camel_case_types)]
+                    struct CategoryNavbarSvc<T: ProductsService>(pub Arc<T>);
+                    impl<
+                        T: ProductsService,
+                    > tonic::server::UnaryService<super::CategoryNavbarRequest>
+                    for CategoryNavbarSvc<T> {
+                        type Response = super::CategoryNavbarResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::CategoryNavbarRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ProductsService>::category_navbar(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CategoryNavbarSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

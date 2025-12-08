@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package products.v1;
+
+import "shared/v1/error.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "CategoryNavbarProto";
+option java_package = "org.megacommerce.products.v1";
+
+message CategoryNavbarRequest {
+  string category_id = 1;
+  string subcategory_id = 2;
+}
+
+message CategoryNavbarResponse {
+  oneof response {
+    CategoryNavbarResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message CategoryNavbarResponseData {
+  string category_id = 1;
+  string category_name = 2;
+  string subcategory_id = 3;
+  string subcategory_name = 4;
+  repeated CategoryNavbarProductItem recommended_products = 5;
+}
+
+message CategoryNavbarProductItem {
+  string id = 1;           // product id
+  string variant_id = 2;
+  string title = 3;
+  string image = 4;
+  uint32 price_cents = 5;
+  optional uint32 discount_price_cents = 6;
+  optional uint32 discount_percentage = 7;
+  string sold_by = 8;      // seller/supplier name
+}

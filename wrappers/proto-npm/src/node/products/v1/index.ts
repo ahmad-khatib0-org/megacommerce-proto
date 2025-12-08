@@ -1,5 +1,6 @@
 import * as BestSellingProducts from './best_selling_products';
 import * as BigDiscountProducts from './big_discount_products';
+import * as CategoryNavbar from './category_navbar';
 import * as HeroProducts from './hero_products';
 import * as NewlyAddedProducts from './newly_added_products';
 import * as Product from './product';
@@ -15,6 +16,7 @@ import * as ProductsToLike from './products_to_like';
 export {
   BestSellingProducts,
   BigDiscountProducts,
+  CategoryNavbar,
   HeroProducts,
   NewlyAddedProducts,
   Product,

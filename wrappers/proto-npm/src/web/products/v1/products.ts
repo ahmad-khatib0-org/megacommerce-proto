@@ -9,6 +9,7 @@ import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
 import { BestSellingProductsRequest, BestSellingProductsResponse } from "./best_selling_products.js";
 import { BigDiscountProductsRequest, BigDiscountProductsResponse } from "./big_discount_products.js";
+import { CategoryNavbarRequest, CategoryNavbarResponse } from "./category_navbar.js";
 import { HeroProductsRequest, HeroProductsResponse } from "./hero_products.js";
 import { NewlyAddedProductsRequest, NewlyAddedProductsResponse } from "./newly_added_products.js";
 import { ProductCreateRequest, ProductCreateResponse } from "./product_create.js";
@@ -47,6 +48,10 @@ export interface ProductsService {
     request: DeepPartial<ProductDetailsRequest>,
     metadata?: grpc.Metadata,
   ): Promise<ProductDetailsResponse>;
+  CategoryNavbar(
+    request: DeepPartial<CategoryNavbarRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<CategoryNavbarResponse>;
 }
 
 export class ProductsServiceClientImpl implements ProductsService {
@@ -63,6 +68,7 @@ export class ProductsServiceClientImpl implements ProductsService {
     this.NewlyAddedProducts = this.NewlyAddedProducts.bind(this);
     this.HeroProducts = this.HeroProducts.bind(this);
     this.ProductDetails = this.ProductDetails.bind(this);
+    this.CategoryNavbar = this.CategoryNavbar.bind(this);
   }
 
   ProductCreate(request: DeepPartial<ProductCreateRequest>, metadata?: grpc.Metadata): Promise<ProductCreateResponse> {
@@ -129,6 +135,13 @@ export class ProductsServiceClientImpl implements ProductsService {
     metadata?: grpc.Metadata,
   ): Promise<ProductDetailsResponse> {
     return this.rpc.unary(ProductsServiceProductDetailsDesc, ProductDetailsRequest.fromPartial(request), metadata);
+  }
+
+  CategoryNavbar(
+    request: DeepPartial<CategoryNavbarRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<CategoryNavbarResponse> {
+    return this.rpc.unary(ProductsServiceCategoryNavbarDesc, CategoryNavbarRequest.fromPartial(request), metadata);
   }
 }
 
@@ -331,6 +344,29 @@ export const ProductsServiceProductDetailsDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = ProductDetailsResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const ProductsServiceCategoryNavbarDesc: UnaryMethodDefinitionish = {
+  methodName: "CategoryNavbar",
+  service: ProductsServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return CategoryNavbarRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = CategoryNavbarResponse.decode(data);
       return {
         ...value,
         toObject() {

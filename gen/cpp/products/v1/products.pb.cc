@@ -41,43 +41,47 @@ const char descriptor_table_protodef_products_2fv1_2fproducts_2eproto[] ABSL_ATT
     "\n\032products/v1/products.proto\022\013products.v"
     "1\032\'products/v1/best_selling_products.pro"
     "to\032\'products/v1/big_discount_products.pr"
-    "oto\032\037products/v1/hero_products.proto\032&pr"
-    "oducts/v1/newly_added_products.proto\032 pr"
-    "oducts/v1/product_create.proto\032\036products"
-    "/v1/product_data.proto\032!products/v1/prod"
-    "uct_details.proto\032\"products/v1/product_s"
-    "napshot.proto\032\"products/v1/products_to_l"
-    "ike.proto2\337\006\n\017ProductsService\022V\n\rProduct"
-    "Create\022!.products.v1.ProductCreateReques"
-    "t\032\".products.v1.ProductCreateResponse\022P\n"
-    "\013ProductData\022\037.products.v1.ProductDataRe"
-    "quest\032 .products.v1.ProductDataResponse\022"
-    "Y\n\016ProductsToLike\022\".products.v1.Products"
-    "ToLikeRequest\032#.products.v1.ProductsToLi"
-    "keResponse\022\\\n\017ProductSnapshot\022#.products"
-    ".v1.ProductSnapshotRequest\032$.products.v1"
-    ".ProductSnapshotResponse\022h\n\023BestSellingP"
-    "roducts\022\'.products.v1.BestSellingProduct"
-    "sRequest\032(.products.v1.BestSellingProduc"
-    "tsResponse\022h\n\023BigDiscountProducts\022\'.prod"
-    "ucts.v1.BigDiscountProductsRequest\032(.pro"
-    "ducts.v1.BigDiscountProductsResponse\022e\n\022"
-    "NewlyAddedProducts\022&.products.v1.NewlyAd"
-    "dedProductsRequest\032\'.products.v1.NewlyAd"
-    "dedProductsResponse\022S\n\014HeroProducts\022 .pr"
-    "oducts.v1.HeroProductsRequest\032!.products"
-    ".v1.HeroProductsResponse\022Y\n\016ProductDetai"
-    "ls\022\".products.v1.ProductDetailsRequest\032#"
-    ".products.v1.ProductDetailsResponseBw\n\034o"
-    "rg.megacommerce.products.v1B\rProductsPro"
-    "toZEgithub.com/ahmad-khatib0-org/megacom"
-    "merce-proto/gen/go/products/v1;v1\370\001\001b\006pr"
-    "oto3"
+    "oto\032!products/v1/category_navbar.proto\032\037"
+    "products/v1/hero_products.proto\032&product"
+    "s/v1/newly_added_products.proto\032 product"
+    "s/v1/product_create.proto\032\036products/v1/p"
+    "roduct_data.proto\032!products/v1/product_d"
+    "etails.proto\032\"products/v1/product_snapsh"
+    "ot.proto\032\"products/v1/products_to_like.p"
+    "roto2\272\007\n\017ProductsService\022V\n\rProductCreat"
+    "e\022!.products.v1.ProductCreateRequest\032\".p"
+    "roducts.v1.ProductCreateResponse\022P\n\013Prod"
+    "uctData\022\037.products.v1.ProductDataRequest"
+    "\032 .products.v1.ProductDataResponse\022Y\n\016Pr"
+    "oductsToLike\022\".products.v1.ProductsToLik"
+    "eRequest\032#.products.v1.ProductsToLikeRes"
+    "ponse\022\\\n\017ProductSnapshot\022#.products.v1.P"
+    "roductSnapshotRequest\032$.products.v1.Prod"
+    "uctSnapshotResponse\022h\n\023BestSellingProduc"
+    "ts\022\'.products.v1.BestSellingProductsRequ"
+    "est\032(.products.v1.BestSellingProductsRes"
+    "ponse\022h\n\023BigDiscountProducts\022\'.products."
+    "v1.BigDiscountProductsRequest\032(.products"
+    ".v1.BigDiscountProductsResponse\022e\n\022Newly"
+    "AddedProducts\022&.products.v1.NewlyAddedPr"
+    "oductsRequest\032\'.products.v1.NewlyAddedPr"
+    "oductsResponse\022S\n\014HeroProducts\022 .product"
+    "s.v1.HeroProductsRequest\032!.products.v1.H"
+    "eroProductsResponse\022Y\n\016ProductDetails\022\"."
+    "products.v1.ProductDetailsRequest\032#.prod"
+    "ucts.v1.ProductDetailsResponse\022Y\n\016Catego"
+    "ryNavbar\022\".products.v1.CategoryNavbarReq"
+    "uest\032#.products.v1.CategoryNavbarRespons"
+    "eBw\n\034org.megacommerce.products.v1B\rProdu"
+    "ctsProtoZEgithub.com/ahmad-khatib0-org/m"
+    "egacommerce-proto/gen/go/products/v1;v1\370"
+    "\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_products_2fv1_2fproducts_2eproto_deps[9] = {
+    descriptor_table_products_2fv1_2fproducts_2eproto_deps[10] = {
         &::descriptor_table_products_2fv1_2fbest_5fselling_5fproducts_2eproto,
         &::descriptor_table_products_2fv1_2fbig_5fdiscount_5fproducts_2eproto,
+        &::descriptor_table_products_2fv1_2fcategory_5fnavbar_2eproto,
         &::descriptor_table_products_2fv1_2fhero_5fproducts_2eproto,
         &::descriptor_table_products_2fv1_2fnewly_5fadded_5fproducts_2eproto,
         &::descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
@@ -90,12 +94,12 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproducts_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproducts_2eproto = {
     false,
     false,
-    1364,
+    1490,
     descriptor_table_protodef_products_2fv1_2fproducts_2eproto,
     "products/v1/products.proto",
     &descriptor_table_products_2fv1_2fproducts_2eproto_once,
     descriptor_table_products_2fv1_2fproducts_2eproto_deps,
-    9,
+    10,
     0,
     schemas,
     file_default_instances,

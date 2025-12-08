@@ -28,6 +28,7 @@
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "products/v1/best_selling_products.pb.h"
 #include "products/v1/big_discount_products.pb.h"
+#include "products/v1/category_navbar.pb.h"
 #include "products/v1/hero_products.pb.h"
 #include "products/v1/newly_added_products.pb.h"
 #include "products/v1/product_create.pb.h"

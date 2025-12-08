@@ -24,6 +24,7 @@ _sym_db = _symbol_database.Default()
 
 from products.v1 import best_selling_products_pb2 as products_dot_v1_dot_best__selling__products__pb2
 from products.v1 import big_discount_products_pb2 as products_dot_v1_dot_big__discount__products__pb2
+from products.v1 import category_navbar_pb2 as products_dot_v1_dot_category__navbar__pb2
 from products.v1 import hero_products_pb2 as products_dot_v1_dot_hero__products__pb2
 from products.v1 import newly_added_products_pb2 as products_dot_v1_dot_newly__added__products__pb2
 from products.v1 import product_create_pb2 as products_dot_v1_dot_product__create__pb2
@@ -33,7 +34,7 @@ from products.v1 import product_snapshot_pb2 as products_dot_v1_dot_product__sna
 from products.v1 import products_to_like_pb2 as products_dot_v1_dot_products__to__like__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproducts/v1/products.proto\x12\x0bproducts.v1\x1a\'products/v1/best_selling_products.proto\x1a\'products/v1/big_discount_products.proto\x1a\x1fproducts/v1/hero_products.proto\x1a&products/v1/newly_added_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a!products/v1/product_details.proto\x1a\"products/v1/product_snapshot.proto\x1a\"products/v1/products_to_like.proto2\xdf\x06\n\x0fProductsService\x12V\n\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n\x0bProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12Y\n\x0eProductsToLike\x12\".products.v1.ProductsToLikeRequest\x1a#.products.v1.ProductsToLikeResponse\x12\\\n\x0fProductSnapshot\x12#.products.v1.ProductSnapshotRequest\x1a$.products.v1.ProductSnapshotResponse\x12h\n\x13\x42\x65stSellingProducts\x12\'.products.v1.BestSellingProductsRequest\x1a(.products.v1.BestSellingProductsResponse\x12h\n\x13\x42igDiscountProducts\x12\'.products.v1.BigDiscountProductsRequest\x1a(.products.v1.BigDiscountProductsResponse\x12\x65\n\x12NewlyAddedProducts\x12&.products.v1.NewlyAddedProductsRequest\x1a\'.products.v1.NewlyAddedProductsResponse\x12S\n\x0cHeroProducts\x12 .products.v1.HeroProductsRequest\x1a!.products.v1.HeroProductsResponse\x12Y\n\x0eProductDetails\x12\".products.v1.ProductDetailsRequest\x1a#.products.v1.ProductDetailsResponseBw\n\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproducts/v1/products.proto\x12\x0bproducts.v1\x1a\'products/v1/best_selling_products.proto\x1a\'products/v1/big_discount_products.proto\x1a!products/v1/category_navbar.proto\x1a\x1fproducts/v1/hero_products.proto\x1a&products/v1/newly_added_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a!products/v1/product_details.proto\x1a\"products/v1/product_snapshot.proto\x1a\"products/v1/products_to_like.proto2\xba\x07\n\x0fProductsService\x12V\n\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n\x0bProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12Y\n\x0eProductsToLike\x12\".products.v1.ProductsToLikeRequest\x1a#.products.v1.ProductsToLikeResponse\x12\\\n\x0fProductSnapshot\x12#.products.v1.ProductSnapshotRequest\x1a$.products.v1.ProductSnapshotResponse\x12h\n\x13\x42\x65stSellingProducts\x12\'.products.v1.BestSellingProductsRequest\x1a(.products.v1.BestSellingProductsResponse\x12h\n\x13\x42igDiscountProducts\x12\'.products.v1.BigDiscountProductsRequest\x1a(.products.v1.BigDiscountProductsResponse\x12\x65\n\x12NewlyAddedProducts\x12&.products.v1.NewlyAddedProductsRequest\x1a\'.products.v1.NewlyAddedProductsResponse\x12S\n\x0cHeroProducts\x12 .products.v1.HeroProductsRequest\x1a!.products.v1.HeroProductsResponse\x12Y\n\x0eProductDetails\x12\".products.v1.ProductDetailsRequest\x1a#.products.v1.ProductDetailsResponse\x12Y\n\x0e\x43\x61tegoryNavbar\x12\".products.v1.CategoryNavbarRequest\x1a#.products.v1.CategoryNavbarResponseBw\n\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,6 +42,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'products.v1.products_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
-  _globals['_PRODUCTSSERVICE']._serialized_start=372
-  _globals['_PRODUCTSSERVICE']._serialized_end=1235
+  _globals['_PRODUCTSSERVICE']._serialized_start=407
+  _globals['_PRODUCTSSERVICE']._serialized_end=1361
 # @@protoc_insertion_point(module_scope)
