@@ -24,9 +24,10 @@ _sym_db = _symbol_database.Default()
 
 from users.v1 import auth_pb2 as users_dot_v1_dot_auth__pb2
 from users.v1 import supplier_pb2 as users_dot_v1_dot_supplier__pb2
+from users.v1 import customer_pb2 as users_dot_v1_dot_customer__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14users/v1/users.proto\x12\x08users.v1\x1a\x13users/v1/auth.proto\x1a\x17users/v1/supplier.proto2\xd0\x02\n\x0cUsersService\x12S\n\x0e\x43reateSupplier\x12\x1f.users.v1.SupplierCreateRequest\x1a .users.v1.SupplierCreateResponse\x12\\\n\x11\x45mailConfirmation\x12\".users.v1.EmailConfirmationRequest\x1a#.users.v1.EmailConfirmationResponse\x12S\n\x0ePasswordForgot\x12\x1f.users.v1.PasswordForgotRequest\x1a .users.v1.PasswordForgotResponse\x12\x38\n\x05Login\x12\x16.users.v1.LoginRequest\x1a\x17.users.v1.LoginResponseBn\n\x19org.megacommerce.users.v1B\nUsersProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14users/v1/users.proto\x12\x08users.v1\x1a\x13users/v1/auth.proto\x1a\x17users/v1/supplier.proto\x1a\x17users/v1/customer.proto2\xa5\x03\n\x0cUsersService\x12S\n\x0e\x43reateSupplier\x12\x1f.users.v1.SupplierCreateRequest\x1a .users.v1.SupplierCreateResponse\x12S\n\x0e\x43reateCustomer\x12\x1f.users.v1.CustomerCreateRequest\x1a .users.v1.CustomerCreateResponse\x12\\\n\x11\x45mailConfirmation\x12\".users.v1.EmailConfirmationRequest\x1a#.users.v1.EmailConfirmationResponse\x12S\n\x0ePasswordForgot\x12\x1f.users.v1.PasswordForgotRequest\x1a .users.v1.PasswordForgotResponse\x12\x38\n\x05Login\x12\x16.users.v1.LoginRequest\x1a\x17.users.v1.LoginResponseBn\n\x19org.megacommerce.users.v1B\nUsersProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,6 +35,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'users.v1.users_pb2', _globa
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031org.megacommerce.users.v1B\nUsersProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\370\001\001'
-  _globals['_USERSSERVICE']._serialized_start=81
-  _globals['_USERSSERVICE']._serialized_end=417
+  _globals['_USERSSERVICE']._serialized_start=106
+  _globals['_USERSSERVICE']._serialized_end=527
 # @@protoc_insertion_point(module_scope)

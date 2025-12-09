@@ -113,6 +113,39 @@ pub mod supplier_create_response {
         Error(super::super::super::shared::v1::AppError),
     }
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CustomerCreateRequest {
+    #[prost(string, tag = "1")]
+    pub username: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub email: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub first_name: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub last_name: ::prost::alloc::string::String,
+    #[prost(string, tag = "5")]
+    pub password: ::prost::alloc::string::String,
+    #[prost(message, optional, tag = "6")]
+    pub image: ::core::option::Option<super::super::shared::v1::Attachment>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CustomerCreateResponse {
+    #[prost(oneof = "customer_create_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<customer_create_response::Response>,
+}
+/// Nested message and enum types in `CustomerCreateResponse`.
+pub mod customer_create_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::super::super::shared::v1::SuccessResponseData),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
 /// Generated client implementations.
 pub mod users_service_client {
     #![allow(
@@ -228,6 +261,30 @@ pub mod users_service_client {
                 .insert(GrpcMethod::new("users.v1.UsersService", "CreateSupplier"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn create_customer(
+            &mut self,
+            request: impl tonic::IntoRequest<super::CustomerCreateRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::CustomerCreateResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/users.v1.UsersService/CreateCustomer",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("users.v1.UsersService", "CreateCustomer"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn email_confirmation(
             &mut self,
             request: impl tonic::IntoRequest<super::EmailConfirmationRequest>,
@@ -317,6 +374,13 @@ pub mod users_service_server {
             request: tonic::Request<super::SupplierCreateRequest>,
         ) -> std::result::Result<
             tonic::Response<super::SupplierCreateResponse>,
+            tonic::Status,
+        >;
+        async fn create_customer(
+            &self,
+            request: tonic::Request<super::CustomerCreateRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::CustomerCreateResponse>,
             tonic::Status,
         >;
         async fn email_confirmation(
@@ -444,6 +508,51 @@ pub mod users_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateSupplierSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/users.v1.UsersService/CreateCustomer" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateCustomerSvc<T: UsersService>(pub Arc<T>);
+                    impl<
+                        T: UsersService,
+                    > tonic::server::UnaryService<super::CustomerCreateRequest>
+                    for CreateCustomerSvc<T> {
+                        type Response = super::CustomerCreateResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::CustomerCreateRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as UsersService>::create_customer(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CreateCustomerSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package users.v1;
+
+import "shared/v1/attachment.proto";
+import "shared/v1/error.proto";
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1";
+option java_outer_classname = "CustomerProto";
+option java_package = "org.megacommerce.users.v1";
+
+message CustomerCreateRequest {
+  string username = 1;
+  string email = 2;
+  string first_name = 3;
+  string last_name = 4;
+  string password = 5;
+  shared.v1.Attachment image = 6;
+}
+
+message CustomerCreateResponse {
+  oneof response {
+    shared.v1.SuccessResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}

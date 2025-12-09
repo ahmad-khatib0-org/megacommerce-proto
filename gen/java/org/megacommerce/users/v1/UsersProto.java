@@ -36,29 +36,34 @@ public final class UsersProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\024users/v1/users.proto\022\010users.v1\032\023users/" +
-      "v1/auth.proto\032\027users/v1/supplier.proto2\320" +
-      "\002\n\014UsersService\022S\n\016CreateSupplier\022\037.user" +
-      "s.v1.SupplierCreateRequest\032 .users.v1.Su" +
-      "pplierCreateResponse\022\\\n\021EmailConfirmatio" +
-      "n\022\".users.v1.EmailConfirmationRequest\032#." +
-      "users.v1.EmailConfirmationResponse\022S\n\016Pa" +
-      "sswordForgot\022\037.users.v1.PasswordForgotRe" +
-      "quest\032 .users.v1.PasswordForgotResponse\022" +
-      "8\n\005Login\022\026.users.v1.LoginRequest\032\027.users" +
-      ".v1.LoginResponseBn\n\031org.megacommerce.us" +
-      "ers.v1B\nUsersProtoZBgithub.com/ahmad-kha" +
-      "tib0-org/megacommerce-proto/gen/go/users" +
-      "/v1;v1\370\001\001b\006proto3"
+      "v1/auth.proto\032\027users/v1/supplier.proto\032\027" +
+      "users/v1/customer.proto2\245\003\n\014UsersService" +
+      "\022S\n\016CreateSupplier\022\037.users.v1.SupplierCr" +
+      "eateRequest\032 .users.v1.SupplierCreateRes" +
+      "ponse\022S\n\016CreateCustomer\022\037.users.v1.Custo" +
+      "merCreateRequest\032 .users.v1.CustomerCrea" +
+      "teResponse\022\\\n\021EmailConfirmation\022\".users." +
+      "v1.EmailConfirmationRequest\032#.users.v1.E" +
+      "mailConfirmationResponse\022S\n\016PasswordForg" +
+      "ot\022\037.users.v1.PasswordForgotRequest\032 .us" +
+      "ers.v1.PasswordForgotResponse\0228\n\005Login\022\026" +
+      ".users.v1.LoginRequest\032\027.users.v1.LoginR" +
+      "esponseBn\n\031org.megacommerce.users.v1B\nUs" +
+      "ersProtoZBgithub.com/ahmad-khatib0-org/m" +
+      "egacommerce-proto/gen/go/users/v1;v1\370\001\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.users.v1.AuthProto.getDescriptor(),
           org.megacommerce.users.v1.SupplierProto.getDescriptor(),
+          org.megacommerce.users.v1.CustomerProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.users.v1.AuthProto.getDescriptor();
     org.megacommerce.users.v1.SupplierProto.getDescriptor();
+    org.megacommerce.users.v1.CustomerProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

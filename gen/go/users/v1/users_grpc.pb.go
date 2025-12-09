@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	UsersService_CreateSupplier_FullMethodName    = "/users.v1.UsersService/CreateSupplier"
+	UsersService_CreateCustomer_FullMethodName    = "/users.v1.UsersService/CreateCustomer"
 	UsersService_EmailConfirmation_FullMethodName = "/users.v1.UsersService/EmailConfirmation"
 	UsersService_PasswordForgot_FullMethodName    = "/users.v1.UsersService/PasswordForgot"
 	UsersService_Login_FullMethodName             = "/users.v1.UsersService/Login"
@@ -30,6 +31,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UsersServiceClient interface {
 	CreateSupplier(ctx context.Context, in *SupplierCreateRequest, opts ...grpc.CallOption) (*SupplierCreateResponse, error)
+	CreateCustomer(ctx context.Context, in *CustomerCreateRequest, opts ...grpc.CallOption) (*CustomerCreateResponse, error)
 	EmailConfirmation(ctx context.Context, in *EmailConfirmationRequest, opts ...grpc.CallOption) (*EmailConfirmationResponse, error)
 	PasswordForgot(ctx context.Context, in *PasswordForgotRequest, opts ...grpc.CallOption) (*PasswordForgotResponse, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
@@ -47,6 +49,16 @@ func (c *usersServiceClient) CreateSupplier(ctx context.Context, in *SupplierCre
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(SupplierCreateResponse)
 	err := c.cc.Invoke(ctx, UsersService_CreateSupplier_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *usersServiceClient) CreateCustomer(ctx context.Context, in *CustomerCreateRequest, opts ...grpc.CallOption) (*CustomerCreateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CustomerCreateResponse)
+	err := c.cc.Invoke(ctx, UsersService_CreateCustomer_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,6 +100,7 @@ func (c *usersServiceClient) Login(ctx context.Context, in *LoginRequest, opts .
 // for forward compatibility.
 type UsersServiceServer interface {
 	CreateSupplier(context.Context, *SupplierCreateRequest) (*SupplierCreateResponse, error)
+	CreateCustomer(context.Context, *CustomerCreateRequest) (*CustomerCreateResponse, error)
 	EmailConfirmation(context.Context, *EmailConfirmationRequest) (*EmailConfirmationResponse, error)
 	PasswordForgot(context.Context, *PasswordForgotRequest) (*PasswordForgotResponse, error)
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
@@ -103,6 +116,9 @@ type UnimplementedUsersServiceServer struct{}
 
 func (UnimplementedUsersServiceServer) CreateSupplier(context.Context, *SupplierCreateRequest) (*SupplierCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSupplier not implemented")
+}
+func (UnimplementedUsersServiceServer) CreateCustomer(context.Context, *CustomerCreateRequest) (*CustomerCreateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCustomer not implemented")
 }
 func (UnimplementedUsersServiceServer) EmailConfirmation(context.Context, *EmailConfirmationRequest) (*EmailConfirmationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EmailConfirmation not implemented")
@@ -148,6 +164,24 @@ func _UsersService_CreateSupplier_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UsersServiceServer).CreateSupplier(ctx, req.(*SupplierCreateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UsersService_CreateCustomer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CustomerCreateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UsersServiceServer).CreateCustomer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UsersService_CreateCustomer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UsersServiceServer).CreateCustomer(ctx, req.(*CustomerCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -216,6 +250,10 @@ var UsersService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateSupplier",
 			Handler:    _UsersService_CreateSupplier_Handler,
+		},
+		{
+			MethodName: "CreateCustomer",
+			Handler:    _UsersService_CreateCustomer_Handler,
 		},
 		{
 			MethodName: "EmailConfirmation",

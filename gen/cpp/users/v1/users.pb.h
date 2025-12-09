@@ -28,6 +28,7 @@
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "users/v1/auth.pb.h"
 #include "users/v1/supplier.pb.h"
+#include "users/v1/customer.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

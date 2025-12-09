@@ -24,9 +24,10 @@ var File_users_v1_users_proto protoreflect.FileDescriptor
 
 const file_users_v1_users_proto_rawDesc = "" +
 	"\n" +
-	"\x14users/v1/users.proto\x12\busers.v1\x1a\x13users/v1/auth.proto\x1a\x17users/v1/supplier.proto2\xd0\x02\n" +
+	"\x14users/v1/users.proto\x12\busers.v1\x1a\x13users/v1/auth.proto\x1a\x17users/v1/supplier.proto\x1a\x17users/v1/customer.proto2\xa5\x03\n" +
 	"\fUsersService\x12S\n" +
-	"\x0eCreateSupplier\x12\x1f.users.v1.SupplierCreateRequest\x1a .users.v1.SupplierCreateResponse\x12\\\n" +
+	"\x0eCreateSupplier\x12\x1f.users.v1.SupplierCreateRequest\x1a .users.v1.SupplierCreateResponse\x12S\n" +
+	"\x0eCreateCustomer\x12\x1f.users.v1.CustomerCreateRequest\x1a .users.v1.CustomerCreateResponse\x12\\\n" +
 	"\x11EmailConfirmation\x12\".users.v1.EmailConfirmationRequest\x1a#.users.v1.EmailConfirmationResponse\x12S\n" +
 	"\x0ePasswordForgot\x12\x1f.users.v1.PasswordForgotRequest\x1a .users.v1.PasswordForgotResponse\x128\n" +
 	"\x05Login\x12\x16.users.v1.LoginRequest\x1a\x17.users.v1.LoginResponseBn\n" +
@@ -35,25 +36,29 @@ const file_users_v1_users_proto_rawDesc = "" +
 
 var file_users_v1_users_proto_goTypes = []any{
 	(*SupplierCreateRequest)(nil),     // 0: users.v1.SupplierCreateRequest
-	(*EmailConfirmationRequest)(nil),  // 1: users.v1.EmailConfirmationRequest
-	(*PasswordForgotRequest)(nil),     // 2: users.v1.PasswordForgotRequest
-	(*LoginRequest)(nil),              // 3: users.v1.LoginRequest
-	(*SupplierCreateResponse)(nil),    // 4: users.v1.SupplierCreateResponse
-	(*EmailConfirmationResponse)(nil), // 5: users.v1.EmailConfirmationResponse
-	(*PasswordForgotResponse)(nil),    // 6: users.v1.PasswordForgotResponse
-	(*LoginResponse)(nil),             // 7: users.v1.LoginResponse
+	(*CustomerCreateRequest)(nil),     // 1: users.v1.CustomerCreateRequest
+	(*EmailConfirmationRequest)(nil),  // 2: users.v1.EmailConfirmationRequest
+	(*PasswordForgotRequest)(nil),     // 3: users.v1.PasswordForgotRequest
+	(*LoginRequest)(nil),              // 4: users.v1.LoginRequest
+	(*SupplierCreateResponse)(nil),    // 5: users.v1.SupplierCreateResponse
+	(*CustomerCreateResponse)(nil),    // 6: users.v1.CustomerCreateResponse
+	(*EmailConfirmationResponse)(nil), // 7: users.v1.EmailConfirmationResponse
+	(*PasswordForgotResponse)(nil),    // 8: users.v1.PasswordForgotResponse
+	(*LoginResponse)(nil),             // 9: users.v1.LoginResponse
 }
 var file_users_v1_users_proto_depIdxs = []int32{
 	0, // 0: users.v1.UsersService.CreateSupplier:input_type -> users.v1.SupplierCreateRequest
-	1, // 1: users.v1.UsersService.EmailConfirmation:input_type -> users.v1.EmailConfirmationRequest
-	2, // 2: users.v1.UsersService.PasswordForgot:input_type -> users.v1.PasswordForgotRequest
-	3, // 3: users.v1.UsersService.Login:input_type -> users.v1.LoginRequest
-	4, // 4: users.v1.UsersService.CreateSupplier:output_type -> users.v1.SupplierCreateResponse
-	5, // 5: users.v1.UsersService.EmailConfirmation:output_type -> users.v1.EmailConfirmationResponse
-	6, // 6: users.v1.UsersService.PasswordForgot:output_type -> users.v1.PasswordForgotResponse
-	7, // 7: users.v1.UsersService.Login:output_type -> users.v1.LoginResponse
-	4, // [4:8] is the sub-list for method output_type
-	0, // [0:4] is the sub-list for method input_type
+	1, // 1: users.v1.UsersService.CreateCustomer:input_type -> users.v1.CustomerCreateRequest
+	2, // 2: users.v1.UsersService.EmailConfirmation:input_type -> users.v1.EmailConfirmationRequest
+	3, // 3: users.v1.UsersService.PasswordForgot:input_type -> users.v1.PasswordForgotRequest
+	4, // 4: users.v1.UsersService.Login:input_type -> users.v1.LoginRequest
+	5, // 5: users.v1.UsersService.CreateSupplier:output_type -> users.v1.SupplierCreateResponse
+	6, // 6: users.v1.UsersService.CreateCustomer:output_type -> users.v1.CustomerCreateResponse
+	7, // 7: users.v1.UsersService.EmailConfirmation:output_type -> users.v1.EmailConfirmationResponse
+	8, // 8: users.v1.UsersService.PasswordForgot:output_type -> users.v1.PasswordForgotResponse
+	9, // 9: users.v1.UsersService.Login:output_type -> users.v1.LoginResponse
+	5, // [5:10] is the sub-list for method output_type
+	0, // [0:5] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -66,6 +71,7 @@ func file_users_v1_users_proto_init() {
 	}
 	file_users_v1_auth_proto_init()
 	file_users_v1_supplier_proto_init()
+	file_users_v1_customer_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

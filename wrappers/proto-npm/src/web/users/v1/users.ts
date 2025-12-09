@@ -15,6 +15,7 @@ import {
   PasswordForgotRequest,
   PasswordForgotResponse,
 } from "./auth.js";
+import { CustomerCreateRequest, CustomerCreateResponse } from "./customer.js";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier.js";
 
 export const protobufPackage = "users.v1";
@@ -24,6 +25,10 @@ export interface UsersService {
     request: DeepPartial<SupplierCreateRequest>,
     metadata?: grpc.Metadata,
   ): Promise<SupplierCreateResponse>;
+  CreateCustomer(
+    request: DeepPartial<CustomerCreateRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<CustomerCreateResponse>;
   EmailConfirmation(
     request: DeepPartial<EmailConfirmationRequest>,
     metadata?: grpc.Metadata,
@@ -41,6 +46,7 @@ export class UsersServiceClientImpl implements UsersService {
   constructor(rpc: Rpc) {
     this.rpc = rpc;
     this.CreateSupplier = this.CreateSupplier.bind(this);
+    this.CreateCustomer = this.CreateCustomer.bind(this);
     this.EmailConfirmation = this.EmailConfirmation.bind(this);
     this.PasswordForgot = this.PasswordForgot.bind(this);
     this.Login = this.Login.bind(this);
@@ -51,6 +57,13 @@ export class UsersServiceClientImpl implements UsersService {
     metadata?: grpc.Metadata,
   ): Promise<SupplierCreateResponse> {
     return this.rpc.unary(UsersServiceCreateSupplierDesc, SupplierCreateRequest.fromPartial(request), metadata);
+  }
+
+  CreateCustomer(
+    request: DeepPartial<CustomerCreateRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<CustomerCreateResponse> {
+    return this.rpc.unary(UsersServiceCreateCustomerDesc, CustomerCreateRequest.fromPartial(request), metadata);
   }
 
   EmailConfirmation(
@@ -87,6 +100,29 @@ export const UsersServiceCreateSupplierDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = SupplierCreateResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const UsersServiceCreateCustomerDesc: UnaryMethodDefinitionish = {
+  methodName: "CreateCustomer",
+  service: UsersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return CustomerCreateRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = CustomerCreateResponse.decode(data);
       return {
         ...value,
         toObject() {

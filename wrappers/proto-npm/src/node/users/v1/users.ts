@@ -25,6 +25,7 @@ import {
   PasswordForgotRequest,
   PasswordForgotResponse,
 } from "./auth";
+import { CustomerCreateRequest, CustomerCreateResponse } from "./customer";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier";
 
 export const protobufPackage = "users.v1";
@@ -41,6 +42,17 @@ export const UsersServiceService = {
     responseSerialize: (value: SupplierCreateResponse): Buffer =>
       Buffer.from(SupplierCreateResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): SupplierCreateResponse => SupplierCreateResponse.decode(value),
+  },
+  createCustomer: {
+    path: "/users.v1.UsersService/CreateCustomer",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: CustomerCreateRequest): Buffer =>
+      Buffer.from(CustomerCreateRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): CustomerCreateRequest => CustomerCreateRequest.decode(value),
+    responseSerialize: (value: CustomerCreateResponse): Buffer =>
+      Buffer.from(CustomerCreateResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): CustomerCreateResponse => CustomerCreateResponse.decode(value),
   },
   emailConfirmation: {
     path: "/users.v1.UsersService/EmailConfirmation",
@@ -77,6 +89,7 @@ export const UsersServiceService = {
 
 export interface UsersServiceServer extends UntypedServiceImplementation {
   createSupplier: handleUnaryCall<SupplierCreateRequest, SupplierCreateResponse>;
+  createCustomer: handleUnaryCall<CustomerCreateRequest, CustomerCreateResponse>;
   emailConfirmation: handleUnaryCall<EmailConfirmationRequest, EmailConfirmationResponse>;
   passwordForgot: handleUnaryCall<PasswordForgotRequest, PasswordForgotResponse>;
   login: handleUnaryCall<LoginRequest, LoginResponse>;
@@ -97,6 +110,21 @@ export interface UsersServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: SupplierCreateResponse) => void,
+  ): ClientUnaryCall;
+  createCustomer(
+    request: CustomerCreateRequest,
+    callback: (error: ServiceError | null, response: CustomerCreateResponse) => void,
+  ): ClientUnaryCall;
+  createCustomer(
+    request: CustomerCreateRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: CustomerCreateResponse) => void,
+  ): ClientUnaryCall;
+  createCustomer(
+    request: CustomerCreateRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: CustomerCreateResponse) => void,
   ): ClientUnaryCall;
   emailConfirmation(
     request: EmailConfirmationRequest,
