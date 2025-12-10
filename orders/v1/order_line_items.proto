@@ -41,6 +41,7 @@ message OrderLineItem {
   // Timestamps
   uint64 created_at = 19; // UNIX timestamp
   optional uint64 updated_at = 20; // optional UNIX timestamp
+  optional uint64 estimated_delivery_date = 21; // Unix timestamp in milliseconds
 }
 
 // Order status

@@ -3,6 +3,7 @@ syntax = "proto3";
 package orders.v1;
 
 import "inventory/v1/reservation_get.proto";
+import "orders/v1/order_line_items.proto";
 import "shared/v1/error.proto";
 import "shared/v1/pagination.proto";
 
@@ -43,4 +44,7 @@ message OrderListItem {
   // order lifecycle
   string status = 6; // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
   uint64 created_at = 7;
+
+  // order line items with details
+  repeated OrderLineItem items = 8;
 }

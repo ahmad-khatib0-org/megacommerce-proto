@@ -385,6 +385,9 @@ pub struct OrderLineItem {
     /// optional UNIX timestamp
     #[prost(uint64, optional, tag = "20")]
     pub updated_at: ::core::option::Option<u64>,
+    /// Unix timestamp in milliseconds
+    #[prost(uint64, optional, tag = "21")]
+    pub estimated_delivery_date: ::core::option::Option<u64>,
 }
 /// Order status
 #[derive(serde::Serialize, serde::Deserialize)]
@@ -706,6 +709,9 @@ pub struct OrderListItem {
     pub status: ::prost::alloc::string::String,
     #[prost(uint64, tag = "7")]
     pub created_at: u64,
+    /// order line items with details
+    #[prost(message, repeated, tag = "8")]
+    pub items: ::prost::alloc::vec::Vec<OrderLineItem>,
 }
 /// Generated client implementations.
 pub mod orders_service_client {

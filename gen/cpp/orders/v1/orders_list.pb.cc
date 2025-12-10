@@ -27,9 +27,36 @@ namespace _fl = ::google::protobuf::internal::field_layout;
 namespace orders {
 namespace v1 {
 
+inline constexpr OrdersListRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        status_{},
+        pagination_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR OrdersListRequest::OrdersListRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(OrdersListRequest_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct OrdersListRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR OrdersListRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~OrdersListRequestDefaultTypeInternal() {}
+  union {
+    OrdersListRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OrdersListRequestDefaultTypeInternal _OrdersListRequest_default_instance_;
+
 inline constexpr OrderListItem::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
+        items_{},
         id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
@@ -90,32 +117,6 @@ struct OrdersListResponseDataDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OrdersListResponseDataDefaultTypeInternal _OrdersListResponseData_default_instance_;
 
-inline constexpr OrdersListRequest::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        status_{},
-        pagination_{nullptr} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR OrdersListRequest::OrdersListRequest(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(OrdersListRequest_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct OrdersListRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR OrdersListRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~OrdersListRequestDefaultTypeInternal() {}
-  union {
-    OrdersListRequest _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OrdersListRequestDefaultTypeInternal _OrdersListRequest_default_instance_;
-
 inline constexpr OrdersListResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : response_{},
@@ -171,7 +172,7 @@ const ::uint32_t
         0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderListItem, _impl_._has_bits_),
-        10, // hasbit index offset
+        11, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderListItem, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderListItem, _impl_.shipping_cents_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderListItem, _impl_.total_cents_),
@@ -179,6 +180,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderListItem, _impl_.inventory_reservation_status_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderListItem, _impl_.status_),
         PROTOBUF_FIELD_OFFSET(::orders::v1::OrderListItem, _impl_.created_at_),
+        PROTOBUF_FIELD_OFFSET(::orders::v1::OrderListItem, _impl_.items_),
         0,
         3,
         4,
@@ -186,6 +188,7 @@ const ::uint32_t
         6,
         2,
         5,
+        ~0u,
 };
 
 static const ::_pbi::MigrationSchema
@@ -204,33 +207,36 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_orders_2fv1_2forders_5flist_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\033orders/v1/orders_list.proto\022\torders.v1"
-    "\032\"inventory/v1/reservation_get.proto\032\025sh"
-    "ared/v1/error.proto\032\032shared/v1/paginatio"
-    "n.proto\"i\n\021OrdersListRequest\022<\n\npaginati"
-    "on\030\001 \001(\0132\034.shared.v1.PaginationRequestR\n"
-    "pagination\022\026\n\006status\030\002 \003(\tR\006status\"\206\001\n\022O"
-    "rdersListResponse\0227\n\004data\030\001 \001(\0132!.orders"
-    ".v1.OrdersListResponseDataH\000R\004data\022+\n\005er"
-    "ror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB"
-    "\n\n\010response\"\211\001\n\026OrdersListResponseData\0220"
-    "\n\006orders\030\001 \003(\0132\030.orders.v1.OrderListItem"
-    "R\006orders\022=\n\npagination\030\002 \001(\0132\035.shared.v1"
-    ".PaginationResponseR\npagination\"\257\002\n\rOrde"
-    "rListItem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016shipping_ce"
-    "nts\030\002 \001(\003R\rshippingCents\022\037\n\013total_cents\030"
-    "\003 \001(\003R\ntotalCents\022#\n\rcurrency_code\030\004 \001(\t"
-    "R\014currencyCode\022j\n\034inventory_reservation_"
-    "status\030\005 \001(\0162(.inventory.v1.InventoryRes"
-    "ervationStatusR\032inventoryReservationStat"
-    "us\022\026\n\006status\030\006 \001(\tR\006status\022\035\n\ncreated_at"
-    "\030\007 \001(\004R\tcreatedAtBu\n\032org.megacommerce.or"
-    "ders.v1B\017OrdersListProtoZCgithub.com/ahm"
-    "ad-khatib0-org/megacommerce-proto/gen/go"
-    "/orders/v1;v1\370\001\001b\006proto3"
+    "\032\"inventory/v1/reservation_get.proto\032 or"
+    "ders/v1/order_line_items.proto\032\025shared/v"
+    "1/error.proto\032\032shared/v1/pagination.prot"
+    "o\"i\n\021OrdersListRequest\022<\n\npagination\030\001 \001"
+    "(\0132\034.shared.v1.PaginationRequestR\npagina"
+    "tion\022\026\n\006status\030\002 \003(\tR\006status\"\206\001\n\022OrdersL"
+    "istResponse\0227\n\004data\030\001 \001(\0132!.orders.v1.Or"
+    "dersListResponseDataH\000R\004data\022+\n\005error\030\002 "
+    "\001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010res"
+    "ponse\"\211\001\n\026OrdersListResponseData\0220\n\006orde"
+    "rs\030\001 \003(\0132\030.orders.v1.OrderListItemR\006orde"
+    "rs\022=\n\npagination\030\002 \001(\0132\035.shared.v1.Pagin"
+    "ationResponseR\npagination\"\337\002\n\rOrderListI"
+    "tem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016shipping_cents\030\002 "
+    "\001(\003R\rshippingCents\022\037\n\013total_cents\030\003 \001(\003R"
+    "\ntotalCents\022#\n\rcurrency_code\030\004 \001(\tR\014curr"
+    "encyCode\022j\n\034inventory_reservation_status"
+    "\030\005 \001(\0162(.inventory.v1.InventoryReservati"
+    "onStatusR\032inventoryReservationStatus\022\026\n\006"
+    "status\030\006 \001(\tR\006status\022\035\n\ncreated_at\030\007 \001(\004"
+    "R\tcreatedAt\022.\n\005items\030\010 \003(\0132\030.orders.v1.O"
+    "rderLineItemR\005itemsBu\n\032org.megacommerce."
+    "orders.v1B\017OrdersListProtoZCgithub.com/a"
+    "hmad-khatib0-org/megacommerce-proto/gen/"
+    "go/orders/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_orders_2fv1_2forders_5flist_2eproto_deps[3] = {
+    descriptor_table_orders_2fv1_2forders_5flist_2eproto_deps[4] = {
         &::descriptor_table_inventory_2fv1_2freservation_5fget_2eproto,
+        &::descriptor_table_orders_2fv1_2forder_5fline_5fitems_2eproto,
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
         &::descriptor_table_shared_2fv1_2fpagination_2eproto,
 };
@@ -238,12 +244,12 @@ static ::absl::once_flag descriptor_table_orders_2fv1_2forders_5flist_2eproto_on
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_orders_2fv1_2forders_5flist_2eproto = {
     false,
     false,
-    944,
+    1026,
     descriptor_table_protodef_orders_2fv1_2forders_5flist_2eproto,
     "orders/v1/orders_list.proto",
     &descriptor_table_orders_2fv1_2forders_5flist_2eproto_once,
     descriptor_table_orders_2fv1_2forders_5flist_2eproto_deps,
-    3,
+    4,
     4,
     schemas,
     file_default_instances,
@@ -1250,6 +1256,10 @@ class OrderListItem::_Internal {
       8 * PROTOBUF_FIELD_OFFSET(OrderListItem, _impl_._has_bits_);
 };
 
+void OrderListItem::clear_items() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.items_.Clear();
+}
 OrderListItem::OrderListItem(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, OrderListItem_class_data_.base()) {
@@ -1265,6 +1275,7 @@ PROTOBUF_NDEBUG_INLINE OrderListItem::Impl_::Impl_(
     const ::orders::v1::OrderListItem& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
+        items_{visibility, arena, from.items_},
         id_(arena, from.id_),
         currency_code_(arena, from.currency_code_),
         status_(arena, from.status_) {}
@@ -1296,6 +1307,7 @@ PROTOBUF_NDEBUG_INLINE OrderListItem::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
+        items_{visibility, arena},
         id_(arena),
         currency_code_(arena),
         status_(arena) {}
@@ -1329,8 +1341,20 @@ inline void* PROTOBUF_NONNULL OrderListItem::PlacementNew_(
   return ::new (mem) OrderListItem(arena);
 }
 constexpr auto OrderListItem::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(OrderListItem),
-                                            alignof(OrderListItem));
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(OrderListItem, _impl_.items_) +
+          decltype(OrderListItem::_impl_.items_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(OrderListItem), alignof(OrderListItem), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&OrderListItem::PlacementNew_,
+                                 sizeof(OrderListItem),
+                                 alignof(OrderListItem));
+  }
 }
 constexpr auto OrderListItem::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -1366,18 +1390,18 @@ OrderListItem::GetClassData() const {
   return OrderListItem_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 7, 0, 53, 2>
+const ::_pbi::TcParseTable<3, 8, 1, 61, 2>
 OrderListItem::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(OrderListItem, _impl_._has_bits_),
     0, // no _extensions_
-    7, 56,  // max_field_number, fast_idx_mask
+    8, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967168,  // skipmap
+    4294967040,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    7,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
+    8,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
     OrderListItem_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
@@ -1385,7 +1409,9 @@ OrderListItem::_table_ = {
     ::_pbi::TcParser::GetTable<::orders::v1::OrderListItem>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
+    // repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];
+    {::_pbi::TcParser::FastMtR1,
+     {66, 63, 0, PROTOBUF_FIELD_OFFSET(OrderListItem, _impl_.items_)}},
     // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(OrderListItem, _impl_.id_)}},
@@ -1431,10 +1457,15 @@ OrderListItem::_table_ = {
     // uint64 created_at = 7 [json_name = "createdAt"];
     {PROTOBUF_FIELD_OFFSET(OrderListItem, _impl_.created_at_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];
+    {PROTOBUF_FIELD_OFFSET(OrderListItem, _impl_.items_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
-  // no aux_entries
   {{
-    "\27\2\0\0\15\0\6\0"
+      {::_pbi::TcParser::GetTable<::orders::v1::OrderLineItem>()},
+  }},
+  {{
+    "\27\2\0\0\15\0\6\0\0\0\0\0\0\0\0\0"
     "orders.v1.OrderListItem"
     "id"
     "currency_code"
@@ -1448,6 +1479,7 @@ PROTOBUF_NOINLINE void OrderListItem::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.items_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000007u) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
@@ -1550,6 +1582,17 @@ PROTOBUF_NOINLINE void OrderListItem::Clear() {
     }
   }
 
+  // repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_items_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_items().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            8, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1574,6 +1617,15 @@ PROTOBUF_NOINLINE void OrderListItem::Clear() {
   (void)cached_has_bits;
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];
+    {
+      total_size += 1UL * this_._internal_items_size();
+      for (const auto& msg : this_._internal_items()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x0000007fu) != 0) {
     // string id = 1 [json_name = "id"];
@@ -1638,6 +1690,8 @@ void OrderListItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::g
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_internal_mutable_items()->MergeFrom(
+      from._internal_items());
   cached_has_bits = from._impl_._has_bits_[0];
   if ((cached_has_bits & 0x0000007fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
@@ -1706,6 +1760,7 @@ void OrderListItem::InternalSwap(OrderListItem* PROTOBUF_RESTRICT PROTOBUF_NONNU
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.items_.InternalSwap(&other->_impl_.items_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.currency_code_, &other->_impl_.currency_code_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.status_, &other->_impl_.status_, arena);

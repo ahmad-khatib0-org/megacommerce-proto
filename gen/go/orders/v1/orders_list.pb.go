@@ -220,8 +220,10 @@ type OrderListItem struct {
 	// we include reservation status in order so UI shows what's reserved.
 	InventoryReservationStatus v11.InventoryReservationStatus `protobuf:"varint,5,opt,name=inventory_reservation_status,json=inventoryReservationStatus,proto3,enum=inventory.v1.InventoryReservationStatus" json:"inventory_reservation_status,omitempty"`
 	// order lifecycle
-	Status        string `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"` // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
-	CreatedAt     uint64 `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	Status    string `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"` // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
+	CreatedAt uint64 `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	// order line items with details
+	Items         []*OrderLineItem `protobuf:"bytes,8,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -305,11 +307,18 @@ func (x *OrderListItem) GetCreatedAt() uint64 {
 	return 0
 }
 
+func (x *OrderListItem) GetItems() []*OrderLineItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_orders_v1_orders_list_proto protoreflect.FileDescriptor
 
 const file_orders_v1_orders_list_proto_rawDesc = "" +
 	"\n" +
-	"\x1borders/v1/orders_list.proto\x12\torders.v1\x1a\"inventory/v1/reservation_get.proto\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\"i\n" +
+	"\x1borders/v1/orders_list.proto\x12\torders.v1\x1a\"inventory/v1/reservation_get.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\"i\n" +
 	"\x11OrdersListRequest\x12<\n" +
 	"\n" +
 	"pagination\x18\x01 \x01(\v2\x1c.shared.v1.PaginationRequestR\n" +
@@ -324,7 +333,7 @@ const file_orders_v1_orders_list_proto_rawDesc = "" +
 	"\x06orders\x18\x01 \x03(\v2\x18.orders.v1.OrderListItemR\x06orders\x12=\n" +
 	"\n" +
 	"pagination\x18\x02 \x01(\v2\x1d.shared.v1.PaginationResponseR\n" +
-	"pagination\"\xaf\x02\n" +
+	"pagination\"\xdf\x02\n" +
 	"\rOrderListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
 	"\x0eshipping_cents\x18\x02 \x01(\x03R\rshippingCents\x12\x1f\n" +
@@ -334,7 +343,8 @@ const file_orders_v1_orders_list_proto_rawDesc = "" +
 	"\x1cinventory_reservation_status\x18\x05 \x01(\x0e2(.inventory.v1.InventoryReservationStatusR\x1ainventoryReservationStatus\x12\x16\n" +
 	"\x06status\x18\x06 \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\a \x01(\x04R\tcreatedAtBu\n" +
+	"created_at\x18\a \x01(\x04R\tcreatedAt\x12.\n" +
+	"\x05items\x18\b \x03(\v2\x18.orders.v1.OrderLineItemR\x05itemsBu\n" +
 	"\x1aorg.megacommerce.orders.v1B\x0fOrdersListProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -359,6 +369,7 @@ var file_orders_v1_orders_list_proto_goTypes = []any{
 	(*v1.AppError)(nil),                 // 5: shared.v1.AppError
 	(*v1.PaginationResponse)(nil),       // 6: shared.v1.PaginationResponse
 	(v11.InventoryReservationStatus)(0), // 7: inventory.v1.InventoryReservationStatus
+	(*OrderLineItem)(nil),               // 8: orders.v1.OrderLineItem
 }
 var file_orders_v1_orders_list_proto_depIdxs = []int32{
 	4, // 0: orders.v1.OrdersListRequest.pagination:type_name -> shared.v1.PaginationRequest
@@ -367,11 +378,12 @@ var file_orders_v1_orders_list_proto_depIdxs = []int32{
 	3, // 3: orders.v1.OrdersListResponseData.orders:type_name -> orders.v1.OrderListItem
 	6, // 4: orders.v1.OrdersListResponseData.pagination:type_name -> shared.v1.PaginationResponse
 	7, // 5: orders.v1.OrderListItem.inventory_reservation_status:type_name -> inventory.v1.InventoryReservationStatus
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	8, // 6: orders.v1.OrderListItem.items:type_name -> orders.v1.OrderLineItem
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_orders_v1_orders_list_proto_init() }
@@ -379,6 +391,7 @@ func file_orders_v1_orders_list_proto_init() {
 	if File_orders_v1_orders_list_proto != nil {
 		return
 	}
+	file_orders_v1_order_line_items_proto_init()
 	file_orders_v1_orders_list_proto_msgTypes[1].OneofWrappers = []any{
 		(*OrdersListResponse_Data)(nil),
 		(*OrdersListResponse_Error)(nil),

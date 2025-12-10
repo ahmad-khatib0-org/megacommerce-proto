@@ -113,7 +113,11 @@ export interface OrderLineItem {
   /** Timestamps */
   createdAt: string;
   /** optional UNIX timestamp */
-  updatedAt?: string | undefined;
+  updatedAt?:
+    | string
+    | undefined;
+  /** Unix timestamp in milliseconds */
+  estimatedDeliveryDate?: string | undefined;
 }
 
 export interface OrderLineItem_AttributesEntry {
@@ -143,6 +147,7 @@ function createBaseOrderLineItem(): OrderLineItem {
     shippingCents: "0",
     createdAt: "0",
     updatedAt: undefined,
+    estimatedDeliveryDate: undefined,
   };
 }
 
@@ -207,6 +212,9 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     }
     if (message.updatedAt !== undefined) {
       writer.uint32(160).uint64(message.updatedAt);
+    }
+    if (message.estimatedDeliveryDate !== undefined) {
+      writer.uint32(168).uint64(message.estimatedDeliveryDate);
     }
     return writer;
   },
@@ -381,6 +389,14 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
           message.updatedAt = reader.uint64().toString();
           continue;
         }
+        case 21: {
+          if (tag !== 168) {
+            break;
+          }
+
+          message.estimatedDeliveryDate = reader.uint64().toString();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -419,6 +435,9 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
       shippingCents: isSet(object.shippingCents) ? globalThis.String(object.shippingCents) : "0",
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
       updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : undefined,
+      estimatedDeliveryDate: isSet(object.estimatedDeliveryDate)
+        ? globalThis.String(object.estimatedDeliveryDate)
+        : undefined,
     };
   },
 
@@ -490,6 +509,9 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     if (message.updatedAt !== undefined) {
       obj.updatedAt = message.updatedAt;
     }
+    if (message.estimatedDeliveryDate !== undefined) {
+      obj.estimatedDeliveryDate = message.estimatedDeliveryDate;
+    }
     return obj;
   },
 
@@ -528,6 +550,7 @@ export const OrderLineItem: MessageFns<OrderLineItem> = {
     message.shippingCents = object.shippingCents ?? "0";
     message.createdAt = object.createdAt ?? "0";
     message.updatedAt = object.updatedAt ?? undefined;
+    message.estimatedDeliveryDate = object.estimatedDeliveryDate ?? undefined;
     return message;
   },
 };

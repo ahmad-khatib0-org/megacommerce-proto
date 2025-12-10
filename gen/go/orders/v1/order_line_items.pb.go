@@ -109,10 +109,11 @@ type OrderLineItem struct {
 	Status          string     `protobuf:"bytes,17,opt,name=status,proto3" json:"status,omitempty"`
 	ShippingCents   uint64     `protobuf:"varint,18,opt,name=shipping_cents,json=shippingCents,proto3" json:"shipping_cents,omitempty"`
 	// Timestamps
-	CreatedAt     uint64  `protobuf:"varint,19,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`       // UNIX timestamp
-	UpdatedAt     *uint64 `protobuf:"varint,20,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"` // optional UNIX timestamp
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	CreatedAt             uint64  `protobuf:"varint,19,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`                                             // UNIX timestamp
+	UpdatedAt             *uint64 `protobuf:"varint,20,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`                                       // optional UNIX timestamp
+	EstimatedDeliveryDate *uint64 `protobuf:"varint,21,opt,name=estimated_delivery_date,json=estimatedDeliveryDate,proto3,oneof" json:"estimated_delivery_date,omitempty"` // Unix timestamp in milliseconds
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *OrderLineItem) Reset() {
@@ -285,11 +286,18 @@ func (x *OrderLineItem) GetUpdatedAt() uint64 {
 	return 0
 }
 
+func (x *OrderLineItem) GetEstimatedDeliveryDate() uint64 {
+	if x != nil && x.EstimatedDeliveryDate != nil {
+		return *x.EstimatedDeliveryDate
+	}
+	return 0
+}
+
 var File_orders_v1_order_line_items_proto protoreflect.FileDescriptor
 
 const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"\n" +
-	" orders/v1/order_line_items.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"\xef\x06\n" +
+	" orders/v1/order_line_items.proto\x12\torders.v1\x1a\x16shared/v1/struct.proto\"\xc8\a\n" +
 	"\rOrderLineItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\border_id\x18\x02 \x01(\tR\aorderId\x12\x1d\n" +
@@ -318,14 +326,16 @@ const file_orders_v1_order_line_items_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x13 \x01(\x04R\tcreatedAt\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x14 \x01(\x04H\x03R\tupdatedAt\x88\x01\x01\x1a=\n" +
+	"updated_at\x18\x14 \x01(\x04H\x03R\tupdatedAt\x88\x01\x01\x12;\n" +
+	"\x17estimated_delivery_date\x18\x15 \x01(\x04H\x04R\x15estimatedDeliveryDate\x88\x01\x01\x1a=\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x13\n" +
 	"\x11_list_price_centsB\x13\n" +
 	"\x11_sale_price_centsB\x11\n" +
 	"\x0f_discount_centsB\r\n" +
-	"\v_updated_at*\xa1\x02\n" +
+	"\v_updated_atB\x1a\n" +
+	"\x18_estimated_delivery_date*\xa1\x02\n" +
 	"\x13OrderLineItemStatus\x12\"\n" +
 	"\x1eORDER_LINE_ITEM_STATUS_CREATED\x10\x00\x12$\n" +
 	" ORDER_LINE_ITEM_STATUS_CONFIRMED\x10\x01\x12\"\n" +

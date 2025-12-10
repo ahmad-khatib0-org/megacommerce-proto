@@ -330,6 +330,7 @@ class OrderLineItem final : public ::google::protobuf::Message
     kShippingCentsFieldNumber = 18,
     kCreatedAtFieldNumber = 19,
     kUpdatedAtFieldNumber = 20,
+    kEstimatedDeliveryDateFieldNumber = 21,
     kQuantityFieldNumber = 8,
   };
   // map<string, string> attributes = 7 [json_name = "attributes"];
@@ -583,6 +584,17 @@ class OrderLineItem final : public ::google::protobuf::Message
   void _internal_set_updated_at(::uint64_t value);
 
   public:
+  // optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];
+  bool has_estimated_delivery_date() const;
+  void clear_estimated_delivery_date() ;
+  ::uint64_t estimated_delivery_date() const;
+  void set_estimated_delivery_date(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_estimated_delivery_date() const;
+  void _internal_set_estimated_delivery_date(::uint64_t value);
+
+  public:
   // int32 quantity = 8 [json_name = "quantity"];
   void clear_quantity() ;
   ::int32_t quantity() const;
@@ -597,7 +609,7 @@ class OrderLineItem final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 20,
+  static const ::google::protobuf::internal::TcParseTable<5, 21,
                                    2, 119,
                                    2>
       _table_;
@@ -641,6 +653,7 @@ class OrderLineItem final : public ::google::protobuf::Message
     ::uint64_t shipping_cents_;
     ::uint64_t created_at_;
     ::uint64_t updated_at_;
+    ::uint64_t estimated_delivery_date_;
     ::int32_t quantity_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1091,7 +1104,7 @@ inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL Order
 inline void OrderLineItem::clear_quantity() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.quantity_ = 0;
-  _impl_._has_bits_[0] &= ~0x00020000u;
+  _impl_._has_bits_[0] &= ~0x00040000u;
 }
 inline ::int32_t OrderLineItem::quantity() const {
   // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.quantity)
@@ -1099,7 +1112,7 @@ inline ::int32_t OrderLineItem::quantity() const {
 }
 inline void OrderLineItem::set_quantity(::int32_t value) {
   _internal_set_quantity(value);
-  _impl_._has_bits_[0] |= 0x00020000u;
+  _impl_._has_bits_[0] |= 0x00040000u;
   // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.quantity)
 }
 inline ::int32_t OrderLineItem::_internal_quantity() const {
@@ -1563,6 +1576,34 @@ inline ::uint64_t OrderLineItem::_internal_updated_at() const {
 inline void OrderLineItem::_internal_set_updated_at(::uint64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_ = value;
+}
+
+// optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];
+inline bool OrderLineItem::has_estimated_delivery_date() const {
+  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
+  return value;
+}
+inline void OrderLineItem::clear_estimated_delivery_date() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.estimated_delivery_date_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00020000u;
+}
+inline ::uint64_t OrderLineItem::estimated_delivery_date() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineItem.estimated_delivery_date)
+  return _internal_estimated_delivery_date();
+}
+inline void OrderLineItem::set_estimated_delivery_date(::uint64_t value) {
+  _internal_set_estimated_delivery_date(value);
+  _impl_._has_bits_[0] |= 0x00020000u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineItem.estimated_delivery_date)
+}
+inline ::uint64_t OrderLineItem::_internal_estimated_delivery_date() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.estimated_delivery_date_;
+}
+inline void OrderLineItem::_internal_set_estimated_delivery_date(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.estimated_delivery_date_ = value;
 }
 
 #ifdef __GNUC__

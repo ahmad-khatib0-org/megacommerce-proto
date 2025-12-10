@@ -541,6 +541,25 @@ java.lang.String defaultValue);
      * @return The updatedAt.
      */
     long getUpdatedAt();
+
+    /**
+     * <pre>
+     * Unix timestamp in milliseconds
+     * </pre>
+     *
+     * <code>optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];</code>
+     * @return Whether the estimatedDeliveryDate field is set.
+     */
+    boolean hasEstimatedDeliveryDate();
+    /**
+     * <pre>
+     * Unix timestamp in milliseconds
+     * </pre>
+     *
+     * <code>optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];</code>
+     * @return The estimatedDeliveryDate.
+     */
+    long getEstimatedDeliveryDate();
   }
   /**
    * Protobuf type {@code orders.v1.OrderLineItem}
@@ -1262,6 +1281,33 @@ java.lang.String defaultValue) {
       return updatedAt_;
     }
 
+    public static final int ESTIMATED_DELIVERY_DATE_FIELD_NUMBER = 21;
+    private long estimatedDeliveryDate_ = 0L;
+    /**
+     * <pre>
+     * Unix timestamp in milliseconds
+     * </pre>
+     *
+     * <code>optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];</code>
+     * @return Whether the estimatedDeliveryDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasEstimatedDeliveryDate() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * Unix timestamp in milliseconds
+     * </pre>
+     *
+     * <code>optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];</code>
+     * @return The estimatedDeliveryDate.
+     */
+    @java.lang.Override
+    public long getEstimatedDeliveryDate() {
+      return estimatedDeliveryDate_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1338,6 +1384,9 @@ java.lang.String defaultValue) {
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         output.writeUInt64(20, updatedAt_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeUInt64(21, estimatedDeliveryDate_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1431,6 +1480,10 @@ java.lang.String defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(20, updatedAt_);
       }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(21, estimatedDeliveryDate_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1500,6 +1553,11 @@ java.lang.String defaultValue) {
       if (hasUpdatedAt()) {
         if (getUpdatedAt()
             != other.getUpdatedAt()) return false;
+      }
+      if (hasEstimatedDeliveryDate() != other.hasEstimatedDeliveryDate()) return false;
+      if (hasEstimatedDeliveryDate()) {
+        if (getEstimatedDeliveryDate()
+            != other.getEstimatedDeliveryDate()) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -1574,6 +1632,11 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getUpdatedAt());
+      }
+      if (hasEstimatedDeliveryDate()) {
+        hash = (37 * hash) + ESTIMATED_DELIVERY_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getEstimatedDeliveryDate());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1759,6 +1822,7 @@ java.lang.String defaultValue) {
         shippingCents_ = 0L;
         createdAt_ = 0L;
         updatedAt_ = 0L;
+        estimatedDeliveryDate_ = 0L;
         return this;
       }
 
@@ -1862,6 +1926,10 @@ java.lang.String defaultValue) {
           result.updatedAt_ = updatedAt_;
           to_bitField0_ |= 0x00000010;
         }
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.estimatedDeliveryDate_ = estimatedDeliveryDate_;
+          to_bitField0_ |= 0x00000020;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1957,6 +2025,9 @@ java.lang.String defaultValue) {
         }
         if (other.hasUpdatedAt()) {
           setUpdatedAt(other.getUpdatedAt());
+        }
+        if (other.hasEstimatedDeliveryDate()) {
+          setEstimatedDeliveryDate(other.getEstimatedDeliveryDate());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2091,6 +2162,11 @@ java.lang.String defaultValue) {
                 bitField0_ |= 0x00080000;
                 break;
               } // case 160
+              case 168: {
+                estimatedDeliveryDate_ = input.readUInt64();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 168
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3567,6 +3643,62 @@ java.lang.String defaultValue) {
         return this;
       }
 
+      private long estimatedDeliveryDate_ ;
+      /**
+       * <pre>
+       * Unix timestamp in milliseconds
+       * </pre>
+       *
+       * <code>optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];</code>
+       * @return Whether the estimatedDeliveryDate field is set.
+       */
+      @java.lang.Override
+      public boolean hasEstimatedDeliveryDate() {
+        return ((bitField0_ & 0x00100000) != 0);
+      }
+      /**
+       * <pre>
+       * Unix timestamp in milliseconds
+       * </pre>
+       *
+       * <code>optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];</code>
+       * @return The estimatedDeliveryDate.
+       */
+      @java.lang.Override
+      public long getEstimatedDeliveryDate() {
+        return estimatedDeliveryDate_;
+      }
+      /**
+       * <pre>
+       * Unix timestamp in milliseconds
+       * </pre>
+       *
+       * <code>optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];</code>
+       * @param value The estimatedDeliveryDate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEstimatedDeliveryDate(long value) {
+
+        estimatedDeliveryDate_ = value;
+        bitField0_ |= 0x00100000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unix timestamp in milliseconds
+       * </pre>
+       *
+       * <code>optional uint64 estimated_delivery_date = 21 [json_name = "estimatedDeliveryDate"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEstimatedDeliveryDate() {
+        bitField0_ = (bitField0_ & ~0x00100000);
+        estimatedDeliveryDate_ = 0L;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:orders.v1.OrderLineItem)
     }
 
@@ -3638,7 +3770,7 @@ java.lang.String defaultValue) {
   static {
     java.lang.String[] descriptorData = {
       "\n orders/v1/order_line_items.proto\022\torde" +
-      "rs.v1\032\026shared/v1/struct.proto\"\357\006\n\rOrderL" +
+      "rs.v1\032\026shared/v1/struct.proto\"\310\007\n\rOrderL" +
       "ineItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001(" +
       "\tR\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tproductI" +
       "d\022\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\020\n\003sku\030" +
@@ -3657,21 +3789,23 @@ java.lang.String defaultValue) {
       "ot\022\026\n\006status\030\021 \001(\tR\006status\022%\n\016shipping_c" +
       "ents\030\022 \001(\004R\rshippingCents\022\035\n\ncreated_at\030" +
       "\023 \001(\004R\tcreatedAt\022\"\n\nupdated_at\030\024 \001(\004H\003R\t" +
-      "updatedAt\210\001\001\032=\n\017AttributesEntry\022\020\n\003key\030\001" +
-      " \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\023\n\021_" +
-      "list_price_centsB\023\n\021_sale_price_centsB\021\n" +
-      "\017_discount_centsB\r\n\013_updated_at*\241\002\n\023Orde" +
-      "rLineItemStatus\022\"\n\036ORDER_LINE_ITEM_STATU" +
-      "S_CREATED\020\000\022$\n ORDER_LINE_ITEM_STATUS_CO" +
-      "NFIRMED\020\001\022\"\n\036ORDER_LINE_ITEM_STATUS_SHIP" +
-      "PED\020\002\022$\n ORDER_LINE_ITEM_STATUS_DELIVERE" +
-      "D\020\003\022$\n ORDER_LINE_ITEM_STATUS_CANCELLED\020" +
-      "\004\022#\n\037ORDER_LINE_ITEM_STATUS_REFUNDED\020\005\022+" +
-      "\n\'ORDER_LINE_ITEM_STATUS_REFUND_REQUESTE" +
-      "D\020\006By\n\032org.megacommerce.orders.v1B\023Order" +
-      "LineItemsProtoZCgithub.com/ahmad-khatib0" +
-      "-org/megacommerce-proto/gen/go/orders/v1" +
-      ";v1\370\001\001b\006proto3"
+      "updatedAt\210\001\001\022;\n\027estimated_delivery_date\030" +
+      "\025 \001(\004H\004R\025estimatedDeliveryDate\210\001\001\032=\n\017Att" +
+      "ributesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030" +
+      "\002 \001(\tR\005value:\0028\001B\023\n\021_list_price_centsB\023\n" +
+      "\021_sale_price_centsB\021\n\017_discount_centsB\r\n" +
+      "\013_updated_atB\032\n\030_estimated_delivery_date" +
+      "*\241\002\n\023OrderLineItemStatus\022\"\n\036ORDER_LINE_I" +
+      "TEM_STATUS_CREATED\020\000\022$\n ORDER_LINE_ITEM_" +
+      "STATUS_CONFIRMED\020\001\022\"\n\036ORDER_LINE_ITEM_ST" +
+      "ATUS_SHIPPED\020\002\022$\n ORDER_LINE_ITEM_STATUS" +
+      "_DELIVERED\020\003\022$\n ORDER_LINE_ITEM_STATUS_C" +
+      "ANCELLED\020\004\022#\n\037ORDER_LINE_ITEM_STATUS_REF" +
+      "UNDED\020\005\022+\n\'ORDER_LINE_ITEM_STATUS_REFUND" +
+      "_REQUESTED\020\006By\n\032org.megacommerce.orders." +
+      "v1B\023OrderLineItemsProtoZCgithub.com/ahma" +
+      "d-khatib0-org/megacommerce-proto/gen/go/" +
+      "orders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3683,7 +3817,7 @@ java.lang.String defaultValue) {
     internal_static_orders_v1_OrderLineItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_orders_v1_OrderLineItem_descriptor,
-        new java.lang.String[] { "Id", "OrderId", "ProductId", "VariantId", "Sku", "Title", "Attributes", "Quantity", "UnitPriceCents", "ListPriceCents", "SalePriceCents", "DiscountCents", "TaxCents", "TotalCents", "AppliedOfferIds", "ProductSnapshot", "Status", "ShippingCents", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "OrderId", "ProductId", "VariantId", "Sku", "Title", "Attributes", "Quantity", "UnitPriceCents", "ListPriceCents", "SalePriceCents", "DiscountCents", "TaxCents", "TotalCents", "AppliedOfferIds", "ProductSnapshot", "Status", "ShippingCents", "CreatedAt", "UpdatedAt", "EstimatedDeliveryDate", });
     internal_static_orders_v1_OrderLineItem_AttributesEntry_descriptor =
       internal_static_orders_v1_OrderLineItem_descriptor.getNestedTypes().get(0);
     internal_static_orders_v1_OrderLineItem_AttributesEntry_fieldAccessorTable = new

@@ -25,7 +25,7 @@ ORDER_LINE_ITEM_STATUS_REFUNDED: OrderLineItemStatus
 ORDER_LINE_ITEM_STATUS_REFUND_REQUESTED: OrderLineItemStatus
 
 class OrderLineItem(_message.Message):
-    __slots__ = ("id", "order_id", "product_id", "variant_id", "sku", "title", "attributes", "quantity", "unit_price_cents", "list_price_cents", "sale_price_cents", "discount_cents", "tax_cents", "total_cents", "applied_offer_ids", "product_snapshot", "status", "shipping_cents", "created_at", "updated_at")
+    __slots__ = ("id", "order_id", "product_id", "variant_id", "sku", "title", "attributes", "quantity", "unit_price_cents", "list_price_cents", "sale_price_cents", "discount_cents", "tax_cents", "total_cents", "applied_offer_ids", "product_snapshot", "status", "shipping_cents", "created_at", "updated_at", "estimated_delivery_date")
     class AttributesEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -53,6 +53,7 @@ class OrderLineItem(_message.Message):
     SHIPPING_CENTS_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
+    ESTIMATED_DELIVERY_DATE_FIELD_NUMBER: _ClassVar[int]
     id: str
     order_id: str
     product_id: str
@@ -73,4 +74,5 @@ class OrderLineItem(_message.Message):
     shipping_cents: int
     created_at: int
     updated_at: int
-    def __init__(self, id: _Optional[str] = ..., order_id: _Optional[str] = ..., product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., sku: _Optional[str] = ..., title: _Optional[str] = ..., attributes: _Optional[_Mapping[str, str]] = ..., quantity: _Optional[int] = ..., unit_price_cents: _Optional[int] = ..., list_price_cents: _Optional[int] = ..., sale_price_cents: _Optional[int] = ..., discount_cents: _Optional[int] = ..., tax_cents: _Optional[int] = ..., total_cents: _Optional[int] = ..., applied_offer_ids: _Optional[_Iterable[str]] = ..., product_snapshot: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., status: _Optional[str] = ..., shipping_cents: _Optional[int] = ..., created_at: _Optional[int] = ..., updated_at: _Optional[int] = ...) -> None: ...
+    estimated_delivery_date: int
+    def __init__(self, id: _Optional[str] = ..., order_id: _Optional[str] = ..., product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., sku: _Optional[str] = ..., title: _Optional[str] = ..., attributes: _Optional[_Mapping[str, str]] = ..., quantity: _Optional[int] = ..., unit_price_cents: _Optional[int] = ..., list_price_cents: _Optional[int] = ..., sale_price_cents: _Optional[int] = ..., discount_cents: _Optional[int] = ..., tax_cents: _Optional[int] = ..., total_cents: _Optional[int] = ..., applied_offer_ids: _Optional[_Iterable[str]] = ..., product_snapshot: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., status: _Optional[str] = ..., shipping_cents: _Optional[int] = ..., created_at: _Optional[int] = ..., updated_at: _Optional[int] = ..., estimated_delivery_date: _Optional[int] = ...) -> None: ...

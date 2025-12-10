@@ -23,11 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from inventory.v1 import reservation_get_pb2 as inventory_dot_v1_dot_reservation__get__pb2
+from orders.v1 import order_line_items_pb2 as orders_dot_v1_dot_order__line__items__pb2
 from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import pagination_pb2 as shared_dot_v1_dot_pagination__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1borders/v1/orders_list.proto\x12\torders.v1\x1a\"inventory/v1/reservation_get.proto\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\"U\n\x11OrdersListRequest\x12\x30\n\npagination\x18\x01 \x01(\x0b\x32\x1c.shared.v1.PaginationRequest\x12\x0e\n\x06status\x18\x02 \x03(\t\"y\n\x12OrdersListResponse\x12\x31\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32!.orders.v1.OrdersListResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"u\n\x16OrdersListResponseData\x12(\n\x06orders\x18\x01 \x03(\x0b\x32\x18.orders.v1.OrderListItem\x12\x31\n\npagination\x18\x02 \x01(\x0b\x32\x1d.shared.v1.PaginationResponse\"\xd3\x01\n\rOrderListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0eshipping_cents\x18\x02 \x01(\x03\x12\x13\n\x0btotal_cents\x18\x03 \x01(\x03\x12\x15\n\rcurrency_code\x18\x04 \x01(\t\x12N\n\x1cinventory_reservation_status\x18\x05 \x01(\x0e\x32(.inventory.v1.InventoryReservationStatus\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x12\n\ncreated_at\x18\x07 \x01(\x04\x42u\n\x1aorg.megacommerce.orders.v1B\x0fOrdersListProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1borders/v1/orders_list.proto\x12\torders.v1\x1a\"inventory/v1/reservation_get.proto\x1a orders/v1/order_line_items.proto\x1a\x15shared/v1/error.proto\x1a\x1ashared/v1/pagination.proto\"U\n\x11OrdersListRequest\x12\x30\n\npagination\x18\x01 \x01(\x0b\x32\x1c.shared.v1.PaginationRequest\x12\x0e\n\x06status\x18\x02 \x03(\t\"y\n\x12OrdersListResponse\x12\x31\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32!.orders.v1.OrdersListResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"u\n\x16OrdersListResponseData\x12(\n\x06orders\x18\x01 \x03(\x0b\x32\x18.orders.v1.OrderListItem\x12\x31\n\npagination\x18\x02 \x01(\x0b\x32\x1d.shared.v1.PaginationResponse\"\xfc\x01\n\rOrderListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0eshipping_cents\x18\x02 \x01(\x03\x12\x13\n\x0btotal_cents\x18\x03 \x01(\x03\x12\x15\n\rcurrency_code\x18\x04 \x01(\t\x12N\n\x1cinventory_reservation_status\x18\x05 \x01(\x0e\x32(.inventory.v1.InventoryReservationStatus\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x12\n\ncreated_at\x18\x07 \x01(\x04\x12\'\n\x05items\x18\x08 \x03(\x0b\x32\x18.orders.v1.OrderLineItemBu\n\x1aorg.megacommerce.orders.v1B\x0fOrdersListProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,12 +36,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'orders.v1.orders_list_pb2',
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.orders.v1B\017OrdersListProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\370\001\001'
-  _globals['_ORDERSLISTREQUEST']._serialized_start=129
-  _globals['_ORDERSLISTREQUEST']._serialized_end=214
-  _globals['_ORDERSLISTRESPONSE']._serialized_start=216
-  _globals['_ORDERSLISTRESPONSE']._serialized_end=337
-  _globals['_ORDERSLISTRESPONSEDATA']._serialized_start=339
-  _globals['_ORDERSLISTRESPONSEDATA']._serialized_end=456
-  _globals['_ORDERLISTITEM']._serialized_start=459
-  _globals['_ORDERLISTITEM']._serialized_end=670
+  _globals['_ORDERSLISTREQUEST']._serialized_start=163
+  _globals['_ORDERSLISTREQUEST']._serialized_end=248
+  _globals['_ORDERSLISTRESPONSE']._serialized_start=250
+  _globals['_ORDERSLISTRESPONSE']._serialized_end=371
+  _globals['_ORDERSLISTRESPONSEDATA']._serialized_start=373
+  _globals['_ORDERSLISTRESPONSEDATA']._serialized_end=490
+  _globals['_ORDERLISTITEM']._serialized_start=493
+  _globals['_ORDERLISTITEM']._serialized_end=745
 # @@protoc_insertion_point(module_scope)

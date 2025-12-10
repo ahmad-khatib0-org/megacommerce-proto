@@ -13,6 +13,7 @@ import {
 } from "../../inventory/v1/reservation_get.js";
 import { AppError } from "../../shared/v1/error.js";
 import { PaginationRequest, PaginationResponse } from "../../shared/v1/pagination.js";
+import { OrderLineItem } from "./order_line_items.js";
 
 export const protobufPackage = "orders.v1";
 
@@ -45,6 +46,8 @@ export interface OrderListItem {
   /** order lifecycle */
   status: string;
   createdAt: string;
+  /** order line items with details */
+  items: OrderLineItem[];
 }
 
 function createBaseOrdersListRequest(): OrdersListRequest {
@@ -292,6 +295,7 @@ function createBaseOrderListItem(): OrderListItem {
     inventoryReservationStatus: 0,
     status: "",
     createdAt: "0",
+    items: [],
   };
 }
 
@@ -317,6 +321,9 @@ export const OrderListItem: MessageFns<OrderListItem> = {
     }
     if (message.createdAt !== "0") {
       writer.uint32(56).uint64(message.createdAt);
+    }
+    for (const v of message.items) {
+      OrderLineItem.encode(v!, writer.uint32(66).fork()).join();
     }
     return writer;
   },
@@ -384,6 +391,14 @@ export const OrderListItem: MessageFns<OrderListItem> = {
           message.createdAt = reader.uint64().toString();
           continue;
         }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.items.push(OrderLineItem.decode(reader, reader.uint32()));
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -404,6 +419,7 @@ export const OrderListItem: MessageFns<OrderListItem> = {
         : 0,
       status: isSet(object.status) ? globalThis.String(object.status) : "",
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
+      items: globalThis.Array.isArray(object?.items) ? object.items.map((e: any) => OrderLineItem.fromJSON(e)) : [],
     };
   },
 
@@ -430,6 +446,9 @@ export const OrderListItem: MessageFns<OrderListItem> = {
     if (message.createdAt !== "0") {
       obj.createdAt = message.createdAt;
     }
+    if (message.items?.length) {
+      obj.items = message.items.map((e) => OrderLineItem.toJSON(e));
+    }
     return obj;
   },
 
@@ -445,6 +464,7 @@ export const OrderListItem: MessageFns<OrderListItem> = {
     message.inventoryReservationStatus = object.inventoryReservationStatus ?? 0;
     message.status = object.status ?? "";
     message.createdAt = object.createdAt ?? "0";
+    message.items = object.items?.map((e) => OrderLineItem.fromPartial(e)) || [];
     return message;
   },
 };

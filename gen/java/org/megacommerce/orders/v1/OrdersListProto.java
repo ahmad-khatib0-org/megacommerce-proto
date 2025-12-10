@@ -2730,6 +2730,50 @@ public final class OrdersListProto {
      * @return The createdAt.
      */
     long getCreatedAt();
+
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    java.util.List<org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem> 
+        getItemsList();
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem getItems(int index);
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    int getItemsCount();
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    java.util.List<? extends org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItemOrBuilder> 
+        getItemsOrBuilderList();
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItemOrBuilder getItemsOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -2761,6 +2805,7 @@ public final class OrdersListProto {
       currencyCode_ = "";
       inventoryReservationStatus_ = 0;
       status_ = "";
+      items_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2962,6 +3007,67 @@ public final class OrdersListProto {
       return createdAt_;
     }
 
+    public static final int ITEMS_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private java.util.List<org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem> items_;
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem> getItemsList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItemOrBuilder> 
+        getItemsOrBuilderList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public int getItemsCount() {
+      return items_.size();
+    }
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem getItems(int index) {
+      return items_.get(index);
+    }
+    /**
+     * <pre>
+     * order line items with details
+     * </pre>
+     *
+     * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItemOrBuilder getItemsOrBuilder(
+        int index) {
+      return items_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2997,6 +3103,9 @@ public final class OrdersListProto {
       if (createdAt_ != 0L) {
         output.writeUInt64(7, createdAt_);
       }
+      for (int i = 0; i < items_.size(); i++) {
+        output.writeMessage(8, items_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3031,6 +3140,10 @@ public final class OrdersListProto {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(7, createdAt_);
       }
+      for (int i = 0; i < items_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, items_.get(i));
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3059,6 +3172,8 @@ public final class OrdersListProto {
           .equals(other.getStatus())) return false;
       if (getCreatedAt()
           != other.getCreatedAt()) return false;
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3087,6 +3202,10 @@ public final class OrdersListProto {
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreatedAt());
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3229,6 +3348,13 @@ public final class OrdersListProto {
         inventoryReservationStatus_ = 0;
         status_ = "";
         createdAt_ = 0L;
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+        } else {
+          items_ = null;
+          itemsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -3255,9 +3381,22 @@ public final class OrdersListProto {
       @java.lang.Override
       public org.megacommerce.orders.v1.OrdersListProto.OrderListItem buildPartial() {
         org.megacommerce.orders.v1.OrdersListProto.OrderListItem result = new org.megacommerce.orders.v1.OrdersListProto.OrderListItem(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(org.megacommerce.orders.v1.OrdersListProto.OrderListItem result) {
+        if (itemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            items_ = java.util.Collections.unmodifiableList(items_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.items_ = items_;
+        } else {
+          result.items_ = itemsBuilder_.build();
+        }
       }
 
       private void buildPartial0(org.megacommerce.orders.v1.OrdersListProto.OrderListItem result) {
@@ -3324,6 +3463,32 @@ public final class OrdersListProto {
         if (other.getCreatedAt() != 0L) {
           setCreatedAt(other.getCreatedAt());
         }
+        if (itemsBuilder_ == null) {
+          if (!other.items_.isEmpty()) {
+            if (items_.isEmpty()) {
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureItemsIsMutable();
+              items_.addAll(other.items_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.items_.isEmpty()) {
+            if (itemsBuilder_.isEmpty()) {
+              itemsBuilder_.dispose();
+              itemsBuilder_ = null;
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              itemsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   internalGetItemsFieldBuilder() : null;
+            } else {
+              itemsBuilder_.addAllMessages(other.items_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3385,6 +3550,19 @@ public final class OrdersListProto {
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
+              case 66: {
+                org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem m =
+                    input.readMessage(
+                        org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.parser(),
+                        extensionRegistry);
+                if (itemsBuilder_ == null) {
+                  ensureItemsIsMutable();
+                  items_.add(m);
+                } else {
+                  itemsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3810,6 +3988,318 @@ public final class OrdersListProto {
         return this;
       }
 
+      private java.util.List<org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          items_ = new java.util.ArrayList<org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem>(items_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItemOrBuilder> itemsBuilder_;
+
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public java.util.List<org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
+        } else {
+          return itemsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public int getItemsCount() {
+        if (itemsBuilder_ == null) {
+          return items_.size();
+        } else {
+          return itemsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public Builder setItems(
+          int index, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public Builder setItems(
+          int index, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public Builder addItems(org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public Builder addItems(
+          int index, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public Builder addItems(
+          org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public Builder addItems(
+          int index, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public Builder addAllItems(
+          java.lang.Iterable<? extends org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public Builder clearItems() {
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public Builder removeItems(int index) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder getItemsBuilder(
+          int index) {
+        return internalGetItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItemOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public java.util.List<? extends org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItemOrBuilder> 
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder addItemsBuilder() {
+        return internalGetItemsFieldBuilder().addBuilder(
+            org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder addItemsBuilder(
+          int index) {
+        return internalGetItemsFieldBuilder().addBuilder(
+            index, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * order line items with details
+       * </pre>
+       *
+       * <code>repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];</code>
+       */
+      public java.util.List<org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder> 
+           getItemsBuilderList() {
+        return internalGetItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItemOrBuilder> 
+          internalGetItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItem.Builder, org.megacommerce.orders.v1.OrderLineItemsProto.OrderLineItemOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:orders.v1.OrderListItem)
     }
 
@@ -3891,34 +4381,37 @@ public final class OrdersListProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033orders/v1/orders_list.proto\022\torders.v1" +
-      "\032\"inventory/v1/reservation_get.proto\032\025sh" +
-      "ared/v1/error.proto\032\032shared/v1/paginatio" +
-      "n.proto\"i\n\021OrdersListRequest\022<\n\npaginati" +
-      "on\030\001 \001(\0132\034.shared.v1.PaginationRequestR\n" +
-      "pagination\022\026\n\006status\030\002 \003(\tR\006status\"\206\001\n\022O" +
-      "rdersListResponse\0227\n\004data\030\001 \001(\0132!.orders" +
-      ".v1.OrdersListResponseDataH\000R\004data\022+\n\005er" +
-      "ror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB" +
-      "\n\n\010response\"\211\001\n\026OrdersListResponseData\0220" +
-      "\n\006orders\030\001 \003(\0132\030.orders.v1.OrderListItem" +
-      "R\006orders\022=\n\npagination\030\002 \001(\0132\035.shared.v1" +
-      ".PaginationResponseR\npagination\"\257\002\n\rOrde" +
-      "rListItem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016shipping_ce" +
-      "nts\030\002 \001(\003R\rshippingCents\022\037\n\013total_cents\030" +
-      "\003 \001(\003R\ntotalCents\022#\n\rcurrency_code\030\004 \001(\t" +
-      "R\014currencyCode\022j\n\034inventory_reservation_" +
-      "status\030\005 \001(\0162(.inventory.v1.InventoryRes" +
-      "ervationStatusR\032inventoryReservationStat" +
-      "us\022\026\n\006status\030\006 \001(\tR\006status\022\035\n\ncreated_at" +
-      "\030\007 \001(\004R\tcreatedAtBu\n\032org.megacommerce.or" +
-      "ders.v1B\017OrdersListProtoZCgithub.com/ahm" +
-      "ad-khatib0-org/megacommerce-proto/gen/go" +
-      "/orders/v1;v1\370\001\001b\006proto3"
+      "\032\"inventory/v1/reservation_get.proto\032 or" +
+      "ders/v1/order_line_items.proto\032\025shared/v" +
+      "1/error.proto\032\032shared/v1/pagination.prot" +
+      "o\"i\n\021OrdersListRequest\022<\n\npagination\030\001 \001" +
+      "(\0132\034.shared.v1.PaginationRequestR\npagina" +
+      "tion\022\026\n\006status\030\002 \003(\tR\006status\"\206\001\n\022OrdersL" +
+      "istResponse\0227\n\004data\030\001 \001(\0132!.orders.v1.Or" +
+      "dersListResponseDataH\000R\004data\022+\n\005error\030\002 " +
+      "\001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010res" +
+      "ponse\"\211\001\n\026OrdersListResponseData\0220\n\006orde" +
+      "rs\030\001 \003(\0132\030.orders.v1.OrderListItemR\006orde" +
+      "rs\022=\n\npagination\030\002 \001(\0132\035.shared.v1.Pagin" +
+      "ationResponseR\npagination\"\337\002\n\rOrderListI" +
+      "tem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016shipping_cents\030\002 " +
+      "\001(\003R\rshippingCents\022\037\n\013total_cents\030\003 \001(\003R" +
+      "\ntotalCents\022#\n\rcurrency_code\030\004 \001(\tR\014curr" +
+      "encyCode\022j\n\034inventory_reservation_status" +
+      "\030\005 \001(\0162(.inventory.v1.InventoryReservati" +
+      "onStatusR\032inventoryReservationStatus\022\026\n\006" +
+      "status\030\006 \001(\tR\006status\022\035\n\ncreated_at\030\007 \001(\004" +
+      "R\tcreatedAt\022.\n\005items\030\010 \003(\0132\030.orders.v1.O" +
+      "rderLineItemR\005itemsBu\n\032org.megacommerce." +
+      "orders.v1B\017OrdersListProtoZCgithub.com/a" +
+      "hmad-khatib0-org/megacommerce-proto/gen/" +
+      "go/orders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.inventory.v1.InventoryReservationGetProto.getDescriptor(),
+          org.megacommerce.orders.v1.OrderLineItemsProto.getDescriptor(),
           org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
           org.megacommerce.shared.v1.PaginationProto.getDescriptor(),
         });
@@ -3945,9 +4438,10 @@ public final class OrdersListProto {
     internal_static_orders_v1_OrderListItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_orders_v1_OrderListItem_descriptor,
-        new java.lang.String[] { "Id", "ShippingCents", "TotalCents", "CurrencyCode", "InventoryReservationStatus", "Status", "CreatedAt", });
+        new java.lang.String[] { "Id", "ShippingCents", "TotalCents", "CurrencyCode", "InventoryReservationStatus", "Status", "CreatedAt", "Items", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.inventory.v1.InventoryReservationGetProto.getDescriptor();
+    org.megacommerce.orders.v1.OrderLineItemsProto.getDescriptor();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
     org.megacommerce.shared.v1.PaginationProto.getDescriptor();
   }
