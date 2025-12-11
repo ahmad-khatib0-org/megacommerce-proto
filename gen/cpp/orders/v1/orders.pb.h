@@ -31,6 +31,7 @@
 #include "orders/v1/order_get.pb.h"
 #include "orders/v1/order_refund.pb.h"
 #include "orders/v1/orders_list.pb.h"
+#include "orders/v1/payment_method.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

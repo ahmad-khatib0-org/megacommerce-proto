@@ -19,11 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OrdersService_OrderCreate_FullMethodName = "/orders.v1.OrdersService/OrderCreate"
-	OrdersService_OrderGet_FullMethodName    = "/orders.v1.OrdersService/OrderGet"
-	OrdersService_OrdersList_FullMethodName  = "/orders.v1.OrdersService/OrdersList"
-	OrdersService_OrderCancel_FullMethodName = "/orders.v1.OrdersService/OrderCancel"
-	OrdersService_OrderRefund_FullMethodName = "/orders.v1.OrdersService/OrderRefund"
+	OrdersService_OrderCreate_FullMethodName         = "/orders.v1.OrdersService/OrderCreate"
+	OrdersService_OrderGet_FullMethodName            = "/orders.v1.OrdersService/OrderGet"
+	OrdersService_OrdersList_FullMethodName          = "/orders.v1.OrdersService/OrdersList"
+	OrdersService_OrderCancel_FullMethodName         = "/orders.v1.OrdersService/OrderCancel"
+	OrdersService_OrderRefund_FullMethodName         = "/orders.v1.OrdersService/OrderRefund"
+	OrdersService_PaymentAddMethod_FullMethodName    = "/orders.v1.OrdersService/PaymentAddMethod"
+	OrdersService_PaymentRemoveMethod_FullMethodName = "/orders.v1.OrdersService/PaymentRemoveMethod"
+	OrdersService_PaymentMakeDefault_FullMethodName  = "/orders.v1.OrdersService/PaymentMakeDefault"
+	OrdersService_PaymentsList_FullMethodName        = "/orders.v1.OrdersService/PaymentsList"
 )
 
 // OrdersServiceClient is the client API for OrdersService service.
@@ -40,6 +44,11 @@ type OrdersServiceClient interface {
 	OrderCancel(ctx context.Context, in *OrderCancelRequest, opts ...grpc.CallOption) (*OrderCancelResponse, error)
 	// Refund an order or order line(s)
 	OrderRefund(ctx context.Context, in *OrderRefundRequest, opts ...grpc.CallOption) (*OrderRefundResponse, error)
+	// Payment methods
+	PaymentAddMethod(ctx context.Context, in *PaymentAddMethodRequest, opts ...grpc.CallOption) (*PaymentAddMethodResponse, error)
+	PaymentRemoveMethod(ctx context.Context, in *PaymentRemoveMethodRequest, opts ...grpc.CallOption) (*PaymentRemoveMethodResponse, error)
+	PaymentMakeDefault(ctx context.Context, in *PaymentMakeDefaultRequest, opts ...grpc.CallOption) (*PaymentMakeDefaultResponse, error)
+	PaymentsList(ctx context.Context, in *PaymentsListRequest, opts ...grpc.CallOption) (*PaymentsListResponse, error)
 }
 
 type ordersServiceClient struct {
@@ -100,6 +109,46 @@ func (c *ordersServiceClient) OrderRefund(ctx context.Context, in *OrderRefundRe
 	return out, nil
 }
 
+func (c *ordersServiceClient) PaymentAddMethod(ctx context.Context, in *PaymentAddMethodRequest, opts ...grpc.CallOption) (*PaymentAddMethodResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PaymentAddMethodResponse)
+	err := c.cc.Invoke(ctx, OrdersService_PaymentAddMethod_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ordersServiceClient) PaymentRemoveMethod(ctx context.Context, in *PaymentRemoveMethodRequest, opts ...grpc.CallOption) (*PaymentRemoveMethodResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PaymentRemoveMethodResponse)
+	err := c.cc.Invoke(ctx, OrdersService_PaymentRemoveMethod_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ordersServiceClient) PaymentMakeDefault(ctx context.Context, in *PaymentMakeDefaultRequest, opts ...grpc.CallOption) (*PaymentMakeDefaultResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PaymentMakeDefaultResponse)
+	err := c.cc.Invoke(ctx, OrdersService_PaymentMakeDefault_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ordersServiceClient) PaymentsList(ctx context.Context, in *PaymentsListRequest, opts ...grpc.CallOption) (*PaymentsListResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PaymentsListResponse)
+	err := c.cc.Invoke(ctx, OrdersService_PaymentsList_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OrdersServiceServer is the server API for OrdersService service.
 // All implementations must embed UnimplementedOrdersServiceServer
 // for forward compatibility.
@@ -114,6 +163,11 @@ type OrdersServiceServer interface {
 	OrderCancel(context.Context, *OrderCancelRequest) (*OrderCancelResponse, error)
 	// Refund an order or order line(s)
 	OrderRefund(context.Context, *OrderRefundRequest) (*OrderRefundResponse, error)
+	// Payment methods
+	PaymentAddMethod(context.Context, *PaymentAddMethodRequest) (*PaymentAddMethodResponse, error)
+	PaymentRemoveMethod(context.Context, *PaymentRemoveMethodRequest) (*PaymentRemoveMethodResponse, error)
+	PaymentMakeDefault(context.Context, *PaymentMakeDefaultRequest) (*PaymentMakeDefaultResponse, error)
+	PaymentsList(context.Context, *PaymentsListRequest) (*PaymentsListResponse, error)
 	mustEmbedUnimplementedOrdersServiceServer()
 }
 
@@ -138,6 +192,18 @@ func (UnimplementedOrdersServiceServer) OrderCancel(context.Context, *OrderCance
 }
 func (UnimplementedOrdersServiceServer) OrderRefund(context.Context, *OrderRefundRequest) (*OrderRefundResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OrderRefund not implemented")
+}
+func (UnimplementedOrdersServiceServer) PaymentAddMethod(context.Context, *PaymentAddMethodRequest) (*PaymentAddMethodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PaymentAddMethod not implemented")
+}
+func (UnimplementedOrdersServiceServer) PaymentRemoveMethod(context.Context, *PaymentRemoveMethodRequest) (*PaymentRemoveMethodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PaymentRemoveMethod not implemented")
+}
+func (UnimplementedOrdersServiceServer) PaymentMakeDefault(context.Context, *PaymentMakeDefaultRequest) (*PaymentMakeDefaultResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PaymentMakeDefault not implemented")
+}
+func (UnimplementedOrdersServiceServer) PaymentsList(context.Context, *PaymentsListRequest) (*PaymentsListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PaymentsList not implemented")
 }
 func (UnimplementedOrdersServiceServer) mustEmbedUnimplementedOrdersServiceServer() {}
 func (UnimplementedOrdersServiceServer) testEmbeddedByValue()                       {}
@@ -250,6 +316,78 @@ func _OrdersService_OrderRefund_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OrdersService_PaymentAddMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PaymentAddMethodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrdersServiceServer).PaymentAddMethod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OrdersService_PaymentAddMethod_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrdersServiceServer).PaymentAddMethod(ctx, req.(*PaymentAddMethodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OrdersService_PaymentRemoveMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PaymentRemoveMethodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrdersServiceServer).PaymentRemoveMethod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OrdersService_PaymentRemoveMethod_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrdersServiceServer).PaymentRemoveMethod(ctx, req.(*PaymentRemoveMethodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OrdersService_PaymentMakeDefault_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PaymentMakeDefaultRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrdersServiceServer).PaymentMakeDefault(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OrdersService_PaymentMakeDefault_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrdersServiceServer).PaymentMakeDefault(ctx, req.(*PaymentMakeDefaultRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OrdersService_PaymentsList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PaymentsListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrdersServiceServer).PaymentsList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OrdersService_PaymentsList_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrdersServiceServer).PaymentsList(ctx, req.(*PaymentsListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OrdersService_ServiceDesc is the grpc.ServiceDesc for OrdersService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -276,6 +414,22 @@ var OrdersService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "OrderRefund",
 			Handler:    _OrdersService_OrderRefund_Handler,
+		},
+		{
+			MethodName: "PaymentAddMethod",
+			Handler:    _OrdersService_PaymentAddMethod_Handler,
+		},
+		{
+			MethodName: "PaymentRemoveMethod",
+			Handler:    _OrdersService_PaymentRemoveMethod_Handler,
+		},
+		{
+			MethodName: "PaymentMakeDefault",
+			Handler:    _OrdersService_PaymentMakeDefault_Handler,
+		},
+		{
+			MethodName: "PaymentsList",
+			Handler:    _OrdersService_PaymentsList_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

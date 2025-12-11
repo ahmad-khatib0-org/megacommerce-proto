@@ -8,6 +8,7 @@ from orders.v1 import order_create_pb2 as orders_dot_v1_dot_order__create__pb2
 from orders.v1 import order_get_pb2 as orders_dot_v1_dot_order__get__pb2
 from orders.v1 import order_refund_pb2 as orders_dot_v1_dot_order__refund__pb2
 from orders.v1 import orders_list_pb2 as orders_dot_v1_dot_orders__list__pb2
+from orders.v1 import payment_method_pb2 as orders_dot_v1_dot_payment__method__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -63,6 +64,26 @@ class OrdersServiceStub(object):
                 request_serializer=orders_dot_v1_dot_order__refund__pb2.OrderRefundRequest.SerializeToString,
                 response_deserializer=orders_dot_v1_dot_order__refund__pb2.OrderRefundResponse.FromString,
                 _registered_method=True)
+        self.PaymentAddMethod = channel.unary_unary(
+                '/orders.v1.OrdersService/PaymentAddMethod',
+                request_serializer=orders_dot_v1_dot_payment__method__pb2.PaymentAddMethodRequest.SerializeToString,
+                response_deserializer=orders_dot_v1_dot_payment__method__pb2.PaymentAddMethodResponse.FromString,
+                _registered_method=True)
+        self.PaymentRemoveMethod = channel.unary_unary(
+                '/orders.v1.OrdersService/PaymentRemoveMethod',
+                request_serializer=orders_dot_v1_dot_payment__method__pb2.PaymentRemoveMethodRequest.SerializeToString,
+                response_deserializer=orders_dot_v1_dot_payment__method__pb2.PaymentRemoveMethodResponse.FromString,
+                _registered_method=True)
+        self.PaymentMakeDefault = channel.unary_unary(
+                '/orders.v1.OrdersService/PaymentMakeDefault',
+                request_serializer=orders_dot_v1_dot_payment__method__pb2.PaymentMakeDefaultRequest.SerializeToString,
+                response_deserializer=orders_dot_v1_dot_payment__method__pb2.PaymentMakeDefaultResponse.FromString,
+                _registered_method=True)
+        self.PaymentsList = channel.unary_unary(
+                '/orders.v1.OrdersService/PaymentsList',
+                request_serializer=orders_dot_v1_dot_payment__method__pb2.PaymentsListRequest.SerializeToString,
+                response_deserializer=orders_dot_v1_dot_payment__method__pb2.PaymentsListResponse.FromString,
+                _registered_method=True)
 
 
 class OrdersServiceServicer(object):
@@ -103,6 +124,31 @@ class OrdersServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PaymentAddMethod(self, request, context):
+        """Payment methods
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PaymentRemoveMethod(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PaymentMakeDefault(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PaymentsList(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_OrdersServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -130,6 +176,26 @@ def add_OrdersServiceServicer_to_server(servicer, server):
                     servicer.OrderRefund,
                     request_deserializer=orders_dot_v1_dot_order__refund__pb2.OrderRefundRequest.FromString,
                     response_serializer=orders_dot_v1_dot_order__refund__pb2.OrderRefundResponse.SerializeToString,
+            ),
+            'PaymentAddMethod': grpc.unary_unary_rpc_method_handler(
+                    servicer.PaymentAddMethod,
+                    request_deserializer=orders_dot_v1_dot_payment__method__pb2.PaymentAddMethodRequest.FromString,
+                    response_serializer=orders_dot_v1_dot_payment__method__pb2.PaymentAddMethodResponse.SerializeToString,
+            ),
+            'PaymentRemoveMethod': grpc.unary_unary_rpc_method_handler(
+                    servicer.PaymentRemoveMethod,
+                    request_deserializer=orders_dot_v1_dot_payment__method__pb2.PaymentRemoveMethodRequest.FromString,
+                    response_serializer=orders_dot_v1_dot_payment__method__pb2.PaymentRemoveMethodResponse.SerializeToString,
+            ),
+            'PaymentMakeDefault': grpc.unary_unary_rpc_method_handler(
+                    servicer.PaymentMakeDefault,
+                    request_deserializer=orders_dot_v1_dot_payment__method__pb2.PaymentMakeDefaultRequest.FromString,
+                    response_serializer=orders_dot_v1_dot_payment__method__pb2.PaymentMakeDefaultResponse.SerializeToString,
+            ),
+            'PaymentsList': grpc.unary_unary_rpc_method_handler(
+                    servicer.PaymentsList,
+                    request_deserializer=orders_dot_v1_dot_payment__method__pb2.PaymentsListRequest.FromString,
+                    response_serializer=orders_dot_v1_dot_payment__method__pb2.PaymentsListResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -267,6 +333,114 @@ class OrdersService(object):
             '/orders.v1.OrdersService/OrderRefund',
             orders_dot_v1_dot_order__refund__pb2.OrderRefundRequest.SerializeToString,
             orders_dot_v1_dot_order__refund__pb2.OrderRefundResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PaymentAddMethod(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/orders.v1.OrdersService/PaymentAddMethod',
+            orders_dot_v1_dot_payment__method__pb2.PaymentAddMethodRequest.SerializeToString,
+            orders_dot_v1_dot_payment__method__pb2.PaymentAddMethodResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PaymentRemoveMethod(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/orders.v1.OrdersService/PaymentRemoveMethod',
+            orders_dot_v1_dot_payment__method__pb2.PaymentRemoveMethodRequest.SerializeToString,
+            orders_dot_v1_dot_payment__method__pb2.PaymentRemoveMethodResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PaymentMakeDefault(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/orders.v1.OrdersService/PaymentMakeDefault',
+            orders_dot_v1_dot_payment__method__pb2.PaymentMakeDefaultRequest.SerializeToString,
+            orders_dot_v1_dot_payment__method__pb2.PaymentMakeDefaultResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PaymentsList(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/orders.v1.OrdersService/PaymentsList',
+            orders_dot_v1_dot_payment__method__pb2.PaymentsListRequest.SerializeToString,
+            orders_dot_v1_dot_payment__method__pb2.PaymentsListResponse.FromString,
             options,
             channel_credentials,
             insecure,

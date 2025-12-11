@@ -7,6 +7,7 @@ import "orders/v1/order_create.proto";
 import "orders/v1/order_get.proto";
 import "orders/v1/order_refund.proto";
 import "orders/v1/orders_list.proto";
+import "orders/v1/payment_method.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1";
@@ -28,4 +29,10 @@ service OrdersService {
 
   // Refund an order or order line(s)
   rpc OrderRefund(orders.v1.OrderRefundRequest) returns (orders.v1.OrderRefundResponse) {}
+
+  // Payment methods
+  rpc PaymentAddMethod(orders.v1.PaymentAddMethodRequest) returns (orders.v1.PaymentAddMethodResponse) {}
+  rpc PaymentRemoveMethod(orders.v1.PaymentRemoveMethodRequest) returns (orders.v1.PaymentRemoveMethodResponse) {}
+  rpc PaymentMakeDefault(orders.v1.PaymentMakeDefaultRequest) returns (orders.v1.PaymentMakeDefaultResponse) {}
+  rpc PaymentsList(orders.v1.PaymentsListRequest) returns (orders.v1.PaymentsListResponse) {}
 }

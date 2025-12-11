@@ -24,44 +24,64 @@ var File_orders_v1_orders_proto protoreflect.FileDescriptor
 
 const file_orders_v1_orders_proto_rawDesc = "" +
 	"\n" +
-	"\x16orders/v1/orders.proto\x12\torders.v1\x1a\x1corders/v1/order_cancel.proto\x1a\x1corders/v1/order_create.proto\x1a\x19orders/v1/order_get.proto\x1a\x1corders/v1/order_refund.proto\x1a\x1borders/v1/orders_list.proto2\x93\x03\n" +
+	"\x16orders/v1/orders.proto\x12\torders.v1\x1a\x1corders/v1/order_cancel.proto\x1a\x1corders/v1/order_create.proto\x1a\x19orders/v1/order_get.proto\x1a\x1corders/v1/order_refund.proto\x1a\x1borders/v1/orders_list.proto\x1a\x1eorders/v1/payment_method.proto2\x92\x06\n" +
 	"\rOrdersService\x12N\n" +
 	"\vOrderCreate\x12\x1d.orders.v1.OrderCreateRequest\x1a\x1e.orders.v1.OrderCreateResponse\"\x00\x12E\n" +
 	"\bOrderGet\x12\x1a.orders.v1.OrderGetRequest\x1a\x1b.orders.v1.OrderGetResponse\"\x00\x12K\n" +
 	"\n" +
 	"OrdersList\x12\x1c.orders.v1.OrdersListRequest\x1a\x1d.orders.v1.OrdersListResponse\"\x00\x12N\n" +
 	"\vOrderCancel\x12\x1d.orders.v1.OrderCancelRequest\x1a\x1e.orders.v1.OrderCancelResponse\"\x00\x12N\n" +
-	"\vOrderRefund\x12\x1d.orders.v1.OrderRefundRequest\x1a\x1e.orders.v1.OrderRefundResponse\"\x00Bq\n" +
+	"\vOrderRefund\x12\x1d.orders.v1.OrderRefundRequest\x1a\x1e.orders.v1.OrderRefundResponse\"\x00\x12]\n" +
+	"\x10PaymentAddMethod\x12\".orders.v1.PaymentAddMethodRequest\x1a#.orders.v1.PaymentAddMethodResponse\"\x00\x12f\n" +
+	"\x13PaymentRemoveMethod\x12%.orders.v1.PaymentRemoveMethodRequest\x1a&.orders.v1.PaymentRemoveMethodResponse\"\x00\x12c\n" +
+	"\x12PaymentMakeDefault\x12$.orders.v1.PaymentMakeDefaultRequest\x1a%.orders.v1.PaymentMakeDefaultResponse\"\x00\x12Q\n" +
+	"\fPaymentsList\x12\x1e.orders.v1.PaymentsListRequest\x1a\x1f.orders.v1.PaymentsListResponse\"\x00Bq\n" +
 	"\x1aorg.megacommerce.orders.v1B\vOrdersProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_orders_v1_orders_proto_goTypes = []any{
-	(*OrderCreateRequest)(nil),  // 0: orders.v1.OrderCreateRequest
-	(*OrderGetRequest)(nil),     // 1: orders.v1.OrderGetRequest
-	(*OrdersListRequest)(nil),   // 2: orders.v1.OrdersListRequest
-	(*OrderCancelRequest)(nil),  // 3: orders.v1.OrderCancelRequest
-	(*OrderRefundRequest)(nil),  // 4: orders.v1.OrderRefundRequest
-	(*OrderCreateResponse)(nil), // 5: orders.v1.OrderCreateResponse
-	(*OrderGetResponse)(nil),    // 6: orders.v1.OrderGetResponse
-	(*OrdersListResponse)(nil),  // 7: orders.v1.OrdersListResponse
-	(*OrderCancelResponse)(nil), // 8: orders.v1.OrderCancelResponse
-	(*OrderRefundResponse)(nil), // 9: orders.v1.OrderRefundResponse
+	(*OrderCreateRequest)(nil),          // 0: orders.v1.OrderCreateRequest
+	(*OrderGetRequest)(nil),             // 1: orders.v1.OrderGetRequest
+	(*OrdersListRequest)(nil),           // 2: orders.v1.OrdersListRequest
+	(*OrderCancelRequest)(nil),          // 3: orders.v1.OrderCancelRequest
+	(*OrderRefundRequest)(nil),          // 4: orders.v1.OrderRefundRequest
+	(*PaymentAddMethodRequest)(nil),     // 5: orders.v1.PaymentAddMethodRequest
+	(*PaymentRemoveMethodRequest)(nil),  // 6: orders.v1.PaymentRemoveMethodRequest
+	(*PaymentMakeDefaultRequest)(nil),   // 7: orders.v1.PaymentMakeDefaultRequest
+	(*PaymentsListRequest)(nil),         // 8: orders.v1.PaymentsListRequest
+	(*OrderCreateResponse)(nil),         // 9: orders.v1.OrderCreateResponse
+	(*OrderGetResponse)(nil),            // 10: orders.v1.OrderGetResponse
+	(*OrdersListResponse)(nil),          // 11: orders.v1.OrdersListResponse
+	(*OrderCancelResponse)(nil),         // 12: orders.v1.OrderCancelResponse
+	(*OrderRefundResponse)(nil),         // 13: orders.v1.OrderRefundResponse
+	(*PaymentAddMethodResponse)(nil),    // 14: orders.v1.PaymentAddMethodResponse
+	(*PaymentRemoveMethodResponse)(nil), // 15: orders.v1.PaymentRemoveMethodResponse
+	(*PaymentMakeDefaultResponse)(nil),  // 16: orders.v1.PaymentMakeDefaultResponse
+	(*PaymentsListResponse)(nil),        // 17: orders.v1.PaymentsListResponse
 }
 var file_orders_v1_orders_proto_depIdxs = []int32{
-	0, // 0: orders.v1.OrdersService.OrderCreate:input_type -> orders.v1.OrderCreateRequest
-	1, // 1: orders.v1.OrdersService.OrderGet:input_type -> orders.v1.OrderGetRequest
-	2, // 2: orders.v1.OrdersService.OrdersList:input_type -> orders.v1.OrdersListRequest
-	3, // 3: orders.v1.OrdersService.OrderCancel:input_type -> orders.v1.OrderCancelRequest
-	4, // 4: orders.v1.OrdersService.OrderRefund:input_type -> orders.v1.OrderRefundRequest
-	5, // 5: orders.v1.OrdersService.OrderCreate:output_type -> orders.v1.OrderCreateResponse
-	6, // 6: orders.v1.OrdersService.OrderGet:output_type -> orders.v1.OrderGetResponse
-	7, // 7: orders.v1.OrdersService.OrdersList:output_type -> orders.v1.OrdersListResponse
-	8, // 8: orders.v1.OrdersService.OrderCancel:output_type -> orders.v1.OrderCancelResponse
-	9, // 9: orders.v1.OrdersService.OrderRefund:output_type -> orders.v1.OrderRefundResponse
-	5, // [5:10] is the sub-list for method output_type
-	0, // [0:5] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0,  // 0: orders.v1.OrdersService.OrderCreate:input_type -> orders.v1.OrderCreateRequest
+	1,  // 1: orders.v1.OrdersService.OrderGet:input_type -> orders.v1.OrderGetRequest
+	2,  // 2: orders.v1.OrdersService.OrdersList:input_type -> orders.v1.OrdersListRequest
+	3,  // 3: orders.v1.OrdersService.OrderCancel:input_type -> orders.v1.OrderCancelRequest
+	4,  // 4: orders.v1.OrdersService.OrderRefund:input_type -> orders.v1.OrderRefundRequest
+	5,  // 5: orders.v1.OrdersService.PaymentAddMethod:input_type -> orders.v1.PaymentAddMethodRequest
+	6,  // 6: orders.v1.OrdersService.PaymentRemoveMethod:input_type -> orders.v1.PaymentRemoveMethodRequest
+	7,  // 7: orders.v1.OrdersService.PaymentMakeDefault:input_type -> orders.v1.PaymentMakeDefaultRequest
+	8,  // 8: orders.v1.OrdersService.PaymentsList:input_type -> orders.v1.PaymentsListRequest
+	9,  // 9: orders.v1.OrdersService.OrderCreate:output_type -> orders.v1.OrderCreateResponse
+	10, // 10: orders.v1.OrdersService.OrderGet:output_type -> orders.v1.OrderGetResponse
+	11, // 11: orders.v1.OrdersService.OrdersList:output_type -> orders.v1.OrdersListResponse
+	12, // 12: orders.v1.OrdersService.OrderCancel:output_type -> orders.v1.OrderCancelResponse
+	13, // 13: orders.v1.OrdersService.OrderRefund:output_type -> orders.v1.OrderRefundResponse
+	14, // 14: orders.v1.OrdersService.PaymentAddMethod:output_type -> orders.v1.PaymentAddMethodResponse
+	15, // 15: orders.v1.OrdersService.PaymentRemoveMethod:output_type -> orders.v1.PaymentRemoveMethodResponse
+	16, // 16: orders.v1.OrdersService.PaymentMakeDefault:output_type -> orders.v1.PaymentMakeDefaultResponse
+	17, // 17: orders.v1.OrdersService.PaymentsList:output_type -> orders.v1.PaymentsListResponse
+	9,  // [9:18] is the sub-list for method output_type
+	0,  // [0:9] is the sub-list for method input_type
+	0,  // [0:0] is the sub-list for extension type_name
+	0,  // [0:0] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_orders_v1_orders_proto_init() }
@@ -74,6 +94,7 @@ func file_orders_v1_orders_proto_init() {
 	file_orders_v1_order_get_proto_init()
 	file_orders_v1_order_refund_proto_init()
 	file_orders_v1_orders_list_proto_init()
+	file_orders_v1_payment_method_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

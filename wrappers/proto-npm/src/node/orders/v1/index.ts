@@ -8,6 +8,7 @@ import * as OrderLineItems from './order_line_items';
 import * as OrderRefund from './order_refund';
 import * as Orders from './orders';
 import * as OrdersList from './orders_list';
+import * as PaymentMethod from './payment_method';
 
 export {
   Order,
@@ -19,5 +20,6 @@ export {
   OrderLineItems,
   OrderRefund,
   Orders,
-  OrdersList
+  OrdersList,
+  PaymentMethod
 };

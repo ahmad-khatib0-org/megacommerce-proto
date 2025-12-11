@@ -12,6 +12,16 @@ import { OrderCreateRequest, OrderCreateResponse } from "./order_create.js";
 import { OrderGetRequest, OrderGetResponse } from "./order_get.js";
 import { OrderRefundRequest, OrderRefundResponse } from "./order_refund.js";
 import { OrdersListRequest, OrdersListResponse } from "./orders_list.js";
+import {
+  PaymentAddMethodRequest,
+  PaymentAddMethodResponse,
+  PaymentMakeDefaultRequest,
+  PaymentMakeDefaultResponse,
+  PaymentRemoveMethodRequest,
+  PaymentRemoveMethodResponse,
+  PaymentsListRequest,
+  PaymentsListResponse,
+} from "./payment_method.js";
 
 export const protobufPackage = "orders.v1";
 
@@ -26,6 +36,20 @@ export interface OrdersService {
   OrderCancel(request: DeepPartial<OrderCancelRequest>, metadata?: grpc.Metadata): Promise<OrderCancelResponse>;
   /** Refund an order or order line(s) */
   OrderRefund(request: DeepPartial<OrderRefundRequest>, metadata?: grpc.Metadata): Promise<OrderRefundResponse>;
+  /** Payment methods */
+  PaymentAddMethod(
+    request: DeepPartial<PaymentAddMethodRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<PaymentAddMethodResponse>;
+  PaymentRemoveMethod(
+    request: DeepPartial<PaymentRemoveMethodRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<PaymentRemoveMethodResponse>;
+  PaymentMakeDefault(
+    request: DeepPartial<PaymentMakeDefaultRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<PaymentMakeDefaultResponse>;
+  PaymentsList(request: DeepPartial<PaymentsListRequest>, metadata?: grpc.Metadata): Promise<PaymentsListResponse>;
 }
 
 export class OrdersServiceClientImpl implements OrdersService {
@@ -38,6 +62,10 @@ export class OrdersServiceClientImpl implements OrdersService {
     this.OrdersList = this.OrdersList.bind(this);
     this.OrderCancel = this.OrderCancel.bind(this);
     this.OrderRefund = this.OrderRefund.bind(this);
+    this.PaymentAddMethod = this.PaymentAddMethod.bind(this);
+    this.PaymentRemoveMethod = this.PaymentRemoveMethod.bind(this);
+    this.PaymentMakeDefault = this.PaymentMakeDefault.bind(this);
+    this.PaymentsList = this.PaymentsList.bind(this);
   }
 
   OrderCreate(request: DeepPartial<OrderCreateRequest>, metadata?: grpc.Metadata): Promise<OrderCreateResponse> {
@@ -58,6 +86,39 @@ export class OrdersServiceClientImpl implements OrdersService {
 
   OrderRefund(request: DeepPartial<OrderRefundRequest>, metadata?: grpc.Metadata): Promise<OrderRefundResponse> {
     return this.rpc.unary(OrdersServiceOrderRefundDesc, OrderRefundRequest.fromPartial(request), metadata);
+  }
+
+  PaymentAddMethod(
+    request: DeepPartial<PaymentAddMethodRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<PaymentAddMethodResponse> {
+    return this.rpc.unary(OrdersServicePaymentAddMethodDesc, PaymentAddMethodRequest.fromPartial(request), metadata);
+  }
+
+  PaymentRemoveMethod(
+    request: DeepPartial<PaymentRemoveMethodRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<PaymentRemoveMethodResponse> {
+    return this.rpc.unary(
+      OrdersServicePaymentRemoveMethodDesc,
+      PaymentRemoveMethodRequest.fromPartial(request),
+      metadata,
+    );
+  }
+
+  PaymentMakeDefault(
+    request: DeepPartial<PaymentMakeDefaultRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<PaymentMakeDefaultResponse> {
+    return this.rpc.unary(
+      OrdersServicePaymentMakeDefaultDesc,
+      PaymentMakeDefaultRequest.fromPartial(request),
+      metadata,
+    );
+  }
+
+  PaymentsList(request: DeepPartial<PaymentsListRequest>, metadata?: grpc.Metadata): Promise<PaymentsListResponse> {
+    return this.rpc.unary(OrdersServicePaymentsListDesc, PaymentsListRequest.fromPartial(request), metadata);
   }
 }
 
@@ -168,6 +229,98 @@ export const OrdersServiceOrderRefundDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = OrderRefundResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const OrdersServicePaymentAddMethodDesc: UnaryMethodDefinitionish = {
+  methodName: "PaymentAddMethod",
+  service: OrdersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return PaymentAddMethodRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = PaymentAddMethodResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const OrdersServicePaymentRemoveMethodDesc: UnaryMethodDefinitionish = {
+  methodName: "PaymentRemoveMethod",
+  service: OrdersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return PaymentRemoveMethodRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = PaymentRemoveMethodResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const OrdersServicePaymentMakeDefaultDesc: UnaryMethodDefinitionish = {
+  methodName: "PaymentMakeDefault",
+  service: OrdersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return PaymentMakeDefaultRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = PaymentMakeDefaultResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const OrdersServicePaymentsListDesc: UnaryMethodDefinitionish = {
+  methodName: "PaymentsList",
+  service: OrdersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return PaymentsListRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = PaymentsListResponse.decode(data);
       return {
         ...value,
         toObject() {

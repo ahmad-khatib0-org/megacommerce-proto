@@ -40,6 +40,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "orders/v1/order_refund.proto",
         "orders/v1/orders.proto",
         "orders/v1/orders_list.proto",
+        "orders/v1/payment_method.proto",
         "shared/v1/attachment.proto",
         "shared/v1/error.proto",
         "shared/v1/pagination.proto",

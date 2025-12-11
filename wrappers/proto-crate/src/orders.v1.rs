@@ -762,6 +762,142 @@ pub struct OrderLineListItem {
     #[prost(string, tag = "19")]
     pub product_image: ::prost::alloc::string::String,
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PaymentMethod {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub user_id: ::prost::alloc::string::String,
+    /// 'card', 'paypal', 'apple', 'google'
+    #[prost(string, tag = "3")]
+    pub r#type: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub name: ::prost::alloc::string::String,
+    /// Last 4 digits for card
+    #[prost(string, optional, tag = "5")]
+    pub last_four: ::core::option::Option<::prost::alloc::string::String>,
+    /// MM/YY format
+    #[prost(string, optional, tag = "6")]
+    pub expiry_date: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, tag = "7")]
+    pub is_default: bool,
+    #[prost(uint64, tag = "8")]
+    pub created_at: u64,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PaymentAddMethodRequest {
+    /// 'card', 'paypal', 'apple', 'google'
+    #[prost(string, tag = "1")]
+    pub r#type: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub name: ::prost::alloc::string::String,
+    /// For card
+    #[prost(string, optional, tag = "3")]
+    pub last_four: ::core::option::Option<::prost::alloc::string::String>,
+    /// MM/YY format
+    #[prost(string, optional, tag = "4")]
+    pub expiry_date: ::core::option::Option<::prost::alloc::string::String>,
+    /// Encrypted/tokenized payment info
+    #[prost(string, tag = "5")]
+    pub token: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PaymentAddMethodResponse {
+    #[prost(oneof = "payment_add_method_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<payment_add_method_response::Response>,
+}
+/// Nested message and enum types in `PaymentAddMethodResponse`.
+pub mod payment_add_method_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::PaymentMethod),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PaymentRemoveMethodRequest {
+    #[prost(string, tag = "1")]
+    pub payment_method_id: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PaymentRemoveMethodResponse {
+    #[prost(oneof = "payment_remove_method_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<payment_remove_method_response::Response>,
+}
+/// Nested message and enum types in `PaymentRemoveMethodResponse`.
+pub mod payment_remove_method_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::PaymentRemoveMethodData),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct PaymentRemoveMethodData {
+    #[prost(bool, tag = "1")]
+    pub success: bool,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PaymentMakeDefaultRequest {
+    #[prost(string, tag = "1")]
+    pub payment_method_id: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PaymentMakeDefaultResponse {
+    #[prost(oneof = "payment_make_default_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<payment_make_default_response::Response>,
+}
+/// Nested message and enum types in `PaymentMakeDefaultResponse`.
+pub mod payment_make_default_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::PaymentMethod),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct PaymentsListRequest {}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PaymentsListResponse {
+    #[prost(oneof = "payments_list_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<payments_list_response::Response>,
+}
+/// Nested message and enum types in `PaymentsListResponse`.
+pub mod payments_list_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::PaymentsListData),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PaymentsListData {
+    #[prost(message, repeated, tag = "1")]
+    pub payment_methods: ::prost::alloc::vec::Vec<PaymentMethod>,
+}
 /// Generated client implementations.
 pub mod orders_service_client {
     #![allow(
@@ -978,6 +1114,107 @@ pub mod orders_service_client {
                 .insert(GrpcMethod::new("orders.v1.OrdersService", "OrderRefund"));
             self.inner.unary(req, path, codec).await
         }
+        /// Payment methods
+        pub async fn payment_add_method(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PaymentAddMethodRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::PaymentAddMethodResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/orders.v1.OrdersService/PaymentAddMethod",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("orders.v1.OrdersService", "PaymentAddMethod"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn payment_remove_method(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PaymentRemoveMethodRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::PaymentRemoveMethodResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/orders.v1.OrdersService/PaymentRemoveMethod",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("orders.v1.OrdersService", "PaymentRemoveMethod"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn payment_make_default(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PaymentMakeDefaultRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::PaymentMakeDefaultResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/orders.v1.OrdersService/PaymentMakeDefault",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("orders.v1.OrdersService", "PaymentMakeDefault"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn payments_list(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PaymentsListRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::PaymentsListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/orders.v1.OrdersService/PaymentsList",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("orders.v1.OrdersService", "PaymentsList"));
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -1031,6 +1268,35 @@ pub mod orders_service_server {
             request: tonic::Request<super::OrderRefundRequest>,
         ) -> std::result::Result<
             tonic::Response<super::OrderRefundResponse>,
+            tonic::Status,
+        >;
+        /// Payment methods
+        async fn payment_add_method(
+            &self,
+            request: tonic::Request<super::PaymentAddMethodRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::PaymentAddMethodResponse>,
+            tonic::Status,
+        >;
+        async fn payment_remove_method(
+            &self,
+            request: tonic::Request<super::PaymentRemoveMethodRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::PaymentRemoveMethodResponse>,
+            tonic::Status,
+        >;
+        async fn payment_make_default(
+            &self,
+            request: tonic::Request<super::PaymentMakeDefaultRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::PaymentMakeDefaultResponse>,
+            tonic::Status,
+        >;
+        async fn payments_list(
+            &self,
+            request: tonic::Request<super::PaymentsListRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::PaymentsListResponse>,
             tonic::Status,
         >;
     }
@@ -1320,6 +1586,189 @@ pub mod orders_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = OrderRefundSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/orders.v1.OrdersService/PaymentAddMethod" => {
+                    #[allow(non_camel_case_types)]
+                    struct PaymentAddMethodSvc<T: OrdersService>(pub Arc<T>);
+                    impl<
+                        T: OrdersService,
+                    > tonic::server::UnaryService<super::PaymentAddMethodRequest>
+                    for PaymentAddMethodSvc<T> {
+                        type Response = super::PaymentAddMethodResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PaymentAddMethodRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as OrdersService>::payment_add_method(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = PaymentAddMethodSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/orders.v1.OrdersService/PaymentRemoveMethod" => {
+                    #[allow(non_camel_case_types)]
+                    struct PaymentRemoveMethodSvc<T: OrdersService>(pub Arc<T>);
+                    impl<
+                        T: OrdersService,
+                    > tonic::server::UnaryService<super::PaymentRemoveMethodRequest>
+                    for PaymentRemoveMethodSvc<T> {
+                        type Response = super::PaymentRemoveMethodResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PaymentRemoveMethodRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as OrdersService>::payment_remove_method(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = PaymentRemoveMethodSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/orders.v1.OrdersService/PaymentMakeDefault" => {
+                    #[allow(non_camel_case_types)]
+                    struct PaymentMakeDefaultSvc<T: OrdersService>(pub Arc<T>);
+                    impl<
+                        T: OrdersService,
+                    > tonic::server::UnaryService<super::PaymentMakeDefaultRequest>
+                    for PaymentMakeDefaultSvc<T> {
+                        type Response = super::PaymentMakeDefaultResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PaymentMakeDefaultRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as OrdersService>::payment_make_default(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = PaymentMakeDefaultSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/orders.v1.OrdersService/PaymentsList" => {
+                    #[allow(non_camel_case_types)]
+                    struct PaymentsListSvc<T: OrdersService>(pub Arc<T>);
+                    impl<
+                        T: OrdersService,
+                    > tonic::server::UnaryService<super::PaymentsListRequest>
+                    for PaymentsListSvc<T> {
+                        type Response = super::PaymentsListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PaymentsListRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as OrdersService>::payments_list(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = PaymentsListSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

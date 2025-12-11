@@ -27,9 +27,10 @@ from orders.v1 import order_create_pb2 as orders_dot_v1_dot_order__create__pb2
 from orders.v1 import order_get_pb2 as orders_dot_v1_dot_order__get__pb2
 from orders.v1 import order_refund_pb2 as orders_dot_v1_dot_order__refund__pb2
 from orders.v1 import orders_list_pb2 as orders_dot_v1_dot_orders__list__pb2
+from orders.v1 import payment_method_pb2 as orders_dot_v1_dot_payment__method__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16orders/v1/orders.proto\x12\torders.v1\x1a\x1corders/v1/order_cancel.proto\x1a\x1corders/v1/order_create.proto\x1a\x19orders/v1/order_get.proto\x1a\x1corders/v1/order_refund.proto\x1a\x1borders/v1/orders_list.proto2\x93\x03\n\rOrdersService\x12N\n\x0bOrderCreate\x12\x1d.orders.v1.OrderCreateRequest\x1a\x1e.orders.v1.OrderCreateResponse\"\x00\x12\x45\n\x08OrderGet\x12\x1a.orders.v1.OrderGetRequest\x1a\x1b.orders.v1.OrderGetResponse\"\x00\x12K\n\nOrdersList\x12\x1c.orders.v1.OrdersListRequest\x1a\x1d.orders.v1.OrdersListResponse\"\x00\x12N\n\x0bOrderCancel\x12\x1d.orders.v1.OrderCancelRequest\x1a\x1e.orders.v1.OrderCancelResponse\"\x00\x12N\n\x0bOrderRefund\x12\x1d.orders.v1.OrderRefundRequest\x1a\x1e.orders.v1.OrderRefundResponse\"\x00\x42q\n\x1aorg.megacommerce.orders.v1B\x0bOrdersProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16orders/v1/orders.proto\x12\torders.v1\x1a\x1corders/v1/order_cancel.proto\x1a\x1corders/v1/order_create.proto\x1a\x19orders/v1/order_get.proto\x1a\x1corders/v1/order_refund.proto\x1a\x1borders/v1/orders_list.proto\x1a\x1eorders/v1/payment_method.proto2\x92\x06\n\rOrdersService\x12N\n\x0bOrderCreate\x12\x1d.orders.v1.OrderCreateRequest\x1a\x1e.orders.v1.OrderCreateResponse\"\x00\x12\x45\n\x08OrderGet\x12\x1a.orders.v1.OrderGetRequest\x1a\x1b.orders.v1.OrderGetResponse\"\x00\x12K\n\nOrdersList\x12\x1c.orders.v1.OrdersListRequest\x1a\x1d.orders.v1.OrdersListResponse\"\x00\x12N\n\x0bOrderCancel\x12\x1d.orders.v1.OrderCancelRequest\x1a\x1e.orders.v1.OrderCancelResponse\"\x00\x12N\n\x0bOrderRefund\x12\x1d.orders.v1.OrderRefundRequest\x1a\x1e.orders.v1.OrderRefundResponse\"\x00\x12]\n\x10PaymentAddMethod\x12\".orders.v1.PaymentAddMethodRequest\x1a#.orders.v1.PaymentAddMethodResponse\"\x00\x12\x66\n\x13PaymentRemoveMethod\x12%.orders.v1.PaymentRemoveMethodRequest\x1a&.orders.v1.PaymentRemoveMethodResponse\"\x00\x12\x63\n\x12PaymentMakeDefault\x12$.orders.v1.PaymentMakeDefaultRequest\x1a%.orders.v1.PaymentMakeDefaultResponse\"\x00\x12Q\n\x0cPaymentsList\x12\x1e.orders.v1.PaymentsListRequest\x1a\x1f.orders.v1.PaymentsListResponse\"\x00\x42q\n\x1aorg.megacommerce.orders.v1B\x0bOrdersProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,6 +38,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'orders.v1.orders_pb2', _glo
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.orders.v1B\013OrdersProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\370\001\001'
-  _globals['_ORDERSSERVICE']._serialized_start=184
-  _globals['_ORDERSSERVICE']._serialized_end=587
+  _globals['_ORDERSSERVICE']._serialized_start=216
+  _globals['_ORDERSSERVICE']._serialized_end=1002
 # @@protoc_insertion_point(module_scope)

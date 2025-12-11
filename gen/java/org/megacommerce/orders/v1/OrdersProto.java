@@ -39,20 +39,31 @@ public final class OrdersProto {
       "ers/v1/order_cancel.proto\032\034orders/v1/ord" +
       "er_create.proto\032\031orders/v1/order_get.pro" +
       "to\032\034orders/v1/order_refund.proto\032\033orders" +
-      "/v1/orders_list.proto2\223\003\n\rOrdersService\022" +
-      "N\n\013OrderCreate\022\035.orders.v1.OrderCreateRe" +
-      "quest\032\036.orders.v1.OrderCreateResponse\"\000\022" +
-      "E\n\010OrderGet\022\032.orders.v1.OrderGetRequest\032" +
-      "\033.orders.v1.OrderGetResponse\"\000\022K\n\nOrders" +
-      "List\022\034.orders.v1.OrdersListRequest\032\035.ord" +
-      "ers.v1.OrdersListResponse\"\000\022N\n\013OrderCanc" +
-      "el\022\035.orders.v1.OrderCancelRequest\032\036.orde" +
-      "rs.v1.OrderCancelResponse\"\000\022N\n\013OrderRefu" +
-      "nd\022\035.orders.v1.OrderRefundRequest\032\036.orde" +
-      "rs.v1.OrderRefundResponse\"\000Bq\n\032org.megac" +
-      "ommerce.orders.v1B\013OrdersProtoZCgithub.c" +
-      "om/ahmad-khatib0-org/megacommerce-proto/" +
-      "gen/go/orders/v1;v1\370\001\001b\006proto3"
+      "/v1/orders_list.proto\032\036orders/v1/payment" +
+      "_method.proto2\222\006\n\rOrdersService\022N\n\013Order" +
+      "Create\022\035.orders.v1.OrderCreateRequest\032\036." +
+      "orders.v1.OrderCreateResponse\"\000\022E\n\010Order" +
+      "Get\022\032.orders.v1.OrderGetRequest\032\033.orders" +
+      ".v1.OrderGetResponse\"\000\022K\n\nOrdersList\022\034.o" +
+      "rders.v1.OrdersListRequest\032\035.orders.v1.O" +
+      "rdersListResponse\"\000\022N\n\013OrderCancel\022\035.ord" +
+      "ers.v1.OrderCancelRequest\032\036.orders.v1.Or" +
+      "derCancelResponse\"\000\022N\n\013OrderRefund\022\035.ord" +
+      "ers.v1.OrderRefundRequest\032\036.orders.v1.Or" +
+      "derRefundResponse\"\000\022]\n\020PaymentAddMethod\022" +
+      "\".orders.v1.PaymentAddMethodRequest\032#.or" +
+      "ders.v1.PaymentAddMethodResponse\"\000\022f\n\023Pa" +
+      "ymentRemoveMethod\022%.orders.v1.PaymentRem" +
+      "oveMethodRequest\032&.orders.v1.PaymentRemo" +
+      "veMethodResponse\"\000\022c\n\022PaymentMakeDefault" +
+      "\022$.orders.v1.PaymentMakeDefaultRequest\032%" +
+      ".orders.v1.PaymentMakeDefaultResponse\"\000\022" +
+      "Q\n\014PaymentsList\022\036.orders.v1.PaymentsList" +
+      "Request\032\037.orders.v1.PaymentsListResponse" +
+      "\"\000Bq\n\032org.megacommerce.orders.v1B\013Orders" +
+      "ProtoZCgithub.com/ahmad-khatib0-org/mega" +
+      "commerce-proto/gen/go/orders/v1;v1\370\001\001b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -62,6 +73,7 @@ public final class OrdersProto {
           org.megacommerce.orders.v1.OrderGetProto.getDescriptor(),
           org.megacommerce.orders.v1.OrderRefundProto.getDescriptor(),
           org.megacommerce.orders.v1.OrdersListProto.getDescriptor(),
+          org.megacommerce.orders.v1.PaymentMethodProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.orders.v1.OrderCancelProto.getDescriptor();
@@ -69,6 +81,7 @@ public final class OrdersProto {
     org.megacommerce.orders.v1.OrderGetProto.getDescriptor();
     org.megacommerce.orders.v1.OrderRefundProto.getDescriptor();
     org.megacommerce.orders.v1.OrdersListProto.getDescriptor();
+    org.megacommerce.orders.v1.PaymentMethodProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

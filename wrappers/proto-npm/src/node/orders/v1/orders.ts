@@ -22,6 +22,16 @@ import { OrderCreateRequest, OrderCreateResponse } from "./order_create";
 import { OrderGetRequest, OrderGetResponse } from "./order_get";
 import { OrderRefundRequest, OrderRefundResponse } from "./order_refund";
 import { OrdersListRequest, OrdersListResponse } from "./orders_list";
+import {
+  PaymentAddMethodRequest,
+  PaymentAddMethodResponse,
+  PaymentMakeDefaultRequest,
+  PaymentMakeDefaultResponse,
+  PaymentRemoveMethodRequest,
+  PaymentRemoveMethodResponse,
+  PaymentsListRequest,
+  PaymentsListResponse,
+} from "./payment_method";
 
 export const protobufPackage = "orders.v1";
 
@@ -77,6 +87,50 @@ export const OrdersServiceService = {
     responseSerialize: (value: OrderRefundResponse): Buffer => Buffer.from(OrderRefundResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): OrderRefundResponse => OrderRefundResponse.decode(value),
   },
+  /** Payment methods */
+  paymentAddMethod: {
+    path: "/orders.v1.OrdersService/PaymentAddMethod",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: PaymentAddMethodRequest): Buffer =>
+      Buffer.from(PaymentAddMethodRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): PaymentAddMethodRequest => PaymentAddMethodRequest.decode(value),
+    responseSerialize: (value: PaymentAddMethodResponse): Buffer =>
+      Buffer.from(PaymentAddMethodResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): PaymentAddMethodResponse => PaymentAddMethodResponse.decode(value),
+  },
+  paymentRemoveMethod: {
+    path: "/orders.v1.OrdersService/PaymentRemoveMethod",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: PaymentRemoveMethodRequest): Buffer =>
+      Buffer.from(PaymentRemoveMethodRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): PaymentRemoveMethodRequest => PaymentRemoveMethodRequest.decode(value),
+    responseSerialize: (value: PaymentRemoveMethodResponse): Buffer =>
+      Buffer.from(PaymentRemoveMethodResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): PaymentRemoveMethodResponse => PaymentRemoveMethodResponse.decode(value),
+  },
+  paymentMakeDefault: {
+    path: "/orders.v1.OrdersService/PaymentMakeDefault",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: PaymentMakeDefaultRequest): Buffer =>
+      Buffer.from(PaymentMakeDefaultRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): PaymentMakeDefaultRequest => PaymentMakeDefaultRequest.decode(value),
+    responseSerialize: (value: PaymentMakeDefaultResponse): Buffer =>
+      Buffer.from(PaymentMakeDefaultResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): PaymentMakeDefaultResponse => PaymentMakeDefaultResponse.decode(value),
+  },
+  paymentsList: {
+    path: "/orders.v1.OrdersService/PaymentsList",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: PaymentsListRequest): Buffer => Buffer.from(PaymentsListRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): PaymentsListRequest => PaymentsListRequest.decode(value),
+    responseSerialize: (value: PaymentsListResponse): Buffer =>
+      Buffer.from(PaymentsListResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): PaymentsListResponse => PaymentsListResponse.decode(value),
+  },
 } as const;
 
 export interface OrdersServiceServer extends UntypedServiceImplementation {
@@ -90,6 +144,11 @@ export interface OrdersServiceServer extends UntypedServiceImplementation {
   orderCancel: handleUnaryCall<OrderCancelRequest, OrderCancelResponse>;
   /** Refund an order or order line(s) */
   orderRefund: handleUnaryCall<OrderRefundRequest, OrderRefundResponse>;
+  /** Payment methods */
+  paymentAddMethod: handleUnaryCall<PaymentAddMethodRequest, PaymentAddMethodResponse>;
+  paymentRemoveMethod: handleUnaryCall<PaymentRemoveMethodRequest, PaymentRemoveMethodResponse>;
+  paymentMakeDefault: handleUnaryCall<PaymentMakeDefaultRequest, PaymentMakeDefaultResponse>;
+  paymentsList: handleUnaryCall<PaymentsListRequest, PaymentsListResponse>;
 }
 
 export interface OrdersServiceClient extends Client {
@@ -172,6 +231,67 @@ export interface OrdersServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: OrderRefundResponse) => void,
+  ): ClientUnaryCall;
+  /** Payment methods */
+  paymentAddMethod(
+    request: PaymentAddMethodRequest,
+    callback: (error: ServiceError | null, response: PaymentAddMethodResponse) => void,
+  ): ClientUnaryCall;
+  paymentAddMethod(
+    request: PaymentAddMethodRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: PaymentAddMethodResponse) => void,
+  ): ClientUnaryCall;
+  paymentAddMethod(
+    request: PaymentAddMethodRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: PaymentAddMethodResponse) => void,
+  ): ClientUnaryCall;
+  paymentRemoveMethod(
+    request: PaymentRemoveMethodRequest,
+    callback: (error: ServiceError | null, response: PaymentRemoveMethodResponse) => void,
+  ): ClientUnaryCall;
+  paymentRemoveMethod(
+    request: PaymentRemoveMethodRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: PaymentRemoveMethodResponse) => void,
+  ): ClientUnaryCall;
+  paymentRemoveMethod(
+    request: PaymentRemoveMethodRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: PaymentRemoveMethodResponse) => void,
+  ): ClientUnaryCall;
+  paymentMakeDefault(
+    request: PaymentMakeDefaultRequest,
+    callback: (error: ServiceError | null, response: PaymentMakeDefaultResponse) => void,
+  ): ClientUnaryCall;
+  paymentMakeDefault(
+    request: PaymentMakeDefaultRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: PaymentMakeDefaultResponse) => void,
+  ): ClientUnaryCall;
+  paymentMakeDefault(
+    request: PaymentMakeDefaultRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: PaymentMakeDefaultResponse) => void,
+  ): ClientUnaryCall;
+  paymentsList(
+    request: PaymentsListRequest,
+    callback: (error: ServiceError | null, response: PaymentsListResponse) => void,
+  ): ClientUnaryCall;
+  paymentsList(
+    request: PaymentsListRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: PaymentsListResponse) => void,
+  ): ClientUnaryCall;
+  paymentsList(
+    request: PaymentsListRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: PaymentsListResponse) => void,
   ): ClientUnaryCall;
 }
 
