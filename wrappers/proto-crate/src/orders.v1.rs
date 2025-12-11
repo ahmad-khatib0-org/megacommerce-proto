@@ -711,7 +711,56 @@ pub struct OrderListItem {
     pub created_at: u64,
     /// order line items with details
     #[prost(message, repeated, tag = "8")]
-    pub items: ::prost::alloc::vec::Vec<OrderLineItem>,
+    pub items: ::prost::alloc::vec::Vec<OrderLineListItem>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct OrderLineListItem {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub order_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub product_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub variant_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "5")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(int32, tag = "6")]
+    pub quantity: i32,
+    /// Price fields in cents
+    ///
+    /// charged price per unit at order time
+    #[prost(uint64, tag = "9")]
+    pub unit_price_cents: u64,
+    /// optional
+    #[prost(uint64, optional, tag = "10")]
+    pub list_price_cents: ::core::option::Option<u64>,
+    /// optional
+    #[prost(uint64, optional, tag = "11")]
+    pub sale_price_cents: ::core::option::Option<u64>,
+    /// total discount applied to this line (all units)
+    #[prost(uint64, optional, tag = "12")]
+    pub discount_cents: ::core::option::Option<u64>,
+    /// tax for this line (total)
+    #[prost(uint64, tag = "13")]
+    pub tax_cents: u64,
+    /// shipping for this line (total)
+    #[prost(uint64, tag = "14")]
+    pub shipping_cents: u64,
+    /// (quantity * unit_price) - discount + tax + shipping_cents
+    #[prost(uint64, tag = "15")]
+    pub total_cents: u64,
+    /// array of applied offer/promotion ids
+    #[prost(string, repeated, tag = "16")]
+    pub applied_offer_ids: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    #[prost(string, tag = "17")]
+    pub status: ::prost::alloc::string::String,
+    /// Unix timestamp in milliseconds
+    #[prost(uint64, optional, tag = "18")]
+    pub estimated_delivery_date: ::core::option::Option<u64>,
+    #[prost(string, tag = "19")]
+    pub product_image: ::prost::alloc::string::String,
 }
 /// Generated client implementations.
 pub mod orders_service_client {

@@ -58,6 +58,10 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_orde
 }  // extern "C"
 namespace orders {
 namespace v1 {
+class OrderLineListItem;
+struct OrderLineListItemDefaultTypeInternal;
+extern OrderLineListItemDefaultTypeInternal _OrderLineListItem_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull OrderLineListItem_class_data_;
 class OrderListItem;
 struct OrderListItemDefaultTypeInternal;
 extern OrderListItemDefaultTypeInternal _OrderListItem_default_instance_;
@@ -89,30 +93,30 @@ namespace v1 {
 
 // -------------------------------------------------------------------
 
-class OrdersListRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:orders.v1.OrdersListRequest) */ {
+class OrderLineListItem final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:orders.v1.OrderLineListItem) */ {
  public:
-  inline OrdersListRequest() : OrdersListRequest(nullptr) {}
-  ~OrdersListRequest() PROTOBUF_FINAL;
+  inline OrderLineListItem() : OrderLineListItem(nullptr) {}
+  ~OrderLineListItem() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(OrdersListRequest* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+  void operator delete(OrderLineListItem* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(OrdersListRequest));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(OrderLineListItem));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR OrdersListRequest(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR OrderLineListItem(::google::protobuf::internal::ConstantInitialized);
 
-  inline OrdersListRequest(const OrdersListRequest& from) : OrdersListRequest(nullptr, from) {}
-  inline OrdersListRequest(OrdersListRequest&& from) noexcept
-      : OrdersListRequest(nullptr, ::std::move(from)) {}
-  inline OrdersListRequest& operator=(const OrdersListRequest& from) {
+  inline OrderLineListItem(const OrderLineListItem& from) : OrderLineListItem(nullptr, from) {}
+  inline OrderLineListItem(OrderLineListItem&& from) noexcept
+      : OrderLineListItem(nullptr, ::std::move(from)) {}
+  inline OrderLineListItem& operator=(const OrderLineListItem& from) {
     CopyFrom(from);
     return *this;
   }
-  inline OrdersListRequest& operator=(OrdersListRequest&& from) noexcept {
+  inline OrderLineListItem& operator=(OrderLineListItem&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -140,13 +144,13 @@ class OrdersListRequest final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const OrdersListRequest& default_instance() {
-    return *reinterpret_cast<const OrdersListRequest*>(
-        &_OrdersListRequest_default_instance_);
+  static const OrderLineListItem& default_instance() {
+    return *reinterpret_cast<const OrderLineListItem*>(
+        &_OrderLineListItem_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 0;
-  friend void swap(OrdersListRequest& a, OrdersListRequest& b) { a.Swap(&b); }
-  inline void Swap(OrdersListRequest* PROTOBUF_NONNULL other) {
+  static constexpr int kIndexInFileMessages = 4;
+  friend void swap(OrderLineListItem& a, OrderLineListItem& b) { a.Swap(&b); }
+  inline void Swap(OrderLineListItem* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -154,7 +158,7 @@ class OrdersListRequest final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(OrdersListRequest* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(OrderLineListItem* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -162,13 +166,13 @@ class OrdersListRequest final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  OrdersListRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<OrdersListRequest>(arena);
+  OrderLineListItem* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<OrderLineListItem>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const OrdersListRequest& from);
+  void CopyFrom(const OrderLineListItem& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const OrdersListRequest& from) { OrdersListRequest::MergeImpl(*this, from); }
+  void MergeFrom(const OrderLineListItem& from) { OrderLineListItem::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -204,18 +208,18 @@ class OrdersListRequest final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(OrdersListRequest* PROTOBUF_NONNULL other);
+  void InternalSwap(OrderLineListItem* PROTOBUF_NONNULL other);
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "orders.v1.OrdersListRequest"; }
+  static ::absl::string_view FullMessageName() { return "orders.v1.OrderLineListItem"; }
 
  protected:
-  explicit OrdersListRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  OrdersListRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const OrdersListRequest& from);
-  OrdersListRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, OrdersListRequest&& from) noexcept
-      : OrdersListRequest(arena) {
+  explicit OrderLineListItem(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  OrderLineListItem(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const OrderLineListItem& from);
+  OrderLineListItem(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, OrderLineListItem&& from) noexcept
+      : OrderLineListItem(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -232,52 +236,251 @@ class OrdersListRequest final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kStatusFieldNumber = 2,
-    kPaginationFieldNumber = 1,
+    kAppliedOfferIdsFieldNumber = 16,
+    kIdFieldNumber = 1,
+    kOrderIdFieldNumber = 2,
+    kProductIdFieldNumber = 3,
+    kVariantIdFieldNumber = 4,
+    kTitleFieldNumber = 5,
+    kStatusFieldNumber = 17,
+    kProductImageFieldNumber = 19,
+    kUnitPriceCentsFieldNumber = 9,
+    kListPriceCentsFieldNumber = 10,
+    kSalePriceCentsFieldNumber = 11,
+    kDiscountCentsFieldNumber = 12,
+    kTaxCentsFieldNumber = 13,
+    kShippingCentsFieldNumber = 14,
+    kTotalCentsFieldNumber = 15,
+    kEstimatedDeliveryDateFieldNumber = 18,
+    kQuantityFieldNumber = 6,
   };
-  // repeated string status = 2 [json_name = "status"];
-  int status_size() const;
+  // repeated string applied_offer_ids = 16 [json_name = "appliedOfferIds"];
+  int applied_offer_ids_size() const;
   private:
-  int _internal_status_size() const;
+  int _internal_applied_offer_ids_size() const;
 
   public:
+  void clear_applied_offer_ids() ;
+  const ::std::string& applied_offer_ids(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_applied_offer_ids(int index);
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_applied_offer_ids(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_applied_offer_ids();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_applied_offer_ids(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& applied_offer_ids() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_applied_offer_ids();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_applied_offer_ids() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_applied_offer_ids();
+
+  public:
+  // string id = 1 [json_name = "id"];
+  void clear_id() ;
+  const ::std::string& id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_id();
+  void set_allocated_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
+
+  public:
+  // string order_id = 2 [json_name = "orderId"];
+  void clear_order_id() ;
+  const ::std::string& order_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_order_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_order_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_order_id();
+  void set_allocated_order_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_order_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_order_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_order_id();
+
+  public:
+  // string product_id = 3 [json_name = "productId"];
+  void clear_product_id() ;
+  const ::std::string& product_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_product_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_product_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_product_id();
+  void set_allocated_product_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_product_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_product_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_product_id();
+
+  public:
+  // string variant_id = 4 [json_name = "variantId"];
+  void clear_variant_id() ;
+  const ::std::string& variant_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_variant_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_variant_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_variant_id();
+  void set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_variant_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_variant_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_variant_id();
+
+  public:
+  // string title = 5 [json_name = "title"];
+  void clear_title() ;
+  const ::std::string& title() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_title(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_title();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_title();
+  void set_allocated_title(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_title() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_title(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_title();
+
+  public:
+  // string status = 17 [json_name = "status"];
   void clear_status() ;
-  const ::std::string& status(int index) const;
-  ::std::string* PROTOBUF_NONNULL mutable_status(int index);
+  const ::std::string& status() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_status(int index, Arg_&& value, Args_... args);
-  ::std::string* PROTOBUF_NONNULL add_status();
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void add_status(Arg_&& value, Args_... args);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& status() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_status();
+  void set_status(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_status();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_status();
+  void set_allocated_status(::std::string* PROTOBUF_NULLABLE value);
 
   private:
-  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_status() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_status();
+  const ::std::string& _internal_status() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_status(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_status();
 
   public:
-  // .shared.v1.PaginationRequest pagination = 1 [json_name = "pagination"];
-  bool has_pagination() const;
-  void clear_pagination() ;
-  const ::shared::v1::PaginationRequest& pagination() const;
-  [[nodiscard]] ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE release_pagination();
-  ::shared::v1::PaginationRequest* PROTOBUF_NONNULL mutable_pagination();
-  void set_allocated_pagination(::shared::v1::PaginationRequest* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_pagination(::shared::v1::PaginationRequest* PROTOBUF_NULLABLE value);
-  ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE unsafe_arena_release_pagination();
+  // string product_image = 19 [json_name = "productImage"];
+  void clear_product_image() ;
+  const ::std::string& product_image() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_product_image(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_product_image();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_product_image();
+  void set_allocated_product_image(::std::string* PROTOBUF_NULLABLE value);
 
   private:
-  const ::shared::v1::PaginationRequest& _internal_pagination() const;
-  ::shared::v1::PaginationRequest* PROTOBUF_NONNULL _internal_mutable_pagination();
+  const ::std::string& _internal_product_image() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_product_image(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_product_image();
 
   public:
-  // @@protoc_insertion_point(class_scope:orders.v1.OrdersListRequest)
+  // uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];
+  void clear_unit_price_cents() ;
+  ::uint64_t unit_price_cents() const;
+  void set_unit_price_cents(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_unit_price_cents() const;
+  void _internal_set_unit_price_cents(::uint64_t value);
+
+  public:
+  // optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];
+  bool has_list_price_cents() const;
+  void clear_list_price_cents() ;
+  ::uint64_t list_price_cents() const;
+  void set_list_price_cents(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_list_price_cents() const;
+  void _internal_set_list_price_cents(::uint64_t value);
+
+  public:
+  // optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];
+  bool has_sale_price_cents() const;
+  void clear_sale_price_cents() ;
+  ::uint64_t sale_price_cents() const;
+  void set_sale_price_cents(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_sale_price_cents() const;
+  void _internal_set_sale_price_cents(::uint64_t value);
+
+  public:
+  // optional uint64 discount_cents = 12 [json_name = "discountCents"];
+  bool has_discount_cents() const;
+  void clear_discount_cents() ;
+  ::uint64_t discount_cents() const;
+  void set_discount_cents(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_discount_cents() const;
+  void _internal_set_discount_cents(::uint64_t value);
+
+  public:
+  // uint64 tax_cents = 13 [json_name = "taxCents"];
+  void clear_tax_cents() ;
+  ::uint64_t tax_cents() const;
+  void set_tax_cents(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_tax_cents() const;
+  void _internal_set_tax_cents(::uint64_t value);
+
+  public:
+  // uint64 shipping_cents = 14 [json_name = "shippingCents"];
+  void clear_shipping_cents() ;
+  ::uint64_t shipping_cents() const;
+  void set_shipping_cents(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_shipping_cents() const;
+  void _internal_set_shipping_cents(::uint64_t value);
+
+  public:
+  // uint64 total_cents = 15 [json_name = "totalCents"];
+  void clear_total_cents() ;
+  ::uint64_t total_cents() const;
+  void set_total_cents(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_total_cents() const;
+  void _internal_set_total_cents(::uint64_t value);
+
+  public:
+  // optional uint64 estimated_delivery_date = 18 [json_name = "estimatedDeliveryDate"];
+  bool has_estimated_delivery_date() const;
+  void clear_estimated_delivery_date() ;
+  ::uint64_t estimated_delivery_date() const;
+  void set_estimated_delivery_date(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_estimated_delivery_date() const;
+  void _internal_set_estimated_delivery_date(::uint64_t value);
+
+  public:
+  // int32 quantity = 6 [json_name = "quantity"];
+  void clear_quantity() ;
+  ::int32_t quantity() const;
+  void set_quantity(::int32_t value);
+
+  private:
+  ::int32_t _internal_quantity() const;
+  void _internal_set_quantity(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:orders.v1.OrderLineListItem)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   1, 42,
+  static const ::google::protobuf::internal::TcParseTable<5, 17,
+                                   0, 123,
                                    2>
       _table_;
 
@@ -295,18 +498,33 @@ class OrdersListRequest final : public ::google::protobuf::Message
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const OrdersListRequest& from_msg);
+        const OrderLineListItem& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::RepeatedPtrField<::std::string> status_;
-    ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE pagination_;
+    ::google::protobuf::RepeatedPtrField<::std::string> applied_offer_ids_;
+    ::google::protobuf::internal::ArenaStringPtr id_;
+    ::google::protobuf::internal::ArenaStringPtr order_id_;
+    ::google::protobuf::internal::ArenaStringPtr product_id_;
+    ::google::protobuf::internal::ArenaStringPtr variant_id_;
+    ::google::protobuf::internal::ArenaStringPtr title_;
+    ::google::protobuf::internal::ArenaStringPtr status_;
+    ::google::protobuf::internal::ArenaStringPtr product_image_;
+    ::uint64_t unit_price_cents_;
+    ::uint64_t list_price_cents_;
+    ::uint64_t sale_price_cents_;
+    ::uint64_t discount_cents_;
+    ::uint64_t tax_cents_;
+    ::uint64_t shipping_cents_;
+    ::uint64_t total_cents_;
+    ::uint64_t estimated_delivery_date_;
+    ::int32_t quantity_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_orders_2fv1_2forders_5flist_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull OrdersListRequest_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull OrderLineListItem_class_data_;
 // -------------------------------------------------------------------
 
 class OrderListItem final : public ::google::protobuf::Message
@@ -461,23 +679,23 @@ class OrderListItem final : public ::google::protobuf::Message
     kCreatedAtFieldNumber = 7,
     kInventoryReservationStatusFieldNumber = 5,
   };
-  // repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];
+  // repeated .orders.v1.OrderLineListItem items = 8 [json_name = "items"];
   int items_size() const;
   private:
   int _internal_items_size() const;
 
   public:
   void clear_items() ;
-  ::orders::v1::OrderLineItem* PROTOBUF_NONNULL mutable_items(int index);
-  ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineItem>* PROTOBUF_NONNULL mutable_items();
+  ::orders::v1::OrderLineListItem* PROTOBUF_NONNULL mutable_items(int index);
+  ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineListItem>* PROTOBUF_NONNULL mutable_items();
 
   private:
-  const ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineItem>& _internal_items() const;
-  ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineItem>* PROTOBUF_NONNULL _internal_mutable_items();
+  const ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineListItem>& _internal_items() const;
+  ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineListItem>* PROTOBUF_NONNULL _internal_mutable_items();
   public:
-  const ::orders::v1::OrderLineItem& items(int index) const;
-  ::orders::v1::OrderLineItem* PROTOBUF_NONNULL add_items();
-  const ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineItem>& items() const;
+  const ::orders::v1::OrderLineListItem& items(int index) const;
+  ::orders::v1::OrderLineListItem* PROTOBUF_NONNULL add_items();
+  const ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineListItem>& items() const;
   // string id = 1 [json_name = "id"];
   void clear_id() ;
   const ::std::string& id() const;
@@ -589,7 +807,7 @@ class OrderListItem final : public ::google::protobuf::Message
         const OrderListItem& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::RepeatedPtrField< ::orders::v1::OrderLineItem > items_;
+    ::google::protobuf::RepeatedPtrField< ::orders::v1::OrderLineListItem > items_;
     ::google::protobuf::internal::ArenaStringPtr id_;
     ::google::protobuf::internal::ArenaStringPtr currency_code_;
     ::google::protobuf::internal::ArenaStringPtr status_;
@@ -819,6 +1037,226 @@ class OrdersListResponseData final : public ::google::protobuf::Message
 };
 
 extern const ::google::protobuf::internal::ClassDataFull OrdersListResponseData_class_data_;
+// -------------------------------------------------------------------
+
+class OrdersListRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:orders.v1.OrdersListRequest) */ {
+ public:
+  inline OrdersListRequest() : OrdersListRequest(nullptr) {}
+  ~OrdersListRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(OrdersListRequest* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(OrdersListRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR OrdersListRequest(::google::protobuf::internal::ConstantInitialized);
+
+  inline OrdersListRequest(const OrdersListRequest& from) : OrdersListRequest(nullptr, from) {}
+  inline OrdersListRequest(OrdersListRequest&& from) noexcept
+      : OrdersListRequest(nullptr, ::std::move(from)) {}
+  inline OrdersListRequest& operator=(const OrdersListRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OrdersListRequest& operator=(OrdersListRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const OrdersListRequest& default_instance() {
+    return *reinterpret_cast<const OrdersListRequest*>(
+        &_OrdersListRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 0;
+  friend void swap(OrdersListRequest& a, OrdersListRequest& b) { a.Swap(&b); }
+  inline void Swap(OrdersListRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OrdersListRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  OrdersListRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<OrdersListRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const OrdersListRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const OrdersListRequest& from) { OrdersListRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(OrdersListRequest* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "orders.v1.OrdersListRequest"; }
+
+ protected:
+  explicit OrdersListRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  OrdersListRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const OrdersListRequest& from);
+  OrdersListRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, OrdersListRequest&& from) noexcept
+      : OrdersListRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kStatusFieldNumber = 2,
+    kPaginationFieldNumber = 1,
+  };
+  // repeated string status = 2 [json_name = "status"];
+  int status_size() const;
+  private:
+  int _internal_status_size() const;
+
+  public:
+  void clear_status() ;
+  const ::std::string& status(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_status(int index);
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_status(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_status();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_status(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& status() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_status();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_status() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_status();
+
+  public:
+  // .shared.v1.PaginationRequest pagination = 1 [json_name = "pagination"];
+  bool has_pagination() const;
+  void clear_pagination() ;
+  const ::shared::v1::PaginationRequest& pagination() const;
+  [[nodiscard]] ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE release_pagination();
+  ::shared::v1::PaginationRequest* PROTOBUF_NONNULL mutable_pagination();
+  void set_allocated_pagination(::shared::v1::PaginationRequest* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_pagination(::shared::v1::PaginationRequest* PROTOBUF_NULLABLE value);
+  ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE unsafe_arena_release_pagination();
+
+  private:
+  const ::shared::v1::PaginationRequest& _internal_pagination() const;
+  ::shared::v1::PaginationRequest* PROTOBUF_NONNULL _internal_mutable_pagination();
+
+  public:
+  // @@protoc_insertion_point(class_scope:orders.v1.OrdersListRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   1, 42,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const OrdersListRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField<::std::string> status_;
+    ::shared::v1::PaginationRequest* PROTOBUF_NULLABLE pagination_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_orders_2fv1_2forders_5flist_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull OrdersListRequest_class_data_;
 // -------------------------------------------------------------------
 
 class OrdersListResponse final : public ::google::protobuf::Message
@@ -1835,50 +2273,809 @@ inline void OrderListItem::_internal_set_created_at(::uint64_t value) {
   _impl_.created_at_ = value;
 }
 
-// repeated .orders.v1.OrderLineItem items = 8 [json_name = "items"];
+// repeated .orders.v1.OrderLineListItem items = 8 [json_name = "items"];
 inline int OrderListItem::_internal_items_size() const {
   return _internal_items().size();
 }
 inline int OrderListItem::items_size() const {
   return _internal_items_size();
 }
-inline ::orders::v1::OrderLineItem* PROTOBUF_NONNULL OrderListItem::mutable_items(int index)
+inline void OrderListItem::clear_items() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.items_.Clear();
+}
+inline ::orders::v1::OrderLineListItem* PROTOBUF_NONNULL OrderListItem::mutable_items(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:orders.v1.OrderListItem.items)
   return _internal_mutable_items()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineItem>* PROTOBUF_NONNULL OrderListItem::mutable_items()
+inline ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineListItem>* PROTOBUF_NONNULL OrderListItem::mutable_items()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:orders.v1.OrderListItem.items)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _internal_mutable_items();
 }
-inline const ::orders::v1::OrderLineItem& OrderListItem::items(int index) const
+inline const ::orders::v1::OrderLineListItem& OrderListItem::items(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:orders.v1.OrderListItem.items)
   return _internal_items().Get(index);
 }
-inline ::orders::v1::OrderLineItem* PROTOBUF_NONNULL OrderListItem::add_items()
+inline ::orders::v1::OrderLineListItem* PROTOBUF_NONNULL OrderListItem::add_items()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::orders::v1::OrderLineItem* _add = _internal_mutable_items()->Add();
+  ::orders::v1::OrderLineListItem* _add = _internal_mutable_items()->Add();
   // @@protoc_insertion_point(field_add:orders.v1.OrderListItem.items)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineItem>& OrderListItem::items() const
+inline const ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineListItem>& OrderListItem::items() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:orders.v1.OrderListItem.items)
   return _internal_items();
 }
-inline const ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineItem>&
+inline const ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineListItem>&
 OrderListItem::_internal_items() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.items_;
 }
-inline ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineItem>* PROTOBUF_NONNULL
+inline ::google::protobuf::RepeatedPtrField<::orders::v1::OrderLineListItem>* PROTOBUF_NONNULL
 OrderListItem::_internal_mutable_items() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.items_;
+}
+
+// -------------------------------------------------------------------
+
+// OrderLineListItem
+
+// string id = 1 [json_name = "id"];
+inline void OrderLineListItem::clear_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::std::string& OrderLineListItem::id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.id)
+  return _internal_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void OrderLineListItem::set_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.id)
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::mutable_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineListItem.id)
+  return _s;
+}
+inline const ::std::string& OrderLineListItem::_internal_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.id_.Get();
+}
+inline void OrderLineListItem::_internal_set_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::_internal_mutable_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE OrderLineListItem::release_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:orders.v1.OrderLineListItem.id)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void OrderLineListItem::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.id_.IsDefault()) {
+    _impl_.id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineListItem.id)
+}
+
+// string order_id = 2 [json_name = "orderId"];
+inline void OrderLineListItem::clear_order_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.order_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::std::string& OrderLineListItem::order_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.order_id)
+  return _internal_order_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void OrderLineListItem::set_order_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.order_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.order_id)
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::mutable_order_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_order_id();
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineListItem.order_id)
+  return _s;
+}
+inline const ::std::string& OrderLineListItem::_internal_order_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.order_id_.Get();
+}
+inline void OrderLineListItem::_internal_set_order_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.order_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::_internal_mutable_order_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.order_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE OrderLineListItem::release_order_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:orders.v1.OrderLineListItem.order_id)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.order_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.order_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void OrderLineListItem::set_allocated_order_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.order_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.order_id_.IsDefault()) {
+    _impl_.order_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineListItem.order_id)
+}
+
+// string product_id = 3 [json_name = "productId"];
+inline void OrderLineListItem::clear_product_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const ::std::string& OrderLineListItem::product_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.product_id)
+  return _internal_product_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void OrderLineListItem::set_product_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.product_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.product_id)
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::mutable_product_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_product_id();
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineListItem.product_id)
+  return _s;
+}
+inline const ::std::string& OrderLineListItem::_internal_product_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_id_.Get();
+}
+inline void OrderLineListItem::_internal_set_product_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.product_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::_internal_mutable_product_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.product_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE OrderLineListItem::release_product_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:orders.v1.OrderLineListItem.product_id)
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* released = _impl_.product_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.product_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void OrderLineListItem::set_allocated_product_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.product_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.product_id_.IsDefault()) {
+    _impl_.product_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineListItem.product_id)
+}
+
+// string variant_id = 4 [json_name = "variantId"];
+inline void OrderLineListItem::clear_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.variant_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline const ::std::string& OrderLineListItem::variant_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.variant_id)
+  return _internal_variant_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void OrderLineListItem::set_variant_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.variant_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.variant_id)
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::mutable_variant_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_variant_id();
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineListItem.variant_id)
+  return _s;
+}
+inline const ::std::string& OrderLineListItem::_internal_variant_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.variant_id_.Get();
+}
+inline void OrderLineListItem::_internal_set_variant_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.variant_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::_internal_mutable_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  return _impl_.variant_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE OrderLineListItem::release_variant_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:orders.v1.OrderLineListItem.variant_id)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  auto* released = _impl_.variant_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.variant_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void OrderLineListItem::set_allocated_variant_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.variant_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.variant_id_.IsDefault()) {
+    _impl_.variant_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineListItem.variant_id)
+}
+
+// string title = 5 [json_name = "title"];
+inline void OrderLineListItem::clear_title() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.title_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline const ::std::string& OrderLineListItem::title() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.title)
+  return _internal_title();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void OrderLineListItem::set_title(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.title_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.title)
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::mutable_title()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_title();
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineListItem.title)
+  return _s;
+}
+inline const ::std::string& OrderLineListItem::_internal_title() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.title_.Get();
+}
+inline void OrderLineListItem::_internal_set_title(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.title_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::_internal_mutable_title() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  return _impl_.title_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE OrderLineListItem::release_title() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:orders.v1.OrderLineListItem.title)
+  if ((_impl_._has_bits_[0] & 0x00000010u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  auto* released = _impl_.title_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.title_.Set("", GetArena());
+  }
+  return released;
+}
+inline void OrderLineListItem::set_allocated_title(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  _impl_.title_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.title_.IsDefault()) {
+    _impl_.title_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineListItem.title)
+}
+
+// int32 quantity = 6 [json_name = "quantity"];
+inline void OrderLineListItem::clear_quantity() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.quantity_ = 0;
+  _impl_._has_bits_[0] &= ~0x00008000u;
+}
+inline ::int32_t OrderLineListItem::quantity() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.quantity)
+  return _internal_quantity();
+}
+inline void OrderLineListItem::set_quantity(::int32_t value) {
+  _internal_set_quantity(value);
+  _impl_._has_bits_[0] |= 0x00008000u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.quantity)
+}
+inline ::int32_t OrderLineListItem::_internal_quantity() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.quantity_;
+}
+inline void OrderLineListItem::_internal_set_quantity(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.quantity_ = value;
+}
+
+// uint64 unit_price_cents = 9 [json_name = "unitPriceCents"];
+inline void OrderLineListItem::clear_unit_price_cents() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.unit_price_cents_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000080u;
+}
+inline ::uint64_t OrderLineListItem::unit_price_cents() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.unit_price_cents)
+  return _internal_unit_price_cents();
+}
+inline void OrderLineListItem::set_unit_price_cents(::uint64_t value) {
+  _internal_set_unit_price_cents(value);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.unit_price_cents)
+}
+inline ::uint64_t OrderLineListItem::_internal_unit_price_cents() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.unit_price_cents_;
+}
+inline void OrderLineListItem::_internal_set_unit_price_cents(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.unit_price_cents_ = value;
+}
+
+// optional uint64 list_price_cents = 10 [json_name = "listPriceCents"];
+inline bool OrderLineListItem::has_list_price_cents() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  return value;
+}
+inline void OrderLineListItem::clear_list_price_cents() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.list_price_cents_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000100u;
+}
+inline ::uint64_t OrderLineListItem::list_price_cents() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.list_price_cents)
+  return _internal_list_price_cents();
+}
+inline void OrderLineListItem::set_list_price_cents(::uint64_t value) {
+  _internal_set_list_price_cents(value);
+  _impl_._has_bits_[0] |= 0x00000100u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.list_price_cents)
+}
+inline ::uint64_t OrderLineListItem::_internal_list_price_cents() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.list_price_cents_;
+}
+inline void OrderLineListItem::_internal_set_list_price_cents(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.list_price_cents_ = value;
+}
+
+// optional uint64 sale_price_cents = 11 [json_name = "salePriceCents"];
+inline bool OrderLineListItem::has_sale_price_cents() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  return value;
+}
+inline void OrderLineListItem::clear_sale_price_cents() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.sale_price_cents_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000200u;
+}
+inline ::uint64_t OrderLineListItem::sale_price_cents() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.sale_price_cents)
+  return _internal_sale_price_cents();
+}
+inline void OrderLineListItem::set_sale_price_cents(::uint64_t value) {
+  _internal_set_sale_price_cents(value);
+  _impl_._has_bits_[0] |= 0x00000200u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.sale_price_cents)
+}
+inline ::uint64_t OrderLineListItem::_internal_sale_price_cents() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.sale_price_cents_;
+}
+inline void OrderLineListItem::_internal_set_sale_price_cents(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.sale_price_cents_ = value;
+}
+
+// optional uint64 discount_cents = 12 [json_name = "discountCents"];
+inline bool OrderLineListItem::has_discount_cents() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+  return value;
+}
+inline void OrderLineListItem::clear_discount_cents() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.discount_cents_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000400u;
+}
+inline ::uint64_t OrderLineListItem::discount_cents() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.discount_cents)
+  return _internal_discount_cents();
+}
+inline void OrderLineListItem::set_discount_cents(::uint64_t value) {
+  _internal_set_discount_cents(value);
+  _impl_._has_bits_[0] |= 0x00000400u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.discount_cents)
+}
+inline ::uint64_t OrderLineListItem::_internal_discount_cents() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.discount_cents_;
+}
+inline void OrderLineListItem::_internal_set_discount_cents(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.discount_cents_ = value;
+}
+
+// uint64 tax_cents = 13 [json_name = "taxCents"];
+inline void OrderLineListItem::clear_tax_cents() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.tax_cents_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000800u;
+}
+inline ::uint64_t OrderLineListItem::tax_cents() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.tax_cents)
+  return _internal_tax_cents();
+}
+inline void OrderLineListItem::set_tax_cents(::uint64_t value) {
+  _internal_set_tax_cents(value);
+  _impl_._has_bits_[0] |= 0x00000800u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.tax_cents)
+}
+inline ::uint64_t OrderLineListItem::_internal_tax_cents() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.tax_cents_;
+}
+inline void OrderLineListItem::_internal_set_tax_cents(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.tax_cents_ = value;
+}
+
+// uint64 shipping_cents = 14 [json_name = "shippingCents"];
+inline void OrderLineListItem::clear_shipping_cents() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.shipping_cents_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00001000u;
+}
+inline ::uint64_t OrderLineListItem::shipping_cents() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.shipping_cents)
+  return _internal_shipping_cents();
+}
+inline void OrderLineListItem::set_shipping_cents(::uint64_t value) {
+  _internal_set_shipping_cents(value);
+  _impl_._has_bits_[0] |= 0x00001000u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.shipping_cents)
+}
+inline ::uint64_t OrderLineListItem::_internal_shipping_cents() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.shipping_cents_;
+}
+inline void OrderLineListItem::_internal_set_shipping_cents(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.shipping_cents_ = value;
+}
+
+// uint64 total_cents = 15 [json_name = "totalCents"];
+inline void OrderLineListItem::clear_total_cents() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.total_cents_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00002000u;
+}
+inline ::uint64_t OrderLineListItem::total_cents() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.total_cents)
+  return _internal_total_cents();
+}
+inline void OrderLineListItem::set_total_cents(::uint64_t value) {
+  _internal_set_total_cents(value);
+  _impl_._has_bits_[0] |= 0x00002000u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.total_cents)
+}
+inline ::uint64_t OrderLineListItem::_internal_total_cents() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.total_cents_;
+}
+inline void OrderLineListItem::_internal_set_total_cents(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.total_cents_ = value;
+}
+
+// repeated string applied_offer_ids = 16 [json_name = "appliedOfferIds"];
+inline int OrderLineListItem::_internal_applied_offer_ids_size() const {
+  return _internal_applied_offer_ids().size();
+}
+inline int OrderLineListItem::applied_offer_ids_size() const {
+  return _internal_applied_offer_ids_size();
+}
+inline void OrderLineListItem::clear_applied_offer_ids() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.applied_offer_ids_.Clear();
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::add_applied_offer_ids()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::std::string* _s = _internal_mutable_applied_offer_ids()->Add();
+  // @@protoc_insertion_point(field_add_mutable:orders.v1.OrderLineListItem.applied_offer_ids)
+  return _s;
+}
+inline const ::std::string& OrderLineListItem::applied_offer_ids(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.applied_offer_ids)
+  return _internal_applied_offer_ids().Get(index);
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::mutable_applied_offer_ids(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineListItem.applied_offer_ids)
+  return _internal_mutable_applied_offer_ids()->Mutable(index);
+}
+template <typename Arg_, typename... Args_>
+inline void OrderLineListItem::set_applied_offer_ids(int index, Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::AssignToString(*_internal_mutable_applied_offer_ids()->Mutable(index), ::std::forward<Arg_>(value),
+                        args... );
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.applied_offer_ids)
+}
+template <typename Arg_, typename... Args_>
+inline void OrderLineListItem::add_applied_offer_ids(Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::google::protobuf::internal::AddToRepeatedPtrField(*_internal_mutable_applied_offer_ids(),
+                               ::std::forward<Arg_>(value),
+                               args... );
+  // @@protoc_insertion_point(field_add:orders.v1.OrderLineListItem.applied_offer_ids)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>& OrderLineListItem::applied_offer_ids()
+    const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:orders.v1.OrderLineListItem.applied_offer_ids)
+  return _internal_applied_offer_ids();
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+OrderLineListItem::mutable_applied_offer_ids() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:orders.v1.OrderLineListItem.applied_offer_ids)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_applied_offer_ids();
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+OrderLineListItem::_internal_applied_offer_ids() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.applied_offer_ids_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+OrderLineListItem::_internal_mutable_applied_offer_ids() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.applied_offer_ids_;
+}
+
+// string status = 17 [json_name = "status"];
+inline void OrderLineListItem::clear_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.status_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline const ::std::string& OrderLineListItem::status() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.status)
+  return _internal_status();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void OrderLineListItem::set_status(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.status_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.status)
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::mutable_status()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineListItem.status)
+  return _s;
+}
+inline const ::std::string& OrderLineListItem::_internal_status() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.status_.Get();
+}
+inline void OrderLineListItem::_internal_set_status(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.status_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::_internal_mutable_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  return _impl_.status_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE OrderLineListItem::release_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:orders.v1.OrderLineListItem.status)
+  if ((_impl_._has_bits_[0] & 0x00000020u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000020u;
+  auto* released = _impl_.status_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.status_.Set("", GetArena());
+  }
+  return released;
+}
+inline void OrderLineListItem::set_allocated_status(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000020u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000020u;
+  }
+  _impl_.status_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.status_.IsDefault()) {
+    _impl_.status_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineListItem.status)
+}
+
+// optional uint64 estimated_delivery_date = 18 [json_name = "estimatedDeliveryDate"];
+inline bool OrderLineListItem::has_estimated_delivery_date() const {
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  return value;
+}
+inline void OrderLineListItem::clear_estimated_delivery_date() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.estimated_delivery_date_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00004000u;
+}
+inline ::uint64_t OrderLineListItem::estimated_delivery_date() const {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.estimated_delivery_date)
+  return _internal_estimated_delivery_date();
+}
+inline void OrderLineListItem::set_estimated_delivery_date(::uint64_t value) {
+  _internal_set_estimated_delivery_date(value);
+  _impl_._has_bits_[0] |= 0x00004000u;
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.estimated_delivery_date)
+}
+inline ::uint64_t OrderLineListItem::_internal_estimated_delivery_date() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.estimated_delivery_date_;
+}
+inline void OrderLineListItem::_internal_set_estimated_delivery_date(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.estimated_delivery_date_ = value;
+}
+
+// string product_image = 19 [json_name = "productImage"];
+inline void OrderLineListItem::clear_product_image() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_image_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline const ::std::string& OrderLineListItem::product_image() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:orders.v1.OrderLineListItem.product_image)
+  return _internal_product_image();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void OrderLineListItem::set_product_image(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.product_image_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:orders.v1.OrderLineListItem.product_image)
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::mutable_product_image()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_product_image();
+  // @@protoc_insertion_point(field_mutable:orders.v1.OrderLineListItem.product_image)
+  return _s;
+}
+inline const ::std::string& OrderLineListItem::_internal_product_image() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_image_.Get();
+}
+inline void OrderLineListItem::_internal_set_product_image(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.product_image_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL OrderLineListItem::_internal_mutable_product_image() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  return _impl_.product_image_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE OrderLineListItem::release_product_image() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:orders.v1.OrderLineListItem.product_image)
+  if ((_impl_._has_bits_[0] & 0x00000040u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000040u;
+  auto* released = _impl_.product_image_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.product_image_.Set("", GetArena());
+  }
+  return released;
+}
+inline void OrderLineListItem::set_allocated_product_image(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000040u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000040u;
+  }
+  _impl_.product_image_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.product_image_.IsDefault()) {
+    _impl_.product_image_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:orders.v1.OrderLineListItem.product_image)
 }
 
 #ifdef __GNUC__

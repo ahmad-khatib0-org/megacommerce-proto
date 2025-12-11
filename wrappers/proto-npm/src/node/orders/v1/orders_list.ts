@@ -13,7 +13,6 @@ import {
 } from "../../inventory/v1/reservation_get";
 import { AppError } from "../../shared/v1/error";
 import { PaginationRequest, PaginationResponse } from "../../shared/v1/pagination";
-import { OrderLineItem } from "./order_line_items";
 
 export const protobufPackage = "orders.v1";
 
@@ -47,7 +46,42 @@ export interface OrderListItem {
   status: string;
   createdAt: string;
   /** order line items with details */
-  items: OrderLineItem[];
+  items: OrderLineListItem[];
+}
+
+export interface OrderLineListItem {
+  id: string;
+  orderId: string;
+  productId: string;
+  variantId: string;
+  title: string;
+  quantity: number;
+  /** Price fields in cents */
+  unitPriceCents: string;
+  /** optional */
+  listPriceCents?:
+    | string
+    | undefined;
+  /** optional */
+  salePriceCents?:
+    | string
+    | undefined;
+  /** total discount applied to this line (all units) */
+  discountCents?:
+    | string
+    | undefined;
+  /** tax for this line (total) */
+  taxCents: string;
+  /** shipping for this line (total) */
+  shippingCents: string;
+  /** (quantity * unit_price) - discount + tax + shipping_cents */
+  totalCents: string;
+  /** array of applied offer/promotion ids */
+  appliedOfferIds: string[];
+  status: string;
+  /** Unix timestamp in milliseconds */
+  estimatedDeliveryDate?: string | undefined;
+  productImage: string;
 }
 
 function createBaseOrdersListRequest(): OrdersListRequest {
@@ -323,7 +357,7 @@ export const OrderListItem: MessageFns<OrderListItem> = {
       writer.uint32(56).uint64(message.createdAt);
     }
     for (const v of message.items) {
-      OrderLineItem.encode(v!, writer.uint32(66).fork()).join();
+      OrderLineListItem.encode(v!, writer.uint32(66).fork()).join();
     }
     return writer;
   },
@@ -396,7 +430,7 @@ export const OrderListItem: MessageFns<OrderListItem> = {
             break;
           }
 
-          message.items.push(OrderLineItem.decode(reader, reader.uint32()));
+          message.items.push(OrderLineListItem.decode(reader, reader.uint32()));
           continue;
         }
       }
@@ -419,7 +453,7 @@ export const OrderListItem: MessageFns<OrderListItem> = {
         : 0,
       status: isSet(object.status) ? globalThis.String(object.status) : "",
       createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
-      items: globalThis.Array.isArray(object?.items) ? object.items.map((e: any) => OrderLineItem.fromJSON(e)) : [],
+      items: globalThis.Array.isArray(object?.items) ? object.items.map((e: any) => OrderLineListItem.fromJSON(e)) : [],
     };
   },
 
@@ -447,7 +481,7 @@ export const OrderListItem: MessageFns<OrderListItem> = {
       obj.createdAt = message.createdAt;
     }
     if (message.items?.length) {
-      obj.items = message.items.map((e) => OrderLineItem.toJSON(e));
+      obj.items = message.items.map((e) => OrderLineListItem.toJSON(e));
     }
     return obj;
   },
@@ -464,7 +498,345 @@ export const OrderListItem: MessageFns<OrderListItem> = {
     message.inventoryReservationStatus = object.inventoryReservationStatus ?? 0;
     message.status = object.status ?? "";
     message.createdAt = object.createdAt ?? "0";
-    message.items = object.items?.map((e) => OrderLineItem.fromPartial(e)) || [];
+    message.items = object.items?.map((e) => OrderLineListItem.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseOrderLineListItem(): OrderLineListItem {
+  return {
+    id: "",
+    orderId: "",
+    productId: "",
+    variantId: "",
+    title: "",
+    quantity: 0,
+    unitPriceCents: "0",
+    listPriceCents: undefined,
+    salePriceCents: undefined,
+    discountCents: undefined,
+    taxCents: "0",
+    shippingCents: "0",
+    totalCents: "0",
+    appliedOfferIds: [],
+    status: "",
+    estimatedDeliveryDate: undefined,
+    productImage: "",
+  };
+}
+
+export const OrderLineListItem: MessageFns<OrderLineListItem> = {
+  encode(message: OrderLineListItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.orderId !== "") {
+      writer.uint32(18).string(message.orderId);
+    }
+    if (message.productId !== "") {
+      writer.uint32(26).string(message.productId);
+    }
+    if (message.variantId !== "") {
+      writer.uint32(34).string(message.variantId);
+    }
+    if (message.title !== "") {
+      writer.uint32(42).string(message.title);
+    }
+    if (message.quantity !== 0) {
+      writer.uint32(48).int32(message.quantity);
+    }
+    if (message.unitPriceCents !== "0") {
+      writer.uint32(72).uint64(message.unitPriceCents);
+    }
+    if (message.listPriceCents !== undefined) {
+      writer.uint32(80).uint64(message.listPriceCents);
+    }
+    if (message.salePriceCents !== undefined) {
+      writer.uint32(88).uint64(message.salePriceCents);
+    }
+    if (message.discountCents !== undefined) {
+      writer.uint32(96).uint64(message.discountCents);
+    }
+    if (message.taxCents !== "0") {
+      writer.uint32(104).uint64(message.taxCents);
+    }
+    if (message.shippingCents !== "0") {
+      writer.uint32(112).uint64(message.shippingCents);
+    }
+    if (message.totalCents !== "0") {
+      writer.uint32(120).uint64(message.totalCents);
+    }
+    for (const v of message.appliedOfferIds) {
+      writer.uint32(130).string(v!);
+    }
+    if (message.status !== "") {
+      writer.uint32(138).string(message.status);
+    }
+    if (message.estimatedDeliveryDate !== undefined) {
+      writer.uint32(144).uint64(message.estimatedDeliveryDate);
+    }
+    if (message.productImage !== "") {
+      writer.uint32(154).string(message.productImage);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): OrderLineListItem {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseOrderLineListItem();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.orderId = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.productId = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.variantId = reader.string();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.title = reader.string();
+          continue;
+        }
+        case 6: {
+          if (tag !== 48) {
+            break;
+          }
+
+          message.quantity = reader.int32();
+          continue;
+        }
+        case 9: {
+          if (tag !== 72) {
+            break;
+          }
+
+          message.unitPriceCents = reader.uint64().toString();
+          continue;
+        }
+        case 10: {
+          if (tag !== 80) {
+            break;
+          }
+
+          message.listPriceCents = reader.uint64().toString();
+          continue;
+        }
+        case 11: {
+          if (tag !== 88) {
+            break;
+          }
+
+          message.salePriceCents = reader.uint64().toString();
+          continue;
+        }
+        case 12: {
+          if (tag !== 96) {
+            break;
+          }
+
+          message.discountCents = reader.uint64().toString();
+          continue;
+        }
+        case 13: {
+          if (tag !== 104) {
+            break;
+          }
+
+          message.taxCents = reader.uint64().toString();
+          continue;
+        }
+        case 14: {
+          if (tag !== 112) {
+            break;
+          }
+
+          message.shippingCents = reader.uint64().toString();
+          continue;
+        }
+        case 15: {
+          if (tag !== 120) {
+            break;
+          }
+
+          message.totalCents = reader.uint64().toString();
+          continue;
+        }
+        case 16: {
+          if (tag !== 130) {
+            break;
+          }
+
+          message.appliedOfferIds.push(reader.string());
+          continue;
+        }
+        case 17: {
+          if (tag !== 138) {
+            break;
+          }
+
+          message.status = reader.string();
+          continue;
+        }
+        case 18: {
+          if (tag !== 144) {
+            break;
+          }
+
+          message.estimatedDeliveryDate = reader.uint64().toString();
+          continue;
+        }
+        case 19: {
+          if (tag !== 154) {
+            break;
+          }
+
+          message.productImage = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): OrderLineListItem {
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
+      orderId: isSet(object.orderId) ? globalThis.String(object.orderId) : "",
+      productId: isSet(object.productId) ? globalThis.String(object.productId) : "",
+      variantId: isSet(object.variantId) ? globalThis.String(object.variantId) : "",
+      title: isSet(object.title) ? globalThis.String(object.title) : "",
+      quantity: isSet(object.quantity) ? globalThis.Number(object.quantity) : 0,
+      unitPriceCents: isSet(object.unitPriceCents) ? globalThis.String(object.unitPriceCents) : "0",
+      listPriceCents: isSet(object.listPriceCents) ? globalThis.String(object.listPriceCents) : undefined,
+      salePriceCents: isSet(object.salePriceCents) ? globalThis.String(object.salePriceCents) : undefined,
+      discountCents: isSet(object.discountCents) ? globalThis.String(object.discountCents) : undefined,
+      taxCents: isSet(object.taxCents) ? globalThis.String(object.taxCents) : "0",
+      shippingCents: isSet(object.shippingCents) ? globalThis.String(object.shippingCents) : "0",
+      totalCents: isSet(object.totalCents) ? globalThis.String(object.totalCents) : "0",
+      appliedOfferIds: globalThis.Array.isArray(object?.appliedOfferIds)
+        ? object.appliedOfferIds.map((e: any) => globalThis.String(e))
+        : [],
+      status: isSet(object.status) ? globalThis.String(object.status) : "",
+      estimatedDeliveryDate: isSet(object.estimatedDeliveryDate)
+        ? globalThis.String(object.estimatedDeliveryDate)
+        : undefined,
+      productImage: isSet(object.productImage) ? globalThis.String(object.productImage) : "",
+    };
+  },
+
+  toJSON(message: OrderLineListItem): unknown {
+    const obj: any = {};
+    if (message.id !== "") {
+      obj.id = message.id;
+    }
+    if (message.orderId !== "") {
+      obj.orderId = message.orderId;
+    }
+    if (message.productId !== "") {
+      obj.productId = message.productId;
+    }
+    if (message.variantId !== "") {
+      obj.variantId = message.variantId;
+    }
+    if (message.title !== "") {
+      obj.title = message.title;
+    }
+    if (message.quantity !== 0) {
+      obj.quantity = Math.round(message.quantity);
+    }
+    if (message.unitPriceCents !== "0") {
+      obj.unitPriceCents = message.unitPriceCents;
+    }
+    if (message.listPriceCents !== undefined) {
+      obj.listPriceCents = message.listPriceCents;
+    }
+    if (message.salePriceCents !== undefined) {
+      obj.salePriceCents = message.salePriceCents;
+    }
+    if (message.discountCents !== undefined) {
+      obj.discountCents = message.discountCents;
+    }
+    if (message.taxCents !== "0") {
+      obj.taxCents = message.taxCents;
+    }
+    if (message.shippingCents !== "0") {
+      obj.shippingCents = message.shippingCents;
+    }
+    if (message.totalCents !== "0") {
+      obj.totalCents = message.totalCents;
+    }
+    if (message.appliedOfferIds?.length) {
+      obj.appliedOfferIds = message.appliedOfferIds;
+    }
+    if (message.status !== "") {
+      obj.status = message.status;
+    }
+    if (message.estimatedDeliveryDate !== undefined) {
+      obj.estimatedDeliveryDate = message.estimatedDeliveryDate;
+    }
+    if (message.productImage !== "") {
+      obj.productImage = message.productImage;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<OrderLineListItem>, I>>(base?: I): OrderLineListItem {
+    return OrderLineListItem.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<OrderLineListItem>, I>>(object: I): OrderLineListItem {
+    const message = createBaseOrderLineListItem();
+    message.id = object.id ?? "";
+    message.orderId = object.orderId ?? "";
+    message.productId = object.productId ?? "";
+    message.variantId = object.variantId ?? "";
+    message.title = object.title ?? "";
+    message.quantity = object.quantity ?? 0;
+    message.unitPriceCents = object.unitPriceCents ?? "0";
+    message.listPriceCents = object.listPriceCents ?? undefined;
+    message.salePriceCents = object.salePriceCents ?? undefined;
+    message.discountCents = object.discountCents ?? undefined;
+    message.taxCents = object.taxCents ?? "0";
+    message.shippingCents = object.shippingCents ?? "0";
+    message.totalCents = object.totalCents ?? "0";
+    message.appliedOfferIds = object.appliedOfferIds?.map((e) => e) || [];
+    message.status = object.status ?? "";
+    message.estimatedDeliveryDate = object.estimatedDeliveryDate ?? undefined;
+    message.productImage = object.productImage ?? "";
     return message;
   },
 };

@@ -46,5 +46,30 @@ message OrderListItem {
   uint64 created_at = 7;
 
   // order line items with details
-  repeated OrderLineItem items = 8;
+  repeated OrderLineListItem items = 8;
+}
+
+message OrderLineListItem {
+  string id = 1;
+  string order_id = 2;
+  string product_id = 3;
+  string variant_id = 4;
+  string title = 5;
+  int32 quantity = 6;
+
+  // Price fields in cents
+  uint64 unit_price_cents = 9; // charged price per unit at order time
+  optional uint64 list_price_cents = 10; // optional
+  optional uint64 sale_price_cents = 11; // optional
+  optional uint64 discount_cents = 12; // total discount applied to this line (all units)
+  uint64 tax_cents = 13; // tax for this line (total)
+  uint64 shipping_cents = 14; // shipping for this line (total)
+  uint64 total_cents = 15; // (quantity * unit_price) - discount + tax + shipping_cents
+
+  // array of applied offer/promotion ids
+  repeated string applied_offer_ids = 16;
+  string status = 17;
+
+  optional uint64 estimated_delivery_date = 18; // Unix timestamp in milliseconds
+  string product_image = 19;
 }

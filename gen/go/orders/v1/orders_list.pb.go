@@ -223,7 +223,7 @@ type OrderListItem struct {
 	Status    string `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"` // e.g., CREATED, CONFIRMED, SHIPPED, CANCELLED, REFUNDED
 	CreatedAt uint64 `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	// order line items with details
-	Items         []*OrderLineItem `protobuf:"bytes,8,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*OrderLineListItem `protobuf:"bytes,8,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -307,11 +307,185 @@ func (x *OrderListItem) GetCreatedAt() uint64 {
 	return 0
 }
 
-func (x *OrderListItem) GetItems() []*OrderLineItem {
+func (x *OrderListItem) GetItems() []*OrderLineListItem {
 	if x != nil {
 		return x.Items
 	}
 	return nil
+}
+
+type OrderLineListItem struct {
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	Id        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	OrderId   string                 `protobuf:"bytes,2,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	ProductId string                 `protobuf:"bytes,3,opt,name=product_id,json=productId,proto3" json:"product_id,omitempty"`
+	VariantId string                 `protobuf:"bytes,4,opt,name=variant_id,json=variantId,proto3" json:"variant_id,omitempty"`
+	Title     string                 `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
+	Quantity  int32                  `protobuf:"varint,6,opt,name=quantity,proto3" json:"quantity,omitempty"`
+	// Price fields in cents
+	UnitPriceCents uint64  `protobuf:"varint,9,opt,name=unit_price_cents,json=unitPriceCents,proto3" json:"unit_price_cents,omitempty"`        // charged price per unit at order time
+	ListPriceCents *uint64 `protobuf:"varint,10,opt,name=list_price_cents,json=listPriceCents,proto3,oneof" json:"list_price_cents,omitempty"` // optional
+	SalePriceCents *uint64 `protobuf:"varint,11,opt,name=sale_price_cents,json=salePriceCents,proto3,oneof" json:"sale_price_cents,omitempty"` // optional
+	DiscountCents  *uint64 `protobuf:"varint,12,opt,name=discount_cents,json=discountCents,proto3,oneof" json:"discount_cents,omitempty"`      // total discount applied to this line (all units)
+	TaxCents       uint64  `protobuf:"varint,13,opt,name=tax_cents,json=taxCents,proto3" json:"tax_cents,omitempty"`                           // tax for this line (total)
+	ShippingCents  uint64  `protobuf:"varint,14,opt,name=shipping_cents,json=shippingCents,proto3" json:"shipping_cents,omitempty"`            // shipping for this line (total)
+	TotalCents     uint64  `protobuf:"varint,15,opt,name=total_cents,json=totalCents,proto3" json:"total_cents,omitempty"`                     // (quantity * unit_price) - discount + tax + shipping_cents
+	// array of applied offer/promotion ids
+	AppliedOfferIds       []string `protobuf:"bytes,16,rep,name=applied_offer_ids,json=appliedOfferIds,proto3" json:"applied_offer_ids,omitempty"`
+	Status                string   `protobuf:"bytes,17,opt,name=status,proto3" json:"status,omitempty"`
+	EstimatedDeliveryDate *uint64  `protobuf:"varint,18,opt,name=estimated_delivery_date,json=estimatedDeliveryDate,proto3,oneof" json:"estimated_delivery_date,omitempty"` // Unix timestamp in milliseconds
+	ProductImage          string   `protobuf:"bytes,19,opt,name=product_image,json=productImage,proto3" json:"product_image,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *OrderLineListItem) Reset() {
+	*x = OrderLineListItem{}
+	mi := &file_orders_v1_orders_list_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OrderLineListItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OrderLineListItem) ProtoMessage() {}
+
+func (x *OrderLineListItem) ProtoReflect() protoreflect.Message {
+	mi := &file_orders_v1_orders_list_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OrderLineListItem.ProtoReflect.Descriptor instead.
+func (*OrderLineListItem) Descriptor() ([]byte, []int) {
+	return file_orders_v1_orders_list_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *OrderLineListItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OrderLineListItem) GetOrderId() string {
+	if x != nil {
+		return x.OrderId
+	}
+	return ""
+}
+
+func (x *OrderLineListItem) GetProductId() string {
+	if x != nil {
+		return x.ProductId
+	}
+	return ""
+}
+
+func (x *OrderLineListItem) GetVariantId() string {
+	if x != nil {
+		return x.VariantId
+	}
+	return ""
+}
+
+func (x *OrderLineListItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *OrderLineListItem) GetQuantity() int32 {
+	if x != nil {
+		return x.Quantity
+	}
+	return 0
+}
+
+func (x *OrderLineListItem) GetUnitPriceCents() uint64 {
+	if x != nil {
+		return x.UnitPriceCents
+	}
+	return 0
+}
+
+func (x *OrderLineListItem) GetListPriceCents() uint64 {
+	if x != nil && x.ListPriceCents != nil {
+		return *x.ListPriceCents
+	}
+	return 0
+}
+
+func (x *OrderLineListItem) GetSalePriceCents() uint64 {
+	if x != nil && x.SalePriceCents != nil {
+		return *x.SalePriceCents
+	}
+	return 0
+}
+
+func (x *OrderLineListItem) GetDiscountCents() uint64 {
+	if x != nil && x.DiscountCents != nil {
+		return *x.DiscountCents
+	}
+	return 0
+}
+
+func (x *OrderLineListItem) GetTaxCents() uint64 {
+	if x != nil {
+		return x.TaxCents
+	}
+	return 0
+}
+
+func (x *OrderLineListItem) GetShippingCents() uint64 {
+	if x != nil {
+		return x.ShippingCents
+	}
+	return 0
+}
+
+func (x *OrderLineListItem) GetTotalCents() uint64 {
+	if x != nil {
+		return x.TotalCents
+	}
+	return 0
+}
+
+func (x *OrderLineListItem) GetAppliedOfferIds() []string {
+	if x != nil {
+		return x.AppliedOfferIds
+	}
+	return nil
+}
+
+func (x *OrderLineListItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *OrderLineListItem) GetEstimatedDeliveryDate() uint64 {
+	if x != nil && x.EstimatedDeliveryDate != nil {
+		return *x.EstimatedDeliveryDate
+	}
+	return 0
+}
+
+func (x *OrderLineListItem) GetProductImage() string {
+	if x != nil {
+		return x.ProductImage
+	}
+	return ""
 }
 
 var File_orders_v1_orders_list_proto protoreflect.FileDescriptor
@@ -333,7 +507,7 @@ const file_orders_v1_orders_list_proto_rawDesc = "" +
 	"\x06orders\x18\x01 \x03(\v2\x18.orders.v1.OrderListItemR\x06orders\x12=\n" +
 	"\n" +
 	"pagination\x18\x02 \x01(\v2\x1d.shared.v1.PaginationResponseR\n" +
-	"pagination\"\xdf\x02\n" +
+	"pagination\"\xe3\x02\n" +
 	"\rOrderListItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
 	"\x0eshipping_cents\x18\x02 \x01(\x03R\rshippingCents\x12\x1f\n" +
@@ -343,8 +517,34 @@ const file_orders_v1_orders_list_proto_rawDesc = "" +
 	"\x1cinventory_reservation_status\x18\x05 \x01(\x0e2(.inventory.v1.InventoryReservationStatusR\x1ainventoryReservationStatus\x12\x16\n" +
 	"\x06status\x18\x06 \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\a \x01(\x04R\tcreatedAt\x12.\n" +
-	"\x05items\x18\b \x03(\v2\x18.orders.v1.OrderLineItemR\x05itemsBu\n" +
+	"created_at\x18\a \x01(\x04R\tcreatedAt\x122\n" +
+	"\x05items\x18\b \x03(\v2\x1c.orders.v1.OrderLineListItemR\x05items\"\xc6\x05\n" +
+	"\x11OrderLineListItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\border_id\x18\x02 \x01(\tR\aorderId\x12\x1d\n" +
+	"\n" +
+	"product_id\x18\x03 \x01(\tR\tproductId\x12\x1d\n" +
+	"\n" +
+	"variant_id\x18\x04 \x01(\tR\tvariantId\x12\x14\n" +
+	"\x05title\x18\x05 \x01(\tR\x05title\x12\x1a\n" +
+	"\bquantity\x18\x06 \x01(\x05R\bquantity\x12(\n" +
+	"\x10unit_price_cents\x18\t \x01(\x04R\x0eunitPriceCents\x12-\n" +
+	"\x10list_price_cents\x18\n" +
+	" \x01(\x04H\x00R\x0elistPriceCents\x88\x01\x01\x12-\n" +
+	"\x10sale_price_cents\x18\v \x01(\x04H\x01R\x0esalePriceCents\x88\x01\x01\x12*\n" +
+	"\x0ediscount_cents\x18\f \x01(\x04H\x02R\rdiscountCents\x88\x01\x01\x12\x1b\n" +
+	"\ttax_cents\x18\r \x01(\x04R\btaxCents\x12%\n" +
+	"\x0eshipping_cents\x18\x0e \x01(\x04R\rshippingCents\x12\x1f\n" +
+	"\vtotal_cents\x18\x0f \x01(\x04R\n" +
+	"totalCents\x12*\n" +
+	"\x11applied_offer_ids\x18\x10 \x03(\tR\x0fappliedOfferIds\x12\x16\n" +
+	"\x06status\x18\x11 \x01(\tR\x06status\x12;\n" +
+	"\x17estimated_delivery_date\x18\x12 \x01(\x04H\x03R\x15estimatedDeliveryDate\x88\x01\x01\x12#\n" +
+	"\rproduct_image\x18\x13 \x01(\tR\fproductImageB\x13\n" +
+	"\x11_list_price_centsB\x13\n" +
+	"\x11_sale_price_centsB\x11\n" +
+	"\x0f_discount_centsB\x1a\n" +
+	"\x18_estimated_delivery_dateBu\n" +
 	"\x1aorg.megacommerce.orders.v1B\x0fOrdersListProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orders/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -359,26 +559,26 @@ func file_orders_v1_orders_list_proto_rawDescGZIP() []byte {
 	return file_orders_v1_orders_list_proto_rawDescData
 }
 
-var file_orders_v1_orders_list_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_orders_v1_orders_list_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_orders_v1_orders_list_proto_goTypes = []any{
 	(*OrdersListRequest)(nil),           // 0: orders.v1.OrdersListRequest
 	(*OrdersListResponse)(nil),          // 1: orders.v1.OrdersListResponse
 	(*OrdersListResponseData)(nil),      // 2: orders.v1.OrdersListResponseData
 	(*OrderListItem)(nil),               // 3: orders.v1.OrderListItem
-	(*v1.PaginationRequest)(nil),        // 4: shared.v1.PaginationRequest
-	(*v1.AppError)(nil),                 // 5: shared.v1.AppError
-	(*v1.PaginationResponse)(nil),       // 6: shared.v1.PaginationResponse
-	(v11.InventoryReservationStatus)(0), // 7: inventory.v1.InventoryReservationStatus
-	(*OrderLineItem)(nil),               // 8: orders.v1.OrderLineItem
+	(*OrderLineListItem)(nil),           // 4: orders.v1.OrderLineListItem
+	(*v1.PaginationRequest)(nil),        // 5: shared.v1.PaginationRequest
+	(*v1.AppError)(nil),                 // 6: shared.v1.AppError
+	(*v1.PaginationResponse)(nil),       // 7: shared.v1.PaginationResponse
+	(v11.InventoryReservationStatus)(0), // 8: inventory.v1.InventoryReservationStatus
 }
 var file_orders_v1_orders_list_proto_depIdxs = []int32{
-	4, // 0: orders.v1.OrdersListRequest.pagination:type_name -> shared.v1.PaginationRequest
+	5, // 0: orders.v1.OrdersListRequest.pagination:type_name -> shared.v1.PaginationRequest
 	2, // 1: orders.v1.OrdersListResponse.data:type_name -> orders.v1.OrdersListResponseData
-	5, // 2: orders.v1.OrdersListResponse.error:type_name -> shared.v1.AppError
+	6, // 2: orders.v1.OrdersListResponse.error:type_name -> shared.v1.AppError
 	3, // 3: orders.v1.OrdersListResponseData.orders:type_name -> orders.v1.OrderListItem
-	6, // 4: orders.v1.OrdersListResponseData.pagination:type_name -> shared.v1.PaginationResponse
-	7, // 5: orders.v1.OrderListItem.inventory_reservation_status:type_name -> inventory.v1.InventoryReservationStatus
-	8, // 6: orders.v1.OrderListItem.items:type_name -> orders.v1.OrderLineItem
+	7, // 4: orders.v1.OrdersListResponseData.pagination:type_name -> shared.v1.PaginationResponse
+	8, // 5: orders.v1.OrderListItem.inventory_reservation_status:type_name -> inventory.v1.InventoryReservationStatus
+	4, // 6: orders.v1.OrderListItem.items:type_name -> orders.v1.OrderLineListItem
 	7, // [7:7] is the sub-list for method output_type
 	7, // [7:7] is the sub-list for method input_type
 	7, // [7:7] is the sub-list for extension type_name
@@ -396,13 +596,14 @@ func file_orders_v1_orders_list_proto_init() {
 		(*OrdersListResponse_Data)(nil),
 		(*OrdersListResponse_Error)(nil),
 	}
+	file_orders_v1_orders_list_proto_msgTypes[4].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_orders_v1_orders_list_proto_rawDesc), len(file_orders_v1_orders_list_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
