@@ -16,6 +16,7 @@ import {
   PasswordForgotResponse,
 } from "./auth.js";
 import { CustomerCreateRequest, CustomerCreateResponse } from "./customer.js";
+import { CustomerProfileRequest, CustomerProfileResponse } from "./customer_profile.js";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier.js";
 
 export const protobufPackage = "users.v1";
@@ -38,6 +39,10 @@ export interface UsersService {
     metadata?: grpc.Metadata,
   ): Promise<PasswordForgotResponse>;
   Login(request: DeepPartial<LoginRequest>, metadata?: grpc.Metadata): Promise<LoginResponse>;
+  GetCustomerProfile(
+    request: DeepPartial<CustomerProfileRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<CustomerProfileResponse>;
 }
 
 export class UsersServiceClientImpl implements UsersService {
@@ -50,6 +55,7 @@ export class UsersServiceClientImpl implements UsersService {
     this.EmailConfirmation = this.EmailConfirmation.bind(this);
     this.PasswordForgot = this.PasswordForgot.bind(this);
     this.Login = this.Login.bind(this);
+    this.GetCustomerProfile = this.GetCustomerProfile.bind(this);
   }
 
   CreateSupplier(
@@ -82,6 +88,13 @@ export class UsersServiceClientImpl implements UsersService {
 
   Login(request: DeepPartial<LoginRequest>, metadata?: grpc.Metadata): Promise<LoginResponse> {
     return this.rpc.unary(UsersServiceLoginDesc, LoginRequest.fromPartial(request), metadata);
+  }
+
+  GetCustomerProfile(
+    request: DeepPartial<CustomerProfileRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<CustomerProfileResponse> {
+    return this.rpc.unary(UsersServiceGetCustomerProfileDesc, CustomerProfileRequest.fromPartial(request), metadata);
   }
 }
 
@@ -192,6 +205,29 @@ export const UsersServiceLoginDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = LoginResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const UsersServiceGetCustomerProfileDesc: UnaryMethodDefinitionish = {
+  methodName: "GetCustomerProfile",
+  service: UsersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return CustomerProfileRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = CustomerProfileResponse.decode(data);
       return {
         ...value,
         toObject() {

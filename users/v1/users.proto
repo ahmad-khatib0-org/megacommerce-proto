@@ -5,6 +5,7 @@ package users.v1;
 import "users/v1/auth.proto";
 import "users/v1/supplier.proto";
 import "users/v1/customer.proto";
+import "users/v1/customer_profile.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1";
@@ -17,4 +18,5 @@ service UsersService {
   rpc EmailConfirmation(users.v1.EmailConfirmationRequest) returns (users.v1.EmailConfirmationResponse);
   rpc PasswordForgot(users.v1.PasswordForgotRequest) returns (users.v1.PasswordForgotResponse);
   rpc Login(users.v1.LoginRequest) returns (users.v1.LoginResponse);
+  rpc GetCustomerProfile(users.v1.CustomerProfileRequest) returns (users.v1.CustomerProfileResponse);
 }

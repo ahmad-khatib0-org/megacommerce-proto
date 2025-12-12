@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="megacommerce_proto",
-    version="0.4.56",
+    version="0.4.57",
     packages=find_packages(where="gen/python"),
     package_dir={"": "gen/python"},
     include_package_data=True,

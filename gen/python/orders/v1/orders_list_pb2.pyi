@@ -1,5 +1,4 @@
 from inventory.v1 import reservation_get_pb2 as _reservation_get_pb2
-from orders.v1 import order_line_items_pb2 as _order_line_items_pb2
 from shared.v1 import error_pb2 as _error_pb2
 from shared.v1 import pagination_pb2 as _pagination_pb2
 from google.protobuf.internal import containers as _containers

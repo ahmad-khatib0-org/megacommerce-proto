@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package users.v1;
+
+import "shared/v1/error.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1";
+option java_outer_classname = "CustomerProfileProto";
+option java_package = "org.megacommerce.users.v1";
+
+message CustomerProfileRequest {}
+
+message CustomerProfile {
+  string id = 1;
+  string full_name = 2;
+  string email = 3;
+  string username = 4;
+  string image = 5;
+  string user_type = 6;
+  bool is_email_verified = 7;
+  int64 created_at = 8;
+  int64 updated_at = 9;
+}
+
+message CustomerProfileResponse {
+  oneof response {
+    CustomerProfile data = 1;
+    shared.v1.AppError error = 2;
+  }
+}

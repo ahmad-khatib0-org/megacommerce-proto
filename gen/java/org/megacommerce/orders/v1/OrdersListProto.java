@@ -7041,55 +7041,53 @@ public final class OrdersListProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033orders/v1/orders_list.proto\022\torders.v1" +
-      "\032\"inventory/v1/reservation_get.proto\032 or" +
-      "ders/v1/order_line_items.proto\032\025shared/v" +
-      "1/error.proto\032\032shared/v1/pagination.prot" +
-      "o\"i\n\021OrdersListRequest\022<\n\npagination\030\001 \001" +
-      "(\0132\034.shared.v1.PaginationRequestR\npagina" +
-      "tion\022\026\n\006status\030\002 \003(\tR\006status\"\206\001\n\022OrdersL" +
-      "istResponse\0227\n\004data\030\001 \001(\0132!.orders.v1.Or" +
-      "dersListResponseDataH\000R\004data\022+\n\005error\030\002 " +
-      "\001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010res" +
-      "ponse\"\211\001\n\026OrdersListResponseData\0220\n\006orde" +
-      "rs\030\001 \003(\0132\030.orders.v1.OrderListItemR\006orde" +
-      "rs\022=\n\npagination\030\002 \001(\0132\035.shared.v1.Pagin" +
-      "ationResponseR\npagination\"\343\002\n\rOrderListI" +
-      "tem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016shipping_cents\030\002 " +
-      "\001(\003R\rshippingCents\022\037\n\013total_cents\030\003 \001(\003R" +
-      "\ntotalCents\022#\n\rcurrency_code\030\004 \001(\tR\014curr" +
-      "encyCode\022j\n\034inventory_reservation_status" +
-      "\030\005 \001(\0162(.inventory.v1.InventoryReservati" +
-      "onStatusR\032inventoryReservationStatus\022\026\n\006" +
-      "status\030\006 \001(\tR\006status\022\035\n\ncreated_at\030\007 \001(\004" +
-      "R\tcreatedAt\0222\n\005items\030\010 \003(\0132\034.orders.v1.O" +
-      "rderLineListItemR\005items\"\306\005\n\021OrderLineLis" +
-      "tItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030\002 \001(\tR" +
-      "\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tproductId\022" +
-      "\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\024\n\005title\030" +
-      "\005 \001(\tR\005title\022\032\n\010quantity\030\006 \001(\005R\010quantity" +
-      "\022(\n\020unit_price_cents\030\t \001(\004R\016unitPriceCen" +
-      "ts\022-\n\020list_price_cents\030\n \001(\004H\000R\016listPric" +
-      "eCents\210\001\001\022-\n\020sale_price_cents\030\013 \001(\004H\001R\016s" +
-      "alePriceCents\210\001\001\022*\n\016discount_cents\030\014 \001(\004" +
-      "H\002R\rdiscountCents\210\001\001\022\033\n\ttax_cents\030\r \001(\004R" +
-      "\010taxCents\022%\n\016shipping_cents\030\016 \001(\004R\rshipp" +
-      "ingCents\022\037\n\013total_cents\030\017 \001(\004R\ntotalCent" +
-      "s\022*\n\021applied_offer_ids\030\020 \003(\tR\017appliedOff" +
-      "erIds\022\026\n\006status\030\021 \001(\tR\006status\022;\n\027estimat" +
-      "ed_delivery_date\030\022 \001(\004H\003R\025estimatedDeliv" +
-      "eryDate\210\001\001\022#\n\rproduct_image\030\023 \001(\tR\014produ" +
-      "ctImageB\023\n\021_list_price_centsB\023\n\021_sale_pr" +
-      "ice_centsB\021\n\017_discount_centsB\032\n\030_estimat" +
-      "ed_delivery_dateBu\n\032org.megacommerce.ord" +
-      "ers.v1B\017OrdersListProtoZCgithub.com/ahma" +
-      "d-khatib0-org/megacommerce-proto/gen/go/" +
-      "orders/v1;v1\370\001\001b\006proto3"
+      "\032\"inventory/v1/reservation_get.proto\032\025sh" +
+      "ared/v1/error.proto\032\032shared/v1/paginatio" +
+      "n.proto\"i\n\021OrdersListRequest\022<\n\npaginati" +
+      "on\030\001 \001(\0132\034.shared.v1.PaginationRequestR\n" +
+      "pagination\022\026\n\006status\030\002 \003(\tR\006status\"\206\001\n\022O" +
+      "rdersListResponse\0227\n\004data\030\001 \001(\0132!.orders" +
+      ".v1.OrdersListResponseDataH\000R\004data\022+\n\005er" +
+      "ror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB" +
+      "\n\n\010response\"\211\001\n\026OrdersListResponseData\0220" +
+      "\n\006orders\030\001 \003(\0132\030.orders.v1.OrderListItem" +
+      "R\006orders\022=\n\npagination\030\002 \001(\0132\035.shared.v1" +
+      ".PaginationResponseR\npagination\"\343\002\n\rOrde" +
+      "rListItem\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016shipping_ce" +
+      "nts\030\002 \001(\003R\rshippingCents\022\037\n\013total_cents\030" +
+      "\003 \001(\003R\ntotalCents\022#\n\rcurrency_code\030\004 \001(\t" +
+      "R\014currencyCode\022j\n\034inventory_reservation_" +
+      "status\030\005 \001(\0162(.inventory.v1.InventoryRes" +
+      "ervationStatusR\032inventoryReservationStat" +
+      "us\022\026\n\006status\030\006 \001(\tR\006status\022\035\n\ncreated_at" +
+      "\030\007 \001(\004R\tcreatedAt\0222\n\005items\030\010 \003(\0132\034.order" +
+      "s.v1.OrderLineListItemR\005items\"\306\005\n\021OrderL" +
+      "ineListItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010order_id\030" +
+      "\002 \001(\tR\007orderId\022\035\n\nproduct_id\030\003 \001(\tR\tprod" +
+      "uctId\022\035\n\nvariant_id\030\004 \001(\tR\tvariantId\022\024\n\005" +
+      "title\030\005 \001(\tR\005title\022\032\n\010quantity\030\006 \001(\005R\010qu" +
+      "antity\022(\n\020unit_price_cents\030\t \001(\004R\016unitPr" +
+      "iceCents\022-\n\020list_price_cents\030\n \001(\004H\000R\016li" +
+      "stPriceCents\210\001\001\022-\n\020sale_price_cents\030\013 \001(" +
+      "\004H\001R\016salePriceCents\210\001\001\022*\n\016discount_cents" +
+      "\030\014 \001(\004H\002R\rdiscountCents\210\001\001\022\033\n\ttax_cents\030" +
+      "\r \001(\004R\010taxCents\022%\n\016shipping_cents\030\016 \001(\004R" +
+      "\rshippingCents\022\037\n\013total_cents\030\017 \001(\004R\ntot" +
+      "alCents\022*\n\021applied_offer_ids\030\020 \003(\tR\017appl" +
+      "iedOfferIds\022\026\n\006status\030\021 \001(\tR\006status\022;\n\027e" +
+      "stimated_delivery_date\030\022 \001(\004H\003R\025estimate" +
+      "dDeliveryDate\210\001\001\022#\n\rproduct_image\030\023 \001(\tR" +
+      "\014productImageB\023\n\021_list_price_centsB\023\n\021_s" +
+      "ale_price_centsB\021\n\017_discount_centsB\032\n\030_e" +
+      "stimated_delivery_dateBu\n\032org.megacommer" +
+      "ce.orders.v1B\017OrdersListProtoZCgithub.co" +
+      "m/ahmad-khatib0-org/megacommerce-proto/g" +
+      "en/go/orders/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.inventory.v1.InventoryReservationGetProto.getDescriptor(),
-          org.megacommerce.orders.v1.OrderLineItemsProto.getDescriptor(),
           org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
           org.megacommerce.shared.v1.PaginationProto.getDescriptor(),
         });
@@ -7125,7 +7123,6 @@ public final class OrdersListProto {
         new java.lang.String[] { "Id", "OrderId", "ProductId", "VariantId", "Title", "Quantity", "UnitPriceCents", "ListPriceCents", "SalePriceCents", "DiscountCents", "TaxCents", "ShippingCents", "TotalCents", "AppliedOfferIds", "Status", "EstimatedDeliveryDate", "ProductImage", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.inventory.v1.InventoryReservationGetProto.getDescriptor();
-    org.megacommerce.orders.v1.OrderLineItemsProto.getDescriptor();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
     org.megacommerce.shared.v1.PaginationProto.getDescriptor();
   }
