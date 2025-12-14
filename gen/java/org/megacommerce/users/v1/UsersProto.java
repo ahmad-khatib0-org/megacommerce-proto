@@ -38,23 +38,26 @@ public final class UsersProto {
       "\n\024users/v1/users.proto\022\010users.v1\032\023users/" +
       "v1/auth.proto\032\027users/v1/supplier.proto\032\027" +
       "users/v1/customer.proto\032\037users/v1/custom" +
-      "er_profile.proto2\200\004\n\014UsersService\022S\n\016Cre" +
-      "ateSupplier\022\037.users.v1.SupplierCreateReq" +
-      "uest\032 .users.v1.SupplierCreateResponse\022S" +
-      "\n\016CreateCustomer\022\037.users.v1.CustomerCrea" +
-      "teRequest\032 .users.v1.CustomerCreateRespo" +
-      "nse\022\\\n\021EmailConfirmation\022\".users.v1.Emai" +
-      "lConfirmationRequest\032#.users.v1.EmailCon" +
-      "firmationResponse\022S\n\016PasswordForgot\022\037.us" +
-      "ers.v1.PasswordForgotRequest\032 .users.v1." +
-      "PasswordForgotResponse\0228\n\005Login\022\026.users." +
-      "v1.LoginRequest\032\027.users.v1.LoginResponse" +
-      "\022Y\n\022GetCustomerProfile\022 .users.v1.Custom" +
-      "erProfileRequest\032!.users.v1.CustomerProf" +
-      "ileResponseBn\n\031org.megacommerce.users.v1" +
-      "B\nUsersProtoZBgithub.com/ahmad-khatib0-o" +
-      "rg/megacommerce-proto/gen/go/users/v1;v1" +
-      "\370\001\001b\006proto3"
+      "er_profile.proto\032\037users/v1/supplier_prof" +
+      "ile.proto2\333\004\n\014UsersService\022S\n\016CreateSupp" +
+      "lier\022\037.users.v1.SupplierCreateRequest\032 ." +
+      "users.v1.SupplierCreateResponse\022S\n\016Creat" +
+      "eCustomer\022\037.users.v1.CustomerCreateReque" +
+      "st\032 .users.v1.CustomerCreateResponse\022\\\n\021" +
+      "EmailConfirmation\022\".users.v1.EmailConfir" +
+      "mationRequest\032#.users.v1.EmailConfirmati" +
+      "onResponse\022S\n\016PasswordForgot\022\037.users.v1." +
+      "PasswordForgotRequest\032 .users.v1.Passwor" +
+      "dForgotResponse\0228\n\005Login\022\026.users.v1.Logi" +
+      "nRequest\032\027.users.v1.LoginResponse\022Y\n\022Get" +
+      "CustomerProfile\022 .users.v1.CustomerProfi" +
+      "leRequest\032!.users.v1.CustomerProfileResp" +
+      "onse\022Y\n\022GetSupplierProfile\022 .users.v1.Su" +
+      "pplierProfileRequest\032!.users.v1.Supplier" +
+      "ProfileResponseBn\n\031org.megacommerce.user" +
+      "s.v1B\nUsersProtoZBgithub.com/ahmad-khati" +
+      "b0-org/megacommerce-proto/gen/go/users/v" +
+      "1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -63,12 +66,14 @@ public final class UsersProto {
           org.megacommerce.users.v1.SupplierProto.getDescriptor(),
           org.megacommerce.users.v1.CustomerProto.getDescriptor(),
           org.megacommerce.users.v1.CustomerProfileProto.getDescriptor(),
+          org.megacommerce.users.v1.SupplierProfileProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.users.v1.AuthProto.getDescriptor();
     org.megacommerce.users.v1.SupplierProto.getDescriptor();
     org.megacommerce.users.v1.CustomerProto.getDescriptor();
     org.megacommerce.users.v1.CustomerProfileProto.getDescriptor();
+    org.megacommerce.users.v1.SupplierProfileProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

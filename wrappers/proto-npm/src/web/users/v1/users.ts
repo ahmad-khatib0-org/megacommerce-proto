@@ -18,6 +18,7 @@ import {
 import { CustomerCreateRequest, CustomerCreateResponse } from "./customer.js";
 import { CustomerProfileRequest, CustomerProfileResponse } from "./customer_profile.js";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier.js";
+import { SupplierProfileRequest, SupplierProfileResponse } from "./supplier_profile.js";
 
 export const protobufPackage = "users.v1";
 
@@ -43,6 +44,10 @@ export interface UsersService {
     request: DeepPartial<CustomerProfileRequest>,
     metadata?: grpc.Metadata,
   ): Promise<CustomerProfileResponse>;
+  GetSupplierProfile(
+    request: DeepPartial<SupplierProfileRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<SupplierProfileResponse>;
 }
 
 export class UsersServiceClientImpl implements UsersService {
@@ -56,6 +61,7 @@ export class UsersServiceClientImpl implements UsersService {
     this.PasswordForgot = this.PasswordForgot.bind(this);
     this.Login = this.Login.bind(this);
     this.GetCustomerProfile = this.GetCustomerProfile.bind(this);
+    this.GetSupplierProfile = this.GetSupplierProfile.bind(this);
   }
 
   CreateSupplier(
@@ -95,6 +101,13 @@ export class UsersServiceClientImpl implements UsersService {
     metadata?: grpc.Metadata,
   ): Promise<CustomerProfileResponse> {
     return this.rpc.unary(UsersServiceGetCustomerProfileDesc, CustomerProfileRequest.fromPartial(request), metadata);
+  }
+
+  GetSupplierProfile(
+    request: DeepPartial<SupplierProfileRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<SupplierProfileResponse> {
+    return this.rpc.unary(UsersServiceGetSupplierProfileDesc, SupplierProfileRequest.fromPartial(request), metadata);
   }
 }
 
@@ -228,6 +241,29 @@ export const UsersServiceGetCustomerProfileDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = CustomerProfileResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const UsersServiceGetSupplierProfileDesc: UnaryMethodDefinitionish = {
+  methodName: "GetSupplierProfile",
+  service: UsersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return SupplierProfileRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = SupplierProfileResponse.decode(data);
       return {
         ...value,
         toObject() {

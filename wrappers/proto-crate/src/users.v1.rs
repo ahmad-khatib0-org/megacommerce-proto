@@ -188,6 +188,50 @@ pub mod customer_profile_response {
         Error(super::super::super::shared::v1::AppError),
     }
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct SupplierProfileRequest {}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SupplierProfile {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub full_name: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub email: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub username: ::prost::alloc::string::String,
+    #[prost(string, tag = "5")]
+    pub image: ::prost::alloc::string::String,
+    #[prost(string, tag = "6")]
+    pub user_type: ::prost::alloc::string::String,
+    #[prost(string, tag = "7")]
+    pub membership: ::prost::alloc::string::String,
+    #[prost(bool, tag = "8")]
+    pub is_email_verified: bool,
+    #[prost(int64, tag = "9")]
+    pub created_at: i64,
+    #[prost(int64, tag = "10")]
+    pub updated_at: i64,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SupplierProfileResponse {
+    #[prost(oneof = "supplier_profile_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<supplier_profile_response::Response>,
+}
+/// Nested message and enum types in `SupplierProfileResponse`.
+pub mod supplier_profile_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::SupplierProfile),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
 /// Generated client implementations.
 pub mod users_service_client {
     #![allow(
@@ -420,6 +464,30 @@ pub mod users_service_client {
                 .insert(GrpcMethod::new("users.v1.UsersService", "GetCustomerProfile"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn get_supplier_profile(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SupplierProfileRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SupplierProfileResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/users.v1.UsersService/GetSupplierProfile",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("users.v1.UsersService", "GetSupplierProfile"));
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -472,6 +540,13 @@ pub mod users_service_server {
             request: tonic::Request<super::CustomerProfileRequest>,
         ) -> std::result::Result<
             tonic::Response<super::CustomerProfileResponse>,
+            tonic::Status,
+        >;
+        async fn get_supplier_profile(
+            &self,
+            request: tonic::Request<super::SupplierProfileRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SupplierProfileResponse>,
             tonic::Status,
         >;
     }
@@ -807,6 +882,52 @@ pub mod users_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetCustomerProfileSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/users.v1.UsersService/GetSupplierProfile" => {
+                    #[allow(non_camel_case_types)]
+                    struct GetSupplierProfileSvc<T: UsersService>(pub Arc<T>);
+                    impl<
+                        T: UsersService,
+                    > tonic::server::UnaryService<super::SupplierProfileRequest>
+                    for GetSupplierProfileSvc<T> {
+                        type Response = super::SupplierProfileResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SupplierProfileRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as UsersService>::get_supplier_profile(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = GetSupplierProfileSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

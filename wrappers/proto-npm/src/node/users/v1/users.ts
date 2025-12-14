@@ -28,6 +28,7 @@ import {
 import { CustomerCreateRequest, CustomerCreateResponse } from "./customer";
 import { CustomerProfileRequest, CustomerProfileResponse } from "./customer_profile";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier";
+import { SupplierProfileRequest, SupplierProfileResponse } from "./supplier_profile";
 
 export const protobufPackage = "users.v1";
 
@@ -97,6 +98,17 @@ export const UsersServiceService = {
       Buffer.from(CustomerProfileResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): CustomerProfileResponse => CustomerProfileResponse.decode(value),
   },
+  getSupplierProfile: {
+    path: "/users.v1.UsersService/GetSupplierProfile",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: SupplierProfileRequest): Buffer =>
+      Buffer.from(SupplierProfileRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): SupplierProfileRequest => SupplierProfileRequest.decode(value),
+    responseSerialize: (value: SupplierProfileResponse): Buffer =>
+      Buffer.from(SupplierProfileResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): SupplierProfileResponse => SupplierProfileResponse.decode(value),
+  },
 } as const;
 
 export interface UsersServiceServer extends UntypedServiceImplementation {
@@ -106,6 +118,7 @@ export interface UsersServiceServer extends UntypedServiceImplementation {
   passwordForgot: handleUnaryCall<PasswordForgotRequest, PasswordForgotResponse>;
   login: handleUnaryCall<LoginRequest, LoginResponse>;
   getCustomerProfile: handleUnaryCall<CustomerProfileRequest, CustomerProfileResponse>;
+  getSupplierProfile: handleUnaryCall<SupplierProfileRequest, SupplierProfileResponse>;
 }
 
 export interface UsersServiceClient extends Client {
@@ -198,6 +211,21 @@ export interface UsersServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: CustomerProfileResponse) => void,
+  ): ClientUnaryCall;
+  getSupplierProfile(
+    request: SupplierProfileRequest,
+    callback: (error: ServiceError | null, response: SupplierProfileResponse) => void,
+  ): ClientUnaryCall;
+  getSupplierProfile(
+    request: SupplierProfileRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: SupplierProfileResponse) => void,
+  ): ClientUnaryCall;
+  getSupplierProfile(
+    request: SupplierProfileRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: SupplierProfileResponse) => void,
   ): ClientUnaryCall;
 }
 

@@ -30,6 +30,7 @@
 #include "users/v1/supplier.pb.h"
 #include "users/v1/customer.pb.h"
 #include "users/v1/customer_profile.pb.h"
+#include "users/v1/supplier_profile.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
