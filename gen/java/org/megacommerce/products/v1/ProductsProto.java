@@ -46,36 +46,39 @@ public final class ProductsProto {
       "etails.proto\032\"products/v1/product_snapsh" +
       "ot.proto\032#products/v1/products_category." +
       "proto\032\"products/v1/products_to_like.prot" +
-      "o2\233\010\n\017ProductsService\022V\n\rProductCreate\022!" +
-      ".products.v1.ProductCreateRequest\032\".prod" +
-      "ucts.v1.ProductCreateResponse\022P\n\013Product" +
-      "Data\022\037.products.v1.ProductDataRequest\032 ." +
-      "products.v1.ProductDataResponse\022Y\n\016Produ" +
-      "ctsToLike\022\".products.v1.ProductsToLikeRe" +
-      "quest\032#.products.v1.ProductsToLikeRespon" +
-      "se\022\\\n\017ProductSnapshot\022#.products.v1.Prod" +
-      "uctSnapshotRequest\032$.products.v1.Product" +
-      "SnapshotResponse\022h\n\023BestSellingProducts\022" +
-      "\'.products.v1.BestSellingProductsRequest" +
-      "\032(.products.v1.BestSellingProductsRespon" +
-      "se\022h\n\023BigDiscountProducts\022\'.products.v1." +
-      "BigDiscountProductsRequest\032(.products.v1" +
-      ".BigDiscountProductsResponse\022e\n\022NewlyAdd" +
-      "edProducts\022&.products.v1.NewlyAddedProdu" +
-      "ctsRequest\032\'.products.v1.NewlyAddedProdu" +
-      "ctsResponse\022S\n\014HeroProducts\022 .products.v" +
-      "1.HeroProductsRequest\032!.products.v1.Hero" +
-      "ProductsResponse\022Y\n\016ProductDetails\022\".pro" +
-      "ducts.v1.ProductDetailsRequest\032#.product" +
-      "s.v1.ProductDetailsResponse\022Y\n\016CategoryN" +
-      "avbar\022\".products.v1.CategoryNavbarReques" +
-      "t\032#.products.v1.CategoryNavbarResponse\022_" +
-      "\n\020ProductsCategory\022$.products.v1.Product" +
-      "sCategoryRequest\032%.products.v1.ProductsC" +
-      "ategoryResponseBw\n\034org.megacommerce.prod" +
-      "ucts.v1B\rProductsProtoZEgithub.com/ahmad" +
-      "-khatib0-org/megacommerce-proto/gen/go/p" +
-      "roducts/v1;v1\370\001\001b\006proto3"
+      "o\032\037products/v1/products_list.proto2\360\010\n\017P" +
+      "roductsService\022V\n\rProductCreate\022!.produc" +
+      "ts.v1.ProductCreateRequest\032\".products.v1" +
+      ".ProductCreateResponse\022P\n\013ProductData\022\037." +
+      "products.v1.ProductDataRequest\032 .product" +
+      "s.v1.ProductDataResponse\022Y\n\016ProductsToLi" +
+      "ke\022\".products.v1.ProductsToLikeRequest\032#" +
+      ".products.v1.ProductsToLikeResponse\022\\\n\017P" +
+      "roductSnapshot\022#.products.v1.ProductSnap" +
+      "shotRequest\032$.products.v1.ProductSnapsho" +
+      "tResponse\022h\n\023BestSellingProducts\022\'.produ" +
+      "cts.v1.BestSellingProductsRequest\032(.prod" +
+      "ucts.v1.BestSellingProductsResponse\022h\n\023B" +
+      "igDiscountProducts\022\'.products.v1.BigDisc" +
+      "ountProductsRequest\032(.products.v1.BigDis" +
+      "countProductsResponse\022e\n\022NewlyAddedProdu" +
+      "cts\022&.products.v1.NewlyAddedProductsRequ" +
+      "est\032\'.products.v1.NewlyAddedProductsResp" +
+      "onse\022S\n\014HeroProducts\022 .products.v1.HeroP" +
+      "roductsRequest\032!.products.v1.HeroProduct" +
+      "sResponse\022Y\n\016ProductDetails\022\".products.v" +
+      "1.ProductDetailsRequest\032#.products.v1.Pr" +
+      "oductDetailsResponse\022Y\n\016CategoryNavbar\022\"" +
+      ".products.v1.CategoryNavbarRequest\032#.pro" +
+      "ducts.v1.CategoryNavbarResponse\022_\n\020Produ" +
+      "ctsCategory\022$.products.v1.ProductsCatego" +
+      "ryRequest\032%.products.v1.ProductsCategory" +
+      "Response\022S\n\014ProductsList\022 .products.v1.P" +
+      "roductsListRequest\032!.products.v1.Product" +
+      "sListResponseBw\n\034org.megacommerce.produc" +
+      "ts.v1B\rProductsProtoZEgithub.com/ahmad-k" +
+      "hatib0-org/megacommerce-proto/gen/go/pro" +
+      "ducts/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -91,6 +94,7 @@ public final class ProductsProto {
           org.megacommerce.products.v1.ProductSnapshotProto.getDescriptor(),
           org.megacommerce.products.v1.ProductsCategoryProto.getDescriptor(),
           org.megacommerce.products.v1.ProductsToLikeProto.getDescriptor(),
+          org.megacommerce.products.v1.ProductsListProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.products.v1.BestSellingProductsProto.getDescriptor();
@@ -104,6 +108,7 @@ public final class ProductsProto {
     org.megacommerce.products.v1.ProductSnapshotProto.getDescriptor();
     org.megacommerce.products.v1.ProductsCategoryProto.getDescriptor();
     org.megacommerce.products.v1.ProductsToLikeProto.getDescriptor();
+    org.megacommerce.products.v1.ProductsListProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

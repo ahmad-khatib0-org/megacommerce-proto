@@ -37,6 +37,7 @@
 #include "products/v1/product_snapshot.pb.h"
 #include "products/v1/products_category.pb.h"
 #include "products/v1/products_to_like.pb.h"
+#include "products/v1/products_list.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

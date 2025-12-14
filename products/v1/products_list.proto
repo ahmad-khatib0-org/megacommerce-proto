@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package products.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/pagination.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "ProductsListProto";
+option java_package = "org.megacommerce.products.v1";
+
+message ProductsListRequest {
+  shared.v1.PaginationRequest pagination = 1;
+}
+
+message ProductsListResponse {
+  oneof response {
+    ProductsListResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message ProductsListResponseData {
+  repeated ProductListItem products = 1;
+  shared.v1.PaginationResponse pagination = 2;
+}
+
+// ProductListItem for supplier's product listing
+message ProductListItem {
+  string id = 1;
+  string title = 2;
+  string status = 3;           // pending, published, rejected
+  uint64 created_at = 4;       // Unix timestamp in milliseconds
+  
+  double price = 5;            // Your price in the default currency
+  optional double list_price = 6;
+  optional double sale_price = 7;
+  string currency_code = 8;
+  
+  int32 quantity = 9;          // Available quantity
+  string image = 10;           // Featured image URL
+}

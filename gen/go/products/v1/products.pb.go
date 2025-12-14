@@ -24,7 +24,7 @@ var File_products_v1_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_products_proto_rawDesc = "" +
 	"\n" +
-	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a'products/v1/best_selling_products.proto\x1a'products/v1/big_discount_products.proto\x1a!products/v1/category_navbar.proto\x1a\x1fproducts/v1/hero_products.proto\x1a&products/v1/newly_added_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a!products/v1/product_details.proto\x1a\"products/v1/product_snapshot.proto\x1a#products/v1/products_category.proto\x1a\"products/v1/products_to_like.proto2\x9b\b\n" +
+	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a'products/v1/best_selling_products.proto\x1a'products/v1/big_discount_products.proto\x1a!products/v1/category_navbar.proto\x1a\x1fproducts/v1/hero_products.proto\x1a&products/v1/newly_added_products.proto\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a!products/v1/product_details.proto\x1a\"products/v1/product_snapshot.proto\x1a#products/v1/products_category.proto\x1a\"products/v1/products_to_like.proto\x1a\x1fproducts/v1/products_list.proto2\xf0\b\n" +
 	"\x0fProductsService\x12V\n" +
 	"\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n" +
 	"\vProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12Y\n" +
@@ -36,7 +36,8 @@ const file_products_v1_products_proto_rawDesc = "" +
 	"\fHeroProducts\x12 .products.v1.HeroProductsRequest\x1a!.products.v1.HeroProductsResponse\x12Y\n" +
 	"\x0eProductDetails\x12\".products.v1.ProductDetailsRequest\x1a#.products.v1.ProductDetailsResponse\x12Y\n" +
 	"\x0eCategoryNavbar\x12\".products.v1.CategoryNavbarRequest\x1a#.products.v1.CategoryNavbarResponse\x12_\n" +
-	"\x10ProductsCategory\x12$.products.v1.ProductsCategoryRequest\x1a%.products.v1.ProductsCategoryResponseBw\n" +
+	"\x10ProductsCategory\x12$.products.v1.ProductsCategoryRequest\x1a%.products.v1.ProductsCategoryResponse\x12S\n" +
+	"\fProductsList\x12 .products.v1.ProductsListRequest\x1a!.products.v1.ProductsListResponseBw\n" +
 	"\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_products_v1_products_proto_goTypes = []any{
@@ -51,17 +52,19 @@ var file_products_v1_products_proto_goTypes = []any{
 	(*ProductDetailsRequest)(nil),       // 8: products.v1.ProductDetailsRequest
 	(*CategoryNavbarRequest)(nil),       // 9: products.v1.CategoryNavbarRequest
 	(*ProductsCategoryRequest)(nil),     // 10: products.v1.ProductsCategoryRequest
-	(*ProductCreateResponse)(nil),       // 11: products.v1.ProductCreateResponse
-	(*ProductDataResponse)(nil),         // 12: products.v1.ProductDataResponse
-	(*ProductsToLikeResponse)(nil),      // 13: products.v1.ProductsToLikeResponse
-	(*ProductSnapshotResponse)(nil),     // 14: products.v1.ProductSnapshotResponse
-	(*BestSellingProductsResponse)(nil), // 15: products.v1.BestSellingProductsResponse
-	(*BigDiscountProductsResponse)(nil), // 16: products.v1.BigDiscountProductsResponse
-	(*NewlyAddedProductsResponse)(nil),  // 17: products.v1.NewlyAddedProductsResponse
-	(*HeroProductsResponse)(nil),        // 18: products.v1.HeroProductsResponse
-	(*ProductDetailsResponse)(nil),      // 19: products.v1.ProductDetailsResponse
-	(*CategoryNavbarResponse)(nil),      // 20: products.v1.CategoryNavbarResponse
-	(*ProductsCategoryResponse)(nil),    // 21: products.v1.ProductsCategoryResponse
+	(*ProductsListRequest)(nil),         // 11: products.v1.ProductsListRequest
+	(*ProductCreateResponse)(nil),       // 12: products.v1.ProductCreateResponse
+	(*ProductDataResponse)(nil),         // 13: products.v1.ProductDataResponse
+	(*ProductsToLikeResponse)(nil),      // 14: products.v1.ProductsToLikeResponse
+	(*ProductSnapshotResponse)(nil),     // 15: products.v1.ProductSnapshotResponse
+	(*BestSellingProductsResponse)(nil), // 16: products.v1.BestSellingProductsResponse
+	(*BigDiscountProductsResponse)(nil), // 17: products.v1.BigDiscountProductsResponse
+	(*NewlyAddedProductsResponse)(nil),  // 18: products.v1.NewlyAddedProductsResponse
+	(*HeroProductsResponse)(nil),        // 19: products.v1.HeroProductsResponse
+	(*ProductDetailsResponse)(nil),      // 20: products.v1.ProductDetailsResponse
+	(*CategoryNavbarResponse)(nil),      // 21: products.v1.CategoryNavbarResponse
+	(*ProductsCategoryResponse)(nil),    // 22: products.v1.ProductsCategoryResponse
+	(*ProductsListResponse)(nil),        // 23: products.v1.ProductsListResponse
 }
 var file_products_v1_products_proto_depIdxs = []int32{
 	0,  // 0: products.v1.ProductsService.ProductCreate:input_type -> products.v1.ProductCreateRequest
@@ -75,19 +78,21 @@ var file_products_v1_products_proto_depIdxs = []int32{
 	8,  // 8: products.v1.ProductsService.ProductDetails:input_type -> products.v1.ProductDetailsRequest
 	9,  // 9: products.v1.ProductsService.CategoryNavbar:input_type -> products.v1.CategoryNavbarRequest
 	10, // 10: products.v1.ProductsService.ProductsCategory:input_type -> products.v1.ProductsCategoryRequest
-	11, // 11: products.v1.ProductsService.ProductCreate:output_type -> products.v1.ProductCreateResponse
-	12, // 12: products.v1.ProductsService.ProductData:output_type -> products.v1.ProductDataResponse
-	13, // 13: products.v1.ProductsService.ProductsToLike:output_type -> products.v1.ProductsToLikeResponse
-	14, // 14: products.v1.ProductsService.ProductSnapshot:output_type -> products.v1.ProductSnapshotResponse
-	15, // 15: products.v1.ProductsService.BestSellingProducts:output_type -> products.v1.BestSellingProductsResponse
-	16, // 16: products.v1.ProductsService.BigDiscountProducts:output_type -> products.v1.BigDiscountProductsResponse
-	17, // 17: products.v1.ProductsService.NewlyAddedProducts:output_type -> products.v1.NewlyAddedProductsResponse
-	18, // 18: products.v1.ProductsService.HeroProducts:output_type -> products.v1.HeroProductsResponse
-	19, // 19: products.v1.ProductsService.ProductDetails:output_type -> products.v1.ProductDetailsResponse
-	20, // 20: products.v1.ProductsService.CategoryNavbar:output_type -> products.v1.CategoryNavbarResponse
-	21, // 21: products.v1.ProductsService.ProductsCategory:output_type -> products.v1.ProductsCategoryResponse
-	11, // [11:22] is the sub-list for method output_type
-	0,  // [0:11] is the sub-list for method input_type
+	11, // 11: products.v1.ProductsService.ProductsList:input_type -> products.v1.ProductsListRequest
+	12, // 12: products.v1.ProductsService.ProductCreate:output_type -> products.v1.ProductCreateResponse
+	13, // 13: products.v1.ProductsService.ProductData:output_type -> products.v1.ProductDataResponse
+	14, // 14: products.v1.ProductsService.ProductsToLike:output_type -> products.v1.ProductsToLikeResponse
+	15, // 15: products.v1.ProductsService.ProductSnapshot:output_type -> products.v1.ProductSnapshotResponse
+	16, // 16: products.v1.ProductsService.BestSellingProducts:output_type -> products.v1.BestSellingProductsResponse
+	17, // 17: products.v1.ProductsService.BigDiscountProducts:output_type -> products.v1.BigDiscountProductsResponse
+	18, // 18: products.v1.ProductsService.NewlyAddedProducts:output_type -> products.v1.NewlyAddedProductsResponse
+	19, // 19: products.v1.ProductsService.HeroProducts:output_type -> products.v1.HeroProductsResponse
+	20, // 20: products.v1.ProductsService.ProductDetails:output_type -> products.v1.ProductDetailsResponse
+	21, // 21: products.v1.ProductsService.CategoryNavbar:output_type -> products.v1.CategoryNavbarResponse
+	22, // 22: products.v1.ProductsService.ProductsCategory:output_type -> products.v1.ProductsCategoryResponse
+	23, // 23: products.v1.ProductsService.ProductsList:output_type -> products.v1.ProductsListResponse
+	12, // [12:24] is the sub-list for method output_type
+	0,  // [0:12] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
@@ -109,6 +114,7 @@ func file_products_v1_products_proto_init() {
 	file_products_v1_product_snapshot_proto_init()
 	file_products_v1_products_category_proto_init()
 	file_products_v1_products_to_like_proto_init()
+	file_products_v1_products_list_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

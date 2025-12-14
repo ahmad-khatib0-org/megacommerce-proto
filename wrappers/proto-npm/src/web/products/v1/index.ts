@@ -12,6 +12,7 @@ import * as ProductEvents from './product_events';
 import * as ProductSnapshot from './product_snapshot';
 import * as Products from './products';
 import * as ProductsCategory from './products_category';
+import * as ProductsList from './products_list';
 import * as ProductsToLike from './products_to_like';
 
 export {
@@ -29,5 +30,6 @@ export {
   ProductSnapshot,
   Products,
   ProductsCategory,
+  ProductsList,
   ProductsToLike
 };
