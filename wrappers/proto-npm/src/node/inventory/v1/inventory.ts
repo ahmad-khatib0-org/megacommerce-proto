@@ -17,6 +17,7 @@ import {
   type ServiceError,
   type UntypedServiceImplementation,
 } from "@grpc/grpc-js";
+import { InventoryGetRequest, InventoryGetResponse } from "./inventory_get";
 import { InventoryListRequest, InventoryListResponse } from "./inventory_list";
 import { InventoryReleaseRequest, InventoryReleaseResponse } from "./inventory_release";
 import { InventoryReserveRequest, InventoryReserveResponse } from "./inventory_reserve";
@@ -37,6 +38,17 @@ export const InventoryServiceService = {
     responseSerialize: (value: InventoryListResponse): Buffer =>
       Buffer.from(InventoryListResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): InventoryListResponse => InventoryListResponse.decode(value),
+  },
+  /** Get a single inventory item by ID */
+  inventoryGet: {
+    path: "/inventory.v1.InventoryService/InventoryGet",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: InventoryGetRequest): Buffer => Buffer.from(InventoryGetRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): InventoryGetRequest => InventoryGetRequest.decode(value),
+    responseSerialize: (value: InventoryGetResponse): Buffer =>
+      Buffer.from(InventoryGetResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): InventoryGetResponse => InventoryGetResponse.decode(value),
   },
   /** Reserve inventory for an order */
   inventoryReserve: {
@@ -92,6 +104,8 @@ export const InventoryServiceService = {
 export interface InventoryServiceServer extends UntypedServiceImplementation {
   /** List inventory items for a supplier */
   inventoryList: handleUnaryCall<InventoryListRequest, InventoryListResponse>;
+  /** Get a single inventory item by ID */
+  inventoryGet: handleUnaryCall<InventoryGetRequest, InventoryGetResponse>;
   /** Reserve inventory for an order */
   inventoryReserve: handleUnaryCall<InventoryReserveRequest, InventoryReserveResponse>;
   /** Release inventory reservation */
@@ -118,6 +132,22 @@ export interface InventoryServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: InventoryListResponse) => void,
+  ): ClientUnaryCall;
+  /** Get a single inventory item by ID */
+  inventoryGet(
+    request: InventoryGetRequest,
+    callback: (error: ServiceError | null, response: InventoryGetResponse) => void,
+  ): ClientUnaryCall;
+  inventoryGet(
+    request: InventoryGetRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: InventoryGetResponse) => void,
+  ): ClientUnaryCall;
+  inventoryGet(
+    request: InventoryGetRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: InventoryGetResponse) => void,
   ): ClientUnaryCall;
   /** Reserve inventory for an order */
   inventoryReserve(

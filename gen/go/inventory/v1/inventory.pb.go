@@ -24,9 +24,10 @@ var File_inventory_v1_inventory_proto protoreflect.FileDescriptor
 
 const file_inventory_v1_inventory_proto_rawDesc = "" +
 	"\n" +
-	"\x1cinventory/v1/inventory.proto\x12\finventory.v1\x1a!inventory/v1/inventory_list.proto\x1a$inventory/v1/inventory_release.proto\x1a$inventory/v1/inventory_reserve.proto\x1a#inventory/v1/inventory_update.proto\x1a\"inventory/v1/reservation_get.proto2\x94\x04\n" +
+	"\x1cinventory/v1/inventory.proto\x12\finventory.v1\x1a!inventory/v1/inventory_list.proto\x1a inventory/v1/inventory_get.proto\x1a$inventory/v1/inventory_release.proto\x1a$inventory/v1/inventory_reserve.proto\x1a#inventory/v1/inventory_update.proto\x1a\"inventory/v1/reservation_get.proto2\xed\x04\n" +
 	"\x10InventoryService\x12Z\n" +
-	"\rInventoryList\x12\".inventory.v1.InventoryListRequest\x1a#.inventory.v1.InventoryListResponse\"\x00\x12c\n" +
+	"\rInventoryList\x12\".inventory.v1.InventoryListRequest\x1a#.inventory.v1.InventoryListResponse\"\x00\x12W\n" +
+	"\fInventoryGet\x12!.inventory.v1.InventoryGetRequest\x1a\".inventory.v1.InventoryGetResponse\"\x00\x12c\n" +
 	"\x10InventoryReserve\x12%.inventory.v1.InventoryReserveRequest\x1a&.inventory.v1.InventoryReserveResponse\"\x00\x12c\n" +
 	"\x10InventoryRelease\x12%.inventory.v1.InventoryReleaseRequest\x1a&.inventory.v1.InventoryReleaseResponse\"\x00\x12`\n" +
 	"\x0fInventoryUpdate\x12$.inventory.v1.InventoryUpdateRequest\x1a%.inventory.v1.InventoryUpdateResponse\"\x00\x12x\n" +
@@ -35,32 +36,36 @@ const file_inventory_v1_inventory_proto_rawDesc = "" +
 
 var file_inventory_v1_inventory_proto_goTypes = []any{
 	(*InventoryListRequest)(nil),            // 0: inventory.v1.InventoryListRequest
-	(*InventoryReserveRequest)(nil),         // 1: inventory.v1.InventoryReserveRequest
-	(*InventoryReleaseRequest)(nil),         // 2: inventory.v1.InventoryReleaseRequest
-	(*InventoryUpdateRequest)(nil),          // 3: inventory.v1.InventoryUpdateRequest
-	(*InventoryReservationGetRequest)(nil),  // 4: inventory.v1.InventoryReservationGetRequest
-	(*InventoryListResponse)(nil),           // 5: inventory.v1.InventoryListResponse
-	(*InventoryReserveResponse)(nil),        // 6: inventory.v1.InventoryReserveResponse
-	(*InventoryReleaseResponse)(nil),        // 7: inventory.v1.InventoryReleaseResponse
-	(*InventoryUpdateResponse)(nil),         // 8: inventory.v1.InventoryUpdateResponse
-	(*InventoryReservationGetResponse)(nil), // 9: inventory.v1.InventoryReservationGetResponse
+	(*InventoryGetRequest)(nil),             // 1: inventory.v1.InventoryGetRequest
+	(*InventoryReserveRequest)(nil),         // 2: inventory.v1.InventoryReserveRequest
+	(*InventoryReleaseRequest)(nil),         // 3: inventory.v1.InventoryReleaseRequest
+	(*InventoryUpdateRequest)(nil),          // 4: inventory.v1.InventoryUpdateRequest
+	(*InventoryReservationGetRequest)(nil),  // 5: inventory.v1.InventoryReservationGetRequest
+	(*InventoryListResponse)(nil),           // 6: inventory.v1.InventoryListResponse
+	(*InventoryGetResponse)(nil),            // 7: inventory.v1.InventoryGetResponse
+	(*InventoryReserveResponse)(nil),        // 8: inventory.v1.InventoryReserveResponse
+	(*InventoryReleaseResponse)(nil),        // 9: inventory.v1.InventoryReleaseResponse
+	(*InventoryUpdateResponse)(nil),         // 10: inventory.v1.InventoryUpdateResponse
+	(*InventoryReservationGetResponse)(nil), // 11: inventory.v1.InventoryReservationGetResponse
 }
 var file_inventory_v1_inventory_proto_depIdxs = []int32{
-	0, // 0: inventory.v1.InventoryService.InventoryList:input_type -> inventory.v1.InventoryListRequest
-	1, // 1: inventory.v1.InventoryService.InventoryReserve:input_type -> inventory.v1.InventoryReserveRequest
-	2, // 2: inventory.v1.InventoryService.InventoryRelease:input_type -> inventory.v1.InventoryReleaseRequest
-	3, // 3: inventory.v1.InventoryService.InventoryUpdate:input_type -> inventory.v1.InventoryUpdateRequest
-	4, // 4: inventory.v1.InventoryService.InventoryReservationGet:input_type -> inventory.v1.InventoryReservationGetRequest
-	5, // 5: inventory.v1.InventoryService.InventoryList:output_type -> inventory.v1.InventoryListResponse
-	6, // 6: inventory.v1.InventoryService.InventoryReserve:output_type -> inventory.v1.InventoryReserveResponse
-	7, // 7: inventory.v1.InventoryService.InventoryRelease:output_type -> inventory.v1.InventoryReleaseResponse
-	8, // 8: inventory.v1.InventoryService.InventoryUpdate:output_type -> inventory.v1.InventoryUpdateResponse
-	9, // 9: inventory.v1.InventoryService.InventoryReservationGet:output_type -> inventory.v1.InventoryReservationGetResponse
-	5, // [5:10] is the sub-list for method output_type
-	0, // [0:5] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0,  // 0: inventory.v1.InventoryService.InventoryList:input_type -> inventory.v1.InventoryListRequest
+	1,  // 1: inventory.v1.InventoryService.InventoryGet:input_type -> inventory.v1.InventoryGetRequest
+	2,  // 2: inventory.v1.InventoryService.InventoryReserve:input_type -> inventory.v1.InventoryReserveRequest
+	3,  // 3: inventory.v1.InventoryService.InventoryRelease:input_type -> inventory.v1.InventoryReleaseRequest
+	4,  // 4: inventory.v1.InventoryService.InventoryUpdate:input_type -> inventory.v1.InventoryUpdateRequest
+	5,  // 5: inventory.v1.InventoryService.InventoryReservationGet:input_type -> inventory.v1.InventoryReservationGetRequest
+	6,  // 6: inventory.v1.InventoryService.InventoryList:output_type -> inventory.v1.InventoryListResponse
+	7,  // 7: inventory.v1.InventoryService.InventoryGet:output_type -> inventory.v1.InventoryGetResponse
+	8,  // 8: inventory.v1.InventoryService.InventoryReserve:output_type -> inventory.v1.InventoryReserveResponse
+	9,  // 9: inventory.v1.InventoryService.InventoryRelease:output_type -> inventory.v1.InventoryReleaseResponse
+	10, // 10: inventory.v1.InventoryService.InventoryUpdate:output_type -> inventory.v1.InventoryUpdateResponse
+	11, // 11: inventory.v1.InventoryService.InventoryReservationGet:output_type -> inventory.v1.InventoryReservationGetResponse
+	6,  // [6:12] is the sub-list for method output_type
+	0,  // [0:6] is the sub-list for method input_type
+	0,  // [0:0] is the sub-list for extension type_name
+	0,  // [0:0] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_inventory_v1_inventory_proto_init() }
@@ -69,6 +74,7 @@ func file_inventory_v1_inventory_proto_init() {
 		return
 	}
 	file_inventory_v1_inventory_list_proto_init()
+	file_inventory_v1_inventory_get_proto_init()
 	file_inventory_v1_inventory_release_proto_init()
 	file_inventory_v1_inventory_reserve_proto_init()
 	file_inventory_v1_inventory_update_proto_init()

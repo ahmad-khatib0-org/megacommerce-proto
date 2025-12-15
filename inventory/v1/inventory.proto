@@ -3,6 +3,7 @@ syntax = "proto3";
 package inventory.v1;
 
 import 'inventory/v1/inventory_list.proto';
+import 'inventory/v1/inventory_get.proto';
 import 'inventory/v1/inventory_release.proto';
 import 'inventory/v1/inventory_reserve.proto';
 import 'inventory/v1/inventory_update.proto';
@@ -16,6 +17,9 @@ option java_package = "org.megacommerce.inventory.v1";
 service InventoryService {
   // List inventory items for a supplier
   rpc InventoryList(inventory.v1.InventoryListRequest) returns (inventory.v1.InventoryListResponse) {}
+
+  // Get a single inventory item by ID
+  rpc InventoryGet(inventory.v1.InventoryGetRequest) returns (inventory.v1.InventoryGetResponse) {}
 
   // Reserve inventory for an order
   rpc InventoryReserve(inventory.v1.InventoryReserveRequest) returns (inventory.v1.InventoryReserveResponse) {}

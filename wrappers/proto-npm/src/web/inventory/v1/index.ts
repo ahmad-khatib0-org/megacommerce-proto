@@ -1,5 +1,6 @@
 import * as Database from './database';
 import * as Inventory from './inventory';
+import * as InventoryGet from './inventory_get';
 import * as InventoryList from './inventory_list';
 import * as InventoryRelease from './inventory_release';
 import * as InventoryReserve from './inventory_reserve';
@@ -9,6 +10,7 @@ import * as ReservationGet from './reservation_get';
 export {
   Database,
   Inventory,
+  InventoryGet,
   InventoryList,
   InventoryRelease,
   InventoryReserve,

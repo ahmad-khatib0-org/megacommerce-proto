@@ -1,4 +1,5 @@
 from inventory.v1 import inventory_list_pb2 as _inventory_list_pb2
+from inventory.v1 import inventory_get_pb2 as _inventory_get_pb2
 from inventory.v1 import inventory_release_pb2 as _inventory_release_pb2
 from inventory.v1 import inventory_reserve_pb2 as _inventory_reserve_pb2
 from inventory.v1 import inventory_update_pb2 as _inventory_update_pb2

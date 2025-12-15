@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from inventory.v1 import inventory_get_pb2 as inventory_dot_v1_dot_inventory__get__pb2
 from inventory.v1 import inventory_list_pb2 as inventory_dot_v1_dot_inventory__list__pb2
 from inventory.v1 import inventory_release_pb2 as inventory_dot_v1_dot_inventory__release__pb2
 from inventory.v1 import inventory_reserve_pb2 as inventory_dot_v1_dot_inventory__reserve__pb2
@@ -43,6 +44,11 @@ class InventoryServiceStub(object):
                 request_serializer=inventory_dot_v1_dot_inventory__list__pb2.InventoryListRequest.SerializeToString,
                 response_deserializer=inventory_dot_v1_dot_inventory__list__pb2.InventoryListResponse.FromString,
                 _registered_method=True)
+        self.InventoryGet = channel.unary_unary(
+                '/inventory.v1.InventoryService/InventoryGet',
+                request_serializer=inventory_dot_v1_dot_inventory__get__pb2.InventoryGetRequest.SerializeToString,
+                response_deserializer=inventory_dot_v1_dot_inventory__get__pb2.InventoryGetResponse.FromString,
+                _registered_method=True)
         self.InventoryReserve = channel.unary_unary(
                 '/inventory.v1.InventoryService/InventoryReserve',
                 request_serializer=inventory_dot_v1_dot_inventory__reserve__pb2.InventoryReserveRequest.SerializeToString,
@@ -70,6 +76,13 @@ class InventoryServiceServicer(object):
 
     def InventoryList(self, request, context):
         """List inventory items for a supplier
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def InventoryGet(self, request, context):
+        """Get a single inventory item by ID
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -110,6 +123,11 @@ def add_InventoryServiceServicer_to_server(servicer, server):
                     servicer.InventoryList,
                     request_deserializer=inventory_dot_v1_dot_inventory__list__pb2.InventoryListRequest.FromString,
                     response_serializer=inventory_dot_v1_dot_inventory__list__pb2.InventoryListResponse.SerializeToString,
+            ),
+            'InventoryGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.InventoryGet,
+                    request_deserializer=inventory_dot_v1_dot_inventory__get__pb2.InventoryGetRequest.FromString,
+                    response_serializer=inventory_dot_v1_dot_inventory__get__pb2.InventoryGetResponse.SerializeToString,
             ),
             'InventoryReserve': grpc.unary_unary_rpc_method_handler(
                     servicer.InventoryReserve,
@@ -159,6 +177,33 @@ class InventoryService(object):
             '/inventory.v1.InventoryService/InventoryList',
             inventory_dot_v1_dot_inventory__list__pb2.InventoryListRequest.SerializeToString,
             inventory_dot_v1_dot_inventory__list__pb2.InventoryListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def InventoryGet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/inventory.v1.InventoryService/InventoryGet',
+            inventory_dot_v1_dot_inventory__get__pb2.InventoryGetRequest.SerializeToString,
+            inventory_dot_v1_dot_inventory__get__pb2.InventoryGetResponse.FromString,
             options,
             channel_credentials,
             insecure,

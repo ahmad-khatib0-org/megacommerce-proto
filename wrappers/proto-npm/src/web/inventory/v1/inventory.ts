@@ -7,6 +7,7 @@
 /* eslint-disable */
 import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
+import { InventoryGetRequest, InventoryGetResponse } from "./inventory_get.js";
 import { InventoryListRequest, InventoryListResponse } from "./inventory_list.js";
 import { InventoryReleaseRequest, InventoryReleaseResponse } from "./inventory_release.js";
 import { InventoryReserveRequest, InventoryReserveResponse } from "./inventory_reserve.js";
@@ -18,6 +19,8 @@ export const protobufPackage = "inventory.v1";
 export interface InventoryService {
   /** List inventory items for a supplier */
   InventoryList(request: DeepPartial<InventoryListRequest>, metadata?: grpc.Metadata): Promise<InventoryListResponse>;
+  /** Get a single inventory item by ID */
+  InventoryGet(request: DeepPartial<InventoryGetRequest>, metadata?: grpc.Metadata): Promise<InventoryGetResponse>;
   /** Reserve inventory for an order */
   InventoryReserve(
     request: DeepPartial<InventoryReserveRequest>,
@@ -46,6 +49,7 @@ export class InventoryServiceClientImpl implements InventoryService {
   constructor(rpc: Rpc) {
     this.rpc = rpc;
     this.InventoryList = this.InventoryList.bind(this);
+    this.InventoryGet = this.InventoryGet.bind(this);
     this.InventoryReserve = this.InventoryReserve.bind(this);
     this.InventoryRelease = this.InventoryRelease.bind(this);
     this.InventoryUpdate = this.InventoryUpdate.bind(this);
@@ -54,6 +58,10 @@ export class InventoryServiceClientImpl implements InventoryService {
 
   InventoryList(request: DeepPartial<InventoryListRequest>, metadata?: grpc.Metadata): Promise<InventoryListResponse> {
     return this.rpc.unary(InventoryServiceInventoryListDesc, InventoryListRequest.fromPartial(request), metadata);
+  }
+
+  InventoryGet(request: DeepPartial<InventoryGetRequest>, metadata?: grpc.Metadata): Promise<InventoryGetResponse> {
+    return this.rpc.unary(InventoryServiceInventoryGetDesc, InventoryGetRequest.fromPartial(request), metadata);
   }
 
   InventoryReserve(
@@ -104,6 +112,29 @@ export const InventoryServiceInventoryListDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = InventoryListResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const InventoryServiceInventoryGetDesc: UnaryMethodDefinitionish = {
+  methodName: "InventoryGet",
+  service: InventoryServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return InventoryGetRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = InventoryGetResponse.decode(data);
       return {
         ...value,
         toObject() {

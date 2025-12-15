@@ -40,30 +40,34 @@ const char descriptor_table_protodef_inventory_2fv1_2finventory_2eproto[] ABSL_A
     protodesc_cold) = {
     "\n\034inventory/v1/inventory.proto\022\014inventor"
     "y.v1\032!inventory/v1/inventory_list.proto\032"
-    "$inventory/v1/inventory_release.proto\032$i"
-    "nventory/v1/inventory_reserve.proto\032#inv"
-    "entory/v1/inventory_update.proto\032\"invent"
-    "ory/v1/reservation_get.proto2\224\004\n\020Invento"
-    "ryService\022Z\n\rInventoryList\022\".inventory.v"
-    "1.InventoryListRequest\032#.inventory.v1.In"
-    "ventoryListResponse\"\000\022c\n\020InventoryReserv"
-    "e\022%.inventory.v1.InventoryReserveRequest"
-    "\032&.inventory.v1.InventoryReserveResponse"
-    "\"\000\022c\n\020InventoryRelease\022%.inventory.v1.In"
-    "ventoryReleaseRequest\032&.inventory.v1.Inv"
-    "entoryReleaseResponse\"\000\022`\n\017InventoryUpda"
-    "te\022$.inventory.v1.InventoryUpdateRequest"
-    "\032%.inventory.v1.InventoryUpdateResponse\""
-    "\000\022x\n\027InventoryReservationGet\022,.inventory"
-    ".v1.InventoryReservationGetRequest\032-.inv"
-    "entory.v1.InventoryReservationGetRespons"
-    "e\"\000Bz\n\035org.megacommerce.inventory.v1B\016In"
-    "ventoryProtoZFgithub.com/ahmad-khatib0-o"
-    "rg/megacommerce-proto/gen/go/inventory/v"
-    "1;v1\370\001\001b\006proto3"
+    " inventory/v1/inventory_get.proto\032$inven"
+    "tory/v1/inventory_release.proto\032$invento"
+    "ry/v1/inventory_reserve.proto\032#inventory"
+    "/v1/inventory_update.proto\032\"inventory/v1"
+    "/reservation_get.proto2\355\004\n\020InventoryServ"
+    "ice\022Z\n\rInventoryList\022\".inventory.v1.Inve"
+    "ntoryListRequest\032#.inventory.v1.Inventor"
+    "yListResponse\"\000\022W\n\014InventoryGet\022!.invent"
+    "ory.v1.InventoryGetRequest\032\".inventory.v"
+    "1.InventoryGetResponse\"\000\022c\n\020InventoryRes"
+    "erve\022%.inventory.v1.InventoryReserveRequ"
+    "est\032&.inventory.v1.InventoryReserveRespo"
+    "nse\"\000\022c\n\020InventoryRelease\022%.inventory.v1"
+    ".InventoryReleaseRequest\032&.inventory.v1."
+    "InventoryReleaseResponse\"\000\022`\n\017InventoryU"
+    "pdate\022$.inventory.v1.InventoryUpdateRequ"
+    "est\032%.inventory.v1.InventoryUpdateRespon"
+    "se\"\000\022x\n\027InventoryReservationGet\022,.invent"
+    "ory.v1.InventoryReservationGetRequest\032-."
+    "inventory.v1.InventoryReservationGetResp"
+    "onse\"\000Bz\n\035org.megacommerce.inventory.v1B"
+    "\016InventoryProtoZFgithub.com/ahmad-khatib"
+    "0-org/megacommerce-proto/gen/go/inventor"
+    "y/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_inventory_2fv1_2finventory_2eproto_deps[5] = {
+    descriptor_table_inventory_2fv1_2finventory_2eproto_deps[6] = {
+        &::descriptor_table_inventory_2fv1_2finventory_5fget_2eproto,
         &::descriptor_table_inventory_2fv1_2finventory_5flist_2eproto,
         &::descriptor_table_inventory_2fv1_2finventory_5frelease_2eproto,
         &::descriptor_table_inventory_2fv1_2finventory_5freserve_2eproto,
@@ -74,12 +78,12 @@ static ::absl::once_flag descriptor_table_inventory_2fv1_2finventory_2eproto_onc
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_inventory_2fv1_2finventory_2eproto = {
     false,
     false,
-    895,
+    1018,
     descriptor_table_protodef_inventory_2fv1_2finventory_2eproto,
     "inventory/v1/inventory.proto",
     &descriptor_table_inventory_2fv1_2finventory_2eproto_once,
     descriptor_table_inventory_2fv1_2finventory_2eproto_deps,
-    5,
+    6,
     0,
     schemas,
     file_default_instances,

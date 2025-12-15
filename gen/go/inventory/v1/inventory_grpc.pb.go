@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	InventoryService_InventoryList_FullMethodName           = "/inventory.v1.InventoryService/InventoryList"
+	InventoryService_InventoryGet_FullMethodName            = "/inventory.v1.InventoryService/InventoryGet"
 	InventoryService_InventoryReserve_FullMethodName        = "/inventory.v1.InventoryService/InventoryReserve"
 	InventoryService_InventoryRelease_FullMethodName        = "/inventory.v1.InventoryService/InventoryRelease"
 	InventoryService_InventoryUpdate_FullMethodName         = "/inventory.v1.InventoryService/InventoryUpdate"
@@ -32,6 +33,8 @@ const (
 type InventoryServiceClient interface {
 	// List inventory items for a supplier
 	InventoryList(ctx context.Context, in *InventoryListRequest, opts ...grpc.CallOption) (*InventoryListResponse, error)
+	// Get a single inventory item by ID
+	InventoryGet(ctx context.Context, in *InventoryGetRequest, opts ...grpc.CallOption) (*InventoryGetResponse, error)
 	// Reserve inventory for an order
 	InventoryReserve(ctx context.Context, in *InventoryReserveRequest, opts ...grpc.CallOption) (*InventoryReserveResponse, error)
 	// Release inventory reservation
@@ -54,6 +57,16 @@ func (c *inventoryServiceClient) InventoryList(ctx context.Context, in *Inventor
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(InventoryListResponse)
 	err := c.cc.Invoke(ctx, InventoryService_InventoryList_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *inventoryServiceClient) InventoryGet(ctx context.Context, in *InventoryGetRequest, opts ...grpc.CallOption) (*InventoryGetResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(InventoryGetResponse)
+	err := c.cc.Invoke(ctx, InventoryService_InventoryGet_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,6 +119,8 @@ func (c *inventoryServiceClient) InventoryReservationGet(ctx context.Context, in
 type InventoryServiceServer interface {
 	// List inventory items for a supplier
 	InventoryList(context.Context, *InventoryListRequest) (*InventoryListResponse, error)
+	// Get a single inventory item by ID
+	InventoryGet(context.Context, *InventoryGetRequest) (*InventoryGetResponse, error)
 	// Reserve inventory for an order
 	InventoryReserve(context.Context, *InventoryReserveRequest) (*InventoryReserveResponse, error)
 	// Release inventory reservation
@@ -126,6 +141,9 @@ type UnimplementedInventoryServiceServer struct{}
 
 func (UnimplementedInventoryServiceServer) InventoryList(context.Context, *InventoryListRequest) (*InventoryListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method InventoryList not implemented")
+}
+func (UnimplementedInventoryServiceServer) InventoryGet(context.Context, *InventoryGetRequest) (*InventoryGetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InventoryGet not implemented")
 }
 func (UnimplementedInventoryServiceServer) InventoryReserve(context.Context, *InventoryReserveRequest) (*InventoryReserveResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method InventoryReserve not implemented")
@@ -174,6 +192,24 @@ func _InventoryService_InventoryList_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(InventoryServiceServer).InventoryList(ctx, req.(*InventoryListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _InventoryService_InventoryGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InventoryGetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(InventoryServiceServer).InventoryGet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: InventoryService_InventoryGet_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(InventoryServiceServer).InventoryGet(ctx, req.(*InventoryGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -260,6 +296,10 @@ var InventoryService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "InventoryList",
 			Handler:    _InventoryService_InventoryList_Handler,
+		},
+		{
+			MethodName: "InventoryGet",
+			Handler:    _InventoryService_InventoryGet_Handler,
 		},
 		{
 			MethodName: "InventoryReserve",
