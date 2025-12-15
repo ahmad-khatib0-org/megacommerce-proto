@@ -232,6 +232,58 @@ pub mod supplier_profile_response {
         Error(super::super::super::shared::v1::AppError),
     }
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct VisitsByPeriod {
+    #[prost(int32, tag = "1")]
+    pub today: i32,
+    #[prost(int32, tag = "2")]
+    pub yesterday: i32,
+    #[prost(int32, tag = "3")]
+    pub last_week: i32,
+    #[prost(int32, tag = "4")]
+    pub last_month: i32,
+    #[prost(int32, tag = "5")]
+    pub last_year: i32,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct DashboardStats {
+    #[prost(int32, tag = "1")]
+    pub total_products: i32,
+    #[prost(int32, tag = "2")]
+    pub total_inventory_items: i32,
+    #[prost(int32, tag = "3")]
+    pub total_reviews: i32,
+    #[prost(int32, tag = "4")]
+    pub product_visits_count: i32,
+    #[prost(message, optional, tag = "5")]
+    pub visits_by_period: ::core::option::Option<VisitsByPeriod>,
+    #[prost(int32, tag = "6")]
+    pub pending_orders: i32,
+    #[prost(int32, tag = "7")]
+    pub total_orders: i32,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct DashboardRequest {}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DashboardResponse {
+    #[prost(oneof = "dashboard_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<dashboard_response::Response>,
+}
+/// Nested message and enum types in `DashboardResponse`.
+pub mod dashboard_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::DashboardStats),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
 /// Generated client implementations.
 pub mod users_service_client {
     #![allow(
@@ -488,6 +540,32 @@ pub mod users_service_client {
                 .insert(GrpcMethod::new("users.v1.UsersService", "GetSupplierProfile"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn get_supplier_dashboard(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DashboardRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DashboardResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/users.v1.UsersService/GetSupplierDashboard",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("users.v1.UsersService", "GetSupplierDashboard"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -547,6 +625,13 @@ pub mod users_service_server {
             request: tonic::Request<super::SupplierProfileRequest>,
         ) -> std::result::Result<
             tonic::Response<super::SupplierProfileResponse>,
+            tonic::Status,
+        >;
+        async fn get_supplier_dashboard(
+            &self,
+            request: tonic::Request<super::DashboardRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DashboardResponse>,
             tonic::Status,
         >;
     }
@@ -928,6 +1013,52 @@ pub mod users_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetSupplierProfileSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/users.v1.UsersService/GetSupplierDashboard" => {
+                    #[allow(non_camel_case_types)]
+                    struct GetSupplierDashboardSvc<T: UsersService>(pub Arc<T>);
+                    impl<
+                        T: UsersService,
+                    > tonic::server::UnaryService<super::DashboardRequest>
+                    for GetSupplierDashboardSvc<T> {
+                        type Response = super::DashboardResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DashboardRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as UsersService>::get_supplier_dashboard(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = GetSupplierDashboardSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

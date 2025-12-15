@@ -19,13 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	UsersService_CreateSupplier_FullMethodName     = "/users.v1.UsersService/CreateSupplier"
-	UsersService_CreateCustomer_FullMethodName     = "/users.v1.UsersService/CreateCustomer"
-	UsersService_EmailConfirmation_FullMethodName  = "/users.v1.UsersService/EmailConfirmation"
-	UsersService_PasswordForgot_FullMethodName     = "/users.v1.UsersService/PasswordForgot"
-	UsersService_Login_FullMethodName              = "/users.v1.UsersService/Login"
-	UsersService_GetCustomerProfile_FullMethodName = "/users.v1.UsersService/GetCustomerProfile"
-	UsersService_GetSupplierProfile_FullMethodName = "/users.v1.UsersService/GetSupplierProfile"
+	UsersService_CreateSupplier_FullMethodName       = "/users.v1.UsersService/CreateSupplier"
+	UsersService_CreateCustomer_FullMethodName       = "/users.v1.UsersService/CreateCustomer"
+	UsersService_EmailConfirmation_FullMethodName    = "/users.v1.UsersService/EmailConfirmation"
+	UsersService_PasswordForgot_FullMethodName       = "/users.v1.UsersService/PasswordForgot"
+	UsersService_Login_FullMethodName                = "/users.v1.UsersService/Login"
+	UsersService_GetCustomerProfile_FullMethodName   = "/users.v1.UsersService/GetCustomerProfile"
+	UsersService_GetSupplierProfile_FullMethodName   = "/users.v1.UsersService/GetSupplierProfile"
+	UsersService_GetSupplierDashboard_FullMethodName = "/users.v1.UsersService/GetSupplierDashboard"
 )
 
 // UsersServiceClient is the client API for UsersService service.
@@ -39,6 +40,7 @@ type UsersServiceClient interface {
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 	GetCustomerProfile(ctx context.Context, in *CustomerProfileRequest, opts ...grpc.CallOption) (*CustomerProfileResponse, error)
 	GetSupplierProfile(ctx context.Context, in *SupplierProfileRequest, opts ...grpc.CallOption) (*SupplierProfileResponse, error)
+	GetSupplierDashboard(ctx context.Context, in *DashboardRequest, opts ...grpc.CallOption) (*DashboardResponse, error)
 }
 
 type usersServiceClient struct {
@@ -119,6 +121,16 @@ func (c *usersServiceClient) GetSupplierProfile(ctx context.Context, in *Supplie
 	return out, nil
 }
 
+func (c *usersServiceClient) GetSupplierDashboard(ctx context.Context, in *DashboardRequest, opts ...grpc.CallOption) (*DashboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DashboardResponse)
+	err := c.cc.Invoke(ctx, UsersService_GetSupplierDashboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UsersServiceServer is the server API for UsersService service.
 // All implementations must embed UnimplementedUsersServiceServer
 // for forward compatibility.
@@ -130,6 +142,7 @@ type UsersServiceServer interface {
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 	GetCustomerProfile(context.Context, *CustomerProfileRequest) (*CustomerProfileResponse, error)
 	GetSupplierProfile(context.Context, *SupplierProfileRequest) (*SupplierProfileResponse, error)
+	GetSupplierDashboard(context.Context, *DashboardRequest) (*DashboardResponse, error)
 	mustEmbedUnimplementedUsersServiceServer()
 }
 
@@ -160,6 +173,9 @@ func (UnimplementedUsersServiceServer) GetCustomerProfile(context.Context, *Cust
 }
 func (UnimplementedUsersServiceServer) GetSupplierProfile(context.Context, *SupplierProfileRequest) (*SupplierProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSupplierProfile not implemented")
+}
+func (UnimplementedUsersServiceServer) GetSupplierDashboard(context.Context, *DashboardRequest) (*DashboardResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSupplierDashboard not implemented")
 }
 func (UnimplementedUsersServiceServer) mustEmbedUnimplementedUsersServiceServer() {}
 func (UnimplementedUsersServiceServer) testEmbeddedByValue()                      {}
@@ -308,6 +324,24 @@ func _UsersService_GetSupplierProfile_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UsersService_GetSupplierDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UsersServiceServer).GetSupplierDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UsersService_GetSupplierDashboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UsersServiceServer).GetSupplierDashboard(ctx, req.(*DashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UsersService_ServiceDesc is the grpc.ServiceDesc for UsersService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -342,6 +376,10 @@ var UsersService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetSupplierProfile",
 			Handler:    _UsersService_GetSupplierProfile_Handler,
+		},
+		{
+			MethodName: "GetSupplierDashboard",
+			Handler:    _UsersService_GetSupplierDashboard_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

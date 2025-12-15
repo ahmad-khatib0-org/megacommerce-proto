@@ -27,6 +27,7 @@ import {
 } from "./auth";
 import { CustomerCreateRequest, CustomerCreateResponse } from "./customer";
 import { CustomerProfileRequest, CustomerProfileResponse } from "./customer_profile";
+import { DashboardRequest, DashboardResponse } from "./dashboard";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier";
 import { SupplierProfileRequest, SupplierProfileResponse } from "./supplier_profile";
 
@@ -109,6 +110,15 @@ export const UsersServiceService = {
       Buffer.from(SupplierProfileResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer): SupplierProfileResponse => SupplierProfileResponse.decode(value),
   },
+  getSupplierDashboard: {
+    path: "/users.v1.UsersService/GetSupplierDashboard",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: DashboardRequest): Buffer => Buffer.from(DashboardRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer): DashboardRequest => DashboardRequest.decode(value),
+    responseSerialize: (value: DashboardResponse): Buffer => Buffer.from(DashboardResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer): DashboardResponse => DashboardResponse.decode(value),
+  },
 } as const;
 
 export interface UsersServiceServer extends UntypedServiceImplementation {
@@ -119,6 +129,7 @@ export interface UsersServiceServer extends UntypedServiceImplementation {
   login: handleUnaryCall<LoginRequest, LoginResponse>;
   getCustomerProfile: handleUnaryCall<CustomerProfileRequest, CustomerProfileResponse>;
   getSupplierProfile: handleUnaryCall<SupplierProfileRequest, SupplierProfileResponse>;
+  getSupplierDashboard: handleUnaryCall<DashboardRequest, DashboardResponse>;
 }
 
 export interface UsersServiceClient extends Client {
@@ -226,6 +237,21 @@ export interface UsersServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: SupplierProfileResponse) => void,
+  ): ClientUnaryCall;
+  getSupplierDashboard(
+    request: DashboardRequest,
+    callback: (error: ServiceError | null, response: DashboardResponse) => void,
+  ): ClientUnaryCall;
+  getSupplierDashboard(
+    request: DashboardRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: DashboardResponse) => void,
+  ): ClientUnaryCall;
+  getSupplierDashboard(
+    request: DashboardRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: DashboardResponse) => void,
   ): ClientUnaryCall;
 }
 

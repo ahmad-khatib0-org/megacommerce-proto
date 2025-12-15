@@ -17,6 +17,7 @@ import {
 } from "./auth.js";
 import { CustomerCreateRequest, CustomerCreateResponse } from "./customer.js";
 import { CustomerProfileRequest, CustomerProfileResponse } from "./customer_profile.js";
+import { DashboardRequest, DashboardResponse } from "./dashboard.js";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier.js";
 import { SupplierProfileRequest, SupplierProfileResponse } from "./supplier_profile.js";
 
@@ -48,6 +49,7 @@ export interface UsersService {
     request: DeepPartial<SupplierProfileRequest>,
     metadata?: grpc.Metadata,
   ): Promise<SupplierProfileResponse>;
+  GetSupplierDashboard(request: DeepPartial<DashboardRequest>, metadata?: grpc.Metadata): Promise<DashboardResponse>;
 }
 
 export class UsersServiceClientImpl implements UsersService {
@@ -62,6 +64,7 @@ export class UsersServiceClientImpl implements UsersService {
     this.Login = this.Login.bind(this);
     this.GetCustomerProfile = this.GetCustomerProfile.bind(this);
     this.GetSupplierProfile = this.GetSupplierProfile.bind(this);
+    this.GetSupplierDashboard = this.GetSupplierDashboard.bind(this);
   }
 
   CreateSupplier(
@@ -108,6 +111,10 @@ export class UsersServiceClientImpl implements UsersService {
     metadata?: grpc.Metadata,
   ): Promise<SupplierProfileResponse> {
     return this.rpc.unary(UsersServiceGetSupplierProfileDesc, SupplierProfileRequest.fromPartial(request), metadata);
+  }
+
+  GetSupplierDashboard(request: DeepPartial<DashboardRequest>, metadata?: grpc.Metadata): Promise<DashboardResponse> {
+    return this.rpc.unary(UsersServiceGetSupplierDashboardDesc, DashboardRequest.fromPartial(request), metadata);
   }
 }
 
@@ -264,6 +271,29 @@ export const UsersServiceGetSupplierProfileDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = SupplierProfileResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const UsersServiceGetSupplierDashboardDesc: UnaryMethodDefinitionish = {
+  methodName: "GetSupplierDashboard",
+  service: UsersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return DashboardRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = DashboardResponse.decode(data);
       return {
         ...value,
         toObject() {

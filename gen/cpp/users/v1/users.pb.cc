@@ -42,31 +42,35 @@ const char descriptor_table_protodef_users_2fv1_2fusers_2eproto[] ABSL_ATTRIBUTE
     "v1/auth.proto\032\027users/v1/supplier.proto\032\027"
     "users/v1/customer.proto\032\037users/v1/custom"
     "er_profile.proto\032\037users/v1/supplier_prof"
-    "ile.proto2\333\004\n\014UsersService\022S\n\016CreateSupp"
-    "lier\022\037.users.v1.SupplierCreateRequest\032 ."
-    "users.v1.SupplierCreateResponse\022S\n\016Creat"
-    "eCustomer\022\037.users.v1.CustomerCreateReque"
-    "st\032 .users.v1.CustomerCreateResponse\022\\\n\021"
-    "EmailConfirmation\022\".users.v1.EmailConfir"
-    "mationRequest\032#.users.v1.EmailConfirmati"
-    "onResponse\022S\n\016PasswordForgot\022\037.users.v1."
-    "PasswordForgotRequest\032 .users.v1.Passwor"
-    "dForgotResponse\0228\n\005Login\022\026.users.v1.Logi"
-    "nRequest\032\027.users.v1.LoginResponse\022Y\n\022Get"
-    "CustomerProfile\022 .users.v1.CustomerProfi"
-    "leRequest\032!.users.v1.CustomerProfileResp"
-    "onse\022Y\n\022GetSupplierProfile\022 .users.v1.Su"
-    "pplierProfileRequest\032!.users.v1.Supplier"
-    "ProfileResponseBn\n\031org.megacommerce.user"
-    "s.v1B\nUsersProtoZBgithub.com/ahmad-khati"
-    "b0-org/megacommerce-proto/gen/go/users/v"
-    "1;v1\370\001\001b\006proto3"
+    "ile.proto\032\030users/v1/dashboard.proto2\254\005\n\014"
+    "UsersService\022S\n\016CreateSupplier\022\037.users.v"
+    "1.SupplierCreateRequest\032 .users.v1.Suppl"
+    "ierCreateResponse\022S\n\016CreateCustomer\022\037.us"
+    "ers.v1.CustomerCreateRequest\032 .users.v1."
+    "CustomerCreateResponse\022\\\n\021EmailConfirmat"
+    "ion\022\".users.v1.EmailConfirmationRequest\032"
+    "#.users.v1.EmailConfirmationResponse\022S\n\016"
+    "PasswordForgot\022\037.users.v1.PasswordForgot"
+    "Request\032 .users.v1.PasswordForgotRespons"
+    "e\0228\n\005Login\022\026.users.v1.LoginRequest\032\027.use"
+    "rs.v1.LoginResponse\022Y\n\022GetCustomerProfil"
+    "e\022 .users.v1.CustomerProfileRequest\032!.us"
+    "ers.v1.CustomerProfileResponse\022Y\n\022GetSup"
+    "plierProfile\022 .users.v1.SupplierProfileR"
+    "equest\032!.users.v1.SupplierProfileRespons"
+    "e\022O\n\024GetSupplierDashboard\022\032.users.v1.Das"
+    "hboardRequest\032\033.users.v1.DashboardRespon"
+    "seBn\n\031org.megacommerce.users.v1B\nUsersPr"
+    "otoZBgithub.com/ahmad-khatib0-org/megaco"
+    "mmerce-proto/gen/go/users/v1;v1\370\001\001b\006prot"
+    "o3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_users_2fv1_2fusers_2eproto_deps[5] = {
+    descriptor_table_users_2fv1_2fusers_2eproto_deps[6] = {
         &::descriptor_table_users_2fv1_2fauth_2eproto,
         &::descriptor_table_users_2fv1_2fcustomer_2eproto,
         &::descriptor_table_users_2fv1_2fcustomer_5fprofile_2eproto,
+        &::descriptor_table_users_2fv1_2fdashboard_2eproto,
         &::descriptor_table_users_2fv1_2fsupplier_2eproto,
         &::descriptor_table_users_2fv1_2fsupplier_5fprofile_2eproto,
 };
@@ -74,12 +78,12 @@ static ::absl::once_flag descriptor_table_users_2fv1_2fusers_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_users_2fv1_2fusers_2eproto = {
     false,
     false,
-    895,
+    1002,
     descriptor_table_protodef_users_2fv1_2fusers_2eproto,
     "users/v1/users.proto",
     &descriptor_table_users_2fv1_2fusers_2eproto_once,
     descriptor_table_users_2fv1_2fusers_2eproto_deps,
-    5,
+    6,
     0,
     schemas,
     file_default_instances,

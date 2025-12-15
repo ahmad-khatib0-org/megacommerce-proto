@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package users.v1;
+
+import "shared/v1/error.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1";
+option java_outer_classname = "DashboardProto";
+option java_package = "org.megacommerce.users.v1";
+
+message VisitsByPeriod {
+  int32 today = 1;
+  int32 yesterday = 2;
+  int32 last_week = 3;
+  int32 last_month = 4;
+  int32 last_year = 5;
+}
+
+message DashboardStats {
+  int32 total_products = 1;
+  int32 total_inventory_items = 2;
+  int32 total_reviews = 3;
+  int32 product_visits_count = 4;
+  VisitsByPeriod visits_by_period = 5;
+  int32 pending_orders = 6;
+  int32 total_orders = 7;
+}
+
+message DashboardRequest {}
+
+message DashboardResponse {
+  oneof response {
+    DashboardStats data = 1;
+    shared.v1.AppError error = 2;
+  }
+}

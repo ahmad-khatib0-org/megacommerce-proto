@@ -2,6 +2,7 @@ import * as Auth from './auth';
 import * as Cache from './cache';
 import * as Customer from './customer';
 import * as CustomerProfile from './customer_profile';
+import * as Dashboard from './dashboard';
 import * as Supplier from './supplier';
 import * as SupplierProfile from './supplier_profile';
 import * as Token from './token';
@@ -13,6 +14,7 @@ export {
   Cache,
   Customer,
   CustomerProfile,
+  Dashboard,
   Supplier,
   SupplierProfile,
   Token,

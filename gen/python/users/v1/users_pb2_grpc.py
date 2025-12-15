@@ -6,6 +6,7 @@ import warnings
 from users.v1 import auth_pb2 as users_dot_v1_dot_auth__pb2
 from users.v1 import customer_pb2 as users_dot_v1_dot_customer__pb2
 from users.v1 import customer_profile_pb2 as users_dot_v1_dot_customer__profile__pb2
+from users.v1 import dashboard_pb2 as users_dot_v1_dot_dashboard__pb2
 from users.v1 import supplier_pb2 as users_dot_v1_dot_supplier__pb2
 from users.v1 import supplier_profile_pb2 as users_dot_v1_dot_supplier__profile__pb2
 
@@ -73,6 +74,11 @@ class UsersServiceStub(object):
                 request_serializer=users_dot_v1_dot_supplier__profile__pb2.SupplierProfileRequest.SerializeToString,
                 response_deserializer=users_dot_v1_dot_supplier__profile__pb2.SupplierProfileResponse.FromString,
                 _registered_method=True)
+        self.GetSupplierDashboard = channel.unary_unary(
+                '/users.v1.UsersService/GetSupplierDashboard',
+                request_serializer=users_dot_v1_dot_dashboard__pb2.DashboardRequest.SerializeToString,
+                response_deserializer=users_dot_v1_dot_dashboard__pb2.DashboardResponse.FromString,
+                _registered_method=True)
 
 
 class UsersServiceServicer(object):
@@ -120,6 +126,12 @@ class UsersServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetSupplierDashboard(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_UsersServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -157,6 +169,11 @@ def add_UsersServiceServicer_to_server(servicer, server):
                     servicer.GetSupplierProfile,
                     request_deserializer=users_dot_v1_dot_supplier__profile__pb2.SupplierProfileRequest.FromString,
                     response_serializer=users_dot_v1_dot_supplier__profile__pb2.SupplierProfileResponse.SerializeToString,
+            ),
+            'GetSupplierDashboard': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSupplierDashboard,
+                    request_deserializer=users_dot_v1_dot_dashboard__pb2.DashboardRequest.FromString,
+                    response_serializer=users_dot_v1_dot_dashboard__pb2.DashboardResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -348,6 +365,33 @@ class UsersService(object):
             '/users.v1.UsersService/GetSupplierProfile',
             users_dot_v1_dot_supplier__profile__pb2.SupplierProfileRequest.SerializeToString,
             users_dot_v1_dot_supplier__profile__pb2.SupplierProfileResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSupplierDashboard(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/users.v1.UsersService/GetSupplierDashboard',
+            users_dot_v1_dot_dashboard__pb2.DashboardRequest.SerializeToString,
+            users_dot_v1_dot_dashboard__pb2.DashboardResponse.FromString,
             options,
             channel_credentials,
             insecure,
