@@ -36,40 +36,40 @@ public final class InventoryProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\034inventory/v1/inventory.proto\022\014inventor" +
-      "y.v1\032 inventory/v1/inventory_get.proto\032$" +
-      "inventory/v1/inventory_release.proto\032$in" +
-      "ventory/v1/inventory_reserve.proto\032#inve" +
-      "ntory/v1/inventory_update.proto\032\"invento" +
-      "ry/v1/reservation_get.proto2\221\004\n\020Inventor" +
-      "yService\022c\n\020InventoryReserve\022%.inventory" +
-      ".v1.InventoryReserveRequest\032&.inventory." +
-      "v1.InventoryReserveResponse\"\000\022c\n\020Invento" +
-      "ryRelease\022%.inventory.v1.InventoryReleas" +
-      "eRequest\032&.inventory.v1.InventoryRelease" +
-      "Response\"\000\022W\n\014InventoryGet\022!.inventory.v" +
-      "1.InventoryGetRequest\032\".inventory.v1.Inv" +
-      "entoryGetResponse\"\000\022`\n\017InventoryUpdate\022$" +
-      ".inventory.v1.InventoryUpdateRequest\032%.i" +
-      "nventory.v1.InventoryUpdateResponse\"\000\022x\n" +
-      "\027InventoryReservationGet\022,.inventory.v1." +
-      "InventoryReservationGetRequest\032-.invento" +
-      "ry.v1.InventoryReservationGetResponse\"\000B" +
-      "z\n\035org.megacommerce.inventory.v1B\016Invent" +
-      "oryProtoZFgithub.com/ahmad-khatib0-org/m" +
-      "egacommerce-proto/gen/go/inventory/v1;v1" +
-      "\370\001\001b\006proto3"
+      "y.v1\032!inventory/v1/inventory_list.proto\032" +
+      "$inventory/v1/inventory_release.proto\032$i" +
+      "nventory/v1/inventory_reserve.proto\032#inv" +
+      "entory/v1/inventory_update.proto\032\"invent" +
+      "ory/v1/reservation_get.proto2\224\004\n\020Invento" +
+      "ryService\022Z\n\rInventoryList\022\".inventory.v" +
+      "1.InventoryListRequest\032#.inventory.v1.In" +
+      "ventoryListResponse\"\000\022c\n\020InventoryReserv" +
+      "e\022%.inventory.v1.InventoryReserveRequest" +
+      "\032&.inventory.v1.InventoryReserveResponse" +
+      "\"\000\022c\n\020InventoryRelease\022%.inventory.v1.In" +
+      "ventoryReleaseRequest\032&.inventory.v1.Inv" +
+      "entoryReleaseResponse\"\000\022`\n\017InventoryUpda" +
+      "te\022$.inventory.v1.InventoryUpdateRequest" +
+      "\032%.inventory.v1.InventoryUpdateResponse\"" +
+      "\000\022x\n\027InventoryReservationGet\022,.inventory" +
+      ".v1.InventoryReservationGetRequest\032-.inv" +
+      "entory.v1.InventoryReservationGetRespons" +
+      "e\"\000Bz\n\035org.megacommerce.inventory.v1B\016In" +
+      "ventoryProtoZFgithub.com/ahmad-khatib0-o" +
+      "rg/megacommerce-proto/gen/go/inventory/v" +
+      "1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.megacommerce.inventory.v1.InventoryGetProto.getDescriptor(),
+          org.megacommerce.inventory.v1.InventoryListProto.getDescriptor(),
           org.megacommerce.inventory.v1.InventoryReleaseProto.getDescriptor(),
           org.megacommerce.inventory.v1.InventoryReserveProto.getDescriptor(),
           org.megacommerce.inventory.v1.InventoryUpdateProto.getDescriptor(),
           org.megacommerce.inventory.v1.InventoryReservationGetProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
-    org.megacommerce.inventory.v1.InventoryGetProto.getDescriptor();
+    org.megacommerce.inventory.v1.InventoryListProto.getDescriptor();
     org.megacommerce.inventory.v1.InventoryReleaseProto.getDescriptor();
     org.megacommerce.inventory.v1.InventoryReserveProto.getDescriptor();
     org.megacommerce.inventory.v1.InventoryUpdateProto.getDescriptor();

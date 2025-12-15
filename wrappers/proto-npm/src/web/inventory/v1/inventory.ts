@@ -7,7 +7,7 @@
 /* eslint-disable */
 import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
-import { InventoryGetRequest, InventoryGetResponse } from "./inventory_get.js";
+import { InventoryListRequest, InventoryListResponse } from "./inventory_list.js";
 import { InventoryReleaseRequest, InventoryReleaseResponse } from "./inventory_release.js";
 import { InventoryReserveRequest, InventoryReserveResponse } from "./inventory_reserve.js";
 import { InventoryUpdateRequest, InventoryUpdateResponse } from "./inventory_update.js";
@@ -16,6 +16,8 @@ import { InventoryReservationGetRequest, InventoryReservationGetResponse } from 
 export const protobufPackage = "inventory.v1";
 
 export interface InventoryService {
+  /** List inventory items for a supplier */
+  InventoryList(request: DeepPartial<InventoryListRequest>, metadata?: grpc.Metadata): Promise<InventoryListResponse>;
   /** Reserve inventory for an order */
   InventoryReserve(
     request: DeepPartial<InventoryReserveRequest>,
@@ -26,8 +28,6 @@ export interface InventoryService {
     request: DeepPartial<InventoryReleaseRequest>,
     metadata?: grpc.Metadata,
   ): Promise<InventoryReleaseResponse>;
-  /** Get inventory levels for products */
-  InventoryGet(request: DeepPartial<InventoryGetRequest>, metadata?: grpc.Metadata): Promise<InventoryGetResponse>;
   /** Update inventory levels */
   InventoryUpdate(
     request: DeepPartial<InventoryUpdateRequest>,
@@ -45,11 +45,15 @@ export class InventoryServiceClientImpl implements InventoryService {
 
   constructor(rpc: Rpc) {
     this.rpc = rpc;
+    this.InventoryList = this.InventoryList.bind(this);
     this.InventoryReserve = this.InventoryReserve.bind(this);
     this.InventoryRelease = this.InventoryRelease.bind(this);
-    this.InventoryGet = this.InventoryGet.bind(this);
     this.InventoryUpdate = this.InventoryUpdate.bind(this);
     this.InventoryReservationGet = this.InventoryReservationGet.bind(this);
+  }
+
+  InventoryList(request: DeepPartial<InventoryListRequest>, metadata?: grpc.Metadata): Promise<InventoryListResponse> {
+    return this.rpc.unary(InventoryServiceInventoryListDesc, InventoryListRequest.fromPartial(request), metadata);
   }
 
   InventoryReserve(
@@ -64,10 +68,6 @@ export class InventoryServiceClientImpl implements InventoryService {
     metadata?: grpc.Metadata,
   ): Promise<InventoryReleaseResponse> {
     return this.rpc.unary(InventoryServiceInventoryReleaseDesc, InventoryReleaseRequest.fromPartial(request), metadata);
-  }
-
-  InventoryGet(request: DeepPartial<InventoryGetRequest>, metadata?: grpc.Metadata): Promise<InventoryGetResponse> {
-    return this.rpc.unary(InventoryServiceInventoryGetDesc, InventoryGetRequest.fromPartial(request), metadata);
   }
 
   InventoryUpdate(
@@ -90,6 +90,29 @@ export class InventoryServiceClientImpl implements InventoryService {
 }
 
 export const InventoryServiceDesc = { serviceName: "inventory.v1.InventoryService" };
+
+export const InventoryServiceInventoryListDesc: UnaryMethodDefinitionish = {
+  methodName: "InventoryList",
+  service: InventoryServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return InventoryListRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = InventoryListResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
 
 export const InventoryServiceInventoryReserveDesc: UnaryMethodDefinitionish = {
   methodName: "InventoryReserve",
@@ -127,29 +150,6 @@ export const InventoryServiceInventoryReleaseDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = InventoryReleaseResponse.decode(data);
-      return {
-        ...value,
-        toObject() {
-          return value;
-        },
-      };
-    },
-  } as any,
-};
-
-export const InventoryServiceInventoryGetDesc: UnaryMethodDefinitionish = {
-  methodName: "InventoryGet",
-  service: InventoryServiceDesc,
-  requestStream: false,
-  responseStream: false,
-  requestType: {
-    serializeBinary() {
-      return InventoryGetRequest.encode(this).finish();
-    },
-  } as any,
-  responseType: {
-    deserializeBinary(data: Uint8Array) {
-      const value = InventoryGetResponse.decode(data);
       return {
         ...value,
         toObject() {

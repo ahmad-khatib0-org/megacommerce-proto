@@ -118,43 +118,40 @@ impl InventoryMovementType {
         }
     }
 }
-/// Request for getting inventory
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct InventoryGetRequest {
-    #[prost(string, repeated, tag = "1")]
-    pub product_ids: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    #[prost(string, repeated, tag = "2")]
-    pub variant_ids: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    #[prost(string, repeated, tag = "3")]
-    pub skus: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+pub struct InventoryListRequest {
+    #[prost(message, optional, tag = "1")]
+    pub pagination: ::core::option::Option<super::super::shared::v1::PaginationRequest>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct InventoryGetResponse {
-    #[prost(oneof = "inventory_get_response::Response", tags = "1, 2")]
-    pub response: ::core::option::Option<inventory_get_response::Response>,
+pub struct InventoryListResponse {
+    #[prost(oneof = "inventory_list_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<inventory_list_response::Response>,
 }
-/// Nested message and enum types in `InventoryGetResponse`.
-pub mod inventory_get_response {
+/// Nested message and enum types in `InventoryListResponse`.
+pub mod inventory_list_response {
     #[derive(serde::Serialize, serde::Deserialize)]
     #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Response {
         #[prost(message, tag = "1")]
-        Data(super::InventoryGetResponseData),
+        Data(super::InventoryListResponseData),
         #[prost(message, tag = "2")]
         Error(super::super::super::shared::v1::AppError),
     }
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct InventoryGetResponseData {
+pub struct InventoryListResponseData {
     #[prost(message, repeated, tag = "1")]
-    pub items: ::prost::alloc::vec::Vec<InventoryItemList>,
+    pub items: ::prost::alloc::vec::Vec<InventoryListItem>,
+    #[prost(message, optional, tag = "2")]
+    pub pagination: ::core::option::Option<super::super::shared::v1::PaginationResponse>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct InventoryItemList {
+pub struct InventoryListItem {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
@@ -163,17 +160,21 @@ pub struct InventoryItemList {
     pub variant_id: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
     pub sku: ::prost::alloc::string::String,
-    #[prost(uint32, tag = "5")]
-    pub quantity_total: u32,
-    #[prost(uint32, tag = "6")]
-    pub quantity_reserved: u32,
-    #[prost(uint32, tag = "7")]
-    pub quantity_available: u32,
-    /// Optional
-    #[prost(string, tag = "8")]
-    pub location_id: ::prost::alloc::string::String,
-    #[prost(message, optional, tag = "9")]
-    pub metadata: ::core::option::Option<super::super::shared::v1::Struct>,
+    #[prost(string, tag = "5")]
+    pub product_name: ::prost::alloc::string::String,
+    #[prost(int32, tag = "6")]
+    pub quantity_total: i32,
+    #[prost(int32, tag = "7")]
+    pub quantity_available: i32,
+    #[prost(int32, tag = "8")]
+    pub quantity_reserved: i32,
+    /// in_stock, low_stock, out_of_stock
+    #[prost(string, tag = "9")]
+    pub status: ::prost::alloc::string::String,
+    #[prost(int64, tag = "10")]
+    pub created_at: i64,
+    #[prost(int64, tag = "11")]
+    pub updated_at: i64,
 }
 /// Request for inventory release
 #[derive(serde::Serialize, serde::Deserialize)]
@@ -557,6 +558,33 @@ pub mod inventory_service_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
+        /// List inventory items for a supplier
+        pub async fn inventory_list(
+            &mut self,
+            request: impl tonic::IntoRequest<super::InventoryListRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::InventoryListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/inventory.v1.InventoryService/InventoryList",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("inventory.v1.InventoryService", "InventoryList"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         /// Reserve inventory for an order
         pub async fn inventory_reserve(
             &mut self,
@@ -608,33 +636,6 @@ pub mod inventory_service_client {
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new("inventory.v1.InventoryService", "InventoryRelease"),
-                );
-            self.inner.unary(req, path, codec).await
-        }
-        /// Get inventory levels for products
-        pub async fn inventory_get(
-            &mut self,
-            request: impl tonic::IntoRequest<super::InventoryGetRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::InventoryGetResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/inventory.v1.InventoryService/InventoryGet",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("inventory.v1.InventoryService", "InventoryGet"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -710,6 +711,14 @@ pub mod inventory_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with InventoryServiceServer.
     #[async_trait]
     pub trait InventoryService: std::marker::Send + std::marker::Sync + 'static {
+        /// List inventory items for a supplier
+        async fn inventory_list(
+            &self,
+            request: tonic::Request<super::InventoryListRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::InventoryListResponse>,
+            tonic::Status,
+        >;
         /// Reserve inventory for an order
         async fn inventory_reserve(
             &self,
@@ -724,14 +733,6 @@ pub mod inventory_service_server {
             request: tonic::Request<super::InventoryReleaseRequest>,
         ) -> std::result::Result<
             tonic::Response<super::InventoryReleaseResponse>,
-            tonic::Status,
-        >;
-        /// Get inventory levels for products
-        async fn inventory_get(
-            &self,
-            request: tonic::Request<super::InventoryGetRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::InventoryGetResponse>,
             tonic::Status,
         >;
         /// Update inventory levels
@@ -827,6 +828,52 @@ pub mod inventory_service_server {
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             match req.uri().path() {
+                "/inventory.v1.InventoryService/InventoryList" => {
+                    #[allow(non_camel_case_types)]
+                    struct InventoryListSvc<T: InventoryService>(pub Arc<T>);
+                    impl<
+                        T: InventoryService,
+                    > tonic::server::UnaryService<super::InventoryListRequest>
+                    for InventoryListSvc<T> {
+                        type Response = super::InventoryListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::InventoryListRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as InventoryService>::inventory_list(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = InventoryListSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 "/inventory.v1.InventoryService/InventoryReserve" => {
                     #[allow(non_camel_case_types)]
                     struct InventoryReserveSvc<T: InventoryService>(pub Arc<T>);
@@ -904,52 +951,6 @@ pub mod inventory_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = InventoryReleaseSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/inventory.v1.InventoryService/InventoryGet" => {
-                    #[allow(non_camel_case_types)]
-                    struct InventoryGetSvc<T: InventoryService>(pub Arc<T>);
-                    impl<
-                        T: InventoryService,
-                    > tonic::server::UnaryService<super::InventoryGetRequest>
-                    for InventoryGetSvc<T> {
-                        type Response = super::InventoryGetResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::InventoryGetRequest>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                <T as InventoryService>::inventory_get(&inner, request)
-                                    .await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let method = InventoryGetSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

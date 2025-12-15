@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package inventory.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/pagination.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1";
+option java_outer_classname = "InventoryListProto";
+option java_package = "org.megacommerce.inventory.v1";
+
+message InventoryListRequest {
+  shared.v1.PaginationRequest pagination = 1;
+}
+
+message InventoryListResponse {
+  oneof response {
+    InventoryListResponseData data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message InventoryListResponseData {
+  repeated InventoryListItem items = 1;
+  shared.v1.PaginationResponse pagination = 2;
+}
+
+message InventoryListItem {
+  string id = 1;
+  string product_id = 2;
+  string variant_id = 3;
+  string sku = 4;
+  string product_name = 5;
+  int32 quantity_total = 6;
+  int32 quantity_available = 7;
+  int32 quantity_reserved = 8;
+  string status = 9;        // in_stock, low_stock, out_of_stock
+  int64 created_at = 10;
+  int64 updated_at = 11;
+}
