@@ -56,6 +56,7 @@ pub struct Order {
     #[prost(uint64, optional, tag = "22")]
     pub deleted_at: ::core::option::Option<u64>,
 }
+/// Payment status for an order
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]

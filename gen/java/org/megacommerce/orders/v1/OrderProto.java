@@ -27,6 +27,10 @@ public final class OrderProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Payment status for an order
+   * </pre>
+   *
    * Protobuf enum {@code orders.v1.PaymentStatus}
    */
   public enum PaymentStatus

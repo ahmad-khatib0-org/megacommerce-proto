@@ -10,6 +10,7 @@ import { Struct } from "../../shared/v1/struct.js";
 
 export const protobufPackage = "orders.v1";
 
+/** Payment status for an order */
 export enum PaymentStatus {
   PAYMENT_UNKNOWN = 0,
   PAYMENT_AUTHORIZED = 1,

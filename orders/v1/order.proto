@@ -9,6 +9,7 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/orde
 option java_outer_classname = "OrderProto";
 option java_package = "org.megacommerce.orders.v1";
 
+// Payment status for an order
 enum PaymentStatus {
   PAYMENT_UNKNOWN = 0;
   PAYMENT_AUTHORIZED = 1;

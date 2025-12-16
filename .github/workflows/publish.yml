@@ -1,4 +1,3 @@
----
 name: Publish Packages (NPM + Crates.io)
 
 on:
@@ -24,14 +23,24 @@ jobs:
           registry-url: "https://registry.npmjs.org/"
           cache: "pnpm"
 
-      # Build steps (from your Makefile)
       - name: Build npm package
         run: |
+          # Install root dependencies (for tsx and esbuild)
+          pnpm install --frozen-lockfile
+
+          # Generate TypeScript barrel files (from root)
+          pnpm exec tsx scripts/gen-barrels.ts
+
+          # Install npm package dependencies and compile TypeScript
           cd wrappers/proto-npm
           pnpm install --frozen-lockfile
-          pnpm exec tsx ../../scripts/gen-barrels.ts
           pnpm run build
-          node ../../scripts/build-cjs.js ./dist
+
+          # Build proto CJS artifacts (from root)
+          cd ../..
+          node ./scripts/build-cjs.js ./wrappers/proto-npm/dist
+
+          echo "Generation complete"
 
       - name: Publish to npm
         run: cd wrappers/proto-npm && npm publish --access public
