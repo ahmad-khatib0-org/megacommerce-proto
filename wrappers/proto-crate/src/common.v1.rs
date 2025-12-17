@@ -788,7 +788,10 @@ pub struct Config {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
-pub struct ConfigGetRequest {}
+pub struct ConfigGetRequest {
+    #[prost(enumeration = "Environment", tag = "1")]
+    pub env: i32,
+}
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigGetResponse {
@@ -851,6 +854,36 @@ pub mod config_listener_response {
 pub struct ConfigListenerRequest {
     #[prost(string, tag = "1")]
     pub client_id: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum Environment {
+    Local = 0,
+    Dev = 1,
+    Production = 2,
+}
+impl Environment {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Local => "LOCAL",
+            Self::Dev => "DEV",
+            Self::Production => "PRODUCTION",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "LOCAL" => Some(Self::Local),
+            "DEV" => Some(Self::Dev),
+            "PRODUCTION" => Some(Self::Production),
+            _ => None,
+        }
+    }
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]

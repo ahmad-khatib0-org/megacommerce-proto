@@ -197,7 +197,7 @@ var File_inventory_v1_inventory_get_proto protoreflect.FileDescriptor
 
 const file_inventory_v1_inventory_get_proto_rawDesc = "" +
 	"\n" +
-	" inventory/v1/inventory_get.proto\x12\finventory.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\x1a!inventory/v1/inventory_list.proto\"%\n" +
+	" inventory/v1/inventory_get.proto\x12\finventory.v1\x1a!inventory/v1/inventory_list.proto\x1a\x15shared/v1/error.proto\"%\n" +
 	"\x13InventoryGetRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\x8d\x01\n" +
 	"\x14InventoryGetResponse\x12<\n" +

@@ -29,9 +29,8 @@
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/unknown_field_set.h"
-#include "shared/v1/error.pb.h"
-#include "shared/v1/types.pb.h"
 #include "inventory/v1/inventory_list.pb.h"
+#include "shared/v1/error.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

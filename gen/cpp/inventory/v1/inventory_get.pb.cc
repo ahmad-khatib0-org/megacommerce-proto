@@ -144,36 +144,34 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_inventory_2fv1_2finventory_5fget_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n inventory/v1/inventory_get.proto\022\014inve"
-    "ntory.v1\032\025shared/v1/error.proto\032\025shared/"
-    "v1/types.proto\032!inventory/v1/inventory_l"
-    "ist.proto\"%\n\023InventoryGetRequest\022\016\n\002id\030\001"
-    " \001(\tR\002id\"\215\001\n\024InventoryGetResponse\022<\n\004dat"
-    "a\030\001 \001(\0132&.inventory.v1.InventoryGetRespo"
-    "nseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared."
-    "v1.AppErrorH\000R\005errorB\n\n\010response\"O\n\030Inve"
-    "ntoryGetResponseData\0223\n\004item\030\001 \001(\0132\037.inv"
-    "entory.v1.InventoryListItemR\004itemB}\n\035org"
-    ".megacommerce.inventory.v1B\021InventoryGet"
-    "ProtoZFgithub.com/ahmad-khatib0-org/mega"
-    "commerce-proto/gen/go/inventory/v1;v1\370\001\001"
-    "b\006proto3"
+    "ntory.v1\032!inventory/v1/inventory_list.pr"
+    "oto\032\025shared/v1/error.proto\"%\n\023InventoryG"
+    "etRequest\022\016\n\002id\030\001 \001(\tR\002id\"\215\001\n\024InventoryG"
+    "etResponse\022<\n\004data\030\001 \001(\0132&.inventory.v1."
+    "InventoryGetResponseDataH\000R\004data\022+\n\005erro"
+    "r\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n"
+    "\010response\"O\n\030InventoryGetResponseData\0223\n"
+    "\004item\030\001 \001(\0132\037.inventory.v1.InventoryList"
+    "ItemR\004itemB}\n\035org.megacommerce.inventory"
+    ".v1B\021InventoryGetProtoZFgithub.com/ahmad"
+    "-khatib0-org/megacommerce-proto/gen/go/i"
+    "nventory/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_inventory_2fv1_2finventory_5fget_2eproto_deps[3] = {
+    descriptor_table_inventory_2fv1_2finventory_5fget_2eproto_deps[2] = {
         &::descriptor_table_inventory_2fv1_2finventory_5flist_2eproto,
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
-        &::descriptor_table_shared_2fv1_2ftypes_2eproto,
 };
 static ::absl::once_flag descriptor_table_inventory_2fv1_2finventory_5fget_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_inventory_2fv1_2finventory_5fget_2eproto = {
     false,
     false,
-    528,
+    505,
     descriptor_table_protodef_inventory_2fv1_2finventory_5fget_2eproto,
     "inventory/v1/inventory_get.proto",
     &descriptor_table_inventory_2fv1_2finventory_5fget_2eproto_once,
     descriptor_table_inventory_2fv1_2finventory_5fget_2eproto_deps,
-    3,
+    2,
     3,
     schemas,
     file_default_instances,

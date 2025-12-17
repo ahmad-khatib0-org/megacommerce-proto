@@ -26,6 +26,132 @@ public final class ConfigProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code common.v1.Environment}
+   */
+  public enum Environment
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>LOCAL = 0;</code>
+     */
+    LOCAL(0),
+    /**
+     * <code>DEV = 1;</code>
+     */
+    DEV(1),
+    /**
+     * <code>PRODUCTION = 2;</code>
+     */
+    PRODUCTION(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        Environment.class.getName());
+    }
+    /**
+     * <code>LOCAL = 0;</code>
+     */
+    public static final int LOCAL_VALUE = 0;
+    /**
+     * <code>DEV = 1;</code>
+     */
+    public static final int DEV_VALUE = 1;
+    /**
+     * <code>PRODUCTION = 2;</code>
+     */
+    public static final int PRODUCTION_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Environment valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Environment forNumber(int value) {
+      switch (value) {
+        case 0: return LOCAL;
+        case 1: return DEV;
+        case 2: return PRODUCTION;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Environment>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Environment> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Environment>() {
+            public Environment findValueByNumber(int number) {
+              return Environment.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.ConfigProto.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Environment[] VALUES = values();
+
+    public static Environment valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Environment(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:common.v1.Environment)
+  }
+
   public interface ConfigMainOrBuilder extends
       // @@protoc_insertion_point(interface_extends:common.v1.ConfigMain)
       com.google.protobuf.MessageOrBuilder {
@@ -54578,6 +54704,17 @@ public final class ConfigProto {
   public interface ConfigGetRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:common.v1.ConfigGetRequest)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.v1.Environment env = 1 [json_name = "env"];</code>
+     * @return The enum numeric value on the wire for env.
+     */
+    int getEnvValue();
+    /**
+     * <code>.common.v1.Environment env = 1 [json_name = "env"];</code>
+     * @return The env.
+     */
+    org.megacommerce.common.v1.ConfigProto.Environment getEnv();
   }
   /**
    * Protobuf type {@code common.v1.ConfigGetRequest}
@@ -54601,6 +54738,7 @@ public final class ConfigProto {
       super(builder);
     }
     private ConfigGetRequest() {
+      env_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -54614,6 +54752,24 @@ public final class ConfigProto {
       return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.class, org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.Builder.class);
+    }
+
+    public static final int ENV_FIELD_NUMBER = 1;
+    private int env_ = 0;
+    /**
+     * <code>.common.v1.Environment env = 1 [json_name = "env"];</code>
+     * @return The enum numeric value on the wire for env.
+     */
+    @java.lang.Override public int getEnvValue() {
+      return env_;
+    }
+    /**
+     * <code>.common.v1.Environment env = 1 [json_name = "env"];</code>
+     * @return The env.
+     */
+    @java.lang.Override public org.megacommerce.common.v1.ConfigProto.Environment getEnv() {
+      org.megacommerce.common.v1.ConfigProto.Environment result = org.megacommerce.common.v1.ConfigProto.Environment.forNumber(env_);
+      return result == null ? org.megacommerce.common.v1.ConfigProto.Environment.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -54630,6 +54786,9 @@ public final class ConfigProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (env_ != org.megacommerce.common.v1.ConfigProto.Environment.LOCAL.getNumber()) {
+        output.writeEnum(1, env_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -54639,6 +54798,10 @@ public final class ConfigProto {
       if (size != -1) return size;
 
       size = 0;
+      if (env_ != org.megacommerce.common.v1.ConfigProto.Environment.LOCAL.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, env_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -54654,6 +54817,7 @@ public final class ConfigProto {
       }
       org.megacommerce.common.v1.ConfigProto.ConfigGetRequest other = (org.megacommerce.common.v1.ConfigProto.ConfigGetRequest) obj;
 
+      if (env_ != other.env_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -54665,6 +54829,8 @@ public final class ConfigProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENV_FIELD_NUMBER;
+      hash = (53 * hash) + env_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -54795,6 +54961,8 @@ public final class ConfigProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        env_ = 0;
         return this;
       }
 
@@ -54821,8 +54989,16 @@ public final class ConfigProto {
       @java.lang.Override
       public org.megacommerce.common.v1.ConfigProto.ConfigGetRequest buildPartial() {
         org.megacommerce.common.v1.ConfigProto.ConfigGetRequest result = new org.megacommerce.common.v1.ConfigProto.ConfigGetRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(org.megacommerce.common.v1.ConfigProto.ConfigGetRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.env_ = env_;
+        }
       }
 
       @java.lang.Override
@@ -54837,6 +55013,9 @@ public final class ConfigProto {
 
       public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigGetRequest other) {
         if (other == org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.getDefaultInstance()) return this;
+        if (other.env_ != 0) {
+          setEnvValue(other.getEnvValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -54863,6 +55042,11 @@ public final class ConfigProto {
               case 0:
                 done = true;
                 break;
+              case 8: {
+                env_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -54876,6 +55060,58 @@ public final class ConfigProto {
         } finally {
           onChanged();
         } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int env_ = 0;
+      /**
+       * <code>.common.v1.Environment env = 1 [json_name = "env"];</code>
+       * @return The enum numeric value on the wire for env.
+       */
+      @java.lang.Override public int getEnvValue() {
+        return env_;
+      }
+      /**
+       * <code>.common.v1.Environment env = 1 [json_name = "env"];</code>
+       * @param value The enum numeric value on the wire for env to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvValue(int value) {
+        env_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.v1.Environment env = 1 [json_name = "env"];</code>
+       * @return The env.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.Environment getEnv() {
+        org.megacommerce.common.v1.ConfigProto.Environment result = org.megacommerce.common.v1.ConfigProto.Environment.forNumber(env_);
+        return result == null ? org.megacommerce.common.v1.ConfigProto.Environment.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.common.v1.Environment env = 1 [json_name = "env"];</code>
+       * @param value The env to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnv(org.megacommerce.common.v1.ConfigProto.Environment value) {
+        if (value == null) { throw new NullPointerException(); }
+        bitField0_ |= 0x00000001;
+        env_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.v1.Environment env = 1 [json_name = "env"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnv() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        env_ = 0;
+        onChanged();
         return this;
       }
 
@@ -59427,22 +59663,25 @@ public final class ConfigProto {
       "ImageProxyR\nimageProxy\022,\n\005oauth\030\026 \001(\0132\026." +
       "common.v1.ConfigOAuthR\005oauth\0225\n\010products" +
       "\030\027 \001(\0132\031.common.v1.ConfigProductsR\010produ" +
-      "cts\"\022\n\020ConfigGetRequest\"u\n\021ConfigGetResp" +
-      "onse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R" +
-      "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro" +
-      "rH\000R\005errorB\n\n\010response\"@\n\023ConfigUpdateRe" +
-      "quest\022)\n\006config\030\001 \001(\0132\021.common.v1.Config" +
-      "R\006config\"x\n\024ConfigUpdateResponse\022\'\n\004data" +
-      "\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005err" +
-      "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n" +
-      "\n\010response\"z\n\026ConfigListenerResponse\022\'\n\004" +
-      "data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n" +
-      "\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005err" +
-      "orB\n\n\010response\"4\n\025ConfigListenerRequest\022" +
-      "\033\n\tclient_id\030\001 \001(\tR\010clientIdBq\n\032org.mega" +
-      "commerce.common.v1B\013ConfigProtoZCgithub." +
-      "com/ahmad-khatib0-org/megacommerce-proto" +
-      "/gen/go/common/v1;v1\370\001\001b\006proto3"
+      "cts\"<\n\020ConfigGetRequest\022(\n\003env\030\001 \001(\0162\026.c" +
+      "ommon.v1.EnvironmentR\003env\"u\n\021ConfigGetRe" +
+      "sponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH" +
+      "\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppEr" +
+      "rorH\000R\005errorB\n\n\010response\"@\n\023ConfigUpdate" +
+      "Request\022)\n\006config\030\001 \001(\0132\021.common.v1.Conf" +
+      "igR\006config\"x\n\024ConfigUpdateResponse\022\'\n\004da" +
+      "ta\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005e" +
+      "rror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005error" +
+      "B\n\n\010response\"z\n\026ConfigListenerResponse\022\'" +
+      "\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022" +
+      "+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005e" +
+      "rrorB\n\n\010response\"4\n\025ConfigListenerReques" +
+      "t\022\033\n\tclient_id\030\001 \001(\tR\010clientId*1\n\013Enviro" +
+      "nment\022\t\n\005LOCAL\020\000\022\007\n\003DEV\020\001\022\016\n\nPRODUCTION\020" +
+      "\002Bq\n\032org.megacommerce.common.v1B\013ConfigP" +
+      "rotoZCgithub.com/ahmad-khatib0-org/megac" +
+      "ommerce-proto/gen/go/common/v1;v1\370\001\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -59598,7 +59837,7 @@ public final class ConfigProto {
     internal_static_common_v1_ConfigGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigGetRequest_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Env", });
     internal_static_common_v1_ConfigGetResponse_descriptor =
       getDescriptor().getMessageTypes().get(25);
     internal_static_common_v1_ConfigGetResponse_fieldAccessorTable = new

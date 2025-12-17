@@ -1,6 +1,5 @@
-from shared.v1 import error_pb2 as _error_pb2
-from shared.v1 import types_pb2 as _types_pb2
 from inventory.v1 import inventory_list_pb2 as _inventory_list_pb2
+from shared.v1 import error_pb2 as _error_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union

@@ -20,7 +20,6 @@
 #include "google/protobuf/io/coded_stream.h"
 #include "google/protobuf/arena.h"
 #include "google/protobuf/arenastring.h"
-#include "google/protobuf/generated_message_bases.h"
 #include "google/protobuf/generated_message_tctable_decl.h"
 #include "google/protobuf/generated_message_util.h"
 #include "google/protobuf/metadata_lite.h"
@@ -29,6 +28,7 @@
 #include "google/protobuf/message_lite.h"
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
+#include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
 #include "shared/v1/error.pb.h"
 // @@protoc_insertion_point(includes)
@@ -56,6 +56,8 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_comm
 }  // extern "C"
 namespace common {
 namespace v1 {
+enum Environment : int;
+extern const uint32_t Environment_internal_data_[];
 class CacheConfig;
 struct CacheConfigDefaultTypeInternal;
 extern CacheConfigDefaultTypeInternal _CacheConfig_default_instance_;
@@ -180,11 +182,51 @@ extern const ::google::protobuf::internal::ClassDataFull ConfigUpdateResponse_cl
 }  // namespace common
 namespace google {
 namespace protobuf {
+template <>
+internal::EnumTraitsT<::common::v1::Environment_internal_data_>
+    internal::EnumTraitsImpl::value<::common::v1::Environment>;
 }  // namespace protobuf
 }  // namespace google
 
 namespace common {
 namespace v1 {
+enum Environment : int {
+  LOCAL = 0,
+  DEV = 1,
+  PRODUCTION = 2,
+  Environment_INT_MIN_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::min(),
+  Environment_INT_MAX_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::max(),
+};
+
+extern const uint32_t Environment_internal_data_[];
+inline constexpr Environment Environment_MIN =
+    static_cast<Environment>(0);
+inline constexpr Environment Environment_MAX =
+    static_cast<Environment>(2);
+inline bool Environment_IsValid(int value) {
+  return 0 <= value && value <= 2;
+}
+inline constexpr int Environment_ARRAYSIZE = 2 + 1;
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL Environment_descriptor();
+template <typename T>
+const ::std::string& Environment_Name(T value) {
+  static_assert(::std::is_same<T, Environment>::value ||
+                    ::std::is_integral<T>::value,
+                "Incorrect type passed to Environment_Name().");
+  return Environment_Name(static_cast<Environment>(value));
+}
+template <>
+inline const ::std::string& Environment_Name(Environment value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<Environment_descriptor, 0, 2>(
+      static_cast<int>(value));
+}
+inline bool Environment_Parse(
+    ::absl::string_view name, Environment* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Environment>(Environment_descriptor(), name,
+                                           value);
+}
 
 // ===================================================================
 
@@ -7232,10 +7274,11 @@ class ConfigImageProxy final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull ConfigImageProxy_class_data_;
 // -------------------------------------------------------------------
 
-class ConfigGetRequest final : public ::google::protobuf::internal::ZeroFieldsBase
+class ConfigGetRequest final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:common.v1.ConfigGetRequest) */ {
  public:
   inline ConfigGetRequest() : ConfigGetRequest(nullptr) {}
+  ~ConfigGetRequest() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
   void operator delete(ConfigGetRequest* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
@@ -7305,21 +7348,48 @@ class ConfigGetRequest final : public ::google::protobuf::internal::ZeroFieldsBa
   // implements Message ----------------------------------------------
 
   ConfigGetRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::internal::ZeroFieldsBase::DefaultConstruct<ConfigGetRequest>(arena);
+    return ::google::protobuf::Message::DefaultConstruct<ConfigGetRequest>(arena);
   }
-  using ::google::protobuf::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const ConfigGetRequest& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl(*this, from);
-  }
-  using ::google::protobuf::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const ConfigGetRequest& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl(*this, from);
-  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ConfigGetRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ConfigGetRequest& from) { ConfigGetRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
 
   public:
   bool IsInitialized() const {
     return true;
   }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ConfigGetRequest* PROTOBUF_NONNULL other);
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
@@ -7346,11 +7416,24 @@ class ConfigGetRequest final : public ::google::protobuf::internal::ZeroFieldsBa
   // nested types ----------------------------------------------------
 
   // accessors -------------------------------------------------------
+  enum : int {
+    kEnvFieldNumber = 1,
+  };
+  // .common.v1.Environment env = 1 [json_name = "env"];
+  void clear_env() ;
+  ::common::v1::Environment env() const;
+  void set_env(::common::v1::Environment value);
+
+  private:
+  ::common::v1::Environment _internal_env() const;
+  void _internal_set_env(::common::v1::Environment value);
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.ConfigGetRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 0,
+  static const ::google::protobuf::internal::TcParseTable<0, 1,
                                    0, 0,
                                    2>
       _table_;
@@ -7370,8 +7453,12 @@ class ConfigGetRequest final : public ::google::protobuf::internal::ZeroFieldsBa
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
         const ConfigGetRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    int env_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
+  union { Impl_ _impl_; };
   friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
 };
 
@@ -27519,6 +27606,30 @@ inline void Config::set_allocated_products(::common::v1::ConfigProducts* PROTOBU
 
 // ConfigGetRequest
 
+// .common.v1.Environment env = 1 [json_name = "env"];
+inline void ConfigGetRequest::clear_env() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.env_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::common::v1::Environment ConfigGetRequest::env() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigGetRequest.env)
+  return _internal_env();
+}
+inline void ConfigGetRequest::set_env(::common::v1::Environment value) {
+  _internal_set_env(value);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigGetRequest.env)
+}
+inline ::common::v1::Environment ConfigGetRequest::_internal_env() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return static_cast<::common::v1::Environment>(_impl_.env_);
+}
+inline void ConfigGetRequest::_internal_set_env(::common::v1::Environment value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.env_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // ConfigGetResponse
@@ -28190,6 +28301,19 @@ inline void ConfigListenerRequest::set_allocated_client_id(::std::string* PROTOB
 }  // namespace v1
 }  // namespace common
 
+
+namespace google {
+namespace protobuf {
+
+template <>
+struct is_proto_enum<::common::v1::Environment> : std::true_type {};
+template <>
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::common::v1::Environment>() {
+  return ::common::v1::Environment_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

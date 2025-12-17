@@ -22,12 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
-from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 from inventory.v1 import inventory_list_pb2 as inventory_dot_v1_dot_inventory__list__pb2
+from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n inventory/v1/inventory_get.proto\x12\x0cinventory.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\x1a!inventory/v1/inventory_list.proto\"!\n\x13InventoryGetRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x80\x01\n\x14InventoryGetResponse\x12\x36\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32&.inventory.v1.InventoryGetResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"I\n\x18InventoryGetResponseData\x12-\n\x04item\x18\x01 \x01(\x0b\x32\x1f.inventory.v1.InventoryListItemB}\n\x1dorg.megacommerce.inventory.v1B\x11InventoryGetProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n inventory/v1/inventory_get.proto\x12\x0cinventory.v1\x1a!inventory/v1/inventory_list.proto\x1a\x15shared/v1/error.proto\"!\n\x13InventoryGetRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x80\x01\n\x14InventoryGetResponse\x12\x36\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32&.inventory.v1.InventoryGetResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"I\n\x18InventoryGetResponseData\x12-\n\x04item\x18\x01 \x01(\x0b\x32\x1f.inventory.v1.InventoryListItemB}\n\x1dorg.megacommerce.inventory.v1B\x11InventoryGetProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,10 +34,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'inventory.v1.inventory_get_
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035org.megacommerce.inventory.v1B\021InventoryGetProtoZFgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1\370\001\001'
-  _globals['_INVENTORYGETREQUEST']._serialized_start=131
-  _globals['_INVENTORYGETREQUEST']._serialized_end=164
-  _globals['_INVENTORYGETRESPONSE']._serialized_start=167
-  _globals['_INVENTORYGETRESPONSE']._serialized_end=295
-  _globals['_INVENTORYGETRESPONSEDATA']._serialized_start=297
-  _globals['_INVENTORYGETRESPONSEDATA']._serialized_end=370
+  _globals['_INVENTORYGETREQUEST']._serialized_start=108
+  _globals['_INVENTORYGETREQUEST']._serialized_end=141
+  _globals['_INVENTORYGETRESPONSE']._serialized_start=144
+  _globals['_INVENTORYGETRESPONSE']._serialized_end=272
+  _globals['_INVENTORYGETRESPONSEDATA']._serialized_start=274
+  _globals['_INVENTORYGETRESPONSEDATA']._serialized_end=347
 # @@protoc_insertion_point(module_scope)

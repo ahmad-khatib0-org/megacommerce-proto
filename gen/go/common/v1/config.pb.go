@@ -22,6 +22,55 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type Environment int32
+
+const (
+	Environment_LOCAL      Environment = 0
+	Environment_DEV        Environment = 1
+	Environment_PRODUCTION Environment = 2
+)
+
+// Enum value maps for Environment.
+var (
+	Environment_name = map[int32]string{
+		0: "LOCAL",
+		1: "DEV",
+		2: "PRODUCTION",
+	}
+	Environment_value = map[string]int32{
+		"LOCAL":      0,
+		"DEV":        1,
+		"PRODUCTION": 2,
+	}
+)
+
+func (x Environment) Enum() *Environment {
+	p := new(Environment)
+	*p = x
+	return p
+}
+
+func (x Environment) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Environment) Descriptor() protoreflect.EnumDescriptor {
+	return file_common_v1_config_proto_enumTypes[0].Descriptor()
+}
+
+func (Environment) Type() protoreflect.EnumType {
+	return &file_common_v1_config_proto_enumTypes[0]
+}
+
+func (x Environment) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Environment.Descriptor instead.
+func (Environment) EnumDescriptor() ([]byte, []int) {
+	return file_common_v1_config_proto_rawDescGZIP(), []int{0}
+}
+
 type ConfigMain struct {
 	state                                    protoimpl.MessageState `protogen:"open.v1"`
 	Env                                      *string                `protobuf:"bytes,1,opt,name=env,proto3,oneof" json:"env,omitempty"`
@@ -3455,6 +3504,7 @@ func (x *Config) GetProducts() *ConfigProducts {
 
 type ConfigGetRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Env           Environment            `protobuf:"varint,1,opt,name=env,proto3,enum=common.v1.Environment" json:"env,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3487,6 +3537,13 @@ func (x *ConfigGetRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use ConfigGetRequest.ProtoReflect.Descriptor instead.
 func (*ConfigGetRequest) Descriptor() ([]byte, []int) {
 	return file_common_v1_config_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *ConfigGetRequest) GetEnv() Environment {
+	if x != nil {
+		return x.Env
+	}
+	return Environment_LOCAL
 }
 
 type ConfigGetResponse struct {
@@ -4497,8 +4554,9 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\vimage_proxy\x18\x15 \x01(\v2\x1b.common.v1.ConfigImageProxyR\n" +
 	"imageProxy\x12,\n" +
 	"\x05oauth\x18\x16 \x01(\v2\x16.common.v1.ConfigOAuthR\x05oauth\x125\n" +
-	"\bproducts\x18\x17 \x01(\v2\x19.common.v1.ConfigProductsR\bproducts\"\x12\n" +
-	"\x10ConfigGetRequest\"u\n" +
+	"\bproducts\x18\x17 \x01(\v2\x19.common.v1.ConfigProductsR\bproducts\"<\n" +
+	"\x10ConfigGetRequest\x12(\n" +
+	"\x03env\x18\x01 \x01(\x0e2\x16.common.v1.EnvironmentR\x03env\"u\n" +
 	"\x11ConfigGetResponse\x12'\n" +
 	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
@@ -4517,7 +4575,12 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\n" +
 	"\bresponse\"4\n" +
 	"\x15ConfigListenerRequest\x12\x1b\n" +
-	"\tclient_id\x18\x01 \x01(\tR\bclientIdBq\n" +
+	"\tclient_id\x18\x01 \x01(\tR\bclientId*1\n" +
+	"\vEnvironment\x12\t\n" +
+	"\x05LOCAL\x10\x00\x12\a\n" +
+	"\x03DEV\x10\x01\x12\x0e\n" +
+	"\n" +
+	"PRODUCTION\x10\x02Bq\n" +
 	"\x1aorg.megacommerce.common.v1B\vConfigProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -4532,76 +4595,79 @@ func file_common_v1_config_proto_rawDescGZIP() []byte {
 	return file_common_v1_config_proto_rawDescData
 }
 
+var file_common_v1_config_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_common_v1_config_proto_msgTypes = make([]protoimpl.MessageInfo, 30)
 var file_common_v1_config_proto_goTypes = []any{
-	(*ConfigMain)(nil),             // 0: common.v1.ConfigMain
-	(*ConfigServices)(nil),         // 1: common.v1.ConfigServices
-	(*ConfigOAuth)(nil),            // 2: common.v1.ConfigOAuth
-	(*ConfigSecurity)(nil),         // 3: common.v1.ConfigSecurity
-	(*CacheConfig)(nil),            // 4: common.v1.CacheConfig
-	(*ConfigMetrics)(nil),          // 5: common.v1.ConfigMetrics
-	(*ConfigSSO)(nil),              // 6: common.v1.ConfigSSO
-	(*ConfigSql)(nil),              // 7: common.v1.ConfigSql
-	(*ConfigPassword)(nil),         // 8: common.v1.ConfigPassword
-	(*ConfigFile)(nil),             // 9: common.v1.ConfigFile
-	(*ConfigEmail)(nil),            // 10: common.v1.ConfigEmail
-	(*ConfigRateLimit)(nil),        // 11: common.v1.ConfigRateLimit
-	(*ConfigPrivacy)(nil),          // 12: common.v1.ConfigPrivacy
-	(*ConfigSupport)(nil),          // 13: common.v1.ConfigSupport
-	(*ConfigLocalization)(nil),     // 14: common.v1.ConfigLocalization
-	(*ConfigLdap)(nil),             // 15: common.v1.ConfigLdap
-	(*ConfigSaml)(nil),             // 16: common.v1.ConfigSaml
-	(*ConfigNativeApp)(nil),        // 17: common.v1.ConfigNativeApp
-	(*ConfigMeilisearch)(nil),      // 18: common.v1.ConfigMeilisearch
-	(*ConfigBleve)(nil),            // 19: common.v1.ConfigBleve
-	(*ConfigDataRetention)(nil),    // 20: common.v1.ConfigDataRetention
-	(*ConfigImageProxy)(nil),       // 21: common.v1.ConfigImageProxy
-	(*ConfigProducts)(nil),         // 22: common.v1.ConfigProducts
-	(*Config)(nil),                 // 23: common.v1.Config
-	(*ConfigGetRequest)(nil),       // 24: common.v1.ConfigGetRequest
-	(*ConfigGetResponse)(nil),      // 25: common.v1.ConfigGetResponse
-	(*ConfigUpdateRequest)(nil),    // 26: common.v1.ConfigUpdateRequest
-	(*ConfigUpdateResponse)(nil),   // 27: common.v1.ConfigUpdateResponse
-	(*ConfigListenerResponse)(nil), // 28: common.v1.ConfigListenerResponse
-	(*ConfigListenerRequest)(nil),  // 29: common.v1.ConfigListenerRequest
-	(*v1.AppError)(nil),            // 30: shared.v1.AppError
+	(Environment)(0),               // 0: common.v1.Environment
+	(*ConfigMain)(nil),             // 1: common.v1.ConfigMain
+	(*ConfigServices)(nil),         // 2: common.v1.ConfigServices
+	(*ConfigOAuth)(nil),            // 3: common.v1.ConfigOAuth
+	(*ConfigSecurity)(nil),         // 4: common.v1.ConfigSecurity
+	(*CacheConfig)(nil),            // 5: common.v1.CacheConfig
+	(*ConfigMetrics)(nil),          // 6: common.v1.ConfigMetrics
+	(*ConfigSSO)(nil),              // 7: common.v1.ConfigSSO
+	(*ConfigSql)(nil),              // 8: common.v1.ConfigSql
+	(*ConfigPassword)(nil),         // 9: common.v1.ConfigPassword
+	(*ConfigFile)(nil),             // 10: common.v1.ConfigFile
+	(*ConfigEmail)(nil),            // 11: common.v1.ConfigEmail
+	(*ConfigRateLimit)(nil),        // 12: common.v1.ConfigRateLimit
+	(*ConfigPrivacy)(nil),          // 13: common.v1.ConfigPrivacy
+	(*ConfigSupport)(nil),          // 14: common.v1.ConfigSupport
+	(*ConfigLocalization)(nil),     // 15: common.v1.ConfigLocalization
+	(*ConfigLdap)(nil),             // 16: common.v1.ConfigLdap
+	(*ConfigSaml)(nil),             // 17: common.v1.ConfigSaml
+	(*ConfigNativeApp)(nil),        // 18: common.v1.ConfigNativeApp
+	(*ConfigMeilisearch)(nil),      // 19: common.v1.ConfigMeilisearch
+	(*ConfigBleve)(nil),            // 20: common.v1.ConfigBleve
+	(*ConfigDataRetention)(nil),    // 21: common.v1.ConfigDataRetention
+	(*ConfigImageProxy)(nil),       // 22: common.v1.ConfigImageProxy
+	(*ConfigProducts)(nil),         // 23: common.v1.ConfigProducts
+	(*Config)(nil),                 // 24: common.v1.Config
+	(*ConfigGetRequest)(nil),       // 25: common.v1.ConfigGetRequest
+	(*ConfigGetResponse)(nil),      // 26: common.v1.ConfigGetResponse
+	(*ConfigUpdateRequest)(nil),    // 27: common.v1.ConfigUpdateRequest
+	(*ConfigUpdateResponse)(nil),   // 28: common.v1.ConfigUpdateResponse
+	(*ConfigListenerResponse)(nil), // 29: common.v1.ConfigListenerResponse
+	(*ConfigListenerRequest)(nil),  // 30: common.v1.ConfigListenerRequest
+	(*v1.AppError)(nil),            // 31: shared.v1.AppError
 }
 var file_common_v1_config_proto_depIdxs = []int32{
-	0,  // 0: common.v1.Config.main:type_name -> common.v1.ConfigMain
-	1,  // 1: common.v1.Config.services:type_name -> common.v1.ConfigServices
-	3,  // 2: common.v1.Config.security:type_name -> common.v1.ConfigSecurity
-	4,  // 3: common.v1.Config.cache:type_name -> common.v1.CacheConfig
-	5,  // 4: common.v1.Config.metrics:type_name -> common.v1.ConfigMetrics
-	6,  // 5: common.v1.Config.sso:type_name -> common.v1.ConfigSSO
-	7,  // 6: common.v1.Config.sql:type_name -> common.v1.ConfigSql
-	8,  // 7: common.v1.Config.password:type_name -> common.v1.ConfigPassword
-	9,  // 8: common.v1.Config.file:type_name -> common.v1.ConfigFile
-	10, // 9: common.v1.Config.email:type_name -> common.v1.ConfigEmail
-	11, // 10: common.v1.Config.rate_limit:type_name -> common.v1.ConfigRateLimit
-	12, // 11: common.v1.Config.privacy:type_name -> common.v1.ConfigPrivacy
-	13, // 12: common.v1.Config.support:type_name -> common.v1.ConfigSupport
-	14, // 13: common.v1.Config.localization:type_name -> common.v1.ConfigLocalization
-	15, // 14: common.v1.Config.ldap:type_name -> common.v1.ConfigLdap
-	16, // 15: common.v1.Config.saml:type_name -> common.v1.ConfigSaml
-	17, // 16: common.v1.Config.native_app:type_name -> common.v1.ConfigNativeApp
-	18, // 17: common.v1.Config.meilisearch:type_name -> common.v1.ConfigMeilisearch
-	19, // 18: common.v1.Config.bleve:type_name -> common.v1.ConfigBleve
-	20, // 19: common.v1.Config.data_retention:type_name -> common.v1.ConfigDataRetention
-	21, // 20: common.v1.Config.image_proxy:type_name -> common.v1.ConfigImageProxy
-	2,  // 21: common.v1.Config.oauth:type_name -> common.v1.ConfigOAuth
-	22, // 22: common.v1.Config.products:type_name -> common.v1.ConfigProducts
-	23, // 23: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
-	30, // 24: common.v1.ConfigGetResponse.error:type_name -> shared.v1.AppError
-	23, // 25: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
-	23, // 26: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
-	30, // 27: common.v1.ConfigUpdateResponse.error:type_name -> shared.v1.AppError
-	23, // 28: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
-	30, // 29: common.v1.ConfigListenerResponse.error:type_name -> shared.v1.AppError
-	30, // [30:30] is the sub-list for method output_type
-	30, // [30:30] is the sub-list for method input_type
-	30, // [30:30] is the sub-list for extension type_name
-	30, // [30:30] is the sub-list for extension extendee
-	0,  // [0:30] is the sub-list for field type_name
+	1,  // 0: common.v1.Config.main:type_name -> common.v1.ConfigMain
+	2,  // 1: common.v1.Config.services:type_name -> common.v1.ConfigServices
+	4,  // 2: common.v1.Config.security:type_name -> common.v1.ConfigSecurity
+	5,  // 3: common.v1.Config.cache:type_name -> common.v1.CacheConfig
+	6,  // 4: common.v1.Config.metrics:type_name -> common.v1.ConfigMetrics
+	7,  // 5: common.v1.Config.sso:type_name -> common.v1.ConfigSSO
+	8,  // 6: common.v1.Config.sql:type_name -> common.v1.ConfigSql
+	9,  // 7: common.v1.Config.password:type_name -> common.v1.ConfigPassword
+	10, // 8: common.v1.Config.file:type_name -> common.v1.ConfigFile
+	11, // 9: common.v1.Config.email:type_name -> common.v1.ConfigEmail
+	12, // 10: common.v1.Config.rate_limit:type_name -> common.v1.ConfigRateLimit
+	13, // 11: common.v1.Config.privacy:type_name -> common.v1.ConfigPrivacy
+	14, // 12: common.v1.Config.support:type_name -> common.v1.ConfigSupport
+	15, // 13: common.v1.Config.localization:type_name -> common.v1.ConfigLocalization
+	16, // 14: common.v1.Config.ldap:type_name -> common.v1.ConfigLdap
+	17, // 15: common.v1.Config.saml:type_name -> common.v1.ConfigSaml
+	18, // 16: common.v1.Config.native_app:type_name -> common.v1.ConfigNativeApp
+	19, // 17: common.v1.Config.meilisearch:type_name -> common.v1.ConfigMeilisearch
+	20, // 18: common.v1.Config.bleve:type_name -> common.v1.ConfigBleve
+	21, // 19: common.v1.Config.data_retention:type_name -> common.v1.ConfigDataRetention
+	22, // 20: common.v1.Config.image_proxy:type_name -> common.v1.ConfigImageProxy
+	3,  // 21: common.v1.Config.oauth:type_name -> common.v1.ConfigOAuth
+	23, // 22: common.v1.Config.products:type_name -> common.v1.ConfigProducts
+	0,  // 23: common.v1.ConfigGetRequest.env:type_name -> common.v1.Environment
+	24, // 24: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
+	31, // 25: common.v1.ConfigGetResponse.error:type_name -> shared.v1.AppError
+	24, // 26: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
+	24, // 27: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
+	31, // 28: common.v1.ConfigUpdateResponse.error:type_name -> shared.v1.AppError
+	24, // 29: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
+	31, // 30: common.v1.ConfigListenerResponse.error:type_name -> shared.v1.AppError
+	31, // [31:31] is the sub-list for method output_type
+	31, // [31:31] is the sub-list for method input_type
+	31, // [31:31] is the sub-list for extension type_name
+	31, // [31:31] is the sub-list for extension extendee
+	0,  // [0:31] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_config_proto_init() }
@@ -4648,13 +4714,14 @@ func file_common_v1_config_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_config_proto_rawDesc), len(file_common_v1_config_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   30,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_common_v1_config_proto_goTypes,
 		DependencyIndexes: file_common_v1_config_proto_depIdxs,
+		EnumInfos:         file_common_v1_config_proto_enumTypes,
 		MessageInfos:      file_common_v1_config_proto_msgTypes,
 	}.Build()
 	File_common_v1_config_proto = out.File

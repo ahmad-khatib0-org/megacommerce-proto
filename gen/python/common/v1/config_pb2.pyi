@@ -1,10 +1,20 @@
 from shared.v1 import error_pb2 as _error_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class Environment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    LOCAL: _ClassVar[Environment]
+    DEV: _ClassVar[Environment]
+    PRODUCTION: _ClassVar[Environment]
+LOCAL: Environment
+DEV: Environment
+PRODUCTION: Environment
 
 class ConfigMain(_message.Message):
     __slots__ = ("env", "site_name", "site_url", "enable_link_previews", "restrict_link_previews", "enable_client_performance_debugging", "enable_gif_picker", "enable_custom_emoji", "enable_emoji_picker", "time_between_user_typing_updates_milliseconds", "enable_file_search", "enable_user_typing_messages", "enable_user_statuses", "enable_email_invitations", "enable_svgs", "allow_persistent_notifications", "persistent_notification_interval_minutes", "persistent_notification_max_count", "persistent_notification_max_recipients", "feature_flag_sync_interval_seconds", "allow_synced_drafts")
@@ -741,8 +751,10 @@ class Config(_message.Message):
     def __init__(self, main: _Optional[_Union[ConfigMain, _Mapping]] = ..., services: _Optional[_Union[ConfigServices, _Mapping]] = ..., security: _Optional[_Union[ConfigSecurity, _Mapping]] = ..., cache: _Optional[_Union[CacheConfig, _Mapping]] = ..., metrics: _Optional[_Union[ConfigMetrics, _Mapping]] = ..., sso: _Optional[_Union[ConfigSSO, _Mapping]] = ..., sql: _Optional[_Union[ConfigSql, _Mapping]] = ..., password: _Optional[_Union[ConfigPassword, _Mapping]] = ..., file: _Optional[_Union[ConfigFile, _Mapping]] = ..., email: _Optional[_Union[ConfigEmail, _Mapping]] = ..., rate_limit: _Optional[_Union[ConfigRateLimit, _Mapping]] = ..., privacy: _Optional[_Union[ConfigPrivacy, _Mapping]] = ..., support: _Optional[_Union[ConfigSupport, _Mapping]] = ..., localization: _Optional[_Union[ConfigLocalization, _Mapping]] = ..., ldap: _Optional[_Union[ConfigLdap, _Mapping]] = ..., saml: _Optional[_Union[ConfigSaml, _Mapping]] = ..., native_app: _Optional[_Union[ConfigNativeApp, _Mapping]] = ..., meilisearch: _Optional[_Union[ConfigMeilisearch, _Mapping]] = ..., bleve: _Optional[_Union[ConfigBleve, _Mapping]] = ..., data_retention: _Optional[_Union[ConfigDataRetention, _Mapping]] = ..., image_proxy: _Optional[_Union[ConfigImageProxy, _Mapping]] = ..., oauth: _Optional[_Union[ConfigOAuth, _Mapping]] = ..., products: _Optional[_Union[ConfigProducts, _Mapping]] = ...) -> None: ...
 
 class ConfigGetRequest(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("env",)
+    ENV_FIELD_NUMBER: _ClassVar[int]
+    env: Environment
+    def __init__(self, env: _Optional[_Union[Environment, str]] = ...) -> None: ...
 
 class ConfigGetResponse(_message.Message):
     __slots__ = ("data", "error")

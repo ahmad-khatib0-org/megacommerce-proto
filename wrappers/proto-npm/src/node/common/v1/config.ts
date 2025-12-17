@@ -10,6 +10,45 @@ import { AppError } from "../../shared/v1/error";
 
 export const protobufPackage = "common.v1";
 
+export enum Environment {
+  LOCAL = 0,
+  DEV = 1,
+  PRODUCTION = 2,
+  UNRECOGNIZED = -1,
+}
+
+export function environmentFromJSON(object: any): Environment {
+  switch (object) {
+    case 0:
+    case "LOCAL":
+      return Environment.LOCAL;
+    case 1:
+    case "DEV":
+      return Environment.DEV;
+    case 2:
+    case "PRODUCTION":
+      return Environment.PRODUCTION;
+    case -1:
+    case "UNRECOGNIZED":
+    default:
+      return Environment.UNRECOGNIZED;
+  }
+}
+
+export function environmentToJSON(object: Environment): string {
+  switch (object) {
+    case Environment.LOCAL:
+      return "LOCAL";
+    case Environment.DEV:
+      return "DEV";
+    case Environment.PRODUCTION:
+      return "PRODUCTION";
+    case Environment.UNRECOGNIZED:
+    default:
+      return "UNRECOGNIZED";
+  }
+}
+
 export interface ConfigMain {
   env?: string | undefined;
   siteName?: string | undefined;
@@ -445,6 +484,7 @@ export interface Config {
 }
 
 export interface ConfigGetRequest {
+  env: Environment;
 }
 
 export interface ConfigGetResponse {
@@ -7241,11 +7281,14 @@ export const Config: MessageFns<Config> = {
 };
 
 function createBaseConfigGetRequest(): ConfigGetRequest {
-  return {};
+  return { env: 0 };
 }
 
 export const ConfigGetRequest: MessageFns<ConfigGetRequest> = {
-  encode(_: ConfigGetRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(message: ConfigGetRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.env !== 0) {
+      writer.uint32(8).int32(message.env);
+    }
     return writer;
   },
 
@@ -7256,6 +7299,14 @@ export const ConfigGetRequest: MessageFns<ConfigGetRequest> = {
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.env = reader.int32() as any;
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -7265,20 +7316,24 @@ export const ConfigGetRequest: MessageFns<ConfigGetRequest> = {
     return message;
   },
 
-  fromJSON(_: any): ConfigGetRequest {
-    return {};
+  fromJSON(object: any): ConfigGetRequest {
+    return { env: isSet(object.env) ? environmentFromJSON(object.env) : 0 };
   },
 
-  toJSON(_: ConfigGetRequest): unknown {
+  toJSON(message: ConfigGetRequest): unknown {
     const obj: any = {};
+    if (message.env !== 0) {
+      obj.env = environmentToJSON(message.env);
+    }
     return obj;
   },
 
   create<I extends Exact<DeepPartial<ConfigGetRequest>, I>>(base?: I): ConfigGetRequest {
     return ConfigGetRequest.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ConfigGetRequest>, I>>(_: I): ConfigGetRequest {
+  fromPartial<I extends Exact<DeepPartial<ConfigGetRequest>, I>>(object: I): ConfigGetRequest {
     const message = createBaseConfigGetRequest();
+    message.env = object.env ?? 0;
     return message;
   },
 };

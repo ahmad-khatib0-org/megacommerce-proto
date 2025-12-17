@@ -2,9 +2,8 @@ syntax = "proto3";
 
 package inventory.v1;
 
-import "shared/v1/error.proto";
-import "shared/v1/types.proto";
 import "inventory/v1/inventory_list.proto";
+import "shared/v1/error.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/inventory/v1;v1";
