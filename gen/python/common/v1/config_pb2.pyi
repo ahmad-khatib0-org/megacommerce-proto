@@ -102,6 +102,24 @@ class ConfigServices(_message.Message):
     inventory_service_max_receive_message_size_bytes: int
     def __init__(self, common_service_grpc_url: _Optional[str] = ..., user_service_grpc_url: _Optional[str] = ..., products_service_grpc_url: _Optional[str] = ..., jaeger_collector_url: _Optional[str] = ..., common_service_prometheus_url: _Optional[str] = ..., user_service_prometheus_url: _Optional[str] = ..., products_service_prometheus_url: _Optional[str] = ..., users_service_max_receive_message_size_bytes: _Optional[int] = ..., auth_service_grpc_url: _Optional[str] = ..., auth_service_prometheus_url: _Optional[str] = ..., search_service_grpc_url: _Optional[str] = ..., search_service_prometheus_url: _Optional[str] = ..., orders_service_grpc_url: _Optional[str] = ..., orders_service_prometheus_url: _Optional[str] = ..., orders_service_max_receive_message_size_bytes: _Optional[int] = ..., inventory_service_grpc_url: _Optional[str] = ..., inventory_service_prometheus_url: _Optional[str] = ..., inventory_service_max_receive_message_size_bytes: _Optional[int] = ...) -> None: ...
 
+class ConfigObservability(_message.Message):
+    __slots__ = ("enable_tracing", "enable_metrics", "enable_profiling", "tracing_sample_rate", "jaeger_endpoint", "prometheus_pushgateway", "otel_grpc_endpoint")
+    ENABLE_TRACING_FIELD_NUMBER: _ClassVar[int]
+    ENABLE_METRICS_FIELD_NUMBER: _ClassVar[int]
+    ENABLE_PROFILING_FIELD_NUMBER: _ClassVar[int]
+    TRACING_SAMPLE_RATE_FIELD_NUMBER: _ClassVar[int]
+    JAEGER_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
+    PROMETHEUS_PUSHGATEWAY_FIELD_NUMBER: _ClassVar[int]
+    OTEL_GRPC_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
+    enable_tracing: bool
+    enable_metrics: bool
+    enable_profiling: bool
+    tracing_sample_rate: float
+    jaeger_endpoint: str
+    prometheus_pushgateway: str
+    otel_grpc_endpoint: str
+    def __init__(self, enable_tracing: bool = ..., enable_metrics: bool = ..., enable_profiling: bool = ..., tracing_sample_rate: _Optional[float] = ..., jaeger_endpoint: _Optional[str] = ..., prometheus_pushgateway: _Optional[str] = ..., otel_grpc_endpoint: _Optional[str] = ...) -> None: ...
+
 class ConfigOAuth(_message.Message):
     __slots__ = ("oauth_provider_url", "oauth_client_id", "oauth_client_secret", "oauth_db_dsn", "oauth_redirect_url", "oauth_login_url", "oauth_consent_url", "oauth_response_type", "oauth_scope", "oauth_admin_url", "oauth_backend_url", "frontend_login_url", "frontend_login_error_url", "oauth_grant_access_token_audience")
     OAUTH_PROVIDER_URL_FIELD_NUMBER: _ClassVar[int]
@@ -701,7 +719,7 @@ class ConfigProducts(_message.Message):
     def __init__(self, product_image_max_size_mb: _Optional[int] = ..., product_image_accepted_formats: _Optional[_Iterable[str]] = ..., product_image_max_width: _Optional[int] = ..., product_image_max_height: _Optional[int] = ..., product_image_min_width: _Optional[int] = ..., product_image_min_height: _Optional[int] = ..., product_images_min_count_per_variant: _Optional[int] = ..., product_images_max_count_per_variant: _Optional[int] = ..., product_media_max_direct_uploading_size_mb: _Optional[int] = ...) -> None: ...
 
 class Config(_message.Message):
-    __slots__ = ("main", "services", "security", "cache", "metrics", "sso", "sql", "password", "file", "email", "rate_limit", "privacy", "support", "localization", "ldap", "saml", "native_app", "meilisearch", "bleve", "data_retention", "image_proxy", "oauth", "products")
+    __slots__ = ("main", "services", "security", "cache", "metrics", "sso", "sql", "password", "file", "email", "rate_limit", "privacy", "support", "localization", "ldap", "saml", "native_app", "meilisearch", "bleve", "data_retention", "image_proxy", "oauth", "products", "observability")
     MAIN_FIELD_NUMBER: _ClassVar[int]
     SERVICES_FIELD_NUMBER: _ClassVar[int]
     SECURITY_FIELD_NUMBER: _ClassVar[int]
@@ -725,6 +743,7 @@ class Config(_message.Message):
     IMAGE_PROXY_FIELD_NUMBER: _ClassVar[int]
     OAUTH_FIELD_NUMBER: _ClassVar[int]
     PRODUCTS_FIELD_NUMBER: _ClassVar[int]
+    OBSERVABILITY_FIELD_NUMBER: _ClassVar[int]
     main: ConfigMain
     services: ConfigServices
     security: ConfigSecurity
@@ -748,7 +767,8 @@ class Config(_message.Message):
     image_proxy: ConfigImageProxy
     oauth: ConfigOAuth
     products: ConfigProducts
-    def __init__(self, main: _Optional[_Union[ConfigMain, _Mapping]] = ..., services: _Optional[_Union[ConfigServices, _Mapping]] = ..., security: _Optional[_Union[ConfigSecurity, _Mapping]] = ..., cache: _Optional[_Union[CacheConfig, _Mapping]] = ..., metrics: _Optional[_Union[ConfigMetrics, _Mapping]] = ..., sso: _Optional[_Union[ConfigSSO, _Mapping]] = ..., sql: _Optional[_Union[ConfigSql, _Mapping]] = ..., password: _Optional[_Union[ConfigPassword, _Mapping]] = ..., file: _Optional[_Union[ConfigFile, _Mapping]] = ..., email: _Optional[_Union[ConfigEmail, _Mapping]] = ..., rate_limit: _Optional[_Union[ConfigRateLimit, _Mapping]] = ..., privacy: _Optional[_Union[ConfigPrivacy, _Mapping]] = ..., support: _Optional[_Union[ConfigSupport, _Mapping]] = ..., localization: _Optional[_Union[ConfigLocalization, _Mapping]] = ..., ldap: _Optional[_Union[ConfigLdap, _Mapping]] = ..., saml: _Optional[_Union[ConfigSaml, _Mapping]] = ..., native_app: _Optional[_Union[ConfigNativeApp, _Mapping]] = ..., meilisearch: _Optional[_Union[ConfigMeilisearch, _Mapping]] = ..., bleve: _Optional[_Union[ConfigBleve, _Mapping]] = ..., data_retention: _Optional[_Union[ConfigDataRetention, _Mapping]] = ..., image_proxy: _Optional[_Union[ConfigImageProxy, _Mapping]] = ..., oauth: _Optional[_Union[ConfigOAuth, _Mapping]] = ..., products: _Optional[_Union[ConfigProducts, _Mapping]] = ...) -> None: ...
+    observability: ConfigObservability
+    def __init__(self, main: _Optional[_Union[ConfigMain, _Mapping]] = ..., services: _Optional[_Union[ConfigServices, _Mapping]] = ..., security: _Optional[_Union[ConfigSecurity, _Mapping]] = ..., cache: _Optional[_Union[CacheConfig, _Mapping]] = ..., metrics: _Optional[_Union[ConfigMetrics, _Mapping]] = ..., sso: _Optional[_Union[ConfigSSO, _Mapping]] = ..., sql: _Optional[_Union[ConfigSql, _Mapping]] = ..., password: _Optional[_Union[ConfigPassword, _Mapping]] = ..., file: _Optional[_Union[ConfigFile, _Mapping]] = ..., email: _Optional[_Union[ConfigEmail, _Mapping]] = ..., rate_limit: _Optional[_Union[ConfigRateLimit, _Mapping]] = ..., privacy: _Optional[_Union[ConfigPrivacy, _Mapping]] = ..., support: _Optional[_Union[ConfigSupport, _Mapping]] = ..., localization: _Optional[_Union[ConfigLocalization, _Mapping]] = ..., ldap: _Optional[_Union[ConfigLdap, _Mapping]] = ..., saml: _Optional[_Union[ConfigSaml, _Mapping]] = ..., native_app: _Optional[_Union[ConfigNativeApp, _Mapping]] = ..., meilisearch: _Optional[_Union[ConfigMeilisearch, _Mapping]] = ..., bleve: _Optional[_Union[ConfigBleve, _Mapping]] = ..., data_retention: _Optional[_Union[ConfigDataRetention, _Mapping]] = ..., image_proxy: _Optional[_Union[ConfigImageProxy, _Mapping]] = ..., oauth: _Optional[_Union[ConfigOAuth, _Mapping]] = ..., products: _Optional[_Union[ConfigProducts, _Mapping]] = ..., observability: _Optional[_Union[ConfigObservability, _Mapping]] = ...) -> None: ...
 
 class ConfigGetRequest(_message.Message):
     __slots__ = ("env",)

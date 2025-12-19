@@ -94,6 +94,16 @@ export interface ConfigServices {
   inventoryServiceMaxReceiveMessageSizeBytes: string;
 }
 
+export interface ConfigObservability {
+  enableTracing: boolean;
+  enableMetrics: boolean;
+  enableProfiling: boolean;
+  tracingSampleRate: number;
+  jaegerEndpoint: string;
+  prometheusPushgateway: string;
+  otelGrpcEndpoint: string;
+}
+
 export interface ConfigOAuth {
   oauthProviderUrl?: string | undefined;
   oauthClientId?: string | undefined;
@@ -481,6 +491,7 @@ export interface Config {
   imageProxy?: ConfigImageProxy | undefined;
   oauth?: ConfigOAuth | undefined;
   products?: ConfigProducts | undefined;
+  observability?: ConfigObservability | undefined;
 }
 
 export interface ConfigGetRequest {
@@ -1305,6 +1316,170 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     message.inventoryServiceGrpcUrl = object.inventoryServiceGrpcUrl ?? "";
     message.inventoryServicePrometheusUrl = object.inventoryServicePrometheusUrl ?? "";
     message.inventoryServiceMaxReceiveMessageSizeBytes = object.inventoryServiceMaxReceiveMessageSizeBytes ?? "0";
+    return message;
+  },
+};
+
+function createBaseConfigObservability(): ConfigObservability {
+  return {
+    enableTracing: false,
+    enableMetrics: false,
+    enableProfiling: false,
+    tracingSampleRate: 0,
+    jaegerEndpoint: "",
+    prometheusPushgateway: "",
+    otelGrpcEndpoint: "",
+  };
+}
+
+export const ConfigObservability: MessageFns<ConfigObservability> = {
+  encode(message: ConfigObservability, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.enableTracing !== false) {
+      writer.uint32(8).bool(message.enableTracing);
+    }
+    if (message.enableMetrics !== false) {
+      writer.uint32(16).bool(message.enableMetrics);
+    }
+    if (message.enableProfiling !== false) {
+      writer.uint32(24).bool(message.enableProfiling);
+    }
+    if (message.tracingSampleRate !== 0) {
+      writer.uint32(33).double(message.tracingSampleRate);
+    }
+    if (message.jaegerEndpoint !== "") {
+      writer.uint32(42).string(message.jaegerEndpoint);
+    }
+    if (message.prometheusPushgateway !== "") {
+      writer.uint32(50).string(message.prometheusPushgateway);
+    }
+    if (message.otelGrpcEndpoint !== "") {
+      writer.uint32(58).string(message.otelGrpcEndpoint);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ConfigObservability {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseConfigObservability();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.enableTracing = reader.bool();
+          continue;
+        }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.enableMetrics = reader.bool();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.enableProfiling = reader.bool();
+          continue;
+        }
+        case 4: {
+          if (tag !== 33) {
+            break;
+          }
+
+          message.tracingSampleRate = reader.double();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.jaegerEndpoint = reader.string();
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.prometheusPushgateway = reader.string();
+          continue;
+        }
+        case 7: {
+          if (tag !== 58) {
+            break;
+          }
+
+          message.otelGrpcEndpoint = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ConfigObservability {
+    return {
+      enableTracing: isSet(object.enableTracing) ? globalThis.Boolean(object.enableTracing) : false,
+      enableMetrics: isSet(object.enableMetrics) ? globalThis.Boolean(object.enableMetrics) : false,
+      enableProfiling: isSet(object.enableProfiling) ? globalThis.Boolean(object.enableProfiling) : false,
+      tracingSampleRate: isSet(object.tracingSampleRate) ? globalThis.Number(object.tracingSampleRate) : 0,
+      jaegerEndpoint: isSet(object.jaegerEndpoint) ? globalThis.String(object.jaegerEndpoint) : "",
+      prometheusPushgateway: isSet(object.prometheusPushgateway) ? globalThis.String(object.prometheusPushgateway) : "",
+      otelGrpcEndpoint: isSet(object.otelGrpcEndpoint) ? globalThis.String(object.otelGrpcEndpoint) : "",
+    };
+  },
+
+  toJSON(message: ConfigObservability): unknown {
+    const obj: any = {};
+    if (message.enableTracing !== false) {
+      obj.enableTracing = message.enableTracing;
+    }
+    if (message.enableMetrics !== false) {
+      obj.enableMetrics = message.enableMetrics;
+    }
+    if (message.enableProfiling !== false) {
+      obj.enableProfiling = message.enableProfiling;
+    }
+    if (message.tracingSampleRate !== 0) {
+      obj.tracingSampleRate = message.tracingSampleRate;
+    }
+    if (message.jaegerEndpoint !== "") {
+      obj.jaegerEndpoint = message.jaegerEndpoint;
+    }
+    if (message.prometheusPushgateway !== "") {
+      obj.prometheusPushgateway = message.prometheusPushgateway;
+    }
+    if (message.otelGrpcEndpoint !== "") {
+      obj.otelGrpcEndpoint = message.otelGrpcEndpoint;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ConfigObservability>, I>>(base?: I): ConfigObservability {
+    return ConfigObservability.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ConfigObservability>, I>>(object: I): ConfigObservability {
+    const message = createBaseConfigObservability();
+    message.enableTracing = object.enableTracing ?? false;
+    message.enableMetrics = object.enableMetrics ?? false;
+    message.enableProfiling = object.enableProfiling ?? false;
+    message.tracingSampleRate = object.tracingSampleRate ?? 0;
+    message.jaegerEndpoint = object.jaegerEndpoint ?? "";
+    message.prometheusPushgateway = object.prometheusPushgateway ?? "";
+    message.otelGrpcEndpoint = object.otelGrpcEndpoint ?? "";
     return message;
   },
 };
@@ -6827,6 +7002,7 @@ function createBaseConfig(): Config {
     imageProxy: undefined,
     oauth: undefined,
     products: undefined,
+    observability: undefined,
   };
 }
 
@@ -6900,6 +7076,9 @@ export const Config: MessageFns<Config> = {
     }
     if (message.products !== undefined) {
       ConfigProducts.encode(message.products, writer.uint32(186).fork()).join();
+    }
+    if (message.observability !== undefined) {
+      ConfigObservability.encode(message.observability, writer.uint32(194).fork()).join();
     }
     return writer;
   },
@@ -7095,6 +7274,14 @@ export const Config: MessageFns<Config> = {
           message.products = ConfigProducts.decode(reader, reader.uint32());
           continue;
         }
+        case 24: {
+          if (tag !== 194) {
+            break;
+          }
+
+          message.observability = ConfigObservability.decode(reader, reader.uint32());
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -7129,6 +7316,7 @@ export const Config: MessageFns<Config> = {
       imageProxy: isSet(object.imageProxy) ? ConfigImageProxy.fromJSON(object.imageProxy) : undefined,
       oauth: isSet(object.oauth) ? ConfigOAuth.fromJSON(object.oauth) : undefined,
       products: isSet(object.products) ? ConfigProducts.fromJSON(object.products) : undefined,
+      observability: isSet(object.observability) ? ConfigObservability.fromJSON(object.observability) : undefined,
     };
   },
 
@@ -7203,6 +7391,9 @@ export const Config: MessageFns<Config> = {
     if (message.products !== undefined) {
       obj.products = ConfigProducts.toJSON(message.products);
     }
+    if (message.observability !== undefined) {
+      obj.observability = ConfigObservability.toJSON(message.observability);
+    }
     return obj;
   },
 
@@ -7275,6 +7466,9 @@ export const Config: MessageFns<Config> = {
       : undefined;
     message.products = (object.products !== undefined && object.products !== null)
       ? ConfigProducts.fromPartial(object.products)
+      : undefined;
+    message.observability = (object.observability !== undefined && object.observability !== null)
+      ? ConfigObservability.fromPartial(object.observability)
       : undefined;
     return message;
   },

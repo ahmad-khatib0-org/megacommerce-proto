@@ -60,6 +60,16 @@ message ConfigServices {
   int64 inventory_service_max_receive_message_size_bytes = 18;
 }
 
+message ConfigObservability {
+  bool enable_tracing = 1;
+  bool enable_metrics = 2;
+  bool enable_profiling = 3;
+  double tracing_sample_rate = 4;
+  string jaeger_endpoint = 5;
+  string prometheus_pushgateway = 6;
+  string otel_grpc_endpoint = 7;
+}
+
 message ConfigOAuth {
   optional string oauth_provider_url = 1;
   optional string oauth_client_id = 2;
@@ -436,6 +446,7 @@ message Config {
   ConfigImageProxy image_proxy = 21;
   ConfigOAuth oauth = 22;
   ConfigProducts products = 23;
+  ConfigObservability observability = 24;
 }
 
 message ConfigGetRequest {

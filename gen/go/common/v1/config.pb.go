@@ -455,6 +455,98 @@ func (x *ConfigServices) GetInventoryServiceMaxReceiveMessageSizeBytes() int64 {
 	return 0
 }
 
+type ConfigObservability struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	EnableTracing         bool                   `protobuf:"varint,1,opt,name=enable_tracing,json=enableTracing,proto3" json:"enable_tracing,omitempty"`
+	EnableMetrics         bool                   `protobuf:"varint,2,opt,name=enable_metrics,json=enableMetrics,proto3" json:"enable_metrics,omitempty"`
+	EnableProfiling       bool                   `protobuf:"varint,3,opt,name=enable_profiling,json=enableProfiling,proto3" json:"enable_profiling,omitempty"`
+	TracingSampleRate     float64                `protobuf:"fixed64,4,opt,name=tracing_sample_rate,json=tracingSampleRate,proto3" json:"tracing_sample_rate,omitempty"`
+	JaegerEndpoint        string                 `protobuf:"bytes,5,opt,name=jaeger_endpoint,json=jaegerEndpoint,proto3" json:"jaeger_endpoint,omitempty"`
+	PrometheusPushgateway string                 `protobuf:"bytes,6,opt,name=prometheus_pushgateway,json=prometheusPushgateway,proto3" json:"prometheus_pushgateway,omitempty"`
+	OtelGrpcEndpoint      string                 `protobuf:"bytes,7,opt,name=otel_grpc_endpoint,json=otelGrpcEndpoint,proto3" json:"otel_grpc_endpoint,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *ConfigObservability) Reset() {
+	*x = ConfigObservability{}
+	mi := &file_common_v1_config_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigObservability) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigObservability) ProtoMessage() {}
+
+func (x *ConfigObservability) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_config_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigObservability.ProtoReflect.Descriptor instead.
+func (*ConfigObservability) Descriptor() ([]byte, []int) {
+	return file_common_v1_config_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ConfigObservability) GetEnableTracing() bool {
+	if x != nil {
+		return x.EnableTracing
+	}
+	return false
+}
+
+func (x *ConfigObservability) GetEnableMetrics() bool {
+	if x != nil {
+		return x.EnableMetrics
+	}
+	return false
+}
+
+func (x *ConfigObservability) GetEnableProfiling() bool {
+	if x != nil {
+		return x.EnableProfiling
+	}
+	return false
+}
+
+func (x *ConfigObservability) GetTracingSampleRate() float64 {
+	if x != nil {
+		return x.TracingSampleRate
+	}
+	return 0
+}
+
+func (x *ConfigObservability) GetJaegerEndpoint() string {
+	if x != nil {
+		return x.JaegerEndpoint
+	}
+	return ""
+}
+
+func (x *ConfigObservability) GetPrometheusPushgateway() string {
+	if x != nil {
+		return x.PrometheusPushgateway
+	}
+	return ""
+}
+
+func (x *ConfigObservability) GetOtelGrpcEndpoint() string {
+	if x != nil {
+		return x.OtelGrpcEndpoint
+	}
+	return ""
+}
+
 type ConfigOAuth struct {
 	state                         protoimpl.MessageState `protogen:"open.v1"`
 	OauthProviderUrl              *string                `protobuf:"bytes,1,opt,name=oauth_provider_url,json=oauthProviderUrl,proto3,oneof" json:"oauth_provider_url,omitempty"`
@@ -477,7 +569,7 @@ type ConfigOAuth struct {
 
 func (x *ConfigOAuth) Reset() {
 	*x = ConfigOAuth{}
-	mi := &file_common_v1_config_proto_msgTypes[2]
+	mi := &file_common_v1_config_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -489,7 +581,7 @@ func (x *ConfigOAuth) String() string {
 func (*ConfigOAuth) ProtoMessage() {}
 
 func (x *ConfigOAuth) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[2]
+	mi := &file_common_v1_config_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -502,7 +594,7 @@ func (x *ConfigOAuth) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigOAuth.ProtoReflect.Descriptor instead.
 func (*ConfigOAuth) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{2}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ConfigOAuth) GetOauthProviderUrl() string {
@@ -632,7 +724,7 @@ type ConfigSecurity struct {
 
 func (x *ConfigSecurity) Reset() {
 	*x = ConfigSecurity{}
-	mi := &file_common_v1_config_proto_msgTypes[3]
+	mi := &file_common_v1_config_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -644,7 +736,7 @@ func (x *ConfigSecurity) String() string {
 func (*ConfigSecurity) ProtoMessage() {}
 
 func (x *ConfigSecurity) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[3]
+	mi := &file_common_v1_config_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -657,7 +749,7 @@ func (x *ConfigSecurity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigSecurity.ProtoReflect.Descriptor instead.
 func (*ConfigSecurity) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{3}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ConfigSecurity) GetAccessTokenExpiryWebInHours() int32 {
@@ -821,7 +913,7 @@ type CacheConfig struct {
 
 func (x *CacheConfig) Reset() {
 	*x = CacheConfig{}
-	mi := &file_common_v1_config_proto_msgTypes[4]
+	mi := &file_common_v1_config_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -833,7 +925,7 @@ func (x *CacheConfig) String() string {
 func (*CacheConfig) ProtoMessage() {}
 
 func (x *CacheConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[4]
+	mi := &file_common_v1_config_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -846,7 +938,7 @@ func (x *CacheConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CacheConfig.ProtoReflect.Descriptor instead.
 func (*CacheConfig) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{4}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CacheConfig) GetCacheType() string {
@@ -905,7 +997,7 @@ type ConfigMetrics struct {
 
 func (x *ConfigMetrics) Reset() {
 	*x = ConfigMetrics{}
-	mi := &file_common_v1_config_proto_msgTypes[5]
+	mi := &file_common_v1_config_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -917,7 +1009,7 @@ func (x *ConfigMetrics) String() string {
 func (*ConfigMetrics) ProtoMessage() {}
 
 func (x *ConfigMetrics) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[5]
+	mi := &file_common_v1_config_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -930,7 +1022,7 @@ func (x *ConfigMetrics) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigMetrics.ProtoReflect.Descriptor instead.
 func (*ConfigMetrics) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{5}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ConfigMetrics) GetEnable() bool {
@@ -993,7 +1085,7 @@ type ConfigSSO struct {
 
 func (x *ConfigSSO) Reset() {
 	*x = ConfigSSO{}
-	mi := &file_common_v1_config_proto_msgTypes[6]
+	mi := &file_common_v1_config_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1005,7 +1097,7 @@ func (x *ConfigSSO) String() string {
 func (*ConfigSSO) ProtoMessage() {}
 
 func (x *ConfigSSO) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[6]
+	mi := &file_common_v1_config_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1018,7 +1110,7 @@ func (x *ConfigSSO) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigSSO.ProtoReflect.Descriptor instead.
 func (*ConfigSSO) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{6}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ConfigSSO) GetEnable() bool {
@@ -1109,7 +1201,7 @@ type ConfigSql struct {
 
 func (x *ConfigSql) Reset() {
 	*x = ConfigSql{}
-	mi := &file_common_v1_config_proto_msgTypes[7]
+	mi := &file_common_v1_config_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1121,7 +1213,7 @@ func (x *ConfigSql) String() string {
 func (*ConfigSql) ProtoMessage() {}
 
 func (x *ConfigSql) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[7]
+	mi := &file_common_v1_config_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1134,7 +1226,7 @@ func (x *ConfigSql) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigSql.ProtoReflect.Descriptor instead.
 func (*ConfigSql) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{7}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ConfigSql) GetDriverName() string {
@@ -1222,7 +1314,7 @@ type ConfigPassword struct {
 
 func (x *ConfigPassword) Reset() {
 	*x = ConfigPassword{}
-	mi := &file_common_v1_config_proto_msgTypes[8]
+	mi := &file_common_v1_config_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1234,7 +1326,7 @@ func (x *ConfigPassword) String() string {
 func (*ConfigPassword) ProtoMessage() {}
 
 func (x *ConfigPassword) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[8]
+	mi := &file_common_v1_config_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1247,7 +1339,7 @@ func (x *ConfigPassword) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigPassword.ProtoReflect.Descriptor instead.
 func (*ConfigPassword) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{8}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ConfigPassword) GetMinimumLength() int32 {
@@ -1326,7 +1418,7 @@ type ConfigFile struct {
 
 func (x *ConfigFile) Reset() {
 	*x = ConfigFile{}
-	mi := &file_common_v1_config_proto_msgTypes[9]
+	mi := &file_common_v1_config_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1338,7 +1430,7 @@ func (x *ConfigFile) String() string {
 func (*ConfigFile) ProtoMessage() {}
 
 func (x *ConfigFile) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[9]
+	mi := &file_common_v1_config_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1351,7 +1443,7 @@ func (x *ConfigFile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigFile.ProtoReflect.Descriptor instead.
 func (*ConfigFile) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{9}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ConfigFile) GetEnableFileAttachments() bool {
@@ -1521,7 +1613,7 @@ type ConfigEmail struct {
 
 func (x *ConfigEmail) Reset() {
 	*x = ConfigEmail{}
-	mi := &file_common_v1_config_proto_msgTypes[10]
+	mi := &file_common_v1_config_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1533,7 +1625,7 @@ func (x *ConfigEmail) String() string {
 func (*ConfigEmail) ProtoMessage() {}
 
 func (x *ConfigEmail) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[10]
+	mi := &file_common_v1_config_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1546,7 +1638,7 @@ func (x *ConfigEmail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigEmail.ProtoReflect.Descriptor instead.
 func (*ConfigEmail) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{10}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ConfigEmail) GetSendEmailNotifications() bool {
@@ -1746,7 +1838,7 @@ type ConfigRateLimit struct {
 
 func (x *ConfigRateLimit) Reset() {
 	*x = ConfigRateLimit{}
-	mi := &file_common_v1_config_proto_msgTypes[11]
+	mi := &file_common_v1_config_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1758,7 +1850,7 @@ func (x *ConfigRateLimit) String() string {
 func (*ConfigRateLimit) ProtoMessage() {}
 
 func (x *ConfigRateLimit) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[11]
+	mi := &file_common_v1_config_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1771,7 +1863,7 @@ func (x *ConfigRateLimit) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigRateLimit.ProtoReflect.Descriptor instead.
 func (*ConfigRateLimit) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{11}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ConfigRateLimit) GetEnable() bool {
@@ -1833,7 +1925,7 @@ type ConfigPrivacy struct {
 
 func (x *ConfigPrivacy) Reset() {
 	*x = ConfigPrivacy{}
-	mi := &file_common_v1_config_proto_msgTypes[12]
+	mi := &file_common_v1_config_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1845,7 +1937,7 @@ func (x *ConfigPrivacy) String() string {
 func (*ConfigPrivacy) ProtoMessage() {}
 
 func (x *ConfigPrivacy) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[12]
+	mi := &file_common_v1_config_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1858,7 +1950,7 @@ func (x *ConfigPrivacy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigPrivacy.ProtoReflect.Descriptor instead.
 func (*ConfigPrivacy) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{12}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ConfigPrivacy) GetShowEmailAddress() bool {
@@ -1890,7 +1982,7 @@ type ConfigSupport struct {
 
 func (x *ConfigSupport) Reset() {
 	*x = ConfigSupport{}
-	mi := &file_common_v1_config_proto_msgTypes[13]
+	mi := &file_common_v1_config_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1902,7 +1994,7 @@ func (x *ConfigSupport) String() string {
 func (*ConfigSupport) ProtoMessage() {}
 
 func (x *ConfigSupport) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[13]
+	mi := &file_common_v1_config_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1915,7 +2007,7 @@ func (x *ConfigSupport) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigSupport.ProtoReflect.Descriptor instead.
 func (*ConfigSupport) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{13}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ConfigSupport) GetTermsOfServiceLink() string {
@@ -1978,7 +2070,7 @@ type ConfigLocalization struct {
 
 func (x *ConfigLocalization) Reset() {
 	*x = ConfigLocalization{}
-	mi := &file_common_v1_config_proto_msgTypes[14]
+	mi := &file_common_v1_config_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1990,7 +2082,7 @@ func (x *ConfigLocalization) String() string {
 func (*ConfigLocalization) ProtoMessage() {}
 
 func (x *ConfigLocalization) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[14]
+	mi := &file_common_v1_config_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2003,7 +2095,7 @@ func (x *ConfigLocalization) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigLocalization.ProtoReflect.Descriptor instead.
 func (*ConfigLocalization) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{14}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ConfigLocalization) GetDefaultServerLocale() string {
@@ -2073,7 +2165,7 @@ type ConfigLdap struct {
 
 func (x *ConfigLdap) Reset() {
 	*x = ConfigLdap{}
-	mi := &file_common_v1_config_proto_msgTypes[15]
+	mi := &file_common_v1_config_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2085,7 +2177,7 @@ func (x *ConfigLdap) String() string {
 func (*ConfigLdap) ProtoMessage() {}
 
 func (x *ConfigLdap) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[15]
+	mi := &file_common_v1_config_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2098,7 +2190,7 @@ func (x *ConfigLdap) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigLdap.ProtoReflect.Descriptor instead.
 func (*ConfigLdap) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{15}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ConfigLdap) GetEnable() bool {
@@ -2361,7 +2453,7 @@ type ConfigSaml struct {
 
 func (x *ConfigSaml) Reset() {
 	*x = ConfigSaml{}
-	mi := &file_common_v1_config_proto_msgTypes[16]
+	mi := &file_common_v1_config_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2373,7 +2465,7 @@ func (x *ConfigSaml) String() string {
 func (*ConfigSaml) ProtoMessage() {}
 
 func (x *ConfigSaml) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[16]
+	mi := &file_common_v1_config_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2386,7 +2478,7 @@ func (x *ConfigSaml) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigSaml.ProtoReflect.Descriptor instead.
 func (*ConfigSaml) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{16}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ConfigSaml) GetEnable() bool {
@@ -2636,7 +2728,7 @@ type ConfigNativeApp struct {
 
 func (x *ConfigNativeApp) Reset() {
 	*x = ConfigNativeApp{}
-	mi := &file_common_v1_config_proto_msgTypes[17]
+	mi := &file_common_v1_config_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2648,7 +2740,7 @@ func (x *ConfigNativeApp) String() string {
 func (*ConfigNativeApp) ProtoMessage() {}
 
 func (x *ConfigNativeApp) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[17]
+	mi := &file_common_v1_config_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2661,7 +2753,7 @@ func (x *ConfigNativeApp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigNativeApp.ProtoReflect.Descriptor instead.
 func (*ConfigNativeApp) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{17}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ConfigNativeApp) GetAppCustomUrlSchemes() []string {
@@ -2752,7 +2844,7 @@ type ConfigMeilisearch struct {
 
 func (x *ConfigMeilisearch) Reset() {
 	*x = ConfigMeilisearch{}
-	mi := &file_common_v1_config_proto_msgTypes[18]
+	mi := &file_common_v1_config_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2764,7 +2856,7 @@ func (x *ConfigMeilisearch) String() string {
 func (*ConfigMeilisearch) ProtoMessage() {}
 
 func (x *ConfigMeilisearch) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[18]
+	mi := &file_common_v1_config_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2777,7 +2869,7 @@ func (x *ConfigMeilisearch) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigMeilisearch.ProtoReflect.Descriptor instead.
 func (*ConfigMeilisearch) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{18}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ConfigMeilisearch) GetServerUrls() []string {
@@ -2920,7 +3012,7 @@ type ConfigBleve struct {
 
 func (x *ConfigBleve) Reset() {
 	*x = ConfigBleve{}
-	mi := &file_common_v1_config_proto_msgTypes[19]
+	mi := &file_common_v1_config_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2932,7 +3024,7 @@ func (x *ConfigBleve) String() string {
 func (*ConfigBleve) ProtoMessage() {}
 
 func (x *ConfigBleve) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[19]
+	mi := &file_common_v1_config_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2945,7 +3037,7 @@ func (x *ConfigBleve) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigBleve.ProtoReflect.Descriptor instead.
 func (*ConfigBleve) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{19}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ConfigBleve) GetIndexDir() string {
@@ -3008,7 +3100,7 @@ type ConfigDataRetention struct {
 
 func (x *ConfigDataRetention) Reset() {
 	*x = ConfigDataRetention{}
-	mi := &file_common_v1_config_proto_msgTypes[20]
+	mi := &file_common_v1_config_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3020,7 +3112,7 @@ func (x *ConfigDataRetention) String() string {
 func (*ConfigDataRetention) ProtoMessage() {}
 
 func (x *ConfigDataRetention) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[20]
+	mi := &file_common_v1_config_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3033,7 +3125,7 @@ func (x *ConfigDataRetention) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigDataRetention.ProtoReflect.Descriptor instead.
 func (*ConfigDataRetention) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{20}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *ConfigDataRetention) GetEnableMessageDeletion() bool {
@@ -3118,7 +3210,7 @@ type ConfigImageProxy struct {
 
 func (x *ConfigImageProxy) Reset() {
 	*x = ConfigImageProxy{}
-	mi := &file_common_v1_config_proto_msgTypes[21]
+	mi := &file_common_v1_config_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3130,7 +3222,7 @@ func (x *ConfigImageProxy) String() string {
 func (*ConfigImageProxy) ProtoMessage() {}
 
 func (x *ConfigImageProxy) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[21]
+	mi := &file_common_v1_config_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3143,7 +3235,7 @@ func (x *ConfigImageProxy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigImageProxy.ProtoReflect.Descriptor instead.
 func (*ConfigImageProxy) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{21}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ConfigImageProxy) GetEnable() bool {
@@ -3191,7 +3283,7 @@ type ConfigProducts struct {
 
 func (x *ConfigProducts) Reset() {
 	*x = ConfigProducts{}
-	mi := &file_common_v1_config_proto_msgTypes[22]
+	mi := &file_common_v1_config_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3203,7 +3295,7 @@ func (x *ConfigProducts) String() string {
 func (*ConfigProducts) ProtoMessage() {}
 
 func (x *ConfigProducts) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[22]
+	mi := &file_common_v1_config_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3216,7 +3308,7 @@ func (x *ConfigProducts) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigProducts.ProtoReflect.Descriptor instead.
 func (*ConfigProducts) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{22}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *ConfigProducts) GetProductImageMaxSizeMb() uint64 {
@@ -3307,13 +3399,14 @@ type Config struct {
 	ImageProxy    *ConfigImageProxy      `protobuf:"bytes,21,opt,name=image_proxy,json=imageProxy,proto3" json:"image_proxy,omitempty"`
 	Oauth         *ConfigOAuth           `protobuf:"bytes,22,opt,name=oauth,proto3" json:"oauth,omitempty"`
 	Products      *ConfigProducts        `protobuf:"bytes,23,opt,name=products,proto3" json:"products,omitempty"`
+	Observability *ConfigObservability   `protobuf:"bytes,24,opt,name=observability,proto3" json:"observability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Config) Reset() {
 	*x = Config{}
-	mi := &file_common_v1_config_proto_msgTypes[23]
+	mi := &file_common_v1_config_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3325,7 +3418,7 @@ func (x *Config) String() string {
 func (*Config) ProtoMessage() {}
 
 func (x *Config) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[23]
+	mi := &file_common_v1_config_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3338,7 +3431,7 @@ func (x *Config) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Config.ProtoReflect.Descriptor instead.
 func (*Config) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{23}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *Config) GetMain() *ConfigMain {
@@ -3502,6 +3595,13 @@ func (x *Config) GetProducts() *ConfigProducts {
 	return nil
 }
 
+func (x *Config) GetObservability() *ConfigObservability {
+	if x != nil {
+		return x.Observability
+	}
+	return nil
+}
+
 type ConfigGetRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Env           Environment            `protobuf:"varint,1,opt,name=env,proto3,enum=common.v1.Environment" json:"env,omitempty"`
@@ -3511,7 +3611,7 @@ type ConfigGetRequest struct {
 
 func (x *ConfigGetRequest) Reset() {
 	*x = ConfigGetRequest{}
-	mi := &file_common_v1_config_proto_msgTypes[24]
+	mi := &file_common_v1_config_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3523,7 +3623,7 @@ func (x *ConfigGetRequest) String() string {
 func (*ConfigGetRequest) ProtoMessage() {}
 
 func (x *ConfigGetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[24]
+	mi := &file_common_v1_config_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3536,7 +3636,7 @@ func (x *ConfigGetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigGetRequest.ProtoReflect.Descriptor instead.
 func (*ConfigGetRequest) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{24}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *ConfigGetRequest) GetEnv() Environment {
@@ -3559,7 +3659,7 @@ type ConfigGetResponse struct {
 
 func (x *ConfigGetResponse) Reset() {
 	*x = ConfigGetResponse{}
-	mi := &file_common_v1_config_proto_msgTypes[25]
+	mi := &file_common_v1_config_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3571,7 +3671,7 @@ func (x *ConfigGetResponse) String() string {
 func (*ConfigGetResponse) ProtoMessage() {}
 
 func (x *ConfigGetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[25]
+	mi := &file_common_v1_config_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3584,7 +3684,7 @@ func (x *ConfigGetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigGetResponse.ProtoReflect.Descriptor instead.
 func (*ConfigGetResponse) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{25}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ConfigGetResponse) GetResponse() isConfigGetResponse_Response {
@@ -3637,7 +3737,7 @@ type ConfigUpdateRequest struct {
 
 func (x *ConfigUpdateRequest) Reset() {
 	*x = ConfigUpdateRequest{}
-	mi := &file_common_v1_config_proto_msgTypes[26]
+	mi := &file_common_v1_config_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3649,7 +3749,7 @@ func (x *ConfigUpdateRequest) String() string {
 func (*ConfigUpdateRequest) ProtoMessage() {}
 
 func (x *ConfigUpdateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[26]
+	mi := &file_common_v1_config_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3662,7 +3762,7 @@ func (x *ConfigUpdateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigUpdateRequest.ProtoReflect.Descriptor instead.
 func (*ConfigUpdateRequest) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{26}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *ConfigUpdateRequest) GetConfig() *Config {
@@ -3685,7 +3785,7 @@ type ConfigUpdateResponse struct {
 
 func (x *ConfigUpdateResponse) Reset() {
 	*x = ConfigUpdateResponse{}
-	mi := &file_common_v1_config_proto_msgTypes[27]
+	mi := &file_common_v1_config_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3697,7 +3797,7 @@ func (x *ConfigUpdateResponse) String() string {
 func (*ConfigUpdateResponse) ProtoMessage() {}
 
 func (x *ConfigUpdateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[27]
+	mi := &file_common_v1_config_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3710,7 +3810,7 @@ func (x *ConfigUpdateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigUpdateResponse.ProtoReflect.Descriptor instead.
 func (*ConfigUpdateResponse) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{27}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *ConfigUpdateResponse) GetResponse() isConfigUpdateResponse_Response {
@@ -3767,7 +3867,7 @@ type ConfigListenerResponse struct {
 
 func (x *ConfigListenerResponse) Reset() {
 	*x = ConfigListenerResponse{}
-	mi := &file_common_v1_config_proto_msgTypes[28]
+	mi := &file_common_v1_config_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3779,7 +3879,7 @@ func (x *ConfigListenerResponse) String() string {
 func (*ConfigListenerResponse) ProtoMessage() {}
 
 func (x *ConfigListenerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[28]
+	mi := &file_common_v1_config_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3792,7 +3892,7 @@ func (x *ConfigListenerResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigListenerResponse.ProtoReflect.Descriptor instead.
 func (*ConfigListenerResponse) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{28}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *ConfigListenerResponse) GetResponse() isConfigListenerResponse_Response {
@@ -3845,7 +3945,7 @@ type ConfigListenerRequest struct {
 
 func (x *ConfigListenerRequest) Reset() {
 	*x = ConfigListenerRequest{}
-	mi := &file_common_v1_config_proto_msgTypes[29]
+	mi := &file_common_v1_config_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3857,7 +3957,7 @@ func (x *ConfigListenerRequest) String() string {
 func (*ConfigListenerRequest) ProtoMessage() {}
 
 func (x *ConfigListenerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_config_proto_msgTypes[29]
+	mi := &file_common_v1_config_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3870,7 +3970,7 @@ func (x *ConfigListenerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigListenerRequest.ProtoReflect.Descriptor instead.
 func (*ConfigListenerRequest) Descriptor() ([]byte, []int) {
-	return file_common_v1_config_proto_rawDescGZIP(), []int{29}
+	return file_common_v1_config_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *ConfigListenerRequest) GetClientId() string {
@@ -3962,7 +4062,15 @@ const file_common_v1_config_proto_rawDesc = "" +
 	" _products_service_prometheus_urlB/\n" +
 	"-_users_service_max_receive_message_size_bytesB\x18\n" +
 	"\x16_auth_service_grpc_urlB\x1e\n" +
-	"\x1c_auth_service_prometheus_url\"\xd4\a\n" +
+	"\x1c_auth_service_prometheus_url\"\xcc\x02\n" +
+	"\x13ConfigObservability\x12%\n" +
+	"\x0eenable_tracing\x18\x01 \x01(\bR\renableTracing\x12%\n" +
+	"\x0eenable_metrics\x18\x02 \x01(\bR\renableMetrics\x12)\n" +
+	"\x10enable_profiling\x18\x03 \x01(\bR\x0fenableProfiling\x12.\n" +
+	"\x13tracing_sample_rate\x18\x04 \x01(\x01R\x11tracingSampleRate\x12'\n" +
+	"\x0fjaeger_endpoint\x18\x05 \x01(\tR\x0ejaegerEndpoint\x125\n" +
+	"\x16prometheus_pushgateway\x18\x06 \x01(\tR\x15prometheusPushgateway\x12,\n" +
+	"\x12otel_grpc_endpoint\x18\a \x01(\tR\x10otelGrpcEndpoint\"\xd4\a\n" +
 	"\vConfigOAuth\x121\n" +
 	"\x12oauth_provider_url\x18\x01 \x01(\tH\x00R\x10oauthProviderUrl\x88\x01\x01\x12+\n" +
 	"\x0foauth_client_id\x18\x02 \x01(\tH\x01R\roauthClientId\x88\x01\x01\x123\n" +
@@ -4526,7 +4634,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x18product_image_min_height\x18\x06 \x01(\x04R\x15productImageMinHeight\x12M\n" +
 	"$product_images_min_count_per_variant\x18\a \x01(\x04R\x1fproductImagesMinCountPerVariant\x12M\n" +
 	"$product_images_max_count_per_variant\x18\b \x01(\x04R\x1fproductImagesMaxCountPerVariant\x12X\n" +
-	"*product_media_max_direct_uploading_size_mb\x18\t \x01(\x04R$productMediaMaxDirectUploadingSizeMb\"\xb2\t\n" +
+	"*product_media_max_direct_uploading_size_mb\x18\t \x01(\x04R$productMediaMaxDirectUploadingSizeMb\"\xf8\t\n" +
 	"\x06Config\x12)\n" +
 	"\x04main\x18\x01 \x01(\v2\x15.common.v1.ConfigMainR\x04main\x125\n" +
 	"\bservices\x18\x02 \x01(\v2\x19.common.v1.ConfigServicesR\bservices\x125\n" +
@@ -4554,7 +4662,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\vimage_proxy\x18\x15 \x01(\v2\x1b.common.v1.ConfigImageProxyR\n" +
 	"imageProxy\x12,\n" +
 	"\x05oauth\x18\x16 \x01(\v2\x16.common.v1.ConfigOAuthR\x05oauth\x125\n" +
-	"\bproducts\x18\x17 \x01(\v2\x19.common.v1.ConfigProductsR\bproducts\"<\n" +
+	"\bproducts\x18\x17 \x01(\v2\x19.common.v1.ConfigProductsR\bproducts\x12D\n" +
+	"\robservability\x18\x18 \x01(\v2\x1e.common.v1.ConfigObservabilityR\robservability\"<\n" +
 	"\x10ConfigGetRequest\x12(\n" +
 	"\x03env\x18\x01 \x01(\x0e2\x16.common.v1.EnvironmentR\x03env\"u\n" +
 	"\x11ConfigGetResponse\x12'\n" +
@@ -4596,78 +4705,80 @@ func file_common_v1_config_proto_rawDescGZIP() []byte {
 }
 
 var file_common_v1_config_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_common_v1_config_proto_msgTypes = make([]protoimpl.MessageInfo, 30)
+var file_common_v1_config_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
 var file_common_v1_config_proto_goTypes = []any{
 	(Environment)(0),               // 0: common.v1.Environment
 	(*ConfigMain)(nil),             // 1: common.v1.ConfigMain
 	(*ConfigServices)(nil),         // 2: common.v1.ConfigServices
-	(*ConfigOAuth)(nil),            // 3: common.v1.ConfigOAuth
-	(*ConfigSecurity)(nil),         // 4: common.v1.ConfigSecurity
-	(*CacheConfig)(nil),            // 5: common.v1.CacheConfig
-	(*ConfigMetrics)(nil),          // 6: common.v1.ConfigMetrics
-	(*ConfigSSO)(nil),              // 7: common.v1.ConfigSSO
-	(*ConfigSql)(nil),              // 8: common.v1.ConfigSql
-	(*ConfigPassword)(nil),         // 9: common.v1.ConfigPassword
-	(*ConfigFile)(nil),             // 10: common.v1.ConfigFile
-	(*ConfigEmail)(nil),            // 11: common.v1.ConfigEmail
-	(*ConfigRateLimit)(nil),        // 12: common.v1.ConfigRateLimit
-	(*ConfigPrivacy)(nil),          // 13: common.v1.ConfigPrivacy
-	(*ConfigSupport)(nil),          // 14: common.v1.ConfigSupport
-	(*ConfigLocalization)(nil),     // 15: common.v1.ConfigLocalization
-	(*ConfigLdap)(nil),             // 16: common.v1.ConfigLdap
-	(*ConfigSaml)(nil),             // 17: common.v1.ConfigSaml
-	(*ConfigNativeApp)(nil),        // 18: common.v1.ConfigNativeApp
-	(*ConfigMeilisearch)(nil),      // 19: common.v1.ConfigMeilisearch
-	(*ConfigBleve)(nil),            // 20: common.v1.ConfigBleve
-	(*ConfigDataRetention)(nil),    // 21: common.v1.ConfigDataRetention
-	(*ConfigImageProxy)(nil),       // 22: common.v1.ConfigImageProxy
-	(*ConfigProducts)(nil),         // 23: common.v1.ConfigProducts
-	(*Config)(nil),                 // 24: common.v1.Config
-	(*ConfigGetRequest)(nil),       // 25: common.v1.ConfigGetRequest
-	(*ConfigGetResponse)(nil),      // 26: common.v1.ConfigGetResponse
-	(*ConfigUpdateRequest)(nil),    // 27: common.v1.ConfigUpdateRequest
-	(*ConfigUpdateResponse)(nil),   // 28: common.v1.ConfigUpdateResponse
-	(*ConfigListenerResponse)(nil), // 29: common.v1.ConfigListenerResponse
-	(*ConfigListenerRequest)(nil),  // 30: common.v1.ConfigListenerRequest
-	(*v1.AppError)(nil),            // 31: shared.v1.AppError
+	(*ConfigObservability)(nil),    // 3: common.v1.ConfigObservability
+	(*ConfigOAuth)(nil),            // 4: common.v1.ConfigOAuth
+	(*ConfigSecurity)(nil),         // 5: common.v1.ConfigSecurity
+	(*CacheConfig)(nil),            // 6: common.v1.CacheConfig
+	(*ConfigMetrics)(nil),          // 7: common.v1.ConfigMetrics
+	(*ConfigSSO)(nil),              // 8: common.v1.ConfigSSO
+	(*ConfigSql)(nil),              // 9: common.v1.ConfigSql
+	(*ConfigPassword)(nil),         // 10: common.v1.ConfigPassword
+	(*ConfigFile)(nil),             // 11: common.v1.ConfigFile
+	(*ConfigEmail)(nil),            // 12: common.v1.ConfigEmail
+	(*ConfigRateLimit)(nil),        // 13: common.v1.ConfigRateLimit
+	(*ConfigPrivacy)(nil),          // 14: common.v1.ConfigPrivacy
+	(*ConfigSupport)(nil),          // 15: common.v1.ConfigSupport
+	(*ConfigLocalization)(nil),     // 16: common.v1.ConfigLocalization
+	(*ConfigLdap)(nil),             // 17: common.v1.ConfigLdap
+	(*ConfigSaml)(nil),             // 18: common.v1.ConfigSaml
+	(*ConfigNativeApp)(nil),        // 19: common.v1.ConfigNativeApp
+	(*ConfigMeilisearch)(nil),      // 20: common.v1.ConfigMeilisearch
+	(*ConfigBleve)(nil),            // 21: common.v1.ConfigBleve
+	(*ConfigDataRetention)(nil),    // 22: common.v1.ConfigDataRetention
+	(*ConfigImageProxy)(nil),       // 23: common.v1.ConfigImageProxy
+	(*ConfigProducts)(nil),         // 24: common.v1.ConfigProducts
+	(*Config)(nil),                 // 25: common.v1.Config
+	(*ConfigGetRequest)(nil),       // 26: common.v1.ConfigGetRequest
+	(*ConfigGetResponse)(nil),      // 27: common.v1.ConfigGetResponse
+	(*ConfigUpdateRequest)(nil),    // 28: common.v1.ConfigUpdateRequest
+	(*ConfigUpdateResponse)(nil),   // 29: common.v1.ConfigUpdateResponse
+	(*ConfigListenerResponse)(nil), // 30: common.v1.ConfigListenerResponse
+	(*ConfigListenerRequest)(nil),  // 31: common.v1.ConfigListenerRequest
+	(*v1.AppError)(nil),            // 32: shared.v1.AppError
 }
 var file_common_v1_config_proto_depIdxs = []int32{
 	1,  // 0: common.v1.Config.main:type_name -> common.v1.ConfigMain
 	2,  // 1: common.v1.Config.services:type_name -> common.v1.ConfigServices
-	4,  // 2: common.v1.Config.security:type_name -> common.v1.ConfigSecurity
-	5,  // 3: common.v1.Config.cache:type_name -> common.v1.CacheConfig
-	6,  // 4: common.v1.Config.metrics:type_name -> common.v1.ConfigMetrics
-	7,  // 5: common.v1.Config.sso:type_name -> common.v1.ConfigSSO
-	8,  // 6: common.v1.Config.sql:type_name -> common.v1.ConfigSql
-	9,  // 7: common.v1.Config.password:type_name -> common.v1.ConfigPassword
-	10, // 8: common.v1.Config.file:type_name -> common.v1.ConfigFile
-	11, // 9: common.v1.Config.email:type_name -> common.v1.ConfigEmail
-	12, // 10: common.v1.Config.rate_limit:type_name -> common.v1.ConfigRateLimit
-	13, // 11: common.v1.Config.privacy:type_name -> common.v1.ConfigPrivacy
-	14, // 12: common.v1.Config.support:type_name -> common.v1.ConfigSupport
-	15, // 13: common.v1.Config.localization:type_name -> common.v1.ConfigLocalization
-	16, // 14: common.v1.Config.ldap:type_name -> common.v1.ConfigLdap
-	17, // 15: common.v1.Config.saml:type_name -> common.v1.ConfigSaml
-	18, // 16: common.v1.Config.native_app:type_name -> common.v1.ConfigNativeApp
-	19, // 17: common.v1.Config.meilisearch:type_name -> common.v1.ConfigMeilisearch
-	20, // 18: common.v1.Config.bleve:type_name -> common.v1.ConfigBleve
-	21, // 19: common.v1.Config.data_retention:type_name -> common.v1.ConfigDataRetention
-	22, // 20: common.v1.Config.image_proxy:type_name -> common.v1.ConfigImageProxy
-	3,  // 21: common.v1.Config.oauth:type_name -> common.v1.ConfigOAuth
-	23, // 22: common.v1.Config.products:type_name -> common.v1.ConfigProducts
-	0,  // 23: common.v1.ConfigGetRequest.env:type_name -> common.v1.Environment
-	24, // 24: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
-	31, // 25: common.v1.ConfigGetResponse.error:type_name -> shared.v1.AppError
-	24, // 26: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
-	24, // 27: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
-	31, // 28: common.v1.ConfigUpdateResponse.error:type_name -> shared.v1.AppError
-	24, // 29: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
-	31, // 30: common.v1.ConfigListenerResponse.error:type_name -> shared.v1.AppError
-	31, // [31:31] is the sub-list for method output_type
-	31, // [31:31] is the sub-list for method input_type
-	31, // [31:31] is the sub-list for extension type_name
-	31, // [31:31] is the sub-list for extension extendee
-	0,  // [0:31] is the sub-list for field type_name
+	5,  // 2: common.v1.Config.security:type_name -> common.v1.ConfigSecurity
+	6,  // 3: common.v1.Config.cache:type_name -> common.v1.CacheConfig
+	7,  // 4: common.v1.Config.metrics:type_name -> common.v1.ConfigMetrics
+	8,  // 5: common.v1.Config.sso:type_name -> common.v1.ConfigSSO
+	9,  // 6: common.v1.Config.sql:type_name -> common.v1.ConfigSql
+	10, // 7: common.v1.Config.password:type_name -> common.v1.ConfigPassword
+	11, // 8: common.v1.Config.file:type_name -> common.v1.ConfigFile
+	12, // 9: common.v1.Config.email:type_name -> common.v1.ConfigEmail
+	13, // 10: common.v1.Config.rate_limit:type_name -> common.v1.ConfigRateLimit
+	14, // 11: common.v1.Config.privacy:type_name -> common.v1.ConfigPrivacy
+	15, // 12: common.v1.Config.support:type_name -> common.v1.ConfigSupport
+	16, // 13: common.v1.Config.localization:type_name -> common.v1.ConfigLocalization
+	17, // 14: common.v1.Config.ldap:type_name -> common.v1.ConfigLdap
+	18, // 15: common.v1.Config.saml:type_name -> common.v1.ConfigSaml
+	19, // 16: common.v1.Config.native_app:type_name -> common.v1.ConfigNativeApp
+	20, // 17: common.v1.Config.meilisearch:type_name -> common.v1.ConfigMeilisearch
+	21, // 18: common.v1.Config.bleve:type_name -> common.v1.ConfigBleve
+	22, // 19: common.v1.Config.data_retention:type_name -> common.v1.ConfigDataRetention
+	23, // 20: common.v1.Config.image_proxy:type_name -> common.v1.ConfigImageProxy
+	4,  // 21: common.v1.Config.oauth:type_name -> common.v1.ConfigOAuth
+	24, // 22: common.v1.Config.products:type_name -> common.v1.ConfigProducts
+	3,  // 23: common.v1.Config.observability:type_name -> common.v1.ConfigObservability
+	0,  // 24: common.v1.ConfigGetRequest.env:type_name -> common.v1.Environment
+	25, // 25: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
+	32, // 26: common.v1.ConfigGetResponse.error:type_name -> shared.v1.AppError
+	25, // 27: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
+	25, // 28: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
+	32, // 29: common.v1.ConfigUpdateResponse.error:type_name -> shared.v1.AppError
+	25, // 30: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
+	32, // 31: common.v1.ConfigListenerResponse.error:type_name -> shared.v1.AppError
+	32, // [32:32] is the sub-list for method output_type
+	32, // [32:32] is the sub-list for method input_type
+	32, // [32:32] is the sub-list for extension type_name
+	32, // [32:32] is the sub-list for extension extendee
+	0,  // [0:32] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_config_proto_init() }
@@ -4677,7 +4788,6 @@ func file_common_v1_config_proto_init() {
 	}
 	file_common_v1_config_proto_msgTypes[0].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[1].OneofWrappers = []any{}
-	file_common_v1_config_proto_msgTypes[2].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[3].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[4].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[5].OneofWrappers = []any{}
@@ -4697,15 +4807,16 @@ func file_common_v1_config_proto_init() {
 	file_common_v1_config_proto_msgTypes[19].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[20].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[21].OneofWrappers = []any{}
-	file_common_v1_config_proto_msgTypes[25].OneofWrappers = []any{
+	file_common_v1_config_proto_msgTypes[22].OneofWrappers = []any{}
+	file_common_v1_config_proto_msgTypes[26].OneofWrappers = []any{
 		(*ConfigGetResponse_Data)(nil),
 		(*ConfigGetResponse_Error)(nil),
 	}
-	file_common_v1_config_proto_msgTypes[27].OneofWrappers = []any{
+	file_common_v1_config_proto_msgTypes[28].OneofWrappers = []any{
 		(*ConfigUpdateResponse_Data)(nil),
 		(*ConfigUpdateResponse_Error)(nil),
 	}
-	file_common_v1_config_proto_msgTypes[28].OneofWrappers = []any{
+	file_common_v1_config_proto_msgTypes[29].OneofWrappers = []any{
 		(*ConfigListenerResponse_Data)(nil),
 		(*ConfigListenerResponse_Error)(nil),
 	}
@@ -4715,7 +4826,7 @@ func file_common_v1_config_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_config_proto_rawDesc), len(file_common_v1_config_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   30,
+			NumMessages:   31,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -130,6 +130,10 @@ class ConfigOAuth;
 struct ConfigOAuthDefaultTypeInternal;
 extern ConfigOAuthDefaultTypeInternal _ConfigOAuth_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull ConfigOAuth_class_data_;
+class ConfigObservability;
+struct ConfigObservabilityDefaultTypeInternal;
+extern ConfigObservabilityDefaultTypeInternal _ConfigObservability_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ConfigObservability_class_data_;
 class ConfigPassword;
 struct ConfigPasswordDefaultTypeInternal;
 extern ConfigPasswordDefaultTypeInternal _ConfigPassword_default_instance_;
@@ -288,7 +292,7 @@ class ConfigSupport final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSupport*>(
         &_ConfigSupport_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 13;
+  static constexpr int kIndexInFileMessages = 14;
   friend void swap(ConfigSupport& a, ConfigSupport& b) { a.Swap(&b); }
   inline void Swap(ConfigSupport* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -593,7 +597,7 @@ class ConfigSql final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSql*>(
         &_ConfigSql_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 7;
+  static constexpr int kIndexInFileMessages = 8;
   friend void swap(ConfigSql& a, ConfigSql& b) { a.Swap(&b); }
   inline void Swap(ConfigSql* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1397,7 +1401,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSecurity*>(
         &_ConfigSecurity_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 3;
+  static constexpr int kIndexInFileMessages = 4;
   friend void swap(ConfigSecurity& a, ConfigSecurity& b) { a.Swap(&b); }
   inline void Swap(ConfigSecurity* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1869,7 +1873,7 @@ class ConfigSaml final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSaml*>(
         &_ConfigSaml_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 16;
+  static constexpr int kIndexInFileMessages = 17;
   friend void swap(ConfigSaml& a, ConfigSaml& b) { a.Swap(&b); }
   inline void Swap(ConfigSaml* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2602,7 +2606,7 @@ class ConfigSSO final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSSO*>(
         &_ConfigSSO_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 6;
+  static constexpr int kIndexInFileMessages = 7;
   friend void swap(ConfigSSO& a, ConfigSSO& b) { a.Swap(&b); }
   inline void Swap(ConfigSSO* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2956,7 +2960,7 @@ class ConfigRateLimit final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigRateLimit*>(
         &_ConfigRateLimit_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 11;
+  static constexpr int kIndexInFileMessages = 12;
   friend void swap(ConfigRateLimit& a, ConfigRateLimit& b) { a.Swap(&b); }
   inline void Swap(ConfigRateLimit* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3230,7 +3234,7 @@ class ConfigProducts final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigProducts*>(
         &_ConfigProducts_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 22;
+  static constexpr int kIndexInFileMessages = 23;
   friend void swap(ConfigProducts& a, ConfigProducts& b) { a.Swap(&b); }
   inline void Swap(ConfigProducts* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3529,7 +3533,7 @@ class ConfigPrivacy final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigPrivacy*>(
         &_ConfigPrivacy_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 12;
+  static constexpr int kIndexInFileMessages = 13;
   friend void swap(ConfigPrivacy& a, ConfigPrivacy& b) { a.Swap(&b); }
   inline void Swap(ConfigPrivacy* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3734,7 +3738,7 @@ class ConfigPassword final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigPassword*>(
         &_ConfigPassword_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 8;
+  static constexpr int kIndexInFileMessages = 9;
   friend void swap(ConfigPassword& a, ConfigPassword& b) { a.Swap(&b); }
   inline void Swap(ConfigPassword* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3949,6 +3953,284 @@ class ConfigPassword final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull ConfigPassword_class_data_;
 // -------------------------------------------------------------------
 
+class ConfigObservability final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:common.v1.ConfigObservability) */ {
+ public:
+  inline ConfigObservability() : ConfigObservability(nullptr) {}
+  ~ConfigObservability() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ConfigObservability* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ConfigObservability));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ConfigObservability(::google::protobuf::internal::ConstantInitialized);
+
+  inline ConfigObservability(const ConfigObservability& from) : ConfigObservability(nullptr, from) {}
+  inline ConfigObservability(ConfigObservability&& from) noexcept
+      : ConfigObservability(nullptr, ::std::move(from)) {}
+  inline ConfigObservability& operator=(const ConfigObservability& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigObservability& operator=(ConfigObservability&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigObservability& default_instance() {
+    return *reinterpret_cast<const ConfigObservability*>(
+        &_ConfigObservability_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 2;
+  friend void swap(ConfigObservability& a, ConfigObservability& b) { a.Swap(&b); }
+  inline void Swap(ConfigObservability* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigObservability* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigObservability* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ConfigObservability>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ConfigObservability& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ConfigObservability& from) { ConfigObservability::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ConfigObservability* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "common.v1.ConfigObservability"; }
+
+ protected:
+  explicit ConfigObservability(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ConfigObservability(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ConfigObservability& from);
+  ConfigObservability(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ConfigObservability&& from) noexcept
+      : ConfigObservability(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kJaegerEndpointFieldNumber = 5,
+    kPrometheusPushgatewayFieldNumber = 6,
+    kOtelGrpcEndpointFieldNumber = 7,
+    kTracingSampleRateFieldNumber = 4,
+    kEnableTracingFieldNumber = 1,
+    kEnableMetricsFieldNumber = 2,
+    kEnableProfilingFieldNumber = 3,
+  };
+  // string jaeger_endpoint = 5 [json_name = "jaegerEndpoint"];
+  void clear_jaeger_endpoint() ;
+  const ::std::string& jaeger_endpoint() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_jaeger_endpoint(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_jaeger_endpoint();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_jaeger_endpoint();
+  void set_allocated_jaeger_endpoint(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_jaeger_endpoint() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_jaeger_endpoint(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_jaeger_endpoint();
+
+  public:
+  // string prometheus_pushgateway = 6 [json_name = "prometheusPushgateway"];
+  void clear_prometheus_pushgateway() ;
+  const ::std::string& prometheus_pushgateway() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_prometheus_pushgateway(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_prometheus_pushgateway();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_prometheus_pushgateway();
+  void set_allocated_prometheus_pushgateway(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_prometheus_pushgateway() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_prometheus_pushgateway(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_prometheus_pushgateway();
+
+  public:
+  // string otel_grpc_endpoint = 7 [json_name = "otelGrpcEndpoint"];
+  void clear_otel_grpc_endpoint() ;
+  const ::std::string& otel_grpc_endpoint() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_otel_grpc_endpoint(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_otel_grpc_endpoint();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_otel_grpc_endpoint();
+  void set_allocated_otel_grpc_endpoint(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_otel_grpc_endpoint() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_otel_grpc_endpoint(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_otel_grpc_endpoint();
+
+  public:
+  // double tracing_sample_rate = 4 [json_name = "tracingSampleRate"];
+  void clear_tracing_sample_rate() ;
+  double tracing_sample_rate() const;
+  void set_tracing_sample_rate(double value);
+
+  private:
+  double _internal_tracing_sample_rate() const;
+  void _internal_set_tracing_sample_rate(double value);
+
+  public:
+  // bool enable_tracing = 1 [json_name = "enableTracing"];
+  void clear_enable_tracing() ;
+  bool enable_tracing() const;
+  void set_enable_tracing(bool value);
+
+  private:
+  bool _internal_enable_tracing() const;
+  void _internal_set_enable_tracing(bool value);
+
+  public:
+  // bool enable_metrics = 2 [json_name = "enableMetrics"];
+  void clear_enable_metrics() ;
+  bool enable_metrics() const;
+  void set_enable_metrics(bool value);
+
+  private:
+  bool _internal_enable_metrics() const;
+  void _internal_set_enable_metrics(bool value);
+
+  public:
+  // bool enable_profiling = 3 [json_name = "enableProfiling"];
+  void clear_enable_profiling() ;
+  bool enable_profiling() const;
+  void set_enable_profiling(bool value);
+
+  private:
+  bool _internal_enable_profiling() const;
+  void _internal_set_enable_profiling(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigObservability)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<3, 7,
+                                   0, 93,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ConfigObservability& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr jaeger_endpoint_;
+    ::google::protobuf::internal::ArenaStringPtr prometheus_pushgateway_;
+    ::google::protobuf::internal::ArenaStringPtr otel_grpc_endpoint_;
+    double tracing_sample_rate_;
+    bool enable_tracing_;
+    bool enable_metrics_;
+    bool enable_profiling_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ConfigObservability_class_data_;
+// -------------------------------------------------------------------
+
 class ConfigOAuth final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:common.v1.ConfigOAuth) */ {
  public:
@@ -4004,7 +4286,7 @@ class ConfigOAuth final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigOAuth*>(
         &_ConfigOAuth_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 2;
+  static constexpr int kIndexInFileMessages = 3;
   friend void swap(ConfigOAuth& a, ConfigOAuth& b) { a.Swap(&b); }
   inline void Swap(ConfigOAuth* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4447,7 +4729,7 @@ class ConfigNativeApp final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigNativeApp*>(
         &_ConfigNativeApp_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 17;
+  static constexpr int kIndexInFileMessages = 18;
   friend void swap(ConfigNativeApp& a, ConfigNativeApp& b) { a.Swap(&b); }
   inline void Swap(ConfigNativeApp* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4756,7 +5038,7 @@ class ConfigMetrics final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigMetrics*>(
         &_ConfigMetrics_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 5;
+  static constexpr int kIndexInFileMessages = 6;
   friend void swap(ConfigMetrics& a, ConfigMetrics& b) { a.Swap(&b); }
   inline void Swap(ConfigMetrics* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5029,7 +5311,7 @@ class ConfigMeilisearch final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigMeilisearch*>(
         &_ConfigMeilisearch_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 18;
+  static constexpr int kIndexInFileMessages = 19;
   friend void swap(ConfigMeilisearch& a, ConfigMeilisearch& b) { a.Swap(&b); }
   inline void Swap(ConfigMeilisearch* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5951,7 +6233,7 @@ class ConfigLocalization final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigLocalization*>(
         &_ConfigLocalization_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 14;
+  static constexpr int kIndexInFileMessages = 15;
   friend void swap(ConfigLocalization& a, ConfigLocalization& b) { a.Swap(&b); }
   inline void Swap(ConfigLocalization* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6190,7 +6472,7 @@ class ConfigListenerRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigListenerRequest*>(
         &_ConfigListenerRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 29;
+  static constexpr int kIndexInFileMessages = 30;
   friend void swap(ConfigListenerRequest& a, ConfigListenerRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigListenerRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6386,7 +6668,7 @@ class ConfigLdap final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigLdap*>(
         &_ConfigLdap_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 15;
+  static constexpr int kIndexInFileMessages = 16;
   friend void swap(ConfigLdap& a, ConfigLdap& b) { a.Swap(&b); }
   inline void Swap(ConfigLdap* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7083,7 +7365,7 @@ class ConfigImageProxy final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigImageProxy*>(
         &_ConfigImageProxy_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 21;
+  static constexpr int kIndexInFileMessages = 22;
   friend void swap(ConfigImageProxy& a, ConfigImageProxy& b) { a.Swap(&b); }
   inline void Swap(ConfigImageProxy* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7329,7 +7611,7 @@ class ConfigGetRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigGetRequest*>(
         &_ConfigGetRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 24;
+  static constexpr int kIndexInFileMessages = 25;
   friend void swap(ConfigGetRequest& a, ConfigGetRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigGetRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7520,7 +7802,7 @@ class ConfigFile final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigFile*>(
         &_ConfigFile_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 9;
+  static constexpr int kIndexInFileMessages = 10;
   friend void swap(ConfigFile& a, ConfigFile& b) { a.Swap(&b); }
   inline void Swap(ConfigFile* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7986,7 +8268,7 @@ class ConfigEmail final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigEmail*>(
         &_ConfigEmail_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 10;
+  static constexpr int kIndexInFileMessages = 11;
   friend void swap(ConfigEmail& a, ConfigEmail& b) { a.Swap(&b); }
   inline void Swap(ConfigEmail* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8568,7 +8850,7 @@ class ConfigDataRetention final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigDataRetention*>(
         &_ConfigDataRetention_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 20;
+  static constexpr int kIndexInFileMessages = 21;
   friend void swap(ConfigDataRetention& a, ConfigDataRetention& b) { a.Swap(&b); }
   inline void Swap(ConfigDataRetention* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8882,7 +9164,7 @@ class ConfigBleve final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigBleve*>(
         &_ConfigBleve_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 19;
+  static constexpr int kIndexInFileMessages = 20;
   friend void swap(ConfigBleve& a, ConfigBleve& b) { a.Swap(&b); }
   inline void Swap(ConfigBleve* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9144,7 +9426,7 @@ class CacheConfig final : public ::google::protobuf::Message
     return *reinterpret_cast<const CacheConfig*>(
         &_CacheConfig_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 4;
+  static constexpr int kIndexInFileMessages = 5;
   friend void swap(CacheConfig& a, CacheConfig& b) { a.Swap(&b); }
   inline void Swap(CacheConfig* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9421,7 +9703,7 @@ class Config final : public ::google::protobuf::Message
     return *reinterpret_cast<const Config*>(
         &_Config_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 23;
+  static constexpr int kIndexInFileMessages = 24;
   friend void swap(Config& a, Config& b) { a.Swap(&b); }
   inline void Swap(Config* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9532,6 +9814,7 @@ class Config final : public ::google::protobuf::Message
     kImageProxyFieldNumber = 21,
     kOauthFieldNumber = 22,
     kProductsFieldNumber = 23,
+    kObservabilityFieldNumber = 24,
   };
   // .common.v1.ConfigMain main = 1 [json_name = "main"];
   bool has_main() const;
@@ -9878,12 +10161,27 @@ class Config final : public ::google::protobuf::Message
   ::common::v1::ConfigProducts* PROTOBUF_NONNULL _internal_mutable_products();
 
   public:
+  // .common.v1.ConfigObservability observability = 24 [json_name = "observability"];
+  bool has_observability() const;
+  void clear_observability() ;
+  const ::common::v1::ConfigObservability& observability() const;
+  [[nodiscard]] ::common::v1::ConfigObservability* PROTOBUF_NULLABLE release_observability();
+  ::common::v1::ConfigObservability* PROTOBUF_NONNULL mutable_observability();
+  void set_allocated_observability(::common::v1::ConfigObservability* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_observability(::common::v1::ConfigObservability* PROTOBUF_NULLABLE value);
+  ::common::v1::ConfigObservability* PROTOBUF_NULLABLE unsafe_arena_release_observability();
+
+  private:
+  const ::common::v1::ConfigObservability& _internal_observability() const;
+  ::common::v1::ConfigObservability* PROTOBUF_NONNULL _internal_mutable_observability();
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.Config)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 23,
-                                   23, 0,
+  static const ::google::protobuf::internal::TcParseTable<5, 24,
+                                   24, 0,
                                    2>
       _table_;
 
@@ -9927,6 +10225,7 @@ class Config final : public ::google::protobuf::Message
     ::common::v1::ConfigImageProxy* PROTOBUF_NULLABLE image_proxy_;
     ::common::v1::ConfigOAuth* PROTOBUF_NULLABLE oauth_;
     ::common::v1::ConfigProducts* PROTOBUF_NULLABLE products_;
+    ::common::v1::ConfigObservability* PROTOBUF_NULLABLE observability_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -9991,7 +10290,7 @@ class ConfigUpdateRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigUpdateRequest*>(
         &_ConfigUpdateRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 26;
+  static constexpr int kIndexInFileMessages = 27;
   friend void swap(ConfigUpdateRequest& a, ConfigUpdateRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigUpdateRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -10192,7 +10491,7 @@ class ConfigUpdateResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 27;
+  static constexpr int kIndexInFileMessages = 28;
   friend void swap(ConfigUpdateResponse& a, ConfigUpdateResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigUpdateResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -10428,7 +10727,7 @@ class ConfigListenerResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 28;
+  static constexpr int kIndexInFileMessages = 29;
   friend void swap(ConfigListenerResponse& a, ConfigListenerResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigListenerResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -10664,7 +10963,7 @@ class ConfigGetResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 25;
+  static constexpr int kIndexInFileMessages = 26;
   friend void swap(ConfigGetResponse& a, ConfigGetResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigGetResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -12696,6 +12995,301 @@ inline ::int64_t ConfigServices::_internal_inventory_service_max_receive_message
 inline void ConfigServices::_internal_set_inventory_service_max_receive_message_size_bytes(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.inventory_service_max_receive_message_size_bytes_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ConfigObservability
+
+// bool enable_tracing = 1 [json_name = "enableTracing"];
+inline void ConfigObservability::clear_enable_tracing() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_tracing_ = false;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline bool ConfigObservability::enable_tracing() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigObservability.enable_tracing)
+  return _internal_enable_tracing();
+}
+inline void ConfigObservability::set_enable_tracing(bool value) {
+  _internal_set_enable_tracing(value);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigObservability.enable_tracing)
+}
+inline bool ConfigObservability::_internal_enable_tracing() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.enable_tracing_;
+}
+inline void ConfigObservability::_internal_set_enable_tracing(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_tracing_ = value;
+}
+
+// bool enable_metrics = 2 [json_name = "enableMetrics"];
+inline void ConfigObservability::clear_enable_metrics() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_metrics_ = false;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline bool ConfigObservability::enable_metrics() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigObservability.enable_metrics)
+  return _internal_enable_metrics();
+}
+inline void ConfigObservability::set_enable_metrics(bool value) {
+  _internal_set_enable_metrics(value);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigObservability.enable_metrics)
+}
+inline bool ConfigObservability::_internal_enable_metrics() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.enable_metrics_;
+}
+inline void ConfigObservability::_internal_set_enable_metrics(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_metrics_ = value;
+}
+
+// bool enable_profiling = 3 [json_name = "enableProfiling"];
+inline void ConfigObservability::clear_enable_profiling() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_profiling_ = false;
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline bool ConfigObservability::enable_profiling() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigObservability.enable_profiling)
+  return _internal_enable_profiling();
+}
+inline void ConfigObservability::set_enable_profiling(bool value) {
+  _internal_set_enable_profiling(value);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigObservability.enable_profiling)
+}
+inline bool ConfigObservability::_internal_enable_profiling() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.enable_profiling_;
+}
+inline void ConfigObservability::_internal_set_enable_profiling(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_profiling_ = value;
+}
+
+// double tracing_sample_rate = 4 [json_name = "tracingSampleRate"];
+inline void ConfigObservability::clear_tracing_sample_rate() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.tracing_sample_rate_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline double ConfigObservability::tracing_sample_rate() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigObservability.tracing_sample_rate)
+  return _internal_tracing_sample_rate();
+}
+inline void ConfigObservability::set_tracing_sample_rate(double value) {
+  _internal_set_tracing_sample_rate(value);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigObservability.tracing_sample_rate)
+}
+inline double ConfigObservability::_internal_tracing_sample_rate() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.tracing_sample_rate_;
+}
+inline void ConfigObservability::_internal_set_tracing_sample_rate(double value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.tracing_sample_rate_ = value;
+}
+
+// string jaeger_endpoint = 5 [json_name = "jaegerEndpoint"];
+inline void ConfigObservability::clear_jaeger_endpoint() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.jaeger_endpoint_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::std::string& ConfigObservability::jaeger_endpoint() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigObservability.jaeger_endpoint)
+  return _internal_jaeger_endpoint();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigObservability::set_jaeger_endpoint(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.jaeger_endpoint_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigObservability.jaeger_endpoint)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigObservability::mutable_jaeger_endpoint()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_jaeger_endpoint();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigObservability.jaeger_endpoint)
+  return _s;
+}
+inline const ::std::string& ConfigObservability::_internal_jaeger_endpoint() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.jaeger_endpoint_.Get();
+}
+inline void ConfigObservability::_internal_set_jaeger_endpoint(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.jaeger_endpoint_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigObservability::_internal_mutable_jaeger_endpoint() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.jaeger_endpoint_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigObservability::release_jaeger_endpoint() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigObservability.jaeger_endpoint)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.jaeger_endpoint_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.jaeger_endpoint_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigObservability::set_allocated_jaeger_endpoint(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.jaeger_endpoint_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.jaeger_endpoint_.IsDefault()) {
+    _impl_.jaeger_endpoint_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigObservability.jaeger_endpoint)
+}
+
+// string prometheus_pushgateway = 6 [json_name = "prometheusPushgateway"];
+inline void ConfigObservability::clear_prometheus_pushgateway() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.prometheus_pushgateway_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::std::string& ConfigObservability::prometheus_pushgateway() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigObservability.prometheus_pushgateway)
+  return _internal_prometheus_pushgateway();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigObservability::set_prometheus_pushgateway(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.prometheus_pushgateway_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigObservability.prometheus_pushgateway)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigObservability::mutable_prometheus_pushgateway()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_prometheus_pushgateway();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigObservability.prometheus_pushgateway)
+  return _s;
+}
+inline const ::std::string& ConfigObservability::_internal_prometheus_pushgateway() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.prometheus_pushgateway_.Get();
+}
+inline void ConfigObservability::_internal_set_prometheus_pushgateway(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.prometheus_pushgateway_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigObservability::_internal_mutable_prometheus_pushgateway() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.prometheus_pushgateway_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigObservability::release_prometheus_pushgateway() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigObservability.prometheus_pushgateway)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.prometheus_pushgateway_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.prometheus_pushgateway_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigObservability::set_allocated_prometheus_pushgateway(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.prometheus_pushgateway_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.prometheus_pushgateway_.IsDefault()) {
+    _impl_.prometheus_pushgateway_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigObservability.prometheus_pushgateway)
+}
+
+// string otel_grpc_endpoint = 7 [json_name = "otelGrpcEndpoint"];
+inline void ConfigObservability::clear_otel_grpc_endpoint() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.otel_grpc_endpoint_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const ::std::string& ConfigObservability::otel_grpc_endpoint() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigObservability.otel_grpc_endpoint)
+  return _internal_otel_grpc_endpoint();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigObservability::set_otel_grpc_endpoint(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.otel_grpc_endpoint_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigObservability.otel_grpc_endpoint)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigObservability::mutable_otel_grpc_endpoint()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_otel_grpc_endpoint();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigObservability.otel_grpc_endpoint)
+  return _s;
+}
+inline const ::std::string& ConfigObservability::_internal_otel_grpc_endpoint() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.otel_grpc_endpoint_.Get();
+}
+inline void ConfigObservability::_internal_set_otel_grpc_endpoint(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.otel_grpc_endpoint_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigObservability::_internal_mutable_otel_grpc_endpoint() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.otel_grpc_endpoint_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigObservability::release_otel_grpc_endpoint() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigObservability.otel_grpc_endpoint)
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* released = _impl_.otel_grpc_endpoint_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.otel_grpc_endpoint_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigObservability::set_allocated_otel_grpc_endpoint(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.otel_grpc_endpoint_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.otel_grpc_endpoint_.IsDefault()) {
+    _impl_.otel_grpc_endpoint_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigObservability.otel_grpc_endpoint)
 }
 
 // -------------------------------------------------------------------
@@ -27600,6 +28194,104 @@ inline void Config::set_allocated_products(::common::v1::ConfigProducts* PROTOBU
 
   _impl_.products_ = reinterpret_cast<::common::v1::ConfigProducts*>(value);
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.products)
+}
+
+// .common.v1.ConfigObservability observability = 24 [json_name = "observability"];
+inline bool Config::has_observability() const {
+  bool value = (_impl_._has_bits_[0] & 0x00800000u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.observability_ != nullptr);
+  return value;
+}
+inline void Config::clear_observability() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.observability_ != nullptr) _impl_.observability_->Clear();
+  _impl_._has_bits_[0] &= ~0x00800000u;
+}
+inline const ::common::v1::ConfigObservability& Config::_internal_observability() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::common::v1::ConfigObservability* p = _impl_.observability_;
+  return p != nullptr ? *p : reinterpret_cast<const ::common::v1::ConfigObservability&>(::common::v1::_ConfigObservability_default_instance_);
+}
+inline const ::common::v1::ConfigObservability& Config::observability() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.Config.observability)
+  return _internal_observability();
+}
+inline void Config::unsafe_arena_set_allocated_observability(
+    ::common::v1::ConfigObservability* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.observability_);
+  }
+  _impl_.observability_ = reinterpret_cast<::common::v1::ConfigObservability*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00800000u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00800000u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.Config.observability)
+}
+inline ::common::v1::ConfigObservability* PROTOBUF_NULLABLE Config::release_observability() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00800000u;
+  ::common::v1::ConfigObservability* released = _impl_.observability_;
+  _impl_.observability_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::common::v1::ConfigObservability* PROTOBUF_NULLABLE Config::unsafe_arena_release_observability() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.Config.observability)
+
+  _impl_._has_bits_[0] &= ~0x00800000u;
+  ::common::v1::ConfigObservability* temp = _impl_.observability_;
+  _impl_.observability_ = nullptr;
+  return temp;
+}
+inline ::common::v1::ConfigObservability* PROTOBUF_NONNULL Config::_internal_mutable_observability() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.observability_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::common::v1::ConfigObservability>(GetArena());
+    _impl_.observability_ = reinterpret_cast<::common::v1::ConfigObservability*>(p);
+  }
+  return _impl_.observability_;
+}
+inline ::common::v1::ConfigObservability* PROTOBUF_NONNULL Config::mutable_observability()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00800000u;
+  ::common::v1::ConfigObservability* _msg = _internal_mutable_observability();
+  // @@protoc_insertion_point(field_mutable:common.v1.Config.observability)
+  return _msg;
+}
+inline void Config::set_allocated_observability(::common::v1::ConfigObservability* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.observability_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00800000u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00800000u;
+  }
+
+  _impl_.observability_ = reinterpret_cast<::common::v1::ConfigObservability*>(value);
+  // @@protoc_insertion_point(field_set_allocated:common.v1.Config.observability)
 }
 
 // -------------------------------------------------------------------

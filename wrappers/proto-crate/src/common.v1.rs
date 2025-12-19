@@ -97,6 +97,24 @@ pub struct ConfigServices {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ConfigObservability {
+    #[prost(bool, tag = "1")]
+    pub enable_tracing: bool,
+    #[prost(bool, tag = "2")]
+    pub enable_metrics: bool,
+    #[prost(bool, tag = "3")]
+    pub enable_profiling: bool,
+    #[prost(double, tag = "4")]
+    pub tracing_sample_rate: f64,
+    #[prost(string, tag = "5")]
+    pub jaeger_endpoint: ::prost::alloc::string::String,
+    #[prost(string, tag = "6")]
+    pub prometheus_pushgateway: ::prost::alloc::string::String,
+    #[prost(string, tag = "7")]
+    pub otel_grpc_endpoint: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigOAuth {
     #[prost(string, optional, tag = "1")]
     pub oauth_provider_url: ::core::option::Option<::prost::alloc::string::String>,
@@ -785,6 +803,8 @@ pub struct Config {
     pub oauth: ::core::option::Option<ConfigOAuth>,
     #[prost(message, optional, tag = "23")]
     pub products: ::core::option::Option<ConfigProducts>,
+    #[prost(message, optional, tag = "24")]
+    pub observability: ::core::option::Option<ConfigObservability>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
